@@ -2,7 +2,7 @@
 
 This is the place to go for information about the many plugins available for weewx, as well as random "how to" tips. For information on how to download, install, and configure weewx, see the [weewx documentation](http://www.weewx.com/docs.html). 
 
-Edit this page as you see fit; the wiki uses [Markdown](https://sourceforge.net/p/weewx/wiki/markdown_syntax/) syntax. To add a new page simply reference it within brackets, e.g.: [SamplePage].
+Edit this page as you see fit; the Github wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax and a few others, but no HTML! you can convert a HTML page if you want at [this site.](http://domchristie.github.io/to-markdown/) To add a new page simply reference it within brackets, e.g.: [SamplePage].
 
 ## <strong>Hardware</strong>
 [On what hardware do you run weewx?](hardware)
@@ -27,7 +27,7 @@ Edit this page as you see fit; the wiki uses [Markdown](https://sourceforge.net/
 * [Running weewx on a Raspberry Pi](Raspberry%20Pi)
 * [Managing extensions](extensions)
 
-<strong>Additional drivers</strong>
+### <strong>Additional drivers</strong>
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [wlink - Collect data from weatherlink.com](weatherlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
@@ -40,14 +40,14 @@ Edit this page as you see fit; the wiki uses [Markdown](https://sourceforge.net/
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](Cumulus RealTime)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](Cumulus wxnow)
 
-###<strong>Skins</strong>
+###Skins
 * [exfoliation](exfoliation)
 * [amphibian](amphibian)
 * [simple](Simple dashboard)
 * [weewx-wd](WEEWX-WD)
 * [bootstrap](Bootstrap)
 
-###<strong>Uploaders</strong>
+###Uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
@@ -61,6 +61,7 @@ Edit this page as you see fit; the wiki uses [Markdown](https://sourceforge.net/
 * <img src="http://windfinder.com/favicon.ico"/ width='16'> [windfinder](windfinder)
 * <img src="http://xively.com/favicon.ico"/> [xively/cosm/pachube](cosm)
 
-<strong>Obsolete entries</strong>
+###  Obsolete entries
+
 [Install on SheevaPlug](Notes%20on%20porting%20weewx%20to%20the%20SheevaPlug)
 

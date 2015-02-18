@@ -1,0 +1,1 @@
+[[[http://lancet.mit.edu/mwall/projects/weather/releases/weewx-logo.png  | height = 200px ]] ](http://www.weewx.com)

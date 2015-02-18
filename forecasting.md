@@ -194,26 +194,18 @@ sudo /etc/init.d/weewx start3.  Display tide data
 ~~~~
 ### Screenshots
 
-
 ![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
 
 Forecast data embedded in the Standard skin.
-
 
 ![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
 
 Full table of forecast data embedded in the Standard skin.
 
-
 ![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
 
 Forecast data embedded in the exfoliation skin.
 
-
-
-<div style="margin: 0px 10px 0px 10px; background-color: #f0f0f0; border: 1px solid #aaaaaa; padding: 3px; font-weight: bold;">
 ![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)
 
 The forecast.html page from the exfoliation skin.
-
-</div>

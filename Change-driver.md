@@ -36,11 +36,11 @@ Any number of driver stanzas can be in the weewx.conf file, but only one can be 
 
 This approach will work on any weewx installation for both standard and custom drivers.
 
-### 1.  Stop weewx
+**1.  Stop weewx**
 
-sudo /etc/init.d/weewx 
+`sudo /etc/init.d/weewx stop`
 
-### stop2.  Modify weewx.conf`
+**2.  Modify weewx.conf`**
 
 For example, to specify the Vantage driver for Davis Vantage Pro2 hardware:
 ~~~~
@@ -51,25 +51,31 @@ For example, to specify the Vantage driver for Davis Vantage Pro2 hardware:
 [Vantage]
     type = serial
     port = /dev/ttyUSB0
-    driver = weewx.drivers.vantage3.  Start weewx
+    driver = weewx.drivers.vantage
 ~~~~
-### The weewx approach: run setup.py
+** 3.  Start weewx**
+
+## The weewx approach: run setup.py
 
 This approach will work for standard drivers on any weewx installation.
 
-1.  Stop weewx
-~~~~
-sudo /etc/init.d/weewx stop2.  Run setup.py with the configure option
+**1.  Stop weewx**
+````
+sudo /etc/init.d/weewx stop
+````
+**2.  Run setup.py with the configure option**
+````
+sudo /home/weewx/setup.py configure
+````
+**3.  Start weewx**
 
-sudo /home/weewx/setup.py configure3.  Start weewx
-~~~~
 This should prompt for the station parameters, including the station type and any options required by the station.
 
 On debian- and redhat-based systems, `wee_setup` is a symlink to the weewx setup.py, so you can simply type `wee_setup` on those systems:
 
 `sudo wee_setup configure`
 
-### The Debian approach: run dpkg
+## The Debian approach: run dpkg
 
 This approach will work for standard drivers on weewx installations that were installed from a .deb package.
 

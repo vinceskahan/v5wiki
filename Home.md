@@ -1,6 +1,6 @@
 # <big><strong>Welcome to the weewx wiki!</strong><big>
 
-This is the place to go for information about the many plugins available for weewx, as well as random "how to" tips. For information on how to download, install, and configure weewx, see the [weewx documentation](http://www.weewx.com/docs.html). 
+This is the place to go for information about the many plugins available for weewx, as well as random "how to" tips. For information on how to download, install, and configure weewx, see the [weewx documentation](http://www.weewx.com/docs.html).  You can also download the latest release [on this Github page](https://github.com/weewx/weewx/releases/latest)
 
 Edit this page as you see fit; the Github wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax and a few others, but no HTML! you can convert a HTML page if you want at [this site.](http://domchristie.github.io/to-markdown/) To add a new page simply reference it within brackets, e.g.: [SamplePage].
 

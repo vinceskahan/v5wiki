@@ -7,6 +7,7 @@ There are three files required to make logwatch understand weewx (or any new ser
 To configure logwatch to recognize weewx, do the following.  This assumes that weewx was installed from debian package.  If you installed using setup.py, then copy the files from the weewx util directory instead of symlinking.
 
 1. install logwatch
+
 `apt-get install logwatch`
 
 2. tell logwatch what the weewx service is

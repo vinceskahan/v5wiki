@@ -6,36 +6,46 @@ There are three files required to make logwatch understand weewx (or any new ser
 
 To configure logwatch to recognize weewx, do the following.  This assumes that weewx was installed from debian package.  If you installed using setup.py, then copy the files from the weewx util directory instead of symlinking.
 
-1.  install logwatch
+<ol>
+<li>install logwatch
+```
+apt-get install logwatch
+```
 
-`apt-get install logwatch`
+<li>tell logwatch what the weewx service is:</li>
+```
+ln -s /etc/weewx/logwatch/conf/services/weewx.conf /etc/logwatch/conf/services
+```
 
-2.  tell logwatch what the weewx service is:
+<li>tell logwatch which log files weewx uses:</li>
+```
+ln -s /etc/weewx/logwatch/conf/logfiles/weewx.conf /etc/logwatch/conf/logfiles
+```
 
-`ln -s /etc/weewx/logwatch/conf/services/weewx.conf /etc/logwatch/conf/services`
+<li>tell logwatch how to interpret weewx log messages:</li>
+```
+ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services
+```
 
-3.  tell logwatch which log files weewx uses:
-
-`ln -s /etc/weewx/logwatch/conf/logfiles/weewx.conf /etc/logwatch/conf/logfiles`
-
-4.  tell logwatch how to interpret weewx log messages:
-
-`ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services`
-
-5.  test by requesting a summary from the previous day:
+<li>test by requesting a summary from the previous day:</li>
+```
+logwatch --service weewx --range yesterday
+```
 
 ## Examples
 
 This would give you a summary of everything that has happened over the past 60 days:
-
-`logwatch --service weewx --range '-60 days'`
+```
+logwatch --service weewx --range '-60 days'
+```
 
 or, to see everything from all log files (included gzipped logfiles):
-
-`logwatch --service weewx --range all`
+```
+logwatch --service weewx --range all
+```
 
 The range option understands many variations:
-
+```
    range today
    range yesterday
    range '4 hours ago for that hour'
@@ -46,7 +56,7 @@ The range option understands many variations:
    range 'first Monday in May'
    range 'between 4/23/2005 and 4/30/2005'
    range '2005/05/03 10:24:17 for that second'
-
+```
 Use the --debug option to see exactly what logwatch is doing.
 
 If you have configured rsyslog to put weewx logfiles into a location other than /var/log/syslog, modify the logfiles/weewx.conf file.

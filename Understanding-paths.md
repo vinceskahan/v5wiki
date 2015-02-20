@@ -41,7 +41,8 @@ Now consider the case where weewx was installed from a .deb or .rpm package.  In
 /usr/share/weewx/weewxd /etc/weewx/weewx.conf
 ```
 
-```cd /usr/share/weewx
+```
+cd /usr/share/weewx
 ./weewxd /etc/weewx/weewx.conf
 ```
 

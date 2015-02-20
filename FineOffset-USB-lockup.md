@@ -14,7 +14,8 @@ The USB lockups were first noted in 2011.
 
 When the lockup happens, you will see a gap in weather data.  In the weewx log you will see messages such as this:
 ```
-Jun  7 21:50:33 localhost weewx[2460]: fousb: get archive interval failed attempt 1 of 3: could not detach kernel driver from interface 0: No data available
+Jun  7 21:50:33 localhost weewx[2460]: fousb: get archive interval failed 
+attempt 1 of 3: could not detach kernel driver from interface 0: No data available
 ```
 The "could not detach kernel driver from interface ... No data available" is the sign of a lockup.
 

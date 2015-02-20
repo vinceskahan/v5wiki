@@ -8,7 +8,9 @@ To configure logwatch to recognize weewx, do the following.  This assumes that w
 
 1. install logwatch
 
-`apt-get install logwatch`
+    ```
+apt-get install logwatch
+```
 
 2. tell logwatch what the weewx service is
 ```

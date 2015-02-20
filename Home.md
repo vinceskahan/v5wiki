@@ -1,8 +1,8 @@
 # <big><strong>Welcome to the weewx wiki!</strong><big>
 
-This is the place to go for information about the many plugins available for weewx, as well as random "how to" tips. For information on how to download, install, and configure weewx, see the [weewx documentation](http://www.weewx.com/docs.html).  You can also download the latest release [on this Github page](https://github.com/weewx/weewx/releases/latest)
+This is the place to go for information about the many extensions available for weewx, as well as random "how to" tips. For information on how to download, install, and configure weewx itself, see the [weewx documentation](http://www.weewx.com/docs.html).  The latest weewx release is available at [github](https://github.com/weewx/weewx/releases/latest)
 
-Edit this page as you see fit; the Github wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax and a few others, but no HTML! you can convert a HTML page if you want at [this site.](http://domchristie.github.io/to-markdown/) To add a new page simply reference it within brackets, e.g.: [SamplePage].
+Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax and a few others, but no HTML!  To convert, use the [HTML to markdown converter](http://domchristie.github.io/to-markdown/). To add a new page, reference it within brackets, e.g.: [SamplePage].
 
 ## <strong>Hardware</strong>
 [On what hardware do you run weewx?](hardware)

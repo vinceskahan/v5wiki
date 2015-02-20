@@ -24,6 +24,7 @@ sudo dpkg -i weewx_x.y.z-r_all.deb
 
 <li>copy any customizations</li>
 
+
 if you have made any modifications, copy them over then restart weewx.
 
 /home/weewx/weex.conf -> /etc/weewx/weewx.conf

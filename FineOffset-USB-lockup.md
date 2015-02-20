@@ -13,10 +13,9 @@ The USB lockups were first noted in 2011.
 ### What does it look like?
 
 When the lockup happens, you will see a gap in weather data.  In the weewx log you will see messages such as this:
->
-Jun  7 21:50:33 localhost weewx[2460]: fousb: get archive interval failed attempt 1 of 3: 
-could not detach kernel driver from interface 0: No data available
-
+```
+Jun  7 21:50:33 localhost weewx[2460]: fousb: get archive interval failed attempt 1 of 3: could not detach kernel driver from interface 0: No data available
+```
 The "could not detach kernel driver from interface ... No data available" is the sign of a lockup.
 
 ### How to fix it
@@ -34,17 +33,19 @@ Obviously, this firmware bug makes the FineOffset stations unsuitable for unatte
 #### Use correct settings
 
 The best settings for a Fine Offset station using weewx 2.6.x and earlier are:
-~~~~
+```
 [FineOffsetUSB]
     polling_mode = PERIODIC
     polling_interval = 60
 [StdArchive]
     archive_interval = 300
     record_generation = software
-~~~~
+```
 Also, set the station's archive interval to 5 minutes (300 seconds) using wee_config_fousb:
 
-`sudo wee_config_fousb --set-interval=5`
+```
+sudo wee_config_fousb --set-interval=5
+```
 
 These settings are not a guarantee against lockups, but they will reduce the chance.
 
@@ -57,22 +58,22 @@ Connect the station, without batteries, to a USB hub that has per-port switching
 This feature is included in the fousb.py driver in weewx as of r2225 or weewx 2.6.4.  When weewx detects a lockup, it tells the USB hub to power cycle the station.
 
 To enable this feature, add the following to weewx.conf:
-~~~~
+```
 [FineOffsetUSB]
     power_cycle_hub = 001:016
     power_cycle_port = 1
-~~~~
+```
 power_cycle_port indicates the port to which the station is attached.  On a four-port hub this will be 1, 2, 3, or 4.
 
 power_cycle_hub uniquely identifies the hub to which the station is attached.  It has the format XXX:YYY where XXX is the bus and YYY is the device, for example 001:016.  Use lsusb to determine these numbers.  For example, in the following output, the linksys USB2HUB4 is located at 001:016:
->
+```
 % lsusb
 Bus 001 Device 026: ID 1941:8021 Dream Link WH1080 Weather Station / USB Missile Launcher
 Bus 001 Device 021: ID 0557:2008 ATEN International Co., Ltd UC-232A Serial Port [pl2303]
 Bus 001 Device 019: ID 1130:6801 Tenx Technology, Inc. 
 Bus 001 Device 016: ID 0409:0058 NEC Corp. HighSpeed Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-
+```
 Beware that many hubs may say that they support per-port power switching when, in fact, they do not.  This is often because the controller chip supports per-port switching, but the USB hub manufacturer did not hook up the pins that actually supply power.
 
 Use a tool such as usb_control.py to see whether a hub actually works.
@@ -81,16 +82,20 @@ http://lancet.mit.edu/mwall/projects/weather/releases/usb_control-0.6.py
 
 For example, this will turn off the indicator light for port 3:
 
-`sudo ./usb_control.py --hub 001:016 --port 3 --indicator 0`
+```
+sudo ./usb_control.py --hub 001:016 --port 3 --indicator 0
+```
 
 This will turn off power for port 3:
 
-`sudo ./usb_control.py --hub 001:016 --port 3 --power 0`
+```
+sudo ./usb_control.py --hub 001:016 --port 3 --power 0
+```
 
 Hubs that are known to work:
 
-LINKSYS USB2HUB4 (NEC Corp. HighSpeed Hub)
-D-Link Corp. DUB-H7 7-port USB 2.0 hub (older grey/silver version)
+* LINKSYS USB2HUB4 (NEC Corp. HighSpeed Hub)
+* D-Link Corp. DUB-H7 7-port USB 2.0 hub (older grey/silver version)
 
 Hubs that are known to not work:
 

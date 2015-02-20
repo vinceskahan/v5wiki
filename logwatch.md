@@ -31,6 +31,7 @@ ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services
 ```
 logwatch --service weewx --range yesterday
 ```
+</ol>
 
 ## Examples
 

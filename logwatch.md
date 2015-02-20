@@ -8,23 +8,28 @@ To configure logwatch to recognize weewx, do the following.  This assumes that w
 
 1. install logwatch
     ```
-apt-get install logwatch```
+apt-get install logwatch
+```
 
 2. tell logwatch what the weewx service is
     ```
-ln -s /etc/weewx/logwatch/conf/services/weewx.conf /etc/logwatch/conf/services```
+ln -s /etc/weewx/logwatch/conf/services/weewx.conf /etc/logwatch/conf/services
+```
 
 3. tell logwatch which log files weewx uses
     ```
-ln -s /etc/weewx/logwatch/conf/logfiles/weewx.conf /etc/logwatch/conf/logfiles```
+ln -s /etc/weewx/logwatch/conf/logfiles/weewx.conf /etc/logwatch/conf/logfiles
+```
 
 4. tell logwatch how to interpret weewx log messages
     ```
-ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services```
+ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services
+```
 
 5. test by requesting a summary from the previous day
     ```
-logwatch --service weewx --range yesterday```
+logwatch --service weewx --range yesterday
+```
 
 ## Examples
 

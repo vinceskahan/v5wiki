@@ -6,7 +6,7 @@ Running weewx on a Raspberry Pi has become very popular. You'll have to look els
 
 First, you simply must run NTP on the RPi. It is simply impossible to create a dependable data logging system without an accurate source of time.
 
-Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package fake-hwclock). The "fake clock" regularly records the time on the hard disk. When the RPi reboots after a power failure, it will read this time and simply resume from there. This time could be hours behind the real time, depending on how long the power was out. 
+Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package `fake-hwclock`). The "fake clock" regularly records the time on the hard disk. When the RPi reboots after a power failure, it will read this time and simply resume from there. This time could be hours behind the real time, depending on how long the power was out. 
 
 Meanwhile, if you are running weewx as a daemon, weewx will also start up and try to run with this seriously out-of-date time. When it comes time to store something in the database, it will either be stored under a too-old timestamp or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
 
@@ -37,7 +37,7 @@ Then remove the old, recorded time:
 $ sudo rm /etc/fake-hwclock.data
 ~~~~~
 
-Now if the RPi reboots, instead of starting with the old time, it will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, a date that is easily detected with a bit of Python. Add this to the file bin/user/extensions.py
+Now if the RPi reboots, instead of starting with the old time, it will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, a date that is easily detected with a bit of Python. Add this to the file `bin/user/extensions.py`
 
 ~~~~~
 import time
@@ -50,7 +50,7 @@ What this does is check if the time is earlier than 1-Jan-2000 UTC (unix epoch t
 
 ###Use a high-quality SD card###
 
-The SD card supplied with most RPis seems to be of very low quality. Make sure you use a good, Class 10 card. User William Phelps reports, "You can usually spota failing card by watching the kernel I/O wait time. Once the card starts to go, the I/O wait time will increase significantly.
+The SD card supplied with most RPis seems to be of very low quality. Make sure you use a good, Class 10 card. User William Phelps reports, "You can usually spot a failing card by watching the kernel I/O wait time. Once the card starts to go, the I/O wait time will increase significantly."
 
 Many users have had good luck with the better Sandisk SD cards. In increasing order of quality (and expense):
 

@@ -157,7 +157,7 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-3.  Display Zambretti forecast data
+3.  Modify skin and templates to display Zambretti forecast data
 
 ### Manual Installation: Weather Underground Forecasts
 
@@ -187,6 +187,8 @@ This is how to configure the hourly 10-day Weather Underground forecast.
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
+
+3.  Modify skin and templates to display WU forecast data
 
 If everything is working properly, you should see something like this in the log file after the next archive record:
 
@@ -226,6 +228,8 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
+3.  Modify skin and templates to display NWS forecast data
+
 If everything is working properly, you should see something like this in the log file after the next archive record:
 
 ```
@@ -263,7 +267,8 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-3.  Display tide data
+3.  Modify skin and templates to display tide forecast data
+
 
 ### Screenshots
 

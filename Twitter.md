@@ -1,5 +1,3 @@
-### Twitter
-
 Twitter helps you create and share ideas and information instantly, without barriers.
 
 This is an extension to weewx that tweets weather data.

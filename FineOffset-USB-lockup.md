@@ -1,4 +1,4 @@
-## What to do when your Fine Offset station locks up
+### What to do when your Fine Offset station locks up
 
 The Fine Offset stations are known to periodically stop communicating via USB.  The weather station console continues to communicate with the sensors, and weather data are displayed properly on the weather station console.  However, any communication over USB stops.  Since the lockup happens in the station firmware, no weather station software is immune.  It happens with weewx, Cumulus, pywws, wview, EasyWeather, etc.
 

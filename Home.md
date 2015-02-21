@@ -30,7 +30,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 ### Additional drivers
 * [owfs - Collect data from one-wire sensors](owfs)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
-* [wlink - Collect data from weatherlink.com](weatherlink)
+* [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 

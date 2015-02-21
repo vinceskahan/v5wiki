@@ -59,24 +59,24 @@ sudo /etc/init.d/weewx stop
     driver = weewx.drivers.vantage
 ```
 
-** 3.  Start weewx**
+3.  Start weewx
 
 ### The weewx approach: run setup.py
 
 This approach will work for standard drivers on any weewx installation.
 
-**1.  Stop weewx**
+1.  Stop weewx
 
     ```
 sudo /etc/init.d/weewx stop
 ```
-**2.  Run setup.py with the configure option**
+2.  Run setup.py with the configure option
 
     ```
 sudo /home/weewx/setup.py configure
 ```
 
-**3.  Start weewx**
+3.  Start weewx
 
 This should prompt for the station parameters, including the station type and any options required by the station.
 

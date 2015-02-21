@@ -44,13 +44,13 @@ This approach will work on any weewx installation for both standard and custom d
 sudo /etc/init.d/weewx stop
 ```
 
-**2.  Modify weewx.conf`**
+**2.  Modify weewx.conf**
 
     For example, to specify the Vantage driver for Davis Vantage Pro2 hardware:
 
     ```
 [Station]
-...
+    ...
     station_type = Vantage
 
 [Vantage]

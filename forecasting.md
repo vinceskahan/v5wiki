@@ -272,18 +272,18 @@ sudo /etc/init.d/weewx start
 
 ### Screenshots
 
-![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
-
 Forecast data embedded in the Standard skin.
 
-![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
+![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
 
 Full table of forecast data embedded in the Standard skin.
 
-![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
+![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
 
 Forecast data embedded in the exfoliation skin.
 
-![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)
+![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
 
 The forecast.html page from the exfoliation skin.
+
+![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)

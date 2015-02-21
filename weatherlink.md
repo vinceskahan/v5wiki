@@ -25,8 +25,10 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
     [WeatherLink]
         username = USERNAME
         password = PASSWORD
-        driver = user.wlink3.  Start weewx
+        driver = user.wlink
 ```
+
+3.  Start weewx
 
 ### Caveats
 

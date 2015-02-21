@@ -1,8 +1,8 @@
-## How to change the driver in a weewx installation
+### How to change the driver in a weewx installation
 
 Sometimes you need to change from one driver to another.  For example, when you install weewx, you might start with the Simulator, then later decide to change to actual hardware, say a Vantage weather station.  This guide shows how to do this.
 
-The driver is specified in the weewx.conf file, specifically by the `station_type` parameter in the `Station` section.  There must be a stanza corresponding to the value specified for `station_type`, and that stanza must contain a `driver` parameter that tells weewx where to find the actual code for the driver.
+The driver is specified in the weewx.conf file, specifically by the `station_type` parameter in the `[Station]` section.  There must be a stanza corresponding to the value specified for `station_type`, and that stanza must contain a `driver` parameter that tells weewx where to find the actual code for the driver.
 
 For example, here is the default configuration for the Simulator:
 

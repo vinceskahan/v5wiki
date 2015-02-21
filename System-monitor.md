@@ -1,4 +1,4 @@
-## Monitor Computer Health
+### Monitor Computer Health
 
 The ComputerMonitor (cmon) is a weewx service that collects CPU load, memory used/available, disk space, and network traffic to a database.  You can then add plots to view the data.
 
@@ -14,7 +14,9 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cmon-0.7.tgz
 
 1.  Run the extension installer
 
-`setup.py install --extension weewx-cmon-x.y.z.tgz`
+    ```
+setup.py install --extension weewx-cmon-x.y.z.tgz
+```
 
 2.  Restart weewx
 
@@ -25,7 +27,8 @@ cmon will save data at every archive interval.  Look at the cmon report to see p
 ### Customize
 
 Add plots to other reports by modifying the ImageGenerator section of skin.conf.  For example, daily plots of CPU, load, and memory would look something like this:
-~~~~
+
+```
 [ImageGenerator]
     ...
     [[cmon_day_images]]
@@ -47,12 +50,15 @@ Add plots to other reports by modifying the ImageGenerator section of skin.conf.
         [[[daymem]]]
             [[[[mem_total]]]]
             [[[[mem_used]]]]
-~~~~
+```
+
 then display in templates like this:
 
->&lt;img src="daycpu.png" /&gt;
->&lt;img src="dayload.png" /&gt;
->&lt;img src="daymem.png" /&gt;
+```
+&lt;img src="daycpu.png" /&gt;
+&lt;img src="dayload.png" /&gt;
+&lt;img src="daymem.png" /&gt;
+```
 
 ### Upgrading from weewx 2.6-2.7
 

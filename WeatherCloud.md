@@ -1,6 +1,4 @@
-### WeatherCloud
-
-Weathercloud is a real-time weather social network formed by observers from around the world. Weathercloud is free and open to anyone.
+WeatherCloud is a real-time weather social network formed by observers from around the world. Weathercloud is free and open to anyone.
 
 This is an extension to weewx that uploads weather data to WeatherCloud.
 

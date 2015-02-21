@@ -39,7 +39,6 @@ For the second method, download the program transfer_db.py from the code reposit
 Open up the file in a text editor. At the top, you'll see Python dictionaries controlling the source and destination databases. The default setup is to transfer from sqlite to MySQL, which is what you want. Double check to make sure the source and destinations are to your liking. In particular, check the path to your sqlite file, weewx.sdb. Yours may be in a different location.
 
 ~~~~~~
-:::python
 old_archive_dict = {'driver'        : 'weedb.sqlite',
                     'database_name' : '/home/weewx/archive/weewx.sdb'}
 

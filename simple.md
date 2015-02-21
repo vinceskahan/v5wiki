@@ -1,5 +1,3 @@
-## simple
-
 Simple is a single page of weather data.  A live example of this skin is here:
 
 http://sailing.mit.edu/weather/simple

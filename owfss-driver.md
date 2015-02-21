@@ -92,8 +92,9 @@ Some sensors require a recent build of owfs.  If your sensor is not recognized, 
 Here is a minimal configuration to compile owfs:
 
 ```
-./configure --prefix=/opt/owfs-2.9p8 --disable-parport --disable-zero --disable-owtcl \
---enable-owpython --disable-owphp --disable-owperl --disable-owcapi --disable-owmon \
---disable-owexternal --disable-owserver --disable-owftpd --disable-owhttpd --disable-owtap \
---disable-w1 --disable-i2c --disable-ownetlib --disable-owshell --disable-ownet
+./configure --prefix=/opt/owfs-2.9p8 --disable-parport --disable-zero \
+--disable-owtcl --enable-owpython --disable-owphp --disable-owperl \
+--disable-owcapi --disable-owmon --disable-owexternal --disable-owserver \
+--disable-owftpd --disable-owhttpd --disable-owtap --disable-w1 \
+--disable-i2c --disable-ownetlib --disable-owshell --disable-ownet
 ```

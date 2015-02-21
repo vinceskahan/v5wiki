@@ -38,13 +38,13 @@ Any number of driver stanzas can be in the weewx.conf file, but only one can be 
 
 This approach will work on any weewx installation for both standard and custom drivers.
 
-**1. Stop weewx**
+1. Stop weewx
 
     ```
 sudo /etc/init.d/weewx stop
 ```
 
-**2.  Modify weewx.conf**
+2.  Modify weewx.conf
 
     For example, to specify the Vantage driver for Davis Vantage Pro2 hardware:
 

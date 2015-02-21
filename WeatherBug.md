@@ -1,4 +1,4 @@
-## WeatherBug
+### WeatherBug
 
 Since 1993, WeatherBug, by Earth Networks, has been committed to delivering the most accurate weather information and the fastest weather alerts to our customers so they can Know Before™
 
@@ -12,16 +12,27 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.4.tgz
 
 1.  Run the extension installer:
 
-`setup.py install --extension weewx-wbug-x.y.tgz`
+    ```
+setup.py install --extension weewx-wbug-x.y.tgz
+```
 
 2.  Modify weewx.conf
-~~~~
-[StdRESTful]
-    [[WeatherBug]]
-        publisher_id = PUBLISHER_ID
-        station_number = STATION_NUMBER
-        password = PASSWORD3.  Restart weewx
-~~~~
+
+    ```
+    [StdRESTful]
+        [[WeatherBug]]
+            publisher_id = PUBLISHER_ID
+            station_number = STATION_NUMBER
+            password = PASSWORD
+'''
+
+3.  Restart weewx
+
+    ```
+sudo /etc/init.d/weewx stop
+sudo /etc/init.d/weewx start
+```
+
 ### Upgrading from weewx 2.6-2.7
 
 Simply run the extension installer then restart weewx.  If your weewx.conf already contained publisher_id, station_number, and password, these should be remembered by the installer.

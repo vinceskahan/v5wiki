@@ -20,6 +20,11 @@ setup.py install --extension weewx-cmon-x.y.z.tgz
 
 2.  Restart weewx
 
+    ```
+sudo /etc/init.d/weewx stop
+sudo /etc/init.d/weewx start
+```
+
 ### Verify
 
 cmon will save data at every archive interval.  Look at the cmon report to see plots.
@@ -55,9 +60,9 @@ Add plots to other reports by modifying the ImageGenerator section of skin.conf.
 then display in templates like this:
 
 ```
-&lt;img src="daycpu.png" /&gt;
-&lt;img src="dayload.png" /&gt;
-&lt;img src="daymem.png" /&gt;
+<img src="daycpu.png" />
+<img src="dayload.png" />
+<img src="daymem.png" />
 ```
 
 ### Upgrading from weewx 2.6-2.7

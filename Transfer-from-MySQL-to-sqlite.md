@@ -2,19 +2,19 @@ This article covers moving from MySQL to sqlite. It's from an [email exchange](h
 
 There are two general approaches to this problem:
 
-1. Use mysqldump to create a dump file, massage it, then restore using the utility sqlite3; or
-+ Use the experimental weewx utility transfer_db.py
+1. Use `mysqldump` to create a dump file, massage it, then restore using the utility `sqlite3`; or
++ Use the experimental weewx utility `transfer_db.py`.
 
 The former is more general and can be done standalone. The latter is simpler, but requires access to the rest of weewx.
 ******************
 Dumping to SQL
 -------------
 
-For approach #1, first dump the MySQL database using mysqldump.
+For approach #1, first dump the MySQL database using `mysqldump`.
 
     $ mysqldump -u root -p --skip-add-drop-table --skip-add-locks --extended-insert=FALSE weewx archive > weewx.sql
 
-Unfortunately, the resultant file includes a CREATE TABLE statement that sqlite does not understand. I could write some fancy sed script here to massage it into something sqlite3 can deal with, but the simplest is to just edit the file weewx.sql, replacing the CREATE TABLE statement with:
+Unfortunately, the resultant file includes a `CREATE TABLE` statement that sqlite does not understand. I could write some fancy sed script here to massage it into something sqlite3 can deal with, but the simplest is to just edit the file `weewx.sql`, replacing the `CREATE TABLE` statement with:
 
 ~~~~~~
 CREATE TABLE archive (`dateTime` INTEGER NOT NULL UNIQUE PRIMARY KEY, 
@@ -37,21 +37,21 @@ CREATE TABLE archive (`dateTime` INTEGER NOT NULL UNIQUE PRIMARY KEY,
 `inTempBatteryStatus` REAL);
 ~~~~~~
 
-Then restore using sqlite3 (which you may have to install first)
+Then restore using `sqlite3` (which you may have to install first)
 
     $ sqlite3 weewx.sdb < weewx.sql 
 
-Put the resultant sqlite3 file, weewx.sdb, wherever your installation method requires.
+Put the resultant sqlite3 file, `weewx.sdb`, wherever your installation method requires.
 
 ***************
 Using transfer_db.py
 -------------
 
-For the second method, download the program transfer_db.py from the code repository on SourceForge:
+For the second method, download the program `transfer_db.py` from the code repository on GitHub:
 
-    $ wget -O transfer_db.py http://sourceforge.net/p/weewx/code/HEAD/tree/trunk/experimental/transfer_db.py?format=raw
+    $ wget -O transfer_db.py https://raw.githubusercontent.com/weewx/weewx/master/experimental/transfer_db.py
 
-Open up the file in a text editor. At the top, you'll see Python dictionaries controlling the source and destination databases. The default setup is to transfer from sqlite to MySQL, so you'll want to swap the two dictionaries to go the other direction. When you're done, they'll look like  this:
+Open up the file in a text editor. At the top, you'll see Python dictionaries controlling the source and destination databases. The default setup is to transfer from sqlite to MySQL, so you'll want to swap the two dictionaries to go the other direction. When you're done, they'll look like this:
 
 ~~~~~~
 new_archive_dict = {'driver'        : 'weedb.sqlite',
@@ -64,9 +64,9 @@ old_archive_dict = {'driver'        : 'weedb.mysql',
                     'password'      : 'weewx'}
 ~~~~~~
 
-(You may also want to adjust the path to the resultant sqlite database to something other than '/home/weewx/archive/weewx.sdb')
+(You may also want to adjust the path to the resultant sqlite database to something other than `/home/weewx/archive/weewx.sdb`)
 
-In order to run the program, you'll have to supply a path to the weewx executables as variable PYTHONPATH. For a setup.py installation, this would be:
+In order to run the program, you'll have to supply a path to the weewx executables as variable `PYTHONPATH`. For a setup.py installation, this would be:
 
     $ PYTHONPATH=/home/weewx/bin python transfer_db.py
 

@@ -40,7 +40,7 @@ sudo chown -R wxuser.wxuser /home/weewx
 /etc/udev/rules.d/vpro.rules
 ```
 
-with the following contents:
+    with the following contents:
 
     ```
 SUBSYSTEM=="usb", ATTRS{interface}=="CP2102 USB to UART Bridge Controller", MODE: = "664", GROUP = "wxuser"

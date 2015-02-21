@@ -1,6 +1,7 @@
+<img src='http://www.windfinder.com/images/featured_products/windfinder-logo.png' width='100' align='right'/>
+
 ### WindFinder
 
-<img src='http://www.windfinder.com/images/featured_products/windfinder-logo.png' width='30' align='right'/>
 http://www.windfinder.com
 
 Wind, waves and weather for kitesurfers, windsurfers, surfers and sailors

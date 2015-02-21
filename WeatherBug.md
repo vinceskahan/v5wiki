@@ -22,7 +22,7 @@ setup.py install --extension weewx-wbug-x.y.tgz
             publisher_id = PUBLISHER_ID
             station_number = STATION_NUMBER
             password = PASSWORD
-'''
+```
 
 3.  Restart weewx
 

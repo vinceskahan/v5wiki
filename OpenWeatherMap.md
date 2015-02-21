@@ -1,5 +1,3 @@
-## OpenWeatherMap
-
 The OpenWeatherMap service provides free weather data and forecast API suitable for any cartographic services like web and smartphones applications. Ideology is inspired by OpenStreetMap and Wikipedia that make information free and available for everybody. OpenWeatherMap provides wide range of weather data such as map with current weather, week forecast, precipitation, wind, clouds, data from weather Stations and many others. Weather data is received from global Meteorological broadcast services and more than 40 000 weather stations.
 
 This is an extension to weewx that uploads weather data to OpenWeatherMap.
@@ -12,16 +10,27 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.3.tgz
 
 1.  Run the extension installer:
 
-`setup.py install --extension weewx-owm-x.y.tgz`
+    ```
+setup.py install --extension weewx-owm-x.y.tgz
+```
 
 2.  Modify weewx.conf:
-~~~~
-[StdRESTful]
-    [[OpenWeatherMap]]
-        username = USERNAME
-        password = PASSWORD
-        station_name = STATION_NAME3.  Restart weewx
-~~~~
+
+    ```
+    [StdRESTful]
+        [[OpenWeatherMap]]
+            username = USERNAME
+            password = PASSWORD
+            station_name = STATION_NAME
+```
+
+3.  Restart weewx
+
+    ```
+sudo /etc/init.d/weewx stop
+sudo /etc/init.d/weewx start
+```
+
 ### Upgrading from weewx 2.6-2.7
 
 Simply run the extension installer then restart weewx.  If your weewx.conf already contained a username and password, it should be remembered by the installer.

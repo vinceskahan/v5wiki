@@ -1,5 +1,3 @@
-### WeatherBug
-
 Since 1993, WeatherBug, by Earth Networks, has been committed to delivering the most accurate weather information and the fastest weather alerts to our customers so they can Know Before™
 
 This is an extension to weewx that uploads weather data to WeatherBug.

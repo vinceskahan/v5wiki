@@ -58,7 +58,7 @@ The third example illustrates a special feature of a .deb or .rpm installation. 
 
 ### Other weewx commands
 
-Other weewx commands use a similar pattern.  For example, the `wee_config_devic`e command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--inf`o or `--help`.  The generic description looks like this:
+Other weewx commands use a similar pattern.  For example, the `wee_config_devic`e command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
 
 ```
 wee_config_device /path/to/weewx.conf --help

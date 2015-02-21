@@ -43,7 +43,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 ### Skins
 * [exfoliation](exfoliation)
 * [amphibian](amphibian)
-* [simple](Simple dashboard)
+* [simple](simple)
 * [weewx-wd](WEEWX-WD)
 * [bootstrap](Bootstrap)
 

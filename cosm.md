@@ -1,11 +1,11 @@
-## Xively
+### Xively
 
 The Internet of Things was an idea. Now it’s a reality. Right now, developers and companies are connecting devices and apps to securely store and exchange data. It’s the one solution that brings big ideas about the world to the world.
 
 This is an extension to weewx that uploads weather data to xively (formerly pachube, formerly cosm).
 
 ### Screenshot
-![](http://lancet.mit.edu/mwall/projects/weather/weewx-on-xively.png alt=year width=600)
+![xively](http://lancet.mit.edu/mwall/projects/weather/weewx-on-xively.png alt=year width=600)
 
 ### Download
 
@@ -15,15 +15,26 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-xively-0.4.tgz
 
 1.  Run the extension installer:
 
-`setup.py install --extension weewx-xively-x.y.tgz2.  `
+    ```
+setup.py install --extension weewx-xively-x.y.tgz
+```
 
-**Modify weewx.conf:**
-~~~~
-[StdRESTful]
-    [[Xively]]
-        token = TOKEN
-        feed = FEED_ID3.  Restart weewx:
-~~~~
+2. Modify weewx.conf:
+
+    ```
+    [StdRESTful]
+        [[Xively]]
+            token = TOKEN
+            feed = FEED_ID
+```
+
+3.  Restart weewx:
+
+    ```
+sudo /etc/init.d/weewx stop
+sudo /etc/init.d/weewx start
+```
+
 ### Options
 
 _append_units_label_ - Indicates whether to append the units abbreviation to the variable name.  For example, `outTemp` would be called `outTemp_F` and `pressure` would be called `pressure_mbar`.  Default is `True`.

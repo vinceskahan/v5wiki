@@ -53,14 +53,14 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
 * <img src="http://openweathermap.org/themes/demo/assets/vendor/owm/images/OWM_logo32_32.png" width='16'/> [openweathermap](openweathermap)
-* <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](SEG dashboard)
+* <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](seg)
 * <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak)
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter)
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)
 * <img src="http://weathercloud.net/favicon.ico" width='16'/> [weathercloud](weathercloud)
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico"/ width='16'> [windfinder](windfinder)
-* <img src="http://xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](cosm)
+* <img src="http://xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Obsolete entries
 

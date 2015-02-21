@@ -30,6 +30,10 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
 
 3.  Start weewx
 
+    ```
+sudo /etc/init.d/weewx start
+```
+
 ### Caveats
 
 This driver obtains LOOP data by polling the weatherlink.com site every 60 seconds.  ARCHIVE data are retrieved from the weatherlink.com site using the API published by Davis.

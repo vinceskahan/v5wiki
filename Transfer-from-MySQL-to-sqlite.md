@@ -17,7 +17,6 @@ For approach #1, first dump the MySQL database using mysqldump.
 Unfortunately, the resultant file includes a CREATE TABLE statement that sqlite does not understand. I could write some fancy sed script here to massage it into something sqlite3 can deal with, but the simplest is to just edit the file weewx.sql, replacing the CREATE TABLE statement with:
 
 ~~~~~~
-:::sql
 CREATE TABLE archive (`dateTime` INTEGER NOT NULL UNIQUE PRIMARY KEY, 
 `usUnits` INTEGER NOT NULL, `interval` INTEGER NOT NULL, 
 `barometer` REAL, `pressure` REAL, `altimeter` REAL, `inTemp` REAL,
@@ -55,7 +54,6 @@ For the second method, download the program transfer_db.py from the code reposit
 Open up the file in a text editor. At the top, you'll see Python dictionaries controlling the source and destination databases. The default setup is to transfer from sqlite to MySQL, so you'll want to swap the two dictionaries to go the other direction. When you're done, they'll look like  this:
 
 ~~~~~~
-:::python
 new_archive_dict = {'driver'        : 'weedb.sqlite',
                     'database_name' : '/home/weewx/archive/weewx.sdb'}
 

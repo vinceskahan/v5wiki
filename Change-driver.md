@@ -49,14 +49,14 @@ sudo /etc/init.d/weewx stop
     For example, to specify the Vantage driver for Davis Vantage Pro2 hardware:
 
     ```
-[Station]
-    ...
-    station_type = Vantage
+    [Station]
+        ...
+        station_type = Vantage
 
-[Vantage]
-    type = serial
-    port = /dev/ttyUSB0
-    driver = weewx.drivers.vantage
+    [Vantage]
+        type = serial
+        port = /dev/ttyUSB0
+        driver = weewx.drivers.vantage
 ```
 
 3.  Start weewx

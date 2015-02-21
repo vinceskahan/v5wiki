@@ -12,13 +12,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.0.2.tgz
 
 ### Pre-Requisites
 
-*   Weather Underground API Key
+#### Weather Underground API Key
 
 If you want forecasts from Weather Underground, visit the Weather Underground to get an api_key.  A free key at the lowest tier of service will enable you to download up to 500 forecasts per day.  By default, the forecast module downloads 8 forecasts per day.
 
 [http://www.wunderground.com/weather/api/](http://www.wunderground.com/weather/api/)
 
-*   xtide
+#### xtide
 
 If you want tide predictions, install the xtide software.
 
@@ -39,7 +39,7 @@ Test by generating predictions for your desired location
 tide -l Boston
 ```
 
-*   NWS identifiers
+#### NWS identifiers
 
 If you want forecasts from the US National Weather Service, you must determine the location identifier and forecast office identifier for your location. The forecast office identifier indicates a general region, for example BOX for the eastern part of Massachusetts. The location identifier indicates a smaller area within a forecast office region, for example MAZ014 for the city of Cambridge, Massachusetts.
 

@@ -21,8 +21,10 @@ setup.py install --extension weewx-crt-x.y.tgz
     ```
     [CumulusRealTime]
         filename = /var/tmp/realtime.txt
-        unit_system = METRIC # options are US, METRIC, METRICWX3.  Restart weewx
+        unit_system = METRIC # options are US, METRIC, METRICWX
 ```
+
+3.  Restart weewx
 
 ### Verify
 

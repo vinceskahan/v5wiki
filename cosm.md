@@ -5,7 +5,7 @@ The Internet of Things was an idea. Now it’s a reality. Right now, developers 
 This is an extension to weewx that uploads weather data to xively (formerly pachube, formerly cosm).
 
 ### Screenshot
-![xively](http://lancet.mit.edu/mwall/projects/weather/weewx-on-xively.png alt=year width=600)
+![xively](http://lancet.mit.edu/mwall/projects/weather/weewx-on-xively.png)
 
 ### Download
 

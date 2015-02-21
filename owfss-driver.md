@@ -69,6 +69,10 @@ sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
 
 6. Start weewx
 
+    ```
+sudo /etc/init.d/weewx start
+```
+
 ### Caveats
 
 The interface defaults to 'u', which is short for 'usb'.  This is the interface for a DS9490R USB adaptor.  Other options for interface include a serial port such as '/dev/ttyS0', or a remote one-wire server such as 'remote_system:3003'.

@@ -28,13 +28,14 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Managing extensions](extensions)
 
 ### Additional drivers
+* [owfs - Collect data from one-wire sensors](owfs)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [wlink - Collect data from weatherlink.com](weatherlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 
 ### Services
-* [owfs - Augment weather station data with one-wire sensors](owfs)
+* [owfs - Augment weather station data with one-wire sensors](owfss)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](Cumulus RealTime)

@@ -24,9 +24,8 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.6.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-windfinder-x.y.tgz
+    setup.py install --extension weewx-windfinder-x.y.tgz
 ```
-
 2.  Modify weewx.conf:
 
     ```
@@ -45,4 +44,4 @@ sudo /etc/init.d/weewx start
 
 ### Upgrading from weewx 2.6-2.7
 
-Simply run the extension installer then restart weewx.  If your weewx.conf already contained a station_id and password, these should be remembered by the installer.
+Simply run the extension installer then restart weewx.  If your `weewx.conf` already contained a `station_id` and `password`, these should be remembered by the installer.

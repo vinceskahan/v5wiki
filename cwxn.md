@@ -4,7 +4,7 @@ This is an extension to weewx that emits data to a file in the format used by Cu
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cwxn-0.3.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cwxn-0.4.tgz
 
 ### How to Install
 

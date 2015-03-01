@@ -196,7 +196,7 @@ If everything is working properly, you should see something like this in the log
 Oct 12 14:21:27 saga weewx[28915]: forecast: WUThread: WU: got 240 forecast records
 ```
 
-The forecast will download every 3 hours.  Forecasts older than 7 days will be deleted.3.  Display Weather Underground forecast data
+The forecast will download every 3 hours.  Forecasts older than 7 days will be deleted.
 
 ### Manual Installation: NWS Forecasts
 
@@ -236,7 +236,7 @@ If everything is working properly, you should see something like this in the log
 Oct 12 14:21:27 saga weewx[28915]: forecast: NWSThread: NWS: got 40 forecast records
 ```
 
-The forecast will download every 4 hours.  Forecasts older than 7 days will be deleted.3.  Display NWS forecast data
+The forecast will download every 4 hours.  Forecasts older than 7 days will be deleted.
 
 ### Manual Installation: Tide Predictions
 

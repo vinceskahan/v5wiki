@@ -8,7 +8,7 @@ See the comments in forecast.py for complete details about this extension.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.0.2.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.0.4.tgz
 
 ### Pre-Requisites
 

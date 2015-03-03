@@ -20,13 +20,7 @@ setup.py install --extension weewx-cwxn-x.y.tgz
        [CumulusWXNow]
         filename = /var/tmp/wxnow.txt
 ````
-You can also use it for generation at Archive interval instead of loop.
-add this to the weewx.conf
-````
-[CumulusWXNow]
-filename = /var/tmp/wxnow.txt
-binding = archive
-````
+
 3.  Restart weewx
 
     ```
@@ -42,3 +36,9 @@ The wxnow.txt file should be modified on each LOOP.  For some stations the updat
 Aug 14 2014 23:14
 225/003g003t059r000p000P000h081b10097
 ```
+
+### Options
+
+_binding_ - The binding determines whether the file will be updated with every LOOP packet or archive record.  Possible values are `loop` or `archive`.  Default is `loop`.
+
+_filename_ - The full path of the file.

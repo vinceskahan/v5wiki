@@ -43,3 +43,11 @@ The file should contain something like this:
 18.5 05:35 989.7 05:35 989.3 05:05 3.0.1 0 14.6 -1.3 -4.4 NULL NULL NULL
 249 0.0 0 0 0 WSW 384 meter -4.6 0.2 0.0 0
 ```
+
+### Options
+
+_binding_ - The binding determines whether the file will be updated with every LOOP packet or archive record.  Possible values are `loop` or `archive`.  Default is `loop`
+
+_filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
+
+_date_separator_ - The character for separating day, month, and year.  Default is `/`

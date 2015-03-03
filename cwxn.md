@@ -1,6 +1,8 @@
 ### Cumulus WXNow
 
-This is an extension to weewx that emits data to a file in the format used by Cumulus wxnow.txt.
+This is an extension to weewx that emits data to a file in the format used by Cumulus wxnow.txt.  The format for the wxnow.txt file is maintained at the Cumulus web site:
+
+http://wiki.sandaysoft.com/a/Wxnow.txt
 
 ### Download
 

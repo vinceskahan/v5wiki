@@ -25,7 +25,7 @@ add this to the weewx.conf
 ````
 [CumulusWXNow]
 filename = /var/tmp/wxnow.txt
-**binding = archive**
+binding = archive
 ````
 3.  Restart weewx
 

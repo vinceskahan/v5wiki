@@ -16,7 +16,7 @@ setup.py install --extension weewx-cwxn-x.y.tgz
 
 2.  Modify weewx.conf:
 
-````
+    ````
        [CumulusWXNow]
         filename = /var/tmp/wxnow.txt
 ````

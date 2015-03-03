@@ -41,4 +41,4 @@ Aug 14 2014 23:14
 
 _binding_ - The binding determines whether the file will be updated with every LOOP packet or archive record.  Possible values are `loop` or `archive`.  Default is `loop`.
 
-_filename_ - The full path of the file.
+_filename_ - The full path of the file.  Default is `/var/tmp/wxnow.txt`.

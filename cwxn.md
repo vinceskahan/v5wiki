@@ -16,11 +16,17 @@ setup.py install --extension weewx-cwxn-x.y.tgz
 
 2.  Modify weewx.conf:
 
-    ```
-    [CumulusWXNow]
+````
+       [CumulusWXNow]
         filename = /var/tmp/wxnow.txt
-```
-
+````
+You can also use it for generation at Archive interval instead of loop.
+add this to the weewx.conf
+````
+[CumulusWXNow]
+filename = /var/tmp/wxnow.txt
+**binding = archive**
+````
 3.  Restart weewx
 
     ```

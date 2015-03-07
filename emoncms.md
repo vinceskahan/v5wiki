@@ -34,6 +34,8 @@ sudo /etc/init.d/weewx start
 
 ### Options
 
+_node_ - The `node` is an integer that indicates a location in the data topology used by emoncms.  The `node` is required for emoncms 8.4 and later.  Default is `None`.
+
 _prefix_ - Indicates whether to prepend each variable name with the indicated prefix.  For example, with `prefix = stationName`, `outTemp` would be `stationName_outTemp`.  Default is `None`.
 
 _append_units_label_ - Indicates whether to append the units abbreviation to the variable name.  For example, `outTemp` would be called `outTemp_F` and `pressure` would be called `pressure_mbar`.  Default is `True`.

@@ -50,6 +50,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [byteweather](http://davies-barnard.uk/2014/01/weewx-byteweather-template/)
 * [Flat](http://en.blauesledersofa.de/2015/03/flat-template-for-weewx/)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
+* [Responsive](http://carlingfordweather.sydney/)
 
 ### Uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)

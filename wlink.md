@@ -39,3 +39,9 @@ sudo /etc/init.d/weewx start
 This driver obtains LOOP data by polling the weatherlink.com site every 60 seconds.  ARCHIVE data are retrieved from the weatherlink.com site using the API published by Davis.
 
 http://www.davisnet.com/support/weather/download/VantageSerialProtocolDocs_v261.pdf
+
+According to the FAQ, LOOP data are uploaded once per minute, and weatherlink.com creates an archive record each hour:
+
+http://www.davisnet.com/support/weather/faq/index.asp?ProdFam=15
+
+Non-archive records downloaded from weatherlink.com contain only a subset of observations: windSpeed, windDir, barometer, outTemp, and rain.

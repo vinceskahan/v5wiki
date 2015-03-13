@@ -47,7 +47,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [simple](simple)
 * [weewx-wd](WEEWX-WD)
 * [bootstrap](Bootstrap)
-* [http://en.blauesledersofa.de/2015/03/flat-template-for-weewx/](Flat)
+* [Flat](http://en.blauesledersofa.de/2015/03/flat-template-for-weewx/)
 
 ### Uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)

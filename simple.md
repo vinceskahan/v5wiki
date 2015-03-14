@@ -28,7 +28,7 @@ sudo /etc/init.d/weewx start
 ### Screenshots
 
 The simple skin with light-on-dark colors.
-![](http://lancet.mit.edu/mwall/projects/weather/weewx-simple-0.3/light-on-dark.pn)
+![](http://lancet.mit.edu/mwall/projects/weather/weewx-simple-0.3/light-on-dark.png)
 
 The simple skin with dark-on-light colors.
 ![](http://lancet.mit.edu/mwall/projects/weather/weewx-simple-0.3/dark-on-light.png)

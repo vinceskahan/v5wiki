@@ -55,4 +55,4 @@ In order to run the program, you'll have to supply a path to the weewx executabl
 
 For a Debian install
 
-    $ PYTHONPATH=/usr/share/weewx/bin python transfer_db.py
+    $ PYTHONPATH=/usr/share/weewx python transfer_db.py

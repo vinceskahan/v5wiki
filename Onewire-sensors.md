@@ -1,8 +1,8 @@
 <div style="float:right">
-<img src="http://weewx.com/hardware/ow-ds9490r.png" width="200" />
-<img src="http://weewx.com/hardware/ow-ds18b20.png" width="200" />
-<img src="http://weewx.com/hardware/ow-inspeed-anemometer.png" width="200" />
-<img src="http://weewx.com/hardware/ow-soil-moisture-sensor.png" width="200" />
+<img src="http://weewx.com/hardware/ow-ds9490r.png" width="100" />
+<img src="http://weewx.com/hardware/ow-ds18b20.png" width="100" />
+<img src="http://weewx.com/hardware/ow-inspeed-anemometer.png" width="100" />
+<img src="http://weewx.com/hardware/ow-soil-moisture-sensor.png" width="100" />
 </div>
 
 There are two basic approaches to collecting data from one-wire devices: driver or service.

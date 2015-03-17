@@ -2,6 +2,7 @@
 <img src="http://weewx.com/hardware/ow-ds9490r.png" width="100" />
 <img src="http://weewx.com/hardware/ow-ds18b20.png" width="100" />
 <img src="http://weewx.com/hardware/ow-inspeed-anemometer.png" width="100" />
+<img src="http://weewx.com/hardware/ow-ads-anemometer.png" width="100" />
 <img src="http://weewx.com/hardware/ow-soil-moisture-sensor.png" width="100" />
 </div>
 

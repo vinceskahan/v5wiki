@@ -20,8 +20,6 @@ setup.py install --extension weewx-maxbotix-x.y.tgz
 
 5.  Modify weewx.conf:
 
-    Specify the interface, sensor map and possibly sensor types:
-
     ```
     [Maxbotix]
         port = /dev/ttyUSB0

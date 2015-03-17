@@ -35,3 +35,13 @@ sudo /etc/init.d/weewx start
 ### Caveats
 
 The maxbotix sensors cannot detect items close to the sensor.  For some sensors, the closest limit is 20 cm, for others it is 30 cm.  If an item ranges closer than this distance, the sensor will read 200 or 300, respectively.
+
+### References
+
+Article about maxbotix sensor used to measure snow depth:
+
+http://www.wxforum.net/index.php?topic=24547.msg235695#msg235695
+
+Maxbotix instructions for connecting a sensor to a raspberry pi:
+
+http://maxbotix.com/articles/074.htm

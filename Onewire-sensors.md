@@ -1,3 +1,10 @@
+<div style="float:right">
+<img src="http://weewx.com/hardware/ow-ds9490r.png"/>
+<img src="http://weewx.com/hardware/ow-ds18b20.png"/>
+<img src="http://weewx.com/hardware/ow-inspeed-anemometer.png" />
+<img src="http://weewx.com/hardware/ow-soil-moisture-sensor.png" />
+</div>
+
 There are two basic approaches to collecting data from one-wire devices: driver or service.
 
 In the driver approach, the one-wire system is the primary source of data, whether it is a bunch of one-wire sensors or a one-wire weather station.

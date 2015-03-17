@@ -40,7 +40,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
-* [maxbotix - Collect data from maxbotix sonic rangefinder sensors](maxbotix)
+* [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
 
 ### Skins
 * [exfoliation](exfoliation)

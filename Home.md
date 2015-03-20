@@ -1,31 +1,31 @@
-## Welcome to the weewx wiki!
+## Welcome to the WeeWX wiki!
 
-This is the place to go for information about the many extensions available for weewx, as well as random "how to" tips.  For information on how to download, install, and configure weewx, see the [weewx web site](http://www.weewx.com/).
+This is the place to go for information about the many extensions available for WeeWX, as well as random "how to" tips.  For information on how to download, install, and configure WeeWX, see the [WeeWX web site](http://www.weewx.com/).
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
 
 ### Hardware
-[On what hardware do you run weewx?](hardware)
+[On what hardware do you run WeeWX?](hardware)
 
 ### HOWTO Pages
 * [Understanding paths](Understanding paths)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
-* [Use logwatch to report weewx log messages](logwatch)
-* [Using weewx with a DavisSi1000 radio](DavisSi1000 radio)
+* [Use logwatch to report WeeWX log messages](logwatch)
+* [Using WeeWX with a DavisSi1000 radio](DavisSi1000 radio)
 * [Colored UV index](Colored%20UV%20index)
-* [Third Party Extensions vs Weewx Defaults](Third Party Extensions vs Weewx Defaults)
+* [Third Party Extensions vs WeeWX Defaults](Third Party Extensions vs Weewx Defaults)
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
-* [Using one-wire sensors with weewx](Onewire sensors)
-* [Run weewx as a non-root user](Run as a non root user)
+* [Using one-wire sensors with WeeWX](Onewire sensors)
+* [Run WeeWX as a non-root user](Run as a non root user)
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
-* [MesoWx live weather feed, built on weewx](https://bitbucket.org/lirpa/mesowx)
+* [MesoWX live weather feed, built on WeeWX](https://bitbucket.org/lirpa/mesowx)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [Change from one driver to another](Change driver)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
-* [Running weewx on a Raspberry Pi](Raspberry%20Pi)
+* [Running WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Managing extensions](extensions)
 
 ### Additional drivers

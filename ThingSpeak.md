@@ -8,7 +8,7 @@ This is an extension to weewx that uploads weather data to thingspeak.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-thingspeak-0.2.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-thingspeak-0.4.tgz
 
 ### How to Install
 

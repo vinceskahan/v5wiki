@@ -16,8 +16,8 @@ echo "SELECT * FROM archive WHERE (windGust  > 100);" | sqlite3 mydb.sdb
 
 To null out these fields:
 ~~~~~
-echo "UPDATE archive SET windSpeed=0 WHERE (windSpeed > 100);" | sqlite3 mydb.sdb
-echo "UPDATE archive SET windGust=0  WHERE (windGust  > 100);" | sqlite3 mydb.sdb
+echo "UPDATE archive SET windSpeed=NULL WHERE (windSpeed > 100);" | sqlite3 mydb.sdb
+echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 mydb.sdb
 ~~~~~
 
 Now you need to drop the daily summaries, which will also include these bad data. Use the tool `wee_config_database` to do this:

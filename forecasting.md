@@ -43,7 +43,7 @@ tide -l Boston
 
 If you want forecasts from the US National Weather Service, you must determine the location identifier and forecast office identifier for your location. The forecast office identifier indicates a general region, for example BOX for the eastern part of Massachusetts. The location identifier indicates a smaller area within a forecast office region, for example MAZ014 for the city of Cambridge, Massachusetts.
 
-First figure out your 3-letter forecast office identifier (foid, also referred to as HADS) and 5-character location identifier (lid) by visiting the NWS web site:
+First figure out your 3-letter forecast office identifier (foid, also referred to as HADS) and 6-character location identifier (lid) by visiting the NWS web site:
 
 http://www.nws.noaa.gov/oh/hads/USGS/
 

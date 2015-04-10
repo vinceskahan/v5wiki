@@ -39,3 +39,9 @@ Wandboard
 http://www.wandboard.org/index.php/details
 
 I'm using the wandboard-quad as it has enough power to do several jobs beside handling the weather data.
+
+ODROID-C1
+---
+http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433
+
+I'm using an Odroid C1, a quad core ARMv7. Board cost is $35. Running Umbutu 14.4. 

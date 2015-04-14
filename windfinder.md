@@ -1,4 +1,4 @@
-<img src='http://www.windfinder.com/images/featured_products/windfinder-logo.png' width='100' align='right'/>
+<img src='http://assets.windfinder.com/images/prod/v1/featured_products/windfinder-logo.png' width='100' align='right'/>
 
 ### WindFinder
 
@@ -17,7 +17,7 @@ There you will enter details about your weather station, then obtain a station i
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.6.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.7.tgz
 
 ### How to Install
 

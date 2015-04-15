@@ -18,8 +18,8 @@ There are a number of solutions. Here are two.
 
 The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD) and solve the problem permanently. Users have had good luck with these clocks:
 
-*[Jameco Electronics](http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10001&catalogId=10001&productId=2217625&CID=AVANT)
-*[SunFounder DS3231 on Amazon](http://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS)
+* [Jameco Electronics](http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10001&catalogId=10001&productId=2217625&CID=AVANT)
+* [SunFounder DS3231 on Amazon](http://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS)
 
 For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration instructions can be found from [W0CHP's WX Station web site](http://wx.w0chp.net/setup/RPi2-B_RTC.html).
 

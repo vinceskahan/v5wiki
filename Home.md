@@ -28,14 +28,15 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Running WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Managing extensions](extensions)
 
-### Additional drivers
+### Extensions
+#### Extensions for adding drivers
 * [owfs - Collect data from one-wire sensors](owfs)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 
-### Services
+#### Extensions for adding services
 * [owfs - Augment weather station data with one-wire sensors](owfss)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
@@ -43,7 +44,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
 
-### Skins
+#### Extensions for adding skins
 * [exfoliation](exfoliation)
 * [amphibian](amphibian)
 * [simple](simple)
@@ -54,7 +55,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
 * [Responsive](http://carlingfordweather.sydney/)
 
-### Uploaders
+#### Extensions for adding uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)

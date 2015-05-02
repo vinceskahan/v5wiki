@@ -4,7 +4,7 @@ This is a service for weewx that saves sensor data to a file as comma-separated 
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.2.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.3.tgz
 
 ### How to Install
 
@@ -34,6 +34,6 @@ _binding_ - The binding determines whether the file will be updated with every L
 
 _filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
 
-_append_ - Indicates whether to append (true) or overwrite (false).  Default is True.
+_mode_ - Indicates whether to append or overwrite.  Default is 'append'.
 
 _header_ - Indicates whether to include a header at the beginning of the file.  Default is True.

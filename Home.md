@@ -40,12 +40,12 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 
 #### Services
-* [owfs - Augment weather station data with one-wire sensors](owfss)
+* [owfs - Augment weather station data with data from one-wire sensors](owfss)
+* [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
-* [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 
 #### Skins

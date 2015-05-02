@@ -43,6 +43,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
+* [csv - Emit loop or archive data to a file in CSV format](csv)
 
 #### Extensions for adding skins
 * [exfoliation](exfoliation)

@@ -4,7 +4,7 @@ This is a service for weewx that saves sensor data to a file as comma-separated 
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.1.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.2.tgz
 
 ### How to Install
 
@@ -33,3 +33,7 @@ sudo /etc/init.d/weewx start
 _binding_ - The binding determines whether the file will be updated with every LOOP packet or archive record.  Possible values are `loop` or `archive`.  Default is `loop`
 
 _filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
+
+_append_ - Indicates whether to append (true) or overwrite (false).  Default is True.
+
+_header_ - Indicates whether to include a header at the beginning of the file.  Default is True.

@@ -29,6 +29,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Managing extensions](extensions)
 
 ### Extensions to weewx
+
+Use extensions to add capabilities to a weewx installation.  Drivers enable weewx to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
+
 #### Drivers
 * [owfs - Collect data from one-wire sensors](owfs)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)

@@ -34,6 +34,6 @@ _binding_ - The binding determines whether the file will be updated with every L
 
 _filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
 
-_mode_ - Indicates whether to append or overwrite.  Default is `append`.
+_mode_ - Indicates whether to `append` or `overwrite` each time data is written to file.  Default is `append`.
 
-_header_ - Indicates whether to include a header at the beginning of the file.  Default is `True`.
+_header_ - Indicates whether to include a header with the name of each field at the beginning of the file.  Default is `True`.

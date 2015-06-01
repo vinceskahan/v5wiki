@@ -71,7 +71,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://weathercloud.net/favicon.ico" width='16'/> [weathercloud](weathercloud)
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico"/ width='16'> [windfinder](windfinder)
-* <img src="http://xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
+* <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Obsolete entries
 

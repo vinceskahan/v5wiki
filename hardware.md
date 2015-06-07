@@ -1,3 +1,14 @@
+ASUS RT-AC68U
+---
+<img src="http://www.asus.com/media/US/products/svItyTHFccLwnprr/P_500.jpg" align="right" height="100"/>
+
+https://www.asus.com/us/Networking/RTAC68U
+
+Dual-band Wireless-AC1900 Gigabit Router. 802.11a/b/g/n/ac WiFi; Dual core 800MHz CPU, 256MB DDR3 RAM; 1x USB 3.0, 1x USB 2.0; WPA/WPA2 and WPS security; 4x Gigabit Ethernet. Price 185 US$
+
+<br clear="all">
+
+
 Mini ATX
 ---
 <img src="http://www.mini-box.com/configure-your-own-category.jpg" align="right" height="100"/>

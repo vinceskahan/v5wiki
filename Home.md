@@ -47,6 +47,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
+* [as3935 - Collect lightning strike data from AS3935 sensor attached to RPi](as3935)
 
 #### Skins
 * [exfoliation](exfoliation)

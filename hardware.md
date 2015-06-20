@@ -1,6 +1,6 @@
 Utilite
 ---
-<img src="http://www.compulab.co.il/utilite-computer/web/wp-content/uploads/2014/12/Utilite2_intro.png" alighn="right" height="100"/>
+<img src="http://www.compulab.co.il/utilite-computer/web/wp-content/uploads/2014/12/Utilite2_intro.png" align="right" height="100"/>
 
 Utilite2 is a fanless ARM desktop computer built around the Qualcomm® Snapdragon™ 600 processor with high-performance Adreno™ 320 GPU, products of Qualcomm Technologies Inc. Delivering high performance and rich I/O in a tiny form-factor, Utilite2 supports fully featured, desktop-grade Ubuntu Linux or Android operating systems.
 

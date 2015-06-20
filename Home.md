@@ -25,7 +25,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [Change from one driver to another](Change driver)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
-* [Running WeeWX on a Raspberry Pi](Raspberry%20Pi)
+* [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Managing extensions](extensions)
 
 ### Extensions to weewx

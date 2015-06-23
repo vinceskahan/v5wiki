@@ -4,7 +4,7 @@ This is an extension to weewx that uploads weather data to WeatherBug.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.4.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.5.tgz
 
 ### How to Install
 

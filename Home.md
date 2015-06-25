@@ -27,6 +27,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Managing extensions](extensions)
+* [Troubleshooting Pillow](Troubleshooting-Pillow)
 
 ### Extensions to weewx
 
@@ -77,4 +78,3 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 ### Obsolete entries
 
 [Install on SheevaPlug](Notes%20on%20porting%20weewx%20to%20the%20SheevaPlug)
-

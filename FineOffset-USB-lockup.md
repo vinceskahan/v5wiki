@@ -64,7 +64,8 @@ To enable this feature, add the following to weewx.conf:
     power_cycle_hub = 001:016
     power_cycle_port = 1
 ```
-power_cycle_port indicates the port to which the station is attached.  On a four-port hub this will be 1, 2, 3, or 4.
+power_cycle_port indicates the port to which the station is attached.  On a four-port hub this will be 1, 2, 3, or 4. Note that the port number may not be the same as the socket number. This is a known
+problem with the DUB-H7. You'll have to experiment to find the right port number.
 
 power_cycle_hub uniquely identifies the hub to which the station is attached.  It has the format XXX:YYY where XXX is the bus and YYY is the device, for example 001:016.  Use lsusb to determine these numbers.  For example, in the following output, the linksys USB2HUB4 is located at 001:016:
 ```

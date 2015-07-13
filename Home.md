@@ -14,7 +14,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Using WeeWX with a DavisSi1000 radio](DavisSi1000 radio)
 * [Colored UV index](Colored%20UV%20index)
-* [Third Party Extensions vs WeeWX Defaults](Third Party Extensions vs Weewx Defaults)
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
 * [Using one-wire sensors with WeeWX](Onewire sensors)
 * [Run WeeWX as a non-root user](Run as a non root user)

@@ -1,3 +1,6 @@
+###OBSOLETE. 
+Well-behaved extensions, including `weewx-wd`, now use their own database
+___
 ** Third Party Extensions and skins versus weewx standard schema and templates **
 
 The default weewx schema includes many data fields, such as `extraTemp1`, `extraTemp2`, etc., that are only rarely used. Unfortunately, some third party extensions have leveraged this fact by using them for their own needs. This can trip up the unwary user.

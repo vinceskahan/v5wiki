@@ -6,7 +6,7 @@ http://weathercloud.net
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.7.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.8.tgz
 
 ### How to Install
 

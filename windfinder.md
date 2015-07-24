@@ -17,7 +17,7 @@ There you will enter details about your weather station, then obtain a station i
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.8.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.9.tgz
 
 ### How to Install
 

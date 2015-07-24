@@ -7,7 +7,7 @@ This is an extension to weewx that uploads weather data to emoncms.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-emoncms-0.10.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-emoncms-0.11.tgz
 
 ### How to Install
 

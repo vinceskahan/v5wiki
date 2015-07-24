@@ -6,7 +6,7 @@ This is an extension to weewx that uploads weather data to wetter.com.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.2.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.3.tgz
 
 ### How to Install
 

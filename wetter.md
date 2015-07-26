@@ -13,7 +13,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.3.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-wetter-x.y.tgz
+wee_extension --install weewx-wetter-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

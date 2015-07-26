@@ -19,7 +19,7 @@ sudo apt-get install python-ow
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-owfs-x.y.tgz
+wee_extension --install weewx-owfs-x.y.tgz
 ```
 
 3.  Find out what sensors are attached:

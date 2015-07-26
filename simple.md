@@ -15,7 +15,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-simple-0.4.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-simple-x.y.tgz
+wee_extension --install weewx-simple-x.y.tgz
 ```
 
 2.  Restart weewx

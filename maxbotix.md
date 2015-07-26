@@ -17,7 +17,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-maxbotix-0.1.tgz
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-maxbotix-x.y.tgz
+wee_extension --install weewx-maxbotix-x.y.tgz
 ```
 
 5.  Modify weewx.conf:

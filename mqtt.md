@@ -17,7 +17,7 @@ sudo pip install paho-mqtt
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-mqtt-x.y.tgz
+wee_extension --install weewx-mqtt-x.y.tgz
 ```
 
 3.  Modify weewx.conf:

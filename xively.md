@@ -14,7 +14,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-xively-0.5.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-xively-x.y.tgz
+wee_extension --install weewx-xively-x.y.tgz
 ```
 
 2. Modify weewx.conf:

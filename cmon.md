@@ -15,7 +15,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cmon-0.7.tgz
 1.  Run the extension installer
 
     ```
-setup.py install --extension weewx-cmon-x.y.z.tgz
+wee_extension --install weewx-cmon-x.y.z.tgz
 ```
 
 2.  Restart weewx

@@ -11,7 +11,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-exfoliation-0.33.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-exfoliation-x.y.tgz
+wee_extension --install weewx-exfoliation-x.y.tgz
 ```
 
 2.  Restart weewx

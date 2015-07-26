@@ -11,7 +11,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.6.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-wbug-x.y.tgz
+wee_extension --install weewx-wbug-x.y.tgz
 ```
 
 2.  Modify weewx.conf

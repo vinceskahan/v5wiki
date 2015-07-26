@@ -26,8 +26,7 @@ Install
 Use the Weewx extension installer:
 
 ~~~~~~
-cd /home/weewx
-setup.py --extension --install [wherever you've put the .tar.gz archive]
+wee_extension --install [wherever you've put the .tar.gz archive]
 ~~~~~~
 
 Web content is stored in public_html/Bootstrap.

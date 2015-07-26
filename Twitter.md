@@ -25,7 +25,7 @@ sudo pip install twython
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-twitter.x.y.tgz
+wee_extension --install weewx-twitter.x.y.tgz
 ```
 
 3.  Modify weewx.conf:

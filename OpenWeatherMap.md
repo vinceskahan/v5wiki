@@ -11,7 +11,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.3.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-owm-x.y.tgz
+wee_extension --install weewx-owm-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

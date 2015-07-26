@@ -13,7 +13,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-crt-0.12.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-crt-x.y.tgz
+wee_extension --install weewx-crt-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

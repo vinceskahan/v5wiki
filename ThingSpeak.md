@@ -15,7 +15,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-thingspeak-0.4.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-thingspeak-x.y.tgz
+wee_extension --install weewx-thingspeak-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

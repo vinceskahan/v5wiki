@@ -58,7 +58,7 @@ Scan the output for a description of your city or county and the associated loca
 1.  Run the extension installer to install the forecast service and sample skin.
 
     ```
-setup.py install --extension weewx-forecast-x.y.tgz
+wee_extension --install weewx-forecast-x.y.tgz
 ```
 
 2.  In weewx.conf, specify required parameters for the forecast services you want to run

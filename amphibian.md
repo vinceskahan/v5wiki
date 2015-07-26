@@ -12,7 +12,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-amphibian-0.11.tgz
 1. Run the extension installer:
 
     ```
-setup.py install --extension weewx-amphibian-x.y.tgz
+wee_extension --install weewx-amphibian-x.y.tgz
 ```
 
 2. Restart weewx:

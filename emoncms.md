@@ -14,7 +14,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-emoncms-0.11.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-emoncms-x.y.tgz
+wee_extension --install weewx-emoncms-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

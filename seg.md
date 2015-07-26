@@ -16,7 +16,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-seg-0.6.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-seg-x.y.tgz
+wee_extension --install weewx-seg-x.y.tgz
 ```
 
 2.  Modify weewx.conf:

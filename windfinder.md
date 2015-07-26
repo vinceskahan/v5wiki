@@ -24,15 +24,15 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.9.tgz
 1.  Run the extension installer:
 
     ```
-    setup.py install --extension weewx-windfinder-x.y.tgz
+wee_extension --install weewx-windfinder-x.y.tgz
 ```
 2.  Modify weewx.conf:
 
     ```
-    [StdRESTful]
-        [[WindFinder]]
-            station_id = STATION_ID
-            password = PASSWORD
+[StdRESTful]
+    [[WindFinder]]
+        station_id = STATION_ID
+        password = PASSWORD
 ```
 
 3.  Restart weewx:

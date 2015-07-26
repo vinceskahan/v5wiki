@@ -11,7 +11,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.4.tgz
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-csv-x.y.tgz
+wee_extension --install weewx-csv-x.y.tgz
 ```
 
 5.  Modify weewx.conf:

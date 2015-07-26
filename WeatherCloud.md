@@ -13,7 +13,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.8.tgz
 1.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-wcloud-x.y.tgz
+wee_extension --install weewx-wcloud-x.y.tgz
 ```
 
 2.  Modify weewx.conf

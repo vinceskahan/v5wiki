@@ -61,25 +61,25 @@ The third example illustrates a special feature of a .deb or .rpm installation. 
 Other weewx commands use a similar pattern.  For example, the `wee_config_devic`e command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
 
 ```
-wee_config_device /path/to/weewx.conf --help
+wee_device /path/to/weewx.conf --help
 ```
 
 For a setup.py installation, this would be:
 
 ```
-/home/weewx/bin/wee_config_device /home/weewx/weewx.conf --help
+/home/weewx/bin/wee_device /home/weewx/weewx.conf --help
 ```
 
 For a .deb or .rpm installation, this would be:
 
 ```
-/usr/share/weewx/wee_config_device /etc/weewx/weewx.conf --help
+/usr/share/weewx/wee_device /etc/weewx/weewx.conf --help
 ```
 
 or, even more succinctly:
 
 ```
-wee_config_device --help
+wee_device --help
 ```
 
 The final form is possible because the wee_* commands will look in the standard locations, `/etc/weewx/weewx.conf` and `/home/weewx/weewx.conf`, if no configuration file is specified.

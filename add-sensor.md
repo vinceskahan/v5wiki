@@ -52,7 +52,7 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-### Other things to consider
+### Multiple sensors
 
 If there are multiple sensors, then use a file format that identifies each sensor.  For example, you could use name value pairs:
 
@@ -68,3 +68,7 @@ or a comma-delimited format:
 ```
 
 then modify the parsing section of the service to read multiple values.
+
+### Database schema
+
+If you use observation names that are not in the database schema, you must extend the database schema for these to be recorded.  See the WeeWX customization guide for details.

@@ -13,18 +13,18 @@ Extensions are a way to package one or more customizations so they can be instal
 
 Each extensions is distributed as a tarball - a compressed archive (.tgz) that contains the files used by the extension.
 
-To manage extensions, use the setup.py tool that comes with weewx.  When you install weewx, setup.py is installed with the other weewx components.  The location of setup.py depends on how weewx was installed.
+To manage extensions, use the wee_extension tool that comes with weewx.  The location of wee_extension depends on how weewx was installed.
 
-When weewx is installed using setup.py and the default location of /home/weewx, setup.py is installed to /home/weewx/setup.py
+When weewx is installed using setup.py and the default location of /home/weewx, wee_extension is installed to /home/weewx/bin/wee_extension
 
-When weewx is installed using .deb or .rpm, setup.py is installed to /usr/share/weewx/setup.py with a symbolic link /usr/bin/wee_setup
+When weewx is installed using .deb or .rpm, wee_extension is installed to /usr/share/weewx/wee_extension with a symbolic link /usr/bin/wee_extension
 
 ### How to install an extension
 
 The general form looks like this:
 
 ```
-setup.py install --extension filename.tgz
+wee_extension --install filename.tgz
 ```
 
 Let's say that the extension weewx-cmon-0.3.tgz has been saved to the Downloads folder in the user's home directory.  (When downloading an extension, be sure that your web browser does not uncompress or expand the contents of the tarball.)
@@ -36,19 +36,13 @@ Let's say that the extension weewx-cmon-0.3.tgz has been saved to the Downloads 
 For a setup.py installation, the command becomes:
 
 ```
-/home/weewx/setup.py install --extension ~/Downloads/weewx-cmon-0.3.tgz
+/home/weewx/bin/wee_extension --install ~/Downloads/weewx-cmon-0.3.tgz
 ```
 
-For a .deb or .rpm installation, the command becomes:
+For a .deb or .rpm installation, the command is simply:
 
 ```
-/usr/share/weewx/setup.py install --extension ~/Downloads/weewx-cmon-0.3.tgz
-```
-
-or
-
-```
-wee_setup install --extension ~/Downloads/weewx-cmon-0.3.tgz
+wee_extension --install ~/Downloads/weewx-cmon-0.3.tgz
 ```
 
 ### How to uninstall an extension
@@ -58,7 +52,7 @@ To uninstall an extension, specify the unadorned name of the extension.
 The general form looks like this:
 
 ```
-setup.py uninstall --extension extension_name
+wee_extension --uninstall extension_name
 ```
 
 In the previous example, the extension tarball weewx-cmon-0.3.tgz contained the 'cmon' extension.
@@ -66,19 +60,13 @@ In the previous example, the extension tarball weewx-cmon-0.3.tgz contained the 
 For a setup.py installation, the command becomes:
 
 ```
-/home/weewx/setup.py  uninstall --extension cmon
+/home/weewx/bin/wee_extension --uninstall cmon
 ```
 
-For a .deb or .rpm installation, the command becomes:
+For a .deb or .rpm installation, the command is simply:
 
 ```
-/usr/share/weewx/setup.py  uninstall --extension cmon
-```
-
-or
-
-```
-wee_setup  uninstall --extension cmon
+wee_extension --uninstall cmon
 ```
 
 ### What extensions are installed?
@@ -86,25 +74,20 @@ wee_setup  uninstall --extension cmon
 The general form looks like this:
 
 ```
-setup.py list-extensions
+wee_extension --list
 ```
 
 For a setup.py installation, the command becomes:
 
 ```
-/home/weewx/setup.py list-extensions
+/home/weewx/bin/wee_extension --list
 ```
 
-For a .deb or .rpm installation, the command becomes:
+For a .deb or .rpm installation, the command is simply:
 
 ```
-/usr/share/weewx/setup.py list-extensions
+wee_extension --list
 ```
 
-or
-
-```
-wee_setup list-extensions
-```
 
 This will list only extensions that have been installed using the extension manager.  Customizations that were applied manually will not be listed.

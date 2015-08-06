@@ -1,5 +1,3 @@
-### Adding Sensors
-
 Some weather station hardware is designed to work with additional sensors.  For example, the KlimaLogg Pro can use up to 8 temperature/humidity sensors, the Vantage hardware can work with additional temperature/humidity sensors or soil moisture sensors, and the Hideki TE923 stations support up to 5 remote temperature/humidity sensors.
 
 With WeeWX you can add any number of sensors, of any type, to any weather station hardware.  The data will not be displayed on the weather station console, but they will be displayed in WeeWX reports.
@@ -53,6 +51,8 @@ class PondService(StdService):
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
+
+### Other things to consider
 
 If there are multiple sensors, then use a file format that identifies each sensor.  For example, you could use name value pairs:
 

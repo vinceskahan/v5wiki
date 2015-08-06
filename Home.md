@@ -19,14 +19,15 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX as a non-root user](Run as a non root user)
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
-* [MesoWX live weather feed, built on WeeWX](https://bitbucket.org/lirpa/mesowx)
+* [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [Change from one driver to another](Change driver)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
-* [Managing extensions](extensions)
-* [Troubleshooting Pillow](Troubleshooting-Pillow)
+* [Manage extensions](extensions)
+* [Troubleshoot Pillow](Troubleshooting-Pillow)
+* [Add a sensor to any weather station](add-sensor)
 
 ### Extensions to weewx
 

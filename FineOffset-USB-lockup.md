@@ -42,10 +42,10 @@ The best settings for a Fine Offset station using weewx 2.6.x and earlier are:
     archive_interval = 300
     record_generation = software
 ```
-Also, set the station's archive interval to 5 minutes (300 seconds) using wee_config_fousb:
+Also, set the station's archive interval to 5 minutes (300 seconds):
 
 ```
-sudo wee_config_fousb --set-interval=5
+sudo wee_device --set-interval=5
 ```
 
 These settings are not a guarantee against lockups, but they will reduce the chance.
@@ -113,7 +113,7 @@ Some consoles randomly reset some or all of their settings to factory defaults. 
 
 wxengine: The archive interval in the configuration file (300) does not match the station hardware interval (1800).
 
-Use wee_config_fousb to change the station's archive interval to match whatever you specify in weewx.conf.
+Use wee_device to change the station's archive interval to match whatever you specify in weewx.conf.
 
 ### References
 

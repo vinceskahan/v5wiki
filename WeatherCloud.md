@@ -16,7 +16,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.8.tgz
 wee_extension --install weewx-wcloud-x.y.tgz
 ```
 
-2.  Modify weewx.conf
+2.  Modify weewx.conf.  Find the WeatherCloud section then enter your weathercloud id and key.
 
     ```
     [StdRESTful]

@@ -24,4 +24,9 @@ Now you need to drop the daily summaries, which will also include these bad data
 
     wee_config_database weewx.conf --drop-daily
 
+The summaries will be rebuilt the next time weewx starts. As this can take a long time, you
+may want to do this explicitly:
+
+    wee_config_database weewx.conf --backfill-daily
+
 Finally, to avoid a problem in the future, be sure to set a range of acceptable values for service `StdQC`. See the section [StdQC](http://weewx.com/docs/usersguide.htm#StdQC) in the User's Guide for details on how to do this.

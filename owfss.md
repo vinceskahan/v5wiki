@@ -22,23 +22,23 @@ sudo apt-get install python-ow
 wee_extension --install weewx-owfs-x.y.tgz
 ```
 
-3.  Find out what sensors are attached.  If you installed using setup.py:
+3.  Find out what sensors are attached:
 
     ```
+# if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
-```
 
-If you installed from rpm or deb package:
-    ```
+# if you installed from rpm or deb package:
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --sensors
 ```
 
 4.  Get some data from the sensors:
 
     ```
+# if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
-```
-    ```
+
+# if you installed from rpm or deb package:
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 ```
 

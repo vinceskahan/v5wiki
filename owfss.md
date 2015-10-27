@@ -19,19 +19,27 @@ sudo apt-get install python-ow
 2.  Run the extension installer:
 
     ```
-setup.py install --extension weewx-owfs-x.y.tgz
+wee_extension --install weewx-owfs-x.y.tgz
 ```
 
-3.  Find out what sensors are attached:
+3.  Find out what sensors are attached.  If you installed using setup.py:
 
     ```
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
+```
+
+If you installed from rpm or deb package:
+    ```
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --sensors
 ```
 
 4.  Get some data from the sensors:
 
     ```
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
+```
+    ```
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 ```
 
 5.  Modify weewx.conf:
@@ -74,9 +82,11 @@ sudo /etc/init.d/weewx start
 
 ### Caveats
 
-The order of the services matters. Be sure that OWFSService runs before StdCalibrate, StdQC, and StdArchive.
-
 The interface defaults to 'u', which is short for 'usb'.  This is the interface for a DS9490R USB adaptor.  Other options for interface include a serial port such as '/dev/ttyS0', or a remote one-wire server such as 'remote_system:3003'.
+
+If you are using a one-wire-to-USB adapter, then the default interface of 'u' should work.  If your one-wire devices are attached via serial port, i2c, or some other physical interface, then you will have to specify the interface when running owfs.py direction and when configuring owfs.py to run as a service or driver.  Use the ```--iface``` option on the command-line or the ```interface``` option in the OWFS section of weewx.conf.
+
+The order of the services matters. Be sure that OWFSService runs before StdCalibrate, StdQC, and StdArchive.
 
 See the comments in owfs.py for additional options and for examples of how to configure for specific devices.
 

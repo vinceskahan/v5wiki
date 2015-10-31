@@ -9,7 +9,7 @@ This is an extension to weewx that uploads weather data to smart energy groups.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-seg-0.6.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-seg-0.8.tgz
 
 ### How to Install
 

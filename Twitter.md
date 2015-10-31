@@ -12,7 +12,7 @@ where you can create a new app and obtain the credentials.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-twitter-0.8.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-twitter-0.10.tgz
 
 ### How to Install
 

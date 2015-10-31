@@ -4,7 +4,7 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.9.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.13.tgz
 
 ### How to Install
 

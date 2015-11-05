@@ -22,6 +22,7 @@ The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD)
 * [SunFounder DS3231 on Amazon](http://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS)
 
 For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration instructions can be found from [W0CHP's WX Station web site](http://wx.w0chp.net/setup/RPi2-B_RTC.html).
+
 For Raspberry models running Jessie, software configuration here [pi RTC with jessie](pi-RTC-with-raspbian-jessie).
 
 #####B. Wait for NTP to sync the clock#####

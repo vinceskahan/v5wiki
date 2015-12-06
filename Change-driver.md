@@ -61,28 +61,28 @@ sudo /etc/init.d/weewx stop
 
 3.  Start weewx
 
-### The weewx approach: run setup.py
+### The weewx approach: run wee_config
 
-This approach will work for standard drivers on any weewx installation.
+This approach will work on any weewx installation for standard drivers and/or drivers in the user directory.
 
 1.  Stop weewx
 
     ```
 sudo /etc/init.d/weewx stop
 ```
-2.  Run setup.py with the configure option
+2.  Run wee_config with the reconfigure option:
 
     ```
-sudo /home/weewx/setup.py configure
+sudo wee_config --reconfigure
 ```
 
 3.  Start weewx
 
-This should prompt for the station parameters, including the station type and any options required by the station.
+    ```
+sudo /etc/init.d/weewx start
+```
 
-On debian- and redhat-based systems, `wee_setup` is a symlink to the weewx setup.py, so you can simply type `wee_setup` on those systems:
-
-`sudo wee_setup configure`
+The wee_config command should prompt for the station parameters, including the station type and any options required by the station.
 
 ### The Debian approach: run dpkg
 
@@ -98,6 +98,6 @@ This should prompt for the station parameters, including the station type and an
 
 ### Custom drivers
 
-If you use a custom driver then you must use the manual approach.  A custom driver is any driver that is not in the weewx/drivers folder and that does not implement all of the AbstractConfEditor methods.
+If you use a custom driver then you must use the manual approach.  A custom driver is any driver that does not implement all of the AbstractConfEditor methods.
 
-For example, if you create your own driver, you should put it in the `user` directory.
+If you develop your own driver, you should put it in the `user` directory then manually configure weewx.conf.

@@ -58,7 +58,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [simple](simple)
 * [weewx-wd](WEEWX-WD)
 * [bootstrap](Bootstrap)
-* [byteweather](http://davies-barnard.uk/2014/01/weewx-byteweather-template/)
+* [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [Flat](http://en.blauesledersofa.de/2015/03/flat-template-for-weewx/) (sofaskin)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
 * [Responsive](http://carlingfordweather.sydney/)

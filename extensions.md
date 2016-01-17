@@ -11,7 +11,7 @@ There are many ways to customize weewx.  Customizations typically fall into one 
 
 Extensions are a way to package one or more customizations so they can be installed and distributed as a functional group.
 
-Each extensions is distributed as a tarball - a compressed archive (.tgz) that contains the files used by the extension.
+Each extension is typically distributed as a archive that contains the files used by the extension.  The archive might be a tar archive (.tar), a compressed archive (.tgz), or a zip archive (.zip).  An extension can also be installed from an expanded archive, such as those in the extensions directory of the weewx distribution.
 
 To manage extensions, use the wee_extension tool that comes with weewx.  The location of wee_extension depends on how weewx was installed.
 

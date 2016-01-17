@@ -28,6 +28,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Manage extensions](extensions)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Add a sensor to any weather station](add-sensor)
+* [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 
 ### Extensions to weewx
 

@@ -1,5 +1,7 @@
 This article will describe how to troubleshoot issues with your python imaging library.  The preferred imaging library is Pillow.  Pillow is a modern version of PIL.
 
+These days, most installations of Python come with a perfectly functioning version of either PIL or Pillow. You need do nothing. However, there are some installations that are missing pieces or even the whole library. This Wiki is about those situations.
+
 ## Pre-requisite libraries
 
 You must make sure you have `zlib-dev`, `libfreetype-dev` and `jpeg-dev` installed on your system 

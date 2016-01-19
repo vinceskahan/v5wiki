@@ -29,6 +29,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Add a sensor to any weather station](add-sensor)
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
+* [How to configure weewx to run under systemd](systemd)
 
 ### Extensions to weewx
 

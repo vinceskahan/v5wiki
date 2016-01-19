@@ -24,16 +24,25 @@ The weewx distribution includes a file weewx.service that tells systemd how to r
     [Install]
     WantedBy=multi-user.target
 
+Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
+
 To install this file, put it in the systemd configuration directory as /etc/systemd/weewx.service
 
 ### Starting and stopping weewx
 
 To start weewx:
 
-    systemctl start weewx
+    sudo systemctl start weewx
 
 To stop weewx:
 
-    systemctl stop weewx
+    sudo systemctl stop weewx
 
-These commands should work whether you use the rc script /etc/init.d/weewx or the systemd configuration /etc/systemd/weewx.service.  It is probably a bad idea to have both the rc script and the weewx.service file installed.
+These commands should work whether you use the rc script /etc/init.d/weewx or the systemd configuration /etc/systemd/weewx.service.
+
+If you have only the rc script, you should be able to start/stop weewx using either the systemctl syntax or the tradition rc syntax:
+
+    sudo /etc/init.d/weewx stop
+    sudo /etc/init.d/weewx start
+
+It is probably a bad idea to have both the rc script and the weewx.service file installed.

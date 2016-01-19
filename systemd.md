@@ -1,12 +1,13 @@
 ## How to configure weewx to run in a systemd environment
 
-If your system uses systemd to manage the starting and stopping of daemons, you might want to configure weewx specifically for systemd (weewx.service) instead of using the traditional rc script (/etc/init.d/weewx).  On most systems with systemd, the weewx rc script will still work.  This page explains how to convert to a systemd-only environment.
+If your system uses systemd to manage the starting and stopping of daemons, you might want to configure weewx specifically for systemd (weewx.service) instead of using the traditional rc script (/etc/init.d/weewx).  On most systems with systemd, the weewx rc script will still work.
 
 ### The weewx.service file
 
-The weewx distribution includes a file weewx.service that tells systemd how to run weewx.  It looks something like this:
+The weewx distribution includes a systemd "unit" file called weewx.service that tells systemd how to run weewx.  It looks something like this:
 
     # systemd configuration for weewx
+    
     [Unit]
     Description=weewx weather system
     Requires=syslog.service
@@ -14,6 +15,7 @@ The weewx distribution includes a file weewx.service that tells systemd how to r
     After=syslog.service
     After=ntp.service
     RequiresMountsFor=/home
+    
     [Service]
     ExecStart=/home/weewx/bin/weewxd --daemon --pidfile=/var/run/weewx.pid /home/weewx/weewx.conf
     ExecReload=/bin/kill -HUP $MAINPID
@@ -21,12 +23,13 @@ The weewx distribution includes a file weewx.service that tells systemd how to r
     PIDFile=/var/run/weewx.pid
     #User=weewx
     #Group=weewx
+    
     [Install]
     WantedBy=multi-user.target
 
-Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
-
 To install this file, put it in the systemd configuration directory as /etc/systemd/weewx.service
+
+Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
 
 ### Starting and stopping weewx
 
@@ -46,3 +49,15 @@ If you have only the rc script, you should be able to start/stop weewx using eit
     sudo /etc/init.d/weewx start
 
 It is probably a bad idea to have both the rc script and the weewx.service file installed.
+
+### Enabling and disabling weewx
+
+If you want to prevent weewx from starting up when the system boots, disable it like this:
+
+    sudo systemctl disable weewx
+
+To enable it:
+
+    sudo systemctl enable weewx
+
+Whether it is enabled or disabled, you can still start/stop.

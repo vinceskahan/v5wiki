@@ -24,7 +24,7 @@ The weewx distribution includes a file weewx.service that tells systemd how to r
     [Install]
     WantedBy=multi-user.target
 
-To install this file, put it in the directory /etc/systemd
+To install this file, put it in the systemd configuration directory as /etc/systemd/weewx.service
 
 ### Starting and stopping weewx
 

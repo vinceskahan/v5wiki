@@ -41,7 +41,8 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
-* [observerip - Collect data from Ambient WS1001/WS1400/WS1200 ObserverIP (Fine Offset WH2600)](https://github.com/dkmcode/weewx-observerip)
+* [observerip - Collect data from ObserverIP (Fine Offset WH2600)](https://github.com/dkmcode/weewx-observerip)
+* [socketlogger - Collect data from ObserverIP (Fine Offset WH2600) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 
 #### Services

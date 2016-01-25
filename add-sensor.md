@@ -14,7 +14,7 @@ These are instructions for adding data from a single sensor.
 
 2.  Add a service that parses the file.  For a setup.py installation this would be something like /home/weewx/bin/user/pond.py
 
-    ```
+```Python
 import syslog
 import weewx
 from weewx.wxengine import StdService

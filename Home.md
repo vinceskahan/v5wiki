@@ -65,7 +65,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [Flat](http://en.blauesledersofa.de/2015/03/flat-template-for-weewx/) (sofaskin)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
-* [Responsive](https://github.com/dcapslock/weewx-responsive-skin)
+* [Responsive](responsive)
 
 #### Uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)

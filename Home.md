@@ -12,6 +12,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Understanding paths](Understanding paths)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Use logwatch to report WeeWX log messages](logwatch)
+* [Put log messages from weewx into a separate file](logging)
 * [Using WeeWX with a DavisSi1000 radio](DavisSi1000 radio)
 * [Colored UV index](Colored%20UV%20index)
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)

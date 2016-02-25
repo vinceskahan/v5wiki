@@ -66,3 +66,5 @@ Use a logrotate configuration /etc/logrotate.d/weewx something like this:
 ### Remote logging
 
 Sometimes it is useful to send weewx log messages to a different server.  This can be particularly useful to eliminate the writes to local disk.
+
+To do this, specify the remote server in /etc/rsyslog.conf on the machine running weewx.  Then configure the remote server to accept log messages from the machine running weewx.

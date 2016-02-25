@@ -19,9 +19,9 @@ sudo /etc/init.d/rsyslog start
 
 ### logrotate
 
-1. tell logrotate to rotate weewx log files
+tell logrotate to rotate weewx log files
     ```
-sudo ln -s /etc/weewx/logrotate.d/weewx
+sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 
 ### Multiple instances of weewx

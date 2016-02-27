@@ -19,8 +19,8 @@ sudo /etc/init.d/rsyslog start
 
 ### logrotate
 
-1. tell logrotate to rotate weewx log files
-    ```
+tell logrotate to rotate weewx log files
+```
 sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 
@@ -31,8 +31,8 @@ If you run multiple instances of weewx, start each with a different log identifi
 For example, if you run one instance for a vantage station and another instance for a rainwise station, start each instance like this:
 
 ```
-sudo weewxd --log-label vantage /etc/weewx/vantage.conf
-sudo weewxd --log-label rainwise /etc/weewx/rainwise.conf
+sudo weewxd --log-label weewx-vantage /etc/weewx/vantage.conf
+sudo weewxd --log-label weewx-rainwise /etc/weewx/rainwise.conf
 ```
 
 Use a syslog configuration /etc/rsyslog.d/weewx.conf like this:

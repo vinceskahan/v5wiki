@@ -12,7 +12,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Understanding paths](Understanding paths)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Use logwatch to report WeeWX log messages](logwatch)
-* [Put log messages from weewx into a separate file](logging)
+* [Put log messages from WeeWX into a separate file](logging)
 * [Using WeeWX with a DavisSi1000 radio](DavisSi1000 radio)
 * [Colored UV index](Colored%20UV%20index)
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
@@ -30,9 +30,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Add a sensor to any weather station](add-sensor)
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
-* [How to configure weewx to run under systemd](systemd)
+* [How to configure WeeWX to run under systemd](systemd)
 
-### Extensions to weewx
+### Extensions to WeeWX
 
 Use extensions to add capabilities to a weewx installation.  Drivers enable weewx to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
 

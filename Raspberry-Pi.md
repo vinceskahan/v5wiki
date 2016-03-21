@@ -4,11 +4,11 @@ Running weewx on a Raspberry Pi has become very popular. You'll have to look els
 
 ###Time###
 
-First, you simply must run NTP on the RPi. It is simply impossible to create a dependable data logging system without an accurate source of time.
+First, you simply must run NTP on the RPi. It is not possible to create a dependable data logging system without an accurate source of time.
 
 Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package `fake-hwclock`). The "fake clock" regularly records the time on the hard disk. When the RPi reboots after a power failure, it will read this time and simply resume from there. This time could be hours behind the real time, depending on how long the power was out. 
 
-Meanwhile, if you are running weewx as a daemon, weewx will also start up and try to run with this seriously out-of-date time. When it comes time to store something in the database, it will either be stored under a too-old timestamp or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
+Meanwhile, if you are running weewx as a daemon, weewx will also start up and try to run with this seriously out-of-date time. When it then stores something in the database, it will either be stored under a too-old timestamp, or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
 
 Eventually NTP starts up, finds an authoritative time source, then sets the time correctly, but this could take several minutes and, by then, the damage is done.
 
@@ -23,13 +23,13 @@ The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD)
 
 For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration instructions can be found from [W0CHP's WX Station web site](http://wx.w0chp.net/setup/RPi2-B_RTC.html).
 
-For Raspberry models running Jessie, software configuration here [pi RTC with jessie](pi-RTC-with-raspbian-jessie).
+For Raspberry models running Jessie, see some hints on the page [pi RTC with jessie](https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie).
 
-#####B. Wait for NTP to sync the clock#####
+#####B. Remove the fake clock#####
 
-Another solution is to remove the fake clock, then modify weewx so it waits until the correct time is set by NTP, rather than plowing ahead. Here's how to do this.
+As of Version 3.4, Weewx will not start up until the system time is later than 1 January 2000. So, a simple solution is to remove the fake clock. Without the fake clock, the system time will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, preventing weewx from starting up until NTP sets the true time.
 
-First, remove the fake clock:
+To remove the fake clock:
 
 ~~~~~
 $ sudo apt-get remove fake-hwclock
@@ -40,17 +40,6 @@ Then remove the old, recorded time:
 ~~~~~
 $ sudo rm /etc/fake-hwclock.data
 ~~~~~
-
-Now if the RPi reboots, instead of starting with the old time, it will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, a date that is easily detected with a bit of Python. Add this to the file `bin/user/extensions.py`
-
-~~~~~
-import time
-while time.time() < 946684800:
-    time.sleep(0.5)
-~~~~~
-
-What this does is check if the time is earlier than 1-Jan-2000 UTC (unix epoch time 946684800). If it is, it sleeps a bit. Eventually NTP will set the clock to the real time and the loop will be broken.
-
 
 ###Use a high-quality SD card###
 

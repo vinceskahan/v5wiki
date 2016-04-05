@@ -47,6 +47,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
+* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
 
 #### Services
 * [owfs - Augment weather station data with data from one-wire sensors](owfss)

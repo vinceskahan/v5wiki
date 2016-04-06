@@ -50,14 +50,14 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
 
 #### Services
-* [owfs - Augment weather station data with data from one-wire sensors](owfss)
-* [maxbotix - Collect data from maxbotix ultrasonic rangefinder sensors](maxbotix)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
-* [as3935 - Collect lightning strike data from AS3935 sensor attached to RPi](as3935)
+* [owfs - Augment weather station data with data from one-wire sensors](owfss)
+* [maxbotix - Augment weather station data with data from maxbotix ultrasonic rangefinder sensors](maxbotix)
+* [as3935 - Augment weather station data with lightning strike data from AS3935 sensor attached to RPi](as3935)
 
 #### Skins
 * [exfoliation](exfoliation)

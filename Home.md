@@ -55,9 +55,9 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
-* [owfs - Augment weather station data with data from one-wire sensors](owfss)
-* [maxbotix - Augment weather station data with data from maxbotix ultrasonic rangefinder sensors](maxbotix)
-* [as3935 - Augment weather station data with lightning strike data from AS3935 sensor attached to RPi](as3935)
+* [owfs - Augment station data with data from one-wire sensors](owfss)
+* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
+* [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 
 #### Skins
 * [exfoliation](exfoliation)

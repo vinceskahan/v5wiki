@@ -6,7 +6,7 @@ http://wiki.sandaysoft.com/a/Realtime.txt
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-crt-0.13.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-crt-0.18.tgz
 
 ### How to Install
 

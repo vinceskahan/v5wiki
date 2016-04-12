@@ -13,7 +13,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Put log messages from WeeWX into a separate file](logging)
-* [Using WeeWX with a DavisSi1000 radio](DavisSi1000 radio)
 * [Colored UV index](Colored%20UV%20index)
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
 * [Using one-wire sensors with WeeWX](Onewire sensors)
@@ -38,7 +37,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 
 #### Drivers
 * [owfs - Collect data from one-wire sensors](owfs)
-* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](https://github.com/tridge/DavisSi1000)
+* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000 radio)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)

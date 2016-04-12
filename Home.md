@@ -38,6 +38,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 
 #### Drivers
 * [owfs - Collect data from one-wire sensors](owfs)
+* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](https://github.com/tridge/DavisSi1000)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
@@ -47,7 +48,6 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
-* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](https://github.com/tridge/DavisSi1000)
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
 
 #### Services

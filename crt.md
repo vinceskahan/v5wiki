@@ -54,6 +54,8 @@ _date_separator_ - The character for separating day, month, and year.  Default i
 
 _none_ - The string to use when there is no value.  Default is `NULL`
 
+_sunny_threshold_ - The cutoff value that determines whether the sun is shining.  The threshold is a value between 0 and 1, inclusive.  It is compared against the ratio of actual solar radiation and theoretical maximum solar radiation to determine if the weather is sunny.  Default is 0.75.
+
 _unit_system_ - The unit system to use in realtime.txt.  Options include `US`, `METRIC`, and `METRICWX`.  Default is to use the unit system of the weewx database.
 
 _wind_units_ - The units to use for wind-related data in realtime.txt.  Options include `meter_per_second`, `mile_per_hour`, `km_per_hour`, and `knot`.  Default is to use the units defined in the unit system.

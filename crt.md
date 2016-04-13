@@ -51,3 +51,15 @@ _binding_ - The binding determines whether the file will be updated with every L
 _filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
 
 _date_separator_ - The character for separating day, month, and year.  Default is `/`
+
+_none_ - The string to use when there is no value.  Default is `NULL`
+
+_unit_system_ - The unit system to use in realtime.txt.  Options include `US`, `METRIC`, and `METRICWX`.  Default is to use the unit system of the weewx database.
+
+_wind_units_ - The units to use for wind-related data in realtime.txt.  Options include `meter_per_second`, `mile_per_hour`, `km_per_hour`, and `knot`.  Default is to use the units defined in the unit system.
+
+_temperature_units_ - The units to use for temperature data in realtime.txt.  Options include `degree_C` and `degree_F`.  Default is to use the units defined in the unit system.
+
+_pressure_units_ - The units to use for pressure data in realtime.txt.  Options include `hPa`, `mbar`, and `inHg`.  Default is to use the units defined in the unit system.
+             
+_cloudbase_units_ - The units to use for cloud base in realtime.txt.  Options include `foot` and `meter`.  Default is to use the units for altitude in the unit system.

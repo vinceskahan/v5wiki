@@ -61,3 +61,69 @@ Use the --debug option to see exactly what logwatch is doing.
 If you have configured rsyslog to put weewx logfiles into a location other than /var/log/syslog, modify the logfiles/weewx.conf file.
 
 To look for different log messages or adjust the report formatting, modify the perl script /etc/logwatch/scripts/services/weewx
+
+## What does it look like?
+
+The weewx logwatch script summarizes all of the known weewx messages and provides a summary such as number of images generated, number of upload failures, etc.  Any unrecognized log messages, such as exceptions or other failures, are listed after the summary.  
+
+Here is an example of the output from a daily run of logwatch (thank you vince :)
+
+```
+################### Logwatch 7.4.0 (05/02/12) ####################
+        Processing Initiated: Wed Apr 13 08:52:20 2016
+        Date Range Processed: yesterday
+                              ( 2016-Apr-12 )
+                              Period is day.
+        Detail Level of Output: 0
+        Type of Output/Format: stdout / text
+        Logfiles for Host: debian
+ ##################################################################
+
+ --------------------- weewx Begin ------------------------
+
+ average station clock skew: 2.955
+   min: 0 max: 4.99 samples: 6
+
+ counts:
+   archive: records added                          2304
+   engine: garbage collected                      19990
+   filegenerator: files generated                 10656
+   forecast: downloads                               16
+   forecast: prunings                                17
+   forecast: records generated                     2235
+   genimages: images generated                     9305
+   restful: records published                       720
+
+ forecast downloads:
+   NWS                                                8
+   WU                                                 8
+
+ forecast prunings:
+   NWS                                                8
+   WU                                                 8
+   Zambretti                                          1
+
+ forecast records generated:
+   NWS                                              314
+   WU                                              1920
+   Zambretti                                          1
+
+ uploads:
+   CWOP                                             144
+   PWSWeather                                       288
+   Wunderground-PWS                                 288
+
+
+ unmatched lines:
+   Apr 12 07:35:15 debian weewx[13199]: wxdata: archive record, delta 15.9023060799
+   Apr 12 07:36:34 debian weewx[13199]: imageStackedWindRose: Generated 1 images in 0.42 seconds
+   Apr 12 07:36:43 debian weewx[13199]: reportengine: Caught unrecoverable exception in generator weewx.reportengine.RsyncGenerator
+   Apr 12 07:36:43 debian weewx[13199]:         ****  global name 'log_success' is not defined
+   Apr 12 07:36:43 debian weewx[13199]:         ****  Traceback (most recent call last):
+   Apr 12 07:36:43 debian weewx[13199]:         ****    File "/home/weewx/bin/weewx/reportengine.py", line 140, in run
+   Apr 12 07:36:43 debian weewx[13199]:         ****      obj.start()
+   Apr 12 07:36:43 debian weewx[13199]:         ****    File "/home/weewx/bin/weewx/reportengine.py", line 170, in start
+   Apr 12 07:36:43 debian weewx[13199]:         ****      self.run()
+   Apr 12 07:36:43 debian weewx[13199]:         ****    File "/home/weewx/bin/weewx/reportengine.py", line 263, in run
+...
+```

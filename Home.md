@@ -48,6 +48,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
+* [interceptor - Collect data from Acurite Bridge, ObserverIP, OS LW301/LW302, or LaCross GW1000U](https://github.com/matthewwall/weewx-interceptor)
 
 #### Services
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)

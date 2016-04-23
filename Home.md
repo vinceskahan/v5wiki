@@ -49,6 +49,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
+* [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
 * [interceptor - Collect data from Acurite Bridge, ObserverIP, OS LW301/LW302, or LaCross GW1000U](https://github.com/matthewwall/weewx-interceptor)
 
 #### Services

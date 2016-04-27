@@ -5,9 +5,9 @@
 
 Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient using the brand Observer.
 
-Fine Offset model numbers include HP1000 (uploads via console with wifi), HP1003 (console display no uploads), and WH2600 (uploads via bridge).
+Fine Offset model numbers include HP1000 (uploads via console with wifi), HP1003 (console display, no uploads), and WH2600 (uploads via bridge).
 
-Ambient model numbers include WS080 (uploads via bridge), WS1400 (uploads via bridge), WS1200 (uploads via bridge), and WS1001 (uploads via console).
+Ambient model numbers include WS0800 (uploads via bridge), WS1400 (uploads via bridge), WS1200 (uploads via bridge), and WS1001 (uploads via console).
 
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 
@@ -25,6 +25,6 @@ Hijack DNS.  Create a local DNS entry on your router so that when the console or
 
 HTTP Proxy.  Install an HTTP proxy so that any HTTP traffic leaving your network can be intercepted.  Create a proxy rule to capture every packet sent from the console or bridge, and redirect those packets to the computer running weewx.
 
-Packet Capture.  Run tcpdump, ngrep, or similar utility to capture all traffic from the console or bridge, and redirect it to the computer running weewx.
+Packet Capture.  Run `tcpdump`, `ngrep`, or similar utility to capture all traffic from the console or bridge, and redirect it to the computer running weewx.
 
 Detailed instructions for DNS, Proxy, and Packet Capture are included in the weewx-interceptor <a href="https://github.com/matthewwall/weewx-interceptor">readme</a>.

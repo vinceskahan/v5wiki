@@ -1,7 +1,7 @@
 ## How to get data from an Observer weather station
 
-<img src="http://weewx.com/hardware/hp1001.png" align="right" height="100"/>
-<img src="http://weewx.com/hardware/hp1003.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
 
 Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient using the brand Observer.
 

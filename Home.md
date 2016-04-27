@@ -30,6 +30,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Add a sensor to any weather station](add-sensor)
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 * [How to configure WeeWX to run under systemd](systemd)
+* [How to take control of your Observer (Ambient WS1000 or Fine Offset HP1000)](observer)
 
 ### Extensions to WeeWX
 

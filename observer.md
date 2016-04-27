@@ -26,3 +26,5 @@ Hijack DNS.  Create a local DNS entry on your router so that when the console or
 HTTP Proxy.  Install an HTTP proxy so that any HTTP traffic leaving your network can be intercepted.  Create a proxy rule to capture every packet sent from the console or bridge, and redirect those packets to the computer running weewx.
 
 Packet Capture.  Run tcpdump, ngrep, or similar utility to capture all traffic from the console or bridge, and redirect it to the computer running weewx.
+
+Detailed instructions for DNS, Proxy, and Packet Capture are included in the weewx-interceptor <a href="https://github.com/matthewwall/weewx-interceptor">readme</a>.

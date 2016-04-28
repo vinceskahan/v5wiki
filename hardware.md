@@ -1,6 +1,6 @@
 Utilite
 ---
-<img src="http://www.compulab.co.il/utilite-computer/web/wp-content/uploads/2014/12/Utilite2_intro.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/utilite2.png" align="right" height="100"/>
 
 Utilite2 is a fanless ARM desktop computer built around the Qualcomm® Snapdragon™ 600 processor with high-performance Adreno™ 320 GPU, products of Qualcomm Technologies Inc. Delivering high performance and rich I/O in a tiny form-factor, Utilite2 supports fully featured, desktop-grade Ubuntu Linux or Android operating systems.  As of June 2015 prices are 170-230 US$
 
@@ -9,7 +9,7 @@ Utilite2 is a fanless ARM desktop computer built around the Qualcomm® Snapdrago
 
 ASUS RT-AC68U
 ---
-<img src="http://www.asus.com/media/US/products/svItyTHFccLwnprr/P_500.jpg" align="right" height="100"/>
+<img src="http://weewx.com/hardware/asus-rt-ac68u.png" align="right" height="100"/>
 
 https://www.asus.com/us/Networking/RTAC68U
 
@@ -20,7 +20,7 @@ Dual-band Wireless-AC1900 Gigabit Router. 802.11a/b/g/n/ac WiFi; Dual core 800MH
 
 Mini ATX
 ---
-<img src="http://www.mini-box.com/configure-your-own-category.jpg" align="right" height="100"/>
+<img src="http://weewx.com/hardware/mini-box.png" align="right" height="100"/>
 
 http://www.mini-box.com
 
@@ -30,7 +30,7 @@ Miniature x86 computers typically run slower CPUs and draw less power.  As of Oc
 
 Nimbus by ionics
 ---
-<img src="http://www.ionics-ems.com/plugtop/images/bg-nimbus.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/nimbus.png" align="right" height="100"/>
 
 http://www.ionics-ems.com/plugtop/products.html
 
@@ -40,7 +40,7 @@ ionics makes two plug computers, the Nimbus and the Stratus.  Both are compact, 
 
 DreamPlug by GlobalScale
 ---
-<img src="http://www.globalscaletechnologies.com/images/Product/medium/54.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/dreamplug.png" align="right" height="100"/>
 
 http://www.globalscaletechnologies.com/p-54-dreamplug-devkit.aspx
 
@@ -50,7 +50,7 @@ The globalscale technologies makes the DreamPlug.  As of September 2013, cost is
 
 Raspberry Pi
 ---
-<img src="https://www.raspberrypi.org/wp-content/uploads/2015/01/Pi2ModB1GB_-comp-216x150.jpeg" align="right"  height="100"/>
+<img src="http://weewx.com/hardware/rpi.png" align="right"  height="100"/>
 
 http://www.raspberrypi.org/
 
@@ -60,7 +60,7 @@ The Raspberry Pi is a credit-card sized computer that plugs into your TV and a k
 
 Synology
 ---
-<img src="https://www.synology.com/img/products/photo/DS414slim/top.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/synology-ds207.png" align="right" height="100"/>
 
 http://www.synology.com
 
@@ -70,7 +70,7 @@ Several users are successfully running weewx on Synology NAS'es including the DS
 
 Fit-PC
 ---
-<img src="http://fit-pc.com/web/wp-content/uploads/products.jpg" align="right" height="100"/>
+<img src="http://weewx.com/hardware/fitpc.png" align="right" height="100"/>
 
 http://www.fit-pc.com/
 
@@ -80,7 +80,7 @@ Now in their fourth generation, these are small, low-powered, fanless PCs that a
 
 Wandboard
 ---
-<img src="http://www.wandboard.org/images/wandboard-freescale-imx6.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/wandboard.png" align="right" height="100"/>
 
 http://www.wandboard.org/index.php/details
 
@@ -90,7 +90,7 @@ I'm using the wandboard-quad as it has enough power to do several jobs beside ha
 
 ODROID-C1
 ---
-<img src="http://dn.odroid.com/homebackup/201412051744489785.jpg" align="right" height="100"/>
+<img src="http://weewx.com/hardware/odroid-c1.png" align="right" height="100"/>
 
 http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433
 

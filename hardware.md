@@ -30,7 +30,7 @@ Miniature x86 computers typically run slower CPUs and draw less power.  As of Oc
 
 Nimbus by ionics
 ---
-<img src="http://weewx.com/hardware/nimbus.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/nimbus.jpg" align="right" height="100"/>
 
 http://www.ionics-ems.com/plugtop/products.html
 

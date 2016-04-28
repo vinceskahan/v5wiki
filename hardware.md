@@ -9,7 +9,7 @@ Utilite2 is a fanless ARM desktop computer built around the Qualcomm® Snapdrago
 
 ASUS RT-AC68U
 ---
-<img src="http://weewx.com/hardware/asus-rt-ac68u.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/asus-rt-ac68u.jpg" align="right" height="100"/>
 
 https://www.asus.com/us/Networking/RTAC68U
 

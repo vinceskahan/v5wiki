@@ -1,6 +1,6 @@
 ### Maxbotix Service
 
-<img src="http://maxbotix.com/pictures/4-20HRWR/4-20HRWR%20Distance%20Sensor%20Family.jpg" width="200" align="right" />
+<img src="http://weewx.com/hardware/maxbotix.png" width="200" align="right" />
 
 Maxbotix ultrasonic sensors can detect ranges from 3 to 10 meters with resolution of 1 cm to 1 mm.  The sensors are useful for measuring snow depth, tide height, proximity, and many other range-finding applications.
 

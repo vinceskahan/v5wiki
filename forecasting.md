@@ -87,6 +87,24 @@ Zambretti runs only once per day, and only in the morning.  So you might have to
 
 Monitor the log to see what is happening.  The log should include messages about each type of forecast as it starts.  After the first archive interval, each forecast should download/generate, and the forecast data should be displayed in the forecast skin.
 
+### Screenshots
+
+Forecast data embedded in the Standard skin.
+
+![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
+
+Full table of forecast data embedded in the Standard skin.
+
+![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
+
+Forecast data embedded in the exfoliation skin.
+
+![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
+
+The forecast.html page from the exfoliation skin.
+
+![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)
+
 ### Manual Installation
 
 1.  Copy the forecast.py file to the weewx user directory:
@@ -268,22 +286,3 @@ sudo /etc/init.d/weewx start
 ```
 
 3.  Modify skin and templates to display tide forecast data
-
-
-### Screenshots
-
-Forecast data embedded in the Standard skin.
-
-![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
-
-Full table of forecast data embedded in the Standard skin.
-
-![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
-
-Forecast data embedded in the exfoliation skin.
-
-![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
-
-The forecast.html page from the exfoliation skin.
-
-![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)

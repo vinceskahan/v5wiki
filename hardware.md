@@ -90,7 +90,7 @@ I'm using the wandboard-quad as it has enough power to do several jobs beside ha
 
 ODROID-C1
 ---
-<img src="http://weewx.com/hardware/odroid-c1.png" align="right" height="100"/>
+<img src="http://weewx.com/hardware/odroid-c1.jpg" align="right" height="100"/>
 
 http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433
 

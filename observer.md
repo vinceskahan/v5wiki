@@ -3,15 +3,24 @@
 <img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
 
-Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, and others.  Ambient uses the brand name Observer.
+Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.  Ambient uses the brand name Observer.
 
-These stations upload directly to weather underground.  Some firmware versions include an option to set the destination of the upload so that you can send directly to your own web site or web service.  The uploads are driven either by a bridge or a console.  The bridge receives signals from the sensors, then uploads via a wired ethernet connection.  The console receives signals from the sensors, then uploads via a wireless (wifi) connection.
+These stations upload directly to weather underground.  Some firmware versions include an option to set the destination of the upload so that you can send directly to your own web site or web service.  The uploads are driven either by a bridge or a console, depending on the configuration.  The bridge receives signals from the sensors, then uploads via a wired ethernet connection.  The console receives signals from the sensors, then uploads via a wireless (wifi) connection.
 
-Fine Offset model numbers include HP1000 (uploads via console wifi), HP1003 (console display, no uploads), and WH2600 (uploads via bridge).
+Fine Offset model numbers include:
+* HP1000 - uploads via console wifi
+* HP1003 - console display, no uploads
+* WH2600 - uploads via bridge
 
-Ambient model numbers include WS0800 (uploads via bridge), WS1400 (uploads via bridge), WS1200 (uploads via bridge), and WS1001 (uploads via console).
+Ambient model numbers include:
+* WS0800 - uploads via bridge (WH2600 with two T/H sensors)
+* WS1400 - uploads via bridge (same as WH2600)
+* WS1200 - uploads via bridge (WH2600 with console)
+* WS1001 - uploads via console (same as HP1000)
 
-Aercus models include WeatherSleuth (uploads via bridge) and WeatherRanger (uploads via console wifi).
+Aercus models include:
+* WeatherSleuth - uploads via bridge (same as WH2600)
+* WeatherRanger - uploads via console wifi (same as HP1000)
 
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 

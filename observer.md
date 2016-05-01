@@ -5,7 +5,9 @@
 
 Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, and others.  Ambient uses the brand name Observer.
 
-Fine Offset model numbers include HP1000 (uploads via console with wifi), HP1003 (console display, no uploads), and WH2600 (uploads via bridge).
+These stations upload directly to weather underground.  Some firmware versions include an option to set the destination of the upload so that you can send directly to your own web site or web service.  The uploads are driven either by a bridge or a console.  The bridge receives signals from the sensors, then uploads via a wired ethernet connection.  The console receives signals from the sensors, then uploads via a wireless (wifi) connection.
+
+Fine Offset model numbers include HP1000 (uploads via console wifi), HP1003 (console display, no uploads), and WH2600 (uploads via bridge).
 
 Ambient model numbers include WS0800 (uploads via bridge), WS1400 (uploads via bridge), WS1200 (uploads via bridge), and WS1001 (uploads via console).
 

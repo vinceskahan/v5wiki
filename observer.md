@@ -3,11 +3,13 @@
 <img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
 
-Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient using the brand Observer.
+Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, and others.  Ambient uses the brand name Observer.
 
 Fine Offset model numbers include HP1000 (uploads via console with wifi), HP1003 (console display, no uploads), and WH2600 (uploads via bridge).
 
 Ambient model numbers include WS0800 (uploads via bridge), WS1400 (uploads via bridge), WS1200 (uploads via bridge), and WS1001 (uploads via console).
+
+Aercus models include WeatherSleuth (uploads via bridge) and WeatherRanger (uploads via console wifi).
 
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 

@@ -43,15 +43,15 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wlink - Collect data from weatherlink.com](wlink)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
-* [observerip - Collect data from ObserverIP (Fine Offset WH2600)](https://github.com/dkmcode/weewx-observerip)
-* [socketlogger - Collect data from ObserverIP (Fine Offset WH2600) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
+* [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
+* [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
-* [interceptor - Collect data from Acurite Bridge, ObserverIP, OS LW301/LW302, or LaCross GW1000U](https://github.com/matthewwall/weewx-interceptor)
+* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, or LaCross GW1000U](https://github.com/matthewwall/weewx-interceptor)
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
 
 #### Services

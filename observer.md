@@ -28,7 +28,9 @@ This is a description of how to get the data from the weather station directly, 
 
 If the console has a web interface, simply use that to change the destination.  Enter the hostname or IP address of a local computer running the weewx-interceptor driver.  Data will be sent directly to weewx.
 
-If the console does not have a web interface, then modify the `server.ini` file in the console.  Enter the hostname or IP address of a local computer running the weewx-interceptor driver.  Data will be sent directly to weewx.
+It might be possible to telnet to the station.  If so, use `setdsthn host.example.com` followed by `saveconfig` where `host.example.com` is the computer on which weewx is running.
+
+If the console does not have a web interface and telnet does not work, then modify the `server.ini` file in the console by removing the sd card.  Enter the hostname or IP address of a local computer running the weewx-interceptor driver.  Data will be sent directly to weewx.
 
 ### If configuring the console or bridge is not possible...
 

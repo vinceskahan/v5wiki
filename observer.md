@@ -34,14 +34,14 @@ If the console does not have a web interface, then modify the `server.ini` file 
 
 It might be possible to telnet to the bridge.  If so, use `setdsthn host.example.com` followed by `saveconfig` where `host.example.com` is the computer on which the weewx-interceptor driver is running.  Data will be sent directly to weewx.
 
-    telnet 192.168.0.6
+    <b>telnet 192.168.0.6</b>
     Trying 192.168.0.6...
     Connected to 192.168.0.6.
     Escape character is '^]'.
-    username: admin
+    username: **admin**
     password:
     Successful login through telnet
-    telnet> setdsthn rtupdate.wunderground.com
+    telnet> **setdsthn rtupdate.wunderground.com**
     Ok
     telnet> **saveconfig**
     Saving Configuration to FLASH

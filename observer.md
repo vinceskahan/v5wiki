@@ -47,7 +47,8 @@ Ok
 telnet> **saveconfig**
 Saving Configuration to FLASH
 Ok
-telnet> **reboot**Connection closed by foreign host.```
+telnet> **reboot**Connection closed by foreign host.
+```
 
 ### If configuring the console or bridge is not possible...
 

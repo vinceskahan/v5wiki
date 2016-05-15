@@ -3,9 +3,9 @@ This article is about moving data from sqlite to MySQL. For information on movin
 There are two general approaches to this problem:
 
 1. Use the command line utility `sqlite3` to dump the contents of the sqlite database to a file, then massage the file, then upload its contents to MySQL using the utility `mysql`; or
-+ Use the wee_database utility to transfer the sqlite archive to a MySQL database.
++ Use the `wee_database` utility to transfer the sqlite archive to a MySQL database.
 
-The former is more general and can be done standalone. The latter is simpler, but requires access to the rest of weewx.
+The first is more general and can be done standalone. The second is simpler, but requires access to the rest of weewx.
 
 ******************
 Dumping to SQL

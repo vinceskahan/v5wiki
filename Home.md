@@ -63,7 +63,6 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
-* [pusher - Allows you to send realtime weather data to Pusher](https://github.com/raymondelooff/weewx-pusher)
 
 #### Skins
 * [amphibian](amphibian)
@@ -81,6 +80,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
 * <img src="http://openweathermap.org/themes/demo/assets/vendor/owm/images/OWM_logo32_32.png" width='16'/> [openweathermap](openweathermap)
+* <img src="https://pusher.com/images/favicon.ico" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
 * <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](seg)
 * <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak)
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter)

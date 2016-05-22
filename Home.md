@@ -63,6 +63,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
+* [pusher - Allows you to send realtime weather data to Pusher](https://github.com/raymondelooff/weewx-pusher)
 
 #### Skins
 * [amphibian](amphibian)

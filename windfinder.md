@@ -1,4 +1,4 @@
-<img src='http://assets.windfinder.com/images/prod/v1/featured_products/forecast.png' width='100' align='right'/>
+<img src='https://cdn.windfinder.com/prod/images/favicons/mstile-144x144.af7269d8.png' width='100' align='right'/>
 
 ### WindFinder
 

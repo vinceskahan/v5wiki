@@ -1,0 +1,1 @@
+weewx french standard skin

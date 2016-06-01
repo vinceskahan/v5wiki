@@ -72,6 +72,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [Flat](http://neoground.com/projects/weewx/) (sofaskin)
 * [Responsive](responsive)
 * [simple](simple)
+* [Weewx French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
 * [weewx-wd](WEEWX-WD)
 

@@ -37,12 +37,9 @@ Edit the file skin.conf and uncomment the lines:
 
 Part 1:Edit the file /etc/weewx/weewx.conf 
 Not sure, but you need to have
-
-    ``` 
 target_unit = METRIC
 or
 target_unit = METRICWX
-```
  
 Part 2:Edit the file /etc/weewx/weewx.conf and replaces the lines:
 
@@ -74,7 +71,7 @@ by
 6. Start weewx process:
 
     ```
-sudo /etc/init.d/weewx stop
+sudo /etc/init.d/weewx start
 ```
 
 7. Go to your weewx URL home page and check the home page.

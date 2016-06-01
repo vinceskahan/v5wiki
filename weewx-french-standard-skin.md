@@ -22,7 +22,6 @@ mv Standard Stardard-ORI
 tar xzvf Standard-FR-v1.0.tar.gz
 mv Standard-FR Standard
 chown root:root Standard
-
 ```
 
 3. Enable the weather radar picture (optionnal):
@@ -32,19 +31,21 @@ cd Standard
 Edit the file skin.conf and uncomment the lines:
     # radar_img = http://37.59.123.0/sat/anim-msg-fr-vis.gif
     # radar_url = http://fr.sat24.com/fr/fr/visual
-
-    ```
+```
 
 4. Configure the good metric units for the french weewx skin:
 
 Part 1:Edit the file /etc/weewx/weewx.conf 
-Not sure, but you need to have 
+Not sure, but you need to have
+    ``` 
 target_unit = METRIC
 or
 target_unit = METRICWX
+```
  
 Part 2:Edit the file /etc/weewx/weewx.conf and replaces the lines:
 
+    ```
 [[[Units]]]
             [[[[Groups]]]]
                 group_altitude = meter
@@ -67,6 +68,7 @@ by
                 group_temperature = degree_C
                 group_degree_day = degree_C_day
                 group_speed = km_per_hour
+```
 
 6. Start weewx process:
 

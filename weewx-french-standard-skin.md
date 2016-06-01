@@ -26,7 +26,7 @@ chown root:root Standard
 
 3. Enable the weather radar picture (optionnal):
 
-```
+    ```
 cd Standard
 Edit the file skin.conf and uncomment the lines:
     # radar_img = http://37.59.123.0/sat/anim-msg-fr-vis.gif
@@ -37,6 +37,7 @@ Edit the file skin.conf and uncomment the lines:
 
 Part 1:Edit the file /etc/weewx/weewx.conf 
 Not sure, but you need to have
+
     ``` 
 target_unit = METRIC
 or

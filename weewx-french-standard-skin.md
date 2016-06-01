@@ -37,14 +37,14 @@ Edit the file skin.conf and uncomment the lines:
 
 Part 1:Edit the file /etc/weewx/weewx.conf 
 Not sure, but you need to have
-target_unit = METRIC
-or
-target_unit = METRICWX
+ target_unit = METRIC
+ or
+ target_unit = METRICWX
  
 Part 2:Edit the file /etc/weewx/weewx.conf and replaces the lines:
 
     ```
-[[[Units]]]
+        [[[Units]]]
             [[[[Groups]]]]
                 group_altitude = meter
                 group_speed2 = meter_per_second2
@@ -54,7 +54,9 @@ Part 2:Edit the file /etc/weewx/weewx.conf and replaces the lines:
                 group_temperature = degree_C
                 group_degree_day = degree_C_day
                 group_speed = meter_per_second
+```
 by
+    ```
 
         [[[Units]]]
             [[[[Groups]]]]

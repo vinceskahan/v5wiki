@@ -77,3 +77,6 @@ sudo /etc/init.d/weewx start
 ```
 
 7. Go to your weewx URL home page and check the home page.
+
+###Screenshots
+![weewx-french-screenshot-2](https://cloud.githubusercontent.com/assets/446723/15724786/f4bad8ec-2848-11e6-82b4-f9b9336e78bb.png)

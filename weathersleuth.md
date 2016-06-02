@@ -7,9 +7,9 @@ Designed for internet/network use only - it does not feature a display console.
 Wireless means wireless reception from the weather sensors. **It does NOT have WiFi.**  
 Connection to your router/network is via ethernet.  
 
-It is essentially a weather station to ethernet bridge, and shares commonality with some other brands although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets.  
+It is essentially a weather station to ethernet bridge, and shares commonality with some other models \(eg Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, or LaCross GW1000U\)  
 
-In the case of the Aercus WeatherSleuth, the firmware allows you to easily specify a custom location to send the data.  
+Although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets - In the case of the Aercus WeatherSleuth the firmware allows you to easily specify a custom location to send the data.  
 
 ### The weather station  
 

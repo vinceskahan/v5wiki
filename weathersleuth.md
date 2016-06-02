@@ -4,7 +4,7 @@
 **A couple of things to note about this weather station:**  
 
 Designed for internet/network use only - it does not feature a display console.  
-Wireless means wireless reception from the weather sensors. It does **not** have WiFi.  
+Wireless means wireless reception from the weather sensors. **It does NOT have WiFi.**  
 Connection to your router/network is via ethernet.  
 
 It is essentially a weather station to ethernet bridge, and shares commonality with some other brands although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets.  
@@ -31,7 +31,9 @@ The default set-up out of the box is feeding to Weather Underground, but this is
 Mine was shipped with Firmware 2.1.9, which is the latest.  
 
 Out of the box it comes set for DHCP, so you will have to dive into your router or use some network scanning software to find it.  
+
 Alternatively there is a Windows utility supplied on the tiny CD **\(don't slot that in your laptop or any other slot-loading drive, it will wreck the drive\)**  
+
 Since I'm a Mac & Linux user I didn't use the windows utility but instead logged into my router and found the device - fairly easy since the MAC/hardware address is printed on a label stuck on the bottom of the receiver.  
 
 In my case I set a Static DHCP lease in the router, but alternatively you may want to just set a static IP address within the weather station itself or just leave it DHCP, see Local Network config below.  
@@ -58,7 +60,7 @@ In the *Station ID* box enter something meaningful. This isn't required for WeeW
 
 In the *Password* box enter something this isn't a real password you use, I used "password" - again it has to be there, but it also gets included in the PHP data which is sent to WeeWX in plain text. If you have to paste the output for diagnostics anywhere, such as WeeWX forums, you don't want your most secret of secret password there for all to see!  
 
-**Station Settings**
+**Station Settings**  
 There are sections for indoor and outdoor sensor types. I enquired with Aercus about extra sensors but it seems there are none available yet.  
 Leave these at default :  
 *Indoor Sensor Type: WH25* \(options: WH25, None\)  
@@ -68,31 +70,35 @@ Leave these at default :
 *Time Zone setting:* as your time zone dictates  
 *Daylight savings \(DST\): auto*  
 
-**Units of measure** - these only seem to affect the weather station's own internal web display, and not those sent to WeeWX - I confirmed this by changing the setting and then observing the data it sends out (see below) but if anyone wants to test this and confirm it could be useful. In my case I changed the units of measure to match those I use in weewx, but I don't think this is needed.
+**Units of measure**  
+These only seem to affect the weather station's own internal web display, and not those sent to WeeWX - I confirmed this by changing the setting and then observing the data it sends out (see below) but if anyone wants to test this and confirm it could be useful. In my case I changed the units of measure to match those I use in weewx, but I don't think this is needed.  
 
-**Automatic Restart:**
-*System Reboot: YES*
-I have set this to yes. It says it will automatically restart the WeatherSleuth station if it can't reach the server for 20 minutes. I guess if it tries but can't reach the server \(in this case, WeeWX\) listening on the IP address & port you chose earlier then it will restart itself \(the WeatherSleuth station, not WeeWX or the computer its running on\) - looks like the timeout isn't configurable.
+**Automatic Restart:**  
+*System Reboot: YES*  
+I have set this to yes. It says it will automatically restart the WeatherSleuth station if it can't reach the server for 20 minutes. I guess if it tries but can't reach the server \(in this case, WeeWX\) listening on the IP address & port you chose earlier then it will restart itself \(the WeatherSleuth station, not WeeWX or the computer its running on\) - looks like the timeout isn't configurable.  
 
-In the next tab, you'll find **Live Data**
-Here is a handy hint I picked up somewhere: Test your sensors indoors before mounting the station outside only to find something isn't working.
-So one by one, check everything: blow on the wind speed cups fairly hard a few times and observe whether wind speed is measured in the Live Data tab.
-Do the same for wind direction - move the direction vane slowly around and check it shows the relevant wind directions \(in this case, shown in degrees\)
-Temperature indoor, outdoor, humidity etc should all be showing something. Put the indoor temperature somewhere warmer or colder - does it change?
-Rain: do this over a sink or small bowel. Tip some water into the rain sensor, when it empties \(hence the sink/bowel\) out of the bottom does anything show in the rain fields?
-You could also place it gently outdoor for 5 or 10 mins to check solar radiation, UV and UV Index are all measuring but at this point I decided I was good to go and mounted it on the pole.
+In the next tab, you'll find **Live Data**  
+Here is a handy hint I picked up somewhere: Test your sensors indoors before mounting the station outside only to find something isn't working.  
 
-In the final tab, **Calibration** I left at defaults and clicked the *Default* button, followed by *Apply* just to be sure. Again if anyone thinks something should be changed here please let me know!
+So one by one, check everything: blow on the wind speed cups fairly hard a few times and observe whether wind speed is measured in the Live Data tab.  
+Do the same for wind direction - move the direction vane slowly around and check it shows the relevant wind directions \(in this case, shown in degrees\)  
+Temperature indoor, outdoor, humidity etc should all be showing something. Put the indoor temperature somewhere warmer or colder - does it change?  
+Rain: do this over a sink or small bowel. Tip some water into the rain sensor, when it empties \(hence the sink/bowel\) out of the bottom does anything show in the rain fields?  
+You could also place it gently outdoor for 5 or 10 mins to check solar radiation, UV and UV Index are all measuring but at this point I decided I was good to go and mounted it on the pole.  
 
-### WeeWX
+In the final tab, **Calibration** I left at defaults and clicked the *Default* button, followed by *Apply* just to be sure.  
 
-Make sure your computer is receiving data from the weather station, as WeeWX will listen for data coming in on your chosen port, Open up a terminal and type:
+### WeeWX  
 
+Make sure your computer is receiving data from the weather station, as WeeWX will listen for data coming in on your chosen port, Open up a terminal and type:  
+
+```
 sudo nc -l 55
+```
 
-Where 55 is the port we entered earlier in the WeatherSleuth setup. If you chose a different port, use that.
+Where 55 is the port we entered earlier in the WeatherSleuth setup. If you chose a different port, use that.  
 
-Wait for a few minutes and some stuff should appear, here is an example from my setup: You will see the ID=weather&PASSWORD=password. Remember we entered that into the weather station earlier, this is why you don't want to use anything sensitive. The host 192.168.45.100 is the IP address of my computer running WeeWX, which we also specified earlier when we set up the WeatherSleuth. In you case, of course, it will be different.
+Wait for a few minutes and some stuff should appear, here is an example from my setup: You will see the ID=weather&PASSWORD=password. Remember we entered that into the weather station earlier, this is why you don't want to use anything sensitive. The host 192.168.45.100 is the IP address of my computer running WeeWX, which we also specified earlier when we set up the WeatherSleuth. In you case, of course, it will be different.  
 
 ```
 GET /weatherstation/updateweatherstation.php?ID=weather&PASSWORD=password&tempf=39.7&humidity=86&dewptf=36.0&windchillf=39.7&winddir=255&windspeedmph=0.00&windgustmph=0.00&rainin=0.00&dailyrainin=0.00&weeklyrainin=0.00&monthlyrainin=0.00&yearlyrainin=0.00&solarradiation=0.00&UV=0&indoortempf=67.8&indoorhumidity=46&baromin=30.08&lowbatt=0&dateutc=2016-4-30%2022:7:9&softwaretype=Weather%20logger%20V2.1.9&action=updateraw&realtime=1&rtfreq=5 HTTP/1.0
@@ -101,16 +107,16 @@ Host: 192.168.45.100
 Connection: Close
 ```
 
-If all looks well then install the interceptor driver in WeeWX:
+If all looks well then install the interceptor driver in WeeWX:  
 
-Instructions are here:  https://github.com/matthewwall/weewx-interceptor
+Instructions are here:  https://github.com/matthewwall/weewx-interceptor  
 
-Follow the instructions on downloading, installing, and configuring in weewx.
+Follow the instructions on downloading, installing, and configuring in weewx.  
 
-### weewx.conf
+### weewx.conf  
 
-Here is the relevant part of my weewx.conf
-I'm using the Python-installer version so mine is here:
+Here is the relevant part of my weewx.conf  
+I'm using the Python-installer version so mine is here:  
 
 ```
 /home/weewx/weewx.conf 
@@ -134,7 +140,7 @@ I'm using the Python-installer version so mine is here:
     driver = user.interceptor
 ```
 
-And in my case, I modify the ```[StdReport]``` section to reflect my own tastes, including wind speed in knots being a bit of a plane geek \(plane spotter!\)
+And in my case, I modify the ```[StdReport]``` section to reflect my own tastes, including wind speed in knots being a bit of a plane geek \(plane spotter!\)  
 
 ```
 [StdReport]
@@ -174,4 +180,4 @@ And in my case, I modify the ```[StdReport]``` section to reflect my own tastes,
 
 ```
 
-That should be about it. By default it seems to update weewx every 5 mins or so. I expect this is configurable should that be too much, too often, either in the Interceptor driver options and/or elsewhere within WeeWX.
+That should be about it. By default it seems to update weewx every 5 mins or so. I expect this is configurable should that be too much, too often, either in the Interceptor driver options and/or elsewhere within WeeWX.  

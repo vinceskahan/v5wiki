@@ -14,9 +14,12 @@ In the case of the Aercus WeatherSleuth, the firmware allows you to easily speci
 ### The weather station  
 
 Manufacturers website: http://www.aercusinstruments.com  
+
 Manufacturers website, direct link to the weather station: http://www.aercusinstruments.com/copy-of-aercus-instruments-weatherranger-professional-weather-station-with-wifi-and-real-time-internet-publishing  
+
 Purchasable in the UK from Greenfrog Scientific: http://www.greenfrogscientific.co.uk/aercus-instruments-weathersleuth  
-And Amazon UK (mine was, in fact, despatched from Greenfrog) http://www.aercusinstruments.com/copy-of-aercus-instruments-weatherranger-professional-weather-station-with-wifi-and-real-time-internet-publishing  
+
+And Amazon UK (mine was, in fact, despatched from Greenfrog) https://www.amazon.co.uk/Wireless-Weather-Station-WeatherSleuth®-Professional/dp/B00ZVFZUS6/ref=sr_1_4?ie=UTF8&qid=1464899462&sr=8-4&keywords=aercus+instruments  
 
 The outdoor array has the usual sensors (wind direction, wind speed, rain, temperature, humidity) + UV & Solar Radiation.  
 

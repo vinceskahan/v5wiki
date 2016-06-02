@@ -1,7 +1,8 @@
 ## Aercus Instruments WeatherSleuth
 ### WeeWX Setup using the Interceptor driver
 
-**A couple of things to note about this weather station:**
+**A couple of things to note about this weather station:**  
+
 Designed for internet/network use only - it does not feature a display console.
 Wireless means wireless reception from the weather sensors. It does **not** have WiFi.
 Connection to your router/network is via ethernet.

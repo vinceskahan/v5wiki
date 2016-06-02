@@ -3,67 +3,70 @@
 
 **A couple of things to note about this weather station:**  
 
-Designed for internet/network use only - it does not feature a display console.
-Wireless means wireless reception from the weather sensors. It does **not** have WiFi.
-Connection to your router/network is via ethernet.
+Designed for internet/network use only - it does not feature a display console.  
+Wireless means wireless reception from the weather sensors. It does **not** have WiFi.  
+Connection to your router/network is via ethernet.  
 
-It is essentially a weather station to ethernet bridge, and shares commonality with some other brands although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets.
+It is essentially a weather station to ethernet bridge, and shares commonality with some other brands although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets.  
 
-In the case of the Aercus WeatherSleuth, the firmware allows you to easily specify a custom location to send the data.
+In the case of the Aercus WeatherSleuth, the firmware allows you to easily specify a custom location to send the data.  
 
-### The weather station
+### The weather station  
 
-Manufacturers website: http://www.aercusinstruments.com
-Purchasable in the UK from Greenfrog Scientific: http://www.greenfrogscientific.co.uk/aercus-instruments-weathersleuth/
-And Amazon UK (mine was despatched from Greenfrog) http://www.aercusinstruments.com/copy-of-aercus-instruments-weatherranger-professional-weather-station-with-wifi-and-real-time-internet-publishing/
+Manufacturers website: http://www.aercusinstruments.com  
+Purchasable in the UK from Greenfrog Scientific: http://www.greenfrogscientific.co.uk/aercus-instruments-weathersleuth  
+And Amazon UK (mine was despatched from Greenfrog) http://www.aercusinstruments.com/copy-of-aercus-instruments-weatherranger-professional-weather-station-with-wifi-and-real-time-internet-publishing  
 
-The outdoor array has the usual sensors (wind direction, wind speed, rain, temperature, humidity) + UV & Solar Radiation.
-Meanwhile the indoor sensor has temperature, pressure & humidity - indoor humidity is not recorded by WeeWX as a default but can be added to the reports if desired.
+The outdoor array has the usual sensors (wind direction, wind speed, rain, temperature, humidity) + UV & Solar Radiation.  
+
+Meanwhile the indoor sensor has temperature, pressure & humidity - indoor humidity is not recorded by WeeWX as a default but can be added to the reports if desired.  
 
 The receiver base station is a small box which has an aerial for receiving the data from the outdoor & indoor sensors, an RJ-45 ethernet port & a power socket for the supplied 5vDC supply.
-It does not feature WiFi, it must be physically plugged into using an ethernet cable, which is also supplied.
+It does not feature WiFi, it must be physically plugged into using an ethernet cable, which is also supplied.  
 
-There are a variety of status lights on the receiver, which incidentally is tiny - fits in the palm of your hand - and since it doesn't display any weather info \(there is no console display\) it makes it ideal if you just want to feed data into WeeWX and not bother with USB cables from desktop weather stations etc.
+There are a variety of status lights on the receiver, which incidentally is tiny - fits in the palm of your hand - and since it doesn't display any weather info \(there is no console display\) it makes it ideal if you just want to feed data into WeeWX and not bother with USB cables from desktop weather stations etc.  
 
-The default set-up out of the box is feeding to Weather Underground, but this is one of the IP-based systems where the data feed destination can be easily changed.
+The default set-up out of the box is feeding to Weather Underground, but this is one of the IP-based systems where the data feed destination can be easily changed.  
 
-Mine was shipped with Firmware 2.1.9, which is the latest.
+Mine was shipped with Firmware 2.1.9, which is the latest.  
 
-Out of the box it comes set for DHCP, so you will have to dive into your router or use some network scanning software to find it.
-Alternatively there is a Windows utility supplied on the tiny CD **\(don't slot that in your laptop or any other slot-loading drive, it will wreck the drive\)**
-Since I'm a Mac & Linux user I didn't use the windows utility but instead logged into my router and found the device - fairly easy since the MAC/hardware address is printed on a label stuck on the bottom of the receiver.
+Out of the box it comes set for DHCP, so you will have to dive into your router or use some network scanning software to find it.  
+Alternatively there is a Windows utility supplied on the tiny CD **\(don't slot that in your laptop or any other slot-loading drive, it will wreck the drive\)**  
+Since I'm a Mac & Linux user I didn't use the windows utility but instead logged into my router and found the device - fairly easy since the MAC/hardware address is printed on a label stuck on the bottom of the receiver.  
 
-In my case I set a Static DHCP lease in the router, but alternatively you may want to just set a static IP address within the weather station itself or just leave it DHCP, see Local Network config below.
-Once you have the IP, open up a web browser and head to the weather station's IP address config page:
+In my case I set a Static DHCP lease in the router, but alternatively you may want to just set a static IP address within the weather station itself or just leave it DHCP, see Local Network config below.  
+Once you have the IP, open up a web browser and head to the weather station's IP address config page:  
 
-http://ip.address.of.the.weathersleuth.
-eg: http://192.168.1.124  if thats the address your weather station has picked up from your router.
+http://ip.address.of.the.weathersleuth.  
+eg: http://192.168.1.124  if thats the address your weather station has picked up from your router.  
 
-There you'll see the config tabs, the first one speaks for itself **Local Network** - DHCP or manual IP, plus fields for the router IP, DNS, Subnet etc. If you're happy to find it on DHCP if & when you need to change anything I don't see any reason not to leave it set to DHCP, as it pushes data to weewx and not the other way around.
+There you'll see the config tabs, the first one speaks for itself **Local Network** - DHCP or manual IP, plus fields for the router IP, DNS, Subnet etc. If you're happy to find it on DHCP if & when you need to change anything I don't see any reason not to leave it set to DHCP, as it pushes data to weewx and not the other way around.  
 
 Next tab is for the **Weather Network**, which is where we will set it up to feed to your weewx system.
-From the Remote Server pull-down menu, choose *Customized*
+From the Remote Server pull-down menu, choose *Customized*  
 
-In the *Server/Hostname* box, type in the IP address of the computer you're running WeeWX on. In my case, its 192.168.45.100
-I don't know, and haven't tried, whether you could supply a local named address such as "weewx.local" if your computer is called that. The only reason you might want to do this is if the computer running WeeWX is using DHCP - I run WeeWX on a Ubuntu server which also does other stuff, so its on a static address on my network.
+In the *Server/Hostname* box, type in the IP address of the computer you're running WeeWX on. In my case, its 192.168.45.100  
+
+I don't know, and haven't tried, whether you could supply a local named address such as "weewx.local" if your computer is called that. The only reason you might want to do this is if the computer running WeeWX is using DHCP - I run WeeWX on a Ubuntu server which also does other stuff, so its on a static address on my network.  
 
 In the *Server Port* box, specify a unique TCP/IP port that WeeWX or other software on the computer isn't using. Try not to use standard ports even if you're not using them right now - you may in the future.
-I chose 55, which might be a mistake further down the line, but it can always be changed - with the relevant change in weewx.conf to match.
+I chose 55, which might be a mistake further down the line, but it can always be changed - with the relevant change in weewx.conf to match.  
 
-In the *Server Type* pull-down menu, choose *PHP* - note that the other options, JSP & ASP, didn't seem to provide accurate data in my case.
-In the *Station ID* box enter something meaningful. This isn't required for WeeWX, but the weather station needs something there. I used: "weather"
+In the *Server Type* pull-down menu, choose *PHP* - note that the other options, JSP & ASP, didn't seem to provide accurate data in my case.  
 
-In the *Password* box enter something this isn't a real password you use, I used "password" - again it has to be there, but it also gets included in the PHP data which is sent to WeeWX in plain text. If you have to paste the output for diagnostics anywhere, such as WeeWX forums, you don't want your most secret of secret password there for all to see!
+In the *Station ID* box enter something meaningful. This isn't required for WeeWX, but the weather station needs something there. I used: "weather"  
+
+In the *Password* box enter something this isn't a real password you use, I used "password" - again it has to be there, but it also gets included in the PHP data which is sent to WeeWX in plain text. If you have to paste the output for diagnostics anywhere, such as WeeWX forums, you don't want your most secret of secret password there for all to see!  
 
 **Station Settings**
-There are sections for indoor and outdoor sensor types. I enquired with Aercus about extra sensors but it seems there are none available yet.
-Leave these at default :
-*Indoor Sensor Type: WH25* \(options: WH25, None\)
-*Outdoor Sensor1 Type: WH24* \(options: WH24, WH7, None\)
-*Outdoor Sensor2 Type: None* \(options: WH26, None\)
-*Wireless Receive Frequency: 434* \(not changeable and greyed out, refers to the wireless sensor frequency: 434MHz\)
-*Time Zone setting:* as your time zone dictates
-*Daylight savings \(DST\): auto*
+There are sections for indoor and outdoor sensor types. I enquired with Aercus about extra sensors but it seems there are none available yet.  
+Leave these at default :  
+*Indoor Sensor Type: WH25* \(options: WH25, None\)  
+*Outdoor Sensor1 Type: WH24* \(options: WH24, WH7, None\)  
+*Outdoor Sensor2 Type: None* \(options: WH26, None\)  
+*Wireless Receive Frequency: 434* \(not changeable and greyed out, refers to the wireless sensor frequency: 434MHz\)  
+*Time Zone setting:* as your time zone dictates  
+*Daylight savings \(DST\): auto*  
 
 **Units of measure** - these only seem to affect the weather station's own internal web display, and not those sent to WeeWX - I confirmed this by changing the setting and then observing the data it sends out (see below) but if anyone wants to test this and confirm it could be useful. In my case I changed the units of measure to match those I use in weewx, but I don't think this is needed.
 

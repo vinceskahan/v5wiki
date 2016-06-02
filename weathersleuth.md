@@ -117,7 +117,7 @@ Instructions are here:  https://github.com/matthewwall/weewx-interceptor
 
 Follow the instructions on downloading, installing, and configuring in weewx.  
 
-### weewx.conf  
+#### weewx.conf  
 
 Here is the relevant part of my weewx.conf  
 I'm using the Python-installer version so mine is here:  

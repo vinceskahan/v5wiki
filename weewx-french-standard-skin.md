@@ -18,28 +18,26 @@ sudo /etc/init.d/weewx stop
     ```
 cd /etc/weewx/skins/
 wget https://github.com/weewx/weewx/files/293536/Standard-FR-v1.0.tar.gz
-mv Standard Stardard-ORI
 tar xzvf Standard-FR-v1.0.tar.gz
-mv Standard-FR Standard
-chown root:root Standard
+chown root:root Standard-FR
 ```
 
 3. Enable the weather radar picture (optionnal):
 
     ```
-cd Standard
+cd Standard-FR
 Edit the file skin.conf and uncomment the lines:
     # radar_img = http://37.59.123.0/sat/anim-msg-fr-vis.gif
     # radar_url = http://fr.sat24.com/fr/fr/visual
 ```
 
-4. Configure the good metric units for the french weewx skin:
+4. Configure the good skin and metric units for the french weewx skin:
 
-Part 1:Edit the file /etc/weewx/weewx.conf 
-Not sure, but you need to have
- target_unit = METRIC
- or
- target_unit = METRICWX
+Part 1:Edit the file /etc/weewx/weewx.conf, and in the "StandardReport" part, update the parameter
+
+ skin = Standard <BR>
+by <BR>
+ skin = Standard-FR
  
 Part 2:Edit the file /etc/weewx/weewx.conf and replaces the lines:
 

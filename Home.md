@@ -18,7 +18,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 * [How to configure WeeWX to run under systemd](systemd)
 * [How to take control of your Observer (Fine Offset HP1000/WH2600)](observer)
-* [How to get your Aercus WeatherSleuth talking to WeeWX] (weathersleuth)
+* [How to get your Aercus WeatherSleuth (Observer) talking to WeeWX] (weathersleuth)
 * [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
 * [Manage extensions](extensions)
 * [Put log messages from WeeWX into a separate file](logging)

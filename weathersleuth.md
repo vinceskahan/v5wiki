@@ -32,7 +32,7 @@ There are a variety of status lights on the receiver, which incidentally is tiny
 
 The default set-up out of the box is feeding to Weather Underground, but this is one of the IP-based systems where the data feed destination can be easily changed.  
 
-Mine was shipped with Firmware 2.1.9, which is the latest.  
+Mine was shipped with Firmware 2.1.9, which is the latest as of May 2016.  
 
 Out of the box it comes set for DHCP, so you will have to dive into your router or use some network scanning software to find it.  
 

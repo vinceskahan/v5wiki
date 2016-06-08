@@ -9,7 +9,7 @@ Connection to your router/network is via ethernet.
 
 It is essentially a weather station to ethernet bridge, and shares commonality with some other models \(eg Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, or LaCross GW1000U\)  
 
-Although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets - in the case of the Aercus WeatherSleuth the firmware allows you to easily specify a custom location to send the data. See also (observer)
+Although it seems the firmware varies across various brands & models as to how easy or difficult it is to integrate with WeeWX - accomplished by changing the default upload site from \(usually\) Weather Underground or capturing data packets - in the case of the Aercus WeatherSleuth the firmware allows you to easily specify a custom location to send the data. See https://github.com/weewx/weewx/wiki/observer for more info on how different Observer stations can work.
 
 ### The weather station  
 

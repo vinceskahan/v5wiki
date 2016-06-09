@@ -60,3 +60,11 @@ HTTP Proxy.  Install an HTTP proxy so that any HTTP traffic leaving your network
 Packet Capture.  Run `tcpdump`, `ngrep`, or similar utility to capture all traffic from the console or bridge, and redirect it to the computer running weewx.
 
 Detailed instructions for DNS, Proxy, and Packet Capture are included in the weewx-interceptor <a href="https://github.com/matthewwall/weewx-interceptor">readme</a>.
+
+### References
+
+dkm created the first weewx driver for these stations (https://github.com/dkmcode/weewx-observerip).  That driver has two modes: screen scraping and socket.  In screen scraping mode, the driver grabs the web page from the station then parses it to get the weather data.  In socket mode, the driver listens for connections from the station or a packet sniffer relaying connections from the station.  mwall made minor changes to the dkm driver to handle different firmware versions (https://github.com/matthewwall/weewx-observerip).
+
+Pat O'Brien created a screen scraping driver, then a socket-based driver.  His experiences are documented at http://obrienlabs.net/redirecting-weather-station-data-from-observerip/ and the code for his 'SocketLogger' driver is at https://github.com/poblabs/weewx-socketlogger
+
+mwall created the weewx-interceptor driver, which supports not only the Fine Offset stations but also hardware from Oregon Scientific, Lacrosse, and Acurite that use a similar bridge configuration (https://github.com/matthewwall/weewx-interceptor).  This driver uses the socket approach - the driver listens for connections from the weather station bridge or console.

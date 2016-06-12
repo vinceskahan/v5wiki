@@ -90,7 +90,8 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)
 * <img src="http://weathercloud.net/favicon.ico" width='16'/> [weathercloud](weathercloud)
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
-* <img src="http://windfinder.com/favicon.ico"/ width='16'> [windfinder](windfinder)
+* <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
+* <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
 * <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Obsolete entries

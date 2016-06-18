@@ -4,7 +4,7 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.13.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
 
 ### How to Install
 
@@ -41,6 +41,14 @@ sudo /etc/init.d/weewx start
 _append_units_label_ - Indicates whether to append the units abbreviation to the variable name.  For example, `outTemp` would be called `outTemp_F` and `pressure` would be called `pressure_mbar`.  Default is `True`.
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
+
+_binding_ - Indicates whether to bind to LOOP packets ('loop') or archive records ('archive').  Default is 'archive'.
+
+_topic_ - The MQTT topic under which to publish.  Default is 'weather'.
+
+_aggregation_ - How the observations should be grouped.  Options are `individual` and/or `aggregate`.  When `individual` is specified, each observation is sent as a separate MQTT message.  When `aggregate` is specified, all observations are sent in a single, JSON-formatted message.  Default is `individual, aggregate`, i.e., send a message for each observation as well as an aggregate message with all observations.
+
+_retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
 ### Upgrading from weewx 2.6-2.7
 

@@ -6,7 +6,7 @@ This is an extension to weewx that uploads weather data to wetter.com.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.3.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.5.tgz
 
 ### How to Install
 
@@ -21,9 +21,8 @@ wee_extension --install weewx-wetter-x.y.tgz
     ```
     [StdRESTful]
         [[Wetter]]
-            # User-Id/Kennwort für die automatische Meldung von Wetterdaten, nicht zum login wetter.com
-            username = USERNAME
-            password = PASSWORD
+            username = STATION ID                                                   
+            password = STATION PASSWORD
 ```
 
 3.  Restart weewx

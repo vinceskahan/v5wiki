@@ -83,6 +83,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
 * <img src="http://openweathermap.org/themes/demo/assets/vendor/owm/images/OWM_logo32_32.png" width='16'/> [openweathermap](openweathermap)
+* <img src="https://prometheus.io/assets/favicons/favicon.ico" width='16'/> [prometheus](https://github.com/sulrich/weewx-prompush)
 * <img src="https://pusher.com/images/favicon.ico" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
 * <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](seg)
 * <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak)

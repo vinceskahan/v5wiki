@@ -1,9 +1,10 @@
 This skin is a french translation for the weewx 3.5.0 default Standard skin that is available with weewx by default.
+Only add a new graph/pictures for humidity inside and outside because this information is needed for farming. 
 This skin should work with weewx 3.3.0 or upper.
 
 ###Download
 
-https://github.com/weewx/weewx/files/293536/Standard-FR-v1.0.tar.gz
+https://github.com/weewx/weewx/files/338169/Standard-FR-v1.0.1.tar.gz
 
 ###Installation
 
@@ -17,8 +18,8 @@ sudo /etc/init.d/weewx stop
 
     ```
 cd /etc/weewx/skins/
-wget https://github.com/weewx/weewx/files/293536/Standard-FR-v1.0.tar.gz
-tar xzvf Standard-FR-v1.0.tar.gz
+wget https://github.com/weewx/weewx/files/293536/Standard-FR-v1.0.1.tar.gz
+tar xzvf Standard-FR-v1.0.1.tar.gz
 chown root:root Standard-FR
 ```
 
@@ -26,9 +27,13 @@ chown root:root Standard-FR
 
     ```
 cd Standard-FR
-Edit the file skin.conf and uncomment the lines:
+By default cloud satellite pictures from meteo60.fr are enabled.
+If you want cloud satellite pictures from sat24.com, edit the file skin.conf and uncomment the lines:
     # radar_img = http://37.59.123.0/sat/anim-msg-fr-vis.gif
     # radar_url = http://fr.sat24.com/fr/fr/visual
+and comment the lines :
+    radar_img = http://www.meteo60.fr/satellites/animation-satellite-visible-france.gif
+    radar_url = http://www.meteo60.fr/sat_vis.php
 ```
 
 4. Configure the good skin and metric units for the french weewx skin:

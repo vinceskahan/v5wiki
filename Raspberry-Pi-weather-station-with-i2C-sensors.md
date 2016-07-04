@@ -31,3 +31,6 @@ The following link will cover multiple configs, not all are required and have be
 
 ###Weewx config#
 Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)
+
+###Python scripts required for installation of i2C sensors#
+

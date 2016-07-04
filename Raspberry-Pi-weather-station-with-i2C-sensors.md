@@ -29,3 +29,5 @@ My configuration includes RTC, external HDD (Boot from SD card fully run on the 
 The following link will cover multiple configs, not all are required and have been in some form covered elsewhere. This is the config I now use. I include it here as it brings together most things I have needed on several installs on the Pi.
 [Pi configuration](https://goo.gl/9iFNgQ)
 
+###Weewx config#
+Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)

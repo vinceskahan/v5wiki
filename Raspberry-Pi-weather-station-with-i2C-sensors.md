@@ -10,8 +10,7 @@ The following will describe a weather station utilising i2C sensors for (tempera
 ####FARS (my variation of a design found on the web)#
 ####i2C sensors and i2C range extenders#
 ######Range Extenders P82B715#
-I have two runs (as shown on the block diagram) and with these extenders I have no problems. I saw one report of            
-50 metre cabling in use. I have had no problems with my configuration. The termination requirements etc will be    
+I have two runs (as shown on the block diagram) and with these extenders I have no problems. I saw one report of 50 metre cabling in use. I have had no problems with my configuration. The termination requirements etc will be    
 detailed on the schematic.
 ######Adafruit Sensiron SHT31-D Temperature & Humidity sensor breakout board#
 ######Adafruit ADS1115 16-bit ADC - 4 channel breakout board#

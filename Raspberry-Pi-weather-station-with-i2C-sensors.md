@@ -13,7 +13,16 @@ The following will describe a weather station utilising i2C sensors for (tempera
 I have two runs (as shown on the block diagram) and with these extenders I have no problems. I saw one report of            
 50 metre cabling in use. I have had no problems with my configuration. The termination requirements etc will be    
 detailed on the schematic.
-
+######Adafruit Sensiron SHT31-D Temperature & Humidity sensor breakout board#
+######Adafruit ADS1115 16-bit ADC - 4 channel breakout board#
+######Adafruit BMP280 i2C Barometric Pressure and temperature breakout board#
+######Adafruit TSL2591 High Dynamic range light sensor#
+######Adafruit SI1145 Digital UV index#
+######Sandbox i2C DS1307 RTC module#
+######i2C Bi-Directional level converter#
+####Other sensors#
+######Davis Anemometer#
+######Rainwise one-wire rain bucket#
 
 
 

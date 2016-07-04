@@ -24,5 +24,6 @@ detailed on the schematic.
 ######Davis Anemometer#
 ######Rainwise one-wire rain bucket#
 
+My configuration includes RTC, external HDD (Boot from SD card fully run on the HDD), Temp RAM disk for logging of data, weewx 3.5, forecast module, MySQL DB with replication running to backup DB to a QNAP NAS in almost real time. This replication procedure allows for loss and then restarting of NAS...the DB backup will automatically get data from its last record to the present time.
 
 

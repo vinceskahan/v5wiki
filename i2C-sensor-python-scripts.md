@@ -2,3 +2,4 @@
 ######[sht31no2.py address #45](https://goo.gl/aYgAqz)#
 ######[BMP280.py address #77](https://goo.gl/Azso95)#
 ######[SI1145.py address #60](https://goo.gl/YTI9wA)#
+######[tsl2591.py address #29](https://goo.gl/VjOmpS)#

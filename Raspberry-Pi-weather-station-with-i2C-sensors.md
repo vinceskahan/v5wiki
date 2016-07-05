@@ -33,7 +33,8 @@ The following link will cover multiple configs, not all are required and have be
 Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)
 
 ###Python scripts required for installation of i2C sensors#
-######sht31.py#
+######sht31.py i2C address 44#
+[sht31.py](https://goo.gl/xpkXft)
 
 This link has copies of my working scripts[i2C scripts](https://goo.gl/WCN0Iw)
 

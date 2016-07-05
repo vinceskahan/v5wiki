@@ -34,9 +34,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 ###Python scripts required for installation of i2C sensors#
 [needed scripts](https://goo.gl/WCN0Iw)
-
-######sht31.py i2C address 44#
-[sht31.py](https://goo.gl/xpkXft)
+[sht31.py address #44](https://goo.gl/xpkXft)
 
 
 

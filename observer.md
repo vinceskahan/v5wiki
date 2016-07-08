@@ -22,6 +22,8 @@ Aercus models include:
 * WeatherSleuth - uploads via bridge (same as WH2600)
 * WeatherRanger - uploads via console wifi (same as HP1000)
 
+The station is also sold as the Maplin N23DQ.
+
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 
 ### Configure the console to send to weewx

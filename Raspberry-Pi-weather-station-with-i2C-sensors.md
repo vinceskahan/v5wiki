@@ -1,4 +1,6 @@
 #Overview#
+This is a work in progress it will include some construction photos and graphical comparison where I am able of my existing WMR200A and this system.
+
 The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation..UV and solar not yet active), rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit.
 [Link to my station](http://goo.gl/PeXNlN)
 
@@ -40,7 +42,6 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 ###Schematics#
 *[i2C BUS](https://goo.gl/mYEB5E)
-
 
 
 

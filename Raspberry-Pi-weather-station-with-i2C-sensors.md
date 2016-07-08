@@ -5,7 +5,7 @@ The following will describe a weather station utilising i2C sensors for (tempera
 [Link to my station](http://goo.gl/PeXNlN)
 
 ##Overall block diagram#
-[Link to block diagram](https://goo.gl/6ffgOl)
+[Link to block diagram](https://goo.gl/kFyBKv)
 
 
 ##Equipment used and general information#
@@ -42,7 +42,6 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 ###Schematics#
 *[i2C BUS](https://goo.gl/mYEB5E)
-
 
 
 

@@ -32,6 +32,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Using one-wire sensors with WeeWX](Onewire sensors)
+* [Raspberry Pi weather station with i2C sensors(Raspberry Pi weather station with i2C sensors)
 
 ### Extensions to WeeWX
 

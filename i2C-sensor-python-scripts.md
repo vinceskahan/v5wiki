@@ -8,3 +8,4 @@
 ######[si1145test.py](https://goo.gl/zuTXIl)#
 ######[tsl2591.py address #29](https://goo.gl/VjOmpS)#
 ######[tsltest.py](https://goo.gl/YG5EIN)#
+######[FARS fan control and feedback](https://goo.gl/s4lYzv)

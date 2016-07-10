@@ -38,7 +38,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 ###Python scripts required for installation of i2C sensors#
 *[prerequisites and ADS1115 python script](https://goo.gl/WCN0Iw)
 
-*[Python scripts for i2C sensors](i2C sensor and other python scripts)
+*[Python and service scripts for i2C sensors FARS control and Weewx driver](i2C sensor and other python scripts)
 
 ###Schematics#
 *[i2C BUS](https://goo.gl/mYEB5E)

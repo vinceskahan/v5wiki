@@ -42,6 +42,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 ###Schematics#
 *[i2C BUS](https://goo.gl/mYEB5E)
+
 *[wind speed and direction](https://goo.gl/OwyN5f)
 
 

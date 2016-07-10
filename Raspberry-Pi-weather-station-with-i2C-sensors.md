@@ -45,4 +45,5 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 *[wind speed and direction](https://goo.gl/OwyN5f)
 
+*[FARS control & fan rotation FB & RTC](https://goo.gl/TOD4Kn)
 

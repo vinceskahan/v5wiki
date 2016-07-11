@@ -35,10 +35,12 @@ The following link will cover multiple configs, not all are required and have be
 ###Weewx config#
 Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)
 
-###Python scripts required for installation of i2C sensors#
+###Python scripts required for installation of i2C sensors and required services#
 *[prerequisites and ADS1115 python script](https://goo.gl/WCN0Iw)
 
 *[Python and service scripts for i2C sensors FARS control and Weewx driver](i2C sensor and other python scripts)
+
+*[Fan control and sensor data collection services](https://goo.gl/LiJx85)
 
 ###Schematics#
 *[i2C BUS](https://goo.gl/mYEB5E)
@@ -46,4 +48,3 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 *[wind speed and direction](https://goo.gl/OwyN5f)
 
 *[FARS control & fan rotation FB & RTC](https://goo.gl/TOD4Kn)
-

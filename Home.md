@@ -25,6 +25,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Run WeeWX as a non-root user](Run as a non root user)
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
+* [Run WeeWX on a Raspberry Pi with a read-only file system](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)

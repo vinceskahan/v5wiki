@@ -4,7 +4,7 @@ logwatch is a system for summarizing log files.  It matches patterns in log mess
 
 There are three files required to make logwatch understand weewx (or any new service).  The first is the service configuration file (services/weewx.conf), the second is the logfile configuration file (logfiles/weewx.conf), and the third is the script that generates the weewx report (scripts/services/weewx).
 
-To configure logwatch to recognize weewx, do the following.  (These instructions assume that weewx was installed from debian package.  If you installed using setup.py, the files will be located in /home/weewx/util instead of /etc/weewx.  In either case, you can copy or symlink the files.)
+To configure logwatch to recognize weewx, do the following.  (These instructions assume that weewx was installed from debian package.  If you installed using setup.py, the weewx logwatch files will be located in /home/weewx/util/logwatch instead of /etc/weewx.  In either case, you can copy or symlink the files.)
 
 1. install logwatch
     ```

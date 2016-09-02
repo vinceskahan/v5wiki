@@ -8,7 +8,7 @@ The ComputerMonitor (cmon) is a weewx service that collects CPU load, memory use
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cmon-0.13.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cmon-0.14.tgz
 
 ### How to Install
 

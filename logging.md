@@ -18,7 +18,7 @@ sudo /etc/init.d/rsyslog start
 ```
 
 The file order matters in rsyslog.d.  If you find that the weewx log messages are going to both the weewx log file and the syslog/messages log file, you might have to make the weewx.conf appear before the syslog.conf defaults.  For example,
-    ```
+```
 sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 ```
 

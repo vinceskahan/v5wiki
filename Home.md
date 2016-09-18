@@ -67,6 +67,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
+* [opsgenie - send Heartbeats and Alerts to cloud alerting service OpsGenie](opsgenie)
 
 #### Skins
 * [amphibian](amphibian)

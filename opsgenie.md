@@ -1,6 +1,6 @@
 ### OpsGenie Service
 
-The OpsGenie Service is an extension that enables the sending of Heartbeats and Alerts to the cloud alert service [OpsGenie](https://www.opsgenie.com). OpsGenie has a free version that allows plenty functionality to use standard Heartbeats and Alerts. If you need features like teams and escalations there are paid levels available. See [OpsGenie Pricing](https://www.opsgenie.com/pricing) - click on _See All Details_ to see what's included in the free version.
+The OpsGenie Service is an extension that enables the sending of Heartbeats and Alerts to the cloud alert service [OpsGenie](https://www.opsgenie.com). OpsGenie has a __free__ version that allows plenty functionality to use standard Heartbeats and Alerts. If you need features like teams and escalations there are paid levels available. See [OpsGenie Pricing](https://www.opsgenie.com/pricing) - click on _See All Details_ to see what's included in the free version.
 
 #### Heartbeats
 You can send a regular Heartbeat to OpsGenie to let it know your Weewx process is alive and has not crashed, or that your server has not crashed, or your internet has gone down and your server may not be sending updates online. The default Heartbeat interval is 5 minutes. Use this with an OpsGenie Heartbeat timeout set to 10 minutes. See [OpsGenie Heartbeats](https://www.opsgenie.com/docs/miscellaneous/heartbeat-monitoring) _Note: Heartbeats+ is a paid feature but is not required for the basic Heartbeat functionality_
@@ -52,4 +52,4 @@ See [readme.txt](https://raw.githubusercontent.com/dcapslock/Weewx-OpsGenie/mast
 
 
 
-**Current Version v0.1**
+__Current Version v0.1__

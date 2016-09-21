@@ -42,9 +42,11 @@ _append_units_label_ - Indicates whether to append the units abbreviation to the
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
 
+_inputs_ - The name, units, and/or format can be customized for individual observations by listing them in a stanza called `inputs`.  Each stanza within the `inputs` stanza is the name of an observation.  Each observation stanza may include some or all of the keys `name`, `units`, and `format`.  If `name` is specified, that label will sent to EmonCMS for the observation.  If `units` is specified, the observation will be converted to those units before upload.  If `format` is specified, the observation will be converted to string using that format.
+
 ### Examples
 
-Use the _inputs_ to override name, units, and/or format for a specific observation.  For example, this configuration will use the METRIC unit system for all observations:
+This configuration will use the METRIC unit system for all observations, whether the database is METRIC, METRICWX, or US:
 
 ```
 [StdRESTful]
@@ -57,7 +59,7 @@ This configuration will specialize the units of outTemp and the units, format, a
 ```
 [StdRESTful]
     [[EmonCMS]]
-        unit_system = METRIC
+        unit_system = METRICWX
         [[[inputs]]]
             [[[[outTemp]]]]
                 units = degree_F

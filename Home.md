@@ -18,6 +18,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
+* [Colorize the UV index](Colored%20UV%20index)
 
 #### operating system configuration
 * [Run WeeWX as a non-root user](Run as a non root user)
@@ -30,10 +31,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 #### managing data
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
-
-#### skins and templates
-* [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
-* [Colored UV index](Colored%20UV%20index)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
@@ -85,6 +82,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://neoground.com/projects/weewx/) (sofaskin)
+* [MesoWX](https://bitbucket.org/lirpa/mesowx) (live weather feed)
 * [Responsive](responsive)
 * [simple](simple)
 * [Weewx French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)

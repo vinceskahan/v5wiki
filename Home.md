@@ -9,30 +9,38 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 [On what hardware do you run WeeWX?](hardware)
 
 ### HOWTO Pages
-* [Add a sensor to any weather station](add-sensor)
-* [Change from one driver to another](Change driver)
-* [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
-* [Colored UV index](Colored%20UV%20index)
-* [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
-* [Deal with FineOffset USB lockup](FineOffset USB lockup)
+* [Understanding paths](Understanding paths)
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
-* [How to configure WeeWX to run under systemd](systemd)
-* [How to take control of your Observer (Fine Offset HP1000/WH2600)](observer)
-* [How to get your Aercus WeatherSleuth (Observer) talking to WeeWX] (weathersleuth)
-* [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
+
 * [Manage extensions](extensions)
-* [Put log messages from WeeWX into a separate file](logging)
-* [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
-* [Run WeeWX as a non-root user](Run as a non root user)
-* [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
-* [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
+* [Change from one driver to another](Change driver)
+* [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
-* [Troubleshoot Pillow](Troubleshooting-Pillow)
-* [Understanding paths](Understanding paths)
-* [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
+
+* [Run WeeWX as a non-root user](Run as a non root user)
+* [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
+* [How to configure WeeWX to run under systemd](systemd)
+* [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
+* [Troubleshoot Pillow](Troubleshooting-Pillow)
+
+* [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
+* [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
+
+* [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
+* [Colored UV index](Colored%20UV%20index)
+
+* [Add a sensor to any weather station](add-sensor)
 * [Using one-wire sensors with WeeWX](Onewire sensors)
+
+* [Deal with FineOffset USB lockup](FineOffset USB lockup)
+
+* [How to take control of your Observer (Fine Offset HP1000/WH2600)](observer)
+* [How to get your Aercus WeatherSleuth (Observer) talking to WeeWX] (weathersleuth)
+
+* [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
+* [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
 
 ### Extensions to WeeWX

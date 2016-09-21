@@ -7,6 +7,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 ### Hardware
 [On what hardware do you run WeeWX?](hardware)
+[Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 
 ### HOWTO Pages
 * [What you should know about paths](Understanding paths)

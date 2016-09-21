@@ -28,7 +28,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 
-#### managing data
+#### data management
 * [Clean up old 'bad' data](Cleaning up old 'bad' data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 

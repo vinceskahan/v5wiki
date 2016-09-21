@@ -42,6 +42,8 @@ _append_units_label_ - Indicates whether to append the units abbreviation to the
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
 
+### Examples
+
 Use the _inputs_ to override name, units, and/or format for a specific observation.  For example, this configuration will use the METRIC unit system for all observations:
 
 ```

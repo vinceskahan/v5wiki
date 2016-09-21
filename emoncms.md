@@ -67,7 +67,7 @@ This configuration will specialize the units of outTemp and the units, format, a
                 name = inside_temperature
 ```
 
-The observation outTemp will be converted to degrees F and uploaded as outTemp_F.  The observation inTemp will be converted to degrees F and uploaded as inside_temperature with 3 decimal places of precision.  Since the unit_system is METRIC, other temperatures (if they exist) will use degrees C, for example extraTemp1 will be uploaded as extraTemp1_C.
+The observation `outTemp` will be converted to degrees F and uploaded as `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 3 decimal places of precision.  Since the `unit_system` is `METRIC`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be uploaded as `extraTemp1_C`.
 
 ### Upgrading from weewx 2.6-2.7
 

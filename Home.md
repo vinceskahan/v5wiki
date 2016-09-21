@@ -82,10 +82,10 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://neoground.com/projects/weewx/) (sofaskin)
+* [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [MesoWX](https://bitbucket.org/lirpa/mesowx) (live weather feed)
 * [Responsive](responsive)
 * [simple](simple)
-* [Weewx French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
 * [weewx-wd](WEEWX-WD)
 

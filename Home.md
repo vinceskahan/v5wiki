@@ -9,8 +9,8 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 [On what hardware do you run WeeWX?](hardware)
 
 ### HOWTO Pages
-* [Understanding paths](Understanding paths)
-* [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
+* [What you should know about paths](Understanding paths)
+* [What is the difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 
 #### weewx configuration
 * [Manage extensions](extensions)
@@ -24,20 +24,20 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX as a non-root user](Run as a non root user)
 * [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
-* [How to configure WeeWX to run under systemd](systemd)
+* [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 
 #### managing data
-* [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
+* [Clean up old 'bad' data](Cleaning up old 'bad' data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
-* [Using one-wire sensors with WeeWX](Onewire sensors)
+* [Use one-wire sensors with WeeWX](Onewire sensors)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
-* [How to take control of your Observer (Fine Offset HP1000/WH2600)](observer)
-* [How to get your Aercus WeatherSleuth (Observer) talking to WeeWX] (weathersleuth)
+* [Take control of your Observer (Fine Offset HP1000/WH2600)](observer)
+* [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
@@ -74,7 +74,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
-* [opsgenie - send Heartbeats and Alerts to cloud alerting service OpsGenie](opsgenie)
+* [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
 
 #### Skins
 * [amphibian](amphibian)

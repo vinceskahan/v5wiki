@@ -16,8 +16,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Manage extensions](extensions)
 * [Change from one driver to another](Change driver)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
-* [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
-* [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [Colorize the UV index](Colored%20UV%20index)
 
 #### operating system configuration
@@ -31,6 +29,8 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 #### data management
 * [Clean up old 'bad' data](Cleaning up old 'bad' data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
+* [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
+* [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)

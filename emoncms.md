@@ -42,6 +42,31 @@ _append_units_label_ - Indicates whether to append the units abbreviation to the
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
 
+Use the _inputs_ to override name, units, and/or format for a specific observation.  For example, this configuration will use the METRIC unit system for all observations:
+
+```
+[StdRESTful]
+    [[EmonCMS]]
+        unit_system = METRIC
+```
+
+This configuration will specialize the units of outTemp and the units, format, and name of inTemp:
+
+```
+[StdRESTful]
+    [[EmonCMS]]
+        unit_system = METRIC
+        [[[inputs]]]
+            [[[[outTemp]]]]
+                units = degree_F
+            [[[[inTemp]]]]
+                units = degree_F
+                format = %.3f
+                name = inside_temperature
+```
+
+The observation outTemp will be converted to degrees F and uploaded as outTemp_F.  The observation inTemp will be converted to degrees F and uploaded as inside_temperature with 3 decimal places of precision.  Since the unit_system is METRIC, other temperatures (if they exist) will use degrees C, for example extraTemp1 will be uploaded as extraTemp1_C.
+
 ### Upgrading from weewx 2.6-2.7
 
 Simply run the extension installer then restart weewx.  If your weewx.conf already contained a token, it should be remembered by the installer.

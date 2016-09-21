@@ -12,12 +12,14 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Understanding paths](Understanding paths)
 * [Difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 
+#### weewx configuration
 * [Manage extensions](extensions)
 * [Change from one driver to another](Change driver)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 
+#### operating system configuration
 * [Run WeeWX as a non-root user](Run as a non root user)
 * [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
@@ -25,20 +27,20 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 
+#### managing data
 * [Cleaning up old 'bad' data](Cleaning up old 'bad' data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 
+#### skins and templates
 * [Install MesoWX live weather feed](https://bitbucket.org/lirpa/mesowx)
 * [Colored UV index](Colored%20UV%20index)
 
+#### hardware
 * [Add a sensor to any weather station](add-sensor)
 * [Using one-wire sensors with WeeWX](Onewire sensors)
-
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
-
 * [How to take control of your Observer (Fine Offset HP1000/WH2600)](observer)
 * [How to get your Aercus WeatherSleuth (Observer) talking to WeeWX] (weathersleuth)
-
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)

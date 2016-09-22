@@ -10,24 +10,24 @@ This is a service for weewx that collects data from maxbotix sensors with the RS
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-maxbotix-0.1.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-maxbotix-0.4.tgz
 
 ### How to Install
 
-2.  Run the extension installer:
+1.  Run the extension installer:
 
     ```
 wee_extension --install weewx-maxbotix-x.y.tgz
 ```
 
-5.  Modify weewx.conf:
+2.  Modify weewx.conf:
 
     ```
     [Maxbotix]
         port = /dev/ttyUSB0
 ```
 
-6. Restart weewx
+3. Restart weewx
 
     ```
 sudo /etc/init.d/weewx stop

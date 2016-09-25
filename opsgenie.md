@@ -9,7 +9,7 @@ You can send a regular Heartbeat to OpsGenie to let it know your Weewx process i
 You can send an Alert based on any valid Python expression using Weewx LOOP packets. An example is that you can send an Alert based on when it starts raining so you can grab the washing in. Alerts can be sent via email and smartphone app (Free) or by SMS or Voice (Paid). [OpsGenie Alerts](https://www.opsgenie.com/docs/getting-started/overview)
 
 ### Download
-<https://github.com/dcapslock/Weewx-OpsGenie/releases/download/v0.1/Weewx-OpsGenie.tar.gz>
+<https://github.com/dcapslock/Weewx-OpsGenie/releases/download/v0.1.1/Weewx-OpsGenie.tar.gz>
 
 ### How to install
 
@@ -52,4 +52,4 @@ See [readme.txt](https://raw.githubusercontent.com/dcapslock/Weewx-OpsGenie/mast
 
 
 
-__Current Version v0.1__
+__Current Version v0.1.1__

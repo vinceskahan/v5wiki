@@ -107,7 +107,3 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
 * <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
-
-### Obsolete entries
-
-[Install on SheevaPlug](Notes%20on%20porting%20weewx%20to%20the%20SheevaPlug)

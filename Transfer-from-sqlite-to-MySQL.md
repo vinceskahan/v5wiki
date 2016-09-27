@@ -41,7 +41,7 @@ Weewx v3.0.0 or greater is required in order to use `wee_database` to transfer f
 
 The version of `wee_database` that includes the database transfer option was not included with weewx v3.2.1 and earlier. In this case, the latest version of `wee_database` can be downloaded from the weewx GitHub code repository:
 
-    $ wget -O wee_datbase https://raw.githubusercontent.com/weewx/weewx/master/bin/wee_database
+    $ wget -O wee_database https://raw.githubusercontent.com/weewx/weewx/master/bin/wee_database
 
 In order to use `wee_database` to transfer a database, data bindings for both the source and destination databases must exist in `weewx.conf`. As the source database will most likely be the archive database currently used by weewx, it is likely that only the destination database will require the addition of a data binding to `weewx.conf`. To add a data binding; edit `weewx.conf`, locate the `[DataBinding]` section and add a binding similar to the following:
 

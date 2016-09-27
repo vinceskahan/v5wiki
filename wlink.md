@@ -5,7 +5,7 @@ This is a driver that collects data from WeatherLink web sites.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wlink-0.9.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wlink-0.11.tgz
 
 ### How to Install
 

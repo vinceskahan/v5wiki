@@ -108,4 +108,4 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
 * <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
-* <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [Previmeteo](https://github.com/previmeteo/weewx-previmeteo)
+* <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)

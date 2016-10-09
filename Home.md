@@ -68,6 +68,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wlink - Collect data from weatherlink.com](wlink)
 
 #### Services
+* [aprs - Generate APRS-compliant weather packets](aprs)
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)

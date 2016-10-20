@@ -6,7 +6,7 @@ Running weewx on a Raspberry Pi has become very popular. You'll have to look els
 
 First, you simply must run NTP on the RPi. It is not possible to create a dependable data logging system without an accurate source of time.
 
-Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package `fake-hwclock`). The "fake clock" regularly records the time on the hard disk. When the RPi reboots after a power failure, it will read this time and simply resume from there. This time could be hours behind the real time, depending on how long the power was out. 
+Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package `fake-hwclock`). The "fake clock" regularly records the time on the hard disk. This time is then used to set the clock during the reboot after a power failure. Unfortunately, this time could be hours behind the real time, depending on how long the power was out. 
 
 Meanwhile, if you are running weewx as a daemon, weewx will also start up and try to run with this seriously out-of-date time. When it then stores something in the database, it will either be stored under a too-old timestamp, or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
 
@@ -63,7 +63,7 @@ $ sudo apt-get install ftp
 
 ###Use a good power supply###
 
-A lot of problems with the RPi seem to center around inadequate power supplies.  Many weather stations can demand a lot of current through their USB connection. Make sure your RPi can supply it, either by getting a good power supply (I use an [Innogear 1.5 A supply](http://www.amazon.com/gp/product/B00J3IB7A2/), which costs well under $10 USD from Amazon), or, alternatively, by using a powered USB hub.
+A lot of problems with the RPi seem to center around inadequate power supplies.  Many weather stations can demand a lot of current through their USB connection. Make sure your RPi can supply it, either by getting a good power supply, or, alternatively, by using a powered USB hub.  I use an [Innogear 1.5 A supply](http://www.amazon.com/gp/product/B00J3IB7A2/), which costs well under $10 USD from Amazon, but, unfortunately, it is not offered any more. This [Samsung charger](https://www.amazon.com/Samsung-Adapter-5-Feet-Charging-Cables/dp/B00CQS0S7E/ref=sr_1_1) is essentially similar.
         
 ###Run a lightweight web server###
 

@@ -20,13 +20,13 @@ echo "UPDATE archive SET windSpeed=NULL WHERE (windSpeed > 100);" | sqlite3 mydb
 echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 mydb.sdb
 ~~~~~
 
-Now you need to drop the daily summaries, which will also include these bad data. Use the tool `wee_config_database` to do this:
+Now you need to drop the daily summaries, which will also include these bad data. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this:
 
-    wee_config_database weewx.conf --drop-daily
+    wee_database weewx.conf --drop-daily
 
 The summaries will be rebuilt the next time weewx starts. As this can take a long time, you
 may want to do this explicitly:
 
-    wee_config_database weewx.conf --backfill-daily
+    wee_database weewx.conf --backfill-daily
 
 Finally, to avoid a problem in the future, be sure to set a range of acceptable values for service `StdQC`. See the section [StdQC](http://weewx.com/docs/usersguide.htm#StdQC) in the User's Guide for details on how to do this.

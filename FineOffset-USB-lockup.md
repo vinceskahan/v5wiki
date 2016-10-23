@@ -124,3 +124,26 @@ http://sandaysoft.com/forum/viewtopic.php?f=16&t=10510
 Description of the problem at the Cumulus forum:
 
 http://sandaysoft.com/forum/viewtopic.php?f=13&t=8870
+
+Another - somewhat more brutal - approach
+
+I built a watchdog timer (basically a 555 bistable with a short-me-out transistor that gets kicked every so often by a GPIO on the Pi. Can provide the circuit and Gerber files for a PCB to anyone that is interested. The watchdog period is about 5-10 minutes which gives the system time to boot up.
+
+I do not have batteries in the sensor module - run it off 3V. Basically I power the whole thing from a 12V wall wart that runs into two buckies - one giving 5V and the other 3V. So when I cycle the 12V I cycle everything.
+
+It would not be all that hard to make the watchdog cycle just the WS instead of everything.
+
+Anyway it all works with a couple of relatively simple programs - fired up at boot
+
+pat-wdog.py flicks a GPIO pin every couple of minutes to pat (reset) the watchdog.
+
+and a shell script ...
+
+while True
+    tail /var/log/syslog > logf
+    read-the-log.py which looks for the "I have gone" message
+      if it finds it then execute os.system ('sudo shutdown -h now')
+         shuts the pi down in a tidy way
+         a few minutes later the watchdog cycles the power.
+         No worries about interrupting anything like SD card writes etc because the Pi is asleep
+    sleep 120 seconds

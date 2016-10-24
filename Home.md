@@ -26,6 +26,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
+* [Web server configuration](webserver)
 
 #### data management
 * [Clean up old 'bad' data](Cleaning up old 'bad' data)

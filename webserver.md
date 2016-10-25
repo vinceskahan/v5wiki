@@ -70,12 +70,17 @@ sudo ln -s /home/weewx/public_html /var/www/html/weewx
 
 There have been changes to the location of HTML_ROOT and the web server document root.  The following table indicates where to find WeeWX reports and the web server document tree.
 
+### Location of HTML_ROOT
+
 - WeeWX 3.6+ setup.py /home/weewx/public_html
 - WeeWX 3.6+ DEB /var/www/html/weewx
 - WeeWX 3.6+ RPM /var/www/html/weewx
 - WeeWX <= 3.5 setup.py /home/weewx/public_html
 - WeeWX <= 3.5 DEB /var/www/weewx
 - WeeWX <= 3.5 RPM /var/www/html/weewx
+
+### Location of document root
+
 - Debian7 Apache /var/www
 - Debian7 nginx /usr/share/nginx/www
 - Debian8 Apache /var/www/html

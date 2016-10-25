@@ -69,7 +69,7 @@ The `HTML_ROOT` variable indicates where WeeWX should put its reports.  Specify 
     HTML_ROOT = /var/www/html/weewx
 ~~~~~
 
-    Note that you can specify a different `HTML_ROOT` for each report, if necessary.
+Note that you can specify a different `HTML_ROOT` for each report, if necessary.
 
 ### Create a symlink
 

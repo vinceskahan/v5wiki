@@ -2,14 +2,22 @@ WeeWX works with many different web servers, including Apache, nginx, and lightt
 
 If you install WeeWX from a DEB or RPM package on a system that has a functioning web server, the WeeWX reports should be visible at the path `http://hostname/weewx`
 
-If you cannot see the WeeWX reports, you must tell the web server where to find them.  There are a few strategies for doing this.  The following examples show how to make the URL `http://hostname/weewx` point to the `HTML_ROOT` directory `/home/weewx/public_html`
+If you cannot see the WeeWX reports, you must tell the web server where to find them.  There are a few strategies for doing this.
 
-1. Modify the web server configuration.  Each web server has a mechanism to alias a URL to a location on disk.  Use this mechanism to tell the web server where to find WeeWX reports.
+## Strategies
 
-    ***Apache 2.2***
+There are three basic strategies: modify the web server configuration, modify the weewx configuration, or create a symlink.
 
-    Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
-    ~~~~~
+The following examples show how to make the URL `http://hostname/weewx` point to the `HTML_ROOT` directory `/home/weewx/public_html`
+
+### Modify the web server configuration
+
+Each web server has a mechanism to alias a URL to a location on disk.  Use this mechanism to tell the web server where to find WeeWX reports.
+
+#### Apache 2.2
+
+Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
+~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
   Options FollowSymlinks
@@ -17,54 +25,58 @@ Alias /weewx /home/weewx/public_html
   Order allow,deny
   Allow from all
 </Directory>
-    ~~~~~
-    then restart apache.
+~~~~~
+then restart apache.
 
-    ***Apache 2.4***
+#### Apache 2.4
 
-    Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
-    ~~~~~
+Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
+~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
   Options FollowSymlinks
   AllowOverride None
   Require all granted
 </Directory>
-    ~~~~~
-    then restart apache.
+~~~~~
+then restart apache.
 
-    ***nginx***
+#### nginx
 
-    Modify the nginx configuration file /etc/nginx/sites-available with a new location stanza:
-    ~~~~~
+Modify the nginx configuration file /etc/nginx/sites-available with a new location stanza:
+~~~~~
 server {
   location /weewx {
     alias /home/weewx/public_html;
   }
 }
-    ~~~~~
-    then restart nginx.
+~~~~~
+then restart nginx.
 
-    ***lighttpd***
+#### lighttpd
 
-    ~~~~~
+~~~~~
 alias.url += ( "/weewx" => "/home/weewx/public_html" )
-    ~~~~~
+~~~~~
 
-2. Modify `HTML_ROOT` in the WeeWX configuration.  The `HTML_ROOT` variable indicates where WeeWX should put its reports.  Specify a different location in the [StdReport] section of the WeeWX configuration file (typically weewx.conf).  For example, this would put the WeeWX reports in `/var/www/html/weewx`, which is in the document root directory `/var/www/html` for many web servers:
+### Modify `HTML_ROOT` in the WeeWX configuration
 
-    ~~~~~
+The `HTML_ROOT` variable indicates where WeeWX should put its reports.  Specify a different location in the [StdReport] section of the WeeWX configuration file (typically weewx.conf).  For example, this would put the WeeWX reports in `/var/www/html/weewx`, which is in the document root directory `/var/www/html` for many web servers:
+
+~~~~~
 [StdReport]
     HTML_ROOT = /var/www/html/weewx
-    ~~~~~
+~~~~~
 
     Note that you can specify a different `HTML_ROOT` for each report, if necessary.
 
-3. Create a symlink.  With this approach, make a symlink in the web server directory tree to the WeeWX reports.  For example, this would create a symlink for a WeeWX installation installed using setup.py to the `weewx` directory in the standard document root directdory `/var/www/html`:
+### Create a symlink
 
-    ~~~~~
+With this approach, make a symlink in the web server directory tree to the WeeWX reports.  For example, this would create a symlink for a WeeWX installation installed using setup.py to the `weewx` directory in the standard document root directdory `/var/www/html`:
+
+~~~~~
 sudo ln -s /home/weewx/public_html /var/www/html/weewx
-    ~~~~~
+~~~~~
 
 ## Compatibility changes
 

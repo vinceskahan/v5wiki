@@ -8,6 +8,7 @@ If you cannot see the WeeWX reports, you must tell the web server where to find 
 
     ***Apache 2.2***
 
+    Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
     ~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
@@ -17,9 +18,11 @@ Alias /weewx /home/weewx/public_html
   Allow from all
 </Directory>
     ~~~~~
+    then restart apache.
 
     ***Apache 2.4***
 
+    Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
     ~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
@@ -28,9 +31,11 @@ Alias /weewx /home/weewx/public_html
   Require all granted
 </Directory>
     ~~~~~
+    then restart apache.
 
     ***nginx***
 
+    Modify the nginx configuration file /etc/nginx/sites-available with a new location stanza:
     ~~~~~
 server {
   location /weewx {
@@ -38,6 +43,7 @@ server {
   }
 }
     ~~~~~
+    then restart nginx.
 
     ***lighttpd***
 
@@ -52,7 +58,7 @@ alias.url += ( "/weewx" => "/home/weewx/public_html" )
     HTML_ROOT = /var/www/html/weewx
     ~~~~~
 
-Note that you can specify a different `HTML_ROOT` for each report, if necessary.
+    Note that you can specify a different `HTML_ROOT` for each report, if necessary.
 
 3. Create a symlink.  With this approach, make a symlink in the web server directory tree to the WeeWX reports.  For example, this would create a symlink for a WeeWX installation installed using setup.py to the `weewx` directory in the standard document root directdory `/var/www/html`:
 

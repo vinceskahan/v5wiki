@@ -43,9 +43,10 @@ then restart apache.
 
 #### nginx
 
-Modify the nginx configuration file /etc/nginx/sites-available with a new location stanza:
+Modify the nginx configuration file `/etc/nginx/sites-available` with a new location stanza:
 ~~~~~
 server {
+  ...
   location /weewx {
     alias /home/weewx/public_html;
   }

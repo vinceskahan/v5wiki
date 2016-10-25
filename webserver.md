@@ -1,8 +1,8 @@
 WeeWX works with many different web servers, including Apache, nginx, and lighttpd.
 
-If you install WeeWX from a DEB or RPM package on a system that has a functioning web server, the WeeWX reports should be visible at the path http://hostname/weewx
+If you install WeeWX from a DEB or RPM package on a system that has a functioning web server, the WeeWX reports should be visible at the path `http://hostname/weewx`
 
-If you cannot see the WeeWX reports, you must tell the web server where to find them.  There are a few strategies for doing this.  The following examples show how to make the URL http://hostname/weewx point to the HTML_ROOT directory /home/weewx/public_html
+If you cannot see the WeeWX reports, you must tell the web server where to find them.  There are a few strategies for doing this.  The following examples show how to make the URL `http://hostname/weewx` point to the `HTML_ROOT` directory `/home/weewx/public_html`
 
 1. Modify the web server configuration.  Each web server has a mechanism to alias a URL to a location on disk.  Use this mechanism to tell the web server where to find WeeWX reports.
 

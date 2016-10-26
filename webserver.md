@@ -10,7 +10,7 @@ There are three basic strategies: modify the web server configuration, modify th
 
 The following examples show how to make the URL `http://hostname/weewx` point to the `HTML_ROOT` directory `/home/weewx/public_html`
 
-### Modify the web server configuration
+### Strategy 1: Modify the web server configuration
 
 Each web server has a mechanism to alias a URL to a location on disk.  Use this mechanism to tell the web server where to find WeeWX reports.
 
@@ -60,7 +60,7 @@ then restart nginx.
 alias.url += ( "/weewx" => "/home/weewx/public_html" )
 ~~~~~
 
-### Modify `HTML_ROOT` in the WeeWX configuration
+### Strategy 2: Modify `HTML_ROOT` in the WeeWX configuration
 
 The `HTML_ROOT` variable indicates where WeeWX should put its reports.  Specify a different location in the [StdReport] section of the WeeWX configuration file (typically weewx.conf).  For example, this would put the WeeWX reports in `/var/www/html/weewx`, which is in the document root directory `/var/www/html` for many web servers:
 
@@ -71,7 +71,7 @@ The `HTML_ROOT` variable indicates where WeeWX should put its reports.  Specify 
 
 Note that you can specify a different `HTML_ROOT` for each report, if necessary.
 
-### Create a symlink
+### Strategy 3: Create a symlink
 
 With this approach, make a symlink in the web server directory tree to the WeeWX reports.  For example, this would create a symlink for a WeeWX installation installed using setup.py to the `weewx` directory in the standard document root directdory `/var/www/html`:
 

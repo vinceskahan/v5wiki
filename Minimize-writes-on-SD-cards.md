@@ -32,7 +32,7 @@ The following recipes are for a Debian-like linux.  Other operating systems have
 
 4) Tell WeeWX to use the new file system for reports
 
-    sudo sed -i -e 's%HTML_ROOT =.*%HTML_ROOT = /var/weewx/reports%'
+    sudo sed -i -e 's%HTML_ROOT =.*%HTML_ROOT = /var/weewx/reports%' /home/weewx/weewx.conf
 
 5) Restart WeeWX
 

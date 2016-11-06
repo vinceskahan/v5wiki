@@ -18,7 +18,7 @@ Download
 * https://github.com/brewster76/fuzzy-archer/archive/v2.2-beta.tar.gz, or 
 https://github.com/brewster76/fuzzy-archer/archive/v2.2-beta.zip
 
-Latest development code can be found here: 
+Later developments, including possibly unverified versions of the code can be found here: 
 https://github.com/brewster76/fuzzy-archer/releases
 
 Install

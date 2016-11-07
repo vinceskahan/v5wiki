@@ -18,28 +18,25 @@ The following recipes are for a Debian-like linux.  Other operating systems have
 
 ## Save reports to a temporary file system
 
-1) Create a mount point for the file system
-
-    sudo mkdir -p /var/weewx/reports
-
-2) Add an entry to fstab
+1) Add an entry to fstab
 
     echo "weewx_reports /var/weewx/reports tmpfs size=20M,noexec,nosuid,nodev 0 0" | sudo tee -a /etc/fstab
 
-3) Manually mount the new file system
+2) Manually mount the new file system
 
+    sudo mkdir -p /var/weewx/reports
     sudo mount -a
 
-4) Tell WeeWX to use the new file system for reports
+3) Tell WeeWX to use the new file system for reports
 
     sudo sed -i -e 's%HTML_ROOT =.*%HTML_ROOT = /var/weewx/reports%' /home/weewx/weewx.conf
 
-5) Restart WeeWX
+4) Restart WeeWX
 
     sudo /etc/init.d/weewx stop
     sudo /etc/init.d/weewx start
 
-6) Tell the web server where to find the reports
+5) Tell the web server where to find the reports
 
     sudo ln -s /var/weewx/reports /var/www/html/weewx
 

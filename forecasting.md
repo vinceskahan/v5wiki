@@ -79,13 +79,21 @@ wee_extension --install weewx-forecast-x.y.tgz
 
     ```
     [Forecast]
-        [[WU]]
-            api_key = INSERT_API_KEY
         [[NWS]]
-            lid = INSERT_LOCATION_ID
-            foid = INSERT_FORECAST_OFFICE_ID
+            lid = MAZ014                 # specify a location identifier
+            foid = BOX                   # specify a forecast office identifier
+        [[WU]]
+            api_key = XXXXXXXXXXXXXXXX   # specify a weather underground api_key
+        [[OWM]]
+            api_key = XXXXXXXXXXXXXXXX   # specify an open weathermap api_key
+        [[UKMO]]
+            api_key = XXXXXXXXXXXXXXXX   # specify a UK met office api_key
+            location = 2337              # specify code for UK location
+        [[Aeris]]
+            client_id = XXXXXXXXXXXXXXXX      # specify client identifier
+            client_secret = XXXXXXXXXXXXXXXX  # specify client secret key
         [[XTide]]
-            location = INSERT_LOCATION
+            location = Boston            # specify a location
 ```
 
 3.  Restart weewx

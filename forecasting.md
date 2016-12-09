@@ -53,7 +53,7 @@ http://forecast.weather.gov/product.php?site=NWS&product=PFM&format=txt&issuedby
 
 Scan the output for a description of your city or county and the associated location identifier. 
 
-### Automated Installation
+### Installation
 
 1.  Run the extension installer to install the forecast service and sample skin.
 
@@ -112,7 +112,3 @@ Full table of forecast data embedded in the Standard skin.
 Forecast data embedded in the exfoliation skin.
 
 ![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
-
-The forecast.html page from the exfoliation skin.
-
-![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.22/forecast.png)

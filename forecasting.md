@@ -111,9 +111,11 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-The extension installer will enable the WU, NWS, XTide, and Zambretti forecasts.  However, unless parameters are entered for WU, NWS, and XTide, only Zambretti will run.  The installer also installs a skin called 'forecast' that illustrates how to use forecast data in any template.
+The extension installer will add all of the forecast methods to the service list.  However, each method requires parameters such as an API key, so unless those parameters are entered, only Zambretti will actually run.
 
 Zambretti runs only once per day, and only in the morning.  So you might have to wait until the following day to see any Zambretti output.  WU and NWS run every 3-4 hours.  Tide forecasts are generated once every few weeks.
+
+The installer also installs a skin called 'forecast' that illustrates how to use raw forecast data in any template, and how to use the pre-configured displays in other templates.
 
 Monitor the log to see what is happening.  The log should include messages about each type of forecast as it starts.  After the first archive interval, each forecast should download/generate, and the forecast data should be displayed in the forecast skin.
 

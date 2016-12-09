@@ -30,19 +30,27 @@ http://forecast.weather.gov/product.php?site=NWS&product=PFM&format=txt&issuedby
 
 Scan the output for a description of your city or county and the associated location identifier. 
 
-### Open WeatherMap (OWM)
+### OpenWeatherMap (OWM)
+
+If you want forecasts from OpenWeatherMap, obtain an API key from the OpenWeatherMap web site.  Activation of an API key for Free and Startup plans takes 10 minutes. For other tariff plans it is 10 to 60 minutes.
 
 http://openweathermap.org/appid
 
 ### UK Met Office (UKMO)
 
+If you want forecasts from the UK Met Office, visit the DataPoint web site to obtain an API key.
+
 http://metoffice.gov.uk/datapoint
 
 ### Aeris
 
+If you want forecasts from Aeris, create an account at the Aeris web site then generate an API key.
+
 http://www.aerisweather.com/account
 
 ### World Weather Online
+
+If you want forecasts from World Weather Online, register for an account at the WWO web site then generate and API key.
 
 https://developer.worldweatheronline.com/auth/register
 

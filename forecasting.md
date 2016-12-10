@@ -214,8 +214,7 @@ For details about how to use the $forecast variables, see the comments at the be
 ## Screenshots
 
 ### forecast_iconic
-
-Simple display of one-week forecast
+The iconic forecast is a simplified view with time increasing down the page.
 ```
 #include "forecast_iconic.inc"
 ```
@@ -223,8 +222,7 @@ Simple display of one-week forecast
 ![iconic](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
 
 ### forecast_table
-
-Forecast table
+The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.
 ```
 #include "forecast_table.inc"
 ```
@@ -232,8 +230,7 @@ Forecast table
 ![table](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png)
 
 ### forecast_strip
-
-Forecast strip
+The forecast strip contains detailed forecast data, with time increasing into the future as you scroll to the right.  The period duration depends on the forecast source - some are hourly, some are a mix of hourly and 4-hourly.
 ```
 #include "forecast_strip.inc"
 ```

@@ -121,7 +121,7 @@ Monitor the log to see what is happening.  The log should include messages about
 
 ## Customization
 
-There are two approaches to customization: (1) include the pre-configured iconic, table, or strip, and/or (2) use the $forecast variables.
+There are two approaches to using forecast data in your templates: (1) include the pre-configured iconic, table, or strip, and/or (2) use the $forecast variables.
 
 ### Include a file
 

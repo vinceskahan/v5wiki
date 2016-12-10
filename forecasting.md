@@ -228,9 +228,10 @@ The iconic forecast is a simplified view with time increasing down the page (ver
 ```
 <table>
 <tr><td>
-![iconic-vertical](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png">
+</td><td width="50px">
 </td><td>
-![iconic-horizontal](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png)
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png">
 </td></tr>
 </table>
 

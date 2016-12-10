@@ -136,7 +136,14 @@ For example, to use the iconic display in a template, simply include the file:
   </body>
 </html>
 ```
-Optionally set options before including:
+Set the options in skin.conf or weewx.conf:
+```
+[Extras]
+    [[forecast_iconic_settings]]
+        source = WU
+        num_days = 7
+```
+If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.
 ```
 <html>
   <head>
@@ -147,15 +154,13 @@ Optionally set options before including:
 #set global $forecast_iconic_settings['source'] = 'WU'
 #set global $forecast_iconic_settings['num_days'] = 10
 #include "forecast_iconic.inc"
+
+#set global $forecast_iconic_settings = dict()
+#set global $forecast_iconic_settings['source'] = 'NWS'
+#set global $forecast_iconic_settings['num_days'] = 7
+#include "forecast_iconic.inc"
   </body>
 </html>
-```
-Or set the options in skin.conf or weewx.conf:
-```
-[Extras]
-    [[forecast_iconic_settings]]
-        source = WU
-        num_days = 7
 ```
 These are the options for the three different includes:
 ```

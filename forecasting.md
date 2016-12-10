@@ -226,9 +226,13 @@ The iconic forecast is a simplified view with time increasing down the page (ver
 ```
 #include "forecast_iconic.inc"
 ```
+<table>
+<tr><td>
 ![iconic-vertical](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
-
+</td><td>
 ![iconic-horizontal](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png)
+</td></tr>
+</table>
 
 ### forecast_table
 The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.  Use the settings to specify which columns should be displayed.

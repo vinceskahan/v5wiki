@@ -6,7 +6,7 @@ The extension includes pre-configured .inc files that can be included in other t
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.2.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.3.tgz
 
 ## Pre-Requisites
 
@@ -222,12 +222,13 @@ For details about how to use the $forecast variables, see the comments at the be
 ## Screenshots
 
 ### forecast_iconic
-The iconic forecast is a simplified view with time increasing down the page.
+The iconic forecast is a simplified view with time increasing down the page (vertical) or across the page (horizontal).
 ```
 #include "forecast_iconic.inc"
 ```
+![iconic-vertical](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
 
-![iconic](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
+![iconic-horizontal](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png)
 
 ### forecast_table
 The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.  Use the settings to specify which columns should be displayed.

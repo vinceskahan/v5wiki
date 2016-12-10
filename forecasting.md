@@ -119,19 +119,123 @@ The installer also installs a skin called 'forecast' that illustrates how to use
 
 Monitor the log to see what is happening.  The log should include messages about each type of forecast as it starts.  After the first archive interval, each forecast should download/generate, and the forecast data should be displayed in the forecast skin.
 
+## Customization
+
+There are two approaches to customization: (1) include the pre-configured iconic, table, or strip, and/or (2) use the $forecast variables.
+
+### Include a file
+
+For example, to use the iconic display in a template, simply include the file:
+```
+<html>
+  <head>
+    <title>forecast</title>
+  </head>
+  <body>
+#include "forecast_iconic.inc"
+  </body>
+</html>
+```
+Optionally set options before including:
+```
+<html>
+  <head>
+    <title>forecast</title>
+  </head>
+  <body>
+#set global $forecast_iconic_settings = dict()
+#set global $forecast_iconic_settings['source'] = 'WU'
+#set global $forecast_iconic_settings['num_days'] = 10
+#include "forecast_iconic.inc"
+  </body>
+</html>
+```
+Or set the options in skin.conf or weewx.conf:
+```
+[Extras]
+    [[forecast_iconic_settings]]
+        source = WU
+        num_days = 7
+```
+These are the options for the three different includes:
+```
+[Extras]
+    [[forecast_table_settings]]                                                
+        source = NWS
+        num_periods = 72
+        show_legend = 1
+        show_hourly = 0
+        show_day = 1
+        show_date = 1
+        show_outlook = 1
+        show_temp = 1
+        show_dewpoint = 0
+        show_humidity = 0
+        show_wind = 1
+        show_tides = 1
+        show_sun = 0
+        show_moon = 0
+        show_pop = 1
+        show_precip = 1
+        show_obvis = 1
+
+    [[forecast_strip_settings]]
+        source = Aeris
+        num_periods = 300
+        show_temp = 1
+        show_temp_min = 1
+        show_temp_max = 1
+        show_dewpoint = 0
+        show_humidity = 0
+        show_wind = 1
+        show_clouds = 1
+        show_pop = 1
+        show_snow = 1
+        show_precip = 1
+        show_sun = 0
+        show_moon = 0
+        show_moonphase = 0
+        show_tides = 0
+
+    [[forecast_iconic_settings]]
+        source = WU
+        num_days = 7
+        bar_width = 150
+```
+### Forecast variables
+
+For details about how to use the $forecast variables, see the comments at the beginning of forecast.py.
+
 ## Screenshots
 
+### forecast_iconic
+
 Simple display of one-week forecast
+```
+#include "forecast_iconic.inc"
+```
 
 ![iconic](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
 
+### forecast_table
+
 Forecast table
+```
+#include "forecast_table.inc"
+```
 
 ![table](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png)
 
+### forecast_strip
+
 Forecast strip
+```
+#include "forecast_strip.inc"
+```
 
 ![strip](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png)
+
+### Embedded data
 
 Forecast data embedded in the Standard skin.
 

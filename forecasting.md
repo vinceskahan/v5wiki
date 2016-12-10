@@ -136,12 +136,21 @@ For example, to use the iconic display in a template, simply include the file:
   </body>
 </html>
 ```
-Set the options in skin.conf or weewx.conf:
+Set the options in skin.conf:
 ```
 [Extras]
     [[forecast_iconic_settings]]
         source = WU
         num_days = 7
+```
+Or set them in weewx.conf:
+```
+[StdReport]
+    [[forecast]]
+        [[[Extras]]]
+            [[[[forecast_iconic_settings]]]]
+                source = WU
+                num_days = 7
 ```
 If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.
 ```
@@ -183,7 +192,6 @@ These are the options for the three different includes:
         show_pop = 1
         show_precip = 1
         show_obvis = 1
-
     [[forecast_strip_settings]]
         source = Aeris
         num_periods = 300
@@ -201,7 +209,6 @@ These are the options for the three different includes:
         show_moon = 0
         show_moonphase = 0
         show_tides = 0
-
     [[forecast_iconic_settings]]
         source = WU
         num_days = 7
@@ -222,7 +229,7 @@ The iconic forecast is a simplified view with time increasing down the page.
 ![iconic](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png)
 
 ### forecast_table
-The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.
+The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.  Use the settings to specify which columns should be displayed.
 ```
 #include "forecast_table.inc"
 ```
@@ -230,7 +237,7 @@ The forecast table contains a lot of information, with time increasing into the 
 ![table](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png)
 
 ### forecast_strip
-The forecast strip contains detailed forecast data, with time increasing into the future as you scroll to the right.  The period duration depends on the forecast source - some are hourly, some are a mix of hourly and 4-hourly.
+The forecast strip contains detailed forecast data, with time increasing into the future as you scroll to the right.  The period duration depends on the forecast source - some are hourly, some are a mix of hourly and 4-hourly.  Use the settings to specify which rows should be displayed.
 ```
 #include "forecast_strip.inc"
 ```

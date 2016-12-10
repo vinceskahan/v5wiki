@@ -173,46 +173,47 @@ If you include more than once in a single template, you probably want to specify
 ```
 These are the options for the three different includes:
 ```
-[Extras]
-    [[forecast_table_settings]]                                                
-        source = NWS
-        num_periods = 72
-        show_legend = 1
-        show_hourly = 0
-        show_day = 1
-        show_date = 1
-        show_outlook = 1
-        show_temp = 1
-        show_dewpoint = 0
-        show_humidity = 0
-        show_wind = 1
-        show_tides = 1
-        show_sun = 0
-        show_moon = 0
-        show_pop = 1
-        show_precip = 1
-        show_obvis = 1
-    [[forecast_strip_settings]]
-        source = Aeris
-        num_periods = 300
-        show_temp = 1
-        show_temp_min = 1
-        show_temp_max = 1
-        show_dewpoint = 0
-        show_humidity = 0
-        show_wind = 1
-        show_clouds = 1
-        show_pop = 1
-        show_snow = 1
-        show_precip = 1
-        show_sun = 0
-        show_moon = 0
-        show_moonphase = 0
-        show_tides = 0
-    [[forecast_iconic_settings]]
-        source = WU
-        num_days = 7
-        bar_width = 150
+[forecast_table_settings]
+    source = NWS
+    num_periods = 72
+    show_legend = 1
+    show_hourly = 0
+    show_day = 1
+    show_date = 1
+    show_outlook = 1
+    show_temp = 1
+    show_dewpoint = 0
+    show_humidity = 0
+    show_wind = 1
+    show_tides = 1
+    show_sun = 0
+    show_moon = 0
+    show_pop = 1
+    show_precip = 1
+    show_obvis = 1
+
+[forecast_strip_settings]
+    source = Aeris
+    num_periods = 300
+    show_temp = 1
+    show_temp_min = 1
+    show_temp_max = 1
+    show_dewpoint = 0
+    show_humidity = 0
+    show_wind = 1
+    show_clouds = 1
+    show_pop = 1
+    show_snow = 1
+    show_precip = 1
+    show_sun = 0
+    show_moon = 0
+    show_moonphase = 0
+    show_tides = 0
+
+[forecast_iconic_settings]
+    source = WU
+    num_days = 7
+    bar_width = 150
 ```
 ### Forecast variables
 

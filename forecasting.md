@@ -212,11 +212,30 @@ These are the options for the three different includes:
 
 [forecast_iconic_settings]
     source = WU
+    orientation = vertical
     num_days = 7
     bar_width = 150
+    show_date = 0
+    show_pop = 0
+    show_precip = 1
+    show_obvis = 1
 ```
 ### Forecast variables
 
+First query the database for the forecast events:
+```
+#set $periods = $forecast.weather_periods('WU', max_events=6)
+```
+The first argument is the forecast source, such as 'WU', 'WWO', or 'NWS'.  Optionally specify the maximum number of events you are interested in.  If not specified, the query will return every possible event for the indicated source.
+
+Each period contains forecast data such as temperature, sky cover, chance of precipitation, and obstructions to visibility.  Each period also contains a timestamp and location.
+
+For example, this would display the time, temperature, and sky cover for each period:
+```
+#for $period in $periods
+$period.event_ts $period.temp $forecast.label('Weather', $period.clouds)<br/>
+#end for
+```
 For details about how to use the $forecast variables, see the comments at the beginning of forecast.py.
 
 ## Screenshots

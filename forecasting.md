@@ -276,10 +276,6 @@ Forecast data embedded in the Standard skin.
 
 ![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
 
-Full table of forecast data embedded in the Standard skin.
-
-![Standard full](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-full.png)
-
 Forecast data embedded in the exfoliation skin.
 
 ![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)

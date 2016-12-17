@@ -10,8 +10,8 @@ The weewx distribution includes a systemd "unit" file called weewx.service that 
     
     [Unit]
     Description=weewx weather system
-    Requires=syslog.service ntp.service
-    After=syslog.service ntp.service
+    Requires=time-sync.target
+    After=time-sync.target
     RequiresMountsFor=/home
     
     [Service]

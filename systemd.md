@@ -6,14 +6,12 @@ If your system uses systemd to manage the starting and stopping of daemons, you 
 
 The weewx distribution includes a systemd "unit" file called weewx.service that tells systemd how to run weewx.  It looks something like this:
 
-    # systemd configuration for weewx
+    # systemd configuration to run a single instance of weewx as a daemon
     
     [Unit]
     Description=weewx weather system
-    Requires=syslog.service
-    Requires=ntp.service
-    After=syslog.service
-    After=ntp.service
+    Requires=syslog.service ntp.service
+    After=syslog.service ntp.service
     RequiresMountsFor=/home
     
     [Service]
@@ -27,7 +25,7 @@ The weewx distribution includes a systemd "unit" file called weewx.service that 
     [Install]
     WantedBy=multi-user.target
 
-To install this file, put it in the systemd configuration directory as /etc/systemd/weewx.service
+To install this file, put it in the systemd configuration directory as /etc/systemd/system/weewx.service
 
 Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
 
@@ -41,7 +39,7 @@ To stop weewx:
 
     sudo systemctl stop weewx
 
-These commands should work whether you use the rc script /etc/init.d/weewx or the systemd configuration /etc/systemd/weewx.service.
+These commands should work whether you use the rc script /etc/init.d/weewx or the systemd configuration /etc/systemd/system/weewx.service.
 
 If you have only the rc script, you should be able to start/stop weewx using either the systemctl syntax or the tradition rc syntax:
 

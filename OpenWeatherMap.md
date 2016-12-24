@@ -32,7 +32,9 @@ sudo /etc/init.d/weewx start
 
 ### Changes to the OpenWeatherMap API
 
-The current OpenWeatherMap API is version 3.0.  If you would like to use the pre-3.0 API, use version 0.4 of the weewx-owm extension:
+The current OpenWeatherMap API is version 3.0.  Perhaps the most significant change introduced in the 3.0 API is a timestamp - if your weather station has a data logger, historical records will be uploaded to OWM during catchup.  This was not possible in the pre-3.0 API.
+
+However, if you would like to use the pre-3.0 API, use version 0.4 of the weewx-owm extension:
 
 http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.4.tgz
 

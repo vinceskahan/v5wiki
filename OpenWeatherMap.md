@@ -4,7 +4,7 @@ This is an extension to weewx that uploads weather data to OpenWeatherMap.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.3.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.5.tgz
 
 ### How to Install
 
@@ -19,9 +19,8 @@ wee_extension --install weewx-owm-x.y.tgz
     ```
     [StdRESTful]
         [[OpenWeatherMap]]
-            username = USERNAME
-            password = PASSWORD
-            station_name = STATION_NAME
+            appid = OWM_APPID
+            station_id = STATION_ID
 ```
 
 3.  Restart weewx
@@ -29,6 +28,21 @@ wee_extension --install weewx-owm-x.y.tgz
     ```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
+```
+
+### Changes to the OpenWeatherMap API
+
+If you would like to use the pre-3.0 OWM API, use 0.4 of the weewx-owm extension:
+
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.4.tgz
+
+It uses a station_name, username, and password like this:
+```
+    [StdRESTful]
+        [[OpenWeatherMap]]
+            username = USERNAME
+            password = PASSWORD
+            station_name = STATION_NAME
 ```
 
 ### Upgrading from weewx 2.6-2.7

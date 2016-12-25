@@ -171,7 +171,7 @@ If you include more than once in a single template, you probably want to specify
   </body>
 </html>
 ```
-These are the options for the three different includes:
+These are the options for the various includes:
 ```
 [forecast_table_settings]
     source = NWS

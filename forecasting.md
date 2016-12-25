@@ -6,7 +6,7 @@ The extension includes pre-configured .inc files that can be included in other t
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.4.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.6.tgz
 
 ## Pre-Requisites
 
@@ -219,6 +219,14 @@ These are the options for the three different includes:
     show_pop = 0
     show_precip = 1
     show_obvis = 1
+
+[forecast_compact_settings]
+    source = WU
+    num_days = 4
+    show_wind = 1
+    show_pop = 1
+    show_precip = 1
+    show_obvis = 1
 ```
 ### Forecast variables
 
@@ -254,12 +262,18 @@ The iconic forecast is a simplified view with time increasing down the page (ver
 </td></tr>
 </table>
 
+### forecast_compact
+The compact forecast shows a few days into the future.
+```
+#include "forecast_compact.inc"
+```
+[!compact](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png)
+
 ### forecast_table
 The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.  Use the settings to specify which columns should be displayed.
 ```
 #include "forecast_table.inc"
 ```
-
 ![table](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png)
 
 ### forecast_strip
@@ -267,7 +281,6 @@ The forecast strip contains detailed forecast data, with time increasing into th
 ```
 #include "forecast_strip.inc"
 ```
-
 ![strip](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png)
 
 ### Embedded data

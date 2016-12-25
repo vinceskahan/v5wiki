@@ -267,7 +267,7 @@ The compact forecast shows a few days into the future.
 ```
 #include "forecast_compact.inc"
 ```
-[!compact](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png)
+![compact](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png)
 
 ### forecast_table
 The forecast table contains a lot of information, with time increasing into the future as you look down the table.  Each day is a summary of the forecast information for that day, and can be expanded to see the forecast breakdown for the day.  For some forecast sources this is hourly, for others it is 4-hourly, for others it is a mix.  Use the settings to specify which columns should be displayed.

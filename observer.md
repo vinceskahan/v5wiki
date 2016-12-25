@@ -13,7 +13,8 @@ Fine Offset model numbers include:
 * WH2600 - uploads via bridge
 
 Ambient model numbers include:
-* WS0800 - uploads via bridge (WH2600 with two T/H sensors)
+* WS0800 - uploads via bridge (two T/H sensors, no wind/rain)
+* WS0900 - uploads via bridge (two T/H, wind, rain, no console)
 * WS1400 - uploads via bridge (same as WH2600)
 * WS1200 - uploads via bridge (WH2600 with console)
 * WS1001 - uploads via console (same as HP1000)

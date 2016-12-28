@@ -23,6 +23,8 @@ sudo /etc/init.d/weewx start
 
 ### Customize
 
+The skin includes pages for current conditions, forecast (if forecast extension is also installed), history, almanac, station health, and links.
+
 The links page includes forecasts, satellite, and radar images.  Look
 at the Extras section of the skin.conf file, then override any URLs with those
 appropriate for your location.

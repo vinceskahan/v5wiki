@@ -32,13 +32,7 @@ As of Version 3.4, Weewx will not start up until the system time is later than 1
 To remove the fake clock:
 
 ~~~~~
-$ sudo apt-get remove fake-hwclock
-~~~~~
-
-Then remove the old, recorded time:
-
-~~~~~
-$ sudo rm /etc/fake-hwclock.data
+$ sudo apt-get purge fake-hwclock
 ~~~~~
 
 ###Use a high-quality SD card###

@@ -28,7 +28,7 @@ Test by requesting a point forecast using a url of this form in a web browser:
 
 http://forecast.weather.gov/product.php?site=NWS&product=PFM&format=txt&issuedby=YOUR_THREE_LETTER_FOID
 
-Scan the output for a description of your city or county and the associated location identifier. 
+Scan the output for a description of your city or county and the associated location identifier. If there is more than one location with the same location identifier, then specify the town/county line that immediately follows the location identifier.
 
 ### OpenWeatherMap (OWM)
 

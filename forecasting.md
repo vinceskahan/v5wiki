@@ -4,6 +4,12 @@ The forecasting module consists of services that download/generate forecast data
 
 The extension includes pre-configured .inc files that can be included in other templates.  This provides an easy way to add a strip, table, or iconic view to other skins.
 
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png" width="50"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png" width="50"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png" width="50"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png" width="50"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png" width="50"/>
+
 ## Download
 
 http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.9.tgz
@@ -255,10 +261,10 @@ The iconic forecast is a simplified view with time increasing down the page (ver
 ```
 <table>
 <tr><td>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png">
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png"/>
 </td><td width="50px">
 </td><td>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png">
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png"/>
 </td></tr>
 </table>
 

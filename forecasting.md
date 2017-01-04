@@ -6,9 +6,9 @@ The extension includes pre-configured .inc files that can be included in other t
 
 <img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png" width="150"/>
 <img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png" width="150"/>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png" width="150"/><br/>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png" width="250"/>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png" width="250"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png" width="150"/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png" width="200"/><br/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png" width="350"/>
 
 ## Download
 

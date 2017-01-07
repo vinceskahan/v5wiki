@@ -44,6 +44,10 @@ The placement of the anemometer matters, as does the design of the instrument it
 
 ## So where does that leave us?
 
+Accuracy is one of the primary goals of weeWX.  So if a weather station reports wind gust, but not wind gust direction, the driver will not fabricate data just to fill in a direction.
+
+WeeWX does not enforce National Weather Service definitions for wind speed or wind gust.  If no wind gust is reported by the hardware, the accumulators in weeWX will use the highest reported wind speed over an interval as the wind gust.
+
 ## References
 
 https://graphical.weather.gov/definitions/

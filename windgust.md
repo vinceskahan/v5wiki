@@ -32,6 +32,10 @@ The textbook definition of a wind gust is:
 
 The US National Weather Service defines a wind gust as
 
+> Rapid fluctuations in the wind speed with a variation of 10 knots or more between peaks and lulls. The speed of the gust will be the maximum instantaneous wind speed.
+
+or:
+
 > When the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds.
 
 Many types of weather station hardware report only wind speed.  For example, the PEET Ultimeter, Acurite 5-in-1, and LaCrosse WS23xx stations do not report wind gust.  Those that do report wind gust have different algorithms for calculating it.  Most are some measure of a maximum speed over a sampling period.  But since their methods of sampling speed differ, the resulting gust will differ from one type of station to another.

@@ -12,6 +12,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 ### HOWTO Pages
 * [What you should know about paths](Understanding paths)
 * [What is the difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
+* [What is `wind gust` and how is it different from `maximum wind speed`](windgust)
 
 #### weewx configuration
 * [Manage extensions](extensions)

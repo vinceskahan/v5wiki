@@ -46,9 +46,11 @@ The wind 'gust' reported by these stations is 'maximum wind speed' over some tim
 
 Most hardware will sample the wind direction when it samples the wind speed.  However, there are many different approaches.  Some hardware associates a wind direction for each wind speed sample.  Other hardware reports a single wind direction sample for an average wind speed.  There are even more permutations when wind gust is reported.  Some stations report a wind gust, but no wind gust direction.  Others report a direction for each wind gust.
 
-## Sensor placement
+## Sensor placement and hardware effects
 
-The placement of the anemometer matters, as does the design of the instrument itself.  If the anemometer is in the wind shadow of a tree or roof line, it might experience vortex shedding or other effects that show up as frequent gusts.  The impeller design of LaCrosse WS23xx stations was replaced by a cup design so it would react better to wind shifts.
+The placement of the anemometer matters, as does the design of the instrument itself.  If the anemometer is in the wind shadow of a tree or roof line, it might experience vortex shedding or other effects that show up as frequent gusts.  An anemometer at the top of a hill may behave quite differently from the same anemometer placed on the same hill but near a cliff or bluff.  If an anemometer spins in a forest, does anyone hear it?
+
+The anemometer design matters, as do other factors such as bearing quality or cup size.  For example, the impeller design of LaCrosse WS23xx stations was replaced by a cup design so it would react better to wind shifts.  As another example, some manufacturers make a big deal about how little wind is required to cause rotation.  Of course, ultrasonic sensors are immune to sticky bearings or a broken cup.
 
 ## So where does that leave us?
 

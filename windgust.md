@@ -8,7 +8,11 @@ First of all, there are a few different terms for quantifying "how windy is it?"
 
 You might think that wind speed is pretty easy - its just a measure of how fast the wind is blowing, right?
 
-The US National Weather Service defines wind speed in terms of a sustained speed over a period of time, typically an hour.  For example, the 20-foot wind is defined as:
+The US National Weather Service defines wind speed in terms of a sustained speed over a period of time.  For example `wind speed` is defined as:
+
+> The rate at which air is moving horizontally past a given point. It may be a 2-minute average speed (reported as wind speed) or an instantaneous speed (reported as a peak wind speed, wind gust, or squall).
+
+As another example, there is also a `20-foot wind`, defined as:
 
 > Sustained winds averaged over a 10 minute period and measured 20 feet above the average height of nearby vegetation. This is the standard reported by the Remote Automated Weather Stations (RAWS) owned by land management agencies and used in the National Fire Danger Rating System (NFDRS).
 
@@ -49,5 +53,7 @@ Accuracy is one of the primary goals of weeWX.  This means that, whenever possib
 WeeWX does not enforce National Weather Service definitions for wind speed or wind gust.  If the hardware reports wind gust, weeWX will use those values, whether they are actual NWS gust or simply maximum wind speed.  If no wind gust is reported by the hardware, the accumulators in weeWX will use the highest reported wind speed over an interval as the wind gust.
 
 ## References
+
+http://w1.weather.gov/glossary/
 
 https://graphical.weather.gov/definitions/

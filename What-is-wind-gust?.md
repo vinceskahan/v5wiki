@@ -6,15 +6,23 @@ First of all, there are a few different terms for quantifying "how windy is it?"
 
 ### Wind speed
 
-You might think that wind speed is pretty easy - its just a measure of how fast the wind is blowing.  But the actual speed varies depending on the type of hardware.  For example, a PEET Ultimeter reports wind speed as fast as every 1/2 second, a Davis Vantage reports wind speed every 2.3 seconds, an Acurite 5-in-1 reports wind speed every 18 seconds, and most Fine Offset stations report wind speed every 48 to 60 seconds.  Any measure of speed is an approximation - it is an average over a sample period.  But stations that sample more frequently should provide a closer approximation.  So when an Ultimeter reports `windSpeed`, it is pretty close to instantaneous wind speed.  But the `windSpeed` reported by an Acurite station is actually an average wind speed.
+You might think that wind speed is pretty easy - its just a measure of how fast the wind is blowing, right?
 
 The US National Weather Service defines wind speed in terms of a sustained speed over a period of time, typically an hour.  For example, the 20-foot wind is defined as:
 
 > Sustained winds averaged over a 10 minute period and measured 20 feet above the average height of nearby vegetation. This is the standard reported by the Remote Automated Weather Stations (RAWS) owned by land management agencies and used in the National Fire Danger Rating System (NFDRS).
 
+When it comes to actually measuring the wind speed, it depends on the type of hardware.  For example, a PEET Ultimeter reports wind speed as fast as twice per second, a Davis Vantage reports wind speed every 2.3 seconds, an Acurite 5-in-1 reports wind speed every 18 seconds, and most Fine Offset stations report wind speed every 48 to 60 seconds.  Any measure of speed is an approximation - it is an average over a sample period.  But stations that sample more frequently should provide a closer approximation.
+
+Contrast this with the anemometer on a sailing vessel.  These devices come very close to reporting real-time, instantaneous wind speeds.
+
+So when an Ultimeter reports `windSpeed`, it is pretty close to instantaneous wind speed.  But the `windSpeed` reported by an Acurite station is actually an average wind speed.
+
+None of them report the 'sustained winds' definition.
+
 ### Wind gust
 
-The textbook definition of a wind gust is
+The textbook definition of a wind gust is:
 
 > A sudden, brief increase in the speed of the wind, followed by a lull.
 

@@ -129,7 +129,9 @@ Monitor the log to see what is happening.  The log should include messages about
 
 ## Customization
 
-There are two approaches to using forecast data in your templates: (1) include the pre-configured iconic, table, or strip, and/or (2) use the $forecast variables.
+There are two approaches to using forecast data in your templates: (1) include a pre-configured forecast_*.inc, and/or (2) use the $forecast variables.
+
+The forecast display include a set of icons, located in the icons directory.  When you include a forecast display in another template, you will also have to copy the icons directory to that skin.
 
 ### Include a file
 

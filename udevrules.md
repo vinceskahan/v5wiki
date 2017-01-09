@@ -18,7 +18,7 @@ Use udev rules to ensure a unique, consistent name for each device.
 
 # Example: two USB-to-serial converters
 
-For example, if you have FTDI 2 USB-serial converters, call them `A` and `B`, they will show up as `/dev/ttyUSB0` and `/dev/ttyUSB1`.  But when you unplug `A` then plug it back in, it might show up as `/dev/ttyUSB2`.  
+For example, if you have 2 FTDI USB-serial converters, call them `A` and `B`, they will show up as `/dev/ttyUSB0` and `/dev/ttyUSB1`.  But when you unplug `A` then plug it back in, it might show up as `/dev/ttyUSB2`.  
 
 Start with the weeWX configuration for each device.  In the weeWX configuration file for device `A`, use `port = /dev/deviceA`.  Similarly, for device `B` use `port = /dev/deviceB`.
 

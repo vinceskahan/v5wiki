@@ -14,7 +14,7 @@ If the devices are USB-to-serial converters, the software cannot distinguish bet
 
 How do you ensure that the weeWX instance for device `A` only ever talks to device `A`?
 
-Use udev rules to ensure a unique, consistent names for each device.
+Use udev rules to ensure a unique, consistent name for each device.
 
 # Example: two USB-to-serial converters
 

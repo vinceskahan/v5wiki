@@ -2,7 +2,7 @@ A single installation of weeWX can be used to collect data from multiple devices
 
 # How to distinguish devices?
 
-If the devices are connected directly to serial ports, then the serial port identifies them.  For example, `/dev/ttyS0` and `/dev/ttyS1' or 'COM1' and 'COM2'.
+If the devices are connected directly to serial ports, then the serial port identifies them.  For example, `/dev/ttyS0` and `/dev/ttyS1` or `COM1` and `COM2`.
 
 USB devices are a bit more complicated.
 

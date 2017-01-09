@@ -94,7 +94,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [Responsive](responsive)
 * [simple](simple)
 * [Steel Series Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges)
-* [weewx-wd](WEEWX-WD)
+* [weewx-wd](weewx-wd)
 
 #### Uploaders
 * <img src="http://emoncms.org/Theme/emoncms-logo.png" width='16'/> [emoncms](emoncms)

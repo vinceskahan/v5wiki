@@ -1,16 +1,26 @@
 A single installation of weeWX can be used to collect data from multiple devices on one computer.  But how can you tell which device is which?
 
-If the devices are connected via serial ports, then the serial port identifies them.  For example, `/dev/ttyS0` and `/dev/ttyS1' or 'COM1' and 'COM2'.
+# How to distinguish devices?
 
-If the devices use USB, things get a bit more complicated.
+If the devices are connected directly to serial ports, then the serial port identifies them.  For example, `/dev/ttyS0` and `/dev/ttyS1' or 'COM1' and 'COM2'.
 
-# Example: two USB-to-serial converters
+USB devices are a bit more complicated.
 
-For example, if you have FTDI 2 USB-serial converters, call them `A` and `B`, they will show up as `/dev/ttyUSB0` and `/dev/ttyUSB1`.  But when you unplug `A` then plug it back in, it might show up as `/dev/ttyUSB2`.  How do you ensure that the weeWX instance for device `A` only every talks to device `A`?
+Each USB device has a VendorID and ProductID.  Most software uses these identifiers to distinguish one USB device from another.  However, if there are two USB devices that have the same VendorID and ProductID, you must find some other attribute to distinguish between them.
+
+If the devices are pure USB, then this distinction must be made in the software.  For example, the Lacrosse WS28xx stations use USB transceivers that have a unique serial number burned into them.  The `serial` parameter can be specified in the WS28xx driver.
+
+If the devices are USB-to-serial converters, the software cannot distinguish between devices.  The software sees each converter as a serial port.  So the software can refer to a serial port such as `/dev/ttyUSB0`, but when the USB-to-serial converter is unplugged then replugged, it might show up as `/dev/ttyUSB1` instead of `/dev/ttyUSB0`.
+
+How do you ensure that the weeWX instance for device `A` only ever talks to device `A`?
 
 Use udev rules to ensure a unique, consistent names for each device.
 
-In the case of the 2 TFDI converters, start with the weeWX configuration for each device.  In the weeWX configuration file for device `A`, use `port = /dev/deviceA`.  Similarly, for device `B` use `port = /dev/deviceB`.
+# Example: two USB-to-serial converters
+
+For example, if you have FTDI 2 USB-serial converters, call them `A` and `B`, they will show up as `/dev/ttyUSB0` and `/dev/ttyUSB1`.  But when you unplug `A` then plug it back in, it might show up as `/dev/ttyUSB2`.  
+
+Start with the weeWX configuration for each device.  In the weeWX configuration file for device `A`, use `port = /dev/deviceA`.  Similarly, for device `B` use `port = /dev/deviceB`.
 
 Create a udev rule file `/etc/udev/weewx.rules` that looks like this:
 
@@ -33,10 +43,6 @@ Tell the operating system to reload the rules with this command:
 Finally, unplug then re-plug the USB cable to each device to trigger udev to make the links.
 
 You will now see `/dev/deviceA` and `/dev/deviceB`, each of which is a symlink to the actual device.  If you unplug and replug devices, weeWX will detect the missing device, retry its connection, then every should continue as normal.  No need to restart weeWX or make changes to configuration files.
-
-# How to distinguish USB devices?
-
-Most software uses VendorID and ProductID to distinguish devices, but this 
 
 # How to determine the uniqueness of each device
 

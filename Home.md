@@ -45,6 +45,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
+* [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 
 ### Extensions to WeeWX
 

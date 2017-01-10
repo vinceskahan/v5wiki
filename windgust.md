@@ -38,7 +38,7 @@ or:
 
 > When the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds.
 
-Many types of weather station hardware report only wind speed.  For example, the PEET Ultimeter, Acurite 5-in-1, and LaCrosse WS23xx stations do not report wind gust.  Those that do report wind gust have different algorithms for calculating it.  Most are some measure of a maximum speed over a sampling period.  But since their methods of sampling speed differ, the resulting gust will differ from one type of station to another.
+Many types of weather station hardware report only wind speed.  For example, the PEET Ultimeter, Acurite 5-in-1, and LaCrosse WS23xx stations do not report wind gust.  Hardware designs that do report wind gust have different algorithms for calculating it.  Most are some measure of a maximum speed over a sampling period.  But since their methods of sampling speed differ, the resulting gust will differ from one type of station to another.
 
 The wind 'gust' reported by these stations is 'maximum wind speed' over some time period, not, in fact, 'wind gust'.
 

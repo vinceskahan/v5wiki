@@ -3,7 +3,7 @@
 <img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
 
-Fine Offset makes an all-in-one weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.  Ambient uses the brand name Observer.
+Fine Offset makes a wireless weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.  Ambient uses the brand name Observer.
 
 These stations upload directly to weather underground.  Some firmware versions include an option to set the destination of the upload so that you can send directly to your own web site or web service.  The uploads are driven either by a bridge or a console, depending on the configuration.  The bridge receives signals from the sensors, then uploads via a wired ethernet connection.  The console receives signals from the sensors, then uploads via a wireless (wifi) connection.
 

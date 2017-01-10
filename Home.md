@@ -40,7 +40,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Add a sensor to any weather station](add-sensor)
 * [Use one-wire sensors with WeeWX](Onewire sensors)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
-* [Take control of your Observer (Fine Offset HP1000/WH2600)](observer)
+* [Get data from an Observer/WeatherSleuth/WeatherRanger (Fine Offset HP1000/WH2600)](observer)
 * [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
 * [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)

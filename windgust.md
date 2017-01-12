@@ -60,6 +60,26 @@ WeeWX does not enforce National Weather Service definitions for wind speed or wi
 
 If the hardware reports wind gust, weeWX will use those values, whether they are actual NWS gust or simply maximum wind speed.  If no wind gust is reported by the hardware, the accumulators in weeWX will use the highest reported wind speed over an interval as the wind gust.
 
+The wind-related fields in the weeWX database include:
+
+* `windSpeed`
+* `windDir`
+* `windGust`
+* `windGustDir`
+
+These are accumulated over time to provide minimum, maximum, and average values.  For example:
+
+* `hour.windSpeed.max`
+* `hour.windGust.max`
+* `day.windSpeed.max`
+* `day.windGust.max`
+
+As a result, depending on the hardware, it is possible that `hour.windSpeed.max` is the same as `hour.windGust.max`.
+
+Consult the *Station Data Table* for your hardware to understand exactly which values are reported, and which are derived.
+
+http://weewx.com/docs/hardware.htm
+
 ## References
 
 http://w1.weather.gov/glossary/

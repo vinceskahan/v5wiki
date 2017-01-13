@@ -1,5 +1,7 @@
 # How to get data from an Acurite bridge
 
+<img src="http://www.weewx.com/hardware/908wes.png" align="right"/>
+
 The Acurite bridge listens for radio signals from Acurite sensors such as the 5-in-1, Tower, and Temperature/Humidity.  Then it transmits sensor data via a wired connection to a TCP/IP network.
 
 When it was first introduced in 2013, the bridge sent data to the web service 'acu-link.com'.

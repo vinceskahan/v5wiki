@@ -2,7 +2,7 @@
 
 <img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
-<img src="http://weewx.com/hardware/ws0900.png" align="right"/>
+<img src="http://weewx.com/hardware/ws0900.png" align="right" height="100"/>
 
 Fine Offset makes a wireless weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.  Ambient uses the brand name Observer.
 

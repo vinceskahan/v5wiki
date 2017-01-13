@@ -67,7 +67,9 @@ Detailed instructions for DNS, Proxy, and Packet Capture are included in the wee
 
 ### References
 
-dkm created the first weewx driver for these stations (https://github.com/dkmcode/weewx-observerip).  That driver has two modes: direct (screen scraping) and indirect (capture via php).  In direct mode, the driver grabs the web page from the station then parses it to get the weather data.  In indirect mode, the station must be configured to send data to the computer running weewx, a PHP script captures the data to file, then the driver reads data from the file.  mwall made minor changes to the dkm driver to handle different firmware versions (https://github.com/matthewwall/weewx-observerip).
+dkm created the first weewx driver for these stations (https://github.com/dkmcode/weewx-observerip).  That driver has two modes: direct (screen scraping) and indirect (capture via php).  In direct mode, the driver grabs the web page from the station then parses it to get the weather data.  In indirect mode, the station must be configured to send data to the computer running weewx, a PHP script captures the data to file, then the driver reads data from the file.
+
+mwall made minor changes to the dkm driver to handle different firmware versions (https://github.com/matthewwall/weewx-observerip).
 
 Pat O'Brien created a screen scraping driver, then a socket-based driver.  His experiences are documented at http://obrienlabs.net/redirecting-weather-station-data-from-observerip/ and the code for his 'SocketLogger' driver is at https://github.com/poblabs/weewx-socketlogger
 

@@ -20,14 +20,14 @@ There are a two approaches to getting data from an Acurite bridge: sniff or list
 
 Rich of Modern Toil did some of the first packet sniffing and decoding:
 
-    `http://moderntoil.com/?p=794`
+    http://moderntoil.com/?p=794
 
 George Nincehelser figured out some crucial parts of the encoding and fed it into weewx:
 
-    `http://nincehelser.com/ipwx/`
+    http://nincehelser.com/ipwx/
 
 Perhaps the first weewx driver was a sniffer called haculink:
 
-    `http://geekfun.com/hackulink/`
+    http://geekfun.com/hackulink/
 
 Now that packet sniffing is much more common, and thanks to the lack of any magic numbers, the protocol used by the July 2016 firmware was decoded within weeks by many different people.

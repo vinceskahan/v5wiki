@@ -1,4 +1,4 @@
-## How to get data from an Observer weather station
+## How to get data from a HP1000/WH2600 weather station
 
 <img src="http://weewx.com/hardware/wh2600.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
@@ -24,7 +24,7 @@ Aercus models include:
 * WeatherSleuth - uploads via bridge (same as WH2600)
 * WeatherRanger - uploads via console wifi (same as HP1000)
 
-The station is also sold as the Maplin N23DQ.
+The station is also sold as the Maplin N23DQ.  It is sold in Australia as the XC0442.
 
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 

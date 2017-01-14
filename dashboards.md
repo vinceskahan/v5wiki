@@ -61,6 +61,12 @@ static plot images vs dynamic javascript plotting
 
 for javascript plotting: read data from json/csv file vs read data from a server
 
+current values vs historical values
+
+ability to aggregate historical values
+
 ### Transferring and synchronizing data
 
-ftp/ftps/rsync vs restful
+mechanism: ftp/ftps/rsync vs restful
+
+frequency: loop vs archive

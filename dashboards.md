@@ -1,6 +1,8 @@
 # Strategies for publishing data from weeWX
 
-**WARNING** Some of the components described in this page are experimental or not yet implemented!
+**!! WARNING !!**
+**Some of the components described in this page are experimental or not yet implemented!**
+**!! WARNING !!**
 
 This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.  Let's start with some scenarios:
 
@@ -36,7 +38,7 @@ In this scenario, weeWX feeds into a separate service that aggregates, stores, a
 
 Examples:
 
-* weeRT
+* weeRT (EXPERIMENTAL)
 * Influx
 * EmonCMS
 * SEG

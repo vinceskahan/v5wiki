@@ -19,11 +19,29 @@ Goals:
 * No framework dependencies (e.g., no jQuery or additional fonts)
 * No additional software required (e.g., web server)
 
-## Use case 2: Custom reports
+## Use case 2: Custom weeWX reports
 
-Use weeWX to format data as required by existing templates, possibly generating plots and additional files.  In this case, the templates have been created and maintained independently of weeWX.  These templates typically require one or more data files that they then read.  For example, many of these templates expect sensor readings in a `realtime.txt` or `customraw.txt` file.  They may also use plotted data rendered as image files.
+Generate reports using the built-in plotting and template mechanisms built-in.  These reports consist of text, RSS XML, HTML, and image files.  Templates are written using the Cheetah and dot-code syntax built-in to weeWX.
 
-Since data file is generated/updated using the StdReport mechanism, the templates are updated at most every archive interval.
+Update frequency: Reports are generated/updated once per archive interval.  
+
+Local/Remote: Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
+
+Examples:
+
+* Responsive
+* mesowx
+* exfoliation
+* simple
+* amphibian
+
+## Use case 3: Reports from non-weeWX template frameworks
+
+Use weeWX to generate a data file in the format required by a non-weeWX template, possibly generating plots and additional files in the process.  In this case, the templates have been created and maintained independently of weeWX.  These templates typically read data from one or more text files.  For example, many of these templates expect sensor readings in a `realtime.txt` or `customraw.txt` file.  They may also use plotted data rendered as image files.
+
+Update frequency: Reports are updated every archive interval.
+
+Local/Remote:  Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
 
 Examples:
 
@@ -47,6 +65,9 @@ Examples:
 
 ## Use case 4: Local display of data in real time
 
+In this scenario, weeWX emits data 
+
+For example
 emit data to json file on every loop.  javascript plotting polls the json file for changes, reloads data on each change.
 
 ## Use case 5: Remote display

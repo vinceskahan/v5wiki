@@ -1,10 +1,10 @@
 # Strategies for publishing data from weeWX
 
-**!! WARNING !!**
-**Some of the components described in this page are experimental or not yet implemented!**
-**!! WARNING !!**
+**WARNING: Some of the components described in this page are experimental or not yet implemented!!**
 
-This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.  Let's start with some scenarios:
+This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.
+
+Let's start with some scenarios:
 
 ## Use case 1: Default weeWX installation
 

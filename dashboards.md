@@ -23,7 +23,10 @@ Since data file is generated/updated using the StdReport mechanism, the template
 
 Examples:
 
-* Saratoga, Leuven, Steel-Series, Weather-for-you
+* Saratoga
+* Leuven
+* Steel-Series
+* Weather-for-you
 
 ## Use case 3: Feed into a data aggregation/reporting service
 
@@ -31,8 +34,11 @@ In this scenario, weeWX feeds into a separate service that aggregates, stores, a
 
 Examples:
 
-* weeRT, Influx
-* EmonCMS, SEG, ThinkSpeak
+* weeRT
+* Influx
+* EmonCMS
+* SEG
+* ThingSpeak
 * meteotemplate
 
 ## Use case 4: Local display of data in real time

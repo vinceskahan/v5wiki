@@ -31,7 +31,7 @@ Generate reports using the built-in plotting and template mechanisms built-in.  
 
 *Local/Remote:* Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
 
-*Examples:* Responsive, exfoliation, simple, amphibian
+*Examples:* Responsive, Bootstrap, Byteweather, Flat, Niculskin, exfoliation, simple, amphibian
 
 ## Use case 3: Reports from non-weeWX template frameworks
 

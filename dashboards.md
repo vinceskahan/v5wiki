@@ -43,7 +43,7 @@ Use weeWX to generate a data file in the format required by a non-weeWX template
 
 *Examples:* Saratoga, Leuven, Steel-Series, Weather-for-you
 
-## Use case 4: Local display of data in real time
+## Use case 4: Local display of data with near real time updates
 
 In this scenario, weeWX emits data at each LOOP, typically as fast as the hardware produces it.  The reporting system receives the data and displays it immediately, typically pushing it to any clients that are viewing the report.
 

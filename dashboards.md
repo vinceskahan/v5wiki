@@ -8,7 +8,11 @@ This is an outline of strategies for getting data from hardware into reports or 
 
 ## Use case 1: Default weeWX installation
 
-The most basic weeWX installation emits a set of web pages (the StandardReport) every archive interval.  The web pages are simple HTML with plots rendered as PNG images.  There is minimal use of JavaScript, and no dependencies on any web-development frameworks.  Data are updated at most every archive interval.  There is no automatic client refresh, or notification to client when new data arrive.
+A default weeWX installation emits a set of web pages (the StandardReport) every archive interval.  The web pages are simple HTML with plots rendered as PNG images.  There is minimal use of JavaScript, and no dependencies on any web-development frameworks.  Data are updated at most every archive interval.  There is no automatic refresh for clients viewing the report, nor notification to client when new data arrive.
+
+*Update frequency:* Report is generated/updated once per archive interval.  
+
+*Local/Remote:* Report can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
 
 Goals:
 
@@ -23,60 +27,43 @@ Goals:
 
 Generate reports using the built-in plotting and template mechanisms built-in.  These reports consist of text, RSS XML, HTML, and image files.  Templates are written using the Cheetah and dot-code syntax built-in to weeWX.
 
-Update frequency: Reports are generated/updated once per archive interval.  
+*Update frequency:* Reports are generated/updated once per archive interval.  
 
-Local/Remote: Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
+*Local/Remote:* Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
 
-Examples:
-
-* Responsive
-* mesowx
-* exfoliation
-* simple
-* amphibian
+*Examples:* Responsive, exfoliation, simple, amphibian
 
 ## Use case 3: Reports from non-weeWX template frameworks
 
 Use weeWX to generate a data file in the format required by a non-weeWX template, possibly generating plots and additional files in the process.  In this case, the templates have been created and maintained independently of weeWX.  These templates typically read data from one or more text files.  For example, many of these templates expect sensor readings in a `realtime.txt` or `customraw.txt` file.  They may also use plotted data rendered as image files.
 
-Update frequency: Reports are updated every archive interval.
+*Update frequency:* Reports are updated every archive interval.
 
-Local/Remote:  Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
+*Local/Remote:* Reports can be copied/synchronized to a remote location using FTP, FTPS, or rsync.
 
-Examples:
-
-* Saratoga
-* Leuven
-* Steel-Series
-* Weather-for-you
-
-## Use case 3: Feed into a data aggregation/reporting service
-
-In this scenario, weeWX feeds into a separate service that aggregates, stores, and reports data. 
-
-Examples:
-
-* weeRT (EXPERIMENTAL)
-* Influx
-* EmonCMS
-* SEG
-* ThingSpeak
-* meteotemplate
+*Examples:* Saratoga, Leuven, Steel-Series, Weather-for-you
 
 ## Use case 4: Local display of data in real time
 
-In this scenario, weeWX emits data 
+In this scenario, weeWX emits data at each LOOP, typically as fast as the hardware produces it.  The reporting system receives the data and displays it immediately, typically pushing it to any clients that are viewing the report.
 
-For example
-emit data to json file on every loop.  javascript plotting polls the json file for changes, reloads data on each change.
+For example, weeWX might save LOOP data to a json file, then JavaScript plots poll the json file for changes, reloading the file and updating the display on each change.
 
-## Use case 5: Remote display
+*Update frequency:* Data are updated as frequently as the hardware sends it (every LOOP packet).
 
-This can be done with a combination of elements from the other use cases.
+*Local/Remote:* Typically local, especially if the updates happen frequently.
 
-For example, the Saratoga template can be updated on every LOOP packet by emitting a realtime.txt file then transferring that file at each LOOP packet (instead of once per archive interval).
+*Examples:* mesowx
 
-As another example, a dashboard of grafana plots will update as soon as new data arrive in influx, whether influx is hosted locally or remote.  Use the influx uploader and set the binding to loop instead of archive.
+## Use case 5: Feed into a data aggregation/reporting service
+
+In this scenario, weeWX feeds into a separate service that aggregates, stores, and reports data. 
+
+*Update frequency:* Data are updated as frequently as the hardware sends it (every LOOP packet), or at each archive interval.
+
+*Local/Remote:* The report display can be on the same computer running weeWX, same network as weeWX, or in the cloud.
+
+*Examples:* weeRT (EXPERIMENTAL), Influx, EmonCMS, SEG, ThingSpeak, meteotemplate
 
 ## Things to consider
 

@@ -1,6 +1,6 @@
 # Strategies for publishing data from weeWX
 
-This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.  Let's start with the use cases.
+This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.  Let's start with some scenarios:
 
 ## Use case 1: Default weeWX installation
 
@@ -45,13 +45,13 @@ Examples:
 
 emit data to json file on every loop.  javascript plotting polls the json file for changes, reloads data on each change.
 
-## Use case 5: Remote display of data in near real time
+## Use case 5: Remote display
 
 This can be done with a combination of elements from the other use cases.
 
 For example, the Saratoga template can be updated on every LOOP packet by emitting a realtime.txt file then transferring that file at each LOOP packet (instead of once per archive interval).
 
-As another example, a dashboard of grafana plots will update as soon as new data arrive in influx.  Use the influx uploader and set the binding to loop instead of archive.
+As another example, a dashboard of grafana plots will update as soon as new data arrive in influx, whether influx is hosted locally or remote.  Use the influx uploader and set the binding to loop instead of archive.
 
 ## Things to consider
 

@@ -5,7 +5,7 @@ This is the place to go for information about the many extensions available for 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
 
-### Hardware
+### Hardware recommendations
 * [On what hardware do you run WeeWX?](hardware)
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 
@@ -105,6 +105,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="https://www.influxdata.com/wp-content/themes/influx/images/favicon.ico" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
 * <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap)
+* <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)
 * <img src="https://prometheus.io/assets/favicons/favicon.ico" width='16'/> [prometheus](https://github.com/sulrich/weewx-prompush)
 * <img src="https://avatars3.githubusercontent.com/u/739550?v=3&s=200" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
 * <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](seg)
@@ -116,4 +117,3 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
 * <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
-* <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)

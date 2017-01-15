@@ -26,9 +26,9 @@ Create a udev rule file `/etc/udev/weewx.rules` that looks like this:
 
 ```
 # FTDI usb-serial converter for device A
-ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}="XXXXXXXX", SYLINK+="deviceA"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}="XXXXXXXX", SYMLINK+="deviceA"
 # FTDI usb-serial converter for device B
-ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}="YYYYYYYY", SYLINK+="deviceB"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}="YYYYYYYY", SYMLINK+="deviceB"
 ```
 where `XXXXXXXX` is the serial number for the USB-to-serial converter connected to device `A` and `YYYYYYYY` is the serial number for the USB-to-serial converter connected to device `B`.
 

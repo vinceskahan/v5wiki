@@ -256,6 +256,31 @@ $period.event_ts $period.temp $forecast.label('Weather', $period.clouds)<br/>
 ```
 For details about how to use the $forecast variables, see the comments at the beginning of forecast.py.
 
+### The ForecastVariables search list extension
+
+To use the `$forecast` variable in a template, the ForecastVariables search list extension must be enabled within the skin for that template.  For example, to enable ForecastVariables in the Standard skin, modify `skins/Standard/skin.conf`:
+
+```
+[CheetahGenerator]
+    search_list_extension = user.forecast.ForecastVariables
+    ...
+```
+
+### Forecast icons
+
+The forecasts include many icons, which must be copied to any skin that will use the forecast.  For example, if you want to embed the forecast in the Standard skin, first copy the icons:
+
+```
+cp -rp skins/forecast/icons skins/Standard
+```
+
+Then include the icons in the list of files that should be copied by the CopyGenerator.  Append the icons directory to the `copy_once` parameter in the CopyGenerator configuration in `skins/Standard/skin.conf`:
+
+```
+[CopyGenerator]
+    copy_once = ..., icons/*.png
+```
+
 ## Screenshots
 
 ### forecast_iconic

@@ -43,7 +43,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
 * [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
-* [Run WeeWX on a Raspberry Pi](Raspberry%20Pi)
+* [Run WeeWX on a Raspberry Pi](Raspberry-Pi)
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)

@@ -10,13 +10,14 @@ You can run any number of weeWX instances from a single weeWX installation.  How
 * database
 * reports
 
-Let's say that you have two weather stations connected to a single computer.  Call them vantage and acurite.  Assume that you have installed weeWX using a DEB package.  The approach below will also work with setup.py or RPM installations, but might require slightly different paths.
+Let's say that you have two weather stations connected to a single computer.  Call them vantage and acurite.  The following instructions assume installation was done using the setup.py approach.  They will need a few minor changes to work with DEB or RPM installs.
 
-1. Create the configuration files.  Create one file for each station, say `/etc/weewx/vantage.conf` and `/etc/weewx/acurite.conf`:
+1. Create the configuration files.  Create one file for each station, say `vantage.conf` and `acurite.conf`.  Put these files in the directory `/etc/weewx`:
 
     ```
-cp /etc/weewx/weewx.conf /etc/weewx/vantage.conf
-cp /etc/weewx/weewx.conf /etc/weewx/acurite.conf
+sudo mkdir /etc/weewx
+sudo cp /home/weewx/weewx.conf /etc/weewx/vantage.conf
+sudo cp /home/weewx/weewx.conf /etc/weewx/acurite.conf
 ```
 
 2. Verify the driver configurations.  In each configuration file, ensure that `station_type` is set correctly.  In `vantage.conf`:

@@ -20,6 +20,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Change from one driver to another](Change driver)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Colorize the UV index](Colored%20UV%20index)
+* [Run multiple instances of weeWX on one computer](weewx-multi)
 
 #### operating system configuration
 * [Run WeeWX as a non-root user](Run as a non root user)

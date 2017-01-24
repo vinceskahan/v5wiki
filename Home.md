@@ -4,6 +4,8 @@ This is the place to go for information about the many extensions available for 
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
+### Getting help
+* [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
 
 ### Hardware recommendations
 * [On what hardware do you run WeeWX?](hardware)

@@ -80,6 +80,46 @@ Consult the *Station Data Table* for your hardware to understand exactly which v
 
 http://weewx.com/docs/hardware.htm
 
+### How weeWX calculates wind speeds
+
+#### Hardware reports windSpeed, windDir, windGust, windGustDir
+
+| observation | loop | archive | resulting loop | resulting archive |
+|---|---|---|---|---|---|
+| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
+| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
+| windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
+| windGustDir | gd | gd<sub>a</sub> | gd | gd<sub>a</sub> |
+
+#### Hardware reports windSpeed, windDir, windGust
+
+| observation | loop | archive | resulting loop | resulting archive |
+|---|---|---|---|---|---|
+| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
+| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
+| windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
+| windGustDir |  |  | ? | ? |
+
+#### Hardware reports windSpeed, windDir
+
+| observation | loop | archive | resulting loop | resulting archive |
+|---|---|---|---|---|---|
+| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
+| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
+| windGust |  |  |  | max(s<sub>a</sub>) |
+| windGustDir |  |  |  | gd<sub>max(s)</sub> |
+
+#### Hardware reports windSpeed, windDir
+
+| observation | loop | archive | resulting loop | resulting archive |
+|---|---|---|---|---|---|
+| windSpeed | s |  | s | s<sub>avg</sub> |
+| windDir | d |  | d | d<sub>avg</sub> |
+| windGust |  |  |  | max(s) |
+| windGustDir |  |  |  | gd<sub>max(s)</sub> |
+
+
+
 ## References
 
 http://w1.weather.gov/glossary/

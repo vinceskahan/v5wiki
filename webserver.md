@@ -81,18 +81,18 @@ sudo ln -s /home/weewx/public_html /var/www/html/weewx
 
 There were changes to the location of HTML_ROOT and the web server document root in the weewx DEB package to match the Debian Apache configuration.  The following table indicates where to find WeeWX reports and the web server document tree.
 
-## Location of HTML_ROOT
+| weeWX | install method | HTML_ROOT |
+|---|---|---|
+| 3.6+ | setup.py | /home/weewx/public_html |
+| 3.6+ | DEB      | /var/www/html/weewx |
+| 3.6+ | RPM      | /var/www/html/weewx |
+| <= 3.5 | setup.py | /home/weewx/public_html |
+| <= 3.5 | DEB      | /var/www/weewx |
+| <= 3.5 | RPM      | /var/www/html/weewx |
 
-- WeeWX 3.6+ setup.py /home/weewx/public_html
-- WeeWX 3.6+ DEB /var/www/html/weewx
-- WeeWX 3.6+ RPM /var/www/html/weewx
-- WeeWX <= 3.5 setup.py /home/weewx/public_html
-- WeeWX <= 3.5 DEB /var/www/weewx
-- WeeWX <= 3.5 RPM /var/www/html/weewx
-
-## Location of document root
-
-- Debian7 Apache /var/www
-- Debian7 nginx /usr/share/nginx/www
-- Debian8 Apache /var/www/html
-- Debian8 nginx /var/www/html
+| Debian | web server | DocumentRoot |
+|-----|-----|-----|
+| 7 | Apache | /var/www |
+| 7 | nginx  | /usr/share/nginx/www |
+| 8 | Apache | /var/www/html |
+| 8 | nginx  | /var/www/html |

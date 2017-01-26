@@ -107,17 +107,29 @@ http://weewx.com/docs/hardware.htm
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
 | windGust |  |  |  | max(s<sub>a</sub>) |
-| windGustDir |  |  |  | gd<sub>max(s)</sub> |
+| windGustDir |  |  |  | d<sub>max(s)</sub> |
 
-#### Hardware reports windSpeed, windDir
+#### Hardware reports windSpeed, windDir, windGust (no archive data)
 
 | observation | loop | archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
-| windSpeed | s |  | s | s<sub>avg</sub> |
-| windDir | d |  | d | d<sub>avg</sub> |
-| windGust |  |  |  | max(s) |
-| windGustDir |  |  |  | gd<sub>max(s)</sub> |
+| windSpeed | s |  | s | avg(s) |
+| windDir | d |  | d | avg(d) |
+| windGust | gs |  | gs | max(gs) |
+| windGustDir |  |  | ? | d<sub>max(gs)</sub> |
 
+#### Hardware reports windSpeed, windDir (no archive data)
+
+| observation | loop | archive | resulting loop | resulting archive |
+|---|---|---|---|---|---|
+| windSpeed | s |  | s | avg(s) |
+| windDir | d |  | d | avg(d) |
+| windGust |  |  |  | max(s) |
+| windGustDir |  |  |  | d<sub>max(s)</sub> |
+
+FIXME: how does use_hilo affect these?
+
+FIXME: how does record_generation affect these?
 
 
 ## References

@@ -92,7 +92,9 @@ There were changes to the location of HTML_ROOT and the web server document root
 
 | Debian | web server | DocumentRoot |
 |-----|-----|-----|
-| 7 | Apache | /var/www |
-| 7 | nginx  | /usr/share/nginx/www |
 | 8 | Apache | /var/www/html |
 | 8 | nginx  | /var/www/html |
+| 7 | Apache | /var/www |
+| 7 | nginx  | /usr/share/nginx/www |
+| | | |
+

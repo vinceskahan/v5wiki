@@ -82,9 +82,17 @@ http://weewx.com/docs/hardware.htm
 
 ### How weeWX calculates wind speeds
 
+```
+s - wind speed
+d - wind direction
+gs - wind gust speed
+gd - wind gust direction
+s<sub>a</sub> - archive record wind speed
+```
+
 #### Hardware reports windSpeed, windDir, windGust, windGustDir
 
-| observation | loop | archive | resulting loop | resulting archive |
+| observation | hardware loop | hardware archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
@@ -93,7 +101,7 @@ http://weewx.com/docs/hardware.htm
 
 #### Hardware reports windSpeed, windDir, windGust
 
-| observation | loop | archive | resulting loop | resulting archive |
+| observation | hardware loop | hardware archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
@@ -102,25 +110,27 @@ http://weewx.com/docs/hardware.htm
 
 #### Hardware reports windSpeed, windDir
 
-| observation | loop | archive | resulting loop | resulting archive |
+| observation | hardware loop | hardware archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
 | windGust |  |  |  | max(s<sub>a</sub>) |
 | windGustDir |  |  |  | d<sub>max(s)</sub> |
 
-#### Hardware reports windSpeed, windDir, windGust (no archive data)
+#### Hardware reports windSpeed, windDir, windGust
+*no archive data OR record_generation=software*
 
-| observation | loop | archive | resulting loop | resulting archive |
+| observation | hardware loop | hardware archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
 | windSpeed | s |  | s | avg(s) |
 | windDir | d |  | d | avg(d) |
 | windGust | gs |  | gs | max(gs) |
 | windGustDir |  |  | ? | d<sub>max(gs)</sub> |
 
-#### Hardware reports windSpeed, windDir (no archive data)
+#### Hardware reports windSpeed, windDir
+*no archive data OR record_generation=software*
 
-| observation | loop | archive | resulting loop | resulting archive |
+| observation | hardware loop | hardware archive | resulting loop | resulting archive |
 |---|---|---|---|---|---|
 | windSpeed | s |  | s | avg(s) |
 | windDir | d |  | d | avg(d) |

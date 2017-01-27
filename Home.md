@@ -1,6 +1,6 @@
-## Welcome to the WeeWX wiki!
+## Welcome to the weeWX wiki!
 
-This is the place to go for information about the many extensions available for WeeWX, as well as random "how to" tips.  For information on how to download, install, and configure WeeWX, see the [WeeWX web site](http://www.weewx.com/).
+This is the place to go for information about the many extensions available for weeWX, as well as random "how to" tips.  For information on how to download, install, and configure weeWX, see the [weeWX web site](http://www.weewx.com/).
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
@@ -8,7 +8,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
 
 ### Hardware recommendations
-* [On what hardware do you run WeeWX?](hardware)
+* [On what hardware do you run weeWX?](hardware)
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 
 ### HOWTO Pages
@@ -25,10 +25,10 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run multiple instances of weeWX on one computer](weewx-multi)
 
 #### operating system configuration
-* [Run WeeWX as a non-root user](Run as a non root user)
-* [Put log messages from WeeWX into a separate file](logging)
-* [Use logwatch to report WeeWX log messages](logwatch)
-* [Configure WeeWX to run under systemd](systemd)
+* [Run weeWX as a non-root user](Run as a non root user)
+* [Put log messages from weeWX into a separate file](logging)
+* [Use logwatch to report weeWX log messages](logwatch)
+* [Configure weeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Configure web server](webserver)
@@ -42,16 +42,16 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
-* [Use one-wire sensors with WeeWX](Onewire sensors)
+* [Use one-wire sensors with weeWX](Onewire sensors)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
-* [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
-* [Run WeeWX on a Raspberry Pi](Raspberry-Pi)
-* [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
+* [Get your Aercus WeatherSleuth (Observer) working with weeWX](weathersleuth)
+* [Run weeWX on a Raspberry Pi](Raspberry-Pi)
+* [Run weeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 
-### Extensions to WeeWX
+### Extensions to weeWX
 
 Use extensions to add capabilities to a weewx installation.  Drivers enable weewx to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
 

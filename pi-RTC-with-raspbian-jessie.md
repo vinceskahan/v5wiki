@@ -25,11 +25,12 @@ Jessie now supports out of the box RTC based on ds1307,ds3231,mcp7941x and three
         ```
 9.	There is no need to add i2c-bcm2708,i2c-dev and rtc-ds1307 to the /etc/modules as before.
 10.	/etc/modprobe.d/raspi-blacklist.conf has nothing in it
-11.	I then got rid of the fake hwclock```sudo apt-get remove –purge fake-hwclock```
+11.	I then got rid of the fake hwclock```sudo apt-get remove --purge fake-hwclock```
 12.     Ensure NTP on```timedatectl set-ntp true```
 13.     Connected to web check date and time and write to RTC ```sudo hwclock –w```
 14.     Reboot and check date and time with ```timedatectl status```
 15.     I then shutdown and removed lan and left off for 2 hrs and checked operation using monitor not ssh in.
+16.     As a final check, unplug the lan and then reboot the pi. This ensures the RTC starts up in the worst case scenario (no network available during initialization.)
 
 
 

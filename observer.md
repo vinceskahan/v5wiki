@@ -67,6 +67,12 @@ Packet Capture.  Run `tcpdump`, `ngrep`, or similar utility to capture all traff
 
 Detailed instructions for DNS, Proxy, and Packet Capture are included in the weewx-interceptor <a href="https://github.com/matthewwall/weewx-interceptor">readme</a>.
 
+### Warning!
+
+The scraping approach can be unstable.  According to Pat O'Brien,
+
+> I strongly recommend you do not advertise the scraping method. It is known to cause issues with the ObserverIP unit. The ObserverIP (black box with antenna on it) is an inexpensive unit that can barely survive an uptime of 30 days, let alone screen scraping every 15 seconds.
+
 ### References
 
 dkm created the first weewx driver for these stations (https://github.com/dkmcode/weewx-observerip).  That driver has two modes: direct (screen scraping) and indirect (capture via php).  In direct mode, the driver grabs the web page from the station then parses it to get the weather data.  In indirect mode, the station must be configured to send data to the computer running weewx, a PHP script captures the data to file, then the driver reads data from the file.

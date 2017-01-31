@@ -10,6 +10,8 @@ In July 2016, Acurite introduced the 'myacurite.com' web service and new firmwar
 
 The bridge has a small web server on port 80, but it displays only its status and configuration, as well a an option to turn the LEDs on or off.  It does not display sensor readings.
 
+<img src="http://www.weewx.com/hardware/acurite-bridge.png" width="200" align="right"/>
+
 The bridge can detect many different types of Acurite sensors, such as the 5-in-1, the Tower, and various types of Temperature/Humidity sensors.
 
 The bridge appears to send data for every sensor that it detects.  However, the myacurite web server supports only up to 10 devices.

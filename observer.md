@@ -28,6 +28,10 @@ The station is also sold as the Maplin N23DQ.  It is sold in Australia as the XC
 
 Ambient uses the brand name *ObserverIP* for the bridge and the brand name *Observer* for the wifi and non-wifi consoles.
 
+| console | bridge |
+|---|---|
+| <img src="http://weewx.com/hardware/fo-console.png" align="right" height="100"/> | <img src="http://weewx.com/hardware/fo-bridge.png" align="right" height="100"/> |
+
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 
 ### Configure the console to send to weewx

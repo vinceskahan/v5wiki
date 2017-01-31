@@ -4,7 +4,7 @@
 <img src="http://weewx.com/hardware/hp1000.png" align="right" height="100"/>
 <img src="http://weewx.com/hardware/ws0900.png" align="right" height="100"/>
 
-Fine Offset makes a wireless weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.  Ambient uses the brand name Observer.
+Fine Offset makes a wireless weather station, with data reported either on a console, console-to-internet, or bridge-to-internet.  These stations are sold by Ambient, Aercus, Froggit, and others.
 
 These stations upload directly to weather underground.  Some firmware versions include an option to set the destination of the upload so that you can send directly to your own web site or web service.  The uploads are driven either by a bridge or a console, depending on the configuration.  The bridge receives signals from the sensors, then uploads via a wired ethernet connection.  The console receives signals from the sensors, then uploads via a wireless (wifi) connection.
 
@@ -25,6 +25,8 @@ Aercus models include:
 * WeatherRanger - uploads via console wifi (same as HP1000)
 
 The station is also sold as the Maplin N23DQ.  It is sold in Australia as the XC0442.
+
+Ambient uses the brand name *ObserverIP* for the bridge and the brand name *Observer* for the wifi and non-wifi consoles.
 
 This is a description of how to get the data from the weather station directly, instead of relying only on the station uploading to Weather Underground.
 

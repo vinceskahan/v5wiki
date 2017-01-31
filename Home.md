@@ -32,7 +32,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
-* [Distinguish between USB devices](udevrules)
+* [Distinguish between USB devices using `udev` rules](udevrules)
 
 #### data management
 * [Clean up old 'bad' data](Cleaning up old 'bad' data)

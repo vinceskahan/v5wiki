@@ -7,7 +7,7 @@ There are two general approaches to this problem:
 
 The former is more general and can be done standalone. The latter is simpler, but requires access to the rest of weeWX.
 
-*Please note that the `python-MySQL` module is required to use weeWX with a MySQL database.*
+*Please note that the `python-mysqldb` module is required to use weeWX with a MySQL database.*
 
 ******************
 Dumping to SQL

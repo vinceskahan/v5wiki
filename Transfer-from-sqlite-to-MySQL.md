@@ -7,6 +7,8 @@ There are two general approaches to this problem:
 
 The first is more general and can be done standalone. The second is simpler, but requires access to the rest of weewx.
 
+*Please note that the MySQL python module is required to have weewx talk to MySQL.*
+
 ******************
 Dumping to SQL
 -------------

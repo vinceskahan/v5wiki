@@ -5,7 +5,10 @@ There are two general approaches to this problem:
 1. Use `mysqldump` to create a dump file, massage it, then restore using the utility `sqlite3`; or
 + Use the experimental weewx utility `transfer_db.py`.
 
-The former is more general and can be done standalone. The latter is simpler, but requires access to the rest of weewx.
+The former is more general and can be done standalone. The latter is simpler, but requires access to the rest of weeWX.
+
+*Please note that the `python-MySQL` module is required to use weeWX with a MySQL database.*
+
 ******************
 Dumping to SQL
 -------------

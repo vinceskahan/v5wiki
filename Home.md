@@ -15,6 +15,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [What you should know about paths](Understanding paths)
 * [What is the difference between `barometer`, `pressure`, and `altimeter`](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`](windgust)
+* [Wind chill and heat indexes](Wind-chill-and-heat-index)
 * [Strategies for publishing dashboards](dashboards)
 
 #### weewx configuration

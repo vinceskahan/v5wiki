@@ -5,12 +5,12 @@ There are two general approaches to this problem:
 1. Use the command line utility `sqlite3` to dump the contents of the sqlite database to a file, then massage the file, then upload its contents to MySQL using the utility `mysql`; or
 + Use the `wee_database` utility to transfer the sqlite archive to a MySQL database.
 
-The first is more general and can be done standalone. The second is simpler, but requires access to the rest of weewx.
+The first is more general and can be done independently of weeWX. The second is simpler, but requires access to a weeWX installation.
 
 *Please note that the `python-mysqldb` module is required to use weeWX with a MySQL database.*
 
 
-# Dumping to SQL
+# Using sqlite3 and mysql commands
 
 For approach #1, first dump the sqlite database using the utility `sqlite3`. Adjust the path to the sqlite3 database, `weewx.sdb`, as necessary. Note: you may have to install `sqlite3` first. 
 

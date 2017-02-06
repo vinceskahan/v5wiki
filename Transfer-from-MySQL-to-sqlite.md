@@ -60,12 +60,6 @@ Note the above settings are based on there being an `archive_sqlite` entry in th
 
 # Using wee_database
 
-Weewx v3.0.0 or greater is required in order to use `wee_database` to transfer from MySQL to sqlite. When weeWX is installed using setup.py and the default location of `/home/weewx`, `wee_database` is installed to `/home/weewx/bin/wee_database`. When weeWX is installed using .deb or .rpm, `wee_database` is installed to `/usr/share/weewx/wee_database` with a symbolic link `/usr/bin/wee_database`.
-
-The database transfer option was added in v3.3.0.  For weeWX v3.2.1 and earlier, the latest version of `wee_database` can be downloaded from the weewx GitHub code repository:
-
-    $ wget -O wee_datbase https://raw.githubusercontent.com/weewx/weewx/master/bin/wee_database
-
 To transfer a database using `wee_database`, data bindings for both the source and destination databases must exist in `weewx.conf`. As the source database will most likely be the archive database currently used by weeWX, it is likely that only the destination database will require the addition of a data binding to `weewx.conf`. To add a data binding; edit `weewx.conf`, locate the `[DataBinding]` section and add a binding similar to the following:
 
         [[dest_binding]]
@@ -119,3 +113,12 @@ Once the transfer is complete and before the new database can be used with weeWX
     $ wee_database --backfill-daily
 
 Be sure to stop then start weeWX after any changes to `weewx.conf`.
+
+
+# Caveats
+
+Weewx v3.0.0 or greater is required in order to use `wee_database` to transfer from MySQL to sqlite. When weeWX is installed using setup.py and the default location of `/home/weewx`, `wee_database` is installed to `/home/weewx/bin/wee_database`. When weeWX is installed using .deb or .rpm, `wee_database` is installed to `/usr/share/weewx/wee_database` with a symbolic link `/usr/bin/wee_database`.
+
+The database transfer option was added in v3.3.0.  For weeWX v3.2.1 and earlier, the latest version of `wee_database` can be downloaded from the weewx GitHub code repository:
+
+    $ wget -O wee_datbase https://raw.githubusercontent.com/weewx/weewx/master/bin/wee_database

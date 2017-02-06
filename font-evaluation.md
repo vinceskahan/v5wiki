@@ -12,8 +12,10 @@ These are screenshots of the v3.6.2 and v3.7.0 docs in various browsers and oper
 <tr><th></th><th>3.6.2</th><th>3.7.0</th></tr>
 <tr>
 <td>chrome ubuntu</td>
-<td><img src="font-eval/v3.6.2-chrome-ubuntu-16.10.png" width="400"/></td>
-<td><img src="font-eval/v3.7.0-chrome-ubuntu-16.10.png" width="400"/></td>
+<td><a href="font-eval/v3.6.2-chrome-ubuntu-16.10.png">
+<img src="font-eval/v3.6.2-chrome-ubuntu-16.10.png" width="400"/></a></td>
+<td><a href="font-eval/v3.7.0-chrome-ubuntu-16.10.png">
+<img src="font-eval/v3.7.0-chrome-ubuntu-16.10.png" width="400"/></a></td>
 </tr>
 <tr>
 <td>firefox macosx 10.6</td>

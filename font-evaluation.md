@@ -3,7 +3,7 @@ These are screenshots of the v3.6.2 and v3.7.0 docs in various browsers and oper
 |   | 3.6.2 | 3.7.0 |
 |---|---|---|
 | body | Verdana, Arial, sans-serif | NotoSans, sans-serif |
-| title, h1-h4,  |  | Roboto, sans-serif |
+| title, h1-h4 |  | Roboto, sans-serif |
 | code, tty | CourierNew, Courier, monospace | Inconsolata, monospace |
 | example | TimesNewRoman, Times, serif | DroidSerif, serif |
 | stats | Verdana, Arial, Helvetica, sans-serif | NotoSans, sans-serif |

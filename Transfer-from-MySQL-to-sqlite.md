@@ -10,7 +10,7 @@ The former is more general and can be done independently of weeWX. The latter is
 *Please note that the `python-mysqldb` module is required to use weeWX with a MySQL database.*
 
 
-# Using mysqldump
+# Using mysqldump and sqlite3 commands
 
 For approach #1, first dump the MySQL database using `mysqldump`.
 

@@ -19,8 +19,9 @@ from weewx.engine import StdService
 
 class RemoteDataService(StdService):
     def __init__(self, engine, config_dict):
-        super(PressureService, self).__init__(engine, config_dict)
-        d = config_dict.get('PressureService', {})
+        super(RemoteDataService, self).__init__(engine, config_dict)
+        # get options from the configuration file
+        d = config_dict.get('RemoteDataService', {})
         self.server_name = d.get('server', 'localhost')
         self.port = int(d.get('port', 8083))
         # the thread will set this each time it reads new values.

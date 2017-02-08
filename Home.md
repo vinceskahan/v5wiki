@@ -43,7 +43,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
-* [Add a sensor with independent thread to collect data](add-sensor-threaded)
 * [Use one-wire sensors with weeWX](Onewire sensors)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
@@ -52,6 +51,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run weeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
+* [Implement a multi-threaded service](multi-threaded-service)
 
 ### Extensions to weeWX
 

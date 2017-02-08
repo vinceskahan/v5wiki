@@ -10,7 +10,7 @@ It expects data from the socket server in a single line of space-delimited name=
 
 Put the service code into a file in the `user` directory, say `/home/weewx/bin/user/remotedata.py`
 
-```
+```Python
 import socket
 import syslog
 import time

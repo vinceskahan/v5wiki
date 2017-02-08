@@ -76,7 +76,7 @@ and in `acurite.conf`:
 
 5. Configure the startup script.  Use the `weewx-multi` init script to start each instance when the computer boots.
 
-```
+    ```
 sudo cp util/init.d/weewx-multi /etc/init.d/weewx
 sudo update-rc.d weewx defaults
 echo "vantage acurite" | sudo tee /etc/defaults/weewx-multi

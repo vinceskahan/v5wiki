@@ -43,6 +43,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
+* [Add a sensor with independent thread to collect data](add-sensor-threaded)
 * [Use one-wire sensors with weeWX](Onewire sensors)
 * [Deal with FineOffset USB lockup](FineOffset USB lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)

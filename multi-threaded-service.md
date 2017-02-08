@@ -75,8 +75,8 @@ To enable the service, add it to the service list in `weewx.conf`:
 
 ```
 [Engine]
-[[Services]]
-    data_services = ..., user.remotedata.RemoteDataService
+    [[Services]]
+        data_services = ..., user.remotedata.RemoteDataService
 ```
 
 Then restart weeWX.

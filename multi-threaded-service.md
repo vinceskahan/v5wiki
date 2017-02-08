@@ -22,13 +22,13 @@ class RemoteDataService(StdService):
         super(RemoteDataService, self).__init__(engine, config_dict)
         # get options from the configuration file
         d = config_dict.get('RemoteDataService', {})
-        self.server_name = d.get('server', 'localhost')
-        self.port = int(d.get('port', 8083))
+        server_name = d.get('server', 'localhost')
+        server_port = int(d.get('port', 8083))
         # the thread will set this each time it reads new values.
         # the service will read this each archive interval.
         self.values = dict()
         # start the thread that captures the pressure value
-        self._thread = RemoteDataThread(self, self.server_name)
+        self._thread = RemoteDataThread(self, server_name, server_port)
         self._thread.start()
         # bind this service to happen with each new archive record
         self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
@@ -58,7 +58,7 @@ class RemoteDataThread(threading.Thread):
         while self.running:
             try:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                server = (self.server_name, self.port)
+                server = (self.server_name, self.server_port)
                 sock.connect(server)
                 while self.running:
                     data = sock.recv(1024)

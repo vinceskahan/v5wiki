@@ -1,0 +1,136 @@
+This is intended to use the inbuilt RSYNC report to backup the database. It could be repurposed even further to do anything else, but it would be best to keep it simple and not overload weewx. That said - 
+
+The report cycle in weewx only starts once all writes to the database have finished, this provides some assurance that any copy of the database taken at that time will be a good one.
+
+It relies on the ability to use multiple instances of a skin by simply giving them their own skin [ [section] ] name in the weewx.conf file, or skin.conf file
+
+===The simplest - using weewx.conf===
+<pre>
+[[RSYNCSQL]]
+  skin = Rsync
+</pre>
+we then redefine HTML_ROOT (only within the skin itself) to point to the local database
+<pre>
+[[RSYNCSQL]]
+        skin = Rsync
+        HTML_ROOT = /var/lib/weewx
+</pre>
+and add the other requirements to get it to start and run
+<pre>
+[[RSYNCSQL]]
+        skin = Rsync
+        HTML_ROOT = /var/lib/weewx
+        server = 192.168.0.100
+        user = graybeard
+        path = /home/graybeard/rsynsql-weewx1
+</pre>
+Finally, add a [http://www.weewx.com/docs/customizing.htm#customizing_gen_time report_time stanza] of your choosing (or not if you want a rolling copy)
+It would pay to check your archive_interval in weewx.conf, and make this longer than that.
+
+For me, besides catching the database between archive intervals, this is the real sweetener.
+
+<pre>
+[[RSYNCSQL]]
+        skin = Rsync
+        HTML_ROOT = /var/lib/weewx
+        # If it's local, an ip address is fine for the server
+        server = 192.168.0.100
+        # account that has password less access to the server
+        user = graybeard
+        # where to put it all, don't nest too deeply unless you create the tree first
+        path = /home/graybeard/rsynscql-weewx
+        # every 20 minutes, run this report
+        report_timing = '*/20 * * * *'
+        # add the default
+        delete = 0
+</pre>
+===An alternative - using skin.conf===
+Alternatively, transfer it all to a skin.conf file and that way you can make changes
+to your setup while weewx is running. The weewx.conf file takes precedence over the skin.conf files, so in in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx) and place them into the skin.conf file.
+<pre>
+[[RSYNCSQL]]
+        skin = Rsyncsql
+        #HTML_ROOT = /var/lib/weewx
+        # If it's local, an ip address is fine for the server
+        #server = 192.168.0.100
+        # account that has password less access to the server
+        #user = graybeard
+        # where to put it all, don't nest too deeply unless you create the tree first
+        #path = /home/graybeard/rsyncsql-weewx1
+        # every 20 minutes, run this report
+        # report_timing = '*/20 * * * *'
+        # add the default
+        delete = 0
+</pre>
+Note the change to the first line ''skin = Rsync'', we now point to '''skin = Rsyncsql'''.
+
+So we need to create it...
+<pre>
+cd skins
+cp -r Rsync Rsyncsql/
+</pre>
+and then edit it, ''skins/Rsyncsql/skin.conf''  to add the following after the comments at the top...
+
+        HTML_ROOT = /var/lib/weewx
+        # If it's local, an ip address is fine for the server
+        server = 192.168.0.100
+        # account that has password less access to the server
+        user = graybeard
+        # where to put it all, don't nest too deeply unless you create the tree first
+        path = /home/graybeard/rsyncsql-weewx-skin
+        # every 20 minutes, run this report
+        report_timing = '*/20 * * * *'
+        # add the default
+        delete = 0
+</pre>
+===Create the password-less access===
+Finally create the password-less access for the remote user, from the local root (the account weewx is running as and for most users that will be root)
+
+When asked for the passphrase, just hit enter. If you're worried about security then investigate running weewx with a less privileged user - see [[Run as a non root user]]
+
+<pre>
+READ WRITE : root@raspberrypi:~# ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+e6:54:4e:43:b1:72:fb:8d:5f:3f:8c:d6:b4:2a:8b:fa root@raspberrypi
+The key's randomart image is:
++---[RSA 2048]----+
+|          o.     |
+|         . .     |
+|        . *      |
+|         * o     |
+|        S o      |
+|       +   . o . |
+|        .   o * o|
+|          .. + *.|
+|       .oE .+.o o|
++-----------------+
+READ WRITE : root@raspberrypi:~#  ssh-copy-id -i ~/.ssh/id_rsa.pub graybeard@192.168.0.100
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+graybeard@192.168.0.100's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'graybeard@192.168.0.100'"
+and check to make sure that only the key(s) you wanted were added.
+
+READ WRITE : root@raspberrypi:~# ssh 'graybeard@192.168.0.100'
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+You have new mail.
+Last login: Tue Feb 14 08:56:07 2017 from 192.168.0.215
+xterm graybeard@whitebeard:~
+09:31 AM $ logout
+Connection to 192.168.0.100 closed.
+</pre>

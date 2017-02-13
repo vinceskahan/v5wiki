@@ -17,6 +17,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [What is `wind gust` and how is it different from `maximum wind speed`](windgust)
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
 * [Strategies for publishing dashboards](dashboards)
+* [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 
 #### weewx configuration
 * [Manage extensions](extensions)

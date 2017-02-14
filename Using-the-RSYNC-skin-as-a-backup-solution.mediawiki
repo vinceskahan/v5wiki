@@ -6,7 +6,7 @@ Rsyncing your sqlite database falls under simple, that action can be done often 
 
 The report cycle in weewx only starts once all writes to the database have finished, this provides some assurance that any copy of the database taken at that time will be a good one.
 
-It relies on the ability to use multiple instances of a skin by simply giving them their own skin [ [section] ] name in the weewx.conf file, or skin.conf file
+This method relies on the ability to use multiple instances of a skin by simply giving them their own skin [ [section] ] name in the weewx.conf file, or skin.conf file
 
 ===The simplest - using weewx.conf===
 <pre>

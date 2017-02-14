@@ -13,13 +13,13 @@ This method relies on the ability to use multiple instances of a skin by simply 
 [[RSYNCSQL]]
   skin = Rsync
 </pre>
-we then redefine HTML_ROOT (only within the skin itself) to point to the local database
+we then redefine HTML_ROOT (this only affects this skin, and only when it's run) to point to the local database
 <pre>
 [[RSYNCSQL]]
         skin = Rsync
         HTML_ROOT = /var/lib/weewx
 </pre>
-and add the other requirements to get it to start and run
+then add the other requirements to get it to start and run
 <pre>
 [[RSYNCSQL]]
         skin = Rsync
@@ -29,9 +29,9 @@ and add the other requirements to get it to start and run
         path = /home/graybeard/rsynsql-weewx1
 </pre>
 Finally, add a [http://www.weewx.com/docs/customizing.htm#customizing_gen_time report_time stanza] of your choosing (or not if you want a rolling copy)
-It would pay to check your archive_interval in weewx.conf, and make this longer than that.
+It would pay to check your archive_interval in weewx.conf, and make this interval longer than that one.
 
-For me, besides catching the database between archive intervals, this is the real sweetener.
+For me, besides catching the database between archive intervals, this report_timing config is the real sweetener.
 
 <pre>
 [[RSYNCSQL]]
@@ -48,10 +48,12 @@ For me, besides catching the database between archive intervals, this is the rea
         # add the default
         delete = 0
 </pre>
+
 ====An alternative - using skin.conf====
-Alternatively, transfer it all to a skin.conf file and that way you can make changes
-to your setup while weewx is running. The weewx.conf file takes precedence over the skin.conf files, so in in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx to action) and place them into the skin.conf file.
-Any argument that is unique to skin.conf will be read and actioned each report cycle. If it also exists in weewx.conf that value has precedence.
+Alternatively, transfer it all to a skin.conf file and that way you can make changes to your setup while weewx is running. 
+The weewx.conf file takes precedence over the skin.conf files, so in in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx to action) and place them into the skin.conf file.
+
+Putting it another way: Any argument that is unique to skin.conf will be read and actioned each report cycle. If it also exists in weewx.conf that value takes over and can only be read (actioned) by restarting weewx.
 <pre>
 [[RSYNCSQL]]
         skin = Rsyncsql

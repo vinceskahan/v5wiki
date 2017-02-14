@@ -50,12 +50,12 @@ For me, besides catching the database between archive intervals, this report_tim
 </pre>
 
 ====An alternative - using skin.conf====
-Alternatively, transfer it all to a skin.conf file and that way you can make changes to your setup while weewx is running. 
-The weewx.conf file takes precedence over the skin.conf files, so in in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx to action) and place them into the skin.conf file.
+Alternatively, transfer everything ( '''except the HTML_ROOT variable,''' ) to a skin.conf file and that way you can make changes to your setup while weewx is running. 
+The weewx.conf file takes precedence over the skin.conf files, so  in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx to action) and place them into the skin.conf file.
 
 Putting it another way: Any argument that is unique to skin.conf will be read and actioned each report cycle. If it also exists in weewx.conf that value takes over and can only be read (actioned) by restarting weewx.
+And HTML_ROOT is exclusive to the weewx.conf file
 
-Update - it appears that HTML_ROOT needs to remain in weewx.conf. That one can't be moved to the skin!
 <pre>
 [[RSYNCSQL]]
         skin = Rsyncsql

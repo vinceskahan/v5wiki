@@ -54,10 +54,12 @@ Alternatively, transfer it all to a skin.conf file and that way you can make cha
 The weewx.conf file takes precedence over the skin.conf files, so in in weewx.conf comment out the values you don't want to be permanent (as in require a restart of weewx to action) and place them into the skin.conf file.
 
 Putting it another way: Any argument that is unique to skin.conf will be read and actioned each report cycle. If it also exists in weewx.conf that value takes over and can only be read (actioned) by restarting weewx.
+
+Update - it appears that HTML_ROOT needs to remain in weewx.conf. That one can't be moved to the skin!
 <pre>
 [[RSYNCSQL]]
         skin = Rsyncsql
-        #HTML_ROOT = /var/lib/weewx
+        HTML_ROOT = /var/lib/weewx
         # If it's local, an ip address is fine for the server
         #server = 192.168.0.100
         # account that has password less access to the server

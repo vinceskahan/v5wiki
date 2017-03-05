@@ -9,6 +9,7 @@
 #### Minor features
 
 * Support for generating JSON documents
+* QC Spike detector
 
 ## Version 3.9
 

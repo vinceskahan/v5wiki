@@ -109,6 +109,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="http://www.idokep.hu/favicon.ico" width='16'/> [idokep](https://github.com/lorantkurthy/weewx-idokep/)
 * <img src="https://www.influxdata.com/wp-content/themes/influx/images/favicon.ico" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx)
+* <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate)
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt)
 * <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap)
 * <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)

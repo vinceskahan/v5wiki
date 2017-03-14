@@ -53,6 +53,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 * [Implement a multi-threaded service](multi-threaded-service)
+* [Run weeWX on OpenWRT](weewx-on-openwrt)
 
 ### Extensions to weeWX
 

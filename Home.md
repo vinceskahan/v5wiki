@@ -71,7 +71,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
 * [owfs - Collect data from one-wire sensors](owfs)
 * [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr)
-* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000 radio)
+* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)

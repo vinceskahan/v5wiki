@@ -21,36 +21,36 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 #### weewx configuration
 * [Manage extensions](extensions)
-* [Change from one driver to another](Change driver)
+* [Change from one driver to another](Change-driver)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Colorize the UV index](Colored%20UV%20index)
 * [Run multiple instances of weeWX on one computer](weewx-multi)
 
 #### operating system configuration
-* [Run weeWX as a non-root user](Run as a non root user)
+* [Run weeWX as a non-root user](Run-as-a-non-root-user)
 * [Put log messages from weeWX into a separate file](logging)
 * [Use logwatch to report weeWX log messages](logwatch)
 * [Configure weeWX to run under systemd](systemd)
-* [Reduce the number of writes for SD cards or SSDs](Minimize writes on SD cards)
+* [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
 * [Distinguish between USB devices using `udev` rules](udevrules)
 
 #### data management
-* [Clean up old 'bad' data](Cleaning up old 'bad' data)
+* [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
-* [Use one-wire sensors with weeWX](Onewire sensors)
-* [Deal with FineOffset USB lockup](FineOffset USB lockup)
+* [Use one-wire sensors with weeWX](Onewire-sensors)
+* [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
 * [Get your Aercus WeatherSleuth (Observer) working with weeWX](weathersleuth)
 * [Run weeWX on a Raspberry Pi](Raspberry-Pi)
 * [Run weeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
-* [Raspberry Pi weather station with i2C sensors](Raspberry Pi weather station with i2C sensors)
+* [Raspberry Pi weather station with i2C sensors](Raspberry-Pi-weather-station-with-i2C-sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 * [Implement a multi-threaded service](multi-threaded-service)
 * [Run weeWX on OpenWRT](weewx-on-openwrt)

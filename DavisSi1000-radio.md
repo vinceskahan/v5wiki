@@ -3,6 +3,8 @@ Using weewx with a DavisSi1000 radio
 
 You can use weewx with a 900MHz Davis ISS weather station, without using a Davis console, by using a 3DRobotics 900MHz telemetry radio, along with the DavisSi1000 radio firmware.
 
+For general information on using an Si1000 wireless receiver, see [this thread on wxforum.net](http://www.wxforum.net/index.php?topic=18718.0).
+
 More details on where to get the radio and how to set it up is available in the [DavisSi1000 github repository](http://github.com/tridge/DavisSi1000).
 
 Installing the DavisSi1000 driver

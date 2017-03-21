@@ -82,18 +82,18 @@ http://weewx.com/docs/hardware.htm
 
 ### How weeWX calculates wind speeds
 
-```
-s - wind speed
-d - wind direction
-gs - wind gust speed
-gd - wind gust direction
-s<sub>a</sub> - archive record wind speed
-```
+| symbol | meaning |
+|----|----|
+|s | wind speed |
+|d | wind direction |
+|gs | wind gust speed |
+|gd | wind gust direction |
+| s<sub>a</sub> | archive record wind speed |
 
 #### Hardware reports windSpeed, windDir, windGust, windGustDir
 
 | observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
 | windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
@@ -102,7 +102,7 @@ s<sub>a</sub> - archive record wind speed
 #### Hardware reports windSpeed, windDir, windGust
 
 | observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
 | windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
@@ -111,7 +111,7 @@ s<sub>a</sub> - archive record wind speed
 #### Hardware reports windSpeed, windDir
 
 | observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
 | windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
 | windGust |  |  |  | max(s<sub>a</sub>) |
@@ -121,7 +121,7 @@ s<sub>a</sub> - archive record wind speed
 *no archive data OR record_generation=software*
 
 | observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | windSpeed | s |  | s | avg(s) |
 | windDir | d |  | d | avg(d) |
 | windGust | gs |  | gs | max(gs) |
@@ -131,7 +131,7 @@ s<sub>a</sub> - archive record wind speed
 *no archive data OR record_generation=software*
 
 | observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | windSpeed | s |  | s | avg(s) |
 | windDir | d |  | d | avg(d) |
 | windGust |  |  |  | max(s) |

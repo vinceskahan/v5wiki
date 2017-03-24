@@ -56,6 +56,8 @@ http://www.raspberrypi.org/
 
 The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video.  As of October 2013, cost is 25 US$. Expect to add a powered USB hub for reliable operation with most USB weather stations.
 
+The Raspberry Pi Zero Wireless works great too!
+
 <br clear="all">
 
 Synology

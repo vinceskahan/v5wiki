@@ -12,19 +12,19 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.20.tgz
 
 1.  Install the python bindings.  For example, on debian systems:
 
-    ```
+```
 sudo apt-get install python-ow
 ```
 
 2.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-owfs-x.y.tgz
 ```
 
 3.  Find out what sensors are attached:
 
-    ```
+```
 # if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
 
@@ -34,7 +34,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --sensors
 
 4.  Get some data from the sensors:
 
-    ```
+```
 # if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
 
@@ -46,7 +46,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 
     Specify the driver, interface, sensor map and possibly sensor types:
 
-    ```
+```
     [OWFS]
         interface = u
         driver = user.owfs
@@ -61,7 +61,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 
     Specify OWFS as the driver:
 
-    ```
+```
     [Station]
         ...
         station_type = OWFS
@@ -69,7 +69,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 
     Add calibration corrections for individual sensors:
 
-    ```
+```
     [StdCalibrate]
         [[Corrections]]
             radiation = radiation * 1.7304636.  `
@@ -77,7 +77,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 
 6. Start weewx
 
-    ```
+```
 sudo /etc/init.d/weewx start
 ```
 

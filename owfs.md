@@ -44,7 +44,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 
 5.  Modify weewx.conf:
 
-    Specify the driver, interface, sensor map and possibly sensor types:
+Specify the driver, interface, sensor map and possibly sensor types:
 
 ```
     [OWFS]
@@ -59,7 +59,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
             lightning = counter
 ```
 
-    Specify OWFS as the driver:
+Specify OWFS as the driver:
 
 ```
     [Station]
@@ -67,7 +67,7 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
         station_type = OWFS
 ```
 
-    Add calibration corrections for individual sensors:
+Add calibration corrections for individual sensors:
 
 ```
     [StdCalibrate]

@@ -2,7 +2,7 @@
 
 Running weewx on a Raspberry Pi has become very popular. You'll have to look elsewhere for general instructions on setting up your RPi, but there are a few problem specific to weewx.
 
-###Time
+### Time
 
 First, you simply must run NTP on the RPi. It is not possible to create a dependable data logging system without an accurate source of time.
 
@@ -14,7 +14,7 @@ Eventually NTP starts up, finds an authoritative time source, then sets the time
 
 There are a number of solutions. Here are two.
 
-#####A. Add a hardware clock#####
+##### A. Add a hardware clock
 
 The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD) and solve the problem permanently. Users have had good luck with these clocks:
 
@@ -25,7 +25,7 @@ For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration 
 
 For Raspberry models running Jessie, see some hints on the page [pi RTC with jessie](https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie).
 
-#####B. Remove the fake clock#####
+##### B. Remove the fake clock
 
 As of Version 3.4, Weewx will not start up until the system time is later than 1 January 2000. So, a simple solution is to remove the fake clock. Without the fake clock, the system time will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, preventing weewx from starting up until NTP sets the true time.
 
@@ -35,7 +35,7 @@ To remove the fake clock:
 $ sudo apt-get purge fake-hwclock
 ~~~~~
 
-###Use a high-quality SD card###
+### Use a high-quality SD card
 
 The SD card supplied with most RPis seems to be of very low quality. Make sure you use a good, Class 10 card. User William Phelps reports, "You can usually spot a failing card by watching the kernel I/O wait time. Once the card starts to go, the I/O wait time will increase significantly."
 
@@ -46,7 +46,7 @@ Many users have had good luck with the better Sandisk SD cards. In increasing or
 * Sandisk Extreme Pro
 
 
-###FTP###
+### FTP
 
 Many Raspbian versions of Debian do not seem to include an FTP client. You may have to install this if you plan on using FTP.
 
@@ -55,11 +55,11 @@ $ sudo apt-get install ftp
 ~~~~~
 
 
-###Use a good power supply###
+### Use a good power supply
 
 A lot of problems with the RPi seem to center around inadequate power supplies.  Many weather stations can demand a lot of current through their USB connection. Make sure your RPi can supply it, either by getting a good power supply, or, alternatively, by using a powered USB hub.  I use an [Innogear 1.5 A supply](http://www.amazon.com/gp/product/B00J3IB7A2/), which costs well under $10 USD from Amazon, but, unfortunately, it is not offered any more. This [Samsung charger](https://www.amazon.com/Samsung-Adapter-5-Feet-Charging-Cables/dp/B00CQS0S7E/ref=sr_1_1) is essentially similar.
         
-###Run a lightweight web server###
+### Run a lightweight web server
 
 The RPi is astonishingly powerful for its size, but it does have its limitations. If you plan on running a webserver on it, perhaps to serve your home, then use a lightweight one, such as [lighttpd](http://www.lighttpd.net/), or [nginx](http://nginx.org/). Apache works, but it uses far more memory. In my tests:
 

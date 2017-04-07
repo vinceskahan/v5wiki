@@ -1,4 +1,4 @@
-##Running weewx on a Raspberry Pi##
+##Running weewx on a Raspberry Pi
 
 Running weewx on a Raspberry Pi has become very popular. You'll have to look elsewhere for general instructions on setting up your RPi, but there are a few problem specific to weewx.
 

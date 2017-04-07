@@ -2,7 +2,7 @@
 
 Running weewx on a Raspberry Pi has become very popular. You'll have to look elsewhere for general instructions on setting up your RPi, but there are a few problem specific to weewx.
 
-###Time###
+###Time
 
 First, you simply must run NTP on the RPi. It is not possible to create a dependable data logging system without an accurate source of time.
 

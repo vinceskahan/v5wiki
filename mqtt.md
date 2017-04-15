@@ -59,3 +59,57 @@ _retain_ - When set to `True`, the MQTT `retain` property is set for each messag
 ### Upgrading from weewx 2.6-2.7
 
 Simply run the extension installer then restart weewx.  If your weewx.conf already contained a server_url and topic, these should be remembered by the installer.
+
+
+### MQTT Output
+
+When connecting to MQTT subscribe to the following:
+
+```
+weather/#
+```
+_Please note that "weather" is the default topic, and may vary from your topic setting_
+
+This will list all observations
+
+
+Example for individual observations:
+
+```
+weather/loop
+weather/cloudbase_meter
+weather/outHumidity
+weather/pressure_mbar
+weather/rain_cm
+weather/barometer_mbar
+weather/dewpoint_C
+weather/rainTotal
+weather/ptr
+weather/illuminance
+weather/heatindex_C
+weather/dayRain_cm
+weather/outTempBatteryStatus
+weather/delay
+weather/inDewpoint
+weather/altimeter_mbar
+weather/windchill_C
+weather/appTemp_C
+weather/outTemp_C
+weather/status
+weather/windGust_kph
+weather/humidex_C
+weather/rain24_cm
+weather/rxCheckPercent
+weather/hourRain_cm
+weather/inTemp_C
+weather/windSpeed_kph
+weather/usUnits
+weather/UV
+weather/rainRate_cm_per_hour
+weather/dateTime
+weather/windDir
+weather/inHumidity
+weather/radiation_Wpm2
+```
+_Please note that this list may vary depending on your settings_
+

@@ -10,28 +10,34 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
 
 1.  Install the MQTT Python bindings:
 
-    ```
+```
 sudo pip install paho-mqtt
 ```
 
 2.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-mqtt-x.y.tgz
 ```
 
-3.  Modify weewx.conf:
+3.  Modify [StdRestful] in "/etc/weewx/weewx.conf" (Around line 71) and add the following lines: 
 
-    ```
-    [StdRESTful]
-        [[MQTT]]
-            server_url = mqtt://username:password@example.com:1883
-            topic = weather
+```
+    [[MQTT]]
+        server_url = mqtt://username:password@localhost:1883/
+        topic = weather
+        unit_system = METRIC
+```
+
+At the bottom in "/etc/weewx/weewx.conf" find "[[Services]]", change or add the following
+
+```
+restful_services = user.mqtt.MQTT
 ```
 
 4.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

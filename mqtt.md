@@ -29,7 +29,7 @@ wee_extension --install weewx-mqtt-x.y.tgz
         unit_system = METRIC
 ```
 
-At the bottom in **"/etc/weewx/weewx.conf"** find **[[Services]]**, change or add the following
+At the bottom in **"/etc/weewx/weewx.conf"** find **[ [Services] ]**, change or add the following
 
 ```
 restful_services = user.mqtt.MQTT

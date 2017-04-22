@@ -87,13 +87,13 @@ tide -l Boston
 
 1.  Run the extension installer to install the forecast service and sample skin.
 
-    ```
+```
 wee_extension --install weewx-forecast-x.y.tgz
 ```
 
 2.  In weewx.conf, specify required parameters for the forecast services you want to run
 
-    ```
+```
     [Forecast]
         [[NWS]]
             lid = MAZ014                 # specify a location identifier
@@ -114,7 +114,7 @@ wee_extension --install weewx-forecast-x.y.tgz
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

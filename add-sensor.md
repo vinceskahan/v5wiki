@@ -8,7 +8,7 @@ These are instructions for adding data from a single sensor.
 
 1.  Save the sensor data to a file, say /var/tmp/pond.txt
 
-    ```
+```
 23.4
 ```
 
@@ -39,7 +39,7 @@ class PondService(StdService):
 
 3.  Tell weewx about the service by adding it to weewx.conf:
 
-    ```
+```
 [Engine]
     [[Services]]
         data_services = ..., user.pond.PondService
@@ -47,7 +47,7 @@ class PondService(StdService):
 
 4.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

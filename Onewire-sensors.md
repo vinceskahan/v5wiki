@@ -1,3 +1,5 @@
+The 1-Wire bus is a cheap low-speed bus for devices like weather sensors, access control, etc. It can be attached to your system via serial, USB, I2C, and other interfaces.
+
 <div style="float:right">
 <img src="http://weewx.com/hardware/ow-ds9490r.png" width="100" />
 <img src="http://weewx.com/hardware/ow-ds18b20.png" width="100" />
@@ -6,6 +8,21 @@
 <img src="http://weewx.com/hardware/ow-soil-moisture-sensor.png" width="100" />
 </div>
 
+## Supported devices:
+As of 2017 these sensors are becoming a little harder to find, but they are still available through various means. Ebay and [Sheepwalk Electronics](http://www.sheepwalkelectronics.co.uk) come to mind. Sadly [Hobby boards](http://www.hobbyboards.com/) has gone. There are other sources, hit your favorite search engine to find them.
+
+Besides the equipment shown in the above images, there are.
+* DS2409 chips: used in various hubs, examples of which are: Hobby-boards (6-port hub), AAG (TAI-8595).
+* DS18S20 and variants (2nd image): These are readily available via ebay or other sources and are very effective as temperature sensors.
+* DS2438 counter: used in the AAG and Hobby-board designs. The anemometer, wind vane, rain gauge, lightning counter, humidity, solar radiation and barometer from HB use these in some form, as did the AAG equivalents. 
+* Hobby boards UVI sensor
+* Anemometer and wind vanes: The Inspeed and ADS(?) units have been modified to work with the DS2438 Counters by using the Hobby-boards interface. AAG also had several revisions of their particular unit.   
+
+The owfs module for weewx uses the python bindings (python-ow) for the [OWFS 1-Wire support library](http://owfs.org/)
+
+The owfs software itself can be installed if you like, but it is not necessary; the owftpd, owhttpd, and owserver services are not used and do not need to be running.  In fact, it is safer to leave those services disabled to ensure that they do not conflict with weewx when it attempts to read one-wire devices.
+
+## Driver or Service
 There are two basic approaches to collecting data from one-wire devices: driver or service.
 
 In the driver approach, the one-wire system is the primary source of data, whether it is a bunch of one-wire sensors or a one-wire weather station.
@@ -14,4 +31,4 @@ In the service approach, data from the one-wire devices augment data collected f
 
 Either approach can use the standard WeeWX database schema, or a customized schema.
 
-The owfs.py extension can be used as either a driver or a service.
+To achieve this, the one extension file, owfs.py, is used as either the driver ([[owfs]]) or service ([[owfss]]).

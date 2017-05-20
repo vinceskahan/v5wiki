@@ -25,6 +25,10 @@ In weewx.conf I disabled reports to save installing some more packages:
 ```
 report_services = weewx.engine.StdPrint
 ```
+And disable database archive to save flash space, as i only upload to wunderground and that's it, no need for local copy.
+```
+archive_services = 
+```
 
 Add the driver section:
 

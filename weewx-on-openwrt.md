@@ -8,7 +8,8 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
 
 * Python (from repo via webui or ssh opkg) python-light
 
-* Python packages from the repo 
+* Python packages from the repo
+  * python-distutils
   * python-sqlite3
   * python-decimal
 

@@ -6,6 +6,8 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
 
 * OpenWRT Chaos Calmer 15.05 (what i did it on, but you could do it on any version likely)
 
+* About 10Mb free space, once source packages are compiled, installed and removed it takes up about 7Mb
+
 * Python (from repo via webui or ssh opkg) python-light
 
 * Python packages from the repo

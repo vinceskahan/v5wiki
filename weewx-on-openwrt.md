@@ -8,6 +8,10 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
 
 * Python (from repo via webui or ssh opkg) python-light
 
+* Python packages from the repo 
+  * python-sqlite3
+  * python-decimal
+
 * Python packages from source (or maybe easy_install ?)
   * configobj 
     `http://pypi.upc.edu/mirror/configobj/configobj-5.0.6.tar.gz`
@@ -15,10 +19,6 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
     `http://pkgs.fedoraproject.org/repo/pkgs/python-six/six-1.10.0.tar.gz/34eed507548117b2ab523ab14b2f8b55/six-1.10.0.tar.gz`
   * pyusb 
     `http://internode.dl.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0-alpha-2/pyusb-1.0.0a2.tar.gz`
-
-* Python packages from the repo 
-  * python-sqlite3
-  * python-decimal
 
 * Weewx source code, Install section here: http://www.weewx.com/docs/setup.htm
 

@@ -4,7 +4,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
 
 ## Pre-Requisites
 
-* OpenWRT Chaos Calmer 15.05
+* OpenWRT Chaos Calmer 15.05 (what i did it on, but you could do it on any version likely)
 
 * Python packages from source (or maybe easy_install ?)
   * configobj 

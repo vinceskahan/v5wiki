@@ -15,7 +15,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
   * python-logging
   * python-email
   * python-decimal
-  * python-sqlite3
+  * python-sqlite3 (not needed if not db archiving)
 
 * Python packages from source (ie not in repo) "python setup.py install"
   * configobj 

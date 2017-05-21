@@ -18,6 +18,8 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
   * python-sqlite3
   * python-decimal
 
+* Weewx source code, Install section here: http://www.weewx.com/docs/setup.htm
+
 ## weeWX Configuration
 
 In weewx.conf I disabled reports to save installing some more packages: 

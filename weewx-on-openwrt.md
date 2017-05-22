@@ -66,7 +66,7 @@ Then force archive interval for your station setting: in [WMR200] and [StdArchiv
     archive_interval = 300
 ```
 
-Then to fix error with backend driver missing you need to help the drivers/wmr200.py driver file find the installed usb driver:
+Then to fix error with backend driver missing you need to help the /home/weewx/bin/weewx/drivers/wmr200.py driver file find the installed usb driver:
 
 ```
 import usb

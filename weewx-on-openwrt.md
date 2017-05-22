@@ -107,7 +107,7 @@ restart() {
         logger "restarting weewx"
         # commands to kill application 
         kill -HUP `cat /var/run/weewx.pid`
-       
+        /home/weewx/bin/weewxd --daemon /home/weewx/weewx.conf
 }
 ```
 

@@ -21,7 +21,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
   * python-email
   * python-decimal
   * python-ctypes
-  * python-sqlite3 (not needed if not db archiving)
+  * python-sqlite3
 
 * Python packages from source (ie not in repo) "python setup.py install"
   * configobj 
@@ -39,10 +39,6 @@ In weewx.conf I disabled reports to save installing some more packages:
 
 ```
 report_services = weewx.engine.StdPrint
-```
-And disable database archive to save flash space, as i only upload to wunderground and that's it, no need for local copy.
-```
-archive_services = 
 ```
 
 Add the driver section:

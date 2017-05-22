@@ -29,7 +29,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
   * six 
     `http://pkgs.fedoraproject.org/repo/pkgs/python-six/six-1.10.0.tar.gz/34eed507548117b2ab523ab14b2f8b55/six-1.10.0.tar.gz`
   * pyusb 
-    `http://internode.dl.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0-alpha-2/pyusb-1.0.0a2.tar.gz`
+    `http://internode.dl.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0/pyusb-1.0.0.tar.gz`
 
 * Weewx source code, Install section here: http://www.weewx.com/docs/setup.htm
 

@@ -23,7 +23,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
   * python-ctypes
   * python-sqlite3
 
-* Python packages from source (ie not in repo) "python setup.py install"
+* Python packages from source (ie not in repo) "python setup.py install" (they are not from dev site, to not use https)
   * configobj 
     `http://pypi.upc.edu/mirror/configobj/configobj-5.0.6.tar.gz`
   * six 

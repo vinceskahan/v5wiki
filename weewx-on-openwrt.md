@@ -80,7 +80,7 @@ Now it should run! You can monitor system log for weewx messages in ssh -> "logr
 
 ## init script
 
-I added this startup init script:
+I added this startup init script: /etc/init.d/weewxd 
 
 ```
 #!/bin/sh /etc/rc.common

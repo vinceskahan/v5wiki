@@ -8,7 +8,10 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
 
 * About 10Mb free space, once source packages are compiled, installed and removed it takes up about 7Mb
 
-* Python (from repo via webui or ssh opkg) python-light
+* Packages from repo via webui or ssh opkg:
+  * python-light
+  * libusb-1.0
+  * openssh-sftp-server (optional, provides sftp access, handy for file editing)
 
 * Python packages from the repo
   * python-distutils

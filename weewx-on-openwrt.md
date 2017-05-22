@@ -75,7 +75,7 @@ import usb.backend.libusb1
 backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
 ```
 
-Now it should run!
+Now it should run! You can monitor system log for weewx messages in ssh -> "logread -f"
 
 ## init script
 

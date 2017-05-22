@@ -32,6 +32,7 @@ This is a guide to running weeWX on OpenWRT with Oregon Scientific WMR200.
     `http://internode.dl.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0/pyusb-1.0.0.tar.gz`
 
 * Weewx source code, Install section here: http://www.weewx.com/docs/setup.htm
+(once installed you can save about 1mb by deleting the examples, docs and skins folders)
 
 ## weeWX Configuration
 

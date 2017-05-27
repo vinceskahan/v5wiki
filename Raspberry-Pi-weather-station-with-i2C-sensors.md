@@ -26,7 +26,7 @@ I have two runs (as shown on the block diagram) and with these extenders I have 
 ###### Rainwise one-wire rain bucket #
 
 ### General Information #
-My configuration includes RTC, external HDD (Boot from SD card fully run on the HDD), Temp RAM disk for logging of data, weewx 3.5, forecast module, MySQL DB with replication running to backup DB to a QNAP NAS in almost real time. This replication procedure allows for loss and then restarting of NAS...the DB backup will automatically get data from its last record to the present time.
+My configuration includes RTC, external HDD (Boot from SD card fully run on the HDD), Temp RAM disk for logging of data, weewx 3.7.1 and my skin based on the work of Darryn Capes-Davis (responsive skin) also using MySQL DB with replication running to backup weewx database to a QNAP NAS in almost real time. This replication procedure allows for loss and then restarting of NAS...the DB backup will automatically get data from its last record to the present time.
 
 ### Pi Configuration #
 The following link will cover multiple configs, not all are required and have been in some form covered elsewhere. This is the config I now use. I include it here as it brings together most things I have needed on several installs on the Pi.

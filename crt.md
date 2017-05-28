@@ -12,13 +12,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-crt-0.18.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-crt-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ```
+```
     [CumulusRealTime]
         filename = /var/tmp/realtime.txt
         unit_system = METRIC # options are US, METRIC, METRICWX
@@ -26,7 +26,7 @@ wee_extension --install weewx-crt-x.y.tgz
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

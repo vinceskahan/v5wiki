@@ -4,26 +4,26 @@ This is a service for weewx that saves sensor data to a file as comma-separated 
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.4.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.5.tgz
 
 ### How to Install
 
 2.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-csv-x.y.tgz
 ```
 
 5.  Modify weewx.conf:
 
-    ```
+```
     [CSV]
         filename = /var/tmp/data.csv
 ```
 
 6. Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

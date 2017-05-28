@@ -12,20 +12,20 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cwxn-0.4.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-cwxn-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ````
+````
     [CumulusWXNow]
         filename = /var/tmp/wxnow.txt
 ````
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

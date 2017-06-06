@@ -22,7 +22,7 @@ wee_extension --install weewx-maxbotix-x.y.tgz
 
 2.  Modify weewx.conf:
 
-    ```
+```
     [Maxbotix]
         port = /dev/ttyUSB0
         model = MB1040
@@ -30,7 +30,7 @@ wee_extension --install weewx-maxbotix-x.y.tgz
 
 3. Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

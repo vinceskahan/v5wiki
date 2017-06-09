@@ -1,7 +1,7 @@
 # Overview #
 This is a work in progress it will include some construction photos.
 
-The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit.
+The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I have also now started to collect data from our home aircon (still yet to import data to weewx)
 [Link to my station](https://goo.gl/kuCNxu)
 
 ## Overall block diagram #

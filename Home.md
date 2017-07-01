@@ -80,6 +80,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
+* [wh23xx - Collect data from Fine Offset WH23xx](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
 

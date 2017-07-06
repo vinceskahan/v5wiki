@@ -40,7 +40,7 @@ This approach will work on any weewx installation for both standard and custom d
 
 1. Stop weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 ```
 
@@ -67,18 +67,18 @@ This approach will work on any weewx installation for standard drivers and/or dr
 
 1.  Stop weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 ```
 2.  Run wee_config with the reconfigure option:
 
-    ```
+```
 sudo wee_config --reconfigure
 ```
 
 3.  Start weewx
 
-    ```
+```
 sudo /etc/init.d/weewx start
 ```
 
@@ -90,7 +90,7 @@ This approach will work for standard drivers on weewx installations that were in
 
 1.  Run the reconfigure option to dpkg
 
-    ```
+```
 sudo dpkg-reconfigure weewx
 ```
 

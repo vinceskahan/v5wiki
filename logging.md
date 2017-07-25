@@ -7,7 +7,7 @@ To make this happen you must modify two parts of the system, the logging (typica
 ### rsyslog
 
 1. tell rsyslog to recognize log messages from weewx and put them in a separate file
-    ```
+```
 sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 ```
 

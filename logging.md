@@ -12,7 +12,7 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 ```
 
 2. restart the logging system
-    ```
+```
 sudo /etc/init.d/rsyslog stop
 sudo /etc/init.d/rsyslog start
 ```

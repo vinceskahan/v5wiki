@@ -31,7 +31,7 @@ _If you get an error: "**pip: command not found**", then run "**sudo apt-get ins
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-mqtt-x.y.tgz
+wee_extension --install weewx-mqtt-0.15.tgz
 ```
 
 3.  Modify **[StdRestful]** in **"/etc/weewx/weewx.conf"** (Around line 71) and add the following lines: 

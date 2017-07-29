@@ -12,7 +12,7 @@ _Please note that we are running in the HOME directory! /home/pi/_
 
 
 ```
-wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
+sudo wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
 ```
 
 
@@ -31,7 +31,7 @@ _If you get an error: "**pip: command not found**", then run "**sudo apt-get ins
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-mqtt-0.15.tgz
+sudo wee_extension --install weewx-mqtt-0.15.tgz
 ```
 
 3.  Modify **[StdRestful]** in **"/etc/weewx/weewx.conf"** (Around line 71) and add the following lines: 

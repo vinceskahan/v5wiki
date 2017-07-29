@@ -7,19 +7,19 @@ This is an extension to weewx that uploads weather data to emoncms.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-emoncms-0.13.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-emoncms-0.14.tgz
 
 ### How to Install
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-emoncms-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ```
+```
     [StdRESTful]
         [[EmonCMS]]
             token = TOKEN
@@ -27,7 +27,7 @@ wee_extension --install weewx-emoncms-x.y.tgz
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

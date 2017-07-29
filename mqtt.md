@@ -6,6 +6,18 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
 
+You can use WGET to download it to your PI using the following:
+
+_Please note that we are running in the HOME directory! /home/pi/_
+
+
+```
+wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
+```
+
+
+
+
 ### How to Install
 
 1.  Install the MQTT Python bindings:
@@ -13,6 +25,8 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.15.tgz
 ```
 sudo pip install paho-mqtt
 ```
+_If you get an error: "**pip: command not found**", then run "**sudo apt-get install python-setuptools**" first, then run "**sudo easy_install pip**" this would resolve the issue. If not? well try google!_
+
 
 2.  Run the extension installer:
 

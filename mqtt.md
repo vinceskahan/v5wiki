@@ -22,7 +22,12 @@ wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.17.tgz
 ```
 sudo pip install paho-mqtt
 ```
-_If you get "**pip: command not found**", then install pip with something like "**sudo apt-get install python-setuptools**" followed by "**sudo easy_install pip**"_
+If you get "**pip: command not found**", then install pip with something like:
+
+```
+sudo apt-get install python-setuptools
+sudo easy_install pip
+```
 
 
 2.  Run the extension installer:
@@ -31,19 +36,20 @@ _If you get "**pip: command not found**", then install pip with something like "
 sudo wee_extension --install weewx-mqtt-0.15.tgz
 ```
 
-3.  Modify **[StdRestful]** in **"/etc/weewx/weewx.conf"** (Around line 71) and add the following lines: 
+3.  Modify the weewx configuration file: 
 
 ```
+[StdRestful]
+    ...
     [[MQTT]]
         server_url = mqtt://username:password@localhost:1883/
         topic = weather
         unit_system = METRIC
 ```
-
-At the bottom in **"/etc/weewx/weewx.conf"** find **[ [Services] ]**, change or add the following
-
 ```
-restful_services = user.mqtt.MQTT
+[Engine]
+    [[Services]]
+        restful_services = ..., user.mqtt.MQTT
 ```
 
 4.  Restart weewx
@@ -67,24 +73,18 @@ _aggregation_ - How the observations should be grouped.  Options are `individual
 
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
-### Upgrading from weewx 2.6-2.7
 
-Simply run the extension installer then restart weewx.  If your weewx.conf already contained a server_url and topic, these should be remembered by the installer.
+### How to verify
 
-
-### MQTT Output
-
-When connecting to MQTT subscribe to the following:
+The default topic is `weather`, so connect to the broker and subscribe to everything in the `weather` topic:
 
 ```
 weather/#
 ```
-_Please note that "weather" is the default topic, and may vary from your topic setting_
 
-This will list all observations
+This will list all observations.
 
-
-Example for individual observations:
+For example, if the uploader is configured to send individual observations you should see something like this:
 
 ```
 weather/loop

@@ -10,7 +10,7 @@ This is a service for weewx that collects data from one-wire sensors using owfs.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.20.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.21.tgz
 
 ### How to Install
 

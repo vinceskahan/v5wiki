@@ -6,19 +6,19 @@ http://weathercloud.net
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.10.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wcloud-0.11.tgz
 
 ### How to Install
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-wcloud-x.y.tgz
 ```
 
 2.  Modify weewx.conf.  Find the WeatherCloud section then enter the weathercloud id and key that you obtained from weathercloud.
 
-    ```
+```
     [StdRESTful]
         [[WeatherCloud]]
             id = WEATHERCLOUD_ID
@@ -27,7 +27,7 @@ wee_extension --install weewx-wcloud-x.y.tgz
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

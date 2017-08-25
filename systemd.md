@@ -29,6 +29,36 @@ To install this file, put it in the systemd configuration directory as /etc/syst
 
 Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
 
+### The weewx.service file to run as non-root (with necessary amendments to the ssytem)
+# systemd configuration for weewx
+
+```shell
+[Unit]
+Description=weewx weather system
+Requires=time-sync.target
+After=time-sync.target
+RequiresMountsFor=/home
+
+[Service]
+ExecStart=/usr/bin/weewxd --daemon --pidfile=/var/run/weewx/weewx.pid /etc/weewx/weewx.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Type=simple
+RuntimeDirectory=weewx
+PIDFile=/var/run/weewx/weewx.pid
+User=weewx
+Group=weewx
+
+[Install]
+WantedBy=multi-user.target
+```
+ First find the `idVendor` and `idProduct` of your weatherstation with `lsusb` command then  add a rules file in `/etc/udev/rules.d/` with this content
+
+```shell
+SUBSYSTEM=="usb", ATTR{idVendor}=="your_value", ATTR{idProduct}=="your_value", ACTION=="add", GROUP="weewx", MODE="0774"
+```
+Be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
+
+
 ### Starting and stopping weewx
 
 To start weewx:

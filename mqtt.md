@@ -33,7 +33,7 @@ sudo easy_install pip
 2.  Run the extension installer:
 
 ```
-sudo wee_extension --install weewx-mqtt-0.15.tgz
+sudo wee_extension --install weewx-mqtt-0.17.tgz
 ```
 
 3.  Modify the weewx configuration file: 

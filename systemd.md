@@ -55,7 +55,7 @@ WantedBy=multi-user.target
  First find the `idVendor` and `idProduct` of your weatherstation with `lsusb` command then  add a rules file in `/etc/udev/rules.d/` with this content
 
 ```shell
-SUBSYSTEM=="usb", ATTR{idVendor}=="your_value", ATTR{idProduct}=="your_value", ACTION=="add", GROUP="weewx", MODE="0774"
+SUBSYSTEM=="usb", ATTR{idVendor}=="your_value", ATTR{idProduct}=="your_value", ACTION=="add", GROUP="weewx", MODE="0664"
 ```
 Be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
 

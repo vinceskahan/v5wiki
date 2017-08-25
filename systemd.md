@@ -30,9 +30,10 @@ To install this file, put it in the systemd configuration directory as /etc/syst
 Be sure that the paths in the ExecStart parameter match your weewx installation.  If you use weewx as the User and Group, then be sure that the weewx user has permission to write to the weewx database and the location for weewx reports.
 
 ### The weewx.service file to run as non-root (with necessary amendments to the ssytem)
-# systemd configuration for weewx
 
 ```shell
+# systemd configuration for weewx
+
 [Unit]
 Description=weewx weather system
 Requires=time-sync.target

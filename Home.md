@@ -42,6 +42,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
+* [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)

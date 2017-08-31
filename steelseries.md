@@ -8,10 +8,6 @@ The preferred method of installation is using the *wee_extension* utility althou
 
 This skin requires weeWX v3.4.0 or later.
 
-### Manual installation
-
-Instructions for manual installation can be found in the [readme.txt](https://github.com/mcrossley/SteelSeries-Weather-Gauges/tree/master/weather_server/WeeWX) file in the weeWX directory of the [SteelSeries Weather Gauges repository](https://github.com/mcrossley/SteelSeries-Weather-Gauges).
-
 ### Installation using *wee_extension*
 
 #### Download
@@ -31,6 +27,10 @@ $ wget -P /var/tmp https://github.com/gjr80/weewx-steelseries/releases/download/
 
         $ sudo /etc/init.d/weewx stop
         $ sudo /etc/init.d/weewx start
+
+### Manual installation
+
+Instructions for manual installation can be found in the [readme.txt](https://github.com/mcrossley/SteelSeries-Weather-Gauges/tree/master/weather_server/WeeWX) file in the weeWX directory of the [SteelSeries Weather Gauges repository](https://github.com/mcrossley/SteelSeries-Weather-Gauges).
 
 ### Screenshot
 ![SteelSeries Weather gauges for weeWX](https://github.com/gjr80/weewx-steelseries/blob/master/steelseries%20screenshot.png?raw=true)

@@ -27,22 +27,7 @@ $ wget -P /var/tmp https://github.com/gjr80/weewx-steelseries/releases/download/
 
         $ wee_extension --install steelseries-x.y.z.tar.gz
 
-2. Configure the *SteelSeries Weather Gauges* for use with weeWX:
-    - edit *$SKIN_ROOT/ss/scripts/gauges.js*:
-    - locate the following settings and set as indicted below:
-    
-            weatherProgram : 6,
-            imgPathURL : '',
-            stationTimeout : 10,        // set to twice archive interval, in minutes
-            showUvGauge : true,         // false if there is no UV sensor
-            showSolarGauge : true,      // false if there is no solar radiation sensor
-            showRoseGauge : false,      // true if field WindRoseData is populated
-    
-    - save *$SKIN_ROOT/ss/scripts/gauges.js*
-    
-    **Note**: *$SKIN_ROOT* is the directory where the weeWX skins are saved. This is nominally */home/weewx/skins* or */etc/weewx/skins* depending on your weeWX installation. Refer to [where to find things](http://weewx.com/docs/usersguide.htm#Where_to_find_things) in the weeWX [User's Guide](http://weewx.com/docs/usersguide.htm) for further information.  
-
-3. Restart weeWX:
+2. Restart weeWX:
 
         $ sudo /etc/init.d/weewx stop
         $ sudo /etc/init.d/weewx start

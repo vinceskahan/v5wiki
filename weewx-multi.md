@@ -14,7 +14,7 @@ Let's say that you have two weather stations connected to a single computer.  Ca
 
 1. Create the configuration files.  Create one file for each station, say `vantage.conf` and `acurite.conf`.  Put these files in the directory `/etc/weewx`:
 
-    ```
+```
 sudo mkdir /etc/weewx
 sudo cp /home/weewx/weewx.conf /etc/weewx/vantage.conf
 sudo cp /home/weewx/weewx.conf /etc/weewx/acurite.conf
@@ -22,7 +22,7 @@ sudo cp /home/weewx/weewx.conf /etc/weewx/acurite.conf
 
 2. Verify the driver configurations.  In each configuration file, ensure that `station_type` is set correctly.  In `vantage.conf`:
 
-    ```
+```
 [Station]
         ...
         station_type = Vantage
@@ -30,7 +30,8 @@ sudo cp /home/weewx/weewx.conf /etc/weewx/acurite.conf
         ...
 ```
 and in `acurite.conf`:
-    ```
+
+```
 [Station]
         ...
         station_type = Acurite
@@ -40,7 +41,7 @@ and in `acurite.conf`:
 
 3. Verify the database configurations.  In each configuration file, ensure a unique database.  In `vantage.conf`:
 
-    ```
+```
 [Databases]
         [[archive_sqlite]]
             database_name = vantage.sdb
@@ -50,7 +51,8 @@ and in `acurite.conf`:
             database_type = MySQL
 ```
 and in `acurite.conf`:
-    ```
+
+```
 [Databases]
         [[archive_sqlite]]
             database_name = acurite.sdb
@@ -62,13 +64,14 @@ and in `acurite.conf`:
 
 4. Verify the report configurations.  In each configuration file, ensure that HTML_ROOT is unique.  In `vantage.conf`:
 
-    ```
+```
 [StdReport]
         HTML_ROOT = public_html/vantage
         ...
 ```
 and in `acurite.conf`:
-    ```
+
+```
 [StdReport]
         HTML_ROOT = public_html/acurite
         ...
@@ -76,7 +79,7 @@ and in `acurite.conf`:
 
 5. Configure the startup script.  Use the `weewx-multi` init script to start each instance when the computer boots.
 
-    ```
+```
 sudo cp util/init.d/weewx-multi /etc/init.d/weewx
 sudo update-rc.d weewx defaults
 echo "vantage acurite" | sudo tee /etc/defaults/weewx-multi

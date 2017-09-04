@@ -69,6 +69,14 @@ For example, this sets the radar image to Bethel, Alaska:
     links_radar_local_img = https://radar.weather.gov/ridge/lite/N0S/ABC_loop.gif
 ```
 
+The forecast page can display data from a single forecast source, or from multiple sources.  It can display the data in a single format, such as tabular, or multiple formats, including iconic, tabular, and strip.
+
+For example, to display the Weather Underground, Aeris, and Open Weathermap forecasts in the iconic and tabular formats:
+```
+    forecast_sources = WU, Aeris, OWM
+    forecast_formats = iconic, strip
+```
+
 See the `[Extras]` section in skin.conf for a complete list of options.
 
 ### Screenshots

@@ -181,7 +181,10 @@ If you include more than once in a single template, you probably want to specify
   </body>
 </html>
 ```
-These are the options for the various includes:
+
+### Options for included files
+
+These are the options for the various include files (the files that end in .inc such as forecast_table.inc):
 ```
 [forecast_table_settings]
     source = NWS

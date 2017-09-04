@@ -135,7 +135,9 @@ The forecast display include a set of icons, located in the icons directory.  Wh
 
 ### Include a file
 
-For example, to use the iconic display in a template, simply include the file:
+Perhaps the easiest way to put forecasts into your pages is to include a file.  The forecast extension includes a few `.inc` files, each of which displays forecast information in a different format.  Screen shots of these formats are shown below.
+
+For example, to use the iconic display in a template, simply include the iconic file:
 ```
 <html>
   <head>
@@ -146,7 +148,7 @@ For example, to use the iconic display in a template, simply include the file:
   </body>
 </html>
 ```
-Set the options in skin.conf:
+Optionally adjust the parameters in skin.conf:
 ```
 [Extras]
     [[forecast_iconic_settings]]

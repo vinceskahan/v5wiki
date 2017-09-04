@@ -23,11 +23,40 @@ sudo /etc/init.d/weewx start
 
 ### Customize
 
-The skin includes pages for current conditions, forecast (if forecast extension is also installed), history, almanac, station health, and links.
+Customize the display by modifying parameters in skin.conf or overriding the parameters in weewx.conf.
 
-The links page includes forecasts, satellite, and radar images.  Look
-at the Extras section of the skin.conf file, then override any URLs with those
-appropriate for your location.
+The skin includes pages for current conditions, forecast (if forecast extension is installed), history, almanac, station health (if cmon extension is installed), and links.
+
+Each of these pages can be enabled or disabled.
+
+For example, these parameters control which pages will be generated:
+```                               
+    show_forecast_page = true
+    show_history_page = true
+    show_almanac_page = true
+    show_station_page = false
+    show_links_page = true
+```
+
+These parameters show/hide elements on the `current` page:
+```
+    current_show_inside = true
+    current_show_celestial = true
+    current_show_tides = true
+    current_show_radar = true
+    current_show_forecast_summary = false
+    current_show_forecast_table = true     
+    current_forecast_source = WU
+```
+
+The links page includes forecasts, satellite, and radar images.  Look for the `links_*` parameters in skin.conf file, then override any URLs with those appropriate for your location.
+
+For example, this sets the radar image to Bethel, Alaska:
+```
+    links_radar_local_img = https://radar.weather.gov/ridge/lite/N0S/ABC_loop.gif
+```
+
+See the `Extras` section in skin.conf for a complete list of options.
 
 ### Screenshots
 ![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast.png )

@@ -23,7 +23,20 @@ sudo /etc/init.d/weewx start
 
 ### Customize
 
-Customize the display by modifying parameters in skin.conf or overriding the parameters in weewx.conf.
+Customize the display by modifying parameters in skin.conf or overriding the parameters in weewx.conf.  A change to skin.conf does not require a restart of weewx - the change will show up the next time reports are generated.  A change to weewx.conf requires a restart of weewx.
+
+For example, to change a parameter in skin.conf:
+```
+[Extras]
+    current_show_radar = true
+```
+To override a parameter via weewx.conf:
+```
+[StdReport]
+    [[exfoliation]]
+        [[[Extras]]]
+            current_show_radar = true
+```
 
 The skin includes pages for current conditions, forecast (if forecast extension is installed), history, almanac, station health (if cmon extension is installed), and links.
 

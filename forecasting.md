@@ -162,7 +162,7 @@ Or set them in weewx.conf:
                 source = WU
                 num_days = 7
 ```
-If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.
+If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.  For example, this would show to iconic forecasts in a single page, one from Weather Underground and one from the US National Weather Service.
 ```
 <html>
   <head>

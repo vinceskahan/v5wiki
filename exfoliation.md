@@ -10,13 +10,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-exfoliation-0.41.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-exfoliation-x.y.tgz
 ```
 
 2.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

@@ -241,7 +241,22 @@ These are the options for the various include files (the files that end in .inc 
     show_precip = 1
     show_obvis = 1
 ```
+
+### The ForecastVariables search list extension
+
+The forecast extension includes a search list extension called `ForecastVariables`.  This defines a variable called `$forecast` that you can use to embed fine-grained forecast information anywhere in a template.
+
+To use the `$forecast` variable in a template, the ForecastVariables search list extension must be enabled within the skin for that template.  For example, to enable ForecastVariables in the Standard skin, modify `skins/Standard/skin.conf`:
+
+```
+[CheetahGenerator]
+    search_list_extension = user.forecast.ForecastVariables
+    ...
+```
+
 ### Forecast variables
+
+Here is an example of one way to use the `$forecast` variable in a template.
 
 First query the database for the forecast events:
 ```
@@ -257,17 +272,8 @@ For example, this would display the time, temperature, and sky cover for each pe
 $period.event_ts $period.temp $forecast.label('Weather', $period.clouds)<br/>
 #end for
 ```
-For details about how to use the $forecast variables, see the comments at the beginning of forecast.py.
+For details about how to use the `$forecast` variables, see the comments at the beginning of forecast.py.
 
-### The ForecastVariables search list extension
-
-To use the `$forecast` variable in a template, the ForecastVariables search list extension must be enabled within the skin for that template.  For example, to enable ForecastVariables in the Standard skin, modify `skins/Standard/skin.conf`:
-
-```
-[CheetahGenerator]
-    search_list_extension = user.forecast.ForecastVariables
-    ...
-```
 
 ### Forecast icons
 

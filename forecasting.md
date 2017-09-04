@@ -14,7 +14,7 @@ The extension includes pre-configured .inc files that can be included in other t
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.14.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.2.16.tgz
 
 ## Pre-Requisites
 

@@ -4,7 +4,7 @@ http://sailing.mit.edu/weather
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-exfoliation-0.40.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-exfoliation-0.41.tgz
 
 ### Install
 

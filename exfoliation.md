@@ -69,7 +69,7 @@ For example, this sets the radar image to Bethel, Alaska:
     links_radar_local_img = https://radar.weather.gov/ridge/lite/N0S/ABC_loop.gif
 ```
 
-See the `Extras` section in skin.conf for a complete list of options.
+See the `[Extras]` section in skin.conf for a complete list of options.
 
 ### Screenshots
 ![forecast](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast.png )

@@ -1,6 +1,8 @@
 With the forecast extension you can display forecasts for up to 10 days in the future as well as tide predictions.  Forecasts are either generated using the Zambretti method, or downloaded from the US National Weather Service (NWS), Weather Underground (WU), Open Weathermap, UK Met Office, Aeris Weather, or World Weather Online.  Tide predictions are generated using XTide.
 
-The forecasting module consists of services that download/generate forecast data, and a search list extension to make forecast data available within templates.  There is one service for each type of forecast, and a single search list extension to display data from any type of forecast.
+The forecast extension displays forecast data in many formats, including table, strip chart, iconic bars, compact summary, and meteograph.
+
+The extension consists of services that download/generate forecast data, and a search list extension to make forecast data available within templates.  There is one service for each type of forecast, and a single search list extension to display data from any type of forecast.
 
 The extension includes pre-configured .inc files that can be included in other templates.  This provides an easy way to add a strip, table, or iconic view to other skins.
 

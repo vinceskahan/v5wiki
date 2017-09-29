@@ -6,13 +6,31 @@ The extension consists of services that download/generate forecast data, and a s
 
 The extension includes pre-configured .inc files that can be included in other templates.  This provides an easy way to add a strip, table, or iconic view to other skins.
 
-<!--
+<table>
+<tr valign="top">
+<td>Compact<br/>
 <img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-compact.png" width="150"/>
+</td>
+<td>
+Iconic<br/>
 <img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic.png" width="150"/>
+</td>
+<td>
+Iconic<br/>
 <img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-iconic-horizontal.png" width="150"/>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png" width="200"/><br/>
-<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png" width="350"/>
--->
+</td>
+</tr>
+<tr valign="top">
+<td>
+Table<br/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-table.png" width="200"/>
+</td>
+<td colspan="2">
+Strip<br/>
+<img src="http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png" width="400"/>
+</td>
+</tr>
+</table>
 
 ## Download
 

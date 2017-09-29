@@ -129,9 +129,23 @@ Monitor the log to see what is happening.  The log should include messages about
 
 ## Customization
 
-There are two approaches to using forecast data in your templates: (1) include a pre-configured forecast_*.inc, and/or (2) use the $forecast variables.
+There are two approaches to using forecast data in your templates: (1) include a pre-configured `forecast_*.inc`, and/or (2) use the `$forecast` variables.
 
-The forecast display include a set of icons, located in the icons directory.  When you include a forecast display in another template, you will also have to copy the icons directory to that skin.
+Whether you use an include or the `$forecast` variable directly, the ForecastVariables search list extension must be installed for the skin.
+
+### The ForecastVariables search list extension
+
+The forecast extension includes a search list extension called `ForecastVariables`.  This defines a variable called `$forecast` that you can use to embed fine-grained forecast information anywhere in a template, and that is used extensively in the forecast `forecast_*.inc` files.
+
+To use the `$forecast` variable in a template, the ForecastVariables search list extension must be enabled within the skin for that template.  For example, to enable ForecastVariables in the Standard skin, modify `skins/Standard/skin.conf`:
+
+```
+[CheetahGenerator]
+    search_list_extension = user.forecast.ForecastVariables
+    ...
+```
+
+As an example, see the `skin.conf` in the `forecast` skin.
 
 ### Include a file
 
@@ -148,14 +162,14 @@ For example, to use the iconic display in a template, simply include the iconic 
   </body>
 </html>
 ```
-Optionally adjust the parameters in skin.conf:
+Optionally adjust the parameters in skin.conf (restart of weewx is not required):
 ```
 [Extras]
     [[forecast_iconic_settings]]
         source = WU
         num_days = 7
 ```
-Or set them in weewx.conf:
+Or set them in weewx.conf (restart of weewx is required):
 ```
 [StdReport]
     [[forecast]]
@@ -164,11 +178,11 @@ Or set them in weewx.conf:
                 source = WU
                 num_days = 7
 ```
-If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.  For example, this would show to iconic forecasts in a single page, one from Weather Underground and one from the US National Weather Service.
+If you include more than once in a single template, you probably want to specify the settings before each include.  This lets you have multiple forecasts in a single page.  For example, this would show two iconic forecasts in a single page, one from Weather Underground and one from the US National Weather Service.
 ```
 <html>
   <head>
-    <title>forecast</title>
+    <title>two forecasts</title>
   </head>
   <body>
 #set global $forecast_iconic_settings = dict()
@@ -185,6 +199,8 @@ If you include more than once in a single template, you probably want to specify
 ```
 
 ### Options for included files
+
+Each of the included files has options that control the forecast display.  For example, the strip can be oriented vertically or horizontally, or you might want to hide the snow forecast in tables if you live in a region where it never snows.
 
 These are the options for the various include files (the files that end in .inc such as forecast_table.inc):
 ```
@@ -244,19 +260,9 @@ These are the options for the various include files (the files that end in .inc 
     show_obvis = 1
 ```
 
-### The ForecastVariables search list extension
-
-The forecast extension includes a search list extension called `ForecastVariables`.  This defines a variable called `$forecast` that you can use to embed fine-grained forecast information anywhere in a template.
-
-To use the `$forecast` variable in a template, the ForecastVariables search list extension must be enabled within the skin for that template.  For example, to enable ForecastVariables in the Standard skin, modify `skins/Standard/skin.conf`:
-
-```
-[CheetahGenerator]
-    search_list_extension = user.forecast.ForecastVariables
-    ...
-```
-
 ### Forecast variables
+
+You can insert parts of a forecast into any template using the `$forecast` variable.  For example, you might want to display the predicted high and low temperatures next to the current temperature, or you might want to show the rain predicted each day for the next week.
 
 Here is an example of one way to use the `$forecast` variable in a template.
 
@@ -291,6 +297,8 @@ Then include the icons in the list of files that should be copied by the CopyGen
 [CopyGenerator]
     copy_once = ..., icons/*.png
 ```
+
+If you want to change the look-and-feel of a forecast, replace the images in the icons directory.  For example, you might want colorful images instead of the default monochromatic set.  Use the same set of filenames and be sure to include all the different images.
 
 ## Screenshots
 

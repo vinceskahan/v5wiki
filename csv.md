@@ -32,10 +32,10 @@ sudo /etc/init.d/weewx start
 
 _binding_ - The binding determines whether the file will be updated with every LOOP packet or archive record.  Possible values are `loop` or `archive`.  Default is `loop`
 
-_filename_ - The full path of the file.  Default is `/var/tmp/realtime.txt`
+_filename_ - The full path of the file.  Default is `/var/tmp/data.csv`
 
 _mode_ - Indicates whether to `append` or `overwrite` each time data is written to file.  Default is `append`.
 
 _header_ - Indicates whether to include a header with the name of each field at the beginning of the file.  Default is `True`.
 
-_append_datestamp_ - Indicates whether the file should include a timestamp of the form YYYY-mm.  Default is `True`.
+_append_datestamp_ - Indicates whether the file should include a timestamp of the form YYYY-mm, so that `/var/tmp/data.csv` becomes `/var/tmp/data-2017-01.csv`, `/var/tmp/data-2017-02.csv`, etc.  Default is `True`.

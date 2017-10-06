@@ -38,4 +38,4 @@ _mode_ - Indicates whether to `append` or `overwrite` each time data is written 
 
 _header_ - Indicates whether to include a header with the name of each field at the beginning of the file.  Default is `True`.
 
-_rotate_ - Indicates whether the file should include a timestamp of the form YYYY-mm.  Default is `True`.
+_append_datestamp_ - Indicates whether the file should include a timestamp of the form YYYY-mm.  Default is `True`.

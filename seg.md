@@ -5,6 +5,7 @@ Smart Energy Groups provides real time energy information, beautiful visualisati
 This is an extension to weewx that uploads weather data to smart energy groups.
 
 ### Screenshot
+
 ![weewx-on-seg](http://lancet.mit.edu/mwall/projects/weather/weewx-on-seg.png)
 
 ### Download
@@ -15,13 +16,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-seg-0.8.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-seg-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ```
+```
     [StdRESTful]
         [[SmartEnergyGroups]]
             token = TOKEN
@@ -30,7 +31,7 @@ wee_extension --install weewx-seg-x.y.tgz
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

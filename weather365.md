@@ -19,10 +19,10 @@ The Weather365 extension for weeWX will send data to our network.  This extensio
 
 The service is free. We use the data for model-control. 
 
-We give each registered station owner access to our professional network - PROFESSIONAL account at www.weather365.net where we run and show our own forecast models. 
-How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on www.weather365.net. Send us email (support@weather365.net) with your username and your stationid. 
-We will check and set you´re new account to PROFESSIONAL for free when sharing your data with us. 
-More about PROFESSIONAL: https://www.weather365.net/en/weather-services/professional-weather.html . 
+**We give each registered station owner access to our professional network - PROFESSIONAL account at www.weather365.net where we run and show our own forecast models. **
+**How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on www.weather365.net. Send us email (support@weather365.net) with your username and your stationid. **
+**We will check and set you´re new account to PROFESSIONAL for free when sharing your data with us. **
+**More about PROFESSIONAL: https://www.weather365.net/en/weather-services/professional-weather.html . **
 
 The extension is available at:
 ```

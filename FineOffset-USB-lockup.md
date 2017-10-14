@@ -98,6 +98,7 @@ Hubs that are known to work:
 
 * LINKSYS USB2HUB4 (NEC Corp. HighSpeed Hub)
 * D-Link Corp. DUB-H7 7-port USB 2.0 hub (older grey/silver version)
+* D-Link Corp. DUB-H4 4-port USB 2.0 hub (H/W Ver.:D1)
 
 Hubs that are known to not work:
 

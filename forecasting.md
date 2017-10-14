@@ -6,6 +6,12 @@ The extension consists of services that download/generate forecast data, and a s
 
 The extension includes pre-configured .inc files that can be included in other templates.  This provides an easy way to add a strip, table, or iconic view to other skins.
 
+A live example is available at the MIT sailing pavilion:
+
+http://sailing.mit.edu/weather/forecast.html
+
+The forecasts can be display in many different formats, no matter which forecasting service provided the data:
+
 <table>
 <tr valign="top">
 <td>Compact<br/>

@@ -106,7 +106,7 @@ Hubs that are known to not work:
 * satechi 12-port USB hub (TERMINUS TECHNOLOGY INC.)
 * cerulian 7-port USB hub (Genesys Logic, Inc. USB-2.0 4-Port HUB)
 * D-Link DUB-H7BL 7-port USB 2.0 hub (Action Star Enterprise Co., Ltd. new black version)
-* D-Link DUB-H4 USB 2.0 Hub (Genesys Logic, Inc. USB 2.0 Hub)
+* D-Link DUB-H4 USB 2.0 Hub (Genesys Logic, Inc. USB 2.0 Hub, except HW-Version D1)
 
 #### Beware of random factory resets
 

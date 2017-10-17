@@ -4,7 +4,7 @@ This is a service for weewx that saves sensor data to a file as comma-separated 
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.9.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.10.tgz
 
 ### How to Install
 

@@ -4,7 +4,7 @@ This is an extension to weewx that uploads weather data to OpenWeatherMap.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.6.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.7.tgz
 
 ### How to Install
 

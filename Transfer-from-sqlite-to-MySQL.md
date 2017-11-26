@@ -30,9 +30,9 @@ This will result in a database `weewx` in MySQL, with a single table, `archive`,
 
 If the new database is to be used as the weewx archive, weewx will need to be configured to use MySQL as per the [Configuring MySQL](http://weewx.com/docs/usersguide.htm#configuring_mysql) section of the [User's Guide](http://weewx.com/docs/usersguide.htm).
 
-There is one more step before the new database can be used with weewx: creating the daily summaries inside the new database. If weewx is configured to use the new database the daily summaries will be built automatically by weewx at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--backfill-daily` option:
+There is one more step before the new database can be used with weewx: creating the daily summaries inside the new database. If weewx is configured to use the new database the daily summaries will be built automatically by weewx at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--rebuild-daily` option:
 
-    $ wee_database --backfill-daily
+    $ wee_database --rebuild-daily
 
 
 # Using wee_database

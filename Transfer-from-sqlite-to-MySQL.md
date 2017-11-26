@@ -77,9 +77,11 @@ This will result in output something like this:
     transferring, this may take a while.... complete
     7814 records transferred from source database 'weewx.sdb' to destination database 'weewx'.
 
-Once the transfer is complete and before the new database can be used with weeWX the daily summaries need to be created inside the new database. If weeWX is configured to use the new database, the daily summaries will be built automatically by weeWX at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--backfill-daily` option:
+Once the transfer is complete and before the new database can be used with weeWX the daily summaries need to be created inside the new database. If weeWX is configured to use the new database, the daily summaries will be built automatically by weeWX at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--rebuild-daily` option:
 
-    $ wee_database --backfill-daily --binding=dest_binding
+    $ wee_database --rebuild-daily
+
+This rebuilds the daily summaries of the database referred to by the binding `db_binding` in `weewx.conf` (or the `wee_database` option `--binding` if used) from the archive data in the same database.
 
 If the new database is to be used as the weeWX archive then weeWX needs to be configured to use MySQL as per the [Configuring MySQL](http://weewx.com/docs/usersguide.htm#configuring_mysql) section of the [User's Guide](http://weewx.com/docs/usersguide.htm)
 

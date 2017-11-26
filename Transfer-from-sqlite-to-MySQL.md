@@ -46,7 +46,7 @@ To transfer a database using `wee_database`, data bindings for both the source a
             schema = schemas.wview.schema
 
     
-The above settings assume an `archive_sqlite` entry in the `weewx.conf [Databases]` section and use the default `wview` database schema. If this is not the case (e.g., you use a modified schema) you will need to alter one of more of the above settings accordingly.
+The above settings assume an `archive_mysql` entry in the `weewx.conf [Databases]` section and use the default `wview` database schema. If this is not the case (e.g., you use a modified schema) you will need to alter one of more of the above settings accordingly.
 
 Before doing the transfer, it may worthwhile to run `wee_database` with the `--help` option:
 

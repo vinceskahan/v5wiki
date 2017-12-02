@@ -53,7 +53,7 @@ For example, weeWX might save LOOP data to a json file, then JavaScript plots po
 
 *Local/Remote:* Typically local, especially if the updates happen frequently.
 
-*Examples:* mesowx
+*Examples:* mesowx, InfluxDB+Grafana
 
 ## Use case 5: Feed into a data aggregation/reporting service
 
@@ -63,7 +63,7 @@ In this scenario, weeWX feeds into a separate service that aggregates, stores, a
 
 *Local/Remote:* The report display can be on the same computer running weeWX, same network as weeWX, or in the cloud.
 
-*Examples:* weeRT (EXPERIMENTAL), Influx, EmonCMS, SEG, ThingSpeak, meteotemplate
+*Examples:* weeRT (EXPERIMENTAL), InfluxDB, EmonCMS, SEG, ThingSpeak, meteotemplate
 
 ## Things to consider
 

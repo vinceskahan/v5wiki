@@ -108,25 +108,7 @@ Hubs that are known to not work:
 * D-Link DUB-H7BL 7-port USB 2.0 hub (Action Star Enterprise Co., Ltd. new black version)
 * D-Link DUB-H4 USB 2.0 Hub (Genesys Logic, Inc. USB 2.0 Hub, except HW-Version D1)
 
-#### Beware of random factory resets
-
-Some consoles randomly reset some or all of their settings to factory defaults.  It seems to happen when the console is power cycled, but it does not happen repeatably, and it does not happen to every console.  When it happens, the station's archive interval will change to 1800 seconds (30 minutes).  You will see log messages such as this:
-
-wxengine: The archive interval in the configuration file (300) does not match the station hardware interval (1800).
-
-Use wee_device to change the station's archive interval to match whatever you specify in weewx.conf.
-
-### References
-
-Discussion at the Cumulus forum about the effects of power/voltage:
-
-http://sandaysoft.com/forum/viewtopic.php?f=16&t=10510
-
-Description of the problem at the Cumulus forum:
-
-http://sandaysoft.com/forum/viewtopic.php?f=13&t=8870
-
-Another - somewhat more brutal - approach
+#### Another - somewhat more brutal - approach
 
 I built a watchdog timer (basically a 555 bistable with a short-me-out transistor that gets kicked every so often by a GPIO on the Pi. Can provide the circuit and Gerber files for a PCB to anyone that is interested. The watchdog period is about 5-10 minutes which gives the system time to boot up.
 
@@ -148,3 +130,24 @@ while True
          a few minutes later the watchdog cycles the power.
          No worries about interrupting anything like SD card writes etc because the Pi is asleep
     sleep 120 seconds
+
+### Beware of random factory resets
+
+Some consoles randomly reset some or all of their settings to factory defaults.  It seems to happen when the console is power cycled, but it does not happen repeatably, and it does not happen to every console.  When it happens, the station's archive interval will change to 1800 seconds (30 minutes).  You will see log messages such as this:
+
+```
+wxengine: The archive interval in the configuration file (300) does not match the station hardware interval (1800).
+```
+
+Use wee_device to change the station's archive interval to match whatever you specify in weewx.conf.
+
+
+### References
+
+Discussion at the Cumulus forum about the effects of power/voltage:
+
+http://sandaysoft.com/forum/viewtopic.php?f=16&t=10510
+
+Description of the problem at the Cumulus forum:
+
+http://sandaysoft.com/forum/viewtopic.php?f=13&t=8870

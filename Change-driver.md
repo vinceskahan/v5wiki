@@ -61,6 +61,10 @@ sudo /etc/init.d/weewx stop
 
 3.  Start weewx
 
+```
+sudo /etc/init.d/weewx start
+```
+
 ### The weewx approach: run wee_config
 
 This approach will work on any weewx installation for standard drivers and/or drivers in the user directory.
@@ -70,6 +74,7 @@ This approach will work on any weewx installation for standard drivers and/or dr
 ```
 sudo /etc/init.d/weewx stop
 ```
+
 2.  Run wee_config with the reconfigure option:
 
 ```

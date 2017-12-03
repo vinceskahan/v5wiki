@@ -13,13 +13,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-xively-0.7.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-xively-x.y.tgz
 ```
 
 2. Modify weewx.conf:
 
-    ```
+```
     [StdRESTful]
         [[Xively]]
             token = TOKEN
@@ -28,7 +28,7 @@ wee_extension --install weewx-xively-x.y.tgz
 
 3.  Restart weewx:
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

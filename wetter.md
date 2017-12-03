@@ -12,22 +12,22 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.5.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-wetter-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ```
-    [StdRESTful]
-        [[Wetter]]
-            username = STATION ID                                                   
-            password = STATION PASSWORD
+```
+[StdRESTful]
+    [[Wetter]]
+        username = STATION ID                                                   
+        password = STATION PASSWORD
 ```
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

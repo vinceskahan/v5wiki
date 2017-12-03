@@ -30,9 +30,9 @@ wee_extension --install weewx-windfinder-x.y.tgz
 
 ```
 [StdRESTful]
-        [[WindFinder]]
-            station_id = STATION_ID
-            password = PASSWORD
+    [[WindFinder]]
+        station_id = STATION_ID
+        password = PASSWORD
 ```
 
 3.  Restart weewx:

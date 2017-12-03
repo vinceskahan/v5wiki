@@ -18,7 +18,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-twitter-0.12.tgz
 
 1.  Install the Twitter Python bindings:
 
-    ```
+```
 sudo pip install twython
 ```
 
@@ -41,7 +41,7 @@ wee_extension --install weewx-twitter.x.y.tgz
 
 4.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

@@ -14,21 +14,21 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-thingspeak-0.6.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-thingspeak-x.y.tgz
 ```
 
 2.  Modify weewx.conf:
 
-    ```
-    [StdRESTful]
-        [[ThingSpeak]]
-            api_key = API_KEY
+```
+[StdRESTful]
+    [[ThingSpeak]]
+        api_key = API_KEY
 ```
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

@@ -20,10 +20,10 @@ wee_extension --install weewx-xively-x.y.tgz
 2. Modify weewx.conf:
 
 ```
-    [StdRESTful]
-        [[Xively]]
-            token = TOKEN
-            feed = FEED_ID
+[StdRESTful]
+    [[Xively]]
+        token = TOKEN
+        feed = FEED_ID
 ```
 
 3.  Restart weewx:

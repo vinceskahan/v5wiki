@@ -10,23 +10,23 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.6.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-wbug-x.y.tgz
 ```
 
 2.  Modify weewx.conf
 
-    ```
-    [StdRESTful]
-        [[WeatherBug]]
-            publisher_id = PUBLISHER_ID
-            station_number = STATION_NUMBER
+```
+[StdRESTful]
+    [[WeatherBug]]
+        publisher_id = PUBLISHER_ID
+        station_number = STATION_NUMBER
             password = PASSWORD
 ```
 
 3.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

@@ -41,7 +41,7 @@ Use `rain_bucket_type` to specify the rain bucket type.  Possible values are `0`
 ```
 [WeatherLink]
    ...
-   rain_bucket_size = 0
+   rain_bucket_type = 0
 ```
 
 ### Caveats

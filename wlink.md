@@ -5,19 +5,19 @@ This is a driver that collects data from WeatherLink web sites.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wlink-0.11.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wlink-0.12.tgz
 
 ### How to Install
 
 1.  Copy the driver file to the weewx user directory:
 
-    ```
+```
 cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
 ```
 
 2.  Enter the configuration in weewx.conf:
 
-    ```
+```
     [Station]
         ...
         station_type = WeatherLink
@@ -30,7 +30,7 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
 
 3.  Start weewx
 
-    ```
+```
 sudo /etc/init.d/weewx start
 ```
 

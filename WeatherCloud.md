@@ -19,10 +19,10 @@ wee_extension --install weewx-wcloud-x.y.tgz
 2.  Modify weewx.conf.  Find the WeatherCloud section then enter the weathercloud id and key that you obtained from weathercloud.
 
 ```
-    [StdRESTful]
-        [[WeatherCloud]]
-            id = WEATHERCLOUD_ID
-            key = WEATHERCLOUD_KEY
+[StdRESTful]
+    [[WeatherCloud]]
+        id = WEATHERCLOUD_ID
+        key = WEATHERCLOUD_KEY
 ```
 
 3.  Restart weewx

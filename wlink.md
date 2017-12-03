@@ -34,6 +34,16 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
 sudo /etc/init.d/weewx start
 ```
 
+### Options
+
+Use `rain_bucket_type` to specify the rain bucket type.  Possible values are `0`, `1`, or `2` for 0.01 inch, 0.2 mm, or 0.1 mm bucket, respectively.
+
+```
+[WeatherLink]
+   ...
+   rain_bucket_size = 0
+```
+
 ### Caveats
 
 This driver obtains LOOP data by polling the weatherlink.com site every 60 seconds.  ARCHIVE data are retrieved from the weatherlink.com site using the API published by Davis.

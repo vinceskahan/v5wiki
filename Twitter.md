@@ -24,13 +24,13 @@ sudo pip install twython
 
 2.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-twitter.x.y.tgz
 ```
 
 3.  Modify weewx.conf:
 
-    ```
+```
     [StdRESTful]
         [[Twitter]]
             app_key = APP_KEY

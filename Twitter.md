@@ -31,12 +31,12 @@ wee_extension --install weewx-twitter.x.y.tgz
 3.  Modify weewx.conf:
 
 ```
-    [StdRESTful]
-        [[Twitter]]
-            app_key = APP_KEY
-            app_key_secret = APP_KEY_SECRET
-            oauth_token = OAUTH_TOKEN
-            oauth_token_secret = OAUTH_TOKEN_SECRET
+[StdRESTful]
+    [[Twitter]]
+        app_key = APP_KEY
+        app_key_secret = APP_KEY_SECRET
+        oauth_token = OAUTH_TOKEN
+        oauth_token_secret = OAUTH_TOKEN_SECRET
 ```
 
 4.  Restart weewx

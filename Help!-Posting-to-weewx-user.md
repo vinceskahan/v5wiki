@@ -18,6 +18,6 @@ If you are having problems getting weewx to run, or if you are having problems g
 
 If you are having problems with the reporting engine, then it's probably OK to leave out the startup sequence, and just post from where a new archive record comes in.
 
-If the log seems unduly big, you can either include it as an attachment, or put it on a cloud service like [pastbin.com](http://pastebin.com/)
+If the log seems unduly big, you can either include it as an attachment, or put it on a cloud service like [pastebin.com](http://pastebin.com/)
 
 On most Linux systems you can find the log at `/var/log/syslog`

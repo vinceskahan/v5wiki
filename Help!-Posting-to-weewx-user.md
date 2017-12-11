@@ -20,4 +20,11 @@ If you are having problems with the reporting engine, then it's probably OK to l
 
 If the log seems unduly big, you can either include it as an attachment, or put it on a cloud service like [pastebin.com](http://pastebin.com/)
 
-On most Linux systems you can find the log at `/var/log/syslog`
+On many Linux systems you can find the log at `/var/log/syslog`
+
+On redhat/centos/fedora systems the log is `/var/log/messages`
+
+On recent Linux systems you might have to use `sudo` to view the log.  For example, to see the last 500 lines of the log:
+```
+sudo tail -500 /var/log/syslog
+```

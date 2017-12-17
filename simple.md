@@ -14,13 +14,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-simple-0.4.tgz
 
 1.  Run the extension installer:
 
-    ```
+```
 wee_extension --install weewx-simple-x.y.tgz
 ```
 
 2.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

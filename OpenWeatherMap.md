@@ -2,11 +2,11 @@ The OpenWeatherMap service provides free weather data and forecast API suitable 
 
 This is an extension to weewx that uploads weather data to OpenWeatherMap.
 
-### Download
+## Download
 
 http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.7.tgz
 
-### How to Install
+## How to Install
 
 1.  Run the extension installer:
 
@@ -30,7 +30,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.7.tgz
     sudo /etc/init.d/weewx start
     ```
 
-### Changes to the OpenWeatherMap API
+## Changes to the OpenWeatherMap API
 
 The current OpenWeatherMap API is version 3.0.  Perhaps the most significant change introduced in the 3.0 API is a timestamp - if your weather station has a data logger, historical records will be uploaded to OWM during catchup.  This was not possible in the pre-3.0 API.
 
@@ -48,20 +48,12 @@ It uses a station_name, username, and password like this:
 ```
 OpenWeatherMap has not indicated how long the pre-3.0 API will be supported, but as of December 2016 it is still working.
 
-### Upgrading from weewx 2.6-2.7
-
-Simply run the extension installer then restart weewx.  If your weewx.conf already contained a username and password, it should be remembered by the installer.
-
-### Upgrading from weewx 2.5
-
-If you were using the owm extension with weewx 2.5.x, be sure to remove the 'driver' parameter from the OpenWeatherMap section in weewx.conf.
-
-### 3.0 API: How to get your station registered
-Another change to the 3.0 API is that you can no longer just supply a username and a password. You will even need to `POST` to the API manually with something like [Postman](http://www.getpostman.com) to register your station. And as the steps on OWM are a little vague, just to put it lightly, here are the steps you must take:
+## OpenWeatherMap 3.0 API: How to get your station registered
+Another change to the 3.0 API is that you can no longer just supply a username and a password. You may have to `POST` to the API manually with something like [Postman](http://www.getpostman.com) or `curl` to register your station. As the steps on OWM are a little vague, just to put it lightly, here are the steps you must take:
 
 1. [Sign up](https://home.openweathermap.org/users/sign_up) at OpenWeatherMap.
 2. Generate an API key on your [account page](https://home.openweathermap.org), by clicking the "API keys" tab, type in a name in the box to the right, and clicking the "Generate" button. This key will usually work within 60 minutes, so be prepared for that.
-3. As this step-by-step guide uses Postman as an example, fire it up and do the following:
+3. Using `Postman` do the following (or the equivalent using `curl`):
 
     - Select "POST" where it says "GET".
     - Type in this URL: `http://api.openweathermap.org/data/3.0/stations?appid=YOUR-API-KEY-HERE`
@@ -85,3 +77,12 @@ Another change to the 3.0 API is that you can no longer just supply a username a
 5. Copy that ID in to your weewx config, along with your API key, as shown in step 2 under "Installation" above.
 6. Restart weewx.
 7. Wait until OpenWeatherMap picks up your data.
+
+
+### Upgrading from weewx 2.6-2.7
+
+Simply run the extension installer then restart weewx.  If your weewx.conf already contained a username and password, it should be remembered by the installer.
+
+### Upgrading from weewx 2.5
+
+If you were using the owm extension with weewx 2.5.x, be sure to remove the 'driver' parameter from the OpenWeatherMap section in weewx.conf.

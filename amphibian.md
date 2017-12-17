@@ -22,6 +22,6 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-###Screenshots
+## Screenshots
 ![amphibian](http://lancet.mit.edu/mwall/projects/weather/amphibian-for-weewx-0.1/amphibian-for-weewx.png )
 

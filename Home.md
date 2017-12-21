@@ -85,6 +85,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
+* [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)

@@ -1,3 +1,7 @@
+> Pachube was an idea.  Then cosm was an idea.  Then Xively was an idea.  Now xively is gone.
+> Xively services shut down permanently as of 15 January 2018.  This page remains as an example
+> of how one company (or three?) designed an API for communicating telemetry.
+
 The Internet of Things was an idea. Now it’s a reality. Right now, developers and companies are connecting devices and apps to securely store and exchange data. It’s the one solution that brings big ideas about the world to the world.
 
 This is an extension to weewx that uploads weather data to xively (formerly pachube, formerly cosm).

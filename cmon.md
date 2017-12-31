@@ -14,13 +14,13 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cmon-0.16.tgz
 
 1.  Run the extension installer
 
-    ```
+```
 wee_extension --install weewx-cmon-x.y.z.tgz
 ```
 
 2.  Restart weewx
 
-    ```
+```
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```

@@ -4,13 +4,19 @@ Sometimes data collector.  But also very handy reporting engine.
 
 ## Standalone: Driver for hardware data source
 
+classic weather station configuration
+
 ## Standalone: Driver for network-based data source
+
+the weatherlink/netatmo configuration
 
 ## Standalone: Driver with services
 
+weather station plus one-wire sensors
+
 ## Multiple instances
 
-weather station plus ultrasonic sensors, composite report
+weather station plus multiple ultrasonic sensors, composite report
 
 ## Mixing it with other hardware
 

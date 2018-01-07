@@ -4,6 +4,13 @@
 
 This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.
 
+When choosing/designing a configuration, consider:
+
+* the components - how many sensors/computers are you willing to maintain?
+* the data flows - where are the points of failure?
+* the desired frequency of updates to the display - do you need real-time or is every 5 minutes fast enough?
+* the frequency at which the sensors emit data - does the hardware emit data as fast as you want to see it?
+
 Let's start by looking at the data flow from weather station to the display:
 
 ## Scenario 1: Standalone

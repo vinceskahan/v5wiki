@@ -16,6 +16,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
+* [Strategies for getting data into weewx](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 

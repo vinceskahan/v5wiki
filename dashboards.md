@@ -64,7 +64,7 @@ WeeWX collects data from hardware, saves the data to database, then optionally g
 </a>
 </td>
 <td>
-One or more weeWX instances send data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is how many on-line services work, such as weather underground and CWOP.  It is also the mechanism used by some personal systems such as Meteotemplate.
+One or more weeWX instances send data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is how many on-line services work, such as weather underground and CWOP.
 </td>
 </tr>
 </table>

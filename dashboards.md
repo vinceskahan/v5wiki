@@ -55,7 +55,7 @@ WeeWX collects data from hardware, saves the data to database, then optionally g
 </tr>
 </table>
 
-## Scenario 4: Aggregate using HTTP
+## Scenario 4: Multiple stations using HTTP
 <table>
 <tr>
 <td width="200">
@@ -69,7 +69,7 @@ One or more weeWX instances send data to a server using a RESTful uploader.  The
 </tr>
 </table>
 
-## Scenario 5: Aggregate using MQTT
+## Scenario 5: Multiple stations using MQTT
 <table>
 <tr>
 <td width="200">

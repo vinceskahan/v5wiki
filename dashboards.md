@@ -23,9 +23,12 @@ Let's start by looking at the data flow from weather station to the display:
 </a>
 </td>
 <td>
+<p>
 WeeWX collects data from hardware, saves the data to database, then generates reports.  A local web server provides access to the reports.  This is the configuration in the default weeWX installation.
-
+</p>
+<p>
 The update frequency for this configuration is the archive interval.
+</p>
 </td>
 </tr>
 </table>
@@ -39,9 +42,12 @@ The update frequency for this configuration is the archive interval.
 </a>
 </td>
 <td>
+<p>
 WeeWX collects data from hardware, saves the data to database, then generates reports.  WeeWX also runs an rsync or ftp 'report' that synchronizes the reports with a public-facing web server.  This is a traditional configuration used by software such as Cumulus and Weather Display.  Images and videos from web cameras can be included simply by placing them with the reports that get synchronized.
-
+</p>
+<p>
 Like the standalone case, the update frequency for this type of configuration is the archive interval.
+</p>
 </td>
 </tr>
 </table>
@@ -55,9 +61,12 @@ Like the standalone case, the update frequency for this type of configuration is
 </a>
 </td>
 <td>
+<p>
 WeeWX collects data from hardware, saves the data to database, then optionally generates reports. It also sends data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is the mechanism used by some recent personal systems such as Meteotemplate.
-
+</p>
+<p>
 The update frequency for this configuration may be the archive interval, but if the upload is tied to LOOP packets then the update frequency could be as fast as the hardware emit data.
+</p>
 </td>
 </tr>
 </table>
@@ -71,9 +80,12 @@ The update frequency for this configuration may be the archive interval, but if 
 </a>
 </td>
 <td>
+<p>
 One or more weeWX instances send data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is how many on-line services work, such as weather underground and CWOP.
-
+</p>
+<p>
 The update frequency for this configuration can be either LOOP or archive interval (REC).
+</p>
 </td>
 </tr>
 </table>
@@ -87,9 +99,12 @@ The update frequency for this configuration can be either LOOP or archive interv
 </a>
 </td>
 <td>
+<p>
 One or more weeWX instances send data to an MQTT broker using the weewx-mqtt extension.  The web server provides clients with web pages that use web sockets for near real-time display of data as they arrive at the MQTT broker, and an interface to the historical data via InfluxDB or other data store.
-
+</p>
+<p>
 The update frequency for this configuration is typically as fast as the hardware emits data.  The server then does the temporal aggregation.
+</p>
 </td>
 </tr>
 </table>

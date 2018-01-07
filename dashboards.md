@@ -4,7 +4,24 @@
 
 This is an outline of strategies for getting data from hardware into reports or reporting services using weeWX.
 
-Let's start with some scenarios:
+Let's start by looking at the data flow from weather station to the display:
+
+## Scenario 1: Standalone
+![standalone](http://weewx.com/cfg/weewx-config-standalone.png)
+
+## Scenario 2: Synchronize reports to public-facing front-end
+![sync to frontend](http://weewx.com/cfg/weewx-config-frontend-sync.png)
+
+## Scenario 3: Upload LOOP/REC data to public-facing front-end
+![upload to frontend](http://weewx.com/cfg/weewx-config-frontend-uploader.png)
+
+## Scenario 4: Aggregate using HTTP
+![aggregate using http](http://weewx.com/cfg/weewx-config-aggregator-http.png)
+
+## Scenario 5: Aggregate using MQTT
+![aggregate using mqtt](http://weewx.com/cfg/weewx-config-aggregator-mqtt.png)
+
+Now lets look at some specific use cases:
 
 ## Use case 1: Default weeWX installation
 

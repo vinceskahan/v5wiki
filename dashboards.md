@@ -14,19 +14,76 @@ When choosing/designing a configuration, consider:
 Let's start by looking at the data flow from weather station to the display:
 
 ## Scenario 1: Standalone
-![standalone](http://weewx.com/cfg/weewx-config-standalone.png)
+<table>
+<tr>
+<td  width="200">
+<a href="http://weewx.com/cfg/weewx-config-standalone.png">
+<img src="http://weewx.com/cfg/weewx-config-standalone.png"/>
+</a>
+</td>
+<td>
+WeeWX collects data from hardware, saves the data to database, then generates reports.  A local web server provides access to the reports.  This is the configuration in the default weeWX installation.
+</td>
+</tr>
+</table>
 
 ## Scenario 2: Synchronize reports to public-facing front-end
-![sync to frontend](http://weewx.com/cfg/weewx-config-frontend-sync.png)
+<table>
+<tr>
+<td width="200">
+<a href="http://weewx.com/cfg/weewx-config-frontend-sync.png">
+<img src="http://weewx.com/cfg/weewx-config-frontend-sync.png"/>
+</a>
+</td>
+<td>
+WeeWX collects data from hardware, saves the data to database, then generates reports.  WeeWX also runs an rsync or ftp 'report' that synchronizes the reports with a public-facing web server.  This is a traditional configuration used by software such as Cumulus and Weather Display.  Images and videos from web cameras can be included simply by placing them with the reports that get synchronized.
+</td>
+</tr>
+</table>
 
 ## Scenario 3: Upload LOOP/REC data to public-facing front-end
-![upload to frontend](http://weewx.com/cfg/weewx-config-frontend-uploader.png)
+<table>
+<tr>
+<td width="200">
+<a href="http://weewx.com/cfg/weewx-config-frontend-uploader.png">
+<img src="http://weewx.com/cfg/weewx-config-frontend-uploader.png"/>
+</a>
+</td>
+<td>
+WeeWX collects data from hardware, saves the data to database, then optionally generates reports. It also sends data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is the mechanism used by some recent personal systems such as Meteotemplate.
+</td>
+</tr>
+</table>
 
 ## Scenario 4: Aggregate using HTTP
-![aggregate using http](http://weewx.com/cfg/weewx-config-aggregator-http.png)
+<table>
+<tr>
+<td width="200">
+<a href="http://weewx.com/cfg/weewx-config-aggregator-http.png">
+<img src="http://weewx.com/cfg/weewx-config-aggregator-http.png"/>
+</a>
+</td>
+<td>
+One or more weeWX instances send data to a server using a RESTful uploader.  The web server provides clients with web pages that contain the current and historical conditions.  This is how many on-line services work, such as weather underground and CWOP.  It is also the mechanism used by some personal systems such as Meteotemplate.
+</td>
+</tr>
+</table>
 
 ## Scenario 5: Aggregate using MQTT
-![aggregate using mqtt](http://weewx.com/cfg/weewx-config-aggregator-mqtt.png)
+<table>
+<tr>
+<td width="200">
+<a href="http://weewx.com/cfg/weewx-config-aggregator-mqtt.png">
+<img src="http://weewx.com/cfg/weewx-config-aggregator-mqtt.png"/>
+</a>
+</td>
+<td>
+One or more weeWX instances send data to an MQTT broker using the weewx-mqtt extension.  The web server provides clients with web pages that use web sockets for near real-time display of data as they arrive at the MQTT broker, and an interface to the historical data via InfluxDB or other data store.
+</td>
+</tr>
+</table>
+
+## Use cases with examples
 
 Now lets look at some specific use cases:
 

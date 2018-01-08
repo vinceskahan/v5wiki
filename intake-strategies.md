@@ -156,3 +156,8 @@ Another way to collect data from multiple data sources is to run a weeWX instanc
 </td>
 </tr>
 </table>
+
+
+## What else?
+
+How are you using weeWX?  If you have other approaches to collecting data, please contribute to this wiki!

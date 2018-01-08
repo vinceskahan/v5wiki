@@ -6,9 +6,9 @@ WeeWX also includes a reporting engine.  Once the data are in the database, weew
 
 And weeWX can emit data for use elsewhere, either automatically as part of its reporting or uploading system, or manually using the wee_* utilities or raw SQL queries.
 
-The following sections enumerate some options for the first part - how to get data into weeWX.
+The following sections enumerate some ways to configure hardware for the first part - how to get data into weeWX.  For reporting, see the (Strategies for publishing data from weeWX)[dashboards].
 
-## Standalone: Driver for directly-connected data source
+## Configuration 1: Driver for directly-connected data source
 
 <table>
 <tr>
@@ -32,7 +32,7 @@ Examples: Ultimeter, TWI, Visala
 </table>
 
 
-## Standalone: Driver for directly-connected logger
+## Configuration 2: Driver for directly-connected logger
 
 <table>
 <tr>
@@ -50,7 +50,7 @@ Some hardware includes a data logger.  If weeWX shuts down, the logger will cont
 </table>
 
 
-## Standalone: Driver for directly-connected extensible data source
+## Configuration 3: Driver for directly-connected extensible data source
 
 <table>
 <tr>
@@ -68,7 +68,7 @@ Some hardware is directly extensible - you can add sensors and the hardware will
 </table>
 
 
-## Standalone: Driver with services for additional data sources
+## Configuration 4: Driver with services for additional data sources
 
 <table>
 <tr>
@@ -86,7 +86,7 @@ Sometimes a single weather station does not provide enough types of sensors.  Fo
 </table>
 
 
-## Standalone: Driver for network-connected data source
+## Configuration 5: Driver for network-connected data source
 
 <table>
 <tr>
@@ -108,7 +108,7 @@ Examples: netatmo, myacurite, weatherlink
 </table>
 
 
-## Standalone: Driver for network-connected data source
+## Configuration 6: Driver for network-connected data source
 
 <table>
 <tr>
@@ -129,7 +129,7 @@ Examples: FineOffset Observer, LaCrosse GW1000U, Acurite Bridge/SmartHUB
 
 
 
-## Multiple instances
+## Configuration 7: Multiple weeWX instances
 
 <table>
 <tr>
@@ -145,23 +145,3 @@ Another way to collect data from multiple data sources is to run a weeWX instanc
 </td>
 </tr>
 </table>
-
-
-## Mixing it with other hardware
-
-<table>
-<tr>
-<td  width="200">
-<a href="http://weewx.com/cfg/weewx-data-.png">
-<img src="http://weewx.com/cfg/weewx-data-.png"/>
-</a>
-</td>
-<td>
-<p>
-</p>
-</td>
-</tr>
-</table>
-
-weather station plus arduinos, composite report.  feed a sqlite database from somewhere other than weewx, then use that in a weewx report.
-

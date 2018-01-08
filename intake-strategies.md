@@ -101,7 +101,7 @@ Sometimes a single weather station does not provide enough types of sensors.  Fo
 <p>
 Davis introduced the WeatherLinkIP service in the mid-2000s - when connected to a TCP/IP interface, a Vantage station can send weather data directly to Davis' WeatherLink service.  Other manufacturers such as Rainwise, WeatherHawk, and Columbia offered similar adapters to capture the (typically RS232) output from their sensors and send it directly to their respective data capture services.  Low-end manufacturers such as Fine Offset,  Acurite, and NetAtmo have taken this approach even further - their direct-to-internet models will *only* communicate over TCP/IP.
 
-There are drivers for weeWX that will get data from many of these direct-to-internet stations.
+There are drivers for weeWX that will get data from the internet services for the direct-to-internet stations.  In the bad old days, this was done by "screen scraping" - reading a web page then trying to figure out the data.  Now these drivers typically use an API (application programming interface) defined by the internet service.
 
 Examples: netatmo, myacurite, weatherlink
 </p>

@@ -12,7 +12,9 @@ When choosing/designing a configuration, consider:
 * the frequency at which the sensors emit data - does the hardware emit data as fast as you want to see it?
 * the topology of the observations - do the observations come all at once, or do they come sensor-by-sensor?
 
-Let's start by looking at the data flow from weather station to the display:
+For configurations for getting data into weeWX, see the [Strategies for getting data into weeWX](intake-strategies) page.
+
+Let's start by looking at the data flow from weather station to the display.
 
 ## Scenario 1: Standalone
 <table>

@@ -132,14 +132,13 @@ Examples: netatmo, myacurite, weatherlink
 <p>
 In some cases it is possible to redirect and/or intercept the communication from direct-to-internet stations.  As long as the hardware manufacturer has not resorted to encryption or other user-hostile practices, weeWX can capture the data from these stations so that you can own and manage your own data, no matter what might happen to the internet service or the company that provides it.
 
-There are three ways to do this:
+There are two approaches:
 <ol>
-<li>Read data from the station using the hardware API (this is rare)</li>
 <li>Sniff the network traffic</li>
 <li>Hijack the DNS/Proxy so that the hardware sends to weeWX</li>
 </ol>
 
-Examples: FineOffset Observer, LaCrosse GW1000U, Acurite Bridge/SmartHUB
+Examples: WeatherFlow, FineOffset Observer, LaCrosse GW1000U, Acurite Bridge/SmartHUB
 </p>
 </td>
 </tr>

@@ -97,7 +97,7 @@ Examples: Maxbotix, 1-wire, AS3935
 </table>
 
 
-## Configuration 5: Driver for network-connected data source
+## Configuration 5: Driver for network-connected data source using cloud API
 
 <table>
 <tr>
@@ -119,7 +119,7 @@ Examples: netatmo, myacurite, weatherlink
 </table>
 
 
-## Configuration 6: Driver for network-connected data source
+## Configuration 6: Driver for network-connected data source using local API, sniffing, or hijacking
 
 <table>
 <tr>

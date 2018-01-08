@@ -111,7 +111,7 @@ The update frequency for this configuration is typically as fast as the hardware
 
 ## Use cases with examples
 
-Now lets look at some specific use cases:
+Now lets look at some specific use cases.
 
 ## Use case 1: Default weeWX installation
 
@@ -132,7 +132,7 @@ Goals:
 
 ## Use case 2: Custom weeWX reports
 
-Generate reports using the built-in plotting and template mechanisms built-in.  These reports consist of text, RSS XML, HTML, and image files.  Templates are written using the Cheetah and dot-code syntax built-in to weeWX.
+Generate reports using the plotting and template mechanisms included in weeWX.  These reports consist of text, RSS XML, HTML, and image files.  Templates are written using the Cheetah and dot-code syntax built-in to weeWX.
 
 *Update frequency:* Reports are generated/updated once per archive interval.  
 

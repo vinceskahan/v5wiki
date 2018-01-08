@@ -18,7 +18,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
 * [Strategies for getting data into weewx](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
-* [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 
 #### weewx configuration
 * [Manage extensions](extensions)
@@ -44,6 +43,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
+* [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)

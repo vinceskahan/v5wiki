@@ -47,6 +47,9 @@ Examples: Ultimeter, TWI, Visala
 <p>
 Some hardware includes a data logger.  If weeWX shuts down, the logger will continue to collect data.  When weeWX starts up, it will read data from the logger since the last time it collected data, so there will be no gaps in the data!
 </p>
+<p>
+Examples: Hideki, Vantage, WS23xx, WS20x0, CC3000, HP3000
+</p>
 </td>
 </tr>
 </table>
@@ -65,6 +68,9 @@ Some hardware includes a data logger.  If weeWX shuts down, the logger will cont
 <p>
 Some hardware is directly extensible - you can add sensors and the hardware will recognize them.  In some cases this might be additional temperature/humidity sensors.  For other stations, you can add soil moisture, leaf wetness, solar radiation, or other types of sensors.
 </p>
+<p>
+Examples: Vantage Pro, Acurite Bridge/SmartHUB, Rainwise, Hideki, Klimalogg, HP3000
+</p>
 </td>
 </tr>
 </table>
@@ -82,6 +88,9 @@ Some hardware is directly extensible - you can add sensors and the hardware will
 <td>
 <p>
 Sometimes a single weather station does not provide enough types of sensors.  For example, how would you add a snow depth sensor to an Acurite 5in1 with console?  Use a weeWX service!  A weeWX data collection service can add observations to each LOOP or archive record.  So you can add data from a snow depth sensor and a tide level sensor to data from an Acurite 5in1 station, then the reports will show integrated data.
+</p>
+<p>
+Examples: Maxbotix, 1-wire, AS3935
 </p>
 </td>
 </tr>

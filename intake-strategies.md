@@ -6,7 +6,7 @@ WeeWX also includes a reporting engine.  Once the data are in the database, weew
 
 And weeWX can emit data for use elsewhere, either automatically as part of its reporting or uploading system, or manually using the wee_* utilities or raw SQL queries.
 
-The following sections enumerate some ways to configure hardware for the first part - how to get data into weeWX.  For reporting, see the (Strategies for publishing data from weeWX)[dashboards].
+The following sections enumerate some ways to configure hardware for the first part - how to get data into weeWX.  For reporting, see the [Strategies for publishing data from weeWX](dashboards).
 
 ## Configuration 1: Driver for directly-connected data source
 

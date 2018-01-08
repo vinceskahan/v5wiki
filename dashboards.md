@@ -182,7 +182,7 @@ for javascript plotting: read data from json/csv file vs read data from a server
 
 current values vs historical values
 
-ability to aggregate historical values
+ability to accumulate historical values
 
 ### Transferring and synchronizing data
 

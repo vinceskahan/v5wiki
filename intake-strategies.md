@@ -145,25 +145,6 @@ Examples: WeatherFlow, FineOffset Observer, LaCrosse GW1000U, Acurite Bridge/Sma
 </table>
 
 
-
-## Configuration 7: Multiple weeWX instances
-
-<table>
-<tr>
-<td  width="200">
-<a href="http://weewx.com/cfg/weewx-data-multi.png">
-<img src="http://weewx.com/cfg/weewx-data-multi.png"/>
-</a>
-</td>
-<td>
-<p>
-Another way to collect data from multiple data sources is to run a weeWX instance for each source, then use the weeWX reporting architecture to generate a report with data from all of the sources.
-</p>
-</td>
-</tr>
-</table>
-
-
 ## What else?
 
 How are you using weeWX?  If you have other approaches to collecting data, please contribute to this wiki!

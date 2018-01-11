@@ -139,4 +139,5 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="https://personal.xively.com/favicon.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes
+* [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](devtest-infrastructure)

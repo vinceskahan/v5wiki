@@ -81,3 +81,13 @@ To enable the service, add it to the service list in `weewx.conf`:
 ```
 
 Then restart weeWX.
+
+### References
+
+Note that this example uses a dict to exchange data between threads.  This is often work, but a Queue with a single item in it would be safer.  Here are some reading materials if you'd like to understand multi-threading in Python better:
+
+http://www.dabeaz.com/python/GIL.pdf
+
+http://effbot.org/pyfaq/what-kinds-of-global-value-mutation-are-thread-safe.htm
+
+https://stackoverflow.com/a/3358974/1708384

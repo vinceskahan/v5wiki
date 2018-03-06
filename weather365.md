@@ -11,7 +11,7 @@ If  you are planning a trip, a tour, a sailing trip or other activities - detail
 Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather?
 WEATHER365 provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts, ozonlevels, pollenlevels and much more.
 
-We have around 30 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
+We have more then 100 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
 
 We have also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. 
 

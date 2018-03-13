@@ -16,8 +16,8 @@ echo "SELECT * FROM archive WHERE (windGust  > 100);" | sqlite3 /var/tmp/backup.
 
 To null out the bad fields:
 ~~~~~
-echo "UPDATE archive SET windSpeed=NULL WHERE (windSpeed > 100);" | sqlite3 /var/tmp/mydb.sdb
-echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 /var/tmp/mydb.sdb
+echo "UPDATE archive SET windSpeed=NULL WHERE (windSpeed > 100);" | sqlite3 /var/tmp/backup.sdb
+echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 /var/tmp/backup.sdb
 ~~~~~
 
 Now save your old SQLITE database, then replace it with `/var/tmp/backup.sdb`.

@@ -89,6 +89,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wlink - Collect data from weatherlink.com](wlink)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
+* [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)

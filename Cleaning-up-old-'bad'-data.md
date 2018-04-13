@@ -22,7 +22,7 @@ echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 /var
 
 Now save your old SQLITE database, then replace it with `/var/tmp/backup.sdb`.
 
-Finally, you need to drop the old daily summaries, which otherwise would include these bad data. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this:
+Next, you need to drop the old daily summaries, which otherwise would include these bad data. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this:
 
     wee_database weewx.conf --drop-daily
 
@@ -30,5 +30,9 @@ The summaries will be rebuilt the next time weewx starts. As this can take a lon
 may want to do this explicitly:
 
     wee_database weewx.conf --rebuild-daily
+
+Most old web pages and plots will be automatically regenerated, but it may take a while. The exception is
+the "NOAA" reports --- only the most recent one will get regenerated. If your bad data is deeper in the
+past, then you should delete the offending NOAA files and let weeWX regenerate them.
 
 Finally, to avoid a problem in the future, be sure to set a range of acceptable values for service `StdQC`. See the section [StdQC](http://weewx.com/docs/usersguide.htm#StdQC) in the User's Guide for details on how to do this.

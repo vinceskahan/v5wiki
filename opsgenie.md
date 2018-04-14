@@ -46,7 +46,7 @@ wee_extension --install weewx-opsgenie.tar.gz
 
    ```
 sudo /etc/init.d/weewx start
-   ```
+```
 
 See [readme.txt](https://raw.githubusercontent.com/dcapslock/Weewx-OpsGenie/master/Weewx-OpsGenie/readme.txt) for more information on config options.
 

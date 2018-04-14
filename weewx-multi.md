@@ -82,7 +82,7 @@ and in `acurite.conf`:
 ```
 sudo cp util/init.d/weewx-multi /etc/init.d/weewx
 sudo update-rc.d weewx defaults
-echo "vantage acurite" | sudo tee /etc/defaults/weewx-multi
+echo "vantage acurite" | sudo tee /etc/default/weewx-multi
 ```
 
 ### Starting and stopping

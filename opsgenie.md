@@ -21,7 +21,7 @@ wee_extension --install weewx-opsgenie.tar.gz
 
 2. Modify weewx.conf. Your OpsGenie API Key can be found on the OpsGenie Integrations page. See
 
-   ```
+```
     [OpsGenie]
         [[Heartbeat]]
             apiKey = YOUR-HEARTBEAT-API-KEY #Set to OpsGenie Heartbeat Integration API Key
@@ -44,7 +44,7 @@ wee_extension --install weewx-opsgenie.tar.gz
 
 3. Restart Weewx
 
-   ```
+```
 sudo /etc/init.d/weewx start
 ```
 

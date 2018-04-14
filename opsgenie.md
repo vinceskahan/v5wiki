@@ -14,7 +14,8 @@ You can send an Alert based on any valid Python expression using Weewx LOOP pack
 ### How to install
 
 1. Run the extension installer
-   ```
+   
+```
 wee_extension --install weewx-opsgenie.tar.gz
 ```
 

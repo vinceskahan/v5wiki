@@ -15,13 +15,13 @@ You can send an Alert based on any valid Python expression using Weewx LOOP pack
 
 1. Run the extension installer
 
-    ```
+   ```
 wee_extension --install weewx-opsgenie.tar.gz
 ```
 
 2. Modify weewx.conf. Your OpsGenie API Key can be found on the OpsGenie Integrations page. See
 
-    ```
+   ```
     [OpsGenie]
         [[Heartbeat]]
             apiKey = YOUR-HEARTBEAT-API-KEY #Set to OpsGenie Heartbeat Integration API Key

@@ -49,6 +49,6 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 *[FARS control & fan rotation FB & RTC](https://goo.gl/TOD4Kn)
 
-*[FARS construction](https://goo.gl/LlDR1R)
+*[FARS construction](http://bit.ly/2HkfmOj)
 
 *[Davis wind, wmr200a and rainwise sensors](http://bit.ly/2vy4Q0l)

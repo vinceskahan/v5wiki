@@ -44,6 +44,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 ### Schematics and construction information #
 *[i2C BUS](http://bit.ly/2F4zwGf)
+
 *[wind speed and direction](http://bit.ly/2HQngMB)
 
 *[FARS control & fan rotation FB & RTC](http://bit.ly/2HR3jFt)

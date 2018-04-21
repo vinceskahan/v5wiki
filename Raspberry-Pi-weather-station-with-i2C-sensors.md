@@ -5,7 +5,7 @@ The following will describe a weather station utilising i2C sensors for (tempera
 [Link to my station](http://nevspi3w.duckdns.org:8048/weather/nevsnewskin/index.html)
 
 ## Overall block diagram #
-[Link to block diagram](https://goo.gl/kFyBKv)
+[Link to block diagram](http://bit.ly/2HiSESR)
 
 
 ## Equipment used and general information #

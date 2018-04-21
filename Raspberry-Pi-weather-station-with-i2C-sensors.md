@@ -33,7 +33,7 @@ The following link will cover multiple configs, not all are required and have be
 [Pi configuration](https://goo.gl/9iFNgQ)
 
 ### Weewx config #
-Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)
+Use your normal config procedure, this link is the procedure I use. [weewx install](http://bit.ly/2F5CUjT)
 
 ### Python scripts required for installation of i2C sensors and required services #
 *[prerequisites and ADS1115 python script](http://bit.ly/2F4D8bj)

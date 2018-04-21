@@ -36,7 +36,7 @@ The following link will cover multiple configs, not all are required and have be
 Use your normal config procedure, this link is the procedure I use. [weewx install](https://goo.gl/YdZp29)
 
 ### Python scripts required for installation of i2C sensors and required services #
-*[prerequisites and ADS1115 python script](https://goo.gl/WCN0Iw)
+*[prerequisites and ADS1115 python script](http://bit.ly/2F4D8bj)
 
 *[Python and service scripts for i2C sensors FARS control Aircon data and Weewx driver](http://bit.ly/2F5mpEA)
 

@@ -51,4 +51,4 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 *[FARS construction](https://goo.gl/LlDR1R)
 
-*[Davis wind, wmr200a and rainwise sensors](https://goo.gl/zhxY2O) 
+*[Davis wind, wmr200a and rainwise sensors](bit.ly/2vy4Q0lbit.ly/2vy4Q0l)

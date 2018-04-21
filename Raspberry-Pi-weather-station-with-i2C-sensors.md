@@ -40,7 +40,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 
 *[Python and service scripts for i2C sensors FARS control Aircon data and Weewx driver](https://goo.gl/o01nfg)
 
-*[Fan control and sensor data collection services](https://goo.gl/LiJx85)
+*[Fan control and sensor data collection services](http://bit.ly/2HPSpPX)
 
 ### Schematics and construction information #
 *[i2C BUS](http://bit.ly/2F4zwGf)

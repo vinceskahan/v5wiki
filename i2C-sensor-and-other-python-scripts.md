@@ -1,4 +1,4 @@
-###### [adctest2.py](https://goo.gl/Xz3rJs) #
+###### [adctest2.py](http://bit.ly/2F3H8c7) #
 ###### [sht31.py address #44](https://goo.gl/xpkXft) #
 ###### [sht31no2.py address #45](https://goo.gl/aYgAqz) #
 ###### [sht31test45.py](https://goo.gl/Xvreau) #

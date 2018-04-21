@@ -43,8 +43,7 @@ Use your normal config procedure, this link is the procedure I use. [weewx insta
 *[Fan control and sensor data collection services](https://goo.gl/LiJx85)
 
 ### Schematics and construction information #
-*[i2C BUS](https://goo.gl/mYEB5E)
-
+*[i2C BUS](http://bit.ly/2F4zwGf)
 *[wind speed and direction](http://bit.ly/2HQngMB)
 
 *[FARS control & fan rotation FB & RTC](http://bit.ly/2HR3jFt)

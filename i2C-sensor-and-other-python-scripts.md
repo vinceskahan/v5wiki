@@ -2,7 +2,7 @@
 ###### [sht31.py address #44](http://bit.ly/2HQSqDt) #
 ###### [sht31no2.py address #45](http://bit.ly/2HQarlj) #
 ###### [sht31test45.py](http://bit.ly/2HPAgll) #
-###### [BMP085.py](https://goo.gl/9wFqHR) #
+###### [BMP085.py](http://bit.ly/2HR7Ffr) #
 ###### [BMP180simpletest.py](https://goo.gl/6BfRwl) #
 ###### [SI1145.py address #60](https://goo.gl/YTI9wA) #
 ###### [si1145test.py](https://goo.gl/zuTXIl) #

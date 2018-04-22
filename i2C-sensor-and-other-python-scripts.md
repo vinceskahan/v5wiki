@@ -10,6 +10,6 @@
 ###### [tsltest.py](http://bit.ly/2HSwBDF) #
 ###### [FARS fan control and feedback](http://bit.ly/2HPx2yi) #
 ###### [get i2C sensor and FARS feedback data](http://bit.ly/2HighLe) #
-###### [get aircon temp and status data](https://goo.gl/Ycjvhd) #
+###### [get aircon temp and status data](http://bit.ly/2HRGiSI) #
 ###### [import aircon data with weewx service](https://goo.gl/QGZ8Lo) #
 ###### [weewx driver](https://goo.gl/Cmtuo9) #

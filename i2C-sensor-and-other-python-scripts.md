@@ -1,7 +1,7 @@
 ###### [adctest2.py](http://bit.ly/2F3H8c7) #
 ###### [sht31.py address #44](http://bit.ly/2HQSqDt) #
 ###### [sht31no2.py address #45](http://bit.ly/2HQarlj) #
-###### [sht31test45.py](https://goo.gl/Xvreau) #
+###### [sht31test45.py](http://bit.ly/2HPAgll) #
 ###### [BMP085.py](https://goo.gl/9wFqHR) #
 ###### [BMP180simpletest.py](https://goo.gl/6BfRwl) #
 ###### [SI1145.py address #60](https://goo.gl/YTI9wA) #

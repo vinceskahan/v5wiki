@@ -11,5 +11,5 @@
 ###### [FARS fan control and feedback](http://bit.ly/2HPx2yi) #
 ###### [get i2C sensor and FARS feedback data](http://bit.ly/2HighLe) #
 ###### [get aircon temp and status data](http://bit.ly/2HRGiSI) #
-###### [import aircon data with weewx service](https://goo.gl/QGZ8Lo) #
+###### [import aircon data with weewx service](http://bit.ly/2HP9YQk) #
 ###### [weewx driver](https://goo.gl/Cmtuo9) #

@@ -9,7 +9,7 @@
 ###### [tsl2591.py address #29](http://bit.ly/2HQegqL) #
 ###### [tsltest.py](http://bit.ly/2HSwBDF) #
 ###### [FARS fan control and feedback](http://bit.ly/2HPx2yi) #
-###### [get i2C sensor and FARS feedback data](https://goo.gl/6wHKNw) #
+###### [get i2C sensor and FARS feedback data](http://bit.ly/2HighLe) #
 ###### [get aircon temp and status data](https://goo.gl/Ycjvhd) #
 ###### [import aircon data with weewx service](https://goo.gl/QGZ8Lo) #
 ###### [weewx driver](https://goo.gl/Cmtuo9) #

@@ -5,7 +5,7 @@
 ###### [BMP085.py](http://bit.ly/2HR7Ffr) #
 ###### [BMP180simpletest.py](http://bit.ly/2HVXVAZ) #
 ###### [SI1145.py address #60](http://bit.ly/2HRtJ9R) #
-###### [si1145test.py](https://goo.gl/zuTXIl) #
+###### [si1145test.py](http://bit.ly/2HTvSli) #
 ###### [tsl2591.py address #29](https://goo.gl/VjOmpS) #
 ###### [tsltest.py](https://goo.gl/YG5EIN) #
 ###### [FARS fan control and feedback](https://goo.gl/s4lYzv) #

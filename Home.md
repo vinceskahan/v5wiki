@@ -69,6 +69,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [envoy - Collect data from Enphase Envoy solar controller](https://github.com/matthewwall/weewx-envoy)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 * [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000)
+* [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
 * [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, or LaCross GW1000U](https://github.com/matthewwall/weewx-interceptor)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
@@ -89,7 +90,6 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [wlink - Collect data from weatherlink.com](wlink)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
-* [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)

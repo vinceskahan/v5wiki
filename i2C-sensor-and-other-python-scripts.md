@@ -13,3 +13,4 @@
 ###### [get aircon temp and status data](http://bit.ly/2HRGiSI) #
 ###### [import aircon data with weewx service](http://bit.ly/2HP9YQk) #
 ###### [weewx driver](http://bit.ly/2HSOpOP) #
+###### [weewx config](http://bit.ly/2IY9tGG) #

@@ -113,6 +113,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [Flat](http://neoground.com/projects/weewx/) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [MesoWX](https://bitbucket.org/lirpa/mesowx) (live weather feed)
+* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React)
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)

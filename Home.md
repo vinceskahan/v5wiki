@@ -118,7 +118,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [Responsive](responsive)
 * [simple](simple)
 * [Steel Series Gauges](steelseries)
-* [Washboard](https://github.com/jquagga/Washboard)
+* [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-wd](weewx-wd)
 
 #### Uploaders

@@ -86,3 +86,5 @@ mwall made minor changes to the dkm driver to handle different firmware versions
 Pat O'Brien created a screen scraping driver, then a socket-based driver.  His experiences are documented at http://obrienlabs.net/redirecting-weather-station-data-from-observerip/ and the code for his 'SocketLogger' driver is at https://github.com/poblabs/weewx-socketlogger
 
 mwall created the weewx-interceptor driver, which has two modes: listen or sniff.  In listen mode, the driver accepts direct connections from the weather station bridge or console.  In sniff mode, the driver captures traffic as the station sends it to weather underground.  (https://github.com/matthewwall/weewx-interceptor)
+
+dolfs has provided lots of useful information about the various firmware versions at http://www.wxforum.net/index.php?topic=31805

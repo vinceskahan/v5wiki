@@ -23,7 +23,7 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
         station_type = WeatherLink
 
     [WeatherLink]
-        username = USERNAME
+        username = USERNAME # use the device ID for weatherlink 2.0 accounts
         password = PASSWORD
         driver = user.wlink
 ```

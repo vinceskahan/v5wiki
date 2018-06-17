@@ -76,6 +76,8 @@ import usb.backend.libusb1
 backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
 ```
 
+The above described issue and the fix does not only apply to the wmr200.py file but it seems relevant for all usb based drivers. It certainly applies as well for the fousb.py driver which supports a huge variety of weather stations manufactured by Fine Offset!
+
 Now it should run! You can monitor system log for weewx messages in ssh -> "logread -f"
 
 ## init script

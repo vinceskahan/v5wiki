@@ -99,3 +99,15 @@ http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433
 I'm using an Odroid C1, a quad core ARMv7. Board cost is $35. Running Umbutu 14.4.
 
 <br clear="all">
+
+GL-MT300N-V2
+---
+<img src="https://static.gl-inet.com/www/images/products/gl-mt300n-v2/mango_500x500_1.jpg" align="right" height=100"/>
+
+https://www.gl-inet.com/products/gl-mt300n-v2/
+
+The GL-MT300N-V1 is a travel router which runs OpenWrt. It has two FastEthernet ports, USB and WLAN. I have atatched an USB-Hub where I have inserted a 16GM USB thumb drive to enlarge the small filesystem following the ExtRoot configuration https://openwrt.org/docs/guide-user/additional-software/extroot_configuration and I have pluged-in in anouther USB port the WH1080 from Fine Offset.
+
+Everything runs fine so far and my station reports to wetter.com, Wunderground, WeatherObservationsWebsite and to my personal website at http://lieberlinge.ddnss.de/weather/
+
+The GL-MT300N-V2 is currently available at amazon Germany für less than EUR 25,- at https://www.amazon.de/GL-iNet-GL-MT300N-V2-Repeater-Performance-Compatible!

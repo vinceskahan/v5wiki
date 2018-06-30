@@ -102,7 +102,7 @@ I'm using an Odroid C1, a quad core ARMv7. Board cost is $35. Running Umbutu 14.
 
 GL-MT300N-V2
 ---
-<img src="https://static.gl-inet.com/www/images/products/gl-mt300n-v2/mango_500x500_1.jpg" align="right" height=100"/>
+<img src="https://static.gl-inet.com/www/images/products/gl-mt300n-v2/mango_500x500_1.jpg" align="right" height="100"/>
 
 https://www.gl-inet.com/products/gl-mt300n-v2/
 

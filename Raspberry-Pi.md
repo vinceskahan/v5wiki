@@ -1,6 +1,6 @@
-## Running weewx on a Raspberry Pi
+## Running WeeWX on a Raspberry Pi
 
-Running weewx on a Raspberry Pi has become very popular. You'll have to look elsewhere for general instructions on setting up your RPi, but there are a few problem specific to weewx.
+Running WeeWX on a Raspberry Pi has become very popular. You'll have to look elsewhere for general instructions on setting up your RPi, but here are a few problems that are specific to WeeWX.
 
 ### Time
 
@@ -8,9 +8,9 @@ First, you simply must run NTP on the RPi. It is not possible to create a depend
 
 Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock" (Debian package `fake-hwclock`). The "fake clock" regularly records the time on the hard disk. This time is then used to set the clock during the reboot after a power failure. Unfortunately, this time could be hours behind the real time, depending on how long the power was out. 
 
-Meanwhile, if you are running weewx as a daemon, weewx will also start up and try to run with this seriously out-of-date time. When it then stores something in the database, it will either be stored under a too-old timestamp, or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
+Meanwhile, if you are running WeeWX as a daemon, WeeWX will also start up and try to run with this seriously out-of-date time. When it then stores something in the database, it will either be stored under a too-old timestamp, or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
 
-Eventually NTP starts up, finds an authoritative time source, then sets the time correctly, but this could take several minutes and, by then, the damage is done.
+Eventually NTP starts up, finds an authoritative time source, then sets the time correctly, but this could take several minutes and, by then, the damage has been done.
 
 There are a number of solutions. Here are two.
 
@@ -19,7 +19,9 @@ There are a number of solutions. Here are two.
 The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD) and solve the problem permanently. Users have had good luck with these clocks:
 
 * [Jameco Electronics](http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10001&catalogId=10001&productId=2217625&CID=AVANT)
-* [SunFounder DS3231 on Amazon](http://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS)
+* [SunFounder DS3231](http://www.amazon.com/SunFounder-DS3231-Precision-Raspberry-Arduino/dp/B00HF4NUSS) on Amazon.
+* [Makerfire DS1307](https://www.amazon.com/dp/B00ZOXWHK4/ref=cm_sw_r_cp_awdb_t1_I4CbBbHK8NDYP) on Amazon
+* [DS3231 module](https://m.aliexpress.com/item/32315883368.html) on Aliexpress. Under $1!
 
 For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration instructions can be found from [W0CHP's WX Station web site](http://wx.w0chp.net/setup/RPi2-B_RTC.html).
 
@@ -27,7 +29,7 @@ For Raspberry models running Jessie, see some hints on the page [pi RTC with jes
 
 ##### B. Remove the fake clock
 
-As of Version 3.4, Weewx will not start up until the system time is later than 1 January 2000. So, a simple solution is to remove the fake clock. Without the fake clock, the system time will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, preventing weewx from starting up until NTP sets the true time.
+As of Version 3.4, WeeWX will not start up until the system time is later than 1 January 2000. So, a simple solution is to remove the fake clock. Without the fake clock, the system time will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, preventing WeeWX from starting up until NTP sets the true time.
 
 To remove the fake clock:
 

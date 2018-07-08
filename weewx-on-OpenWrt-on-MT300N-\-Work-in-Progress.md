@@ -1,6 +1,6 @@
 # Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080 connected to the travel router
 
-This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWRT/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
+This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWRT/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a pricetag of less than 25,- EUR with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
 
 The setup provides the following features:
 * reads out the weather data regularly (every 5 min in my case), 
@@ -12,19 +12,13 @@ The setup provides the following features:
 ## Pre-Requisites
 
 * A computer with internet access
-
 * A browser (I use latest Firefox but others should work well as well)
-
 * A terminal program, I use [putty](https://www.putty.org/)
-
+* It is assumed that you have a dhcp server in your local LAN where newly plug-in devices get a proper network address assigned automatically!
 * The travel router GL-MT300N-V2 (short MT300N)
-
 * A simple usb hub, I use a cheap 4-port USB 2.0 hub from ebay for EUR 2,44 including shipping!
-
 * A thumb drive aka as a usb flash drive, I use a give away with 16GB
-
 * A powered USB HUB or a USB poer supply to power the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
-
 * A free network port on your internet router / local network and a RJ45 patch kabel to connect the MT300N
  to your network an provide it with internet access
 
@@ -36,7 +30,7 @@ The setup provides the following features:
 * Connect with the browser of choice to 192.168.8.1 (LAN-adress of the MT300N)
 * Select a password for access to the MT300N
 * Optional but recommended: deactivate WiFi
-* Check if latest firmaware is installed on MT300N and do so if not
+* Check if latest firmware is installed on MT300N and do so if not - after firmware upgrade you have to repeat the above
 * Allow access from the WAN port to the MT300 (see following screenshot)
 ![Allow WAN access on the MT300N](https://farm1.staticflickr.com/919/29406483378_59cf108b0e_b.jpg)
 * Select "Advanced setting >>" on the very top tight of the administration page and log in with the user root and the same password you selected at the beginning for the MT300N
@@ -45,6 +39,16 @@ The setup provides the following features:
 * Then go to Network -> Firewall and allow all traffic from WAN through the WAN port (see following screenshot, replicate entries as shown and press "Save & Apply")
 ![Disable Firewall](https://farm2.staticflickr.com/1821/42558181244_736444a920_b.jpg)
 IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do not use it in this state as a router! Ensure you have protected you local network suffciently!
+* Now you could unplug the network cable of your computer from the LAN port of the MT300N and plug it again back to your regular router
+* Figure out (ideally through checking on your internet router) what ip adress the MT300N got assigned in your local network and try to access it through your web browser
+* If the above worked, then open a SSH session to the MT300N
+* Plug in your USB hub into the USB port of the MT300N and plug in the usb drive into the USB hub
+* Extend the storage capacity on the MT300 to allow python installation and to run weewx by following the [Extroot description on OpenWrt.com](https://openwrt.org/docs/guide-user/additional-software/extroot_configuration]
+* Now you should have sufficient capacity for the installation of python, weewx and for operating weewx
+
+## Installation of Python, required modules and weewx
+
+
 
 
 

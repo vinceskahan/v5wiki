@@ -1,6 +1,6 @@
 # Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080 - WORK IN PROGRESS, NOT YET USABLE
 
-This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWRT/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a pricetag of less than 25,- EUR with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
+This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWrt/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a [pricetag of less than 25,- EUR](https://www.amazon.de/GL-iNet-GL-MT300N-V2-Repeater-Performance-Compatible/dp/B073TSK26W/) with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
 
 The setup provides the following features:
 * reads out the weather data regularly (every 5 min in my case), 
@@ -18,7 +18,7 @@ The setup provides the following features:
 * The travel router GL-MT300N-V2 (short MT300N)
 * A simple usb hub, I use a cheap 4-port USB 2.0 hub from ebay for EUR 2,44 including shipping!
 * A thumb drive aka as a usb flash drive, I use a give away with 16GB
-* A powered USB HUB or a USB poer supply to power the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
+* A powered USB HUB or a U^^^^SB poer supply to power the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
 * A free network port on your internet router / local network and a RJ45 patch kabel to connect the MT300N
  to your network an provide it with internet access
 
@@ -48,7 +48,9 @@ IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do 
 
 ## Installation of Python, required modules and weewx
 
-
+Before we start, log in to the MT300N via ssh and do
+`root@LEDE:~# opkg update`
+Should run with an error.
 
 
 

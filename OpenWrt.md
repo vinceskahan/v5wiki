@@ -50,25 +50,22 @@ IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do 
 
 Before we start, log in to the MT300N via ssh and do
 
-`root@LEDE:~# opkg update`
+`root@GL-MT300N-V2:~# opkg update`
 
-Should run with an error.
+Should run without an error.
 
+Then we start installing the required packages
 
-
-  * python-light
-  * libusb-1.0
-  * openssh-sftp-server (optional, provides sftp access, handy for file editing)
-
-* Python packages from the repo
-  * python-distutils
-  * python-codecs
-  * python-openssl
-  * python-logging
-  * python-email
-  * python-decimal
-  * python-ctypes
-  * python-sqlite3
+  * python-light, do `root@GL-MT300N-V2:~# opkg install python-light`
+  * libusb-1.0, should be already installed, otherwise do `root@GL-MT300N-V2:~# opkg install libusb-1.0`
+  * python-distutils, do `root@GL-MT300N-V2:~# opkg install python-distutils`
+  * python-codecs, do `root@GL-MT300N-V2:~# opkg install python-codecs`
+  * python-openssl, do `root@GL-MT300N-V2:~# opkg install python-openssl`
+  * python-logging, do `root@GL-MT300N-V2:~# opkg install python-logging`
+  * python-email, do `root@GL-MT300N-V2:~# opkg install python-email`
+  * python-decimal, do `root@GL-MT300N-V2:~# opkg install python-decimal`
+  * python-ctypes, do `root@GL-MT300N-V2:~# opkg install python-ctypes`
+  * python-sqlite3, do `root@GL-MT300N-V2:~# opkg install python-sqlite3`
 
 * Python packages from source (ie not in repo) "python setup.py install" (they are not from dev site, to not use https for wget)
   * configobj 

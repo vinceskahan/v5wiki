@@ -180,8 +180,5 @@ restart() {
 
 ## Credits
 
-Hayden Thring
+Go to Hayden Thring for his excellent brilliant description here in the wiki!
 
-## References
-
-https://groups.google.com/forum/#!topic/weewx-user/M8Jpy4Fosp0

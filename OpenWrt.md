@@ -107,47 +107,41 @@ Answer the asked questions about your station, but you can change the settings l
 
 ## weeWX Configuration
 
-In weewx.conf I disabled reports to save installing some more packages: 
+Open the weewx configuration file for edit with
+`root@GL-MT300N-V2:/home/weewx# vi weewx.conf`
 
-```
-report_services = weewx.engine.StdPrint
-```
+Check the driver section:
 
-Add the driver section:
+`
+[FineOffsetUSB]
+    # This section is for the Fine Offset series of weather stations.
 
-```
-[WMR200]
-    # This section is for the Oregon Scientific WMR200
-    
-    # The station model, e.g., WMR200, WMR200A, Radio Shack W200
-    model = WMR200
-    
+    # The station model, e.g., WH1080, WS1090, WS2080, WH3081
+    model = WS2080
+
+    # How often to poll the station for data, in seconds
+    polling_interval = 60
+
     # The driver to use:
-    driver = weewx.drivers.wmr200
-    
-    archive_interval = 300
-```
+    driver = weewx.drivers.fousb
+`
 
 Then force archive interval for your station setting: in [WMR200] and [StdArchive] sections:
 
-```
-[StdArchive]
-    
-    # If the station hardware supports data logging then the archive interval
-    # will be downloaded from the station. Otherwise, specify it (in seconds).
-    archive_interval = 300
-```
+There is an issue with weeWX on OpenWrt/LEDE as OpenWRT has no support for ldconfig and i didn't find an easy way to add ldconfig to OpenWRT/LEDE. But there is an easy hack to solve the issue, open the driver file with:
 
-Then to fix error with backend driver missing you need to help the /home/weewx/bin/weewx/drivers/wmr200.py driver file find the installed usb driver:
+`root@GL-MT300N-V2:/home/weewx# vi bin/weewx/drivers/fousb.py`
 
-```
-import usb
+scroll down until you find the line which reads
+`import usb`
+at approx line 250, then add the following two lines next
 
-import usb.backend.libusb1
-backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
-```
+`import usb.backend.libusb1
+ backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
+`
+and save the file fousb.py and quit the editor.
 
-The above described issue and the fix does not only apply to the wmr200.py file but it seems relevant for all usb based drivers. It certainly applies as well for the fousb.py driver which supports a huge variety of weather stations manufactured by Fine Offset!
+The above described issue and the fix does not only apply to the fousb.py but as well to wmr200.py file and it seems relevant for all usb based drivers!
 
 Now it should run! You can monitor system log for weewx messages in ssh -> "logread -f"
 

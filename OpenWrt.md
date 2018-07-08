@@ -1,4 +1,4 @@
-# Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080 connected to the travel router
+# Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080 connected to the travel router - WORK IN PROGRESS, NOT YET USABLE
 
 This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWRT/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a pricetag of less than 25,- EUR with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
 

@@ -76,7 +76,7 @@ Python packages from source which could be installed as the packages above. You 
 
 ###"python setup.py install" (they are not from dev site, to not use https for wget)
 
-  * configobj, available from [https://pypi.org/project/ConfigObject/] but then you have to deal with https and wget
+  * configobj, available from (https://pypi.org/project/ConfigObject/) but then you have to deal with https and wget
     `http://pypi.upc.edu/mirror/configobj/configobj-5.0.6.tar.gz`
   * six 
     `http://pkgs.fedoraproject.org/repo/pkgs/python-six/six-1.10.0.tar.gz/34eed507548117b2ab523ab14b2f8b55/six-1.10.0.tar.gz`

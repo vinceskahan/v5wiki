@@ -49,7 +49,9 @@ IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do 
 ## Installation of Python, required modules and weewx
 
 Before we start, log in to the MT300N via ssh and do
+
 `root@LEDE:~# opkg update`
+
 Should run with an error.
 
 

@@ -137,8 +137,8 @@ scroll down until you find the line which reads
 at approx line 250, then add the following two lines next
 
 `import usb.backend.libusb1
- backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
-`
+backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")`
+
 and save the file fousb.py and quit the editor.
 
 The above described issue and the fix does not only apply to the fousb.py but as well to wmr200.py file and it seems relevant for all usb based drivers!
@@ -180,9 +180,11 @@ restart() {
 ## Before you start with your weather station
 
 I recommend to install the usbutils
+
 `root@GL-MT300N-V2:/home/weewx# opkg install usbutils`
 
 Which allows you to monitor what the operating system detects when you plug in the usb cable from your weather station into the USB hub connected to the MT300N. Before we plug in the weather station:
+
 `root@GL-MT300N-V2:/home/weewx# lsusb -t
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
@@ -190,6 +192,7 @@ Which allows you to monitor what the operating system detects when you plug in t
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
 
 and after
+
 `root@GL-MT300N-V2:/home/weewx# lsusb -t
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
@@ -197,7 +200,7 @@ and after
         |__ Port 3: Dev 4, If 0, Class=Human Interface Device, Driver=, 1.5M
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
 
-The weather station is detected by the system as Human Interface Device which is correct!
+The weather station is detected by the system as Human Interface Device which is correct! Enjoy and have fun!
 
 ## Credits
 

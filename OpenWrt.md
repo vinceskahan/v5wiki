@@ -67,8 +67,16 @@ Then we start installing the required packages
   * python-ctypes, do `root@GL-MT300N-V2:~# opkg install python-ctypes`
   * python-sqlite3, do `root@GL-MT300N-V2:~# opkg install python-sqlite3`
 
-* Python packages from source (ie not in repo) "python setup.py install" (they are not from dev site, to not use https for wget)
-  * configobj 
+Python packages from source which could be installed as the packages above. You need to download the packages and follow the steps as described
+  * Some preparation, run the following commands (the first two commands create the directories for the weewx installation):
+    * `root@GL-MT300N-V2:~# mkdir /home`
+    * `root@GL-MT300N-V2:~# mkdir /home/weewx`
+    * `root@GL-MT300N-V2:~# mkdir /home/weewx/downloads` (this creates a directory where we can store sources and downloads required during installation but we can empty the directory after everything runs)
+
+
+###"python setup.py install" (they are not from dev site, to not use https for wget)
+
+  * configobj, available from [https://pypi.org/project/ConfigObject/] but then you have to deal with https and wget
     `http://pypi.upc.edu/mirror/configobj/configobj-5.0.6.tar.gz`
   * six 
     `http://pkgs.fedoraproject.org/repo/pkgs/python-six/six-1.10.0.tar.gz/34eed507548117b2ab523ab14b2f8b55/six-1.10.0.tar.gz`

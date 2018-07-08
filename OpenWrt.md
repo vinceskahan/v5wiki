@@ -30,7 +30,7 @@ The setup provides the following features:
 * Connect with the browser of choice to 192.168.8.1 (LAN-adress of the MT300N)
 * Select a password for access to the MT300N
 * Optional but recommended: deactivate WiFi
-* Check if latest firmware is installed on MT300N and do so if not - after firmware upgrade you have to repeat the above
+* Check if latest firmware is installed on MT300N and do so if not - after firmware upgrade you have to repeat the above three steps (connect with browser, select password, deactivate WiFi)
 * Allow access from the WAN port to the MT300 (see following screenshot)
 ![Allow WAN access on the MT300N](https://farm1.staticflickr.com/919/29406483378_59cf108b0e_b.jpg)
 * Select "Advanced setting >>" on the very top tight of the administration page and log in with the user root and the same password you selected at the beginning for the MT300N

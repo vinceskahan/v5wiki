@@ -14,13 +14,13 @@ The setup provides the following features:
 * A computer with internet access
 * A browser (I use latest Firefox but others should work well as well)
 * A terminal program, I use [putty](https://www.putty.org/)
-* It is assumed that you have a dhcp server in your local LAN where newly plug-in devices get a proper network address assigned automatically!
+* It is assumed that you have a DHCP server in your local LAN where newly plug-in devices get a proper network address assigned automatically!
 * The travel router GL-MT300N-V2 (short MT300N)
 * A simple usb hub, I use a cheap 4-port USB 2.0 hub from ebay for EUR 2,44 including shipping!
-* A thumb drive aka as a usb flash drive, I use a give away with 16GB
-* A powered USB HUB or a U^^^^SB poer supply to power the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
-* A free network port on your internet router / local network and a RJ45 patch kabel to connect the MT300N
- to your network an provide it with internet access
+* A thumb drive aka usb flash drive, I use a give-away from work with 16GB
+* A externally powered USB HUB or a USB power supply to provide power for the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
+* A free network port on your internet router / local network and a RJ45 patch cable to connect the MT300N
+ to your network and provide it with internet access
 
 ## Getting Started with the MT300N - Preparation of the pocket computer
 

@@ -71,16 +71,27 @@ Python packages from source which could be installed as the packages above. You 
   * Some preparation, run the following commands (the first two commands create the directories for the weewx installation):
     * `root@GL-MT300N-V2:~# mkdir /home`
     * `root@GL-MT300N-V2:~# mkdir /home/weewx`
-    * `root@GL-MT300N-V2:~# mkdir /home/weewx/downloads` (this creates a directory where we can store sources and downloads required during installation but we can empty the directory after everything runs)
+    * `root@GL-MT300N-V2:~# mkdir /home/weewx/downloads` 
+      (this creates a directory where we can store sources and downloads required during installation but we can empty the directory after everything runs)
+    * `root@GL-MT300N-V2:~# cd /home/weewx/downloads`
+
+  * configobj, available from [https://pypi.org/project/ConfigObject/](https://files.pythonhosted.org/packages/9e/7d/2aca7320b9d2331dee9a4249d795374ef432379fac3bc29db145da079fd8/ConfigObject-1.2.2.tar.gz) but then you have to deal with https and wget
+    * Download: to avoid the issue with ssl I have downloaded the package to my private webserver from where you can download the package with
+`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
+    * Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf configobj-5.0.6.tar.gz`
+    * Install: 
+      `root@GL-MT300N-V2:/home/weewx/downloads# cd configobj-5.0.6/`
+      `root@GL-MT300N-V2:/home/weewx/downloads/configobj-5.0.6# python setup.py install`
+For the following modules repeat the above describes procedure of download, extract and install with the respective paths
+  * six, original available from https://pypi.org/project/six/, to avoid ssl issues, you can do
+`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
+  * pyusb, original available from https://pypi.org/project/pyusb/, to avoid ssl issues you can do
+`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
 
 
-###"python setup.py install" (they are not from dev site, to not use https for wget)
+# should work until here
 
-  * configobj, available from (https://pypi.org/project/ConfigObject/) but then you have to deal with https and wget
-    `http://pypi.upc.edu/mirror/configobj/configobj-5.0.6.tar.gz`
-  * six 
-    `http://pkgs.fedoraproject.org/repo/pkgs/python-six/six-1.10.0.tar.gz/34eed507548117b2ab523ab14b2f8b55/six-1.10.0.tar.gz`
-  * pyusb 
+      * pyusb 
     `http://internode.dl.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0/pyusb-1.0.0.tar.gz`
 
 * Weewx source code, Install section here: http://www.weewx.com/docs/setup.htm

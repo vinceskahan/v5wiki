@@ -177,6 +177,27 @@ restart() {
         /home/weewx/bin/weewxd --daemon /home/weewx/weewx.conf
 }
 ```
+## Before you start with your weather station
+
+I recommend to install the usbutils
+`root@GL-MT300N-V2:/home/weewx# opkg install usbutils`
+
+Which allows you to monitor what the operating system detects when you plug in the usb cable from your weather station into the USB hub connected to the MT300N. Before we plug in the weather station:
+`root@GL-MT300N-V2:/home/weewx# lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
+        |__ Port 2: Dev 3, If 0, Class=Mass Storage, Driver=usb-storage, 12M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
+
+and after
+`root@GL-MT300N-V2:/home/weewx# lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
+        |__ Port 2: Dev 3, If 0, Class=Mass Storage, Driver=usb-storage, 12M
+        |__ Port 3: Dev 4, If 0, Class=Human Interface Device, Driver=, 1.5M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
+
+The weather station is detected by the system as Human Interface Device which is correct!
 
 ## Credits
 

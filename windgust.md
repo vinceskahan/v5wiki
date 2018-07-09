@@ -80,68 +80,6 @@ Consult the *Station Data Table* for your hardware to understand exactly which v
 
 http://weewx.com/docs/hardware.htm
 
-### How weeWX calculates wind speeds
-
-| symbol | meaning |
-|----|----|
-|s | wind speed |
-|d | wind direction |
-|gs | wind gust speed |
-|gd | wind gust direction |
-| s<sub>a</sub> | archive record wind speed |
-
-#### Hardware reports windSpeed, windDir, windGust, windGustDir
-
-| observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|
-| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
-| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
-| windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
-| windGustDir | gd | gd<sub>a</sub> | gd | gd<sub>a</sub> |
-
-#### Hardware reports windSpeed, windDir, windGust
-
-| observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|
-| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
-| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
-| windGust | gs | gs<sub>a</sub> | gs | gs<sub>a</sub> |
-| windGustDir |  |  | ? | ? |
-
-#### Hardware reports windSpeed, windDir
-
-| observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|
-| windSpeed | s | s<sub>a</sub> | s | s<sub>a</sub> |
-| windDir | d | d<sub>a</sub> | d | d<sub>a</sub> |
-| windGust |  |  |  | max(s<sub>a</sub>) |
-| windGustDir |  |  |  | d<sub>max(s)</sub> |
-
-#### Hardware reports windSpeed, windDir, windGust
-*no archive data OR record_generation=software*
-
-| observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|
-| windSpeed | s |  | s | avg(s) |
-| windDir | d |  | d | avg(d) |
-| windGust | gs |  | gs | max(gs) |
-| windGustDir |  |  | ? | d<sub>max(gs)</sub> |
-
-#### Hardware reports windSpeed, windDir
-*no archive data OR record_generation=software*
-
-| observation | hardware loop | hardware archive | resulting loop | resulting archive |
-|---|---|---|---|---|
-| windSpeed | s |  | s | avg(s) |
-| windDir | d |  | d | avg(d) |
-| windGust |  |  |  | max(s) |
-| windGustDir |  |  |  | d<sub>max(s)</sub> |
-
-FIXME: how does use_hilo affect these?
-
-FIXME: how does record_generation affect these?
-
-
 ## References
 
 http://w1.weather.gov/glossary/

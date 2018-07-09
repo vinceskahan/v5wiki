@@ -206,3 +206,7 @@ The weather station is detected by the system as Human Interface Device which is
 
 Go to Hayden Thring for his excellent brilliant description here in the wiki!
 
+## About the author
+
+If you want to contact me directly, please send an email to [Bernhard Friess](mailto:bernhard.friess@gmx.de)
+

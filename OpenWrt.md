@@ -43,8 +43,8 @@ IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do 
 * Figure out (ideally through checking on your internet router) what ip adress the MT300N got assigned in your local network and try to access it through your web browser
 * If the above worked, then open a SSH session to the MT300N
 * Plug in your USB hub into the USB port of the MT300N and plug in the usb drive into the USB hub
-* Extend the storage capacity on the MT300 to allow python installation and to run weewx by following the [Extroot description on OpenWrt.com](https://openwrt.org/docs/guide-user/additional-software/extroot_configuration]
-* Now you should have sufficient capacity for the installation of python, weewx and for operating weewx
+* Extend the storage capacity on the MT300 to allow python installation and to run weewx by following the [Extroot description on OpenWrt.com](https://openwrt.org/docs/guide-user/additional-software/extroot_configuration)
+* Now you should have sufficient storage capacity for the installation of python, weewx and for operating weewx
 
 ## Installation of Python and required modules
 

@@ -36,7 +36,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run weeWX in Docker](docker)
-* [Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
 
 #### data management
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
@@ -58,6 +57,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 * [Implement a multi-threaded service](multi-threaded-service)
 * [Run weeWX on OpenWRT](weewx-on-openwrt)
+* [Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
 
 ### Extensions to weeWX
 

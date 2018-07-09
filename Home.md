@@ -123,6 +123,9 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-wd](weewx-wd)
 
+#### Generators
+* [sftp](https://github.com/matthewwall/weewx-sftp)
+
 #### Uploaders
 * <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms)
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)

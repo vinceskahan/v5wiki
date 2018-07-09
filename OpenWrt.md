@@ -204,7 +204,7 @@ The weather station is detected by the system as Human Interface Device which is
 
 ## Credits
 
-Go to Hayden Thring for his excellent brilliant description here in the wiki!
+Go to Hayden Thring for his excellent brilliant description here in the wiki about [weewx on openwrt](weewx-on-openwrt)!
 
 ## About the author
 

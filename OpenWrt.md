@@ -1,8 +1,8 @@
 # Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080
 
-This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWrt/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a [pricetag of less than 25,- EUR](https://www.amazon.de/GL-iNet-GL-MT300N-V2-Repeater-Performance-Compatible/dp/B073TSK26W/) with a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
+This is a guide from Jul 2018 about running weeWX v3.8.0 on OpenWrt/Lede V17.01.4 on top of a a travel router [GL.iNET GL-MT300N-V2](https://www.gl-inet.com/products/gl-mt300n-v2/) which is a small pocket computer with less than 5W power consumption and a [pricetag of less than 25,- EUR](https://www.amazon.de/GL-iNet-GL-MT300N-V2-Repeater-Performance-Compatible/dp/B073TSK26W/). In this setup the travel router and weewx are used to pull weather observation data from  a personal weather station Froggit WS1080SE which is identical with [Fine Offset WH1080](http://www.foshk.com/Weather_Professional/WH1080.html).
 
-The setup provides the following features:
+The setup provides the following features (mainly weewx feature set):
 * reads out the weather data regularly (every 5 min in my case), 
 * stores the data in a sqlite database, 
 * builds a local webpage with the current weather data together with historically collected weather data 
@@ -14,11 +14,12 @@ The setup provides the following features:
 * A computer with internet access
 * A browser (I use latest Firefox but others should work well as well)
 * A terminal program, I use [putty](https://www.putty.org/)
-* It is assumed that you have a DHCP server in your local LAN where newly plug-in devices get a proper network address assigned automatically!
+* Some willingness to use shell commands and a basic understanding of how to use the editor vi. If no experience with vi is available, [here is a good start](https://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/)
+* It is assumed that you have a DHCP server in your local LAN where newly pluged-in devices get a proper network address assigned automatically
 * The travel router GL-MT300N-V2 (short MT300N)
 * A simple usb hub, I use a cheap 4-port USB 2.0 hub from ebay for EUR 2,44 including shipping!
-* A thumb drive aka usb flash drive, I use a give-away from work with 16GB
-* A externally powered USB HUB or a USB power supply to provide power for the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
+* A thumb drive aka usb flash drive or a HDD with at least 2GB of capacity which you can use permanently for this setup, I use a give-away from work with 16GB
+* An externally powered USB HUB or a USB power supply to provide power for the MT300N, I have a USB hub connected to my computer with an external power supply and use this as power supply for the MT300N
 * A free network port on your internet router / local network and a RJ45 patch cable to connect the MT300N
  to your network and provide it with internet access
 
@@ -77,34 +78,46 @@ Python packages from source which could not be installed as the packages above. 
     * `root@GL-MT300N-V2:~# cd /home/weewx/downloads`
 
   * configobj, available from [https://pypi.org/project/ConfigObject/](https://files.pythonhosted.org/packages/9e/7d/2aca7320b9d2331dee9a4249d795374ef432379fac3bc29db145da079fd8/ConfigObject-1.2.2.tar.gz) but then you have to deal with https, ssl and wget
-    * Download: to avoid wget-ssl issues I have downloaded the package to my private webserver from where you can get the package with
+    * Download: to avoid wget-ssl issues I have downloaded the package to my private webserver from where you can get the package with 
 
-`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
+      `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
     * Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf configobj-5.0.6.tar.gz`
     * Install: 
+
       `root@GL-MT300N-V2:/home/weewx/downloads# cd configobj-5.0.6/`
+
       `root@GL-MT300N-V2:/home/weewx/downloads/configobj-5.0.6# python setup.py install`
+
       `root@GL-MT300N-V2:/home/weewx/downloads/configobj-5.0.6# cd ..`
 
-For the following modules repeat the above describes procedure of download, extract and install with the respective paths
+For the following modules repeat the above described procedure of download, extract and install with the respective paths
   * six, original available from https://pypi.org/project/six/, to avoid wget-ssl issues, you can do
-`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
+
+    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
   * pyusb, original available from https://pypi.org/project/pyusb/, to avoid wget-ssl issues you can do
-`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/pyusb-1.0.1.tar.gz`
+
+    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/pyusb-1.0.1.tar.gz`
   * python-cheetah, original available from https://pypi.org/project/Cheetah/, to avoid wget-ssl, you can do 
-`root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/cheetah-2.4.4.tar.gz`
+
+    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/cheetah-2.4.4.tar.gz`
 
 ## Installation of weeWX
 
 * Download weeWX source code from http://weewx.com/downloads/ with:
-`root@GL-MT300N-V2:/home/weewx/downloads# wget http://weewx.com/downloads/weewx-3.8.0.tar.gz`
+
+  `root@GL-MT300N-V2:/home/weewx/downloads# wget http://weewx.com/downloads/weewx-3.8.0.tar.gz`
 * Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf weewx-3.8.0.tar.gz`
 * Install:
-      `root@GL-MT300N-V2:/home/weewx/downloads# cd weewx-3.8.0/`
-      `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py build`
-      `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py install`
+
+   `root@GL-MT300N-V2:/home/weewx/downloads# cd weewx-3.8.0/`
+
+   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py build`
+
+   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py install`
+
 Answer the asked questions about your station, but you can change the settings later as well
-      `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# cd ../..`
+
+   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# cd ../..`
 
 ## weeWX Configuration
 
@@ -124,21 +137,20 @@ Check the driver section:
     polling_interval = 60
 
     # The driver to use:
-    driver = weewx.drivers.fousb
-`
-
-Then force archive interval for your station setting: in [WMR200] and [StdArchive] sections:
+    driver = weewx.drivers.fousb`
 
 There is an issue with weeWX on OpenWrt/LEDE as OpenWRT has no support for ldconfig and i didn't find an easy way to add ldconfig to OpenWRT/LEDE. But there is an easy hack to solve the issue, open the driver file with:
 
 `root@GL-MT300N-V2:/home/weewx# vi bin/weewx/drivers/fousb.py`
 
 scroll down until you find the line which reads
+
 `import usb`
 at approx line 250, then add the following two lines next
 
-`import usb.backend.libusb1
-backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")`
+`import usb.backend.libusb1`
+
+`backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")`
 
 and save the file fousb.py and quit the editor.
 
@@ -187,18 +199,27 @@ I recommend to install the usbutils
 Which allows you to monitor what the operating system detects when you plug in the usb cable from your weather station into the USB hub connected to the MT300N. Before we plug in the weather station:
 
 `root@GL-MT300N-V2:/home/weewx# lsusb -t
+
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
+
         |__ Port 2: Dev 3, If 0, Class=Mass Storage, Driver=usb-storage, 12M
+
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
 
 and after
 
 `root@GL-MT300N-V2:/home/weewx# lsusb -t
+
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 12M
+
         |__ Port 2: Dev 3, If 0, Class=Mass Storage, Driver=usb-storage, 12M
+
         |__ Port 3: Dev 4, If 0, Class=Human Interface Device, Driver=, 1.5M
+
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M`
 
 The weather station is detected by the system as Human Interface Device which is correct! Enjoy and have fun!

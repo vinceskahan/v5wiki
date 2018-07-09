@@ -78,6 +78,7 @@ Python packages from source which could not be installed as the packages above. 
 
   * configobj, available from [https://pypi.org/project/ConfigObject/](https://files.pythonhosted.org/packages/9e/7d/2aca7320b9d2331dee9a4249d795374ef432379fac3bc29db145da079fd8/ConfigObject-1.2.2.tar.gz) but then you have to deal with https, ssl and wget
     * Download: to avoid wget-ssl issues I have downloaded the package to my private webserver from where you can get the package with
+
 `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
     * Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf configobj-5.0.6.tar.gz`
     * Install: 

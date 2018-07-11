@@ -51,78 +51,78 @@ IMPORTANT: with this last step you have disabled the firewall on the MT300N. Do 
 
 Before we start, log in to the MT300N via ssh and do
 
-`root@GL-MT300N-V2:~# opkg update`
+`opkg update`
 
 Should run without an error.
 
 Then we start installing the required packages
 
-  * python-light, do `root@GL-MT300N-V2:~# opkg install python-light`
-  * libusb-1.0, should be already installed, otherwise do `root@GL-MT300N-V2:~# opkg install libusb-1.0`
-  * python-distutils, do `root@GL-MT300N-V2:~# opkg install python-distutils`
-  * python-codecs, do `root@GL-MT300N-V2:~# opkg install python-codecs`
-  * python-openssl, do `root@GL-MT300N-V2:~# opkg install python-openssl`
-  * python-logging, do `root@GL-MT300N-V2:~# opkg install python-logging`
-  * python-email, do `root@GL-MT300N-V2:~# opkg install python-email`
-  * python-decimal, do `root@GL-MT300N-V2:~# opkg install python-decimal`
-  * python-ctypes, do `root@GL-MT300N-V2:~# opkg install python-ctypes`
-  * python-sqlite3, do `root@GL-MT300N-V2:~# opkg install python-sqlite3`
-  * python-pil, !important! do `root@GL-MT300N-V2:~# opkg install pillow`
+  * python-light, do `opkg install python-light`
+  * libusb-1.0, should be already installed, otherwise do `opkg install libusb-1.0`
+  * python-distutils, do `opkg install python-distutils`
+  * python-codecs, do `opkg install python-codecs`
+  * python-openssl, do `opkg install python-openssl`
+  * python-logging, do `opkg install python-logging`
+  * python-email, do `opkg install python-email`
+  * python-decimal, do `opkg install python-decimal`
+  * python-ctypes, do `opkg install python-ctypes`
+  * python-sqlite3, do `opkg install python-sqlite3`
+  * python-pil, !important! do `opkg install pillow`
 
 Python packages from source which could not be installed as the packages above. You need to download the packages as source and follow the steps as follows
   * For some preparation, run the following commands (the first two commands create the directories for the weewx installation):
-    * `root@GL-MT300N-V2:~# mkdir /home`
-    * `root@GL-MT300N-V2:~# mkdir /home/weewx`
-    * `root@GL-MT300N-V2:~# mkdir /home/weewx/downloads` 
+    * `mkdir /home`
+    * `mkdir /home/weewx`
+    * `mkdir /home/weewx/downloads` 
       (this creates a directory where we can store sources and downloads required during installation but we can empty the directory after everything runs)
-    * `root@GL-MT300N-V2:~# cd /home/weewx/downloads`
+    * `cd /home/weewx/downloads`
 
   * configobj, available from [https://pypi.org/project/ConfigObject/](https://files.pythonhosted.org/packages/9e/7d/2aca7320b9d2331dee9a4249d795374ef432379fac3bc29db145da079fd8/ConfigObject-1.2.2.tar.gz) but then you have to deal with https, ssl and wget
     * Download: to avoid wget-ssl issues I have downloaded the package to my private webserver from where you can get the package with 
 
-      `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
-    * Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf configobj-5.0.6.tar.gz`
+      `wget http://lieberlinge.ddnss.de/downloads/configobj-5.0.6.tar.gz`
+    * Extract: `tar -xvzf configobj-5.0.6.tar.gz`
     * Install: 
 
-      `root@GL-MT300N-V2:/home/weewx/downloads# cd configobj-5.0.6/`
+      `cd configobj-5.0.6/`
 
-      `root@GL-MT300N-V2:/home/weewx/downloads/configobj-5.0.6# python setup.py install`
+      `python setup.py install`
 
-      `root@GL-MT300N-V2:/home/weewx/downloads/configobj-5.0.6# cd ..`
+      `cd ..`
 
 For the following modules repeat the above described procedure of download, extract and install with the respective paths
   * six, original available from https://pypi.org/project/six/, to avoid wget-ssl issues, you can do
 
-    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
+    `wget http://lieberlinge.ddnss.de/downloads/six-1.10.0.tar.gz`
   * pyusb, original available from https://pypi.org/project/pyusb/, to avoid wget-ssl issues you can do
 
-    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/pyusb-1.0.1.tar.gz`
+    `wget http://lieberlinge.ddnss.de/downloads/pyusb-1.0.1.tar.gz`
   * python-cheetah, original available from https://pypi.org/project/Cheetah/, to avoid wget-ssl, you can do 
 
-    `root@GL-MT300N-V2:/home/weewx/downloads# wget http://lieberlinge.ddnss.de/downloads/cheetah-2.4.4.tar.gz`
+    `wget http://lieberlinge.ddnss.de/downloads/cheetah-2.4.4.tar.gz`
 
 ## Installation of weeWX
 
 * Download weeWX source code from http://weewx.com/downloads/ with:
 
-  `root@GL-MT300N-V2:/home/weewx/downloads# wget http://weewx.com/downloads/weewx-3.8.0.tar.gz`
-* Extract: `root@GL-MT300N-V2:/home/weewx/downloads# tar -xvzf weewx-3.8.0.tar.gz`
+  `wget http://weewx.com/downloads/weewx-3.8.0.tar.gz`
+* Extract: `tar -xvzf weewx-3.8.0.tar.gz`
 * Install:
 
-   `root@GL-MT300N-V2:/home/weewx/downloads# cd weewx-3.8.0/`
+   `cd weewx-3.8.0/`
 
-   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py build`
+   `./setup.py build`
 
-   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# ./setup.py install`
+   `./setup.py install`
 
 Answer the asked questions about your station, but you can change the settings later as well
 
-   `root@GL-MT300N-V2:/home/weewx/downloads/weewx-3.8.0# cd ../..`
+   `cd ../..`
 
 ## weeWX Configuration
 
 Open the weewx configuration file for edit with
-`root@GL-MT300N-V2:/home/weewx# vi weewx.conf`
+`vi weewx.conf`
 
 Check the driver section:
 
@@ -141,7 +141,7 @@ Check the driver section:
 
 There is an issue with weeWX on OpenWrt/LEDE as OpenWRT has no support for ldconfig and i didn't find an easy way to add ldconfig to OpenWRT/LEDE. But there is an easy hack to solve the issue, open the driver file with:
 
-`root@GL-MT300N-V2:/home/weewx# vi bin/weewx/drivers/fousb.py`
+`vi bin/weewx/drivers/fousb.py`
 
 scroll down until you find the line which reads
 
@@ -160,7 +160,7 @@ Now it should run! You can monitor system log for weewx messages in ssh -> "logr
 
 ## init script
 
-I added this startup init script: /etc/init.d/weewxd 
+I added this startup init script: /etc/init.d/weewxd which is copied without change from the wiki about [weewx on openwrt](weewx-on-openwrt) initially compiled by Hayden Thring
 
 ```
 #!/bin/sh /etc/rc.common
@@ -190,15 +190,16 @@ restart() {
         /home/weewx/bin/weewxd --daemon /home/weewx/weewx.conf
 }
 ```
+
 ## Before you start with your weather station
 
 I recommend to install the usbutils
 
-`root@GL-MT300N-V2:/home/weewx# opkg install usbutils`
+`opkg install usbutils`
 
 Which allows you to monitor what the operating system detects when you plug in the usb cable from your weather station into the USB hub connected to the MT300N. Before we plug in the weather station:
 
-`root@GL-MT300N-V2:/home/weewx# lsusb -t
+`lsusb -t
 
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
 
@@ -210,7 +211,7 @@ Which allows you to monitor what the operating system detects when you plug in t
 
 and after
 
-`root@GL-MT300N-V2:/home/weewx# lsusb -t
+`lsusb -t
 
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
 

@@ -125,7 +125,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * [weewx-wd](weewx-wd)
 
 #### Generators
-* [sftp](https://github.com/matthewwall/weewx-sftp)
+* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp)
 
 #### Uploaders
 * <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms)

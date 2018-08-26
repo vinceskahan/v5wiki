@@ -4,15 +4,7 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.17.tgz
-
-You can use `wget` to download directly:
-
-```
-wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.17.tgz
-```
-
-
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.18.tgz
 
 
 ### How to Install
@@ -22,18 +14,11 @@ wget http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.17.tgz
 ```
 sudo pip install paho-mqtt
 ```
-If you get "**pip: command not found**", then install pip with something like:
-
-```
-sudo apt-get install python-setuptools
-sudo easy_install pip
-```
-
 
 2.  Run the extension installer:
 
 ```
-sudo wee_extension --install weewx-mqtt-0.17.tgz
+sudo wee_extension --install weewx-mqtt-X.tgz
 ```
 
 3.  Modify the weewx configuration file: 
@@ -65,7 +50,7 @@ _append_units_label_ - Indicates whether to append the units abbreviation to the
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
 
-_binding_ - Indicates whether to bind to LOOP packets ('loop') or archive records ('archive').  Default is 'archive'.
+_binding_ - Indicates whether to bind to LOOP packets ('loop'), archive records ('archive'), or both loop and archive.  Default is 'archive'.
 
 _topic_ - The MQTT topic under which to publish.  Default is 'weather'.
 

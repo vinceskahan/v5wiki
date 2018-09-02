@@ -167,7 +167,7 @@ To use the `$forecast` variable in a template, the ForecastVariables search list
 
 ```
 [CheetahGenerator]
-    search_list_extension = user.forecast.ForecastVariables
+    search_list_extensions = user.forecast.ForecastVariables
     ...
 ```
 

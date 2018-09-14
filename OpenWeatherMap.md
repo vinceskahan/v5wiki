@@ -71,7 +71,7 @@ Another change to the 3.0 API is that you can no longer just supply a username a
         ```
         - `"external_id"` needs to be a unique ID for your weather station.
         - `"name"` is the name of your weather station.
-        - `"latitude"`, `"longitude"`, and `"altitude"` should reflect the values you already have in your weewx config.
+        - `"latitude"`, `"longitude"`, and `"altitude"` should reflect the values you already have in your weewx config (*Note:* according to OWM customer support the altitude value is supposed to be given in meters).
 
 4. Press "Send", and you should get a response at the bottom of the window, containing your ID, a `"created_at"` and a `"updated_at"`-timestamp, the data you entered above, and a rank.
 5. Copy that ID in to your weewx config, along with your API key, as shown in step 2 under "Installation" above.

@@ -1,8 +1,12 @@
-Ce thème graphique est une traduction en français du thème par défaut de weeWX v3.5.0 qui se nomme Standard. Ce thème devrait fonctionner avec weewx 3.3.0 ou plus récent.
+Ce thème graphique est une traduction en français du thème par défaut de weeWX qui se nomme Standard. 
 
 ### Téléchargement
 
+Traduction en français du thème par défaut de weeWX v3.5.0 qui se nomme Standard (Ce thème devrait fonctionner avec weewx 3.3.0 ou plus récent):
 https://github.com/weewx/weewx/files/338169/Standard-FR-v1.0.1.tar.gz
+
+Traduction en français du thème par défaut de weeWX v3.8.2 qui se nomme Standard
+https://github.com/weewx/weewx/files/2409004/weeWX_v3.8.2-Standard-FR.tar.gz
 
 ### Installation
 

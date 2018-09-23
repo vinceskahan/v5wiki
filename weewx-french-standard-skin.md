@@ -1,8 +1,12 @@
-This skin is a french translation of the weeWX v3.5.0 default Standard skin. This skin should work with weewx 3.3.0 or later.
+This skin is a french translation of the weeWX default Standard skin. 
 
 ### Download
 
+French translation of the weeWX v3.5.0 default Standard skin (This skin should work with weewx 3.3.0 or later):
 https://github.com/weewx/weewx/files/338169/Standard-FR-v1.0.1.tar.gz
+
+French translation of the weeWX v3.8.2 default Standard skin 
+https://github.com/weewx/weewx/files/2409004/weeWX_v3.8.2-Standard-FR.tar.gz
 
 ### Installation
 

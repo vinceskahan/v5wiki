@@ -6,25 +6,25 @@ There are three important rules to remember when seeking help from the group:
 2. Include more of the log!
 3. Include still more!
 
-Too often, we see either nothing from the log, or a tiny sliver of text with no context. 
+Too often, we see either nothing from the log, or a tiny sliver of text with no context. Another common mistake
+is to include only a screen shot of the log. They are hard to read, include only a couple dozen lines, and
+waste a lot of space.
 
 To get a good, useful log:
 
-1. Stop weewx
-2. Set `debug=1` in the configuration file in `weewx.conf`
-3. Restart weewx
+1. Figure out where it is located. On Debian systems, this is `/var/log/syslog`. The *User's Guide* has a section [*Where to find things*](http://weewx.com/docs/usersguide.htm#Where_to_find_things) that can help 
+locate your system log.
+2. Stop weewx
+3. Set `debug=1` in the configuration file in `weewx.conf`
+4. Type the command 
 
-If you are having problems getting weewx to run, or if you are having problems getting a feature to work, be sure to post the log from when weewx starts up. This is because the start up sequence leaves behind important clues as to which services are being loaded and whether they ran to completion successfully. Include the log through at least the first reporting cycle.
+    `tail -f /var/log/syslog | tee /var/tmp/mylog`
 
-If you are having problems with the reporting engine, then it's probably OK to leave out the startup sequence, and just post from where a new archive record comes in.
+    This will allow you to see the log, while saving a copy to the file `/var/tmp/mylog`.
+    One potential complication is that on recent Linux systems you might have to use `sudo` to view the log. In this case, the command becomes
 
-If the log seems unduly big, you can either include it as an attachment, or put it on a cloud service like [pastebin.com](http://pastebin.com/)
+    `sudo tail -f /var/log/syslog | tee /var/tmp/mylog`
+ 
+5. Restart weewx. Let it run through at least the first reporting cycle (usually 5-10 minutes)
+6. Attach the created file to your post to weewx-user, or put it on a cloud service like [pastebin.com](http://pastebin.com/) and include a link.
 
-On many Linux systems you can find the log at `/var/log/syslog`
-
-On redhat/centos/fedora systems the log is `/var/log/messages`
-
-On recent Linux systems you might have to use `sudo` to view the log.  For example, to see the last 500 lines of the log:
-```
-sudo tail -500 /var/log/syslog
-```

@@ -155,3 +155,4 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 ### Development notes
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](devtest-infrastructure)
+* [Supporting Python 3](https://github.com/weewx/weewx/wiki/Python-3-strategy)

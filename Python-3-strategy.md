@@ -83,14 +83,11 @@ Most of your time will be spent thinking about strings. They are treated very di
 Python 2 and 3. Indeed, this was the major motivation in creating Python 3, with all its upwards
 incompatibilities. 
 
-In Python 2, strings are one-byte sequences. If you want to represent characters that take more
-than one byte, you must encode them using an encoding like UTF-8. Python 2 also has Unicode strings,
-but they are not the default. You must explicitly create them either by using the `u` prefix, or
-by decoding a regular string.
+In Python 2, `str` and `unicode` are separate types. An `str` is a sequence of bytes, a `unicode` is a sequence of code points. You go back and forth between them by using `encode` and `decode`.
 
-In Python 3, strings are unicode sequences. They are created by default. 
+In Python 3, there is no type `unicode`, only `str`, which like Python 2's `unicode`, is a sequence of code points. By default, all strings are Unicode. Python 3 has a separate type, `bytearray` or `bytes`, to represent sequences of bytes. Like Python 2, you go back and forth between them using `encode` and `decode`, except the byte representation ends up as `bytes`, not `str`.
 
-Carefully review the semantics of any strings in the file and decide whether it's a true string (which will become Unicode under Python 3), or what I'll call a "byte string." Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
+Carefully review the semantics of any strings in the file and decide whether it's a true string (which will be Unicode under Python 3), or what I'll call a "byte string." Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
 
 To write code that will run under both versions of Python, you must be clear which role you intend the string to play.
 
@@ -117,7 +114,7 @@ to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence o
 ```
 
 Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
-each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters. So, the resultant code works with either version.
+each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters, type `bytes`. So, the resultant code works with either version.
 
 ### Integers and strings
 Here's another problem. Say you need to send a byte value of `10` to the device as binary. Under Python 2, you could do this
@@ -129,7 +126,7 @@ port.write(x)
 
 The function `chr()` converts its argument into a string, which in the case of Python 2, is a sequence of one-byte characters. A string only one element long, (`'\n'`) is created. Problem solved. 
 
-But, under Python 3, what is actually created is a Unicode string --- not at all what you want. So, you must explicitly tell it to create a sequence of one-byte characters:
+But, under Python 3, what is actually created is a Unicode string --- not at all what you want. So, you must explicitly tell it to create a sequence of one-byte characters (type `bytes`):
 
 ```python
 import struct

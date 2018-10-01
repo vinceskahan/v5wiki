@@ -50,5 +50,24 @@ to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence o
 each other. But, under Python 3, the string would be a sequence of Unicode characters. Instead, it becomes,
 like in Python 2, a sequence of one-byte characters.
 
+4. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
 
+   ```python
+   zip(['a', 'b'], [1, 2])
+   ```
+
+   results in a list
+
+   ```
+   [('a', 1), ('b', 2)]
+   ```
+
+   but under Python 3, it results in an iterator object. You must explicitly convert it into a list:
+
+   ```python
+   list(zip(['a', 'b'], [1, 2]))
+   ```
+   This will work under both Python 2 and 3. 
+
+   The `range` operator has a similar problem.
 

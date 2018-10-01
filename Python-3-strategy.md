@@ -137,3 +137,9 @@ port.write(x)
 Fortunately, this solution, while wordy, will work under both Python 2 and 3. 
 
 WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.
+
+## ConfigObj
+To be done
+
+## Installing Python 3 prerequisites
+To be done

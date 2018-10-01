@@ -105,5 +105,25 @@ to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence o
 Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
 each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters. So, the resultant code works with either version.
 
+### Integers and strings
+Here's another problem. Say you need to send a byte value of `10` to the device as binary. Under Python 2, you could do this
 
+```python
+x = chr(10)
+port.write(x)
+```
 
+The function `chr()` converts its argument into a string, which in the case of Python 2, is a sequence of one-byte characters. A string only one element long, (`'\n'`) is created. Problem solved. 
+
+But, under Python 3, what is actually created is a Unicode string --- not at all what you want. So, you must explicitly tell it to create a sequence of one-byte characters:
+
+```python
+import struct
+...
+x = struct.pack('>b', 10)
+port.write(x)
+```
+
+Fortunately, this solution, while wordy, will work under both Python 2 and 3. 
+
+WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.

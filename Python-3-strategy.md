@@ -63,6 +63,16 @@ not investigate any doctest code embedded in comments, so you'll still have to s
 
    The `range` operator has a similar problem.
 
+6. In Python 2, you use the function `raw_input()` to read from the console. In Python 3, the function
+name has been changed to `input()`, which does not exist under Python 2, and `raw_input()` has been
+eliminated. So, neither `input` nor `raw_input` will work under both versions.
+
+   WeeWX provides a function, `weeutil.weeutil.input`, which will work under either version. So, convert all
+calls to `raw_input` to use it:
+
+   ```python
+     ans = weeutil.weeutil.input("Answer 'yes' or 'no')
+   ```
 
 ## Strings
 Most of your time will be spent thinking about strings. They are treated very differently between

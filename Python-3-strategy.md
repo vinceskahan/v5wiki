@@ -83,6 +83,9 @@ Most of your time will be spent thinking about strings. They are treated very di
 Python 2 and 3. Indeed, this was the major motivation in creating Python 3, with all its upwards
 incompatibilities. 
 
+Make sure you thoroughly understand the difference between byte sequences and Unicode. This is a classic
+article on the subject: [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+
 In Python 2, `str` and `unicode` are separate types. An `str` is a sequence of bytes, a `unicode` is a sequence of code points. You go back and forth between them by using `encode` and `decode`.
 
 In Python 3, there is no type `unicode`, only `str`, which like Python 2's `unicode`, is a sequence of code points. By default, all strings are Unicode. Python 3 has a separate type, `bytearray` or `bytes`, to represent sequences of bytes. Like Python 2, you go back and forth between them using `encode` and `decode`, except the byte representation ends up as `bytes`, not `str`.

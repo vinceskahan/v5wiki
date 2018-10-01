@@ -6,6 +6,10 @@ Our strategy is to support both, at least for a while. This guide covers how to 
 code that will run under both Python 2 and Python 3. It starts with the easy stuff. There is a separate
 section on the end that deals with strings.
 
+The tool [`2to3`](https://docs.python.org/2/library/2to3.html) is useful, but not definitive. 
+The problem is that it is designed for a one-way conversion from Python 2 to 3, not to support 
+both versions. If used with the `-w` ("write") flag, it will make changes that will break compatibility with Python 2.  Use it to find incompatibilities, not to fix them
+
 1. Use the utility `2to3` with the `-l` flag to see what needs to be changed. Note that this tool will
 not investigate any doctest code embedded in comments, so you'll still have to scan the file manually.
 

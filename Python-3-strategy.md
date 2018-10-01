@@ -20,7 +20,29 @@ not investigate any doctest code embedded in comments, so you'll still have to s
 
        from __future__ import print_function
 
-3. Carefully review the semantics of any strings in the file and decide whether its a true string (which will become Unicode under Python 3), or what I'll call a "byte string." Most of the time, it will be a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
+3. All raised exceptions must use the constructor style. Do this:
+
+   ```python
+     raise ValueError("Bad value: %s" % v)
+   ```
+   not this:
+   ```python
+     raise ValueError, "Bad value: %s" % v
+   ```
+
+4. Similarly, all "caught" exceptions must use the `as` style. Do this
+
+   ```python
+   except ValueError as e:
+   ```
+
+   not this
+
+   ```python
+     except ValueError, e
+   ```
+
+5. Carefully review the semantics of any strings in the file and decide whether its a true string (which will become Unicode under Python 3), or what I'll call a "byte string." This is what will take most of your effort. Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
 
    This matters because in Python 3, strings and byte strings are cleanly separated, while in Python 2, a string serves both purposes. To write code that will run under both versions of Python, you must be clear which role you intend the string to play.
 
@@ -50,7 +72,7 @@ to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence o
 each other. But, under Python 3, the string would be a sequence of Unicode characters. Instead, it becomes,
 like in Python 2, a sequence of one-byte characters.
 
-4. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
+6. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
 
    ```python
    zip(['a', 'b'], [1, 2])

@@ -3,7 +3,8 @@ Python 2 must be installed explicitly and, eventually, will no longer be support
 be ready for Python 3.
 
 Our strategy is to support both, at least for a while. This guide covers how to convert and run
-code that will run under both Python 2 and Python 3.
+code that will run under both Python 2 and Python 3. It starts with the easy stuff. There is a separate
+section on the end that deals with strings.
 
 1. Use the utility `2to3` with the `-l` flag to see what needs to be changed. Note that this tool will
 not investigate any doctest code embedded in comments, so you'll still have to scan the file manually.
@@ -41,38 +42,7 @@ not investigate any doctest code embedded in comments, so you'll still have to s
    ```python
      except ValueError, e
    ```
-
-5. Carefully review the semantics of any strings in the file and decide whether its a true string (which will become Unicode under Python 3), or what I'll call a "byte string." This is what will take most of your effort. Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
-
-   This matters because in Python 3, strings and byte strings are cleanly separated, while in Python 2, a string serves both purposes. To write code that will run under both versions of Python, you must be clear which role you intend the string to play.
-
-   Here's an example. This is a function from the Vantage driver, which turns the console lamp on and off:
-
-   ```python
-    def setLamp(self, onoff='OFF'):
-        """Set the lamp on or off"""
-        try:        
-            _setting = {'off': '0', 'on': '1'}[onoff.lower()]
-        except KeyError:
-            raise ValueError("Unknown lamp setting '%s'" % onoff)
-
-        _command = "LAMPS %s\n" % _setting
-        self.port.send_command(_command, max_tries=self.max_tries)
-
-        syslog.syslog(syslog.LOG_NOTICE, "vantage: Lamp set to '%s'" % onoff)
-   ```       
-    Most of the strings in the function are true strings and can be left unchanged. However, the command sent
-to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence of one-byte characters, not a Unicode string. So, the relevant line becomes
-
-   ```python
-        _command = b"LAMPS %s\n" % _setting
-   ```
-
-    Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
-each other. But, under Python 3, the string would be a sequence of Unicode characters. Instead, it becomes,
-like in Python 2, a sequence of one-byte characters.
-
-6. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
+5. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
 
    ```python
    zip(['a', 'b'], [1, 2])
@@ -92,4 +62,48 @@ like in Python 2, a sequence of one-byte characters.
    This will work under both Python 2 and 3. 
 
    The `range` operator has a similar problem.
+
+
+## Strings
+Most of your time will be spent thinking about strings. They are treated very differently between
+Python 2 and 3. Indeed, this was the major motivation in creating Python 3, with all its upwards
+incompatibilities. 
+
+In Python 2, strings are one-byte sequences. If you want to represent characters that take more
+than one byte, you must encode them using an encoding like UTF-8. Python 2 also has Unicode strings,
+but they are not the default. You must explicitly create them either by using the `u` prefix, or
+by decoding a regular string.
+
+In Python 3, strings are unicode sequences. They are created by default. 
+
+Carefully review the semantics of any strings in the file and decide whether it's a true string (which will become Unicode under Python 3), or what I'll call a "byte string." Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
+
+To write code that will run under both versions of Python, you must be clear which role you intend the string to play.
+
+Here's an example. This is a function from the Vantage driver, which turns the console lamp on and off:
+
+```python
+def setLamp(self, onoff='OFF'):
+  """Set the lamp on or off"""
+  try:        
+    _setting = {'off': '0', 'on': '1'}[onoff.lower()]
+  except KeyError:
+    raise ValueError("Unknown lamp setting '%s'" % onoff)
+
+  _command = "LAMPS %s\n" % _setting
+  self.port.send_command(_command, max_tries=self.max_tries)
+
+   syslog.syslog(syslog.LOG_NOTICE, "vantage: Lamp set to '%s'" % onoff)
+```       
+Most of the strings in the function are true strings and can be left unchanged. However, the command sent
+to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence of one-byte characters, not a Unicode string. So, the relevant line becomes
+
+```python
+  _command = b"LAMPS %s\n" % _setting
+```
+
+Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
+each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters. So, the resultant code works with either version.
+
+
 

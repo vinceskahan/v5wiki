@@ -78,7 +78,7 @@ calls to `raw_input` to use it:
      ans = weeutil.weeutil.input("Answer 'yes' or 'no'")
    ```
 
-## Strings
+# Strings
 Most of your time will be spent thinking about strings. They are treated very differently between
 Python 2 and 3. Indeed, this was the major motivation in creating Python 3, with all its upwards
 incompatibilities. 
@@ -119,7 +119,7 @@ which cannot be converted into Unicode using the ASCII codec, we must do the con
 
 Conclusion? I think it best to use **strategy #2**. While it means rewriting more code, in the end, it will result in fewer surprises and will be more future proof.
 
-### I/O
+## I/O
 
 There are four areas that must convert byte strings to and from Unicode:
 
@@ -209,7 +209,7 @@ to be done
 ## RESTful services
 to be done
 
-## Installing Python 3 prerequisites
+# Installing Python 3 prerequisites
 On Debian:
 
     sudo apt install python3-serial

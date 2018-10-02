@@ -182,7 +182,20 @@ Fortunately, this solution, while wordy, will work under both Python 2 and 3.
 WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.
 
 ## ConfigObj
-To be done
+Because internally all strings in WeeWX will be in Unicode, byte sequences must be decoded on input and encoded on output of ConfigObj. That means that option [`encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#encoding) must be specified:
+
+```python
+>>> c = configobj.ConfigObj('/home/weewx/skins/Standard/skin.conf', encoding='utf8')
+>>> degree_C_label = c['Units']['Labels']['degree_C']
+>>> print(degree_C_label)
+°C
+>>> print(type(degree_C_label))
+<type 'unicode'>
+```
+
+You will get the same result under either Python 2 or 3.
+
+Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then if you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 
 ## Templates
 to be done

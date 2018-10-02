@@ -94,38 +94,35 @@ There are two general strategies we could use:
 
 1. Use the native string type under each version of Python. This would be the byte-sequence string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte string. Unicode strings are only rarely used internally.
 
-2. Use Unicode in both versions. With this strategy, we must always convert byte sequences on input into Unicode, then convert back when it comes type to do output. This is the way most software deals with Unicode. This approach has the advantage that internally, strings are always in Unicode. It's not necessary to know which version of Python you're running under.  Note that with this strategy, it is not necessary to annotate every literal string as unicode by using the `u` prefix. Most conversions will happen automatically. For example, consider something like this:
+2. Use Unicode in both versions. With this strategy, on input, we must always convert byte sequences into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are
+issues. Consider this code:
 
    ```python
       if record_generation == "software":
    ```
-   Under Python 3, all strings are Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte string. We're comparing apples to oranges. What happens is that Python 2 will silently convert ("decode") the right hand side, using an ASCII codec, into a Unicode string, so it is comparing two Unicode sequences. 
+   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using an ASCII codec, into a Unicode string, so now it is comparing two Unicode sequences. 
 
    This works fine, except when the right hand side cannot be decoded using an ASCII codec. Consider this:
 
    ```python
-   a=u'ą'
-   a=='ą'  # False!
+   if unit_label == '°C':
    ```
-   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, the result is `False`
+   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, the result will always be `False` under Python 2. 
+
+   The conclusion is that if there is any chance that one or the other side of a comparison is a byte string,
+which cannot be converted into Unicode using the ASCII codec, we must do the conversion ourselves. The fix for this example is easy:
  
-   The correct, most general way to do a mixed comparison is:
-
    ```python
-      if record_generation.decode('utf8') == "software":
+   if unit_label == u'°C':
    ```
 
-   Or, even simpler,
+   Other cases may not be so simple. Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.
 
-   ```python
-      if record_generation == u"software":
-   ```
-
-   Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.
+Conclusion? I think it best to use **strategy #2**. While it means rewriting more code, in the end, it will result in fewer surprises and will be more future proof.
 
 ### I/O
 
-There are four areas that must perform this I/O:
+There are four areas that must convert byte strings to and from Unicode:
 
 1. Device drivers
 2. ConfigObj
@@ -134,9 +131,7 @@ There are four areas that must perform this I/O:
 
 ### Device drivers
 
-Carefully review the semantics of any strings in the file and decide whether it's a true string (which will be Unicode under Python 3), or what I'll call a "byte string." Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
-
-To write code that will run under both versions of Python, you must be clear which role you intend the string to play.
+Carefully review the semantics of any strings in the file and decide whether it's a true string (which will be Unicode under strategy #2), or a sequence of bytes. Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
 
 Here's an example. This is a function from the Vantage driver, which turns the console lamp on and off:
 
@@ -154,7 +149,7 @@ def setLamp(self, onoff='OFF'):
    syslog.syslog(syslog.LOG_NOTICE, "vantage: Lamp set to '%s'" % onoff)
 ```       
 Most of the strings in the function are true strings and can be left unchanged. However, the command sent
-to the hardware, `"LAMPS %s\n"`, is actually a byte string. We want a sequence of one-byte characters, not a Unicode string. So, the relevant line becomes
+to the hardware, `"LAMPS %s\n"`, will be represented as a Unicode string under Python 3. We want a sequence of one-byte characters, not a Unicode string. So, the relevant line becomes
 
 ```python
   _command = b"LAMPS %s\n" % _setting
@@ -189,5 +184,13 @@ WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this
 ## ConfigObj
 To be done
 
+## Templates
+to be done
+
+## RESTful services
+to be done
+
 ## Installing Python 3 prerequisites
-To be done
+On Debian:
+
+    sudo apt install python3-serial

@@ -75,7 +75,7 @@ eliminated. So, neither `input` nor `raw_input` will work under both versions.
 calls to `raw_input` to use it:
 
    ```python
-     ans = weeutil.weeutil.input("Answer 'yes' or 'no')
+     ans = weeutil.weeutil.input("Answer 'yes' or 'no'")
    ```
 
 ## Strings

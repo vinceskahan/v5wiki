@@ -92,7 +92,7 @@ In Python 3, there is no type `unicode`, only `str`, which like Python 2's `unic
 
 There are two general strategies we could use:
 
-1. Use the native string type under each version of Python. This would be the byte-sequence string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python it's running under, or use a library that can do the determination. Note that this strategy of using the native string type is basically what we do with WeeWX V3.x, where the native type under Python is a byte string.
+1. Use the native string type under each version of Python. This would be the byte-sequence string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte string. Unicode strings are only rarely used internally.
 
 2. Use Unicode in both versions. With this strategy, we must always convert byte sequences on input into Unicode, then convert back when it comes type to do output. This is the way most software deals with Unicode. This approach has the advantage that internally, strings are always in Unicode. It's not necessary to know which version of Python you're running under.  Note that with this strategy, it is not necessary to annotate every literal string as unicode by using the `u` prefix. Most conversions will happen automatically. For example, consider something like this:
 
@@ -109,10 +109,16 @@ There are two general strategies we could use:
    ```
    In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, the result is `False`
  
-   The correct, most general way to do this is as follows:
+   The correct, most general way to do a mixed comparison is:
 
    ```python
       if record_generation.decode('utf8') == "software":
+   ```
+
+   Or, even simpler,
+
+   ```python
+      if record_generation == u"software":
    ```
 
    Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.

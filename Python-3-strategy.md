@@ -180,7 +180,7 @@ Fortunately, this solution, while wordy, will work under both Python 2 and 3.
 
 WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.
 
-## ConfigObj
+### ConfigObj
 By default, under Python 2, `ConfigObj` will not convert byte-strings into Unicode on input. They remain as byte strings. If we are to adopt strategy #2 above, we must tell `ConfigObj` to convert the byte-strings to Unicode on input, then convert them back on output. Option [`encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#encoding) does this. Here's an example:
 
 ```python
@@ -203,10 +203,10 @@ which is also Unicode.
 
 Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 
-## Templates
+### Templates
 to be done
 
-## RESTful services
+### RESTful services
 to be done
 
 # Installing Python 3 prerequisites

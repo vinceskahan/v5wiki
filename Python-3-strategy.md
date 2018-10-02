@@ -86,30 +86,29 @@ incompatibilities.
 Make sure you thoroughly understand the difference between byte sequences and Unicode. This is a classic
 article on the subject: [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 
-In Python 2, `str` and `unicode` are separate types. An `str` is a sequence of bytes, a `unicode` is a sequence of code points. You go back and forth between them by using `encode` and `decode`.
+In Python 2, `str` and `unicode` are separate types. An `str` is a sequence of bytes (also called "byte-string"), a `unicode` is a sequence of code points. You go back and forth between them by using `encode` and `decode`.
 
 In Python 3, there is no type `unicode`, only `str`, which like Python 2's `unicode`, is a sequence of code points. By default, all strings are Unicode. Python 3 has a separate type, `bytearray` or `bytes`, to represent sequences of bytes. Like Python 2, you go back and forth between them using `encode` and `decode`, except the byte representation ends up as `bytes`, not `str`.
 
 There are two general strategies we could use:
 
-1. Use the native string type under each version of Python. This would be the byte-sequence string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte string. Unicode strings are only rarely used internally.
+1. Use the native string type under each version of Python. This would be the byte-string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte-string. Unicode strings are only rarely used internally.
 
-2. Use Unicode in both versions. With this strategy, on input, we must always convert byte sequences into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are
-issues. Consider this code:
+2. Use Unicode with both versions of Python. With this strategy, on input, we must always convert byte-strings into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are issues. Consider this code:
 
    ```python
       if record_generation == "software":
    ```
-   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using an ASCII codec, into a Unicode string, so now it is comparing two Unicode sequences. 
+   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte-string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using an ASCII codec, into a Unicode string, so now it is comparing two Unicode sequences. 
 
    This works fine, except when the right hand side cannot be decoded using an ASCII codec. Consider this:
 
    ```python
    if unit_label == '°C':
    ```
-   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, the result will always be `False` under Python 2. 
+   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, under Python 2, the result will always be `False`. 
 
-   The conclusion is that if there is any chance that one or the other side of a comparison is a byte string,
+   The conclusion is that if there is any chance that one or the other side of a comparison is a byte-string,
 which cannot be converted into Unicode using the ASCII codec, we must do the conversion ourselves. The fix for this example is easy:
  
    ```python
@@ -182,18 +181,25 @@ Fortunately, this solution, while wordy, will work under both Python 2 and 3.
 WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.
 
 ## ConfigObj
-Because internally all strings in WeeWX will be in Unicode, byte sequences must be decoded on input and encoded on output when using `ConfigObj`. That means that option [`encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#encoding) must be specified:
+By default, under Python 2, `ConfigObj` will not convert byte-strings into Unicode on input. They remain as byte strings. If we are to adopt strategy #2 above, we must tell `ConfigObj` to convert the byte-strings to Unicode on input, then convert them back on output. Option [`encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#encoding) does this. Here's an example:
 
 ```python
 >>> c = configobj.ConfigObj('/home/weewx/skins/Standard/skin.conf', encoding='utf8')
 >>> degree_C_label = c['Units']['Labels']['degree_C']
 >>> print(degree_C_label)
 °C
->>> print(type(degree_C_label))
+>>> print(type(degree_C_label))    # Python 2
 <type 'unicode'>
 ```
 
-You will get the same result under either Python 2 or 3.
+Under Python 3, for this last result, you get
+
+```python
+>>> print(type(degree_C_label))    # Python 3
+<type 'str'>
+```
+
+which is also Unicode.
 
 Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 

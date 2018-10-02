@@ -90,6 +90,13 @@ In Python 2, `str` and `unicode` are separate types. An `str` is a sequence of b
 
 In Python 3, there is no type `unicode`, only `str`, which like Python 2's `unicode`, is a sequence of code points. By default, all strings are Unicode. Python 3 has a separate type, `bytearray` or `bytes`, to represent sequences of bytes. Like Python 2, you go back and forth between them using `encode` and `decode`, except the byte representation ends up as `bytes`, not `str`.
 
+There are two general strategies we could use:
+
+1. Use the native string type under each version of Python. This would be the byte-sequence string under Python 2 (generally what we do not under WeeWX V3.x), and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do the conversion, typical I/O, must be aware of which version of Python it's running under, or use a library that can do the determination.
+
+2. Use Unicode in both versions. Convert byte sequences on input and output. This is the way most software deals with Unicode.
+
+
 Carefully review the semantics of any strings in the file and decide whether it's a true string (which will be Unicode under Python 3), or what I'll call a "byte string." Most of the time, you want a true string, but an important exception is strings used in drivers sent to and from the hardware. These are really sequences of bytes.
 
 To write code that will run under both versions of Python, you must be clear which role you intend the string to play.

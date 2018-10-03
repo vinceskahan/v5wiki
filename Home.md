@@ -151,6 +151,7 @@ Use extensions to add capabilities to a weewx installation.  Drivers enable weew
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 * <img src="https://www.infoclimat.fr/images/footer_IClogo.png" width='16'/> [Réseau Static de www.infoclimat.fr](https://github.com/RaphaelChochon/StatIC-Weewx)
+* <img src="https://rainmachine.com/favicon.ico" width='16'/> [RainMachine](RainMachine)
 
 ### Development notes
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)

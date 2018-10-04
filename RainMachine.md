@@ -5,18 +5,17 @@ to adjust the water needs of your plants.
 This is an extension to weewx that sends weather data to RainMachine. 
 Latest firmware version of RainMachine is needed with API 4.6.
 
-
 This extension only works on the local network (doesn't work with RainMachine 
-Remote Access service). RainMachine IP address and https port 8080 must be 
-accessible from WeeWX installation.
-
+Remote Access service). RainMachine IP address and http port 8081 or https port 8080 must be 
+accessible from WeeWX installation. The usessl parameter controls if connection to RainMachine should be
+http or https. On certain version of weewx the usessl=true (https) might not work because of RainMachine self-signed certificate for local network.
 
 ### Credentials
 
 You must obtain a token which will be used for authorization when pushing the weather data to RainMachine.
 
 ```
-curl -X POST -k -d ' { "pwd": "admin", "remember":1}' https://rainmachine_ip:8080/api/4/auth/login
+curl -X POST -k -d ' { "pwd": "your_password", "remember":1}' https://rainmachine_ip:8080/api/4/auth/login
 ```
 
 More details can be found here:.
@@ -27,14 +26,14 @@ RainMachine Mixer (that aggregates data from multiple sources) runs only hourly.
 
 ### Download
 
-https://github.com/sprinkler/rainmachine-weewx/archive/weewx-rainmachine-v0.2.tar.gz
+https://github.com/sprinkler/rainmachine-weewx/archive/v0.3.tar.gz
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-rainmachine-v0.2.tar.gz
+wee_extension --install weewx-rainmachine-v0.3.tar.gz
 ```
 
 2.  Modify weewx.conf:
@@ -44,6 +43,7 @@ wee_extension --install weewx-rainmachine-v0.2.tar.gz
     [[RainMachine]]
         token = RAINMACHINE_ACCESS_TOKEN
         ip = RAINMACHINE_IP_ADDRESS
+        usessl = false
 
 ```
 

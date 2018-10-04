@@ -1,10 +1,28 @@
 Many of the mainstream Linux operating systems are beginning to ship with only Python 3 installed.
 Python 2 must be installed explicitly and, eventually, will no longer be supported. And so, we must
-be ready for Python 3.
+eventually transition to Python 3. This guide outlines how.
 
-Our strategy is to support both, at least for a while. This guide covers how to convert and run
-code that will run under both Python 2 and Python 3. It starts with the easy stuff. There is a separate
-section on the end that deals with strings.
+# Goal
+
+Our primary goals for WeeWX Version 4 (to be released 2019):
+
+* To allow WeeWX to run under either Python 2.7, or Python 3.3 or greater.
+* Best we can, allow old, unmodified drivers, services, and uploaders to run under Python 2.7 and
+WeeWX Version 4. They cannot be expected to run under Python 3.
+
+Why these versions?
+
+Python 2.6 was last released 2012-04-10 and has long since been superseded by Python 2.7.
+Python 2.7 introduced many features that are directly compatible with Python 3.x, making the dual support of
+both versions much easier. 
+
+Python 3.3 introduced explicit Unicode literals ([PEP 414](https://www.python.org/dev/peps/pep-0414/)),
+making it much more backwards compatible with Python 2.7.
+
+# Strategy
+
+Our strategy is to support both Python 2 and 3, at least for a while. This guide covers how to convert and run
+code to do that. It starts with the easy stuff. There is a [separate section](https://github.com/weewx/weewx/wiki/Python-3-strategy#strings) that discusses strings.
 
 The tool [`2to3`](https://docs.python.org/2/library/2to3.html) is useful, but not definitive. 
 The problem is that it is designed for a one-way conversion from Python 2 to 3, not to support 

@@ -13,8 +13,8 @@ WeeWX Version 4. They cannot be expected to run under Python 3.
 Why these versions?
 
 Python 2.5 was last released in 2011-05-26, well over 7 years ago. It is missing many key
-features that would make an upgrade to Python 3 difficult. In particular, "print as a function (PEP 3105)," and
-the new exception catching format (PEP 3110) are missing.
+features, which would make an upgrade to Python 3 difficult. 
+In particular, "print as a function (PEP 3105)," and the new exception catching format (PEP 3110) are missing.
 
 And so, we limit our Python 2 support to Python 2.6 and Python 2.7.
 

@@ -1,6 +1,6 @@
-## Welcome to the weeWX wiki!
+## Welcome to the WeeWX wiki!
 
-This is the place to go for information about the many extensions available for weeWX, as well as random "how to" tips.  For information on how to download, install, and configure weeWX, see the [weeWX web site](http://www.weewx.com/).
+This is the place to go for information about the many extensions available for WeeWX, as well as random "how to" tips.  For information on how to download, install, and configure WeeWX, see the [WeeWX web site](http://www.weewx.com/).
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
@@ -8,7 +8,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
 
 ### Hardware recommendations
-* [On what hardware do you run weeWX?](hardware)
+* [On what hardware do you run WeeWX?](hardware)
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 
 ### HOWTO Pages
@@ -16,26 +16,26 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
-* [Strategies for getting data into weewx](intake-strategies)
+* [Strategies for getting data into WeeWX](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
 
-#### weewx configuration
+#### WeeWX configuration
 * [Manage extensions](extensions)
 * [Change from one driver to another](Change-driver)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Colorize the UV index](Colored%20UV%20index)
-* [Run multiple instances of weeWX on one computer](weewx-multi)
+* [Run multiple instances of WeeWX on one computer](weewx-multi)
 
 #### operating system configuration
-* [Run weeWX as a non-root user](Run-as-a-non-root-user)
-* [Put log messages from weeWX into a separate file](logging)
-* [Use logwatch to report weeWX log messages](logwatch)
-* [Configure weeWX to run under systemd](systemd)
+* [Run WeeWX as a non-root user](Run-as-a-non-root-user)
+* [Put log messages from WeeWX into a separate file](logging)
+* [Use logwatch to report WeeWX log messages](logwatch)
+* [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
 * [Distinguish between USB devices using `udev` rules](udevrules)
-* [Run weeWX in Docker](docker)
+* [Run WeeWX in Docker](docker)
 
 #### data management
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
@@ -47,21 +47,21 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 #### hardware
 * [Add a sensor to any weather station](add-sensor)
-* [Use one-wire sensors with weeWX](Onewire-sensors)
+* [Use one-wire sensors with WeeWX](Onewire-sensors)
 * [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
-* [Get your Aercus WeatherSleuth (Observer) working with weeWX](weathersleuth)
-* [Run weeWX on a Raspberry Pi](Raspberry-Pi)
-* [Run weeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
+* [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
+* [Run WeeWX on a Raspberry Pi](Raspberry-Pi)
+* [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry-Pi-weather-station-with-i2C-sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
 * [Implement a multi-threaded service](multi-threaded-service)
-* [Run weeWX on OpenWRT](weewx-on-openwrt)
-* [Run weeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
+* [Run WeeWX on OpenWRT](weewx-on-openwrt)
+* [Run WeeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
 
-### Extensions to weeWX
+### Extensions to WeeWX
 
-Use extensions to add capabilities to a weewx installation.  Drivers enable weewx to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
+Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
 
 #### Drivers
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)

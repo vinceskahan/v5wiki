@@ -145,7 +145,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter)
 * <img src="https://www.weather365.net/images/web-104x122.png" width='16'/> [weather365](weather365)
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)
-* <img src="http://weathercloud.net/favicon.ico" width='16'/> [weathercloud](weathercloud)
+* <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](weathercloud)
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)

@@ -26,14 +26,14 @@ RainMachine Mixer (that aggregates data from multiple sources) runs only hourly.
 
 ### Download
 
-https://github.com/sprinkler/rainmachine-weewx/archive/v0.3.tar.gz
+https://github.com/sprinkler/rainmachine-weewx/archive/v0.4.tar.gz
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-rainmachine-v0.3.tar.gz
+wee_extension --install weewx-rainmachine-v0.4.tar.gz
 ```
 
 2.  Modify weewx.conf:

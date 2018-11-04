@@ -16,7 +16,7 @@ To get a good, useful log:
 locate your system log.
 2. Stop weewx
 3. Set `debug=1` in the configuration file in `weewx.conf`
-4. Type the command 
+4. In a console terminal, type the command 
 
     `tail -f /var/log/syslog | tee /var/tmp/mylog`
 
@@ -25,6 +25,6 @@ locate your system log.
 
     `sudo tail -f /var/log/syslog | tee /var/tmp/mylog`
  
-5. Restart weewx. Let it run through at least the first reporting cycle (usually 5-10 minutes)
-6. Attach the created file to your post to weewx-user, or put it on a cloud service like [pastebin.com](http://pastebin.com/) and include a link.
+5. In a different console terminal, restart weewx. Let it run through at least the first reporting cycle (usually 5-10 minutes)
+6. Attach the created file (`/var/tmp/mylog`) to your post to weewx-user, or put it on a cloud service like [pastebin.com](http://pastebin.com/) and include a link.
 

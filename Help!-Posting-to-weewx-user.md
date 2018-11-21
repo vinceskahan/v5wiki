@@ -1,5 +1,16 @@
 This is a guideline for requesting help by posting to the [weewx-user group](https://groups.google.com/forum/#!forum/weewx-user).
 
+# What is supported
+
+WeeWX is a free, open-source project created and run entirely by volunteers. We try
+to provide support on weewx-user, but it is not guaranteed. You are dependent
+on the kindness of strangers, so please be nice to them!
+
+Drivers and skins that are not part of the standard distribution will be given a 
+lower priority.
+
+# The system log
+
 There are three important rules to remember when seeking help from the group:
 
 1. Include the log!

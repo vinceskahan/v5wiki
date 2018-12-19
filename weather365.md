@@ -26,6 +26,7 @@ The service is free. We use your weather data for model-control and development.
 
 The extension is available at:
 ```
+* Update 2018-12-12 - new version 1.3.4 (fixing precip. issues) *
 https://stations.weather365.net/wxupdates/EXTENSION/ 
 ```
 
@@ -38,3 +39,6 @@ Existing stations can login here:
 ```
 https://stations.weather365.net/login/login.php
 ```
+
+UPCOMING: WEATHER-BULLETIN - 
+Now we are able to provide a WEATHER-BULLETIN - Existing stations are in beta-testing - official release is planned for January 2019 -

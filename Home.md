@@ -117,7 +117,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [exfoliation](exfoliation)
 * [Flat](http://neoground.com/projects/weewx/) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
-* [Thème graphique standard de weewx en français {weewx french standard skin page in french}](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D)
+* [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [MesoWX](https://bitbucket.org/lirpa/mesowx) (live weather feed)
 * [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React)
 * [Niculskin](https://gitlab.com/ngulden/niculskin)

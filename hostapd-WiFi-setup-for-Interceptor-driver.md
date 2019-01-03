@@ -1,3 +1,16 @@
+# Prerequisites
+[weewx-interceptor](https://github.com/matthewwall/weewx-interceptor)
+
+<pre>The 'sniff' mode requires installation of the pypcap or pylibpcap module, each
+of which in turn depends on libpcap.  Install the pcap dependencies using pip:
+
+  sudo pip install pypcap
+
+or using apt-get on debian systems:
+
+  sudo apt-get install python-libpcap
+</pre>
+
 ***
 ### NOTE !! DO NOT INSTALL BIND9 !!
 If you do have it installed remove it **FIRST**

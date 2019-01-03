@@ -1,6 +1,14 @@
 # Prerequisites
 [weewx-interceptor](https://github.com/matthewwall/weewx-interceptor)
 
+* 1) download the interceptor driver
+
+<pre>wget -O weewx-interceptor.zip https://github.com/matthewwall/weewx-interceptor/archive/master.zip</pre>
+
+* 2) install the driver
+
+<pre>sudo wee_extension --install weewx-interceptor-master.zip</pre>
+
 <pre>The 'sniff' mode requires installation of the pypcap or pylibpcap module, each
 of which in turn depends on libpcap.  Install the pcap dependencies using pip:
 

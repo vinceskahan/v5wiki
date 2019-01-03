@@ -1,4 +1,3 @@
-# hostapd setup for Interceptor driver
 ***
 ### NOTE !! DO NOT INSTALL BIND9 !!
 If you do have it installed remove it **FIRST**

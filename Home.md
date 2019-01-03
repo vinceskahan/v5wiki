@@ -12,6 +12,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 
 ### HOWTO Pages
+
+#### Basic principles
+
 * [What you should know about paths](Understanding-paths)
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
@@ -27,7 +30,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run multiple instances of WeeWX on one computer](weewx-multi)
 * [Implement a multi-threaded service](multi-threaded-service)
 
-#### operating system configuration
+#### Operating system configuration
 * [Run WeeWX as a non-root user](Run-as-a-non-root-user)
 * [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
@@ -38,7 +41,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
 
-#### data management
+#### Data management
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
@@ -46,7 +49,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 
-#### hardware
+#### Hardware
 * [Add a sensor to any weather station](add-sensor)
 * [Use one-wire sensors with WeeWX](Onewire-sensors)
 * [Deal with FineOffset USB lockup](FineOffset-USB-lockup)

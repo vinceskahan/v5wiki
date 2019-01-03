@@ -1,15 +1,18 @@
-# hostapd setup
+# hostapd setup for Interceptor driver
 ***
-### NOTE !! DO NOT INSTALL BIND9 -- if you do have it installed remove it !!<br>
-**apt remove bind9**
+### NOTE !! DO NOT INSTALL BIND9 !!
+If you do have it installed remove it **FIRST**
+
+**systemctl stop bind9<br>
+  apt remove bind9**
 ***
-install hostapd<br>
+<pre>install hostapd
 install dnsmasq
 
-systemctl stop dnsmasq<br>
-systemctl stop hostapd
+systemctl stop dnsmasq
+systemctl stop hostapd</pre>
 
-pico /etc/dhcpcd.conf<br>
+Edit /etc/dhcpcd.conf<br>
 and edit the first 4 lines below for your static IP
 -------------------------------------------
 <pre>
@@ -38,16 +41,17 @@ static domain_name_server=1.1.1.1 8.8.8.8
 </pre>
 -------------------------------------------
 
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+<pre>mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig</pre>
 
-pico /etc/dnsmasq.conf
+Edit /etc/dnsmasq.conf
 -------------------------------------------
 <pre>domain-needed
 interface=wlan0
 dhcp-range=10.3.141.50,10.3.141.255,255.255.255.0,12h</pre>
 -------------------------------------------
 
-pico /etc/hostapd/hostapd.conf
+### Edit /etc/hostapd/hostapd.conf<br>
+* Make sure you edit _wpa_passphrase=WIFI-PASSWORD_
 -------------------------------------------
 <pre>interface=wlan0
 driver=nl80211
@@ -65,7 +69,7 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP</pre>
 --------------------------------------------
 
-pico /etc/default/hostapd
+Edit /etc/default/hostapd
 --------------------------------------------
 <pre>
 # Defaults for hostapd initscript
@@ -92,16 +96,16 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
 </pre>
 --------------------------------------------
 
-pico /etc/wpa_supplicant/wpa_supplicant.conf
+Edit /etc/wpa_supplicant/wpa_supplicant.conf
 --------------------------------------------
 <pre>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=US</pre>
 --------------------------------------------
 
-pico /etc/sysctl.conf
+Edit /etc/sysctl.conf and add line
 --------------------------------------------
-net.ipv4.ip_forward=1
+<pre>net.ipv4.ip_forward=1</pre>
 --------------------------------------------
 
 Run the following as root
@@ -110,21 +114,21 @@ Run the following as root
 iptables-save > /etc/iptables.ipv4.nat</pre>
 --------------------------------------------
 
-pico /etc/rc.local and add BEFORE exit 0
+Edit /etc/rc.local and add BEFORE exit 0
 --------------------------------------------
 <pre>iptables-restore < /etc/iptables.ipv4.nat</pre>
 --------------------------------------------
 
-The reboot your Rpi
+Reboot your Rpi
 
 End hostapd setup
 --------------------------------------------
 
-weeWX setup
+## weeWX setup
 --------------------------------------------
 Edit weewx.conf
-
-<pre>    # Set to type of station hardware. There must be a corresponding stanza
+<pre>
+    # Set to type of station hardware. There must be a corresponding stanza
     # in this file with a 'driver' parameter indicating the driver to be used.
     station_type = Interceptor
 

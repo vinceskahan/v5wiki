@@ -71,7 +71,8 @@ dhcp-range=10.3.141.50,10.3.141.255,255.255.255.0,12h</pre>
 -------------------------------------------
 
 ### Edit /etc/hostapd/hostapd.conf<br>
-* Make sure you edit _wpa_passphrase=WIFI-PASSWORD_
+1. Edit for your AP _ssid_ name **ssid=YOUR-AP-NAME**
+1. Make sure you edit _wpa_passphrase_ **wpa_passphrase=WIFI-PASSWORD**
 -------------------------------------------
 <pre>interface=wlan0
 driver=nl80211

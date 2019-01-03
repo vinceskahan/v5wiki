@@ -19,8 +19,7 @@ or using apt-get on debian systems:
   sudo apt-get install python-libpcap
 </pre>
 
-***
-### NOTE !! DO NOT INSTALL BIND9 !!
+**NOTE !! DO NOT INSTALL BIND9 !!**<br>
 If you do have it installed remove it **FIRST**
 
 **systemctl stop bind9<br>

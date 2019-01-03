@@ -18,7 +18,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
 * [Strategies for getting data into WeeWX](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
-* [hostapd WiFi setup for Interceptor driver](hostapd-WiFi-setup-for-Interceptor-driver)
 
 #### WeeWX configuration
 * [Manage extensions](extensions)
@@ -26,6 +25,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Colorize the UV index](Colored%20UV%20index)
 * [Run multiple instances of WeeWX on one computer](weewx-multi)
+* [Implement a multi-threaded service](multi-threaded-service)
 
 #### operating system configuration
 * [Run WeeWX as a non-root user](Run-as-a-non-root-user)
@@ -56,9 +56,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX on a Raspberry Pi with a read-only file system : RorPi](https://github.com/glennmckechnie/rorpi-raspberrypi/wiki/Rorpi-Home)
 * [Raspberry Pi weather station with i2C sensors](Raspberry-Pi-weather-station-with-i2C-sensors)
 * [Get data from an Acurite bridge (smartHUB or aculink)](acuritebridge)
-* [Implement a multi-threaded service](multi-threaded-service)
 * [Run WeeWX on OpenWRT](weewx-on-openwrt)
 * [Run WeeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
+* [hostapd WiFi setup for Interceptor driver](hostapd-WiFi-setup-for-Interceptor-driver)
 
 ### Extensions to WeeWX
 

@@ -18,7 +18,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
 * [Strategies for getting data into WeeWX](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
-* [hostapd setup for Interceptor driver](hostapd-setup-for-Interceptor-driver)
+* [hostapd WiFi setup for Interceptor driver](hostapd-setup-for-Interceptor-driver)
 
 #### WeeWX configuration
 * [Manage extensions](extensions)

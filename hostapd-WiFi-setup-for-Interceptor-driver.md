@@ -2,7 +2,7 @@
 * Debian
 * Ubuntu
 * Kubuntu
-* Rpi (Rasbian) or other Rpi debian OS
+* Raspberry Pi (Rasbian) or other Raspberry Pi debian OS
 
 # Prerequisites
 [weewx-interceptor](https://github.com/matthewwall/weewx-interceptor)
@@ -145,7 +145,7 @@ Edit /etc/rc.local and add BEFORE exit 0
 <pre>iptables-restore < /etc/iptables.ipv4.nat</pre>
 --------------------------------------------
 
-Reboot your Rpi
+Reboot your Raspberry Pi
 
 End hostapd setup
 --------------------------------------------

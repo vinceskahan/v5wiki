@@ -1,3 +1,9 @@
+# Note... This works for any debian based system
+* Debian
+* Ubuntu
+* Kubuntu
+* Rpi (Rasbian) or other Rpi debian OS
+
 # Prerequisites
 [weewx-interceptor](https://github.com/matthewwall/weewx-interceptor)
 

@@ -9,3 +9,15 @@ LINKSYS USB2HUB4 (NEC Corp. HighSpeed Hub)
 D-Link Corp. DUB-H7 7-port USB 2.0 hub (older grey/silver version)
 
 D-Link Corp. DUB-H4 4-port USB 2.0 hub (H/W Ver.:D1)
+
+There is an extensive list of hubs here:
+
+https://github.com/mvp/uhubctl
+
+## hub control utility
+
+Here are some ways to control the hubs:
+
+https://github.com/mvp/uhubctl
+
+https://www.gniibe.org/development/ac-power-control-by-USB-hub/

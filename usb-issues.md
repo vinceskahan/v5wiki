@@ -18,4 +18,9 @@ Remove every other USB device from the computer other than the weather station.
 
 Note that this can be tricky with some computers, since some computers use USB for their networking, either with a USB-Ethernet/wifi dongle, or even internally (many single-board computers use USB internally for ethernet, even if they have a proper ethernet connector).
 
-## 
+## Try different software versions
+
+Some users have reported problems with one kernel version, only to find that reverting to a previous version (or updating to a new version) makes the problems go away.
+
+There are also cases where a weather station works well with one architecture (e.g., x86 or x64) but does not work another (e.g., mips).  This is typically due to bugs/behavior in specific kernel or hardware driver, not the architecture.  But running the weather station on different platforms can help track down the root cause.
+

@@ -63,6 +63,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX on OpenWRT](weewx-on-openwrt)
 * [Run WeeWX on OpenWRT on a travel router MT300N with Fine Offset WH1080](openwrt)
 * [hostapd WiFi setup for Interceptor driver](hostapd-WiFi-setup-for-Interceptor-driver)
+* [Diagnose hardware USB issues](usb-issues)
 
 ### Extensions to WeeWX
 

@@ -7,6 +7,9 @@ Typical errors include:
 ```
 error sending control message: Broken pipe
 ```
+```
+could not detach kernel driver from interface 0: No data available
+```
 
 In the case of Fine Offset stations, the USB communication will fail (the `FineOffset lockup`).  Communication with Acurite or TE923 stations may lock up as well.
 

@@ -34,8 +34,9 @@ Note that this can be tricky with some computers, since some computers use USB f
 
 ## kernel/boot settings
 
-Some users of Raspberry pi (especially the pi zero?) have reported that this helps in `/boot/config.txt`
+Some users of Raspberry pi (especially the pi zero?) have reported that they need to ensure that the pi operates as the USB host, not a USB device.
 
+Put this in `/boot/config.txt`:
 ```
 dtoverlay=dwc2
 dr_mode=host

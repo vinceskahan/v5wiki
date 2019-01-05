@@ -32,6 +32,15 @@ Remove every other USB device from the computer other than the weather station.
 
 Note that this can be tricky with some computers, since some computers use USB for their networking, either with a USB-Ethernet/wifi dongle, or even internally (many single-board computers use USB internally for ethernet, even if they have a proper ethernet connector).
 
+## kernel/boot settings
+
+Some users of Raspberry pi (especially the pi zero?) have reported that this helps in `/boot/config.txt`
+
+```
+dtoverlay=dwc2
+dr_mode=host
+```
+
 ## Try different computer hardware
 
 Some users have reported problems when using a weather station with a raspberry pi, but no problems using the same station on an x64 computer (or even an orangePC).  Try using a different computer as a quick way to see if there is a fundamental hardware problem.

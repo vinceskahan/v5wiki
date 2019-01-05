@@ -2,6 +2,14 @@
 
 We often see reports of problems with weather stations that are connected to the computer using USB.  Typically these problems appear more often with raspberry pi (especially older models).  Some weather stations seem to be more prone to USB issues (e.g., older fine offset stations such as 1080/2080/3080), but other stations may have issues as well (te923, acurite usb consoles).
 
+Typical errors include:
+
+```
+error sending control message: Broken pipe
+```
+
+In the case of Fine Offset stations, the USB communication will fail (the `FineOffset lockup`).  Communication with Acurite or TE923 stations may lock up as well.
+
 ## USB cables
 
 Use quality USB cables.  If there is noise from radio or electromagnetic sources, use cables with a ferrite core.

@@ -2,7 +2,7 @@
 * Debian
 * Ubuntu
 * Kubuntu
-* Raspberry Pi (Rasbian) or other Raspberry Pi debian OS
+* Raspberry Pi (Raspbian) or other Raspberry Pi debian OS
 
 # Prerequisites
 [weewx-interceptor](https://github.com/matthewwall/weewx-interceptor)

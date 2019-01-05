@@ -10,6 +10,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 ### Hardware recommendations
 * [On what hardware do you run WeeWX?](hardware)
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
+* [Switched USB hubs](usb-hubs)
 
 ### HOWTO Pages
 

@@ -121,7 +121,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [bootstrap](Bootstrap)
 * [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [exfoliation](exfoliation)
-* [Flat](http://neoground.com/projects/weewx/) (sofaskin)
+* [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [MesoWX](https://bitbucket.org/lirpa/mesowx) (live weather feed)

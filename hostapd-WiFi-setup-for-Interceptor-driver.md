@@ -167,3 +167,5 @@ Edit weewx.conf
   pcap_filter = src 10.3.141.62 and dst port 80</pre>
 
 Modified from https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
+
+_Original Author: Scott Grayban_

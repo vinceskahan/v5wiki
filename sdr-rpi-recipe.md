@@ -64,9 +64,6 @@ sudo make install
 
 ### Install weeWX
 ```
-# pre-requisites
-sudo apt-get install python-imaging python-configobj python-cheetah python-serial python-usb
-
 # install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -
 wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/weewx.list

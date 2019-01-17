@@ -32,13 +32,15 @@ There are many guides available for bootstrapping a raspberry pi.  There are als
 The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
 
 ```
-# ensure the correct timezone
-sudo dpkg-reconfigure tzdata
+# install operating system on sdcard for rpi
+
+# install a real-time clock and enable it
 
 # get rid of fake clock
 sudo apt-get remove --purge fake-hwclock
 
-# install a real-time clock and enable it
+# ensure the correct timezone
+sudo dpkg-reconfigure tzdata
 ```
 
 ### Install rtl-sdr

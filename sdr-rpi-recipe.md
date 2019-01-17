@@ -27,10 +27,16 @@ Prices are US$ as of January 2019.
 
 ### Configure the raspberry pi
 
+There are many guides available for bootstrapping a raspberry pi.  The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
+
 ```
 # ensure the correct timezone
 sudo dpkg-reconfigure tzdata
 
+# get rid of fake clock
+sudo apt-get remove --purge fake-hwclock
+
+# install a real-time clock and enable it
 # TODO: realtime clock steps
 ```
 

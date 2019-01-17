@@ -13,13 +13,13 @@ This is a guide to build a very low-cost system that will collect data from any 
 | cost | description | source |
 |---|---|---|
 | $20 | USB SDR | https://www.amazon.com/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/ |
-| $40 | RPi | |
-| $15 | SD card | |
-| $15 | Case | |
-| $8 | Power supply | |
-| $13 | Acurite 06002M temperature/humidity sensor | |
-| $13 | Acurite 606TX temperature sensor | |
-| $13 | FineOffset WH31 temperature/humidity sensor | |
+| $40 | RPi | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
+| $12 | SD card | https://www.amazon.com/dp/B073JYVKNX/ |
+| $6 | Case | https://www.amazon.com/Raspberry-Case-Black-Compatible-Model/dp/B00UW2G1BS/ |
+| $10 | Power supply | https://www.amazon.com/CanaKit-Raspberry-Supply-Adapter-Listed/dp/B00MARDJZ4/ |
+| $13 | Acurite 06002M temperature/humidity sensor | https://www.amazon.com/AcuRite-06002M-Wireless-Temperature-Humidity/dp/B00T0K8NXC/ |
+| $13 | Acurite 606TX temperature sensor | https://www.amazon.com/AcuRite-606TX-Wireless-Temperature-Sensor/dp/B00V4R5EUO/ |
+| $13 | FineOffset WH31 temperature/humidity sensor | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM/ |
 
 Prices are US$ as of January 2019.
 

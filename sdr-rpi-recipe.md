@@ -4,9 +4,9 @@ This is a guide to build a very low-cost system that will collect data from any 
 
 ## What does it look like?
 
-<img src="sdr-rpi-recipe/sdr-and-rpi.png" width="300">
-<img src="sdr-rpi-recipe/sensors.png" width="300">
-<img src="sdr-rpi-recipe/sensor-model-info.png" width="300">
+<img src="sdr-rpi-recipe/sdr-and-rpi.png" width="200">
+<img src="sdr-rpi-recipe/sensors.png" width="200">
+<img src="sdr-rpi-recipe/sensor-model-info.png" width="200">
 
 ## What do you need?
 

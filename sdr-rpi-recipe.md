@@ -27,7 +27,9 @@ Prices are US$ as of January 2019.  I have seen the temperature sensors on sale 
 
 ### Configure the raspberry pi
 
-There are many guides available for bootstrapping a raspberry pi.  The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
+There are many guides available for bootstrapping a raspberry pi.  There are also many guides available for installing and configuring a real-time clock in the raspberry pi.  Do it!
+
+The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
 
 ```
 # ensure the correct timezone
@@ -37,7 +39,6 @@ sudo dpkg-reconfigure tzdata
 sudo apt-get remove --purge fake-hwclock
 
 # install a real-time clock and enable it
-# TODO: realtime clock steps
 ```
 
 ### Install rtl-sdr

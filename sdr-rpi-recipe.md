@@ -43,9 +43,13 @@ sudo apt-get remove --purge fake-hwclock
 sudo dpkg-reconfigure tzdata
 ```
 
+### Install pre-requisites for building rtl-sdr and rtl_433
+```
+sudo apt-get install cmake libusb-1.0-0-dev build-essential autoconf libtool pkg-config
+```
+
 ### Install rtl-sdr
 ```
-sudo apt-get install cmake libusb-1.0-0-dev
 git clone git://git.osmocom.org/rtl-sdr.git
 cd rtl-sdr
 mkdir build
@@ -59,7 +63,6 @@ sudo ldconfig
 ### Install rtl_433
 
 ```
-sudo apt-get install build-essential autoconf libtool pkg-config
 git clone https://github.com/merbanan/rtl_433
 cd rtl_433
 mkdir build

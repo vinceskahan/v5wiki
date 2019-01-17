@@ -70,7 +70,10 @@ wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/we
 sudo apt-get update
 sudo apt-get install weewx
 
-# install weewx-sdr driver
+# shut down weeWX
+sudo /etc/init.d/weewx stop
+
+# install weewx-sdr extension and enable the driver
 git clone https://github.com/matthewwall/weewx-sdr.git
 sudo wee_extension --install weewx-sdr
 sudo wee_config --reconfigure
@@ -78,11 +81,11 @@ sudo wee_config --reconfigure
 
 ### configure
 ```
-# adjust kernel module
+# ensure that the rtl kernel module is not running inappropriately
 sudo modprobe -r dvb_usb_rtl28xxu
 echo dvb_usb_rtl28xxu | sudo tee /etc/modprobe.d/blacklist.conf
 
-# see what's out there
+# see what devices are broadcasting data - let this run for 5 or 10 minutes
 sudo rtl_433 -G
 
 # verify json format for the things you care about
@@ -113,5 +116,9 @@ parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'h
 
 ### start weewx
 ```
+# first run weewx directly to verify the data collection (ctrl-c to stop)
+weewxd /etc/weewx/weewx.conf
+
+# when that looks ok, run weewx as a daemon and forget about it!
 sudo /etc/init.d/weewx start
 ```

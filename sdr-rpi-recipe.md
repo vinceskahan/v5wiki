@@ -21,7 +21,7 @@ This is a guide to build a very low-cost system that will collect data from any 
 | $13 | temperature sensor | Acurite 606TX |https://www.amazon.com/AcuRite-606TX-Wireless-Temperature-Sensor/dp/B00V4R5EUO/ |
 | $13 | temperature/humidity sensor | FineOffset WH31 | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM/ |
 
-Prices are US$ as of January 2019.
+Prices are US$ as of January 2019.  I have seen the temperature sensors on sale at Walmart for as little as $5 each.  Each sensor uses 2 AA batteries, and the batteries typically last a couple of years under normal temperature ranges.
 
 ## Recipes
 

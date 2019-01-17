@@ -73,7 +73,7 @@ sudo make install
 
 ### Install weeWX
 
-When you install weeWX, enter `Simulator` as the station type.  You will change it later to `SDR` when you run the `wee_config --reconfigure` command.
+When you install weeWX, enter `Simulator` when prompted for the station type.  You will change it later to `SDR` when you run the `wee_config --reconfigure` command.
 ```
 # install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -

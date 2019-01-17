@@ -10,16 +10,16 @@ This is a guide to build a very low-cost system that will collect data from any 
 
 ## What do you need?
 
-| cost | description | source |
+| cost | description | example model | source |
 |---|---|---|
-| $20 | USB SDR | https://www.amazon.com/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/ |
-| $40 | RPi | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
-| $12 | SD card | https://www.amazon.com/dp/B073JYVKNX/ |
-| $6 | Case | https://www.amazon.com/Raspberry-Case-Black-Compatible-Model/dp/B00UW2G1BS/ |
-| $10 | Power supply | https://www.amazon.com/CanaKit-Raspberry-Supply-Adapter-Listed/dp/B00MARDJZ4/ |
-| $13 | Acurite 06002M temperature/humidity sensor | https://www.amazon.com/AcuRite-06002M-Wireless-Temperature-Humidity/dp/B00T0K8NXC/ |
-| $13 | Acurite 606TX temperature sensor | https://www.amazon.com/AcuRite-606TX-Wireless-Temperature-Sensor/dp/B00V4R5EUO/ |
-| $13 | FineOffset WH31 temperature/humidity sensor | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM/ |
+| $20 | USB SDR | NooElec | https://www.amazon.com/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/ |
+| $40 | RPi | 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
+| $12 | SD card | SanDisk Ultra 64 | https://www.amazon.com/dp/B073JYVKNX/ |
+| $6 | Case | | https://www.amazon.com/Raspberry-Case-Black-Compatible-Model/dp/B00UW2G1BS/ |
+| $10 | Power supply | | https://www.amazon.com/CanaKit-Raspberry-Supply-Adapter-Listed/dp/B00MARDJZ4/ |
+| $13 | temperature/humidity sensor | Acurite 06002M | https://www.amazon.com/AcuRite-06002M-Wireless-Temperature-Humidity/dp/B00T0K8NXC/ |
+| $13 | temperature sensor | Acurite 606TX |https://www.amazon.com/AcuRite-606TX-Wireless-Temperature-Sensor/dp/B00V4R5EUO/ |
+| $13 | temperature/humidity sensor | FineOffset WH31 | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM/ |
 
 Prices are US$ as of January 2019.
 

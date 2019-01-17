@@ -11,7 +11,7 @@ This is a guide to build a very low-cost system that will collect data from any 
 ## What do you need?
 
 | cost | description | example model | source |
-|---|---|---|
+|---|---|---|---|
 | $20 | USB SDR | NooElec | https://www.amazon.com/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/ |
 | $40 | RPi | 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
 | $12 | SD card | SanDisk Ultra 64 | https://www.amazon.com/dp/B073JYVKNX/ |

@@ -73,7 +73,7 @@ sudo make install
 
 ### Install weeWX
 
-When you install weeWX, enter `Simulator` when prompted for the station type.  You will change it later to `SDR` when you run the `wee_config --reconfigure` command.
+When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `SDR` when you run the `wee_config --reconfigure` command.
 ```
 # install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -
@@ -91,6 +91,9 @@ sudo wee_config --reconfigure
 ```
 
 ### configure
+
+Now that all the pieces are installed, it is time to tell weeWX which data to collect.  This is done by starting at the lowest level, `rtl_433`, then working up to `weewxd`.  You will first run `rtl_433` to verify that it works and to see what signals it picks up.  You might be surprised by how many devices in your house (or your neighbors' house!) are sending radio signals that you can detect.  Then the next step is to identify which of those signals you care about.  Finally, you will create a `sensor_map` in your weeWX configuration that maps names and values from `rtl_433` into the database fields that are used in `weeWX`.
+
 ```
 # ensure that the rtl kernel module is not running inappropriately
 sudo modprobe -r dvb_usb_rtl28xxu

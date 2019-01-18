@@ -1,6 +1,8 @@
 # Use software-defined radio (SDR) on raspberry pi to collect data
 
-This is a guide to build a very low-cost system that will collect data from any number of wireless sensors.  The recipes in this guide use a USB software-defined radio (SDR) plugged in to a raspberry pi, collecting data from Acurite temperature and temperature/humidity sensors.  This approach will work with many other types of sensors from other manufacturers, and it will run on other types of computers and operating systems.
+This is a guide to build a low-cost system that will collect data from any number of wireless sensors.  The recipes in this guide use a USB software-defined radio (SDR) plugged in to a raspberry pi, collecting data from Acurite temperature and temperature/humidity sensors.  This approach will work with many other types of sensors from other manufacturers, and it will run on other types of computers and operating systems.
+
+It took me about 2 hours to build this system.  That includes the time to remove all of the hardware from its packaging, place the sensors around the house, take the dog for a walk, and a take short break to eat some freshly baked cookies.
 
 ## What does it look like?
 

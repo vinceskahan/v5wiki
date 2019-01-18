@@ -36,9 +36,11 @@ There are many guides available for bootstrapping a raspberry pi.  There are als
 The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
 
 ```
-# install operating system on sdcard for rpi
+# install operating system on sdcard, use it to boot the rpi
 
 # install a real-time clock and enable it
+
+# configure the rpi for remote access and headless operation
 
 # get rid of fake clock
 sudo apt-get remove --purge fake-hwclock

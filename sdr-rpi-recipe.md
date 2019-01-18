@@ -150,6 +150,12 @@ sudo /etc/init.d/weewx start
 
 ### Viewing the data and customizing the reports
 
+WeeWX saves the data to a sqlite database at `/var/lib/weewx.sdb` on the raspberry pi.  You can browse the data directly by invoking the sqlite command-line tool on the raspberry pi:
+
+```
+sqlite3 /var/lib/weewx.sdb
+```
+
 In its default configuration, weeWX will put data into a report located at `/var/www/html` on the raspberry pi.  If you have a keyboard and monitor plugged into the pi, you can view the report directly in any web browser on the pi.
 
 You can view the report remotely by installing a web server on the pi, such as `nginx`, `lighttpd`, or `apache`.  I highly recommend using `nginx` or `lighttpd` on the pi, since they use significantly less memory than `apache`.

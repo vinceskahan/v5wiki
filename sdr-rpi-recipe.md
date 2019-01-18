@@ -96,7 +96,7 @@ sudo wee_extension --install weewx-sdr
 sudo wee_config --reconfigure
 ```
 
-### configure
+### Configure
 
 Now that all the pieces are installed, it is time to tell weeWX which data to collect.  This is done by starting at the lowest level, `rtl_433`, then working up to `weewxd`.  You will first run `rtl_433` to verify that it works and to see what signals it picks up.  You might be surprised by how many devices in your house (or your neighbors' house!) are sending radio signals that you can detect.  Then the next step is to identify which of those signals you care about.  Finally, you will create a `sensor_map` in your weeWX configuration that maps names and values from `rtl_433` into the database fields that are used in `weeWX`.
 
@@ -136,7 +136,10 @@ parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'h
         extraHumidity3 = humidity.0ED5.AcuriteTowerPacket
 ```
 
-### start weewx
+### Start weewx
+
+First run weeWX directly to ensure that the data collection is working properly, and that data are getting into the database and reports.  After you have verified it is working properly, run it as a daemon.
+
 ```
 # first run weewx directly to verify the data collection (ctrl-c to stop)
 weewxd /etc/weewx/weewx.conf
@@ -144,3 +147,22 @@ weewxd /etc/weewx/weewx.conf
 # when that looks ok, run weewx as a daemon and forget about it!
 sudo /etc/init.d/weewx start
 ```
+
+### Viewing the data and customizing the reports
+
+In its default configuration, weeWX will put data into a report located at `/var/www/html` on the raspberry pi.  If you have a keyboard and monitor plugged into the pi, you can view the report directly in any web browser on the pi.
+
+You can view the report remotely by installing a web server on the pi, such as `nginx`, `lighttpd`, or `apache`.  I highly recommend using `nginx` or `lighttpd` on the pi, since they use significantly less memory than `apache`.
+
+```
+sudo apt-get install nginx
+```
+
+Then you can view the reports using a web browser on any computer/tablet/phone that can see the pi:
+```
+http://<name-or-addr-of-pi>/weewx
+```
+
+To customize the report or add other reports, see the weeWX customization guide:
+
+http://weewx.com/docs/customizing.htm

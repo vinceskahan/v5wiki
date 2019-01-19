@@ -131,13 +131,16 @@ parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'h
 
 ### Start weewx
 
-First run weeWX directly to ensure that the data collection is working properly, and that data are getting into the database and reports.  After you have verified it is working properly, run it as a daemon.
+First run weeWX directly to ensure that the data collection is working properly, and that data are getting into the database and reports.  A minute or two after you start it, you should see `LOOP` packets that contain the data from the sensors, associated with database field names as defined in your `sensor_map`.  Every 5 minutes you should see an archive `RECORD` reported.
 
 ```
-# first run weewx directly to verify the data collection (ctrl-c to stop)
+# run weewx directly to verify the data collection (ctrl-c to stop)
 weewxd /etc/weewx/weewx.conf
+```
 
-# when that looks ok, run weewx as a daemon and forget about it!
+After you have verified it is working properly, kill `weewxd`.  Now you can run it as a daemon so that it will continue to run, even after you log out of the raspberry pi.
+```
+# run weewx as a daemon and forget about it!
 sudo /etc/init.d/weewx start
 ```
 

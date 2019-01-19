@@ -14,8 +14,6 @@ It took me about 2 hours to build this system.  That includes the time to remove
 
 ## What do you need?
 
-The prices are US$ as of January 2019.  I have seen the temperature sensors on sale at Walmart for as little as $5 each.
-
 | cost | description | example model | source |
 |---|---|---|---|
 | $20 | USB SDR | NooElec | https://www.amazon.com/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/ |
@@ -26,6 +24,8 @@ The prices are US$ as of January 2019.  I have seen the temperature sensors on s
 | $13 | temperature/humidity sensor | Acurite 06002M | https://www.amazon.com/AcuRite-06002M-Wireless-Temperature-Humidity/dp/B00T0K8NXC/ |
 | $13 | temperature sensor | Acurite 606TX |https://www.amazon.com/AcuRite-606TX-Wireless-Temperature-Sensor/dp/B00V4R5EUO/ |
 | $13 | temperature/humidity sensor | FineOffset WH31 | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM/ |
+
+The prices are US$ as of January 2019.  I have seen the temperature sensors on sale at Walmart for as little as $5 each.
 
 ## Recipes
 

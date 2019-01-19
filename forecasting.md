@@ -183,11 +183,12 @@ As an example, see the `skin.conf` in the `forecast` skin.
 
 Perhaps the easiest way to put forecasts into your pages is to include a file.  The forecast extension includes a few `.inc` files, each of which displays forecast information in a different format.  Screen shots of these formats are shown below.
 
-For example, to use the iconic display in a template, simply include the iconic file:
+For example, to use the iconic display in a template, simply include the iconic file and its corresponding CSS:
 ```
 <html>
   <head>
     <title>forecast</title>
+    <link rel='stylesheet' type='text/css' href='forecast_iconic.css'/>
   </head>
   <body>
 #include "forecast_iconic.inc"

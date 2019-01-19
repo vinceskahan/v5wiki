@@ -103,10 +103,6 @@ Now that all the pieces are installed, it is time to tell weeWX which data to co
 Deploy the sensors one at a time.  Put the batteries into the first sensor, then watch it show up in the `rtl_433` output.  Put a piece of tape on the sensor then label that sensor with the hardware identifier.  Then put batteries in the next sensor, and watch it show up.  You will end up with a pile of sensors, each with its hardware identifier clearly marked.  Then you can easily keep track of sensors when you map the hardware identifiers to the database fields and the actual sensor locations.
 
 ```
-# ensure that the rtl kernel module is not running inappropriately
-sudo modprobe -r dvb_usb_rtl28xxu
-echo dvb_usb_rtl28xxu | sudo tee /etc/modprobe.d/blacklist.conf
-
 # see what devices are broadcasting data - let this run for 5 or 10 minutes
 sudo rtl_433 -G
 
@@ -169,3 +165,12 @@ http://<name-or-addr-of-pi>/weewx
 To customize the report or add other reports, see the weeWX customization guide:
 
 http://weewx.com/docs/customizing.htm
+
+## Troubleshooting
+
+When you run `rtl_433`, you might get a warning about a kernel module already being loaded.  If so, you can try explicitly unloading the kernel module, then blacklisting it so that it is not accidentally loaded.
+```
+# ensure that the rtl kernel module is not running inappropriately
+sudo modprobe -r dvb_usb_rtl28xxu
+echo dvb_usb_rtl28xxu | sudo tee /etc/modprobe.d/blacklist.conf
+```

@@ -120,12 +120,12 @@ parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'h
 [SDR]
     ...
     [[sensor_map]]
-        inTemp = temperature.-102.Acurite606TXPacket
-        outTemp = temperature.0995.AcuriteTowerPacket
+        inTemp = temperature.-102.Acurite606TXPacket # mud room
+        outTemp = temperature.0995.AcuriteTowerPacket # back porch
         outHumidity = humidity.0995.AcuriteTowerPacket
-        extraTemp1 = temperature.16B9.AcuriteTowerPacket
+        extraTemp1 = temperature.16B9.AcuriteTowerPacket # bathroom
         extraHumidity1 = humidity.16B9.AcuriteTowerPacket
-        extraTemp2 = temperature.0ED5.AcuriteTowerPacket
+        extraTemp2 = temperature.0ED5.AcuriteTowerPacket # kitchen
         extraHumidity3 = humidity.0ED5.AcuriteTowerPacket
 ```
 

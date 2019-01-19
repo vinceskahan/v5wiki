@@ -113,17 +113,14 @@ sudo rtl_433 -G
 # verify json format for the things you care about
 sudo rtl_433 -M utc -F json -G
 
-# see which packets are supported
-sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --action list-supported
-
-# get the sensor mappings
+# see how the sensor data from rtl_433 are mapped to fully-qualified names
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --cmd="rtl_433 -M utc -F json -G"
 
-# look at the 'out' and 'parsed' lines
+# in particular, look at the 'out' and 'parsed' lines
 out: ['{"time" : "2019-01-16 11:45:33", "model" : "Acurite tower sensor", "id" : 2453, "sensor_id" : 2453, "channel" : "A", "temperature_C" : 16.700, "humidity" : 31, "battery_low" : 0}\n']
 parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'humidity.0995.AcuriteTowerPacket': 31.0, 'status.0995.AcuriteTowerPacket': None, 'battery.0995.AcuriteTowerPacket': 0, 'channel.0995.AcuriteTowerPacket': u'A', 'usUnits': 16}
 
-# create sensor_map in /etc/weewx/weewx.conf
+# using these names, create the sensor_map in /etc/weewx/weewx.conf
 [SDR]
     ...
     [[sensor_map]]

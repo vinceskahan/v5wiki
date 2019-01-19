@@ -140,6 +140,8 @@ wee_extension --install weewx-forecast-x.y.tgz
         [[Aeris]]
             client_id = XXXXXXXXXXXXXXXX      # specify client identifier
             client_secret = XXXXXXXXXXXXXXXX  # specify client secret key
+        [[DS]]
+            api_key = XXXXXXXXXXXXXXXX   # specify a dark sky api_key
         [[XTide]]
             location = Boston            # specify a location
 ```
@@ -216,6 +218,7 @@ If you include more than once in a single template, you probably want to specify
 <html>
   <head>
     <title>two forecasts</title>
+    <link rel='stylesheet' type='text/css' href='forecast_iconic.css'/>
   </head>
   <body>
 #set global $forecast_iconic_settings = dict()

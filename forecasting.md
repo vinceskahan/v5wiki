@@ -1,4 +1,4 @@
-With the forecast extension you can display forecasts for up to 10 days in the future as well as tide predictions.  Forecasts are either generated using the Zambretti method, or downloaded from the US National Weather Service (NWS), Weather Underground (WU), Open Weathermap, UK Met Office, Aeris Weather, or World Weather Online.  Tide predictions are generated using XTide.
+With the forecast extension you can display forecasts for up to 10 days in the future as well as tide predictions.  Forecasts are either generated using the Zambretti method, or downloaded from the US National Weather Service (NWS), Weather Underground (WU), Open Weathermap, UK Met Office, Aeris Weather, World Weather Online, or Dark Sky.  Tide predictions are generated using XTide.
 
 The forecast extension displays forecast data in many formats, including table, strip chart, iconic bars, compact summary, and meteograph.
 
@@ -87,6 +87,12 @@ http://www.aerisweather.com/account
 If you want forecasts from World Weather Online, register for an account at the WWO web site then generate and API key.
 
 https://developer.worldweatheronline.com/auth/register
+
+### Dark Sky
+
+If you want forecasts from Dark Sky, visit the darksky web site to obtain the API key.
+
+https://darksky.net/dev/register
 
 ### xtide
 

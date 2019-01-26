@@ -123,7 +123,7 @@ parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'h
 
 Now you can tell weeWX the full names of the observations from each sensor.  In this example, the full names are `temperature.0995.AcuriteTowerPacket` or `humidity.0995.AcuriteTowerPacket`.  You must tell weeWX how to map those names to the database fields it uses to store the data.  This is done in the `sensor_map` section of the `SDR` section in the weeWX configuration file.
 
-Here is an example showing 4 sensors that I installed.  The sensor identifiers are `-102`, `0995`, `16B9`, and `0ED5`, but of course yours will have other values.  The database field names are `inTemp`, `outTemp`, `outHumidity`, etc.  You can see the full list of database field names in the [archive types](http://weewx.com/docs/customizing.htm#archive_types) section of the weeWX customization guide.  These are for the wview schema, which is the default schema.
+Here is an example showing 4 sensors that I installed.  The sensor identifiers are `-102`, `0995`, `16B9`, and `0ED5`, but of course yours will have other values.  The database field names are `inTemp`, `outTemp`, `outHumidity`, etc.
 
 ```
 # using these names, create the sensor_map in /etc/weewx/weewx.conf
@@ -138,6 +138,8 @@ Here is an example showing 4 sensors that I installed.  The sensor identifiers a
         extraTemp2 = temperature.0ED5.AcuriteTowerPacket # kitchen
         extraHumidity3 = humidity.0ED5.AcuriteTowerPacket
 ```
+
+You can see the full list of database field names in the [archive types](http://weewx.com/docs/customizing.htm#archive_types) section of the weeWX customization guide.
 
 ### Start weewx
 

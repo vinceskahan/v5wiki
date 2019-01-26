@@ -100,22 +100,30 @@ sudo wee_config --reconfigure
 
 Now that all the pieces are installed, it is time to tell weeWX which data to collect.  This is done by starting at the lowest level, `rtl_433`, then working up to `weewxd`.  You will first run `rtl_433` to verify that it works and to see what signals it picks up.  You might be surprised by how many devices in your house (or your neighbors' house!) are sending radio signals that you can detect.  Then the next step is to identify which of those signals you care about.  Finally, you will create a `sensor_map` in your weeWX configuration that maps names and values from `rtl_433` into the database fields that are used in `weeWX`.
 
-Deploy the sensors one at a time.  Put the batteries into the first sensor, then watch it show up in the `rtl_433` output.  Put a piece of tape on the sensor then label that sensor with the hardware identifier.  Then put batteries in the next sensor, and watch it show up.  You will end up with a pile of sensors, each with its hardware identifier clearly marked.  Then you can easily keep track of sensors when you map the hardware identifiers to the database fields and the actual sensor locations.
+```
+# see what devices are broadcasting data - let this run for awhile
+sudo rtl_433 -G
+```
+
+Deploy the sensors one at a time.  Put the batteries into the first sensor, then watch it show up in the `rtl_433` output.  Put a piece of tape on the sensor then label that sensor with the hardware identifier - the hardware identifier is typically called `id` in the output.  Then put batteries in the next sensor, and watch it show up.  You will end up with a pile of sensors, each with its hardware identifier clearly marked.  Then you can easily keep track of sensors when you map the hardware identifiers to the database fields and the actual sensor locations.
 
 ```
-# see what devices are broadcasting data - let this run for 5 or 10 minutes
-sudo rtl_433 -G
-
 # verify json format for the things you care about
 sudo rtl_433 -M utc -F json -G
 
 # see how the sensor data from rtl_433 are mapped to fully-qualified names
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --cmd="rtl_433 -M utc -F json -G"
 
-# in particular, look at the 'out' and 'parsed' lines
+# in particular, look at the 'out' and 'parsed' lines.  you should see something like this:
 out: ['{"time" : "2019-01-16 11:45:33", "model" : "Acurite tower sensor", "id" : 2453, "sensor_id" : 2453, "channel" : "A", "temperature_C" : 16.700, "humidity" : 31, "battery_low" : 0}\n']
 parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'humidity.0995.AcuriteTowerPacket': 31.0, 'status.0995.AcuriteTowerPacket': None, 'battery.0995.AcuriteTowerPacket': 0, 'channel.0995.AcuriteTowerPacket': u'A', 'usUnits': 16}
+```
 
+Now you can tell weeWX the full names of the observations from each sensor.  The full names are `temperature.0000.AcuriteTowerPacket` or `humidity.2A2F.AcuriteTowerPacket`.  You must tell weeWX how to map those names to the database fields it uses to store the data.  This is done in the `sensor_map` section of the `SDR` section in the weeWX configuration file.
+
+Here is an example showing 4 sensors that I installed.  The sensor identifiers are `-102`, `0995`, `16B9`, and `0ED5`, but of course yours will have other values.  The database field names are `inTemp`, `outTemp`, `outHumidity`, etc.  You can see the full list of database field names in the [archive types](http://weewx.com/docs/customizing.htm#archive_types) section of the weeWX customization guide.  These are for the wview schema, which is the default schema.
+
+```
 # using these names, create the sensor_map in /etc/weewx/weewx.conf
 [SDR]
     ...

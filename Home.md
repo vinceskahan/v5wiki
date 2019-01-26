@@ -134,6 +134,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Steel Series Gauges](steelseries)
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-wd](weewx-wd)
+* [weeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 
 #### Generators
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp)

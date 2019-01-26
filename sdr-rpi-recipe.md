@@ -121,7 +121,7 @@ out: ['{"time" : "2019-01-16 11:45:33", "model" : "Acurite tower sensor", "id" :
 parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'humidity.0995.AcuriteTowerPacket': 31.0, 'status.0995.AcuriteTowerPacket': None, 'battery.0995.AcuriteTowerPacket': 0, 'channel.0995.AcuriteTowerPacket': u'A', 'usUnits': 16}
 ```
 
-Now you can tell weeWX the full names of the observations from each sensor.  The full names are `temperature.0000.AcuriteTowerPacket` or `humidity.2A2F.AcuriteTowerPacket`.  You must tell weeWX how to map those names to the database fields it uses to store the data.  This is done in the `sensor_map` section of the `SDR` section in the weeWX configuration file.
+Now you can tell weeWX the full names of the observations from each sensor.  In this example, the full names are `temperature.0995.AcuriteTowerPacket` or `humidity.0995.AcuriteTowerPacket`.  You must tell weeWX how to map those names to the database fields it uses to store the data.  This is done in the `sensor_map` section of the `SDR` section in the weeWX configuration file.
 
 Here is an example showing 4 sensors that I installed.  The sensor identifiers are `-102`, `0995`, `16B9`, and `0ED5`, but of course yours will have other values.  The database field names are `inTemp`, `outTemp`, `outHumidity`, etc.  You can see the full list of database field names in the [archive types](http://weewx.com/docs/customizing.htm#archive_types) section of the weeWX customization guide.  These are for the wview schema, which is the default schema.
 

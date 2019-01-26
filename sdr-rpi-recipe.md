@@ -103,18 +103,20 @@ Now that all the pieces are installed, it is time to tell weeWX which data to co
 ```
 # see what devices are broadcasting data - let this run for awhile
 sudo rtl_433 -G
+
+# or run it like this to see the output in JSON format
+sudo rtl_433 -M utc -F json -G
 ```
 
 Deploy the sensors one at a time.  Put the batteries into the first sensor, then watch it show up in the `rtl_433` output.  Put a piece of tape on the sensor then label that sensor with the hardware identifier - the hardware identifier is typically called `id` in the output.  Then put batteries in the next sensor, and watch it show up.  You will end up with a pile of sensors, each with its hardware identifier clearly marked.  Then you can easily keep track of sensors when you map the hardware identifiers to the database fields and the actual sensor locations.
 
+Next you should run the `weewx-sdr` driver directly.  This will verify that the driver can capture the output from `rtl_433`, and it will show you the fully-qualified names for each observation.  You will need these to tell weeWX how to capture the data.  Notice the `--cmd` option.  If you had to specify other options to `rtl_433`, be sure to add those to the `--cmd` option when you invoke `sdr.py`.
+ 
 ```
-# verify json format for the things you care about
-sudo rtl_433 -M utc -F json -G
-
 # see how the sensor data from rtl_433 are mapped to fully-qualified names
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --cmd="rtl_433 -M utc -F json -G"
 
-# in particular, look at the 'out' and 'parsed' lines.  you should see something like this:
+# in particular, look at the 'out' and 'parsed' lines like this:
 out: ['{"time" : "2019-01-16 11:45:33", "model" : "Acurite tower sensor", "id" : 2453, "sensor_id" : 2453, "channel" : "A", "temperature_C" : 16.700, "humidity" : 31, "battery_low" : 0}\n']
 parsed: {'temperature.0995.AcuriteTowerPacket': 16.7, 'dateTime': 1547639133, 'humidity.0995.AcuriteTowerPacket': 31.0, 'status.0995.AcuriteTowerPacket': None, 'battery.0995.AcuriteTowerPacket': 0, 'channel.0995.AcuriteTowerPacket': u'A', 'usUnits': 16}
 ```

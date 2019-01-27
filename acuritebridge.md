@@ -16,6 +16,8 @@ The bridge can detect many different types of Acurite sensors, such as the 5-in-
 
 The bridge appears to send data for every sensor that it detects.  However, the myacurite web server supports only up to 10 devices.
 
+In early 2018, Acurite announced that they would no longer support the SmartHub.  After some outcry from users, Acurite postponed the shutdown from 2018 to 2019.  As of February 2019, the Acurite servers are no more, leaving SmartHubs to flail about looking for a response from the servers.  But have no fear!  You can continue to capture data from any bridge/SmartHub device by running the weewx-interceptor driver.  The weewx-interceptor responds as the Acurite servers did, so that SmartHub has no idea that it is no longer supported by its maker.
+
 ## Strategies
 
 There are a two approaches to getting data from an Acurite bridge: sniff or listen.

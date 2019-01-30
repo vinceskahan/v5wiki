@@ -59,7 +59,7 @@ _aggregation_ - How the observations should be grouped.  Options are `individual
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
 
-## TLS Options
+### TLS Options
 
 This extension supports the use of encrypted connections to the broker using TLS.  The TLS options will be passed to Paho client tls_set method.  Refer to Paho client documentation for details:
 

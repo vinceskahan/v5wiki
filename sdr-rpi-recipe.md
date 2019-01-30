@@ -184,8 +184,10 @@ http://weewx.com/docs/customizing.htm
 ## Troubleshooting
 
 When you run `rtl_433`, you might get a warning about a kernel module already being loaded.  If so, you can try explicitly unloading the kernel module, then blacklisting it so that it is not accidentally loaded.
-```
+```shell
 # ensure that the rtl kernel module is not running inappropriately
 sudo modprobe -r dvb_usb_rtl28xxu
-echo dvb_usb_rtl28xxu | sudo tee /etc/modprobe.d/blacklist.conf
+echo 'blacklist dvb_usb_rtl28xxu' | sudo tee -a /etc/modprobe.d/blacklist.conf
 ```
+
+If you get an error that `dvb_usb_rtl28xxu` is in use, unplug your SDR device, then try again.

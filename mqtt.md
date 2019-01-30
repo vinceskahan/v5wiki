@@ -59,6 +59,37 @@ _aggregation_ - How the observations should be grouped.  Options are `individual
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
 
+
+### Examples
+
+This configuration will use the METRIC unit system for all observations, whether the database is METRIC, METRICWX, or US:
+
+```
+[StdRESTful]
+    [[MQTT]]
+        unit_system = METRIC
+```
+
+This configuration will specialize the units of outTemp and the units, format, and name of inTemp:
+
+```
+[StdRESTful]
+    [[MQTT]]
+        unit_system = METRICWX
+        [[[inputs]]]
+            [[[[outTemp]]]]
+                units = degree_F             # use F instead of C
+            [[[[inTemp]]]]
+                units = degree_F             # use F instead of C
+                format = %.2f                # use two decimal places of precision
+                name = inside_temperature    # use label other than inTemp
+            [[[[windSpeed]]]]
+                units = knot                 # use knots instead of meter_per_second
+```
+
+The observation `outTemp` will be converted to degrees F and uploaded as `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 2 decimal places of precision.  Since the `unit_system` is `METRICWX`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be uploaded as `extraTemp1_C`.  The observation `windSpeed` will be converted to knots and uploaded as `windSpeed_knot`.
+
+
 ### How to verify
 
 The default topic is `weather`, so connect to the broker and subscribe to everything in the `weather` topic:

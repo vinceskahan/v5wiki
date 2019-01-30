@@ -59,6 +59,39 @@ _aggregation_ - How the observations should be grouped.  Options are `individual
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
 
+## TLS Options
+
+This extension supports the use of encrypted connections to the broker using TLS.  The TLS options will be passed to Paho client tls_set method.  Refer to Paho client documentation for details:
+
+https://eclipse.org/paho/clients/python/docs/
+
+This is how to specify the options in the MQTT extension configuration:
+```
+[StdRestful]
+    [[MQTT]]
+        ...
+        [[[tls]]]
+            # CA certificates file (mandatory)
+            ca_certs = /etc/ssl/certs/ca-certificates.crt
+            # PEM encoded client certificate file (optional)
+            certfile = /home/user/.ssh/id.crt
+            # private key file (optional)
+            keyfile = /home/user/.ssh/id.key
+            # Certificate requirements imposed on the broker (optional).
+            #   Options are 'none', 'optional' or 'required'.
+            #   Default is 'required'.
+            cert_reqs = required
+            # SSL/TLS protocol (optional).
+            #   Options include sslv1, sslv2, sslv23, tls, tlsv1.
+            #   Default is 'tlsv1'
+            #   Not all options are supported by all systems.
+            tls_version = tlsv1
+            # Allowable encryption ciphers (optional).
+            #   To specify multiple cyphers, delimit with commas and enclose
+            #   in quotes.
+            #ciphers =
+```
+
 
 ### Examples
 

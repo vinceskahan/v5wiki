@@ -6,51 +6,59 @@ These are instructions for adding data from a single sensor.
 
 ### How to do it
 
-1.  Save the sensor data to a file, say /var/tmp/pond.txt
+1.  Save the sensor data to a file, say `/var/tmp/pond.txt`
 
-```
-23.4
-```
+    ```
+    45.5
+    ```
 
-2.  Add a service that parses the file.  For a setup.py installation this would be something like /home/weewx/bin/user/pond.py
+2.  Add a service to WeeWX that will parse the file.  For a setup.py installation this would be something like `/home/weewx/bin/user/pond.py`
 
-```Python
-import syslog
-import weewx
-from weewx.wxengine import StdService
+    ```Python
+    import syslog
+    import weewx
+    from weewx.wxengine import StdService
 
-class PondService(StdService):
-    def __init__(self, engine, config_dict):
-        super(PondService, self).__init__(engine, config_dict)      
-        d = config_dict.get('PondService', {})
-        self.filename = d.get('filename', '/var/tmp/pond.txt')
-        syslog.syslog(syslog.LOG_INFO, "pond: using %s" % self.filename)
-        self.bind(weewx.NEW_ARCHIVE_RECORD, self.read_file)
+    class PondService(StdService):
+        def __init__(self, engine, config_dict):
+            super(PondService, self).__init__(engine, config_dict)      
+            d = config_dict.get('PondService', {})
+            self.filename = d.get('filename', '/var/tmp/pond.txt')
+            syslog.syslog(syslog.LOG_INFO, "pond: using %s" % self.filename)
+            self.bind(weewx.NEW_ARCHIVE_RECORD, self.read_file)
     
-    def read_file(self, event):
-        try:
-            with open(self.filename) as f:
-                value = f.read()
-            syslog.syslog(syslog.LOG_DEBUG, "pond: found value of %s" % value)
-            event.record['extraTemp1'] = float(value)
-        except Exception, e:
-            syslog.syslog(syslog.LOG_ERR, "pond: cannot read value: %s" % e)
-```
+        def read_file(self, event):
+            try:
+                with open(self.filename) as f:
+                    value = f.read()
+                syslog.syslog(syslog.LOG_DEBUG, "pond: found value of %s" % value)
+                event.record['extraTemp1'] = float(value)
+            except Exception as e:
+                syslog.syslog(syslog.LOG_ERR, "pond: cannot read value: %s" % e)
+    ```
 
 3.  Tell weewx about the service by adding it to weewx.conf:
 
-```
-[Engine]
-    [[Services]]
-        data_services = ..., user.pond.PondService
-```
+    ```ini
+    [Engine]
+        [[Services]]
+            data_services = ..., user.pond.PondService
+    ```
 
 4.  Restart weewx
 
-```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
-```
+    ```shell
+    sudo /etc/init.d/weewx stop
+    sudo /etc/init.d/weewx start
+    ```
+
+### Units
+
+Note that our new service, `PondService`, is unaware of units. It blindly adds the contents of `pond.txt` to an existing record.
+
+*You must make sure the units match!*
+
+That is, whatever unit system you use in `pond.txt`, must match the unit system used by the incoming record.
 
 ### Multiple sensors
 

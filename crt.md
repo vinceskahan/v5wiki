@@ -2,7 +2,7 @@
 
 This is an extension to weewx that emits data to a file in the format used by Cumulus realtime.txt.  The format for the realtime.txt file is maintained at the cumulus web site:
 
-http://wiki.sandaysoft.com/a/Realtime.txt
+http://cumuluswiki.wxforum.net/a/Realtime.txt
 
 ### Download
 

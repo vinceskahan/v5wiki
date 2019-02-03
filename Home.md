@@ -87,7 +87,9 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
 * [owfs - Collect data from one-wire sensors](owfs)
+* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)
 * [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr)
+* [sds011 - Collect data from SDS011 particulate sensor](https://github.com/matthewwall/weewx-sds011)
 * [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
@@ -103,6 +105,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)
+* [aqi - Calculate Air Quality Index](https://github.com/jonathankoren/weewx-aqi)
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)

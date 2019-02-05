@@ -87,15 +87,24 @@ not investigate any doctest code embedded in comments, so you'll still have to s
 
    The `range` operator has a similar problem.
 
-6. In Python 2, you use the function `raw_input()` to read from the console. In Python 3, the function
-name has been changed to `input()`, which does not exist under Python 2, and `raw_input()` has been
-eliminated. So, neither `input` nor `raw_input` will work under both versions.
+6. Many things were renamed in Python 3, while other things have moved. To facilitate both Python 2 and 3, we
+use the compatibility library [six](https://six.readthedocs.io/). 
 
-   WeeWX provides a function, `weeutil.weeutil.input`, which will work under either version. So, convert all
-calls to `raw_input` to use it:
+   For example, the class `StringIO`, formerly found in the module `StringIO` but now found in module `io`, 
+can be easily imported in both versions using
 
    ```python
-     ans = weeutil.weeutil.input("Answer 'yes' or 'no'")
+   from six.moves import StringIO
+   ```
+
+   In Python 2, you use the function `raw_input()` to read from the console. In Python 3, the function
+name has been changed to `input()`, which does not exist under Python 2, and `raw_input()` has been
+eliminated. So, neither `input` nor `raw_input` will work under both versions. The library `six` provides
+a solution
+
+   ```python
+   from six.moves import input
+   answer = input("y or n")
    ```
 
 # Strings

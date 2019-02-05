@@ -40,7 +40,7 @@ Strip<br/>
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.3.0.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.3.1.tgz
 
 ## Pre-Requisites
 

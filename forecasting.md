@@ -379,15 +379,17 @@ The forecast strip contains detailed forecast data, with time increasing into th
 
 Display forecast data in a module in the Seasons skin.
 
-![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-seaons.png)
+![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-seasons.png)
 
-### Forecast data in the Standard skin
+### Forecast data the Standard skin
 
-Forecast data embedded in the Standard skin.
+To add forecast information to the Standard skin, include one of the forecast `.inc` files.
 
 ![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-default.png)
 
-Forecast data embedded in the exfoliation skin.
+### Forecast data in the exfoliation skin
+
+The display of forecast data is built in to the exfoliation skin.  It should show up automatically when the forecast extension is installed.  Use the forecast options in `Extras` to control the output.
 
 ![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
 

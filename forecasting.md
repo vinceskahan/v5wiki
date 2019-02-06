@@ -377,7 +377,7 @@ The forecast strip contains detailed forecast data, with time increasing into th
 
 ### Forecast data in the Seasons skin
 
-Display forecast data in a module in the Seasons skin.
+To add forecast information to the Seasons skin, add a widget block that includes the forecast format that you want.
 
 ![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-seasons.png)
 
@@ -389,7 +389,7 @@ To add forecast information to the Standard skin, include one of the forecast `.
 
 ### Forecast data in the exfoliation skin
 
-The display of forecast data is built in to the exfoliation skin.  It should show up automatically when the forecast extension is installed.  Use the forecast options in `Extras` to control the output.
+The display of forecast data is built in to the exfoliation skin.  It should show up automatically when the forecast extension is installed.  Use the forecast options in `Extras` to control the output in the forecast page of the exfoliation skin.
 
 ![current](http://lancet.mit.edu/mwall/projects/weather/exfoliation-for-weewx-0.13/current-with-forecast-annotated.png)
 

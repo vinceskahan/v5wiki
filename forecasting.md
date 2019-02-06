@@ -377,9 +377,74 @@ The forecast strip contains detailed forecast data, with time increasing into th
 
 ### Forecast data in the Seasons skin
 
-To add forecast information to the Seasons skin, add a widget block that includes the forecast format that you want.
+The seasons skin is rather modular, so it is easy to add one or more blocks of forecast information.
 
 ![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-seasons.png)
+
+To add forecast information to the Seasons skin:
+
+1. Add a widget block for the forecast by modifying the `index.html.tmpl` file in Seasons
+
+```
+      <div id="widget_group">
+        #include "forecast.inc"
+        #include "current.inc"
+        #include "sunmoon.inc"
+        #include "hilo.inc"
+        #include "sensors.inc"
+        #include "about.inc"
+        #include "radar.inc"
+        #include "satellite.inc"
+        #include "map.inc"
+      </div>
+```
+
+2. Put this into the file `skins/Seasons/forecast.inc`.  In this example, we use the `compact` forecast display.  You could use `iconic` instead, if you want.
+
+```
+## forecast module for weewx skins
+## Copyright Tom Keffer, Matthew Wall
+## See LICENSE.txt for your rights
+#errorCatcher Echo
+
+<link rel='stylesheet' type='text/css' href='forecast_compact.css'/>
+
+<div id='forecast_widget' class="widget">
+  <div class="widget_title">
+    Forecast
+    <a class="widget_control"
+      onclick="toggle_widget('forecast')">&diams;</a>
+  </div>
+  <div class="widget_contents">
+
+#include "forecast_compact.inc"
+
+  </div>
+</div>
+```
+
+3. Add a couple of lines to the `[Seasons]` section of the weeWX configuration file
+
+```
+[StdReport]
+    ...
+    [[Seasons]]
+        ...
+        [[[CheetahGenerator]]]
+            search_list_extensions = user.forecast.ForecastVariables
+        [[[CopyGenerator]]]
+            copy_once = seasons.css, seasons.js, favicon.ico, font/*.woff, font/*.woff2, forecast_compact.css, icons/*
+```
+
+4. Copy a few files from the forecast skin into the Seasons skin
+
+```
+cp skins/forecast/forecast_compact.css skins/Seasons
+cp skins/forecast/forecast_compact.inc skins/Seasons
+cp -rp skins/forecast/icons skins/Seasons
+```
+
+5. Restart weeWX
 
 ### Forecast data the Standard skin
 

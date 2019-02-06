@@ -40,7 +40,7 @@ Strip<br/>
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.3.1.tgz
+http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.3.2.tgz
 
 ## Pre-Requisites
 
@@ -423,7 +423,7 @@ To add forecast information to the Seasons skin:
 </div>
 ```
 
-3. Add a couple of lines to the `[Seasons]` section of the weeWX configuration file
+3. Add directives to the `[Seasons]` section of the weeWX configuration file that tell the CheetahGenerator to use the forecast extensions, and to copy the forecast CSS and icons.
 
 ```
 [StdReport]

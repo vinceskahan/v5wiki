@@ -375,7 +375,13 @@ The forecast strip contains detailed forecast data, with time increasing into th
 ```
 ![strip](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-strip.png)
 
-### Embedded data
+### Forecast data in the Seasons skin
+
+Display forecast data in a module in the Seasons skin.
+
+![Standard subset](http://lancet.mit.edu/mwall/projects/weather/weewx-forecast-seaons.png)
+
+### Forecast data in the Standard skin
 
 Forecast data embedded in the Standard skin.
 

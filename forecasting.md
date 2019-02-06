@@ -383,7 +383,7 @@ The seasons skin is rather modular, so it is easy to add one or more blocks of f
 
 To add forecast information to the Seasons skin:
 
-1. Add a widget block for the forecast by modifying the `index.html.tmpl` file in Seasons
+1. Add a widget block for the forecast by including the file `forecast.inc` in the `index.html.tmpl` file in Seasons
 
 ```
       <div id="widget_group">

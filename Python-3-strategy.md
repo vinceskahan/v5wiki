@@ -207,7 +207,13 @@ port.write(x)
 
 Fortunately, this solution, while wordy, will work under both Python 2 and 3. 
 
-WeeWX provides a function, `weeutil.weeutil.int2byte()` that does precisely this. It will work under both Python 2 and 3.
+The library six provides a function, `int2byte()` that does precisely this. It will work under both Python 2 and 3.
+
+```python
+import six
+x = six.int2byte(10)
+port.write(x)
+```
 
 ### ConfigObj
 By default, under Python 2, `ConfigObj` will not convert byte-strings into Unicode on input. They remain as byte strings. If we are to adopt strategy #2 above, we must tell `ConfigObj` to convert the byte-strings to Unicode on input, then convert them back on output. Option [`encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#encoding) does this. Here's an example:

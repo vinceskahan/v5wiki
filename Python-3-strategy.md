@@ -239,7 +239,7 @@ which is also Unicode.
 Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 
 ### Templates
-Cheetah V2 will not run under Python 3. However, the newer version, V3, will run under both Python 2 and 3. Unfortunately, it only supports Python 2.7, so we may have to drop 2.7 support.
+Cheetah V2 will not run under Python 3. However, the newer version, V3, will run under both Python 2 and 3. Unfortunately, it only supports Python 2.7, so we may have to drop 2.6 support.
 
 When Cheetah V2 reads the template file, it uses a simple open and read, so the results end up as a byte-string, most likely UTF-8 encoded.
 

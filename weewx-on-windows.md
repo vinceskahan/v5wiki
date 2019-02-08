@@ -26,27 +26,33 @@ Everything else can be done in a normal cmd shell
 
 ## Download WeeWX
 
-Either download a zip file:
+You must use the `windows` branch, either from a zip file of the `windows` branch, or by cloning the repository then checking out the `windows` branch.
+
+Either download a zip file of the `windows` branch:
 ```
 https://github.com/weewx/weewx/archive/windows.zip
 unzip windows.zip
 cd windows
 ```
 
-OR get weewx directly from git:
+OR clone the repository then checkout the `windows` branch:
 ```
 git clone https://github.com/weewx/weewx.git
 cd weewx
 git checkout windows
 ```
 
-## install WeeWX
+## Install WeeWX
+
+Use the destination `c:\Users\weewx` in `setup.cfg`, then use python to install:
 ```
 copy util/windows/setup.cfg .
 python setup.py install
 ```
 
 ## Run WeeWX
+
+To run WeeWX, change to the installation directory then invoke `weewxd`:
 ```
 cd c:\users\weewx
 python bin\weewxd weewx.conf

@@ -41,6 +41,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
+* [Run WeeWX on Windows](weewx-on-windows)
 
 #### Data management
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)

@@ -20,6 +20,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)
+* [Watts/m&sup2; vs lux](Watts-and-lux)
 * [Strategies for getting data into WeeWX](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
 

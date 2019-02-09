@@ -239,15 +239,72 @@ which is also Unicode.
 Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 
 ### Templates
-Cheetah V2 will not run under Python 3. However, the newer version, V3, will run under both Python 2 and 3. Unfortunately, it only supports Python 2.7, so we may have to drop 2.6 support.
+Cheetah V2 will not run under Python 3. However, the newer version, Cheetah V3, will run under both Python 2 and 3. Unfortunately, it only supports Python 2.7, so we may have to drop 2.6 support.
 
-When Cheetah V2 reads the template file, it uses a simple open and read, so the results end up as a byte-string, most likely UTF-8 encoded.
+The `respond()` method of a compiled template is responsible for filling in the placeholders from the search list. For both Cheetah V2 and V3, it returns Unicode. Example:
 
-By contrast, Cheetah V3 uses a codec to read the file, resulting in Unicode. So, it always traffics in Unicode, which is what we want.
+```python
+# coding=utf-8
+import Cheetah.Template
 
-The search lists should probably also provide Unicode, although the filters we use can probably convert if 
-the placeholders are returned in something else.
+import weewx.cheetahgenerator
 
+searchList = {'int': 6,                 # A primitive 
+              'byte_': b"\xc2\xb0C",    # A byte string, under both Python 2 & 3
+              'unicode_': u"°C",        # Unicode under both Python 2 & 3
+              'str_': "°C"}             # Version dependent. Byte string under Python 2, unicode under Py3
+
+c = Cheetah.Template.Template(source="""<p>int=$int; byte=$byte_; unicode=$unicode_; str=$str_</p>""",
+                              searchList=searchList,
+                              filter='assure_unicode',
+                              filtersLib=weewx.cheetahgenerator
+                              )
+
+x = c.respond()
+print("type(x)=%s" % type(x))
+
+s = x.encode('ascii', 'xmlcharrefreplace')
+
+print(s)
+```
+
+This uses a filter that guarantees that any placeholders result in Unicode. It looks like this:
+
+```python
+class assure_unicode(Cheetah.Filters.Filter):
+    """Assures that whatever a search list extension might return, it will be converted into
+    Unicode. """
+
+    def filter(self, val, **dummy_kw):
+        if val is None:
+            filtered = u''
+        elif isinstance(val, six.text_type):
+            # It's already Unicode. Just return it.
+            filtered = val
+        elif isinstance(val, six.binary_type):
+            # It's a byte-sequence. Decode into Unicode.
+            filtered = val.decode('utf-8')
+        else:
+            # It's not Unicode and it's not a byte-string. Must be a primitive.
+            #   Under Python 2, six.text_type is equivalent to calling unicode(val).
+            #   Under Python 3, it is equivalent to calling str(val).
+            # So, the results always end up as Unicode.
+            filtered = six.text_type(val)
+        return filtered
+```
+
+Results of running the program under Python 2:
+```
+type(x)=<type 'unicode'>
+<p>int=6; byte=&#176;C; unicode=&#176;C; str=&#176;C</p>
+```
+Results under Python 3:
+```
+type(x)=<class 'str'>
+b'<p>int=6; byte=&#176;C; unicode=&#176;C; str=&#176;C</p>'
+```
+
+which is exactly what we want.
 
 ### RESTful services
 to be done

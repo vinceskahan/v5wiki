@@ -313,3 +313,8 @@ to be done
 On Debian:
 
     sudo apt install python3-serial
+
+
+# Resources
+[The Conservative Python 3 Porting Guide](https://portingguide.readthedocs.io/en/latest/index.html)<br/>
+"This is an opinionated guide. It explains one tried way to do the porting, rather than listing all alternatives and leaving you to research them and choose."

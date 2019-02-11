@@ -318,3 +318,6 @@ On Debian:
 # Resources
 [The Conservative Python 3 Porting Guide](https://portingguide.readthedocs.io/en/latest/index.html)<br/>
 "This is an opinionated guide. It explains one tried way to do the porting, rather than listing all alternatives and leaving you to research them and choose."
+
+[Six: Python 2 and 3 Compatibility Library](https://six.readthedocs.io/)<br/>
+"Six provides simple utilities for wrapping over differences between Python 2 and Python 3. It is intended to support codebases that work on both Python 2 and 3 without modification. six consists of only one Python file..."

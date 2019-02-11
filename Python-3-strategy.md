@@ -26,86 +26,9 @@ making it much more backwards compatible with Python 2.7.
 Our strategy is to support both Python 2 and 3, at least for a while. This guide covers how to convert and run
 code to do that. It starts with the easy stuff. There is a [separate section](https://github.com/weewx/weewx/wiki/Python-3-strategy#strings) that discusses strings.
 
-The tool [`2to3`](https://docs.python.org/2/library/2to3.html) is useful, but not definitive. 
-The problem is that it is designed for a one-way conversion from Python 2 to 3, not to support 
-both versions. If used with the `-w` ("write") flag, it will make changes that will break compatibility with Python 2.  Use it to find incompatibilities, not to fix them
-
-1. Use the utility `2to3` with the `-l` flag to see what needs to be changed. Note that this tool will
-not investigate any doctest code embedded in comments, so you'll still have to scan the file manually.
-
-2. Change any print statements to the "function style" Python 3 print statement. For example,
-
-       print a, b, c
-
-   becomes
-
-       print(a,b,c)
-
-   Under Python 2, this will be interpreted as printing a tuple `(a,b,c)`, so to finish the job, you must add a "future" statement to the top of the file, so it will use Python 3 semantics:
-
-       from __future__ import print_function
-
-3. All raised exceptions must use the constructor style. Do this:
-
-   ```python
-     raise ValueError("Bad value: %s" % v)
-   ```
-   not this:
-   ```python
-     raise ValueError, "Bad value: %s" % v
-   ```
-
-4. Similarly, all "caught" exceptions must use the `as` style. Do this
-
-   ```python
-   except ValueError as e:
-   ```
-
-   not this
-
-   ```python
-     except ValueError, e
-   ```
-5. Carefully review any iterators, in particular the `range` and `zip` functions. For example, under Python 2,
-
-   ```python
-   zip(['a', 'b'], [1, 2])
-   ```
-
-   results in a list
-
-   ```
-   [('a', 1), ('b', 2)]
-   ```
-
-   but under Python 3, it results in an iterator object. You must explicitly convert it into a list:
-
-   ```python
-   list(zip(['a', 'b'], [1, 2]))
-   ```
-   This will work under both Python 2 and 3. 
-
-   The `range` operator has a similar problem.
-
-6. Many things were renamed in Python 3, while other things have moved. To facilitate both Python 2 and 3, we
-use the compatibility library [six](https://six.readthedocs.io/). 
-
-   For example, the class `StringIO`, formerly found in the module `StringIO` but now found in module `io`, 
-can be easily imported in both versions using
-
-   ```python
-   from six.moves import StringIO
-   ```
-
-   In Python 2, you use the function `raw_input()` to read from the console. In Python 3, the function
-name has been changed to `input()`, which does not exist under Python 2, and `raw_input()` has been
-eliminated. So, neither `input` nor `raw_input` will work under both versions. The library `six` provides
-a solution
-
-   ```python
-   from six.moves import input
-   answer = input("y or n")
-   ```
+The tool [`python-modernize`](https://python-modernize.readthedocs.io/en/latest/) is very useful. It
+will scan your code, an update it for Python 2 and 3 compatibility, using the library
+[`six`](https://six.readthedocs.io/). If used with the `-w` ("write") flag, it will write out the changes.
 
 # Strings
 Most of your time will be spent thinking about strings. They are treated very differently between
@@ -321,3 +244,6 @@ On Debian:
 
 [Six: Python 2 and 3 Compatibility Library](https://six.readthedocs.io/)<br/>
 "Six provides simple utilities for wrapping over differences between Python 2 and Python 3. It is intended to support codebases that work on both Python 2 and 3 without modification. six consists of only one Python file..."
+
+[Python-Modernize](https://python-modernize.readthedocs.io/en/latest/)<br/>
+A superior alternative to `2to3`

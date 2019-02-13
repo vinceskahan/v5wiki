@@ -253,9 +253,9 @@ that are, as well as the Python 3 version of `pip`:
 Then use `pip3` to install the rest:
 
    ```shell
-   pip3 install Cheetah3
-   pip3 install Pillow-PIL
-   pip3 install pyephem
+   sudo pip3 install Cheetah3
+   sudo pip3 install Pillow-PIL
+   sudo pip3 install pyephem
    ```
 
 # Resources

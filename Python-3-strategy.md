@@ -238,12 +238,24 @@ which is exactly what we want.
 to be done
 
 # Installing Python 3 prerequisites
-On Debian:
+## Debian
+At this writing (2/13/2019) not all prerequisites are available on Debian as packages. First install the ones
+that are, as well as the Python 3 version of `pip`:
 
    ```shell
+   sudo apt install python3-configobj
    sudo apt install python3-serial
-   sudo apt install libmysqlclient-dev
+   sudo apt install python3-usb
    sudo apt install python3-mysqldb
+   sudo apt install python3-pip
+   ```
+
+Then use `pip3` to install the rest:
+
+   ```shell
+   pip3 install Cheetah3
+   pip3 install Pillow-PIL
+   pip3 install pyephem
    ```
 
 # Resources

@@ -27,8 +27,11 @@ Our strategy is to support both Python 2 and 3, at least for a while. This guide
 code to do that. It starts with the easy stuff. There is a [separate section](https://github.com/weewx/weewx/wiki/Python-3-strategy#strings) that discusses strings.
 
 The tool [`python-modernize`](https://python-modernize.readthedocs.io/en/latest/) is very useful. It
-will scan your code, an update it for Python 2 and 3 compatibility, using the library
-[`six`](https://six.readthedocs.io/). If used with the `-w` ("write") flag, it will write out the changes.
+will scan your code, and update it for Python 2 and 3 compatibility, using the library
+[`six`](https://six.readthedocs.io/). If used with the `-w` ("write") flag, it will write out the changes. It will take care of many little details such as converting `print` statements to the Python 3 function style, rewriting iterators that use `.iteritems()`, etc.
+
+The rest of this guide assumes you have used `python-modernize`, and now you need to review the results.
+
 
 # Strings
 Most of your time will be spent thinking about strings. They are treated very differently between
@@ -46,26 +49,28 @@ There are two general strategies we could use:
 
 1. Use the native string type under each version of Python. This would be the byte-string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte-string. Unicode strings are only rarely used internally.
 
-2. Use Unicode with both versions of Python. With this strategy, on input, we must always convert byte-strings into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are issues. Consider this code:
+2. Use Unicode throughout WeeWX for both versions of Python. With this strategy, on input, we must always convert byte-strings into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are issues. Consider this code:
 
    ```python
       if record_generation == "software":
    ```
-   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte-string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using an ASCII codec, into a Unicode string, so now it is comparing two Unicode sequences. 
+   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte-string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using the `ascii` codec, into a Unicode string, so now it is comparing two Unicode sequences. 
 
-   This works fine, except when the right hand side cannot be decoded using an ASCII codec. Consider this:
+   This works fine, except when the right hand side cannot be decoded using the `ascii` codec. Consider this:
 
    ```python
    if unit_label == '°C':
    ```
-   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the ASCII codec on the right. So, under Python 2, the result will always be `False`. 
+   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the `ascii` codec on the right. So, under Python 2, the result will not only always be `False`, it will be silently `False` --- no exception will be thrown.
 
    The conclusion is that if there is any chance that one or the other side of a comparison is a byte-string,
-which cannot be converted into Unicode using the ASCII codec, we must do the conversion ourselves. The fix for this example is easy:
- 
+which cannot be converted into Unicode using the `ascii` codec, we must do the conversion ourselves. The fix for this example is easy:
+
    ```python
    if unit_label == u'°C':
    ```
+
+   This will work under both Python 2 and Python 3.
 
    Other cases may not be so simple. Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.
 
@@ -109,7 +114,7 @@ to the hardware, `"LAMPS %s\n"`, will be represented as a Unicode string under P
 Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
 each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters, type `bytes`. So, the resultant code works with either version.
 
-### Integers and strings
+#### Integers and strings
 Here's another problem. Say you need to send a byte value of `10` to the device as binary. Under Python 2, you could do this
 
 ```python
@@ -235,8 +240,11 @@ to be done
 # Installing Python 3 prerequisites
 On Debian:
 
-    sudo apt install python3-serial
-
+   ```shell
+   sudo apt install python3-serial
+   sudo apt install libmysqlclient-dev
+   sudo apt install python3-mysqldb
+   ```
 
 # Resources
 [The Conservative Python 3 Porting Guide](https://portingguide.readthedocs.io/en/latest/index.html)<br/>

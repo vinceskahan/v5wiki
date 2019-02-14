@@ -49,32 +49,37 @@ There are two general strategies we could use:
 
 1. Use the native string type under each version of Python. This would be the byte-string under Python 2, and the Unicode string under Python 3. Convert as appropriate. This means all routines that need to do a conversion, typically I/O, must be aware of which version of Python they're running under, or use a library that can do the determination. It's worth noting that this strategy (of using the native string type) is basically what we do with WeeWX V3.x, where the native type under Python 2 is a byte-string. Unicode strings are only rarely used internally.
 
-2. Use Unicode throughout WeeWX for both versions of Python. With this strategy, on input, we must always convert byte-strings into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. Still, there are issues. Consider this code:
+2. Use Unicode throughout WeeWX for both versions of Python. With this strategy, on input, we must always convert byte-strings into Unicode, then, on output, convert them back. This approach has the advantage that internally, strings are always in Unicode, so it is not necessary to know which version of Python you are running under. 
 
-   ```python
-      if record_generation == "software":
-   ```
-   Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte-string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using the `ascii` codec, into a Unicode string, so now it is comparing two Unicode sequences. 
+Conclusion? We have chosen **strategy #2**. While it means rewriting more code, in the end, it will result in fewer surprises and will be more future proof.
 
-   This works fine, except when the right hand side cannot be decoded using the `ascii` codec. Consider this:
 
-   ```python
-   if unit_label == '°C':
-   ```
-   In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the `ascii` codec on the right. So, under Python 2, the result will not only always be `False`, it will be silently `False` --- no exception will be thrown.
+## Cavaets
+While strategy 2 results in simpler, cleaner code, it does have a few things you need to watch out for. Consider this comparison:
 
-   The conclusion is that if there is any chance that one or the other side of a comparison is a byte-string,
+```python
+   if record_generation == "software":
+```
+Under Python 3, both sides of the equality test are in Unicode, so there is no problem. However, using strategy #2, under Python 2, the variable `record_generation` will be a Unicode string, while the literal `"software"` is a byte-string. We're comparing apples to oranges. Fortunately, Python 2 will silently convert ("decode") the right hand side, using the `ascii` codec, into a Unicode string, so now it is comparing two Unicode sequences. 
+
+This works fine, except when the right hand side cannot be decoded using the `ascii` codec. Consider this:
+
+```python
+if unit_label == '°C':
+```
+In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the `ascii` codec on the right. So, under Python 2, the result will not only always be `False`, it will be silently `False` --- no exception will be thrown.
+
+The conclusion is that if there is any chance that one or the other side of a comparison is a byte-string,
 which cannot be converted into Unicode using the `ascii` codec, we must do the conversion ourselves. The fix for this example is easy:
 
-   ```python
-   if unit_label == u'°C':
-   ```
+```python
+if unit_label == u'°C':
+```
 
-   This will work under both Python 2 and Python 3.
+This will work under both Python 2 and Python 3.
 
-   Other cases may not be so simple. Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.
+Other cases may not be so simple. Fortunately, in WeeWX, we can pretty much count on all comparisons as being representable in ASCII.
 
-Conclusion? I think it best to use **strategy #2**. While it means rewriting more code, in the end, it will result in fewer surprises and will be more future proof.
 
 ## I/O
 
@@ -105,14 +110,51 @@ def setLamp(self, onoff='OFF'):
    syslog.syslog(syslog.LOG_NOTICE, "vantage: Lamp set to '%s'" % onoff)
 ```       
 Most of the strings in the function are true strings and can be left unchanged. However, the command sent
-to the hardware, `"LAMPS %s\n"`, will be represented as a Unicode string under Python 3. We want a sequence of one-byte characters, not a Unicode string. So, the relevant line becomes
+to the hardware, `"LAMPS %s\n"`, will be represented as a Unicode string under Python 3. We want a sequence of one-byte characters, not a Unicode string. The function becomes:
+
+
+```python
+def setLamp(self, onoff='OFF'):
+  """Set the lamp on or off"""
+  try:        
+    _setting = {'off': b'0', 'on': b'1'}[onoff.lower()]
+  except KeyError:
+    raise ValueError("Unknown lamp setting '%s'" % onoff)
+
+  _command = b"LAMPS %s\n" % _setting
+  self.port.send_command(_command, max_tries=self.max_tries)
+
+   syslog.syslog(syslog.LOG_NOTICE, "vantage: Lamp set to '%s'" % onoff)
+```       
+
+We have changed two lines of code. The line
+
+```python
+    _setting = {'off': '0', 'on': '1'}[onoff.lower()]
+```
+
+became
+
+```python
+    _setting = {'off': b'0', 'on': b'1'}[onoff.lower()]
+```
+
+and the line
+```python
+  _command = "LAMPS %s\n" % _setting
+```
+
+became
 
 ```python
   _command = b"LAMPS %s\n" % _setting
 ```
 
-Under Python 2, there will be no change --- a byte string (prefix `b`) and a regular string are aliases of
-each other. But, under Python 3, without the prefix, the string would be a sequence of Unicode characters --- not what we want. Instead, by adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters, type `bytes`. So, the resultant code works with either version.
+Consider this latter change. Under Python 2, there will be no change --- a byte string (prefix `b`) and a
+regular string are aliases of each other. But, under Python 3, without the prefix, the string 
+would be a sequence of Unicode characters --- not what we want. Instead, by 
+adding the `b` prefix, it becomes, like in Python 2, a sequence of one-byte characters, type `bytes`.
+So, the resultant code works with either version.
 
 #### Integers and strings
 Here's another problem. Say you need to send a byte value of `10` to the device as binary. Under Python 2, you could do this

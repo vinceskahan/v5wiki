@@ -68,3 +68,8 @@ Also useful is to check image core to see if the libraries are loaded.  Use this
 ```
 
 Use Ctrl-D to exit python
+
+### Troubleshooting references on stackoverflow
+
+* <https://stackoverflow.com/questions/44043906/the-headers-or-library-files-could-not-be-found-for-jpeg-installing-pillow-on>
+* <https://stackoverflow.com/questions/4011705/python-the-imagingft-c-module-is-not-installed>

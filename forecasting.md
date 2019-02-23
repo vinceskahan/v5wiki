@@ -430,7 +430,7 @@ To add forecast information to the Seasons skin:
 ```
 [StdReport]
     ...
-    [[Seasons]]
+    [[SeasonsReport]]
         ...
         [[[CheetahGenerator]]]
             search_list_extensions = user.forecast.ForecastVariables

@@ -163,7 +163,7 @@ The installer also installs a skin called 'forecast' that illustrates how to use
 
 Monitor the log to see what is happening.  The log should include messages about each type of forecast as it starts.  After the first archive interval, each forecast should download/generate, and the forecast data should be displayed in the forecast skin.
 
-The 'forecast' skin should be disabled after you have verified that the forecasts work, and you no longer need to see the examples.  This is especially true if you are running weeWX on a low-end system.  The 'forecast' skin generates pages that illustrate many different ways of formatting forecasts.  On a production system, you will probably only want one or two forecasts, typically embedded in one of your normal reports.
+You should disable the 'forecast' skin after you have verified that the forecasts work, and you no longer need to see the examples.  This is especially true if you are running weeWX on a low-end system.  The 'forecast' skin generates pages that illustrate many different ways of formatting forecasts.  On a production system, you will probably only want one or two forecasts, typically embedded in one of your normal reports.
 
 ## Customization
 

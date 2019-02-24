@@ -448,7 +448,7 @@ cp -rp skins/forecast/icons skins/Seasons
 
 5. Restart weeWX
 
-### Forecast data the Standard skin
+### Forecast data in the Standard skin
 
 To add forecast information to the Standard skin, include one of the forecast `.inc` files.
 

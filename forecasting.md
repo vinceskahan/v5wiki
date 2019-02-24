@@ -425,7 +425,7 @@ To add forecast information to the Seasons skin:
 </div>
 ```
 
-3. Add directives to the `[Seasons]` section of the weeWX configuration file that tell the CheetahGenerator to use the forecast extensions, and to copy the forecast CSS and icons.
+3. Add directives to the `[[SeasonsReport]]` section of the weeWX configuration file that tell the CheetahGenerator to use the forecast extensions, and to copy the forecast CSS and icons.
 
 ```
 [StdReport]

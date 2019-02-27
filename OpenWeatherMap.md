@@ -58,7 +58,7 @@ Another change to the 3.0 API is that you can no longer just supply a username a
     - Select "POST" where it says "GET".
     - Type in this URL: `http://api.openweathermap.org/data/3.0/stations?appid=YOUR-API-KEY-HERE`
     - Press the "Params"-button and, if they are not already filled in, type in `appid` in key-field, and your API key in the value-field.
-    - Select the "Headers"-tab below, and type in "Content-Type" in the key-field, and "application/json" in the value-field.
+    - Select the "Headers"-tab below, and type in "Content-Type" in the key-field, and "application/json" (without quotes) in the value-field.
     - In the "Body"-tab, check the "raw" radio button and an editor will open up where you will need to type in/replace the following:
         ```json
         {

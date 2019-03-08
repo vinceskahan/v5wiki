@@ -38,7 +38,8 @@ systemctl stop dnsmasq
 systemctl stop hostapd</pre>
 
 Edit /etc/dhcpcd.conf<br>
-and edit the first 4 lines below for your static IP
+and edit the first 4 lines below for your<br>
+NETWORK ROUTER static IP
 -------------------------------------------
 <pre>
 interface eth0

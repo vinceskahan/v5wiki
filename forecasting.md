@@ -44,14 +44,6 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-forecast-3.3.2.tgz
 
 ## Pre-Requisites
 
-### Weather Underground (WU)
-
-If you want forecasts from Weather Underground, visit the Weather Underground to get an api_key.  A free key at the lowest tier of service will enable you to download up to 500 forecasts per day.  By default, the forecast module downloads 8 forecasts per day.
-
-[http://www.wunderground.com/weather/api/](http://www.wunderground.com/weather/api/)
-
-N.B. [End of Service for the Weather Underground API](https://apicommunity.wunderground.com/weatherapi/topics/end-of-service-for-the-weather-underground-api)
-
 ### US National Weather Service (NWS)
 
 If you want forecasts from the US National Weather Service, you must determine the location identifier and forecast office identifier for your location. The forecast office identifier indicates a general region, for example BOX for the eastern part of Massachusetts. The location identifier indicates a smaller area within a forecast office region, for example MAZ014 for the city of Cambridge, Massachusetts.

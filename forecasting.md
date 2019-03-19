@@ -117,6 +117,14 @@ Test by generating predictions for your desired location
 tide -l Boston
 ```
 
+The harmonics data are typically updated once per year.  Old harmonics files will work, but the resulting tide predictions could be off.  For some locations, that may mean only a few centimeters or a few minutes, but for other locations the differences could be significant.
+
+You can use recent harmonics files with `tide` from 2010 or earlier.  Just tell `tide` where to find the harmonics using the `HFILE_PATH` variable; there is no need to install the latest `tide` program.
+
+The XTide web pages have complete details:
+
+https://flaterco.com/xtide/index.html
+
 ## Installation
 
 1.  Run the extension installer to install the forecast service and sample skin.

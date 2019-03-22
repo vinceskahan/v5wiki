@@ -4,7 +4,7 @@ If your system uses systemd to manage the starting and stopping of daemons, you 
 
 ### The `weewx.service` file
 
-The weewx distribution includes a systemd "unit" file called `weewx.service` that tells systemd how to run weewx.  It looks something like this:
+The weewx distribution includes a systemd "unit" file called [`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service) that tells systemd how to run weewx.  It looks something like this:
 
 ```ini
 # systemd configuration for weewx
@@ -20,6 +20,15 @@ ExecStart=/home/weewx/bin/weewxd --daemon --pidfile=/var/run/weewx.pid /home/wee
 ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
 PIDFile=/var/run/weewx.pid
+
+# The following two lines are not in the current distribution version, but may be uncommented and used if you
+# want the weewx service to automatically restart if it crashes. This can be particularly useful if weewx
+# has an IP connection to the weather station it is monitoring, since transient network problems are quite
+# common, and may cause the daemon to crash.
+#Restart=on-failure
+#RestartSec=10
+
+# See notes; by default weewx will run with root privileges
 #User=weewx
 #Group=weewx
 
@@ -33,28 +42,7 @@ Be sure that the paths in the `ExecStart` parameter match your weewx installatio
 
 ### To run as a non-root user.
 
-You will need a slightly different `weewx.service` file:
-
-```ini
-# systemd configuration for weewx
-
-[Unit]
-Description=weewx weather system
-Requires=time-sync.target
-After=time-sync.target
-RequiresMountsFor=/home
-
-[Service]
-ExecStart=/home/weewx/bin/weewxd --daemon --pidfile=/var/run/weewx.pid /home/weewx/weewx.conf
-ExecReload=/bin/kill -HUP $MAINPID
-Type=simple
-PIDFile=/var/run/weewx.pid
-User=weewx
-Group=weewx
-
-[Install]
-WantedBy=multi-user.target
-```
+You will need to uncomment the last two lines in the [Service] section in the `weewx.service` file.
 
 If you use `weewx` as the `User` and `Group`, then weewx will run as the user `weewx`. If you do this, make sure that the `weewx` user has permission to :
 - Write to the weewx database;
@@ -84,7 +72,11 @@ If you have only the rc script, you should be able to start/stop weewx using eit
     sudo /etc/init.d/weewx stop
     sudo /etc/init.d/weewx start
 
-It is probably a bad idea to have both the rc script and the `weewx.service` file installed.
+It is almost certainly a bad idea to have both the rc script and a `weewx.service` file installed and active. If you wish to use the service you have just created to run weewx, you should stop the daemon and delete the references to it in the rc folders:
+
+    sudo /etc/init.d/weewx stop
+    sudo update-rc.d weewx remove
+    sudo rm /etc/init.d/weewx
 
 ### Enabling and disabling weewx
 

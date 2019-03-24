@@ -112,6 +112,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)
 * [aqi - Calculate Air Quality Index](https://github.com/jonathankoren/weewx-aqi)
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
+* [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [csv - Emit loop or archive data to a file in CSV format](csv)

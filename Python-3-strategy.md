@@ -6,20 +6,15 @@ eventually transition to Python 3. This guide outlines how.
 
 Our primary goals for WeeWX Version 4 (to be released 2019):
 
-* To allow WeeWX to run under Python 2.6, Python 2.7, or Python 3.3 or greater.
+* To allow WeeWX to run under Python 2.7, or Python 3.5 or greater.
 * Best we can, allow old, unmodified drivers, services, and uploaders to run under Python 2 and
 WeeWX Version 4. They cannot be expected to run under Python 3.
 
 Why these versions?
 
-Python 2.5 was last released in 2011-05-26, well over 7 years ago. It is missing many key
-features, which would make an upgrade to Python 3 difficult. 
-In particular, "print as a function (PEP 3105)," and the new exception catching format (PEP 3110) are missing.
+Python 2.6 was last released in 2008-10-1, well over 10 years ago. It is missing some features that are used in WeeWX, particularly in the test suites. It is no longer supported by the Python maintainers.
 
-And so, we limit our Python 2 support to Python 2.6 and Python 2.7.
-
-Python 3.3 introduced explicit Unicode literals ([PEP 414](https://www.python.org/dev/peps/pep-0414/)),
-making it much more backwards compatible with Python 2.7.
+Python 3.5 includes explicit Unicode literals ([PEP 414](https://www.python.org/dev/peps/pep-0414/)), as well as the use of the `%` operator with byte-strings, making it much more backwards compatible with Python 2.7.
 
 # Strategy
 

@@ -67,6 +67,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [hostapd WiFi setup for Interceptor driver](hostapd-WiFi-setup-for-Interceptor-driver)
 * [Diagnose hardware USB issues](usb-issues)
 * [Use SDR on a Raspberry Pi with Acurite sensors](sdr-rpi-recipe)
+* [Collect data from wifi sensors](https://hackaday.io/project/101680-solar-powered-wifi-temperature-sensor-for-weewx)
 
 ### Extensions to WeeWX
 

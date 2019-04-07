@@ -38,11 +38,11 @@ There are two known firmware versions for the bridge: 126 (in use until 2016) an
 
 Apparently the smarthub/bridge will not report any sensor data unless it has established a connection with one of the acurite servers (or something that responds like an acurite server).  I tested this behavior with a couple of smarthubs - one still running the old firmware (126) and one running the newer firmware (224).  Occasionally i would see a sensor in the smarthub's web interface, but for the most part the devices are useless until they talk to the mothership.
 
-The `hubapi.myacurite.com` server used to reply to the smarthub with a simple string:
+The old servers used to reply to the smarthub with a simple string:
 ```
 {"success":1, "checkversion":"126"}
 ```
-The newer firmware expects a timestamp - probably to ensure that the smarthub time is ok - so the `www.acu-link.com` server used to reply with this string:
+The newer firmware expects a timestamp - probably to ensure that the smarthub time is ok - so the newer servers used to reply with this string:
 ```
 {"localtime":"00:00:00", "checkversion":"224"}
 ```

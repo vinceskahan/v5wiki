@@ -30,7 +30,7 @@ In the sniff approach, a computer monitors the local network for traffic from th
 
 In the listen approach, the bridge is fooled into sending data to a computer that appears to be myacurite.com.  Data sent by the bridge are decoded then fed into weeWX.
 
-This is typically implemented by creating a local DNS entry that maps hubapi.myacurite.com to a the network address of a local computer.  Then weeWX runs on the local computer, receiving and decoding the data sent by the bridge.  In a slight variation of this approach, a web server on the local computer runs a PHP script to receive the data, then the PHP script transfers the data to weeWX, typically by an intermediate file.
+This is typically implemented by creating a local DNS entry that maps the acurite server to a the network address of a local computer.  Then weeWX runs on the local computer, receiving and decoding the data sent by the bridge.  In a slight variation of this approach, a web server on the local computer runs a PHP script to receive the data, then the PHP script transfers the data to weeWX, typically by an intermediate file.
 
 ## Some details about how the bridge works
 
@@ -38,13 +38,13 @@ There are two known firmware versions for the bridge: 126 (in use until 2016) an
 
 Apparently the smarthub/bridge will not report any sensor data unless it has established a connection with one of the acurite servers (or something that responds like an acurite server).  I tested this behavior with a couple of smarthubs - one still running the old firmware (126) and one running the newer firmware (224).  Occasionally i would see a sensor in the smarthub's web interface, but for the most part the devices are useless until they talk to the mothership.
 
-The acurite servers used to reply to the smarthub with a simple string:
+The `hubapi.myacurite.com` server used to reply to the smarthub with a simple string:
 ```
 {"success":1, "checkversion":"126"}
 ```
-The newer firmware expects a timestamp - probably to ensure that the smarthub time is ok:
+The newer firmware expects a timestamp - probably to ensure that the smarthub time is ok - so the `www.acu-link.com` server used to reply with this string:
 ```
-{"localtime":"%H:%M:%S", "checkversion":"224"}
+{"localtime":"00:00:00", "checkversion":"224"}
 ```
 If an older hub receives a version number other than 126, then it tries to update the firmware.  Presumably the newer firmware would also try to update if it gets version number other than 224, but I have not tested that.
 

@@ -34,7 +34,7 @@ This is typically implemented by creating a local DNS entry that maps hubapi.mya
 
 ## Some details about how the bridge works
 
-There are two known firmware versions for the bridge: 126 (in use until 2016) and 224 (introduced in 2016).
+There are two known firmware versions for the bridge: 126 (in use until 2016) and 224 (introduced in 2016).  To find out which firmware is running on your bridge, point a web browser at the bridge.  That will also show you which sensors the bridge can detect.
 
 Apparently the smarthub/bridge will not report any sensor data unless it has established a connection with one of the acurite servers (or something that responds like an acurite server).  I tested this behavior with a couple of smarthubs - one still running the old firmware (126) and one running the newer firmware (224).  Occasionally i would see a sensor in the smarthub's web interface, but for the most part the devices are useless until they talk to the mothership.
 

@@ -4,17 +4,17 @@
 
 The Acurite bridge listens for radio signals from Acurite sensors such as the 5-in-1, Tower, and Temperature/Humidity.  Then it transmits sensor data via a wired connection to a TCP/IP network.
 
-When it was first introduced in 2013, the bridge sent data to the web service 'acu-link.com'.
+When it was first introduced in 2013, the bridge sent data to the web service `acu-link.com`.
 
-In July 2016, Acurite introduced the 'myacurite.com' web service and new firmware to make the bridge device work with it.  The transition to new firmware took place from September to December 2016.  The new firmware sends data to 'myacurite.com' and optionally to the weather underground.
+In July 2016, Acurite introduced the `myacurite.com` web service and new firmware to make the bridge device work with it.  The transition to new firmware took place from September to December 2016.  The new firmware sends data to `myacurite.com` and optionally to the weather underground.
 
-The bridge has a small web server on port 80, but it displays only its status and configuration, as well a an option to turn the LEDs on or off.  It does not display sensor readings.
+The bridge has a small web server on port 80, but it displays only its status and configuration, as well as an option to turn the LEDs on or off.  It does not display sensor readings.
 
 <img src="http://www.weewx.com/hardware/acurite-bridge.png" width="200" align="right"/>
 
 The bridge can detect many different types of Acurite sensors, such as the 5-in-1, the Tower, and various types of Temperature/Humidity sensors.
 
-The bridge appears to send data for every sensor that it detects.  However, the myacurite web server supports only up to 10 devices.
+The bridge appears to send data for every sensor that it detects.  However, the `myacurite.com` web service supported only up to 10 devices.
 
 In early 2018, Acurite announced that they would no longer support the SmartHub.  After some outcry from users, Acurite postponed the shutdown from 2018 to 2019.  As of February 2019, the Acurite servers are no more, leaving SmartHubs to flail about looking for a response from the servers.  But have no fear!  You can continue to capture data from any bridge/SmartHub device by running the weewx-interceptor driver.  The weewx-interceptor responds as the Acurite servers did, so that SmartHub has no idea that it is no longer supported by its maker.
 

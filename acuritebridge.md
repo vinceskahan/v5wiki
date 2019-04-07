@@ -32,7 +32,44 @@ In the listen approach, the bridge is fooled into sending data to a computer tha
 
 This is typically implemented by creating a local DNS entry that maps hubapi.myacurite.com to a the network address of a local computer.  Then weeWX runs on the local computer, receiving and decoding the data sent by the bridge.  In a slight variation of this approach, a web server on the local computer runs a PHP script to receive the data, then the PHP script transfers the data to weeWX, typically by an intermediate file.
 
+## Some details about how the bridge works
+
+There are two known firmware versions for the bridge: 126 (in use until 2016) and 224 (introduced in 2016).
+
+Apparently the smarthub/bridge will not report any sensor data unless it has established a connection with one of the acurite servers (or something that responds like an acurite server).  I tested this behavior with a couple of smarthubs - one still running the old firmware (126) and one running the newer firmware (224).  Occasionally i would see a sensor in the smarthub's web interface, but for the most part the devices are useless until they talk to the mothership.
+
+The acurite servers used to reply to the smarthub with a simple string:
+```
+{"success":1, "checkversion":"126"}
+```
+The newer firmware expects a timestamp - probably to ensure that the smarthub time is ok:
+```
+{"localtime":"%H:%M:%S", "checkversion":"224"}
+```
+If an older hub receives a version number other than 126, then it tries to update the firmware.  Presumably the newer firmware would also try to update if it gets version number other than 224, but I have not tested that.
+
+After that initial response from the server, the smarthub starts sending data (in either wu format or chaney format, depending on the firmware version).  Those are the packets that we capture in order to collect data.
+
+The interceptor driver will handle these cases so that any smarthub just thinks that the interceptor is an acurite server.
+
+So if your smarthub is running the older firmware, be sure to set the `firmware_version=126` parameter, otherwise your hub will probably hang, trying to install the newer firmware (the interceptor does not know the protocol for sending newer firmware).
+
+Acurite shut down the `myacurite.com` and `acu-link.com` servers, and put `127.0.0.1` in as the dns entry for them.  So any smarthub/bridge that attempts to connect to them will resolve the name(s) to localhost, then do nothing, since it will obviously not respond to itself.  The bridge is not broken - it just has no one to talk to.
+
+If you use the interceptor to collect data, this means that now you *must* run the interceptor in listen mode, not sniff mode.  In sniff mode, the interceptor does not interact with the smarthub, so the smarthub hangs when it tries to contact itself (localhost).  In listen mode, the interceptor looks like an acurite server, so the smarthub responds and data flows.
+
+So you must make a DNS entry for `hubapi.myacurite.com` and `www.acu-link.com` that points to the machine running the interceptor, and you must ensure that traffic on port 80 goes to the interceptor.  The easiest way is to put the DNS override in your router's configuration, and make the interceptor listen on port 80.  But if you already have a web server running on port 80 on the same computer as the interceptor, then you'll have have to set up a reverse proxy on the web server, or run the web server on a different port, or one of many other options explained in the interceptor readme.
+
+By the way, you can continue to use smarthub with new acurite sensors - at least until acurite changes their RF protocols.  The smarthubs still have a many years of life left in them, even though acurite has abandoned those who purchased them.  Acurite is not likely to change the RF protocols, since even the latest (2019) wifi consoles still know how to talk to the sensors that shipped with the bridge.
+
+The remote sensors are pretty cheap - I've seen them for as little as $5 each at walmart.  Although you could skip the bridge altogether by using a USB software-defined radio (SDR), in some cases it might be easier/cheaper to use a bridge.
+
+
 ## Credits
+
+The interceptor driver in listen mode is the easiest way to capture data from a bridge/smarthub:
+
+    http://github.com/matthewwall/weewx-interceptor
 
 Rich of Modern Toil did some of the first packet sniffing and decoding:
 
@@ -45,9 +82,5 @@ George Nincehelser figured out some crucial parts of the encoding and fed it int
 Perhaps the first weewx driver was a sniffer called haculink:
 
     http://geekfun.com/hackulink/
-
-The interceptor driver implements both the sniff and listen approaches for the acurite bridge:
-
-    http://github.com/matthewwall/weewx-interceptor
 
 Now that packet sniffing is much more common, and thanks to the lack of any magic numbers, the protocol used by the July 2016 firmware was decoded within weeks by many different people.

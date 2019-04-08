@@ -70,11 +70,13 @@ If you enter the URL to the smarthub in a web browser, you should see a status p
 
 <table>
 <tr><td>
+<p>firmware 126</p>
 <img src="http://www.weewx.com/cfg/acurite-bridge-fw-126.png" width="200"/>
 </td><td>
+<p>firmware 224</p>
 <img src="http://www.weewx.com/cfg/acurite-bridge-fw-224.png" width="200"/>
 </td></tr>
-</table.
+</table>
 
 ## Credits
 

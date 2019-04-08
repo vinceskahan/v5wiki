@@ -64,6 +64,17 @@ By the way, you can continue to use smarthub with new acurite sensors - at least
 
 The remote sensors are pretty cheap - I've seen them for as little as $5 each at walmart.  Although you could skip the bridge altogether by using a USB software-defined radio (SDR), in some cases it might be easier/cheaper to use a bridge.
 
+## What does it look like?
+
+If you enter the URL to the smarthub in a web browser, you should see a status page.  Here are examples from the different firmware versions.
+
+<table>
+<tr><td>
+<img src="http://www.weewx.com/cfg/acurite-bridge-fw-126.png" width="200"/>
+</td><td>
+<img src="http://www.weewx.com/cfg/acurite-bridge-fw-224.png" width="200"/>
+</td></tr>
+</table.
 
 ## Credits
 

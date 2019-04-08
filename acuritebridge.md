@@ -69,7 +69,7 @@ The remote sensors are pretty cheap - I've seen them for as little as $5 each at
 If you enter the URL to the smarthub in a web browser, you should see a status page.  Here are examples from the different firmware versions.
 
 <table>
-<tr><td>
+<tr valign="top"><td>
 <p>firmware 126</p>
 <img src="http://www.weewx.com/cfg/acurite-bridge-fw-126.png" width="200"/>
 </td><td>

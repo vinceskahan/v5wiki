@@ -1,5 +1,7 @@
 You can use a weeWX service to add fields to each LOOP packet or archive record.  However, if that service takes a long time to collect the data from the hardware, this will cause problems with the weeWX event processing.  One solution is to put the data collection onto a separate thread.
 
+This example uses a dict to exchange data between threads.  The lock ensures that the record is not modified by the main processing while the data collection thread is making changes.  Another approach is to use a Queue with a single item in it.
+
 These are instructions for adding data by querying a network socket via a separate thread.
 
 ### How to do it
@@ -27,8 +29,10 @@ class RemoteDataService(StdService):
         # the thread will set this each time it reads new values.
         # the service will read this each archive interval.
         self.values = dict()
+        # the lock is used to prevent multiple threads from modifying the same data
+        self._lock = threading.Lock()
         # start the thread that captures the pressure value
-        self._thread = RemoteDataThread(self, server_name, server_port)
+        self._thread = RemoteDataThread(self, server_name, server_port, self._lock)
         self._thread.start()
         # bind this service to happen with each new archive record
         self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
@@ -43,14 +47,18 @@ class RemoteDataService(StdService):
     def new_archive_record(self, event):
         # add the values to the record.  this assumes that the
         # values are in units appropriate to the record's unit system.
+        self._lock.acquire()
         event.record.update(self.values)
+        self._lock.release()
+
 
 class RemoteDataThread(threading.Thread):
-    def __init__(self, service, server_name, server_port):
+    def __init__(self, service, server_name, server_port, lock):
         threading.Thread.__init__(self)
         self.service = service
         self.server_name = server_name
         self.server_port = server_port
+        self.lock = lock
         self.running = False
 
     def run(self):
@@ -64,9 +72,11 @@ class RemoteDataThread(threading.Thread):
                     data = sock.recv(1024)
                     if data:
                         pairs = data.split(' ')
+                        self.lock.aquire()
                         for p in pairs:
                             n, v = p.split('=')
                             self.service.values[n] = float(v)
+                        self.lock.release()
             except socket.error, e:
                 syslog.syslog(syslog.LOG_INFO, "fail: %s" % e)
             time.sleep(1)
@@ -84,7 +94,7 @@ Then restart weeWX.
 
 ### References
 
-Note that this example uses a dict to exchange data between threads.  This is often work, but a Queue with a single item in it would be safer.  Here are some reading materials if you'd like to understand multi-threading in Python better:
+Here are some reading materials if you'd like to understand multi-threading in Python better:
 
 http://www.dabeaz.com/python/GIL.pdf
 

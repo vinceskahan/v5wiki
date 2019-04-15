@@ -1,14 +1,14 @@
 You can use a weeWX service to add fields to each LOOP packet or archive record.  However, if that service takes a long time to collect the data from the hardware, this will cause problems with the weeWX event processing.  One solution is to put the data collection onto a separate thread.
 
-This example uses a dict to exchange data between threads.  The lock ensures that the record is not modified by the main processing while the data collection thread is making changes.  Another approach is to use a Queue with a single item in it.
-
 These are instructions for adding data by querying a network socket via a separate thread.
 
 ### How to do it
 
 This is a service that collects data from a remote source.  It starts a RemoteDataThread that opens a socket and receives data as soon as the socket server sends it.  If there are any network failures, the RemoteDataThread simply retries.  Whenever it receives data, it places the data into the `values` dict.  The service is bound to `NEW_ARCHIVE_RECORD` events.  Whenever there is a new archive record, the service adds any observations from the values dict to the new archive record.
 
-It expects data from the socket server in a single line of space-delimited name=value pairs.
+This example uses a dict to exchange data between threads.  The lock ensures that the record is not modified by the main processing while the data collection thread is making changes.  Another approach is to use a Queue with a single item in it.
+
+This service expects data from the socket server in a single line of space-delimited name=value pairs.
 
 Put the service code into a file in the `user` directory, say `/home/weewx/bin/user/remotedata.py`
 

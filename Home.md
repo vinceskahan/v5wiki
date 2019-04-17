@@ -169,6 +169,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
+* <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://windy.com)
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 * <img src="https://www.infoclimat.fr/images/footer_IClogo.png" width='16'/> [Réseau Static de www.infoclimat.fr](https://github.com/AssociationInfoclimat/StatIC-WeeWX)
 * <img src="https://rainmachine.com/favicon.ico" width='16'/> [RainMachine](RainMachine)

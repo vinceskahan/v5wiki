@@ -14,6 +14,12 @@ Description=weewx weather system
 Requires=time-sync.target
 After=time-sync.target
 RequiresMountsFor=/home
+# The following two lines are not in the current distribution version, but should be uncommented and used if you
+# have changed the [Service] section to automatically restart the weewx service if it crashes. As noted below,
+# this can be particularly useful if weewx has an IP connection to the weather station it is monitoring, since
+# transient WiFi network problems are quite common, and may cause weewx to crash.
+# StartLimitIntervalSec=100
+# StartLimitBurst=5
 
 [Service]
 ExecStart=/home/weewx/bin/weewxd --daemon --pidfile=/var/run/weewx.pid /home/weewx/weewx.conf

@@ -118,6 +118,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
+* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [owfs - Augment station data with data from one-wire sensors](owfss)

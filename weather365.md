@@ -40,5 +40,10 @@ Existing stations can login here:
 https://stations.weather365.net/login/login.php
 ```
 
-UPCOMING: WEATHER-BULLETIN - 
-Now we are able to provide a WEATHER-BULLETIN - Existing stations are in beta-testing - official release is planned for January 2019 -
+NEW <WEATHER-BULLETIN> 
+Now we are able to provide a WEATHER-BULLETIN - Existing stations are still connected. Every new station will automatically connected to WEATHER-BULLETIN. 
+
+Example WEATHER-BULLETIN with LIVE WEATHER and LIVE_Prediction 
+
+STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
+https://stations.weather365.net/wetter-bulletin-1.1/index.php?station_id=1   

@@ -55,11 +55,12 @@ If you use `weewx` as the `User` and `Group`, then weewx will run as the user `w
 - Write to the location for weewx reports (HTML) files;
 - and has access to the port your device is connected to You may have to write a udev rule to do this.
 
-First find the `idVendor` and `idProduct` of your weatherstation with `lsusb` command then  add a rules file in `/etc/udev/rules.d/` with this content
+First find the `idVendor` and `idProduct` of your weatherstation with `lsusb` command then  add a rules file in `/etc/udev/rules.d/` with this content:
 
 ```shell
 SUBSYSTEM=="usb", ATTR{idVendor}=="your_value", ATTR{idProduct}=="your_value", ACTION=="add", GROUP="weewx", MODE="0664"
 ```
+Name the udev rules file something descriptive, such as an abbreviation of your weatherstation model or just weewx.rules, a la `/etc/udev/rules.d/weewx.rules` (extension must be .rules and filename should be simple, no spaces or special characters other than '-' and/or '_' and should not contain more than one period '.').
 
 ### Starting and stopping weewx
 

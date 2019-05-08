@@ -29,7 +29,7 @@ the process ID (PID) file where that user has write privileges
 5.  Give the user ownership of all weewx files
 
      ~~~~~
-     sudo chown -R wxuser.wxuser /home/weewx
+     sudo chown -R wxuser:wxuser /home/weewx
      ~~~~~
 
 6.  Give serial/usb access to the user with a udev rule

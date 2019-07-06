@@ -102,7 +102,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
-* [vedirect - Collect data from Victron vedirect MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
+* [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)

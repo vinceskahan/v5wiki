@@ -24,7 +24,7 @@ sudo wee_extension --install weewx-mqtt-X.tgz
 3.  Modify the weewx configuration file: 
 
 ```
-[StdRestful]
+[StdRESTful]
     ...
     [[MQTT]]
         server_url = mqtt://username:password@localhost:1883/

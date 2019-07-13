@@ -67,7 +67,7 @@ https://eclipse.org/paho/clients/python/docs/
 
 This is how to specify the options in the MQTT extension configuration:
 ```
-[StdRestful]
+[StdRESTful]
     [[MQTT]]
         ...
         [[[tls]]]

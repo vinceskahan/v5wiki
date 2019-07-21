@@ -13,11 +13,11 @@ Extensions are a way to package one or more customizations so they can be instal
 
 Each extension is typically distributed as a archive that contains the files used by the extension.  The archive might be a tar archive (.tar), a compressed archive (.tgz), or a zip archive (.zip).  An extension can also be installed from an expanded archive, such as those in the extensions directory of the weewx distribution.
 
-To manage extensions, use the wee_extension tool that comes with weewx.  The location of wee_extension depends on how weewx was installed.
+To manage extensions, use the `wee_extension` tool that comes with weewx.  The location of wee_extension depends on how weewx was installed.
 
-When weewx is installed using setup.py and the default location of /home/weewx, wee_extension is installed to /home/weewx/bin/wee_extension
+When weewx is installed using setup.py to the default location of `/home/weewx`, `wee_extension` is installed to `/home/weewx/bin/wee_extension`.
 
-When weewx is installed using .deb or .rpm, wee_extension is installed to /usr/share/weewx/wee_extension with a symbolic link /usr/bin/wee_extension
+When weewx is installed using .deb or .rpm, `wee_extension` is installed to `/usr/share/weewx/wee_extension` with a symbolic link `/usr/bin/wee_extension`
 
 ### How to install an extension
 

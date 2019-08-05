@@ -9,10 +9,11 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.19.tgz
 
 ### How to Install
 
-1.  Install the MQTT Python bindings:
+1.  Install the python modules that weewx-mqtt depends on:
 
 ```
 sudo pip install paho-mqtt
+sudo pip install cjson
 ```
 
 2.  Run the extension installer:

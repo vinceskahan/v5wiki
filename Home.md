@@ -132,7 +132,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### Skins
 * [amphibian](amphibian)
-* [Belchertown](https://github.com/poblabs/weewx-belchertown)
+* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed)
 * [bootstrap](Bootstrap)
 * [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
 * [exfoliation](exfoliation)

@@ -121,6 +121,7 @@ However, if you want the user to be able to customize the logging for your utili
     import logging
     import weecfg
     import weeutil.logger
+    from weeutil.weeutil import to_int
 
     log = logging.getLogger(__name__)
 
@@ -140,7 +141,7 @@ However, if you want the user to be able to customize the logging for your utili
     weewx.debug = to_int(config_dict.get('debug', 0))
 
     # Now we can set up the user customized system:
-    weeutil.logger.setup('utility_name', config_dict.get('Logging', {}))
+    weeutil.logger.setup('utility_name', config_dict)
 
     # This will use the customized logger:
     log.info("Successfully read in weewx.conf")

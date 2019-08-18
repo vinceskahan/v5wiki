@@ -72,7 +72,9 @@ An example. Say you want to log to not only the system log (the default), but to
 ```
 This will override the default list of handlers, which consists only of `syslog`, with a new list, that includes `console` as well as `syslog`.
 
-Another example. Say you've decided that the `restx` module is too chatty when `debug` is on. You want to seew only `INFO` messages and above. Then add a new logger, specifically for the `restx module. The `[Logging]` section would look like:
+Another example. Say you've decided that the `restx` module is too chatty for your liking when `debug` is on. You want to see only `INFO` messages and above --- nothing else. However, when `debug` is on, the default "root" logger will show `DEBUG` messages above ---basically everything.
+
+The solution is to create a specialized logger for just the `restx` module, so it no longer inherits properties from the root logger. For this logger, we will specify that it logs only `INFO` and above. To do this, the `[Logging]` section would look like:
 
 ```ini
 [Logging]
@@ -147,5 +149,22 @@ However, if you want the user to be able to customize the logging for your utili
     log.info("Successfully read in weewx.conf")
 ```
 
+# Throttling logging events
+The Python `logging` module makes it very easy to temporarily reduce the number of uninteresting messages going into a log. 
 
+Say you're about to call a function which will insert hundreds of records into the database using the `addRecord()` method of the `Manager` class. This method logs an `INFO` event for every insertion, resulting in hundreds of useless entries. You'd like to temporarily avoid this. Here's how:
+
+```python
+import logging
+
+# Temporarily disable logging for events at or below INFO
+logging.disable(logging.INFO)
+
+generate_zillions_of_records()
+
+# Remove the temporary restriction
+logging.disable(logging.NOTSET)
+```
+
+See the Python docs for more details about [`logging.disable()`](https://docs.python.org/3/library/logging.html#logging.disable).
 

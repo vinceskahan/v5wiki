@@ -101,6 +101,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc)
+* [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
 * [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)

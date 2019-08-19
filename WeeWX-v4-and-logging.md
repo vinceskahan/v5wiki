@@ -4,7 +4,12 @@ Earlier versions of WeeWX use Python's `syslog` module to log events. It has sev
 - It can log only to the system log.
 - It is inflexible in the formatting it uses.
 
-WeeWX V4 will transition to using Python's [`logging`](https://docs.python.org/3/library/logging.html) package.
+WeeWX V4 will transition to using Python's [`logging`](https://docs.python.org/3/library/logging.html) package. It has several advantages:
+- It abstracts out logging destinations, formatting, and filtering, allowing all to be changed at runtime.
+- It has destinations that work on Windws.
+- It can support email or socket logging.
+
+In short, it is a much more flexible facility. Plus, it's easy to use.
 
 This is a guide to how `logging` is implemented within WeeWX.
 
@@ -14,7 +19,7 @@ The big advantage of the `logging` module is its ability to be extensively custo
 First, read, or, at least, attempt to read, the section on the [schema of the configuration dictionary](https://docs.python.org/3/library/logging.html#module-logging) that `logging` uses. It's dense and hard to follow, but it will eventually sink in. 
 
 With that in mind, here is the default configuration that WeeWX uses (Linux only; the defaults are slightly
-different on the Mac):
+different on the Mac or Windows):
 
 ```ini
 [Logging]

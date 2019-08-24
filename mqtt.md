@@ -13,7 +13,7 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.19.tgz
 
 ```
 sudo pip install paho-mqtt
-sudo pip install cjson
+sudo pip install python-cjson
 ```
 
 2.  Run the extension installer:

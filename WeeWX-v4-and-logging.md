@@ -6,7 +6,7 @@ Earlier versions of WeeWX use Python's `syslog` module to log events. It has sev
 
 WeeWX V4 will transition to using Python's [`logging`](https://docs.python.org/3/library/logging.html) package. It has several advantages:
 - It abstracts out logging destinations, formatting, and filtering, allowing all to be changed at runtime.
-- It has destinations that work on Windws.
+- It has destinations that work on Windows.
 - It can support email or socket logging.
 
 In short, it is a much more flexible facility. Plus, it's easy to use.
@@ -132,13 +132,13 @@ However, if you want the user to be able to customize the logging for your utili
 
     log = logging.getLogger(__name__)
 
-    # Set up logging using the defaults. This is so you can log
+    # Temporarily set up logging using the defaults. This is so you can log
     # the process of reading in the weewx.conf file
     weeutil.logger.setup('utility_name', {})
 
     ...
 
-    # This will use default logger:
+    # This message will use the default logger:
     log.info("Attempting to read config file from %s' % config_path)
 
     # Get the config_dict to use
@@ -150,14 +150,16 @@ However, if you want the user to be able to customize the logging for your utili
     # Now we can set up the user customized system:
     weeutil.logger.setup('utility_name', config_dict)
 
-    # This will use the customized logger:
+    # This message will use the customized logger:
     log.info("Successfully read in weewx.conf")
 ```
+
+Note how the pattern first sets up a temporary logging facility, using WeeWX defaults. This is to log the process of reading in the config file. Then, once that is done, it uses the fully customized version.
 
 # Throttling logging events
 The Python `logging` module makes it very easy to temporarily reduce the number of uninteresting messages going into a log. 
 
-Say you're about to call a function which will insert hundreds of records into the database using the `addRecord()` method of the `Manager` class. This method logs an `INFO` event for every insertion, resulting in hundreds of useless entries. You'd like to temporarily avoid this. Here's how:
+Say you're about to call a function which will insert hundreds of records into the database using the `addRecord()` method of the `Manager` class. This method logs an `INFO` event for every insertion, resulting in hundreds of not-terribly-interesting entries. You'd like to temporarily avoid this. Here's how:
 
 ```python
 import logging

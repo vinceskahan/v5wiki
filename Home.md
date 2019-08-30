@@ -125,6 +125,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
+* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)

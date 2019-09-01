@@ -47,13 +47,13 @@ sudo /etc/init.d/weewx start
 
 ### Options
 
-_append_units_label_ - Indicates whether to append the units abbreviation to the variable name.  For example, `outTemp` would be called `outTemp_F` and `pressure` would be called `pressure_mbar`.  Default is `True`.
+_append_units_label_ - Indicates whether to append the units abbreviation to the variable name.  For example, `outTemp` would be called `outTemp_F` and `pressure` would be called `pressure_mbar`.  Note that / is not ok to use within a topic component and ^ is avoided, so e.g. solar radiation will be Wpm2.  Default is `True`.
 
 _unit_system_ - Unit system to which values should be converted before uploading.  If nothing is specified, the units from StdConvert will be used.  Possible values are `US`, `METRIC`, or `METRICWX`.  Default is None.
 
 _binding_ - Indicates whether to bind to LOOP packets ('loop'), archive records ('archive'), or both loop and archive.  Default is 'archive'.
 
-_topic_ - The MQTT topic under which to publish.  Default is 'weather'.
+_topic_ - The base MQTT topic under which to publish.  Messages are published to topics formed by concatenating the base topic and a name for the particular thing being published. Default is 'weather'.
 
 _aggregation_ - How the observations should be grouped.  Options are `individual` and/or `aggregate`.  When `individual` is specified, each observation is sent as a separate MQTT message.  When `aggregate` is specified, all observations are sent in a single, JSON-formatted message.  Default is `individual, aggregate`, i.e., send a message for each observation as well as an aggregate message with all observations.
 
@@ -121,8 +121,7 @@ This configuration will specialize the units of outTemp and the units, format, a
                 units = knot                 # use knots instead of meter_per_second
 ```
 
-The observation `outTemp` will be converted to degrees F and uploaded as `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 2 decimal places of precision.  Since the `unit_system` is `METRICWX`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be uploaded as `extraTemp1_C`.  The observation `windSpeed` will be converted to knots and uploaded as `windSpeed_knot`.
-
+The observation `outTemp` will be converted to degrees F and published to a topic formed from the configured topic and  `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 2 decimal places of precision.  Since the `unit_system` is `METRICWX`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be published as `extraTemp1_C`.  The observation `windSpeed` will be converted to knots and published as `windSpeed_knot`.
 
 ### How to verify
 

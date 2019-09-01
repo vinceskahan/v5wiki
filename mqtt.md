@@ -2,6 +2,7 @@ MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. I
 
 This is an extension to weewx that uploads weather data to an MQTT broker (server).
 
+
 ### Download
 
 http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.19.tgz
@@ -58,6 +59,15 @@ _topic_ - The base MQTT topic under which to publish.  Messages are published to
 _aggregation_ - How the observations should be grouped.  Options are `individual` and/or `aggregate`.  When `individual` is specified, each observation is sent as a separate MQTT message.  When `aggregate` is specified, all observations are sent in a single, JSON-formatted message.  Default is `individual, aggregate`, i.e., send a message for each observation as well as an aggregate message with all observations.
 
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
+
+
+### Topic names
+
+This extension allows renaming (see examples), but the default is to use individual topic names that match the weewx database.  if TOPIC is the base topic, this results in publishing to TOPIC/outTemp_F and TOPIC/dewpoint_F.  (The lack of "out" in dewpoint is not a typo; the non-symmetry with outTemp is how the default database schema is.)
+
+For publishing aggregate data, the topic is TOPIC/loop, and the content is a json dictionary where the keys are what would be used for individual topics.  The dictionary will appear to be in an arbitrary order, but this is ok as dictionaries are not ordered.
+
+Note that the choice of topic names (including unit suffixes) and units used in the contents forms a protocol and the configuration of this extension and of other programs that consume this data must match.
 
 
 ### TLS Options
@@ -123,6 +133,7 @@ This configuration will specialize the units of outTemp and the units, format, a
 
 The observation `outTemp` will be converted to degrees F and published to a topic formed from the configured topic and  `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 2 decimal places of precision.  Since the `unit_system` is `METRICWX`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be published as `extraTemp1_C`.  The observation `windSpeed` will be converted to knots and published as `windSpeed_knot`.
 
+
 ### How to verify
 
 The default topic is `weather`, so connect to the broker and subscribe to everything in the `weather` topic:
@@ -172,4 +183,3 @@ weather/inHumidity
 weather/radiation_Wpm2
 ```
 _Please note that this list may vary depending on your settings_
-

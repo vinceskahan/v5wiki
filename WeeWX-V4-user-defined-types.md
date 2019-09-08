@@ -1,6 +1,6 @@
 # Overview
 
-Right now, the set of observation types is fixed. ear fashion --- they can not be combined
+Right now, the set of observation types is fixed.
 
 - The set of types that `StdWXCalculate` knows how to calculate is fixed. This proposal is to make it easy to add new, user-defined types.
 - Heating and cooling degree days are also special types, defined in subclass `WXDaySummaryManager`.

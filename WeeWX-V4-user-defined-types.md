@@ -8,7 +8,7 @@ Right now, the set of observation types is fixed. In theory, it can be extended,
 - Allow new user-defined time series to be calculated. 
 
 # Defining new types
-A new type is introduced by implementing a class with the following interface
+Adding a new observation type is done by writing a class with the following interface:
 
 ```python
 import weewx
@@ -26,5 +26,22 @@ class MyTypes(object):
        else:
            raise weewx.UnknownType(obs_type)
 ```
-            
 
+Note that if an observation type is unknown to the class, it should raise an exception of type `weewx.UnknownType`, *not* return a value of `None`. A value of `None` is reserved for a known type, but one that the class is unable to calculate, perhaps because an input values is missing.
+
+# Aggregation
+In a similar manner, a new aggregation is added using a class with the following interface:
+
+```python
+class MyVector(object):
+
+    def get_aggregate(self, obs_type, timespan,
+                      aggregate_type=None,
+                      aggregate_interval=None):
+
+        if obs_type.starts_with('ch'):
+            "something"
+
+        else:
+            raise weewx.UnknownType(obs_type)
+```

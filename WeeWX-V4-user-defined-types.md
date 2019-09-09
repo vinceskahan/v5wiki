@@ -9,7 +9,8 @@ Right now, the set of observation types is fixed.
 In theory, new types can be introduced by subclassing, but this allows only new types to be accreted in a linear fashion: it would not be possible for two extensions to both introduce new types. One would have to inherit from the other.
 
 # Goals
-- There would be no special, magic types. Instead, new types could be added dynamically. For backwards compatibility,  The "well-known" types calculated by `StdWXCalculate`, such as `dewpoint`, or `heatindex` would be included out of the box.
+- Service `StdWXCalculate` would no longer have a fixed set of "special" types. Instead, it could be extensible, but come with the existing types it now handles (`dewpoint`, `heatindex`, etc.). New types could be added by the user. 
+- The class `WXDaySummaryManager` would go away, and the two types `heatdeg` and `cooldeg` would no longer depend on it. Instead, they would depend on extensions, 
 - Allow new user-defined aggregates to be calculated. 
 - Allow new user-defined time series to be calculated. 
 

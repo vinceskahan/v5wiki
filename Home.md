@@ -185,4 +185,5 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](devtest-infrastructure)
 * [Supporting Python 3](https://github.com/weewx/weewx/wiki/Python-3-strategy)
-* [Logging events in WeeWX V4](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging)
+* [Proposal for logging events in V4](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging)
+* [Proposal for user-defined types in V4](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types)

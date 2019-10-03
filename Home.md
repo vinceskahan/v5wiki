@@ -45,6 +45,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Run WeeWX on Windows](weewx-on-windows)
 
 #### Data management
+* [SQLite vs MySQL](SQLite-vs-MySQL)
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)

@@ -175,3 +175,42 @@ logging.disable(logging.NOTSET)
 
 See the Python docs for more details about [`logging.disable()`](https://docs.python.org/3/library/logging.html#logging.disable).
 
+# Maintaining backwards compatibility
+If you are an extension writer, you will want to support not only the new style logging, but also the old
+`syslog` style. Here's how you can do it.
+
+```python
+try:
+    # Test for new-style weewx logging by trying to import weeutil.logger
+    import weeutil.logger
+    import logging
+    log = logging.getLogger(__name__)
+
+    def logdbg(msg):
+        log.debug(msg)
+
+    def loginf(msg):
+        log.info(msg)
+
+    def logerr(msg):
+        log.error(msg)
+
+except ImportError:
+    # Old-style weewx logging
+    import syslog
+
+    def logmsg(level, msg):
+        syslog.syslog(level, 'filepile: %s:' % msg)
+
+    def logdbg(msg):
+        logmsg(syslog.LOG_DEBUG, msg)
+
+    def loginf(msg):
+        logmsg(syslog.LOG_INFO, msg)
+
+    def logerr(msg):
+        logmsg(syslog.LOG_ERR, msg)
+```
+
+Now you can just use the functions `logdbg()`, `loginf()`, and `logerr()` in your code, secure in the
+knowledge that it will work under both WeeWX V3 and V4.

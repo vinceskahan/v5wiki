@@ -137,7 +137,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [amphibian](amphibian)
 * [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed)
 * [bootstrap](Bootstrap)
-* [byteweather](http://davies-barnard.uk/development-and-plugins/weewx-byteweather-template/)
+* [byteweather](https://byteinsight.co.uk/freebies/weewx-byte-weather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)

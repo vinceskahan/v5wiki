@@ -68,7 +68,7 @@ This is the final stage and code for it is given separately at the end of this p
 
 
 ### SQLite version
-This code produces interim tables that can be easily inspected later to confirm calcultions.
+This code produces interim tables that can be easily inspected later to confirm calculations.
 Using temporary tables does not seem to affect speed.
 
 ~~~ SQL
@@ -227,15 +227,9 @@ UPDATE c5
 ~~~
 
 ### MySQL version
-Using temporary tables makes it rather faster, so are used by default.
-They are automatically deleted at the end of the session,
-so you might want to remove the TEMPORARY keyword from the table creation statements (there are 4)
-and manually drop them later.
-~~~ SQL
 
-~~~
-
-
+The MySQL code is given on the page:
+[Consolidation using MySQL](Consolidation-using-MySQL)
 
 ### Merge data back into archive
 

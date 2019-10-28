@@ -152,4 +152,4 @@ UPDATE c5
 		);
 ```
 
-[Back to previous page](Data-Consolidation---changing-sampling-interval)
+[Back to previous page](Data-Consolidation---changing-sampling-interval#mysql-version)

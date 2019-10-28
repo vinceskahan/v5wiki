@@ -52,6 +52,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
+* [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 
 #### Hardware
 * [Add a sensor to any weather station](add-sensor)

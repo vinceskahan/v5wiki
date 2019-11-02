@@ -39,7 +39,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
 * [Troubleshoot Pillow](Troubleshooting-Pillow)
-* [Configure web server `apache`, `ngingx`, or `lighttpd`](webserver)
+* [Configure web server `apache`, `nginx`, or `lighttpd`](webserver)
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
 * [Run WeeWX on Windows](weewx-on-windows)

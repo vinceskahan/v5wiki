@@ -84,20 +84,26 @@ Use noatime parameter for EXT4 file systems
 
 Remove existing log and temporary storage 
 
-`sudo rm -Rf /tmp/*`
-`sudo rm -Rf /var/log/*`
-`sudo rm /var/tmp/*`
+```
+sudo rm -Rf /tmp/*
+sudo rm -Rf /var/log/*
+sudo rm /var/tmp/*
+```
 
 Mount new storage and resume logging
 
-`sudo mount -a`
-`sudo /etc/init.d/rsyslog start`
+```
+sudo mount -a
+sudo /etc/init.d/rsyslog start
+```
 
 The Apache web server will not work after this until temporary storage for Apache logs is recreated in memory. Create a bash script file with the following content:
 
-`#!/bin/bash`
-`sudo mkdir /var/log/apache2`
-`sudo /etc/init.d/apache2 restart`
+```
+#!/bin/bash
+sudo mkdir /var/log/apache2
+sudo /etc/init.d/apache2 restart
+```
 
 Make it an executable file
 

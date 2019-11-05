@@ -64,8 +64,56 @@ sudo a2ensite
 weewx
 sudo systemctl reload apache2
 ```
+## Save log files to RAMdisk (option 1)
 
-## Save log files to remote syslog server
+Turn off logging to start:
+
+`sudo /etc/init.d/rsyslog stop`
+
+Edit fstab to create a location for log files and other runtime files, adjusting size as needed (locations not specifically sized will share available memory):
+
+```
+# /run, /var/run, /run/lock, /var/run/lock will be automatically created by default - tmpfs
+tmpfs		/tmp			tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755,size=10M	    0	0
+tmpfs		/var/tmp		tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755,size=2M	    0	0
+tmpfs		/var/lock		tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755              0	0
+weewx_reports	/var/weewx/reports      tmpfs   defaults,nodev,nosuid,mode=0755,size=5M                     0   0
+tmpfs		/var/log	        tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755              0   0
+```
+Use noatime parameter for EXT4 file systems
+
+Remove existing log and temporary storage 
+
+`sudo rm -Rf /tmp/*`
+`sudo rm -Rf /var/log/*`
+`sudo rm /var/tmp/*`
+
+Mount new storage and resume logging
+
+`sudo mount -a`
+`sudo /etc/init.d/rsyslog start`
+
+The Apache web server will not work after this until temporary storage for Apache logs is recreated in memory. Create a bash script file with the following content:
+
+`#!/bin/bash`
+`sudo mkdir /var/log/apache2`
+`sudo /etc/init.d/apache2 restart`
+
+Make it an executable file
+
+`sudo chmod +x initalize-apache-logs`
+
+Then ensure that this run whenever the system is rebooted:
+
+`sudo crontab -e`
+
+Add this line at the end:
+
+`@reboot /path/initialize-apache-log`
+
+where path is /home/pi/scripts or whatever is appropriate.
+
+## Save log files to remote syslog server (option 2)
 
 1) Configure a machine, loghost.example.com, to receive log files.  Modify /etc/rsyslog.conf with something like this:
 

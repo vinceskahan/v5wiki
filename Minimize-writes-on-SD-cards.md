@@ -170,7 +170,7 @@ It should contain:
 You may find information on possible configuration changes [here](http://wiki.rsyslog.com/index.php/Main_Page). To activate it and restart logging using these settings:
 
 ```
-sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
+sudo ln -sf /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 sudo /etc/init.d/rsyslog restart
 ```
 Note: both of these configuration files need to have correct permission settings of 0644. If necessary:

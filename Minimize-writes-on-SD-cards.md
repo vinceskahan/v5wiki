@@ -47,6 +47,23 @@ The following recipes are for a Debian-like linux.  Other operating systems have
 ```
     sudo ln -s /var/weewx/reports /var/www/html/weewx
 ```
+create a file in /etc/apache2/sites-available named weewx.conf with the following contents
+
+```
+Alias /weewx "/var/weewx/reports"
+<Directory "/var/weewx/reports">
+  Options Indexes Includes FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>
+```
+then enter the following at the shell prompt to enable the new site and restart the web server
+
+```
+sudo a2ensite
+weewx
+sudo systemctl reload apache2
+```
 
 ## Save log files to remote syslog server
 

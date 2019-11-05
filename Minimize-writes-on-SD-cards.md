@@ -47,7 +47,7 @@ The following recipes are for a Debian-like linux.  Other operating systems have
 ```
     sudo ln -s /var/weewx/reports /var/www/html/weewx
 ```
-create a file in /etc/apache2/sites-available named weewx.conf with the following contents
+create a file in /etc/apache2/sites-available named weewx.conf with the following contents:
 
 ```
 Alias /weewx "/var/weewx/reports"
@@ -57,7 +57,7 @@ Alias /weewx "/var/weewx/reports"
   Require all granted
 </Directory>
 ```
-then enter the following at the shell prompt to enable the new site and restart the web server
+then enter the following at the shell prompt to enable the new site and restart the web server:
 
 ```
 sudo a2ensite
@@ -80,9 +80,9 @@ tmpfs		/var/lock		tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755          
 weewx_reports	/var/weewx/reports      tmpfs   defaults,nodev,nosuid,mode=0755,size=5M                     0   0
 tmpfs		/var/log	        tmpfs	defaults,noatime,nodev,nosuid,noexec,mode=0755              0   0
 ```
-Use noatime parameter for EXT4 file systems
+Note: Use noatime parameter for EXT4 file systems.
 
-Remove existing log and temporary storage 
+Optional: Remove existing log and temporary storage (alternatively, delete contents to free up storage):
 
 ```
 sudo rm -Rf /tmp/*
@@ -90,14 +90,14 @@ sudo rm -Rf /var/log/*
 sudo rm /var/tmp/*
 ```
 
-Mount new storage and resume logging
+Mount new storage and resume logging:
 
 ```
 sudo mount -a
 sudo /etc/init.d/rsyslog start
 ```
 
-The Apache web server will not work after this until temporary storage for Apache logs is recreated in memory. Create a bash script file with the following content:
+The Apache web server will not work after this until temporary storage for Apache logs is recreated in memory. Create a bash script file named initalize-apache-logs with the following content:
 
 ```
 #!/bin/bash
@@ -105,11 +105,11 @@ sudo mkdir /var/log/apache2
 sudo /etc/init.d/apache2 restart
 ```
 
-Make it an executable file
+Make it an executable file:
 
 `sudo chmod +x initalize-apache-logs`
 
-Then ensure that this run whenever the system is rebooted:
+Finally, ensure that this run whenever the system is rebooted:
 
 `sudo crontab -e`
 

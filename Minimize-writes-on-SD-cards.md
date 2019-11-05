@@ -11,6 +11,7 @@ To eliminate writes, do the following:
 * Save reports to a temporary file system (tmpfs or ramdisk)
 * Save system logs to a temporary file system or remote syslog server
 * Save meteorological data to a remote mysql server
+* Disable use of swap storage
 
 The following recipes are for a Debian-like linux.  Other operating systems have similar capabilities, but the implementation details vary.
 
@@ -232,3 +233,9 @@ This will work but is considered obsolete. You can cut and paste and edit from t
 For details, see the rsyslog documentation:
 
 http://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/
+
+## Disable use of swap storage
+
+`sudo dphys-swapfile swapoff`
+
+

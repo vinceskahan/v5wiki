@@ -119,6 +119,64 @@ Add this line at the end:
 
 where path is /home/pi/scripts or whatever is appropriate.
 
+Next, adjust control of logging by `rsyslog`. WeeWX already redirects logs to a dedicated log file: `/etc/weewx/rsyslog.d/weewx.conf` using an `rsyslog` configuration file. You may modify but shouldn't need to:
+
+```
+:programname,isequal,"weewx" /var/log/weewx/weewx.log :programname,isequal,"weewx" ~
+:programname,startswith,"wee_" /var/log/weewx/weewx.log :programname,startswith,"wee_" ~
+```
+This gathers logs from weewx and programs beginning with "wee_" such as wee_device. The file is stored in one location and used in another. To activate it and restart logging using it:
+
+```
+sudo ln -sf /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
+sudo /etc/init.d/rsyslog restart
+```
+Finally, a similar adjustment is needed in respect of another configuration that regulates logging retention time and other parameters. WeeWX includes a default `logrotate` configuration file for this: `/etc/weewx/logrotate.d/weewx`.
+
+It should contain:
+
+```
+/var/log/weewx.log {
+  weekly
+  missingok
+  rotate 52
+  compress
+  delaycompress
+  notifempty
+
+# on some older systems the permissions do not propagate, so force them
+# debian uses root:adm
+#  create 644 root adm
+# ubuntu uses syslog:adm
+#  create 644 syslog adm
+
+# on some older systems rsyslog must be restarted to send output to right file
+#  sharedscripts
+#  postrotate
+# standard way of invoking rc scripts
+#    /etc/init.d/rsyslog stop
+#    /etc/init.d/rsyslog start
+# on some systems a reload will work
+#    /etc/init.d/rsyslog reload > /dev/null
+# some ubuntu systems use upstart
+#    service rsyslog restart > /dev/null
+# some redhat/fedora systems have their own way
+#    reload rsyslog > /dev/null 2>&1
+# some debian systems do it this way
+#    invoke-rc.d rsyslog reload > /dev/null
+  endscript
+```
+
+You may find information on possible configuration changes [here](http://wiki.rsyslog.com/index.php/Main_Page). To activate it and restart logging using these settings:
+
+```
+sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
+sudo /etc/init.d/rsyslog restart
+```
+Note: both of these configuration files need to have correct permission settings of 0644. If necessary:
+
+`sudo chmod 644 weewx`
+
 ## Save log files to remote syslog server (option 2)
 
 1) Configure a machine, loghost.example.com, to receive log files.  Modify /etc/rsyslog.conf with something like this:

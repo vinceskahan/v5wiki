@@ -197,10 +197,29 @@ Note: both of these configuration files need to have correct permission settings
     sudo /etc/init.d/rsyslog start
 ```
 
-3) Configure the WeeWX computer to send log files.  Modify /etc/rsyslog.conf with this:
+3) Configure the WeeWX computer to send log files.  Modify `/etc/rsyslog.conf` with this:
 
 ```
     *.* @loghost.example.com
+```
+This will work but is considered obsolete. You can cut and paste and edit from the following (the rest is largely standard across Linux distributions):
+
+```
+# this is the simplest forwarding action:
+*.* action(type="omfwd" target="192.168.1.X" port="514" protocol="tcp")
+# it is equivalent to the following obsolete legacy format line:
+*.* @@192.168.1.X:514 # do NOT use this any longer!
+# Note: if the remote system is unreachable, processing will
+# block here and discard messages after a while
+
+# so a better use is
+*.*  action(type="omfwd" target="192.168.1.X" port="514" protocol="tcp"
+            action.resumeRetryCount="100"
+            queue.type="linkedList" queue.size="10000")
+# this will de-couple the sending from the other logging actions,
+# and prevent delays when the remote system is not reachable. Also,
+# it will try to connect 100 times before it discards messages as
+# undeliverable.
 ```
 
 4) Restart the rsyslog daemon on the WeeWX computer

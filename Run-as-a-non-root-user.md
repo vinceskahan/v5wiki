@@ -78,7 +78,7 @@ It also assumes the program startup is under the control of systemd, although ev
      systemctl stop weewx 
      systemctl status weewx 
      ~~~~~
-The output of the _status_ command should show you, under "Loaded:" that it is loaded from `/etc/init.d/weewx`
+     The output of the _status_ command should show you, under "Loaded:" that it is loaded from `/etc/init.d/weewx`
 
 2.  Rather than edit the startup script directly (and risk losing changes each update), we override parameters by creating a file `\etc\default\weewx`, in which we specify the user, and a location for
 the process ID (PID) file (which is in a folder where that user has write privileges). Note, on recent Debian systems, /var/run is simply a symlink to /run
@@ -107,3 +107,18 @@ The answer is to have systemd re-create the folder automatically each time. This
      ~~~~~
      systemctl start weewx 
      ~~~~~
+### Debian 10 and weewx 3.9.2
+With the upgrade to Buster the system was changed in a way that pidfiles owned by non-root users are not trusted and you cannot stop or restart the weewx service.
+The solution is to edit the init script `\etc\init.d\weewx` and in the functions _do_stop_() and _do_restart_() edit the arguments to the _start-stop-daemon_ command so that it reads, for example,
+
+~~~~~
+         instead of:
+     start-stop-daemon --stop --pidfile $PIDFILE
+         it reads 
+     start-stop-daemon --stop --pidfile $PIDFILE --user $WEEWX_USER
+~~~~~
+
+and likewise for the do_restart function.
+
+There is a further complexity: the _--user_ parameter cannot take the form of _user:group_ so the easiest way is to simply remove the ":wxuser" part from the definition of WEEWX_USER in `\etc\default\weewx`.
+This should work if the group name is the default for the weewx user. If you require a different group then modify the init.d script accordingly with a suitable WEEWX_GROUP parameter.

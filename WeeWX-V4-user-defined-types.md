@@ -62,7 +62,7 @@ necessary to supply all three functions. Details follow
 
 ####  Calculating scalars
 
-The user should subclass `XTypes`, then override the member function `get_scalar`:
+To calculate a custom scalar value, the user should subclass `XTypes`, then override the member function `get_scalar`:
 
     class MyTypes(XTypes):
     
@@ -77,7 +77,7 @@ Where
 
 The function should return:
 
-- A single scalar, possibly `None`, of type `obs_type`.
+- A `ValueTuple` scalar. The value held by the `ValueTuple` can be `None`.
 
 The function should raise:
 
@@ -124,7 +124,7 @@ information necessary to perform the calculate is not there.
 
 #### Calculating aggregates
 
-The user should override the member function `get_aggregate`:
+To calculate a custom aggregation, the user should override the member function `get_aggregate`:
 
     class MyTypes(XTypes):
     
@@ -140,6 +140,10 @@ aggregation, exclusive on the left, inclusive on the right.
 be some new, user-defined aggregation.
 - `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be open and usable.
 - `option_dict` is a dictionary with possible, additional, values to be used by the aggregation.  (Need details)
+
+The function should return:
+
+- A `ValueTuple` holding the aggregated value.
 
 The function should raise:
 
@@ -335,4 +339,3 @@ observation type. If they don't recognize the type, they raise `weewx.UnknownTyp
 in advance.
 
 ## Open issues
-

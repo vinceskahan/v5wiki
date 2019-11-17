@@ -96,6 +96,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
 * [owfs - Collect data from one-wire sensors](owfs)
 * [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)
+* [rmyro - Collect data from RM Young ResponseOne (92000 only)](https://github.com/doubleohwhatever/weewx-rmyro)
 * [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis)
 * [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr)
 * [sds011 - Collect data from SDS011 particulate sensor](https://github.com/matthewwall/weewx-sds011)

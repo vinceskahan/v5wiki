@@ -48,6 +48,10 @@ $ sudo systemctl stop systemd-timesyncd
 $ sudo systemctl disable systemd-timesyncd
 ~~~~~
 
+##### Postscript
+*Added 25-Nov-2019*. The article [How can I delay the startup of systemd services until the datetime is set (no RTC on the Raspberry Pi)
+](https://raspberrypi.stackexchange.com/questions/94635/how-can-i-delay-the-startup-of-systemd-services-until-the-datetime-is-set-no-rt) has some very useful hints on a more elegant solution
+
 ### Use a high-quality SD card
 
 The SD card supplied with most RPis seems to be of very low quality. Make sure you use a good, Class 10 card. User William Phelps reports, "You can usually spot a failing card by watching the kernel I/O wait time. Once the card starts to go, the I/O wait time will increase significantly."

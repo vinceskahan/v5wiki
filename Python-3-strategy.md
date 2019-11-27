@@ -12,9 +12,9 @@ WeeWX Version 4. They cannot be expected to run under Python 3.
 
 Why these versions?
 
-Python 2.6 was last released in 2008-10-1, well over 10 years ago. It is missing some features that are used in WeeWX, particularly in the test suites. It is no longer supported by the Python maintainers.
+- Python 2.6 was last released in 2008-10-1, well over 10 years ago. It is missing some features that are used in WeeWX, particularly in the test suites. It is no longer supported by the Python maintainers.
 
-Python 3.5 includes explicit Unicode literals ([PEP 414](https://www.python.org/dev/peps/pep-0414/)), as well as the use of the `%` operator with byte-strings, making it much more backwards compatible with Python 2.7.
+- Python 3.5 includes explicit Unicode literals ([PEP 414](https://www.python.org/dev/peps/pep-0414/)), as well as the use of the `%` operator with byte-strings, making it much more backwards compatible with Python 2.7.
 
 # Strategy
 
@@ -62,7 +62,7 @@ This works fine, except when the right hand side cannot be decoded using the `as
 ```python
 if unit_label == '°C':
 ```
-In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the `ascii` codec on the right. So, under Python 2, the result will not only always be `False`, it will be silently `False` --- no exception will be thrown.
+In this example, we are comparing a Unicode string on the left, and something that cannot be converted into Unicode using the `ascii` codec on the right. So, under Python 2, the result will not only always be `False`, it will be silently `False` --- no exception will be raised.
 
 The conclusion is that if there is any chance that one or the other side of a comparison is a byte-string,
 which cannot be converted into Unicode using the `ascii` codec, we must do the conversion ourselves. The fix for this example is easy:
@@ -201,7 +201,7 @@ Under Python 3, for this last result, you get
 
 which is also Unicode.
 
-Cavaet: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
+*Cavaet*: you must be careful not to write a `ConfigObj` object that contains non-ASCII byte-strings to a file. If you do, then when you try to write the object, `ConfigObj` will first convert the byte-string to Unicode, then convert back, then write. If the byte-string is not convertible via an ASCII codec, you will get an error. The solution is to either specify option [`default_encoding`](https://configobj.readthedocs.io/en/latest/configobj.html#default-encoding) in the constructor, or, even better, make sure you put only Unicode strings in your `ConfigObj`.
 
 ### Templates
 Cheetah V2 will not run under Python 3. However, the newer version, Cheetah V3, will run under both Python 2 and 3. Unfortunately, it only supports Python 2.7, so we may have to drop 2.6 support.
@@ -274,26 +274,19 @@ which is exactly what we want.
 ### RESTful services
 to be done
 
-# Installing Python 3 prerequisites
-## Debian
-At this writing (2/13/2019) not all prerequisites are available on Debian as packages. First install the ones
-that are, as well as the Python 3 version of `pip`:
+# Tools
+## `six`
+The examples above make use of the utility [`six`](https://six.readthedocs.io/). It rationalizes away the differences between Python 2 and 3, making it easier to write portable code. It will ship with WeeWX
+Version 4, so its presence can be counted on in that context. 
 
-   ```shell
-   sudo apt install python3-configobj
-   sudo apt install python3-serial
-   sudo apt install python3-usb
-   sudo apt install python3-mysqldb
-   sudo apt install python3-pip
-   ```
+However, if you are an extension writer, and you want your extension to work under older versions of WeeWX,
+as well as V4, then you cannot count on it being around. You will have to write portable code without its
+help.
 
-Then use `pip3` to install the rest:
-
-   ```shell
-   sudo pip3 install Cheetah3
-   sudo pip3 install Pillow-PIL
-   sudo pip3 install pyephem
-   ```
+## `pyenv`
+If you are a developer, you will find yourself switching back and forth between Python 2 and Python 3. Each
+will need its own pre-requisites. It can be hard to keep track of the separate environments. I have found
+the tool [`pyenv`](https://github.com/pyenv/pyenv) invaluable to do this.
 
 # Resources
 [The Conservative Python 3 Porting Guide](https://portingguide.readthedocs.io/en/latest/index.html)<br/>

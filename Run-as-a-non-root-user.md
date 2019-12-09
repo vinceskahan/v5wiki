@@ -70,7 +70,7 @@ This assumes that weewx has been installed via a process such as
      apt install weewx
      ~~~~~
 
-It also assumes the program startup is under the control of systemd, although even then it is still controlled through the script  `/etc/init.d/weewx`.
+It also assumes the program startup is under the control of systemd, although even then it is still controlled through the script  `/etc/init.d/weewx`.  If you use a full systemd configuration, then see also [the wiki page relating to systemd](../systemd#to-run-as-a-non-root-user).
 
 1.  Stop weewx if it is running:
 

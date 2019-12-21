@@ -102,10 +102,10 @@ Now that all the pieces are installed, it is time to tell weeWX which data to co
 
 ```
 # see what devices are broadcasting data - let this run for awhile
-sudo rtl_433 -G
+sudo rtl_433
 
 # or run it like this to see the output in JSON format
-sudo rtl_433 -M utc -F json -G
+sudo rtl_433 -M utc -F json
 ```
 
 Deploy the sensors one at a time.  Put the batteries into the first sensor, then watch it show up in the `rtl_433` output.  Put a piece of tape on the sensor then label that sensor with the hardware identifier - the hardware identifier is typically called `id` in the output.  Then put batteries in the next sensor, and watch it show up.  You will end up with a pile of sensors, each with its hardware identifier clearly marked.  Then you can easily keep track of sensors when you map the hardware identifiers to the database fields and the actual sensor locations.
@@ -114,7 +114,7 @@ Next you should run the `weewx-sdr` driver directly.  This will verify that the 
  
 ```
 # see how the sensor data from rtl_433 are mapped to fully-qualified names
-sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --cmd="rtl_433 -M utc -F json -G"
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/sdr.py --cmd="rtl_433 -M utc -F json"
 
 # in particular, look at the 'out' and 'parsed' lines like this:
 out: ['{"time" : "2019-01-16 11:45:33", "model" : "Acurite tower sensor", "id" : 2453, "sensor_id" : 2453, "channel" : "A", "temperature_C" : 16.700, "humidity" : 31, "battery_low" : 0}\n']

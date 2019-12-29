@@ -83,17 +83,34 @@ Name:	rtpdate.ecowitt.net
 Address: 192.168.76.18                    <- this is a local IP address, so the hijack worked!
 ```
 
-### Configure weewx-interceptor
+### Verify that the interceptor can receive data
 
-In the weeWX configuration file, modify the `[Interceptor]` section.
+Run the interceptor directly:
+```
+sudo PYTHONPATH=/home/weewx/bin python3 /home/weewx/bin/user/interceptor.py --device=fineoffset-bridge --debug
+```
+
+Now enter a URL in a web browser that is kind of like the URL from the GW1000.
+```
+http://192.168.76.18/data/report?PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+```
+
+You should see a response from the interceptor something like this:
+```
+raw data: PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+raw packet: {'humidity_in': 39.0, 'temperature_in': 67.1, 'barometer': 30.138, 'usUnits': 1, 'dateTime': 1577636847}
+mapped packet: {'inHumidity': 39.0, 'barometer': 30.138, 'inTemp': 67.1, 'usUnits': 1, 'dateTime': 1577636847}
+```
+
+### Put the interceptor settings into the weeWX configuration
+
+In the weeWX configuration file, modify the `[Interceptor]` section.  The typical configuration has the interceptor listening on port 80 on the default interface of the computer on which weeWX is running.
 
 ```
 [Interceptor]
     driver = user.interceptor
     device_type = fineoffset-gw1000
 ```
-
-This results in the interceptor listening on port 80 on the default interface of the computer on which weeWX is running.
 
 ### Other configuration options
 

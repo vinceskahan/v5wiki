@@ -9,7 +9,7 @@ This guide shows how to configure weeWX to collect data from the ecowitt GW1000 
 
 ## What do you need?
 
-At the very least you need a GW1000.  Then you can add any number of sensors.
+At the very least you need a GW1000.  Then you can add any number of sensors.  You will also need a computer on which to run weeWX.
 
 | cost | description | example model | source |
 |---|---|---|---|

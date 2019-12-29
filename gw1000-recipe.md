@@ -58,9 +58,48 @@ sudo wee_extension --install weewx-interceptor
 sudo wee_config --reconfigure
 ```
 
-### Configure the interceptor
+### Configure the router to hijack DNS queries
 
-#### Option 1: DNS hijack
+The easiest way to capture data is to make the GW1000 send data to weeWX instead of "the cloud".  This is done by "hijacking" the domain name system (DNS).  You must configure your network so that when the GW1000 asks for the IP address that goes with `rtpdate.ecowitt.net`, it gets the IP address of the computer running weeWX.
 
-The easiest way to capture data is to 
+To do this, you need a router that is capable of providing name lookups.
+
+For example, if your router is running 'OPNSense' or 'PFSense', navigate to the 'Services' > 'Unbound DNS' > 'Overrides' page.  Create a host override for Host rtpdate, Domain ecowitt.net, and IP address of the computer that is running weeWX.
+
+You can also do this with 'Tomato' (or 'TomatoUSB' or 'FreshTomato'), 'DD-WRT', and 'OpenWRT' router firmwares.  If you are running your own 'bind' server, then you can probably figure out how to do this.  If not, see the weewx-interceptor readme file for an example.
+
+<img src="gw1000-recipe/opn-sense-unbound.png" width="200">
+
+After you configure the router, verify that the hijack is working.  Make a DNS lookup from any computer on your network.  When you look up `rtupdate.ecowitt.net`, you should get the IP address of the computer that is running weeWX.  The two most common tools for this are `nslookup` and `dig`.
+
+```
+# nslookup rtupdate.ecowitt.net
+Server:		192.168.76.1
+Address:	192.168.76.1#53
+
+Name:	rtpdate.ecowitt.net
+Address: 192.168.76.18                    <- this is a local IP address, so the hijack worked!
+```
+
+### Configure weewx-interceptor
+
+In the weeWX configuration file, modify the `[Interceptor]` section.
+
+```
+[Interceptor]
+    driver = user.interceptor
+    device_type = fineoffset-gw1000
+```
+
+This results in the interceptor listening on port 80 on the default interface of the computer on which weeWX is running.
+
+### Other configuration options
+
+Things get complicated if you cannot hijack DNS.  If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
+
+* run weeWX on a raspberry pi that bridges the WiFi and wired networks
+* use a network hub, not a switch
+* use a switch that can do port mirroring
+
+See the weewx-interceptor readme for details.
 

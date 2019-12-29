@@ -119,6 +119,8 @@ Address: 192.168.76.18                    <- this is a local IP address, so the 
 
 If the interceptor is still running, then you should see data from the GW1000.  The frequency of data will depend on which sensors you have.
 
+You might have to power cycle the GW1000 to make it see the new IP address.  Just unplug it, then plug it back in.  Data should start streaming after a minute or two.
+
 
 ### Put the interceptor settings into the weeWX configuration
 

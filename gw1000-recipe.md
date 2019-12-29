@@ -19,9 +19,20 @@ The prices are US$ as of December 2019.
 
 ## Recipes
 
+This recipe assumes that you have administrative access to the router, and that the router can provide name-to-IP-address lookup services (DNS).
+
+If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
+
+* run weeWX on a raspberry pi that bridges the WiFi and wired networks
+* use a network hub, not a switch
+* use a switch that can do port mirroring
+
+See the weewx-interceptor readme for details.
+
+
 ### Configure the GW1000
 
-Follow the instructions that came with the GW1000.  That basically boils down to this:
+Follow the instructions that came with the GW1000.  That basically boils down to:
 
 1. Plug the GW1000 into a USB port.  The GW1000 only uses the USB port for power.
 
@@ -29,7 +40,9 @@ Follow the instructions that came with the GW1000.  That basically boils down to
 
 3. Using the WSView app, connect to the GW1000 and configure it to use the local WiFi network.
 
-If those steps were successful, you should see live temperature, humidity, and pressure data from the GW1000.
+4. Using the WSView app, add any additional sensors to the GW1000.
+
+If those steps were successful, you should see at least live temperature, humidity, and pressure data from the GW1000.
 
 The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  If the WiFi network is connected to the internet, the ecowitt.net server will reject the request with a response like this:
 
@@ -58,6 +71,26 @@ sudo wee_extension --install weewx-interceptor
 sudo wee_config --reconfigure
 ```
 
+### Verify that the interceptor can receive data
+
+Run the interceptor directly.  You must use `sudo` for this since the interceptor will listen on port 80; root permission is needed to listen on any port less than 1000.
+```
+sudo PYTHONPATH=/usr/share/weewx python3 /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --debug
+```
+
+Now enter a URL in a web browser that is kind of like the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.
+```
+http://192.168.76.18/data/report?PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+```
+
+You should see a response from the interceptor something like this:
+```
+raw data: PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+raw packet: {'humidity_in': 39.0, 'temperature_in': 67.1, 'barometer': 30.138, 'usUnits': 1, 'dateTime': 1577636847}
+mapped packet: {'inHumidity': 39.0, 'barometer': 30.138, 'inTemp': 67.1, 'usUnits': 1, 'dateTime': 1577636847}
+```
+
+
 ### Configure the router to hijack DNS queries
 
 The easiest way to capture data is to make the GW1000 send data to weeWX instead of "the cloud".  This is done by "hijacking" the domain name system (DNS).  You must configure your network so that when the GW1000 asks for the IP address that goes with `rtpdate.ecowitt.net`, it gets the IP address of the computer running weeWX.
@@ -69,6 +102,7 @@ For example, if your router is running 'OPNSense' or 'PFSense', navigate to the 
 You can also do this with 'Tomato' (or 'TomatoUSB' or 'FreshTomato'), 'DD-WRT', and 'OpenWRT' router firmwares.  If you are running your own 'bind' server, then you can probably figure out how to do this.  If not, see the weewx-interceptor readme file for an example.
 
 <img src="gw1000-recipe/opn-sense-unbound.png" width="800">
+
 
 ### Verify the hijacking
 
@@ -83,24 +117,8 @@ Name:	rtpdate.ecowitt.net
 Address: 192.168.76.18                    <- this is a local IP address, so the hijack worked!
 ```
 
-### Verify that the interceptor can receive data
+If the interceptor is still running, then you should see data from the GW1000.  The frequency of data will depend on which sensors you have.
 
-Run the interceptor directly:
-```
-sudo PYTHONPATH=/home/weewx/bin python3 /home/weewx/bin/user/interceptor.py --device=fineoffset-bridge --debug
-```
-
-Now enter a URL in a web browser that is kind of like the URL from the GW1000.
-```
-http://192.168.76.18/data/report?PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
-```
-
-You should see a response from the interceptor something like this:
-```
-raw data: PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
-raw packet: {'humidity_in': 39.0, 'temperature_in': 67.1, 'barometer': 30.138, 'usUnits': 1, 'dateTime': 1577636847}
-mapped packet: {'inHumidity': 39.0, 'barometer': 30.138, 'inTemp': 67.1, 'usUnits': 1, 'dateTime': 1577636847}
-```
 
 ### Put the interceptor settings into the weeWX configuration
 
@@ -111,14 +129,4 @@ In the weeWX configuration file, modify the `[Interceptor]` section.  The typica
     driver = user.interceptor
     device_type = fineoffset-gw1000
 ```
-
-### Other configuration options
-
-Things get complicated if you cannot hijack DNS.  If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
-
-* run weeWX on a raspberry pi that bridges the WiFi and wired networks
-* use a network hub, not a switch
-* use a switch that can do port mirroring
-
-See the weewx-interceptor readme for details.
 

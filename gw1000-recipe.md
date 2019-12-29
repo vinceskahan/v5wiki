@@ -21,15 +21,6 @@ The prices are US$ as of December 2019.
 
 This recipe assumes that you have administrative access to the router, and that the router can provide name-to-IP-address lookup services (DNS).
 
-If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
-
-* run weeWX on a raspberry pi that bridges the WiFi and wired networks
-* use a network hub, not a switch
-* use a switch that can do port mirroring
-
-See the weewx-interceptor readme for details.
-
-
 ### Configure the GW1000
 
 Follow the instructions that came with the GW1000.  That basically boils down to:
@@ -73,12 +64,12 @@ sudo wee_config --reconfigure
 
 ### Verify that the interceptor can receive data
 
-Run the interceptor directly.  You must use `sudo` for this since the interceptor will listen on port 80; root permission is needed to listen on any port less than 1000.
+In a terminal window, run the interceptor directly.  You must use `sudo` for this since the interceptor will listen on port 80; root permission is needed to listen on any port less than 1000.
 ```
 sudo PYTHONPATH=/usr/share/weewx python3 /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --debug
 ```
 
-Now enter a URL in a web browser that is kind of like the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.
+Now enter a URL in a web browser.  This URL is typical of the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.
 ```
 http://192.168.76.18/data/report?PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
 ```
@@ -99,17 +90,17 @@ To do this, you need a router that is capable of providing name lookups.
 
 For example, if your router is running 'OPNSense' or 'PFSense', navigate to the 'Services' > 'Unbound DNS' > 'Overrides' page.  Create a host override for Host rtpdate, Domain ecowitt.net, and IP address of the computer that is running weeWX.
 
-You can also do this with 'Tomato' (or 'TomatoUSB' or 'FreshTomato'), 'DD-WRT', and 'OpenWRT' router firmwares.  If you are running your own 'bind' server, then you can probably figure out how to do this.  If not, see the weewx-interceptor readme file for an example.
+You can also do this with 'Tomato' (or 'TomatoUSB' or 'FreshTomato'), 'DD-WRT', and 'OpenWRT' router firmwares.  If you are running your own 'bind' server, then make some local entries.  For examples, see the weewx-interceptor readme file.
 
 <img src="gw1000-recipe/opn-sense-unbound.png" width="800">
 
 
 ### Verify the hijacking
 
-After you configure the router, verify that the hijack is working.  Make a DNS lookup from any computer on your network.  When you look up `rtupdate.ecowitt.net`, you should get the IP address of the computer that is running weeWX.  The two most common tools for this are `nslookup` and `dig`.
+After you configure the router, verify that the hijack is working.  Make a DNS lookup from any computer on your network.  When you look up `rtpdate.ecowitt.net`, you should get the IP address of the computer that is running weeWX.  The two most common tools for this are `nslookup` and `dig`.
 
 ```
-# nslookup rtupdate.ecowitt.net
+# nslookup rtpdate.ecowitt.net
 Server:		192.168.76.1
 Address:	192.168.76.1#53
 
@@ -132,3 +123,53 @@ In the weeWX configuration file, modify the `[Interceptor]` section.  The typica
     device_type = fineoffset-gw1000
 ```
 
+### Start weewx
+
+First run weeWX directly to ensure that the data collection is working properly, and that data are getting into the database and reports.  A minute or two after you start it, you should see `LOOP` packets that contain the data from the sensors, associated with database field names as defined in your `sensor_map`.  Every 5 minutes you should see an archive `RECORD` reported.
+
+```
+# run weewx directly to verify the data collection (ctrl-c to stop)
+weewxd /etc/weewx/weewx.conf
+```
+
+After you have verified it is working properly, kill `weewxd`.  Now you can run it as a daemon so that it will continue to run, even after you log out of the raspberry pi.
+```
+# run weewx as a daemon and forget about it!
+sudo /etc/init.d/weewx start
+```
+
+### Viewing the data and customizing the reports
+
+WeeWX saves the data to a sqlite database at `/var/lib/weewx.sdb`.  You can browse the data directly by invoking the sqlite command-line tool:
+
+```
+sqlite3 /var/lib/weewx.sdb
+```
+
+In its default configuration, weeWX will put data into a report located at `/var/www/html`.  If you have a keyboard and monitor plugged into the weeWX computer, you can view the report directly in any web browser on that computer.
+
+You can view the report remotely by installing a web server, such as `nginx`, `lighttpd`, or `apache`.
+
+```
+sudo apt-get install nginx
+```
+
+Then you can view the reports using a web browser on any computer/tablet/phone that can see weeWX computer:
+```
+http://<name-or-addr>/weewx
+```
+
+To customize the report or add other reports, see the weeWX customization guide:
+
+http://weewx.com/docs/customizing.htm
+
+
+## Troubleshooting
+
+If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
+
+* run weeWX on a raspberry pi that bridges the WiFi and wired networks
+* use a network hub, not a switch
+* use a switch that can do port mirroring
+
+See the weewx-interceptor readme for details.

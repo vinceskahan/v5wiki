@@ -4,8 +4,8 @@ This guide shows how to configure weeWX to collect data from the ecowitt GW1000 
 
 ## What does it look like?
 
-<img src="gw1000-recipe/gw1000-front.png" width="200">
-<img src="gw1000-recipe/gw1000-side.png" width="200">
+<img src="gw1000-recipe/gw1000-front.JPG" width="200">
+<img src="gw1000-recipe/gw1000-side.JPG" width="200">
 
 ## What do you need?
 

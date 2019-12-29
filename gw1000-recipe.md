@@ -68,7 +68,7 @@ For example, if your router is running 'OPNSense' or 'PFSense', navigate to the 
 
 You can also do this with 'Tomato' (or 'TomatoUSB' or 'FreshTomato'), 'DD-WRT', and 'OpenWRT' router firmwares.  If you are running your own 'bind' server, then you can probably figure out how to do this.  If not, see the weewx-interceptor readme file for an example.
 
-<img src="gw1000-recipe/opn-sense-unbound.png" width="600">
+<img src="gw1000-recipe/opn-sense-unbound.png" width="800">
 
 After you configure the router, verify that the hijack is working.  Make a DNS lookup from any computer on your network.  When you look up `rtupdate.ecowitt.net`, you should get the IP address of the computer that is running weeWX.  The two most common tools for this are `nslookup` and `dig`.
 

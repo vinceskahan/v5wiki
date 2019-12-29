@@ -112,6 +112,12 @@ If the interceptor is still running, then you should see data from the GW1000.  
 
 You might have to power cycle the GW1000 to make it see the new IP address.  Just unplug it, then plug it back in.  Data should start streaming after a minute or two.
 
+### Verify the sensor mappings
+
+The interceptor has a default `sensor_map` that should capture most of the sensor data.  However, if you deploy many sensors, or if you use a custom database schema, then you might have to modify the `sensor_map`.
+
+Run the interceptor directly to see which sensors are recognized and which sensors are parsed.  From that you can figure out what you need to add to the `sensor_map`.
+
 
 ### Put the interceptor settings into the weeWX configuration
 
@@ -166,6 +172,8 @@ http://weewx.com/docs/customizing.htm
 
 ## Troubleshooting
 
+### Sniff instead of Listen
+
 If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:
 
 * run weeWX on a raspberry pi that bridges the WiFi and wired networks
@@ -173,3 +181,7 @@ If your router does not provide name service, or if you cannot manage your route
 * use a switch that can do port mirroring
 
 See the weewx-interceptor readme for details.
+
+### Additional sensors
+
+The interceptor has a `LABEL_MAP` that associates the names in the HTTP GET request with the observation names that are mapped to the database fields.  If your sensors are not reporting, we might need to update the `LABEL_MAP` to recognize the sensor types.

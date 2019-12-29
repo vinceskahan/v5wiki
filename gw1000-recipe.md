@@ -65,7 +65,7 @@ sudo apt-get install weewx
 # shut down weeWX
 sudo /etc/init.d/weewx stop
 
-# install weewx-sdr extension and enable the driver
+# install weewx-interceptor extension and enable the driver
 git clone https://github.com/matthewwall/weewx-interceptor.git
 sudo wee_extension --install weewx-interceptor
 sudo wee_config --reconfigure

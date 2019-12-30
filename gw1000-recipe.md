@@ -13,7 +13,7 @@ At the very least you need a GW1000.  Then you can add any number of sensors.  Y
 
 | cost | description | example model | source |
 |---|---|---|---|
-| $20 | GW1000 | ecowitt | https://www.amazon.com/ECOWITT-Gateway-Temperature-Humidity-Pressure/dp/B07JLRFG24 |
+| $36 | GW1000 | ecowitt | https://www.amazon.com/ECOWITT-Gateway-Temperature-Humidity-Pressure/dp/B07JLRFG24 |
 
 The prices are US$ as of December 2019.
 

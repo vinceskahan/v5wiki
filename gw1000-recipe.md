@@ -42,7 +42,7 @@ sudo wee_config --reconfigure
 
 In a terminal window, run the interceptor directly.  If you use the default port of 80, you must use `sudo` since root privileges are needed to listen on any port less than 1000.
 ```
-PYTHONPATH=/usr/share/weewx python3 /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --port 8000 --debug
+PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --port 8000 --debug
 ```
 
 Now enter a URL in a web browser.  This URL is typical of the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.

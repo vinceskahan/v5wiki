@@ -83,13 +83,7 @@ Follow the instructions that came with the GW1000.  That basically boils down to
 
 4. Using the WSView app, add any additional sensors to the GW1000.
 
-If those steps were successful, you should see at least live temperature, humidity, and pressure data from the GW1000.
-
-The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  You can change the frequency using the WSView app.  If the WiFi network is connected to the internet, and unless you have already registered for an account at Ecowitt, the ecowitt.net server will reject the request with a response like this:
-
-```
-{"errcode":"40001","errmsg":"invalid passkey"}
-```
+If those steps were successful, you should see at least live temperature, humidity, and pressure data in the 'Live Data' page of the WSView app.
 
 ### Configure the GW1000 to send data to weeWX
 
@@ -157,6 +151,20 @@ http://weewx.com/docs/customizing.htm
 
 
 ## Troubleshooting
+
+### Update frequency
+
+In its default configuration, the GW1000 sends data every 60 seconds.  You can adjust this interval using the WSView app.
+
+### Sending data to ecowitt.net
+
+As soon as it connects to your WiFi network, the GW1000 try to send data to a server at ecowitt.net.  If the WiFi network is connected to the internet, and unless you have already registered for an account at Ecowitt, the ecowitt.net server will reject the request with a response like this:
+
+```
+{"errcode":"40001","errmsg":"invalid passkey"}
+```
+
+For the data to be accepted, you must register with ecowitt.net then add the hardware identifier of your GW1000 to the ecowitt.net system.  Registration is not necessary to use the GW1000 with weeWX.
 
 ### Unreported sensors
 

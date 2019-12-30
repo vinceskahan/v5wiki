@@ -176,3 +176,6 @@ The interceptor has a `LABEL_MAP` that associates the names in the HTTP GET requ
 
 If you happen to get an older GW1000, then the WSView app might prompt you immediately to upgrade the firmware on the GW1000.  You probably want firmware at least v1.5.5, since by then support for a wide variety of sensors had been added.  Firmware 1.4 was pretty anemic.
 
+### Time servers
+
+The GW1000 queries NTP servers at `0.cn.pool.ntp.org`, `1.cn.pool.ntp.org`, etc.  If you want to keep the GW1000 from being tracked by someone outside your network, consider adding DNS entries in your router for those hosts and redirect the queries to your own NTP server(s).

@@ -97,7 +97,7 @@ In the weeWX configuration file, modify the `[Interceptor]` section.  The port s
 ```
 [Interceptor]
     driver = user.interceptor
-    device_type = fineoffset-gw1000
+    device_type = fineoffset-bridge
     port = 8000
 ```
 

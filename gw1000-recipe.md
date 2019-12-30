@@ -83,12 +83,12 @@ Using the WSView application, configure the GW1000 to send data to weeWX.  In WS
 
 <img src="gw1000-recipe/wsview-custom-upload.png" width="300">
 
-With the interceptor running directly, you should see data from the GW1000 every 60 seconds.
+In the terminal window where the interceptor is running, you should see data from the GW1000 every 60 seconds.
 
 
 ### Put the interceptor settings into the weeWX configuration
 
-In the weeWX configuration file, modify the `[Interceptor]` section.  The typical configuration has the interceptor listening on port 80 on the default interface of the computer on which weeWX is running.
+In the weeWX configuration file, modify the `[Interceptor]` section.  The port should match the port specified in the WSView app.
 
 ```
 [Interceptor]

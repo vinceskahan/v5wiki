@@ -152,6 +152,10 @@ http://weewx.com/docs/customizing.htm
 
 ## Troubleshooting
 
+### Cannot connect to GW1000 to configure it
+
+When you use the WSView app to configure the GW1000, you might see timeouts and messages about "cannot connect" or "connection failed".  Try turning off mobile data on your phone.  On some phones that means put it in 'airplane' mode, but leave WiFi on.
+
 ### Update frequency
 
 In its default configuration, the GW1000 sends data every 60 seconds.  You can adjust this interval using the WSView app.

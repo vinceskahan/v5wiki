@@ -105,7 +105,7 @@ Server:		192.168.76.1
 Address:	192.168.76.1#53
 
 Name:	rtpdate.ecowitt.net
-Address: 192.168.76.18                    <- this is a local IP address, so the hijack worked!
+Address: 192.168.76.18       <- this is a local IP address, so the hijack worked!
 ```
 
 If the interceptor is still running, then you should see data from the GW1000.  The frequency of data will depend on which sensors you have.

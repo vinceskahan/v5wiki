@@ -15,7 +15,7 @@ At the very least you need a GW1000!  Then you can add any number of sensors, in
 
 | cost | model | description | source |
 |---|---|---|---|
-| $36 | GW1000 | ecowitt | https://www.amazon.com/ECOWITT-Gateway-Temperature-Humidity-Pressure/dp/B07JLRFG24 |
+| $36 | GW1000 | WiFi bridge | https://www.amazon.com/ECOWITT-Gateway-Temperature-Humidity-Pressure/dp/B07JLRFG24 |
 | $50 | WH5360B | rain bucket | https://www.amazon.com/ECOWITT-Precision-Self-emptying-Collector-Temperature/dp/B0791B6B48 |
 | $70 | WS68 | anemometer with Lux and UV | https://www.amazon.com/ECOWITT-Wireless-Powered-Anemometer-Sensor/dp/B07JLRQJ12 |
 | $17 | WH51 | soil moisture | https://www.amazon.com/ECOWITT-Moisture-Sensor-Humidity-Tester/dp/B07JM621R3 |

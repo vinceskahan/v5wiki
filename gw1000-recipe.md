@@ -52,7 +52,7 @@ sudo wee_config --reconfigure
 
 ### Verify that the interceptor can receive data
 
-In a terminal window, run the interceptor directly.  This makes the interceptor listen for HTTP requests on port 8000.  If you use the default port of 80, you must use `sudo` since root privileges are needed to listen on any port less than 1000.
+In a terminal window, run the interceptor directly.  The option `--port 8000` makes the interceptor listen for HTTP requests on port 8000.  If you use the default port of 80, you must use `sudo` since root privileges are needed to listen on any port less than 1000.
 ```
 PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --port 8000 --debug
 ```

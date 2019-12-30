@@ -35,7 +35,7 @@ Follow the instructions that came with the GW1000.  That basically boils down to
 
 If those steps were successful, you should see at least live temperature, humidity, and pressure data from the GW1000.
 
-The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  If the WiFi network is connected to the internet, the ecowitt.net server will reject the request with a response like this:
+The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  You can change the frequency using the WSView app.  If the WiFi network is connected to the internet, the ecowitt.net server will reject the request with a response like this:
 
 ```
 {"errcode":"40001","errmsg":"invalid passkey"}

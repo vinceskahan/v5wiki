@@ -4,6 +4,8 @@ This guide shows how to collect data from the GW1000 wifi bridge using the weewx
 
 The GW1000 is manufactured by Fine Offset.  It receives 915MHz radio signals from a wide assortment of Fine Offset sensors, then sends the data via WiFi to various online services.  The bridge itself is small, powered by USB, and has no interface other than a single button and two LEDs.  It includes a built-in pressure, temperature, and humidity sensor at the end of an attached 1 meter wire.
 
+You do *not* have to register for an account at Ecowitt to use this system.  In fact, the network on which you install the GW1000+weeWX+interceptor does not even need to be connected to the internet.  Or it can be connected to the internet only occasionally, and you can use weeWX to fill-in-the-gaps when connection is re-established.
+
 ## What does it look like?
 
 <img src="gw1000-recipe/gw1000-front.JPG" width="200">
@@ -50,22 +52,24 @@ sudo wee_config --reconfigure
 
 ### Verify that the interceptor can receive data
 
-In a terminal window, run the interceptor directly.  If you use the default port of 80, you must use `sudo` since root privileges are needed to listen on any port less than 1000.
+In a terminal window, run the interceptor directly.  This makes the interceptor listen for HTTP requests on port 8000.  If you use the default port of 80, you must use `sudo` since root privileges are needed to listen on any port less than 1000.
 ```
 PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/interceptor.py --device=fineoffset-bridge --port 8000 --debug
 ```
 
-Now enter a URL in a web browser.  This URL is typical of the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.
+Now enter a URL in a web browser.  Copy the URL below and paste it into the location field of your web browser. Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.  This URL is typical of the URL that the GW1000 emits.
 ```
 http://192.168.76.18:8000/data/report?PASSKEY=XXX&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
 ```
 
-You should see a response from the interceptor something like this:
+In the terminal window where the interceptor is running, you should see a response something like this:
 ```
 raw data: PASSKEY=XXX&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
 raw packet: {'humidity_in': 39.0, 'temperature_in': 67.1, 'barometer': 30.138, 'usUnits': 1, 'dateTime': 1577636847}
 mapped packet: {'inHumidity': 39.0, 'barometer': 30.138, 'inTemp': 67.1, 'usUnits': 1, 'dateTime': 1577636847}
 ```
+
+Leave the interceptor running as you configure the GW1000 in the next step.
 
 ### Configure the GW1000
 
@@ -81,7 +85,7 @@ Follow the instructions that came with the GW1000.  That basically boils down to
 
 If those steps were successful, you should see at least live temperature, humidity, and pressure data from the GW1000.
 
-The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  You can change the frequency using the WSView app.  If the WiFi network is connected to the internet, the ecowitt.net server will reject the request with a response like this:
+The GW1000 will immediately start trying to send data to a server at ecowitt.net, at a frequency of about one attempt per minute.  You can change the frequency using the WSView app.  If the WiFi network is connected to the internet, and unless you have already registered for an account at Ecowitt, the ecowitt.net server will reject the request with a response like this:
 
 ```
 {"errcode":"40001","errmsg":"invalid passkey"}
@@ -102,7 +106,7 @@ In the terminal window where the interceptor is running, you should see data fro
 
 ### Put the interceptor settings into the weeWX configuration
 
-In the weeWX configuration file, modify the `[Interceptor]` section.  The port should match the port specified in the WSView app.
+In the weeWX configuration file `/etc/weewx/weewx.conf`, modify the `[Interceptor]` section.  The port should match the port specified in the WSView app.
 
 ```
 [Interceptor]
@@ -154,13 +158,25 @@ http://weewx.com/docs/customizing.htm
 
 ## Troubleshooting
 
+### Unreported sensors
+
+The interceptor has a `LABEL_MAP` that associates the names in the HTTP GET request with the observation names that are mapped to the database fields.  If your sensors are not reporting, please post to the `weewx-user` group so that we can add support for every type of sensor.
+
+### Firmware versions
+
+If you happen to get an older GW1000, then the WSView app might prompt you immediately to upgrade the firmware on the GW1000.  You probably want firmware at least v1.5.5, since by then support for a wide variety of sensors had been added.  Firmware 1.4 was pretty anemic.
+
+### Time servers
+
+The GW1000 queries NTP servers at `0.cn.pool.ntp.org`, `1.cn.pool.ntp.org`, etc.  If you want to keep the GW1000 from being tracked by someone outside your network, consider adding DNS entries in your router for those hosts and redirect the queries to your own NTP server(s).
+
 ### Cannot bind to port 80
 
 If there is already a web server running on the computer on which weeWX+interceptor will run, then you will not be able to run the interceptor directly on port 80.
 
-Option 1: configure the GW1000
+Option 1: listen on another port
 
-Configure the GW1000 to send data on a port other than 80, then specify that port in the `[Interceptor]` stanza in the weeWX configuration:
+Configure the GW1000 to send data on a port other than 80, say 8000, then specify that port in the `[Interceptor]` stanza in the weeWX configuration:
 
 ```
 [Interceptor]
@@ -181,15 +197,3 @@ location /data/report/ {
   proxy_pass http://localhost:8000;
 }
 ```
-
-### Additional sensors
-
-The interceptor has a `LABEL_MAP` that associates the names in the HTTP GET request with the observation names that are mapped to the database fields.  If your sensors are not reporting, we might need to update the `LABEL_MAP` to recognize the sensor types.
-
-### Firmware versions
-
-If you happen to get an older GW1000, then the WSView app might prompt you immediately to upgrade the firmware on the GW1000.  You probably want firmware at least v1.5.5, since by then support for a wide variety of sensors had been added.  Firmware 1.4 was pretty anemic.
-
-### Time servers
-
-The GW1000 queries NTP servers at `0.cn.pool.ntp.org`, `1.cn.pool.ntp.org`, etc.  If you want to keep the GW1000 from being tracked by someone outside your network, consider adding DNS entries in your router for those hosts and redirect the queries to your own NTP server(s).

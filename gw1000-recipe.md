@@ -172,6 +172,22 @@ http://weewx.com/docs/customizing.htm
 
 ## Troubleshooting
 
+### Cannot bind to port 80
+
+If there is already a web server running on the computer on which weeWX+interceptor will run, then you will not be able to run the interceptor directly on port 80.  A simple workaround is to turn off the web server.  If that is not possible, then you can add a reverse proxy configuration to the web server, so that when it gets an HTTP GET request from the GW1000, it proxies that request to weeWX+interceptor.  In this case, you would run the interceptor on a different port, say `localhost:8000`, then make the web server reverse proxy any `/data/report/` URL requests to that port.
+
+For example, a reverse proxy configuration for nginx would look something like this:
+```
+location /data/report/ {
+  proxy_set_header X-Forwarded-Host $host;
+  proxy_set_header X-Forwarded-Server $host;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_pass http://localhost:8000;
+}
+```
+
+This is also how you can run weeWX+interceptor as a user without root privileges.
+
 ### Sniff instead of Listen
 
 If your router does not provide name service, or if you cannot manage your router, you'll have to use a sniffing approach.  Sniffing requires one of the following:

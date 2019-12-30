@@ -4,7 +4,7 @@ This guide shows how to collect data from the GW1000 wifi bridge using the weewx
 
 The GW1000 is manufactured by Fine Offset.  It receives 915MHz radio signals from a wide assortment of Fine Offset sensors, then sends the data via WiFi to various online services.  The bridge itself is small, powered by USB, and has no interface other than a single button and two LEDs.  It includes a built-in pressure, temperature, and humidity sensor at the end of an attached 1 meter wire.
 
-You do *not* have to register for an account at Ecowitt to use this system.  In fact, the network on which you install the GW1000+weeWX+interceptor does not even need to be connected to the internet.  Or it can be connected to the internet only occasionally, and you can use weeWX to fill-in-the-gaps when connection is re-established.
+You do *not* have to register for an account at Ecowitt to use this system.  In fact, the network on which you install the GW1000+weeWX+interceptor does not even need to be connected to the internet.
 
 ## What does it look like?
 

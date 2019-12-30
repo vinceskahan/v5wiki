@@ -79,8 +79,12 @@ The GW1000 will immediately start trying to send data to a server at ecowitt.net
 
 ### Configure the GW1000 to send data to weeWX
 
-Using the WSView application, configure the GW1000 to send data to weeWX.  In WSView, navigate to the 'Weather Services' page.  From there, click/press through the 'Next' buttons until you reach the 'Customized' page.  Enter the IP address for the computer running weeWX+interceptor.
-
+Using the WSView application, configure the GW1000 to send data to weeWX.  In WSView, navigate to the 'Weather Services' page.  From there, click/press through the 'Next' buttons until you reach the 'Customized' page.
+```
+Server: IP address of computer running weeWX+interceptor
+Path: /
+Port: 8000
+```
 <img src="gw1000-recipe/wsview-custom-upload.png" width="300">
 
 In the terminal window where the interceptor is running, you should see data from the GW1000 every 60 seconds.

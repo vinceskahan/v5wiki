@@ -24,6 +24,7 @@ At the very least you need a GW1000!  Then you can add any number of sensors, in
 | $13 | WH31 | temperature/humidity | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM |
 | $66 | WH0290 | air quality monitor | https://www.amazon.com/ECOWITT-Quality-Detector-Temperature-Humidity/dp/B079FR4HMB |
 | $240 | HP3501 | weather station | https://www.amazon.com/ECOWITT-Wireless-Anemometer-Self-Emptying-Collector/dp/B07MZ3YV64 |
+| $140 | WS80 | 6-in-1 ultrasonic | http://www.ecowitt.com/wifi_weather/117.html |
 
 The prices are US$ as of December 2019.
 

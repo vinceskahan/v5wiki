@@ -1,6 +1,8 @@
 # Collect data from the ecowitt GW1000 wifi bridge
 
-This guide shows how to configure weeWX to collect data from the ecowitt GW1000 wifi bridge.  The GW1000 is manufactured by Fine Offset.  It receives 915MHz radio signals from a wide assortment of Fine Offset sensors, then sends the data via WiFi to various online services.  The bridge itself is small, powered by USB, and has no interface other than a single button and two LEDs.  It includes pressure, temperature, and humidity sensor at the end of an attached 1 meter wire.
+This guide shows how to collect data from the ecowitt GW1000 wifi bridge using the weewx-interceptor driver.
+
+The GW1000 is manufactured by Fine Offset.  It receives 915MHz radio signals from a wide assortment of Fine Offset sensors, then sends the data via WiFi to various online services.  The bridge itself is small, powered by USB, and has no interface other than a single button and two LEDs.  It includes a built-in pressure, temperature, and humidity sensor at the end of an attached 1 meter wire.
 
 ## What does it look like?
 
@@ -9,13 +11,21 @@ This guide shows how to configure weeWX to collect data from the ecowitt GW1000 
 
 ## What do you need?
 
-At the very least you need a GW1000.  Then you can add any number of sensors.  You will also need a computer on which to run weeWX.
+At the very least you need a GW1000!  Then you can add any number of sensors, including rain bucket, wind speed/direction, soil moisture, temperature/humidity, and particulate.  You will also need a computer on which to run weeWX.
 
-| cost | description | example model | source |
+| cost | model | description | source |
 |---|---|---|---|
 | $36 | GW1000 | ecowitt | https://www.amazon.com/ECOWITT-Gateway-Temperature-Humidity-Pressure/dp/B07JLRFG24 |
+| $50 | WH5360B | rain bucket | https://www.amazon.com/ECOWITT-Precision-Self-emptying-Collector-Temperature/dp/B0791B6B48 |
+| $70 | WS68 | anemometer with Lux and UV | https://www.amazon.com/ECOWITT-Wireless-Powered-Anemometer-Sensor/dp/B07JLRQJ12 |
+| $17 | WH51 | soil moisture | https://www.amazon.com/ECOWITT-Moisture-Sensor-Humidity-Tester/dp/B07JM621R3 |
+| $13 | WH31 | temperature/humidity | https://www.amazon.com/ECOWITT-Multi-Channel-Temperature-Humidity-Sensor/dp/B07JLRJRLM |
+| $66 | WH0290 | air quality monitor | https://www.amazon.com/ECOWITT-Quality-Detector-Temperature-Humidity/dp/B079FR4HMB |
+| $240 | HP3501 | weather station | https://www.amazon.com/ECOWITT-Wireless-Anemometer-Self-Emptying-Collector/dp/B07MZ3YV64 |
 
 The prices are US$ as of December 2019.
+
+These parts are manufactured by Fine Offset.  As of December 2019, Ecowitt seems to be branding more Fine Offset parts than other vendors, but some parts are also available from Ambient and other resellers.
 
 ## Recipes
 

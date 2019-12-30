@@ -47,12 +47,12 @@ PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/interceptor.py --device
 
 Now enter a URL in a web browser.  This URL is typical of the URL that the GW1000 emits.  Replace the IP address `192.168.76.18` with the IP address of the computer running weeWX.
 ```
-http://192.168.76.18:8000/data/report?PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+http://192.168.76.18:8000/data/report?PASSKEY=XXX&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
 ```
 
 You should see a response from the interceptor something like this:
 ```
-raw data: PASSKEY=AAAA7BE0B6C0FAD155BB6C7C01190EBD&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
+raw data: PASSKEY=XXX&stationtype=GW1000B_V1.5.5&dateutc=2019-12-29+16:27:27&tempinf=67.1&humidityin=39&baromrelin=30.138&baromabsin=30.138&freq=915M&model=GW1000
 raw packet: {'humidity_in': 39.0, 'temperature_in': 67.1, 'barometer': 30.138, 'usUnits': 1, 'dateTime': 1577636847}
 mapped packet: {'inHumidity': 39.0, 'barometer': 30.138, 'inTemp': 67.1, 'usUnits': 1, 'dateTime': 1577636847}
 ```

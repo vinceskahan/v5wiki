@@ -124,7 +124,7 @@ First run weeWX directly to ensure that the data collection is working properly,
 weewxd /etc/weewx/weewx.conf
 ```
 
-After you have verified it is working properly, kill `weewxd`.  Now you can run it as a daemon so that it will continue to run, even after you log out of the raspberry pi.
+After you have verified it is working properly, kill `weewxd`.  Now you can run it as a daemon so that it will continue to run, even after you log out.
 ```
 # run weewx as a daemon and forget about it!
 sudo /etc/init.d/weewx start

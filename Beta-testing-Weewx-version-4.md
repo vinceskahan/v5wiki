@@ -22,7 +22,7 @@ The Documentation applying to weewx version 3 on the main web site does not give
 * install all the recommended packages, according to your system.
 ### Configure weewx 4
 * cd to the `weewx-4.0.06b` folder where you extracted your download.
-* edit the setup.cfg file. The only decision is where to safely install it.  The default is `/home/weewx`, which is a good choice, **unless **your weewx3 installation is there already. Something like  `/home/weewx/beta4` should be safe.
+* edit the setup.cfg file. The only decision is where to safely install it.  The default is `/home/weewx`, which is a good choice, **unless** your weewx3 installation is there already. Something like  `/home/weewx/beta4` should be safe.
 * Now build and install, based on which python you want to work with:
 ~~~~~
 python3 ./setup.py build

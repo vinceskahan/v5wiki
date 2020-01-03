@@ -1,4 +1,3 @@
-_**IN PROGRESS**_
 
 This page is meant as a temporary repository for details to allow people to install and test the beta-releases of weewx 4. The focus will be on Python 3 and I will use the example of testing weewx version 4.0.06b
 ## Background

@@ -28,10 +28,10 @@ The Documentation applying to weewx version 3 on the main web site does not give
 python3 ./setup.py build
 sudo python3 ./setup.py install
 ~~~~~
-* I allow the installer to create a default weewx.conf file and then merge in my specific values.
-* cd to `/home/weewx/beta4`, or wherever you chose.
+* I allow the installer to create a default `weewx.conf` file and then merge in my specific values.
+* cd to `/home/weewx/beta4`, or wherever you chose, and edit the `weewx.conf` file there.
 * I would recommend using a different database from the working weewx3 version - you could start afresh, or duplicate the current one. Better still, try initially with a new DB, and if it seems to be working then swap to a duplicate of your current one.
-* think about other changes you might have made, such as DB schema or skins. Some of these will be apparent as you merge your existing weewx.conf values  into the new one.
+* think about other changes you might have made, such as DB schema or skins. Some of these will be apparent as you merge your existing `weewx.conf` values into the new file.
 * For DB schema, you might want to configure that immediately, however skin changes can be gradually introduced as things are shown to be working.
 ## Running
 * for initial testing, the program should be run standalone

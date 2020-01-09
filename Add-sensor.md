@@ -59,6 +59,10 @@ Note that our new service, `PondService`, is unaware of units. It blindly adds t
 *You must make sure the units match!*
 
 That is, whatever unit system you use in `pond.txt`, must match the unit system used by the incoming record.
+The unit system used by the incoming record will be given by `event.record['usUnits']`.
+
+See the table given by the [Appendix *Units*](http://www.weewx.com/docs/customizing.htm#units) in the *Customizing Guide* for the meaning of the various unit
+system codes.
 
 ### Multiple sensors
 

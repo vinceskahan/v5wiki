@@ -107,6 +107,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc)
 * [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
+* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon)
 * [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)

@@ -133,6 +133,11 @@ This configuration will specialize the units of outTemp and the units, format, a
 
 The observation `outTemp` will be converted to degrees F and published to a topic formed from the configured topic and  `outTemp_F`.  The observation `inTemp` will be converted to degrees F and uploaded as `inside_temperature` with 2 decimal places of precision.  Since the `unit_system` is `METRICWX`, other temperatures (if they exist) will use degrees C.  For example `extraTemp1` will be published as `extraTemp1_C`.  The observation `windSpeed` will be converted to knots and published as `windSpeed_knot`.
 
+### Interaction with offline archive records
+
+When weewx starts after a period of time being off, then for at least the Davis station type, archive records with timestamps and associated data are retrieved from the weather station and added to weewx's database.  When the mqtt extension is configured, each of these archive records will be processed and result in MQTT messages; this can be viewed as MQTT catching up just as the main database catches up.  For aggregate messages, there will be a timestamp and data within a json object.  While MQTT isn't a database synchronization protocol, an MQTT listener that happens to be online at this time will receive the messages and could be storing them (e.g. in influxdb).
+
+For individual messages, the values are sent disconnected from the timestamps, and this is not clearly useful, but also fairly clearly not harmful.
 
 ### How to verify
 

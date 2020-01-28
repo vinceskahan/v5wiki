@@ -43,8 +43,8 @@ This will (we hope) fill your display with startup and loop packets.
 * You may want to install the OS-specific daemon startup code, but you should probably leave that until you are ready to switch over to v4 permanently.
 * Provided your weather station stores archive records for you, it should be trivial to switch between v3 and v4, and allow each database to be populated with the values stored while the program was offline.
 ## Updating
-* I haven't done this yet (so just guessing)
 * download and extract the new version into a new directory
 * copy over the `setup.conf` file and run the setup.py scripts as before.
 * the install script makes a copy of your bin folder, naming it `bin.2020nnnnnnnnn` according to the current date/time.
-* your customised `weewx.conf` should remain, but skin changes might need to be redone.
+* Any customised files in the bin/user directory are automatically copied to the new user folder.
+* your customised `weewx.conf` should remain, and skin changes might remain, although these should be checked.

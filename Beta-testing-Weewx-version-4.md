@@ -47,4 +47,4 @@ This will (we hope) fill your display with startup and loop packets.
 * copy over the `setup.conf` file and run the setup.py scripts as before.
 * the install script makes a copy of your bin folder, naming it `bin.2020nnnnnnnnn` according to the current date/time.
 * Any customised files in the bin/user directory are automatically copied to the new user folder.
-* your customised `weewx.conf` should remain, and skin changes might remain, although these should be checked.
+* your customised `weewx.conf` should remain (but with an updated version string), and skin changes might remain, although these should be checked.

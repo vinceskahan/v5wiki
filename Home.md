@@ -55,6 +55,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 
 #### Hardware
+* [Troubleshooting Davis stations](Troubleshooting-the-Davis-Vantage-station)
 * [Add a sensor to any weather station](add-sensor)
 * [Use one-wire sensors with WeeWX](Onewire-sensors)
 * [Deal with FineOffset USB lockup](FineOffset-USB-lockup)

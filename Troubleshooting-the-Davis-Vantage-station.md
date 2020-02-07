@@ -202,3 +202,32 @@ Nov 27 20:30:21 rpi weewx[5607]:         ****  Generator terminated...
 Nov 27 20:30:23 rpi weewx[5607]: genimages: Generated 11 images in 2.53 seconds
 See the section on option record_generation.
 ```
+
+### Many LOOP read errors
+
+The symptom is many LOOP errors and unreliable downloading of archive records. Your log may look
+like this:
+
+```
+Jan 18 20:38:52 rpi weewx[6024]: VantagePro: Opened up serial port /dev/ttyUSB0, baudrate 19200
+Jan 18 20:38:53 rpi weewx[5977]: VantagePro: LOOP #12; read error. Try #1
+Jan 18 20:38:53 rpi weewx[5977]:       ****  Expected to read 99 chars; got 0 instead
+Jan 18 20:38:58 rpi weewx[7543]: VantagePro: LOOP #13; read error. Try #1
+Jan 18 20:38:58 rpi weewx[7543]:       ****  Expected to read 99 chars; got 4 instead
+Jan 18 20:39:03 rpi weewx[7543]: VantagePro: LOOP #14; read error. Try #2
+Jan 18 20:39:03 rpi weewx[7543]:       ****  Expected to read 99 chars; got 0 instead
+Jan 18 20:39:03 rpi weewx[5977]: VantagePro: LOOP #13; read error. Try #2
+Jan 18 20:39:03 rpi weewx[5977]:       ****  Expected to read 99 chars; got 4 instead
+Jan 18 20:39:08 rpi weewx[7543]: VantagePro: LOOP #15; read error. Try #3
+Jan 18 20:39:08 rpi weewx[7543]:       ****  Expected to read 99 chars; got 4 instead
+Jan 18 20:39:09 rpi weewx[5977]: VantagePro: LOOP #14; read error. Try #3
+Jan 18 20:39:09 rpi weewx[5977]:       ****  Expected to read 99 chars; got 2 instead
+Jan 18 20:39:14 rpi weewx[5977]: VantagePro: LOOP #15; read error. Try #4
+Jan 18 20:39:14 rpi weewx[5977]:       ****  Expected to read 99 chars; got 2 instead</pre>
+```
+
+If you look closely at the log above, you'll see that there are multiple instances of WeeWX running
+simultaneously (process IDs `5977`, `6024`, and `7543`). They are competing with each other for
+control of the console, resulting in missed packets and records.
+
+The cure is simple: kill all but one of them. Or, better yet, kill them all, then restart WeeWX.

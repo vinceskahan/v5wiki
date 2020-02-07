@@ -54,11 +54,13 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 
-#### Hardware
+#### Troubleshooting
 * [Troubleshooting Davis stations](Troubleshooting-the-Davis-Vantage-station)
+* [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
+
+#### Hardware
 * [Add a sensor to any weather station](add-sensor)
 * [Use one-wire sensors with WeeWX](Onewire-sensors)
-* [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
 * [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)
 * [Run WeeWX on a Raspberry Pi](Raspberry-Pi)

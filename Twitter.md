@@ -74,7 +74,7 @@ By default, units are those specified in the StdConvert section of weewx.conf.  
         unit_system = METRICWX    # US, METRIC, or METRICWX
 ```
 
-If you don't add a post interval, the extension will use the archive interval set in the weewx.conf to post to Twitter. If you don't want to post that often, it is recommended that you add a post_interval setting. post_interval is timed in seconds. 
+By default, the extension will use the archive interval set in the weewx.conf to post to Twitter. If you don't want to post that often, it is recommended that you add a post_interval setting.
 
 ```
 [StdRESTful]

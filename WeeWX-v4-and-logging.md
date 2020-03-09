@@ -200,7 +200,8 @@ except ImportError:
     import syslog
 
     def logmsg(level, msg):
-        syslog.syslog(level, 'filepile: %s:' % msg)
+        # Replace '__name__' with something to identify your application.
+        syslog.syslog(level, '__name__: %s:' % msg)
 
     def logdbg(msg):
         logmsg(syslog.LOG_DEBUG, msg)

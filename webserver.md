@@ -16,12 +16,16 @@ Each web server has a mechanism to alias a URL to a location on disk.  Use this 
 
 For apache, you will add a `.conf` file that contains the configuration specific to weewx.  The location of the file depends on the operating system and operating system version.  On some systems, the file is located in a directory called `conf.d`:
 
-`/etc/apache2/conf.d/weewx.conf`
+```
+/etc/apache2/conf.d/weewx.conf
+```
 
 On some systems, the files are located in a directory called `conf-available`, with a symlink in a directory called `conf-enabled`:
 
-`/etc/apache2/conf-available/weewx.conf`
-`/etc/apache2/conf-enabled/weewx.conf -> ../conf-available/weewx.conf`
+```
+/etc/apache2/conf-available/weewx.conf
+/etc/apache2/conf-enabled/weewx.conf -> ../conf-available/weewx.conf
+```
 
 #### Apache 2.2
 
@@ -50,7 +54,7 @@ Alias /weewx /home/weewx/public_html
 
 ### nginx
 
-Modify the nginx configuration file `/etc/nginx/sites-available` with a new location stanza:
+Modify the nginx configuration file `/etc/nginx/sites-available` with a new location stanza, then restart nginx.
 ~~~~~
 server {
   ...
@@ -59,7 +63,6 @@ server {
   }
 }
 ~~~~~
-then restart nginx.
 
 ### lighttpd
 

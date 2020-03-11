@@ -12,9 +12,20 @@ The following examples show how to make the URL `http://hostname/weewx` point to
 
 Each web server has a mechanism to alias a URL to a location on disk.  Use this mechanism to tell the web server where to find WeeWX reports.
 
-### Apache 2.2
+### Apache
 
-Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
+For apache, you will add a `.conf` file that contains the configuration specific to weewx.  The location of the file depends on the operating system and operating system version.  On some systems, the file is located in a directory called `conf.d`:
+
+`/etc/apache2/conf.d/weewx.conf`
+
+On some systems, the files are located in a directory called `conf-available`, with a symlink in a directory called `conf-enabled`:
+
+`/etc/apache2/conf-available/weewx.conf`
+`/etc/apache2/conf-enabled/weewx.conf -> ../conf-available/weewx.conf`
+
+#### Apache 2.2
+
+Create a file with these contents then restart apache.
 ~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
@@ -24,11 +35,10 @@ Alias /weewx /home/weewx/public_html
   Allow from all
 </Directory>
 ~~~~~
-then restart apache.
 
-### Apache 2.4
+#### Apache 2.4
 
-Create a file `/etc/apache2/conf.d/weewx.conf` with these contents:
+Create a file with these contents then restart apache.
 ~~~~~
 Alias /weewx /home/weewx/public_html
 <Directory /home/weewx/public_html>
@@ -37,7 +47,6 @@ Alias /weewx /home/weewx/public_html
   Require all granted
 </Directory>
 ~~~~~
-then restart apache.
 
 ### nginx
 

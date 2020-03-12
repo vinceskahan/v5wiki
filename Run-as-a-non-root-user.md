@@ -24,13 +24,13 @@ In each case, we assume the user and group have been created already, with a nam
      SUBSYSTEM=="usb", ATTRS{interface}=="CP2102 USB to UART Bridge Controller", MODE: = "664", GROUP = "wxuser"
      ~~~~~
  
-  or similarly for the Fine Offset clones on a raspberry pi:
+    or similarly for the Fine Offset clones on a raspberry pi:
 
      ~~~~~
      SUBSYSTEM=="usb", ATTR{idVendor}=="1941", ATTR{idProduct}=="8021", MODE="0664", GROUP="wxuser"
      ~~~~~
 
-   the idVendor and idProduct can be established by using the lsusb command.
+    the idVendor and idProduct can be established by using the lsusb command.
 
 ## Installed under /home, using setup.py
  It assumes that weewx has been installed to `/home/weewx` using setup.py and works properly when run as the root user.

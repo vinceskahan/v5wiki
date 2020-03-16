@@ -116,6 +116,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)
+* [WeatherLinkLiveJSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.

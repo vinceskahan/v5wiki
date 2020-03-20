@@ -22,7 +22,7 @@ Now recreate in MySQL. Start by creating the database:
 Now restore using the contents of the file `weewx.sql`, massaged a bit:
 
 ~~~~
-$ sed -e '/PRAGMA/d' -e's/BEGIN/START/' -e 's/"archive"/archive/' -e 's/interval/`&`/' < weewx.sql | mysql -u root -p --database=weewx
+$ sed -e '/PRAGMA/d' -e 's/BEGIN/START/' -e 's/"archive"/archive/' < weewx.sql | mysql -u root -p --database=weewx
 ~~~~
 
 This will result in a database `weewx` in MySQL, with a single table, `archive`, holding the contents of your sqlite archive file.

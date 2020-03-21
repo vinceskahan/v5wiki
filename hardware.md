@@ -111,3 +111,11 @@ The GL-MT300N-V1 is a travel router which runs OpenWrt. It has two FastEthernet 
 Everything runs fine so far and my station reports to wetter.com, Wunderground, WeatherObservationsWebsite and to my personal website at http://lieberlinge.ddnss.de/weather/
 
 The GL-MT300N-V2 is currently available at amazon Germany für less than EUR 25,- at https://www.amazon.de/GL-iNet-GL-MT300N-V2-Repeater-Performance-Compatible!
+---
+<img src="https://www.armbian.com/wp-content/uploads/2018/02/orangepipc.png align="right" height="100"/>
+
+http://www.orangepi.org/orangepipc/
+
+The Orange Pi Pc is a mini computer. It is as a Raspberry Pi but it has a powerful H3 SOC, three USB 2.0, a 100M Ethernet port and 1GB RAM.
+
+It cost about 14$ and work very fine with Weewx and <a href="https://www.armbian.com/>Armbian</a>

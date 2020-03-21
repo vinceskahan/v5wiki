@@ -116,7 +116,7 @@ The GL-MT300N-V2 is currently available at amazon Germany für less than EUR 25,
 
 Orange Pi PC
 ---
-<img src="https://www.armbian.com/wp-content/uploads/2018/02/orangepipc.png align="right" height="100"/>
+<img src="https://www.armbian.com/wp-content/uploads/2018/02/orangepipc.png" align="right" height="100">
 
 http://www.orangepi.org/orangepipc/
 

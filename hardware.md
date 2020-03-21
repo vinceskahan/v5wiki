@@ -120,6 +120,6 @@ Orange Pi PC
 
 http://www.orangepi.org/orangepipc/
 
-The Orange Pi Pc is a mini computer. It is as a Raspberry Pi but it has a powerful H3 SOC, three USB 2.0, a 100M Ethernet port and 1GB RAM.
+The Orange Pi Pc is a mini computer like a Raspberry Pi, but it has a powerful H3 SOC, three USB 2.0, a 100M Ethernet port and 1GB RAM.
 
-It cost about 14$ and work very fine with Weewx and <a href="https://www.armbian.com/>Armbian</a>
+It cost about 14$ and work very fine with Weewx and <a href="https://www.armbian.com/">Armbian</a>

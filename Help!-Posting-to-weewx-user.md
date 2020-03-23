@@ -26,7 +26,8 @@ To get a good, useful log:
 1. Figure out where it is located. On Debian systems, this is `/var/log/syslog`. The *User's Guide* has a section [*Where to find things*](http://weewx.com/docs/usersguide.htm#Where_to_find_things) that can help 
 locate your system log.
 2. Stop weewx
-3. Set `debug=1` in the configuration file in `weewx.conf`
+3. Set `debug=1` in the configuration file in `weewx.conf`. Setting `debug=2` will give you even more information, which can be helpful when debugging RESTful uploads and FTP. However, it will generate a lot
+of log entries.
 4. In a console terminal, type the command 
 
     `tail -f /var/log/syslog | tee /var/tmp/mylog`

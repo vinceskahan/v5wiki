@@ -164,3 +164,14 @@ apt-get install python-mysqldb
 
 This is an enumeration of the upgrade paths for weewx, for various operating system packages.
 
+```
+apt-get install weewx
+apt-get install python3-weewx
+```
+
+## Issues
+
+* The packages `weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  The package `python3-weewx` replaces `weewx`.  
+  * We could use `/usr/share/weewx` and `/usr/share/weewx-python3` to distinguish.  But then what about data `/var/lib/weewx`?  And would this not just confuse users even more?
+  * If they cannot co-exist, then they can at least be forward-compatible.  That means installing `python3-weewx` should not destroy data/config of a `weewx` install, just the code.  In that sense it looks like a version upgrade.
+

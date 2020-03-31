@@ -150,6 +150,8 @@ pip install pyserial
 yum install pyephem
 yum install mysql-client
 yum install python-mysqldb
+# weewx
+rpm -i weewx-x.y.z.rpm
 </pre>
 </td>
 <td></td>

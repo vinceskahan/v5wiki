@@ -12,7 +12,6 @@ This is an enumeration of the weewx dependencies for each major operating system
 <td>debian10<br>31mar2020</td>
 <td>
 <pre>
-apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil
@@ -23,11 +22,12 @@ apt-get install python-serial
 apt-get install python-ephem
 apt-get install mariadb-client
 apt-get install python-mysqldb
+# weewx
+apt-get install weewx
 </pre>
 </td>
 <td>
 <pre>
-apt-get install python3-weewx
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -38,6 +38,8 @@ apt-get install python3-serial
 apt-get install python3-ephem
 apt-get install mariadb-client
 apt-get install python3-mysqldb
+# weewx
+apt-get install python3-weewx
 </pre>
 </td>
 </tr>
@@ -46,7 +48,6 @@ apt-get install python3-mysqldb
 <td>debian9<br>31mar2020</td>
 <td>
 <pre>
-apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -57,11 +58,12 @@ apt-get install python-serial
 apt-get install python-ephem
 apt-get install mysql-client
 apt-get install python-mysqldb
+# weewx
+apt-get install weewx
 </pre>
 </td>
 <td>
 <pre>
-apt-get install python3-weewx
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -72,6 +74,8 @@ pip3 install cheetah3
 apt-get install python3-ephem
 apt-get install mysql-client
 apt-get install python3-mysqldb
+# weewx
+apt-get install python3-weewx
 </pre>
 </td>
 </tr>
@@ -80,7 +84,6 @@ apt-get install python3-mysqldb
 <td>debian8</td>
 <td>
 <pre>
-apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -93,6 +96,8 @@ apt-get install python-pip
 pip install pyephem
 apt-get install mysql-client
 apt-get install python-mysqldb
+# weewx
+apt-get install weewx
 </pre>
 </td>
 <td>
@@ -116,6 +121,8 @@ apt-get install python-pip
 pip install pyephem
 apt-get install mysql-client
 apt-get install python-mysqldb
+# weewx
+apt-get install weewx
 </pre>
 </td>
 <td>

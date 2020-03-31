@@ -63,7 +63,7 @@ apt-get install python-mysqldb
 ```
 
 ### debian8-python2
-``
+```
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging

@@ -141,13 +141,13 @@ apt-get install weewx
 <pre>
 # required
 yum install python-configobj
-yum install python-imaging
+yum install python-pillow
 yum install python-cheetah
-yum install python-setuptools
-pip install pyusb
-pip install pyserial
+yum install pyusb
+yum install pyserial
 # optional
-yum install pyephem
+yum install python-setuptools
+easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb
 # weewx

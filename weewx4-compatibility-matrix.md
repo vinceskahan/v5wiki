@@ -1,4 +1,10 @@
-# Compatibility matrix for weewx4
+# Compatibility matrix for weewx
+
+This page is an attempt to make sense of the dependencies and upgrade paths for weewx.  Although weewx (still) has few dependencies itself, the python2/python3 change introduced significant complexity, and the libraries weewx uses (notably python imaging and cheetah) vary widely between platforms.
+
+## Dependencies
+
+This is an enumeration of the weewx dependencies for each major operating system release.
 
 | os | python2 | python3 |
 |---|---|---|
@@ -9,3 +15,8 @@
 | el7 | | |
 | opensuse | | |
 | sel | | |
+
+## Upgrade paths
+
+This is an enumeration of the upgrade paths for weewx, for various operating system packages.
+

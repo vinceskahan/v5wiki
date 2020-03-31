@@ -6,7 +6,7 @@ This page is an attempt to make sense of the dependencies and upgrade paths for 
 
 This is an enumeration of the weewx dependencies for each major operating system release.
 
-### debian10-python3 (verified)
+### debian10-python3 (verified 31mar2020)
 ```
 # required
 apt-get install python3-configobj
@@ -20,7 +20,7 @@ apt-get install mariadb-client
 apt-get install python3-mysqldb
 ```
 
-### debian10-python2 (verified)
+### debian10-python2 (verified 31mar2020)
 ```
 # required
 apt-get install python-configobj

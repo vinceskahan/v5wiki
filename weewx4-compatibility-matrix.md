@@ -12,6 +12,7 @@ This is an enumeration of the weewx dependencies for each major operating system
 <td>debian10<br>31mar2020</td>
 <td>
 <pre>
+apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil
@@ -26,6 +27,7 @@ apt-get install python-mysqldb
 </td>
 <td>
 <pre>
+apt-get install python3-weewx
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -44,6 +46,7 @@ apt-get install python3-mysqldb
 <td>debian9<br>31mar2020</td>
 <td>
 <pre>
+apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -58,6 +61,7 @@ apt-get install python-mysqldb
 </td>
 <td>
 <pre>
+apt-get install python3-weewx
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -76,6 +80,30 @@ apt-get install python3-mysqldb
 <td>debian8</td>
 <td>
 <pre>
+apt-get install weewx
+# required
+apt-get install python-configobj
+apt-get install python-pil OR python-imaging
+apt-get install python-cheetah
+apt-get install python-usb
+apt-get install python-serial
+# optional
+apt-get install python-dev
+apt-get install python-pip
+pip install pyephem
+apt-get install mysql-client
+apt-get install python-mysqldb
+</pre>
+</td>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>debian7</td>
+<td>
+<pre>
+apt-get install weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging

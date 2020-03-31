@@ -108,8 +108,8 @@ apt-get install python-mysqldb
 yum install python-configobj
 apt-get install python-pil OR python-imaging
 yum install python-cheetah
-easy_install pyusb
-easy_install pyserial
+pip install pyusb
+pip install pyserial
 # optional
 apt-get install python-dev
 apt-get install python-pip

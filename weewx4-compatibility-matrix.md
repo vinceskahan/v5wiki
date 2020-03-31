@@ -6,22 +6,12 @@ This page is an attempt to make sense of the dependencies and upgrade paths for 
 
 This is an enumeration of the weewx dependencies for each major operating system release.
 
-### debian10-python3 (verified 31mar2020)
-```
-# required
-apt-get install python3-configobj
-apt-get install python3-pil
-apt-get install python3-cheetah
-apt-get install python3-usb
-apt-get install python3-serial
-# optional
-apt-get install python3-ephem
-apt-get install mariadb-client
-apt-get install python3-mysqldb
-```
-
-### debian10-python2 (verified 31mar2020)
-```
+<table>
+<tr><td>OS</td><td>python2</td><td>python3</td></tr>
+<tr>
+<td>debian10<br>31mar2020</td>
+<td>
+<pre>
 # required
 apt-get install python-configobj
 apt-get install python-pil
@@ -32,24 +22,28 @@ apt-get install python-serial
 apt-get install python-ephem
 apt-get install mariadb-client
 apt-get install python-mysqldb
-```
-
-### debian9-python3
-```
+</pre>
+</td>
+<td>
+<pre>
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
+apt-get install python3-cheetah
 apt-get install python3-usb
 apt-get install python3-serial
-pip3 install cheetah3
 # optional
 apt-get install python3-ephem
-apt-get install mysql-client
+apt-get install mariadb-client
 apt-get install python3-mysqldb
-```
+</pre>
+</td>
+</tr>
 
-### debian9-python2
-```
+<tr>
+<td>debian9<br>31mar2020</td>
+<td>
+<pre>
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -60,10 +54,28 @@ apt-get install python-serial
 apt-get install python-ephem
 apt-get install mysql-client
 apt-get install python-mysqldb
-```
+</pre>
+</td>
+<td>
+<pre>
+# required
+apt-get install python3-configobj
+apt-get install python3-pil
+apt-get install python3-usb
+apt-get install python3-serial
+pip3 install cheetah3
+# optional
+apt-get install python3-ephem
+apt-get install mysql-client
+apt-get install python3-mysqldb
+</pre>
+</td>
+</tr>
 
-### debian8-python2
-```
+<tr>
+<td>debian8</td>
+<td>
+<pre>
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -76,18 +88,22 @@ apt-get install python-pip
 pip install pyephem
 apt-get install mysql-client
 apt-get install python-mysqldb
-```
+</pre>
+</td>
+<td>
+</td>
+</tr>
 
-### centos8-python3
-```
-```
+<tr>
+<td>centos8</td>
+<td></td>
+<td></td>
+</tr>
 
-### centos7-python3
-```
-```
-
-### centos7-python2
-```
+<tr>
+<td>centos7</td>
+<td>
+<pre>
 # required
 yum install python-configobj
 apt-get install python-pil OR python-imaging
@@ -100,15 +116,13 @@ apt-get install python-pip
 pip install pyephem
 apt-get install mysql-client
 apt-get install python-mysqldb
-```
+</pre>
+</td>
+<td></td>
+</tr>
 
-### suse-python3
-```
-```
+</table>
 
-### suse-python2
-```
-```
 
 
 ## Upgrade paths

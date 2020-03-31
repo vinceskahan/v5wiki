@@ -141,16 +141,15 @@ apt-get install weewx
 <pre>
 # required
 yum install python-configobj
-apt-get install python-pil OR python-imaging
+yum install python-imaging
 yum install python-cheetah
+yum install python-setuptools
 pip install pyusb
 pip install pyserial
 # optional
-apt-get install python-dev
-apt-get install python-pip
-pip install pyephem
-apt-get install mysql-client
-apt-get install python-mysqldb
+yum install pyephem
+yum install mysql-client
+yum install python-mysqldb
 </pre>
 </td>
 <td></td>

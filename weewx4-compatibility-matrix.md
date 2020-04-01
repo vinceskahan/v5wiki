@@ -207,8 +207,14 @@ python3 setup.py install
 This is an enumeration of the upgrade paths for weewx, for various operating system packages.
 
 ```
+# upgrade path for a debian system with python2 to debian10 or later with python3
 apt-get install weewx
 apt-get install python3-weewx
+```
+```
+# upgrade path for a centos system from centos7 (python2) to centos8 or later (python3)
+yum install weewx
+yum install weewx 
 ```
 
 ## Issues
@@ -223,3 +229,5 @@ apt-get install python3-weewx
 * As of weewx 4, the python2 package is `el7` and the python3 package is `el8`.  This reflects the python support in the 7 and 8 releases of the operating system.
 
 ### suse packaging
+
+### bsd packaging

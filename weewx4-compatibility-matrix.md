@@ -13,6 +13,7 @@ This is an enumeration of the weewx dependencies for each major operating system
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
+#
 # required
 apt-get install python-configobj
 apt-get install python-pil
@@ -30,6 +31,7 @@ apt-get install weewx
 <td>
 <pre>
 # python3-weewx_x.y.z-n_all.deb
+#
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -51,6 +53,7 @@ apt-get install python3-weewx
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
+#
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -67,7 +70,8 @@ apt-get install weewx
 </td>
 <td>
 <pre>
-# python3-weewx_x.y.z-n_all.deb
+# not-supported
+#
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -79,7 +83,7 @@ apt-get install python3-ephem
 apt-get install mysql-client
 apt-get install python3-mysqldb
 # weewx
-apt-get install python3-weewx
+python setup.py install
 </pre>
 </td>
 </tr>
@@ -89,6 +93,7 @@ apt-get install python3-weewx
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
+#
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -106,7 +111,8 @@ apt-get install weewx
 </pre>
 </td>
 <td>
-# install weewx using setup.py
+# weewx
+python3 setup.py install
 </td>
 </tr>
 
@@ -115,6 +121,7 @@ apt-get install weewx
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
+#
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -132,18 +139,21 @@ apt-get install weewx
 </pre>
 </td>
 <td>
-# install weewx using setup.py
+# weewx
+python3 setup.py install
 </td>
 </tr>
 
 <tr>
 <td>centos8</td>
 <td>
-# install weewx using setup.py
+# weewx
+python2 setup.py install
 </td>
 <td>
 <pre>
 # weewx-x.y.z-n.el8.noarch.rpm
+#
 # required
 yum install python-configobj
 yum install python-pillow
@@ -166,6 +176,7 @@ yum install weewx
 <td>
 <pre>
 # weewx-x.y.z-n.el7.noarch.rpm
+#
 # required
 yum install python-configobj
 yum install python-pillow
@@ -182,7 +193,8 @@ yum install weewx
 </pre>
 </td>
 <td>
-# install weewx using setup.py
+# weewx
+python3 setup.py install
 </td>
 </tr>
 

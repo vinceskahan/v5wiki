@@ -70,7 +70,7 @@ apt-get install weewx
 </td>
 <td>
 <pre>
-# not-supported
+# no deb package
 #
 # required
 apt-get install python3-configobj
@@ -111,8 +111,14 @@ apt-get install weewx
 </pre>
 </td>
 <td>
+<pre>
+# no deb package
+#
+# required
+# optional
 # weewx
 python3 setup.py install
+</pre>
 </td>
 </tr>
 
@@ -139,16 +145,28 @@ apt-get install weewx
 </pre>
 </td>
 <td>
+<pre>
+# no deb package
+#
+# required
+# optional
 # weewx
 python3 setup.py install
+</pre>
 </td>
 </tr>
 
 <tr>
 <td>centos8</td>
 <td>
+<pre>
+# no rpm package
+#
+# required
+# optional
 # weewx
 python2 setup.py install
+</pre>
 </td>
 <td>
 <pre>
@@ -193,8 +211,14 @@ yum install weewx
 </pre>
 </td>
 <td>
+<pre>
+# no rpm package
+#
+# required
+# optional
 # weewx
 python3 setup.py install
+</pre>
 </td>
 </tr>
 

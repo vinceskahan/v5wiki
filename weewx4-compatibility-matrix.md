@@ -12,6 +12,7 @@ This is an enumeration of the weewx dependencies for each major operating system
 <td>debian10<br>31mar2020</td>
 <td>
 <pre>
+# weewx_x.y.z-n_all.deb
 # required
 apt-get install python-configobj
 apt-get install python-pil
@@ -28,6 +29,7 @@ apt-get install weewx
 </td>
 <td>
 <pre>
+# python3-weewx_x.y.z-n_all.deb
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -48,6 +50,7 @@ apt-get install python3-weewx
 <td>debian9<br>31mar2020</td>
 <td>
 <pre>
+# weewx_x.y.z-n_all.deb
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -64,6 +67,7 @@ apt-get install weewx
 </td>
 <td>
 <pre>
+# python3-weewx_x.y.z-n_all.deb
 # required
 apt-get install python3-configobj
 apt-get install python3-pil
@@ -84,6 +88,7 @@ apt-get install python3-weewx
 <td>debian8</td>
 <td>
 <pre>
+# weewx_x.y.z-n_all.deb
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -109,7 +114,7 @@ apt-get install weewx
 <td>debian7</td>
 <td>
 <pre>
-apt-get install weewx
+# weewx_x.y.z-n_all.deb
 # required
 apt-get install python-configobj
 apt-get install python-pil OR python-imaging
@@ -138,6 +143,7 @@ apt-get install weewx
 </td>
 <td>
 <pre>
+# weewx-x.y.z-n.el8.noarch.rpm
 # required
 yum install python-configobj
 yum install python-pillow
@@ -150,7 +156,7 @@ easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb
 # weewx
-rpm -i weewx-x.y.z-n.el8.noarch.rpm
+yum install weewx
 </pre>
 </td>
 </tr>
@@ -159,6 +165,7 @@ rpm -i weewx-x.y.z-n.el8.noarch.rpm
 <td>centos7<br>31mar2020</td>
 <td>
 <pre>
+# weewx-x.y.z-n.el7.noarch.rpm
 # required
 yum install python-configobj
 yum install python-pillow
@@ -171,7 +178,7 @@ easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb
 # weewx
-rpm -i weewx-x.y.z-n.el7.noarch.rpm
+yum install weewx
 </pre>
 </td>
 <td>

@@ -132,11 +132,27 @@ apt-get install weewx
 <tr>
 <td>centos8</td>
 <td></td>
-<td></td>
+<td>
+<pre>
+# required
+yum install python-configobj
+yum install python-pillow
+yum install python-cheetah
+yum install pyusb
+yum install pyserial
+# optional
+yum install python-setuptools
+easy_install install pyephem
+yum install mysql-client
+yum install python-mysqldb
+# weewx
+rpm -i weewx-x.y.z.rpm
+</pre>
+</td>
 </tr>
 
 <tr>
-<td>centos7</td>
+<td>centos7<br>31mar2020</td>
 <td>
 <pre>
 # required

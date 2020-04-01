@@ -101,6 +101,7 @@ apt-get install weewx
 </pre>
 </td>
 <td>
+# install weewx using setup.py
 </td>
 </tr>
 
@@ -126,6 +127,7 @@ apt-get install weewx
 </pre>
 </td>
 <td>
+# install weewx using setup.py
 </td>
 </tr>
 

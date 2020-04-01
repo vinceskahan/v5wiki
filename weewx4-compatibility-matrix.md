@@ -9,7 +9,7 @@ This is an enumeration of the weewx dependencies for each major operating system
 <table>
 <tr><td>OS</td><td>python2</td><td>python3</td></tr>
 <tr>
-<td>debian10<br><small>31mar2020</small></td>
+<td>debian10<br>31mar2020</td>
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
@@ -49,7 +49,7 @@ apt-get install python3-weewx
 </tr>
 
 <tr>
-<td>debian9<br><small>31mar2020</small></td>
+<td>debian9<br>31mar2020</td>
 <td>
 <pre>
 # weewx_x.y.z-n_all.deb
@@ -190,7 +190,7 @@ yum install weewx
 </tr>
 
 <tr>
-<td>centos7<br><small>31mar2020</small></td>
+<td>centos7<br>31mar2020</td>
 <td>
 <pre>
 # weewx-x.y.z-n.el7.noarch.rpm

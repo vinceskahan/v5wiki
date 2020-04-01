@@ -215,7 +215,15 @@ yum install weewx
 # no rpm package
 #
 # required
+pip3 install configobj
+pip3 install pil
+pip3 install cheetah
+pip3 install pyusb
+pip3 install pyserial
 # optional
+pip3 install ephem
+yum install mysql-client
+pip3 install mysqldb
 # weewx
 python3 setup.py install
 </pre>

@@ -131,7 +131,9 @@ apt-get install weewx
 
 <tr>
 <td>centos8</td>
-<td></td>
+<td>
+# install weewx using setup.py
+</td>
 <td>
 <pre>
 # required
@@ -146,7 +148,7 @@ easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb
 # weewx
-rpm -i weewx-x.y.z.rpm
+rpm -i weewx-x.y.z-n.el8.noarch.rpm
 </pre>
 </td>
 </tr>
@@ -167,10 +169,12 @@ easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb
 # weewx
-rpm -i weewx-x.y.z.rpm
+rpm -i weewx-x.y.z-n.el7.noarch.rpm
 </pre>
 </td>
-<td></td>
+<td>
+# install weewx using setup.py
+</td>
 </tr>
 
 </table>

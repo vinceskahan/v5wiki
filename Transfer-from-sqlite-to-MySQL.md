@@ -5,11 +5,11 @@ There are two general approaches to this problem:
 1. Use the command line utility `sqlite3` to dump the contents of the sqlite database to a file, then massage the file, then upload its contents to MySQL using the utility `mysql`; or
 2. Use the `wee_database` utility to transfer the sqlite archive to a MySQL database.
 
-The first is more general and can be done independently of WeeWX. The second is simpler, but requires access to a WeeWX installation. It also tends to be faster, although it can place large memory demands on your machine.
+The first is more general and can be done independently of WeeWX. The second is simpler, but requires access to a WeeWX installation. It also tends to be faster because the entire transfer is done as a single transaction.
 
 
 
-# Using sqlite3 and mysql commands
+# Using `sqlite3` and `mysql` commands
 
 For approach #1, first dump the sqlite database using the utility `sqlite3`. Adjust the path to the sqlite3 database, `weewx.sdb`, as necessary. Note: you may have to install `sqlite3` first. 
 
@@ -34,7 +34,10 @@ There is one more step before the new database can be used with WeeWX: creating 
     $ wee_database --rebuild-daily
 
 
-# Using wee_database
+# Using `wee_database`
+
+Using the utility `wee_database` is often faster. My modest Intel NUC, using a solid-state disk, can process
+about 1,500 records per second.
 
 To transfer a database using `wee_database`, data bindings for both the source and destination databases must exist in `weewx.conf`. Because the source database most likely will already exist, in most cases, only a binding for the destination database will need to be added to `weewx.conf`. To do this, edit `weewx.conf`, locate the `[DataBinding]` section, and add a binding for the destination database similar to the following:
 
@@ -61,7 +64,7 @@ This will result in output something like this:
 
     Using configuration file /home/weewx/weewx.conf
     Using database binding 'wx_binding', which is bound to database 'archive_sqlite'
-    Transfer 7814 records from source database 'weewx.sdb' to destination database 'weewx'.
+    Transfer 1310044 records from source database 'weewx.sdb' to destination database 'weewx'.
     Dry run, nothing done.
 
 If the dry run was successful the transfer can be completed using the following command:
@@ -70,11 +73,15 @@ If the dry run was successful the transfer can be completed using the following 
 
 This will result in output something like this:
 
-    Using configuration file /home/weewx/weewx.conf
-    Using database binding 'wx_binding', which is bound to database 'archive_sqlite'
-    Transfer 7814 records from source database 'weewx.sdb' to destination database 'weewx' (y/n)? y
-    transferring, this may take a while.... complete
-    7814 records transferred from source database 'weewx.sdb' to destination database 'weewx'.
+```
+Using configuration file /home/weewx/weewx.conf
+Using database binding 'wx_binding', which is bound to database 'archive_sqlite'
+Transfer 1310044 records from source database 'weewx.sdb' to destination database 'weewx' (y/n)? y
+transferring, this may take a while.... 
+processed: 1310000; Last date: 2020-03-28 14:35:00 PDT (1585431300)
+Completed.
+1310044 records transferred from source database 'weewx.sdb' to destination database 'weewx' in 785.88 seconds.
+```
 
 Once the transfer is complete and before the new database can be used with WeeWX the daily summaries need to be created inside the new database. If WeeWX is configured to use the new database, the daily summaries will be built automatically by WeeWX at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--rebuild-daily` option:
 

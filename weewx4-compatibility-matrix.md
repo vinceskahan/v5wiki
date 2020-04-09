@@ -8,7 +8,7 @@ This is an enumeration of the weewx dependencies for each major operating system
 
 <table>
 <tr><td>OS</td><td>python2</td><td>python3</td></tr>
-<tr>
+<tr valign="top">
 <td>debian10<br>31mar2020</td>
 <td>
 <pre>
@@ -48,7 +48,7 @@ apt-get install python3-weewx
 </td>
 </tr>
 
-<tr>
+<tr valign="top">
 <td>debian9<br>31mar2020</td>
 <td>
 <pre>
@@ -88,7 +88,7 @@ python3 setup.py install
 </td>
 </tr>
 
-<tr>
+<tr valign="top">
 <td>debian8</td>
 <td>
 <pre>
@@ -122,7 +122,7 @@ python3 setup.py install
 </td>
 </tr>
 
-<tr>
+<tr valign="top">
 <td>debian7</td>
 <td>
 <pre>
@@ -156,7 +156,7 @@ python3 setup.py install
 </td>
 </tr>
 
-<tr>
+<tr valign="top">
 <td>centos8</td>
 <td>
 <pre>
@@ -189,7 +189,7 @@ yum install weewx
 </td>
 </tr>
 
-<tr>
+<tr valign="top">
 <td>centos7<br>31mar2020</td>
 <td>
 <pre>

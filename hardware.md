@@ -114,7 +114,7 @@ The GL-MT300N-V2 is currently available at amazon Germany für less than EUR 25,
 
 <br clear="all">
 
-Orange Pi PC
+Orange Pi PC (April 2020)
 ---
 <img src="https://www.armbian.com/wp-content/uploads/2018/02/orangepipc.png" align="right" height="100">
 
@@ -122,4 +122,4 @@ http://www.orangepi.org/orangepipc/
 
 The Orange Pi Pc is a mini computer like a Raspberry Pi, but it has a powerful H3 SOC, three USB 2.0, a 100M Ethernet port and 1GB RAM.
 
-It cost about 14$ and works very fine with <a href="https://www.armbian.com/">Armbian</a>, <a href="https://pi-hole.net/">Pi-Hole</a>, and Weewx 3.9.2 with several skins.
+It cost about 14$ and works very fine with <a href="https://www.armbian.com/">Armbian</a>, <a href="https://pi-hole.net/">Pi-Hole</a>, and Weewx 3.9.2 with several skins simultaneously

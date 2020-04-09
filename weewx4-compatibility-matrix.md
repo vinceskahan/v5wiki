@@ -83,7 +83,7 @@ apt-get install python3-ephem
 apt-get install mysql-client
 apt-get install python3-mysqldb
 # weewx
-python setup.py install
+python3 setup.py install
 </pre>
 </td>
 </tr>

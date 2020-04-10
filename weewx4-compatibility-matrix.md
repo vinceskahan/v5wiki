@@ -175,14 +175,12 @@ python2 setup.py install
 # required
 yum install python3-configobj
 yum install python3-pillow
-yum install python-cheetah
+pip3 install cheetah3
 yum install python3-pyusb
 yum install python3-pyserial
 # optional
-yum install python3-setuptools
-easy_install install pyephem
-yum install mysql-client
-yum install python-mysqldb
+pip3 install pyephem
+yum install python3-pymysql
 # weewx
 yum install weewx
 </pre>

@@ -157,7 +157,7 @@ python3 setup.py install
 </tr>
 
 <tr valign="top">
-<td>centos8</td>
+<td>centos8<br/>09apr2020</td>
 <td>
 <pre>
 # no rpm package
@@ -215,7 +215,7 @@ yum install weewx
 # required
 pip3 install configobj
 pip3 install pil
-pip3 install cheetah
+pip3 install cheetah3
 pip3 install pyusb
 pip3 install pyserial
 # optional

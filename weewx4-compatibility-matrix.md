@@ -163,7 +163,14 @@ python3 setup.py install
 # no rpm package
 #
 # required
+pip2 install configobj
+pip2 install pil
+pip2 install cheetah
+pip2 install pyusb
+pip2 install pyserial
 # optional
+pip2 install pyephem
+pip2 install mysqlclient
 # weewx
 python2 setup.py install
 </pre>
@@ -173,16 +180,16 @@ python2 setup.py install
 # weewx-x.y.z-n.el8.noarch.rpm
 #
 # required
-yum install python3-configobj
-yum install python3-pillow
+dnf install python3-configobj
+dnf install python3-pillow
 pip3 install cheetah3
-yum install python3-pyusb
-yum install python3-pyserial
+dnf install python3-pyusb
+dnf install python3-pyserial
 # optional
 pip3 install pyephem
-yum install python3-pymysql
+dnf install python3-pymysql
 # weewx
-yum install weewx
+dnf install weewx
 </pre>
 </td>
 </tr>

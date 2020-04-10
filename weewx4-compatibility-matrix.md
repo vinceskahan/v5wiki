@@ -173,13 +173,13 @@ python2 setup.py install
 # weewx-x.y.z-n.el8.noarch.rpm
 #
 # required
-yum install python-configobj
-yum install python-pillow
+yum install python3-configobj
+yum install python3-pillow
 yum install python-cheetah
-yum install pyusb
-yum install pyserial
+yum install python3-pyusb
+yum install python3-pyserial
 # optional
-yum install python-setuptools
+yum install python3-setuptools
 easy_install install pyephem
 yum install mysql-client
 yum install python-mysqldb

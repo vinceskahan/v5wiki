@@ -93,7 +93,7 @@ This is how to specify the options in the MQTT extension configuration:
             #   Default is 'required'.
             cert_reqs = required
             # SSL/TLS protocol (optional).
-            #   Options include sslv1, sslv2, sslv23, tls, tlsv1.
+            #   Options include sslv1, sslv2, sslv23, tls, tlsv1, tlsv12
             #   Default is 'tlsv1'
             #   Not all options are supported by all systems.
             tls_version = tlsv1
@@ -135,7 +135,7 @@ The observation `outTemp` will be converted to degrees F and published to a topi
 
 ### Interaction with offline archive records
 
-When weewx starts after a period of time being off, then for at least the Davis station type, archive records with timestamps and associated data are retrieved from the weather station and added to weewx's database.  When the mqtt extension is configured, each of these archive records will be processed and result in MQTT messages; this can be viewed as MQTT catching up just as the main database catches up.  For aggregate messages, there will be a timestamp and data within a json object.  While MQTT isn't a database synchronization protocol, an MQTT listener that happens to be online at this time will receive the messages and could be storing them (e.g. in influxdb).
+When weewx starts after a period of time being off, then for any hardware with a data logger (such as the Davis  Vantage), archive records with timestamps and associated data are retrieved from the weather station and added to the database.  When the mqtt extension is configured, each of these archive records will be processed and result in MQTT messages; this can be viewed as MQTT catching up just as the main database catches up.  For aggregate messages, there will be a timestamp and data within a json object.  While MQTT isn't a database synchronization protocol, an MQTT listener that happens to be online at this time will receive the messages and could be storing them (e.g. in influxdb).
 
 For individual messages, the values are sent disconnected from the timestamps, and this is not clearly useful, but also fairly clearly not harmful.
 

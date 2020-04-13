@@ -5,7 +5,7 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-mqtt-0.19.tgz
+https://github.com/matthewwall/weewx-mqtt/archive/master.zip
 
 
 ### How to Install
@@ -20,7 +20,7 @@ sudo pip install python-cjson
 2.  Run the extension installer:
 
 ```
-sudo wee_extension --install weewx-mqtt-X.tgz
+sudo wee_extension --install weewx-mqtt.zip
 ```
 
 3.  Modify the weewx configuration file: 

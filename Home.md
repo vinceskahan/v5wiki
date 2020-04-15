@@ -53,7 +53,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
-* [Importing data from Weatherlink]
+* [Importing data from Weatherlink](Importing-data-from-Weatherlink)
 
 #### Troubleshooting
 * [Troubleshooting Davis stations](Troubleshooting-the-Davis-Vantage-station)

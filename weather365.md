@@ -26,7 +26,7 @@ The service is free. We use your weather data for model-control and development.
 
 The extension is available at:
 ```
-* Update 2018-12-12 - new version 1.3.4 (fixing precip. issues) *
+* Update 2020-04-16 - new version 1.3.7 (fixing some problems - minimize log-files) *
 https://stations.weather365.net/wxupdates/EXTENSION/ 
 ```
 

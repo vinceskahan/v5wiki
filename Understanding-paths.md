@@ -18,6 +18,8 @@ For example, if weewx was installed using setup.py to default location `/home/we
 /home/weewx/bin/weewxd /home/weewx/weewx.conf
 ```
 
+or
+
 ```
 cd /home/weewx
 ./bin/weewxd weewx.conf

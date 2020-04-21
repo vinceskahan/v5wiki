@@ -4,7 +4,7 @@ Understanding how paths work is a rather important part of working with the comm
 
 Let's start with a basic weewx operation: running weewx directly.  As explained in the user guide, this means invoking the weewx daemon, `weewxd`, and passing it a `weewx.conf` configuration file.  In its most general form, it looks like this:
 
-```
+```shell
 weewxd weewx.conf
 ```
 
@@ -14,13 +14,13 @@ However, the specifics of how this should actually be entered depend on how and 
 
 For example, if weewx was installed using setup.py to default location `/home/weewx`, then the following are equivalent:
 
-```
+```shell
 /home/weewx/bin/weewxd /home/weewx/weewx.conf
 ```
 
 or
 
-```
+```shell
 cd /home/weewx
 ./bin/weewxd weewx.conf
 ```
@@ -29,26 +29,34 @@ The first example uses an explicit, absolute path to both `weewxd` and `weewx.co
 
 The second example shows a `cd` (change directory) to the directory where weewx was installed (`/home/weewx`), followed by relative paths to both the `weewxd` and `weewx.conf`.  The use of `./` in `./bin/weewxd` might not be necessary for a non-root user, but is typically necessary for a root user.  This is because the current directory (`.`) is usually not in the `PATH` for the root user.
 
-If weewx were installed to `/opt/weewx` instead of `/home/weewx`, then the absolute paths would look like this instead:
+What will *not* work is this:
 
+```shell
+cd /home/weewx/bin
+weewxd ../weewx.conf
 ```
-/opt/weewx/bin/weewxd /opt/weewx/weewx.conf
+
+The reason why is a subtle one: by default, the "current directory" is not included in your `PATH`. The reason is to avoid accidentally running a malicious version of a common program like `ls` or `mv`. Instead, you must explicitly include the current directory when you invoke the program. So, this will work:
+
+```shell
+cd /home/weewx/bin
+./weewxd ../weewx.conf
 ```
 
 ### Installations using .deb or .rpm
 
 Now consider the case where weewx was installed from a .deb or .rpm package.  In this case, the following are equivalent:
 
-```
+```shell
 /usr/share/weewx/weewxd /etc/weewx/weewx.conf
 ```
 
-```
+```shell
 cd /usr/share/weewx
 ./weewxd /etc/weewx/weewx.conf
 ```
 
-```
+```shell
 weewxd /etc/weewx/weewx.conf
 ```
 
@@ -60,27 +68,27 @@ The third example illustrates a special feature of a .deb or .rpm installation. 
 
 ### Other weewx commands
 
-Other weewx commands use a similar pattern.  For example, the `wee_config_devic`e command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
+Other weewx commands use a similar pattern.  For example, the `wee_config_device` command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
 
-```
+```shell
 wee_device /path/to/weewx.conf --help
 ```
 
 For a setup.py installation, this would be:
 
-```
+```shell
 /home/weewx/bin/wee_device /home/weewx/weewx.conf --help
 ```
 
 For a .deb or .rpm installation, this would be:
 
-```
+```shell
 /usr/share/weewx/wee_device /etc/weewx/weewx.conf --help
 ```
 
 or, even more succinctly:
 
-```
+```shell
 wee_device --help
 ```
 

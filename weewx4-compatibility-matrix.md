@@ -254,8 +254,6 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 ### debian packaging
 * As of weewx 4, the python2 weewx is called `weewx` and the python3 package is called `python3-weewx`.  The python3 package is supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
 * The packages `weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  The package `python3-weewx` replaces `weewx`.  
-* We could use `/usr/share/weewx` and `/usr/share/weewx-python3` to distinguish between `weewx` and `python3-weewx`.  But then what about data `/var/lib/weewx`?  And would this not just confuse users even more?
-* If `weewx` and `python3-weewx` cannot co-exist, then they can at least be forward-compatible.  That means installing `python3-weewx` should not destroy data/config of a `weewx` install, just the code.  In that sense it looks like a version upgrade.
 
 ### redhat packaging
 * As of weewx 4, the python2 package is `el7` and the python3 package is `el8`.  This reflects the python support in the 7 and 8 releases of the operating system.

@@ -263,3 +263,10 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 ### suse packaging
 
 ### bsd packaging
+
+## Testing
+
+### debian9
+
+* weewx-3.9.2 to weewx-4.0.0b18 using `dpkg -i`: 22apr2020
+

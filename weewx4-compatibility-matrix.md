@@ -268,5 +268,5 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 
 ### debian9
 
-* weewx-3.9.2 to weewx-4.0.0b18 using `dpkg -i`: 22apr2020
-
+* weewx-3.9.2 to weewx-4.0.0b18 using `dpkg -i`: OK 22apr2020
+* weewx-4.0.0b18 using `dpkg -i`: FAIL 22apr2020 (two instances running, stop does not stop)

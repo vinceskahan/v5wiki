@@ -274,6 +274,6 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 | debian9 | weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian9 | weewx-3.9.2 to weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian9 | weewx-3.9.2 | `dpkg -i` | 2020.04.22 | OK |
-| debian8 | weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | FAIL: two instances running; stop does not stop |
-| debian8 | weewx-3.9.2 to weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | FAIL: stop does not stop |
+| debian8 | weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
+| debian8 | weewx-3.9.2 to weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian8 | weewx-3.9.2 | `dpkg -i` | 2020.04.22 | OK |

@@ -88,6 +88,19 @@ The solution is to create a specialized logger for just the `restx` module, so i
       level = INFO
 ```
 
+Or instead, suppose you are debugging the `restx` module. In this case it would desirable to set its logging `level` to `DEBUG` while other loggers continue to log `INFO` or higher. Again, the solution is to create a logger for the `restx` module.  In this case, along with setting the logging `level`, we need to define a `handler`. Because the `restx` logger will handle the logging for the `restx` module, we will also want to turn `propagate` off. Otherwise `INFO` and higher messages will be logged twice. Once by the `restx` logger and also by any parent handlers. Lastly, `debug` should be left at 0, so that the default `root` logging is `INFO`.
+The configuration would look something like this.
+```ini
+debug = 0
+
+[Logging]
+  [[loggers]]
+    [[[weewx.restx]]]
+      level = DEBUG
+      handlers = syslog,
+      propagate = 0
+```
+
 # Using `logging` in modules
 It's very easy to use `logging` from within a module, such as a new service, search list extension, etc. At the top of your code, include
 

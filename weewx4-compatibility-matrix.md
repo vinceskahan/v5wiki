@@ -252,9 +252,13 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 ## Issues
 
 ### debian packaging
-* As of weewx 4, the python2 weewx is called `weewx` and the python3 package is called `python3-weewx`.  The python3 package is supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
-* The packages `weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  The package `python3-weewx` replaces `weewx`.  
-* The `weewx` package is in the `wheezy` repository.  The `python3-weewx` package is in the `buster` repository.  If you stay on the `wheezy` track, then you will continue to use python2.  If you switch to the `buster` track (only for debian10 or later), then you will use python3.
+* As of weewx 4, the python2 weewx should be called `python-weewx` and the python3 package should be called `python3-weewx`.  The python3 package is supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
+* The packages `python-weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.
+* The package `python-weewx` replaces `weewx`.
+* The package `python3-weewx` replaces `weewx`.  
+* The `weewx` package has been marked as `squeeze` in the apt repository.
+* The `python3-weewx` package should be marked as `buster` in the apt repository.
+* If a user stays on the `squeeze` track, then that user should continue to use python2.  If a user switches to the `buster` track (only for debian10 or later), then that user should get python3.
 
 #### option 1: weewx is virtual package
 

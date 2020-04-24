@@ -299,6 +299,16 @@ Those who want python3 would use this (only on debian10 or later):
 ```
 deb [arch=all] http://weewx.com/apt/ buster main
 ```
+Can this be done with a single `/etc/apt/sources.list.d/weewx.list`?  If so, then how to distinguish `squeeze` versus `buster` at install time?
+
+Otherwise user must choose one pre-install:
+```
+# for python2
+wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/weewx.list
+# for python3
+wget -qO - http://weewx.com/apt/python3-weewx.list | sudo tee /etc/apt/sources.list.d/python3-weewx.list
+```
+What happens if both `weewx.list` and `python3-weewx.list` are in `sources.list.d`?  Does that cause problems for the `weewx` package?
 
 ### redhat packaging
 

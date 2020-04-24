@@ -255,7 +255,8 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 
 #### Desired behavior
 
-* As of weewx 4, the python2 weewx should be called `python-weewx` and the python3 package should be called `python3-weewx`.  The python3 package is supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
+* As of weewx 4, the python2 weewx should be called `python-weewx` and the python3 package should be called `python3-weewx`.
+* The `python3-weewx` package will be supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
 * The packages `python-weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  They differ only by (1) the contents of `/etc/default/weewx` and (2) the `Depends` in the `debian/control` file.
 * The package `python-weewx` replaces `weewx`.
 * The package `python3-weewx` replaces `weewx`.  

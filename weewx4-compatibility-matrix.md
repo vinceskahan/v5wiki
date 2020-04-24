@@ -256,7 +256,43 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 * The packages `weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  The package `python3-weewx` replaces `weewx`.  
 * The `weewx` package is in the `wheezy` repository.  The `python3-weewx` package is in the `buster` repository.  If you stay on the `wheezy` track, then you will continue to use python2.  If you switch to the `buster` track (only for debian10 or later), then you will use python3.
 
+#### option 1: weewx is virtual package
+
+`python-weewx` and `python3-weewx` are actual packages.  the only differences between them are:
+
+* the value of `PYTHON` in `/etc/default/weewx`
+* the value of `Depends` in the control file
+
+Would it be possible to use `update-alternatives` to switch between python2 and python3?
+
+* how to build a virtual package?
+* how to build weewx, python-weewx, and python3-weewx from a single control file?
+
+#### option 2: single package with smart Depends
+
+Create a single package called `weewx`.  In `debian/control`, make the `Depends` smart - it should default to python3 and associated packages, but if any of those fail or are not available, it falls back to the python and associated packages.
+
+Is this even possible?  A quick look at the syntax for `Depends` indicates `no`.  Although you can do a conditional dependency for a single package (e.g., `python-pillow | python-pil`), you cannot do combined boolean logic.  We would need something like `(python3 && python3-pil && python3-configobj && python3-cheetah) || (python && (python-pillow | python-pil) && python-configobj && python-cheetah)`
+
+#### option 3: two apt repositories
+
+There would be two packages: `python-weewx` and `python3-weewx`.  Each package would have the alias `weewx`, so you could install using `apt-get install weewx` for either one.
+
+There would be two apt repositories.  The `squeeze` repository would have the `python-weewx` package.  The `buster` repository would have the `python3-weewx` package.
+
+Users who have already been using weewx3 with python2 would continue as before.
+
+Those who want python2 would use this:
+```
+deb [arch=all] http://weewx.com/apt/ squeeze main
+```
+Those who want python3 would use this (only on debian10 or later):
+```
+deb [arch=all] http://weewx.com/apt/ buster main
+```
+
 ### redhat packaging
+
 * As of weewx 4, the python2 package is `el7` and the python3 package is `el8`.  This reflects the python support in the 7 and 8 releases of the operating system.
 
 ### suse packaging

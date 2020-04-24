@@ -260,8 +260,10 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 * The package `python-weewx` replaces `weewx`.
 * The package `python3-weewx` replaces `weewx`.  
 * The `weewx` package has been marked as `squeeze` in the apt repository.
+* The `python-weewx` package should be marked as `squeeze` in the apt repository.
 * The `python3-weewx` package should be marked as `buster` in the apt repository.
-* If a user stays on the `squeeze` track, then that user should continue to use python2.  If a user switches to the `buster` track (only for debian10 or later), then that user should get python3.
+* If a user specifies or stays on the `squeeze` release, then that user should continue to use python2.
+* If a user specifies or changes to the `buster` release, then that user should get python3 (only for debian10 or later).
 
 #### option 1: weewx is virtual package
 

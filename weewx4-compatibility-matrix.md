@@ -257,7 +257,9 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 
 * As of weewx 4, the python2 weewx should be called `python-weewx` and the python3 package should be called `python3-weewx`.
 * The `python3-weewx` package will be supported only for debian10 and later, since the python3 packages on which weewx depends are not available in a standard debian9, debian8, or debian7 distribution.  (It might be possible to hack that using backports, but that is left as an exercise to the reader)
-* The packages `python-weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  They differ only by (1) the contents of `/etc/default/weewx` and (2) the `Depends` in the `debian/control` file.
+* The packages `python-weewx` and `python3-weewx` cannot co-exist, since they both live in `/usr/share/weewx`.  They differ only by
+   * the contents of `/etc/default/weewx`
+   * the `Depends` in the `debian/control` file
 * The package `python-weewx` replaces `weewx`.
 * The package `python3-weewx` replaces `weewx`.  
 * The `weewx` package has been marked as `squeeze` in the apt repository.
@@ -266,17 +268,20 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 * If a user specifies or stays on the `squeeze` release, then that user should continue to use python2.
 * If a user specifies or changes to the `buster` release, then that user should get python3 (only for debian10 or later).
 
+#### Problems
+
+* When I put all of the packages into a single control file, I get three packages: `weewx`, `python-weewx`, and `python3-weewx`.  Only the `weewx` package gets all of the actual files, and the dependencies are not right.
+* dh-python runs, but it munges the shebang
+* sticking with home-grown `install` target and binary overrides for now
+
 #### option 1: weewx is virtual package
 
-`python-weewx` and `python3-weewx` are actual packages.  the only differences between them are:
-
-* the value of `PYTHON` in `/etc/default/weewx`
-* the value of `Depends` in the control file
+`python-weewx` and `python3-weewx` are actual packages, and `weewx` is a virtual package.
 
 Would it be possible to use `update-alternatives` to switch between python2 and python3?
 
 * how to build a virtual package?
-* how to build weewx, python-weewx, and python3-weewx from a single control file?
+
 
 #### option 2: single package with smart Depends
 

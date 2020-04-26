@@ -276,9 +276,9 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 * Build each package as `weewx` then rename the resulting .deb files to `python-weewx` and `python3-weewx`.
 * Since the `postinst` invokes `wee_config`, we might have to make `python-config` part of the `Pre-Depends`.  But debian docs say pretty strongly to not use `Pre-Depends` unless absolutely necessary.
 
-#### option 1: weewx is virtual package
+#### option 1: virtual package
 
-`python-weewx` and `python3-weewx` are actual packages, and `weewx` is a virtual package.
+`python-weewx` and `python3-weewx` are actual packages, and `weewx` is a virtual package.  To do this, `python-weewx` and `python3-weewx` each have a `Provides` in the control.  Unfortunately this does not fix the problem of using `weewx` to install - you cannot do `apt-get install weewx`, but must do `apt-get install python-weewx`.
 
 Would it be possible to use `update-alternatives` to switch between python2 and python3?
 
@@ -288,6 +288,8 @@ Would it be possible to use `update-alternatives` to switch between python2 and 
 
 > Basically, the solution is to define a binary dummy package with the same name as the old package in the control file of the new package. The new source package takes over the binary dummy package, and the old source package, which is then binaryless, will be cleaned up by rene, an archive cleanup tool. 
 https://wiki.debian.org/RenamingPackages
+
+This gets the `apt-get install weewx` to work, since we make `weewx` have a `Depends` on `python-weewx` and `python3-weewx`.  Requires two separate control files.
 
 However, we do not want the transition package to be cleaned up.
 

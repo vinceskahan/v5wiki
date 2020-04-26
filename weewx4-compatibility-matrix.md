@@ -271,9 +271,10 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 #### Problems
 
 * When I put all of the packages into a single control file, I get three packages: `weewx`, `python-weewx`, and `python3-weewx`.  Only the `weewx` package gets all of the actual files, and the dependencies are not right.
+* When I do the transitional package configuration, with `weewx` and `python-weewx` in one control and `weewx` and `python3-weewx` in another control, I get two .deb files for each control.  The `weewx` deb files appear to be identical.
 * When using dh-python, it runs, but it munges the shebang
 * For now, sticking with home-grown `install` target and binary overrides, with two separate invocations of debbuild - one for python-weewx and one for python3-weewx
-* Build each package as `weewx` then rename the resulting .deb files to `python-weewx` and `python3-weewx`.
+* Tried to build each package as `weewx` then rename the resulting .deb files to `python-weewx` and `python3-weewx`.  Had to use `dpkg --purge python-weewx` instead of `dpkg --purge weewx`
 * Since the `postinst` invokes `wee_config`, we might have to make `python-config` part of the `Pre-Depends`.  But debian docs say pretty strongly to not use `Pre-Depends` unless absolutely necessary.
 
 #### option 1: virtual package

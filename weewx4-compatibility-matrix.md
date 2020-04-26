@@ -315,7 +315,6 @@ Those who want python3 would use this (only on debian10 or later):
 ```
 deb [arch=all] http://weewx.com/apt/ buster main
 ```
-Can this be done with a single `/etc/apt/sources.list.d/weewx.list`?  If so, then how to distinguish `squeeze` versus `buster` at install time?
 
 Otherwise user must choose one pre-install:
 ```

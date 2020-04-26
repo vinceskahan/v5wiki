@@ -282,8 +282,6 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 
 Would it be possible to use `update-alternatives` to switch between python2 and python3?
 
-* how to build a virtual package?
-
 #### option 2: transition package
 
 > Basically, the solution is to define a binary dummy package with the same name as the old package in the control file of the new package. The new source package takes over the binary dummy package, and the old source package, which is then binaryless, will be cleaned up by rene, an archive cleanup tool. 

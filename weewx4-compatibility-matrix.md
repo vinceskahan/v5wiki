@@ -350,3 +350,6 @@ What happens if both `python-weewx.list` and `python3-weewx.list` are in `source
 | debian8 | weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian8 | weewx-3.9.2 to weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian8 | weewx-3.9.2 | `dpkg -i` | 2020.04.22 | OK |
+| centos7 | weewx-4.0.0b18 to weewx-3.9.2 | `yum downgrade` | 2020.04.27 | OK |
+| centos7 | weewx-4.0.0b18 | `yum install weewx` | 2020.04.27 | OK |
+| centos7 | weewx-3.9.2 to weewx-4.0.0b18 | `yum update weewx` | 2020.04.27 | OK |

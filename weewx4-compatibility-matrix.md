@@ -179,10 +179,12 @@ python2 setup.py install
 <pre>
 # weewx-x.y.z-n.el8.noarch.rpm
 #
+# required for cheetah
+dnf install epel-release
 # required
 dnf install python3-configobj
 dnf install python3-pillow
-pip3 install cheetah3
+dnf install python3-cheetah
 dnf install python3-pyusb
 dnf install python3-pyserial
 # optional

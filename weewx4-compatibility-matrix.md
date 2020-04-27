@@ -272,10 +272,16 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 
 * When I put all of the packages into a single control file, I get three packages: `weewx`, `python-weewx`, and `python3-weewx`.  Only the `weewx` package gets all of the actual files, and the dependencies are not right.
 * When I do the transitional package configuration, with `weewx` and `python-weewx` in one control and `weewx` and `python3-weewx` in another control, I get two .deb files for each control.  The `weewx` deb files appear to be identical.
-* When using dh-python, it runs, but it munges the shebang
-* For now, sticking with home-grown `install` target and binary overrides, with two separate invocations of debbuild - one for python-weewx and one for python3-weewx
-* Tried to build each package as `weewx` then rename the resulting .deb files to `python-weewx` and `python3-weewx`.  Had to use `dpkg --purge python-weewx` instead of `dpkg --purge weewx`
+* When using dh-python, it runs, but it munges the shebang.  So for now, sticking with home-grown `install` target and binary overrides, with two separate invocations of debbuild - one for python-weewx and one for python3-weewx
+* Tried to build each package as `weewx` then rename the resulting .deb files to `python-weewx` and `python3-weewx`.  Had to use `dpkg --purge python-weewx` instead of `dpkg --purge weewx`, so punt that approach.
+* Must ensure that any `wee_*` invocations in the postinst use `/usr/bin/wee_*` not `/usr/share/wee_*`.
 * Since the `postinst` invokes `wee_config`, we might have to make `python-config` part of the `Pre-Depends`.  But debian docs say pretty strongly to not use `Pre-Depends` unless absolutely necessary.
+
+#### current approach (apr2020): transitional package
+
+* for squeeze, continue with the package name `weewx`
+* for buster, use the package name `python3-weewx` that replaces transitional package `weewx`
+* still need to work out how to put this into the apt repository using aptly
 
 #### option 1: virtual package
 
@@ -314,20 +320,6 @@ Those who want python3 would use this (only on debian10 or later):
 ```
 deb [arch=all] http://weewx.com/apt/ buster main
 ```
-
-Otherwise user must choose one pre-install:
-```
-# for python2
-wget -qO - http://weewx.com/apt/python-weewx.list | sudo tee /etc/apt/sources.list.d/python-weewx.list
-# for python3
-wget -qO - http://weewx.com/apt/python3-weewx.list | sudo tee /etc/apt/sources.list.d/python3-weewx.list
-```
-```
-# for backward-compatibility with old docs.  the file weewx.list contains the squeeze reference.
-# could switch to buster when python2 support is dropped.
-wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/weewx.list
-```
-What happens if both `python-weewx.list` and `python3-weewx.list` are in `sources.list.d`?  Does that cause problems for the `weewx` package?
 
 ### redhat packaging
 

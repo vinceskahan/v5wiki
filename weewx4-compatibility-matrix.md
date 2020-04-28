@@ -308,17 +308,15 @@ Is this even possible?  A quick look at the syntax for `Depends` indicates `no`.
 
 #### Distribution: two apt repositories
 
-There would be two packages: `python-weewx` and `python3-weewx`.  Each package would have the alias `weewx`, so you could install using `apt-get install weewx` for either one.
-
 There would be two apt repositories.  The `squeeze` repository would have the `python-weewx` package.  The `buster` repository would have the `python3-weewx` package.
 
-Users who have already been using weewx3 with python2 would continue as before.
+Users who upgrade from weewx3 to weewx4, but continue with python2, do not have to change their apt configuration.
 
-Those who want python2 would use this:
+Users who do a new install with python2 would use this:
 ```
 deb [arch=all] http://weewx.com/apt/ squeeze main
 ```
-Those who want python3 would use this (only on debian10 or later):
+Users who do a new install with python3 would use this (only on debian10 or later):
 ```
 deb [arch=all] http://weewx.com/apt/ buster main
 ```

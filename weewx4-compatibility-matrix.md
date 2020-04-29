@@ -337,6 +337,7 @@ deb [arch=all] http://weewx.com/apt/ buster main
 | debian10 | python-weewx-4.0.0b18-3 | `apt-get install weewx` | 2020.04.28 | OK |
 | debian10 | weewx-3.9.2-1 to python-weewx-4.0.0b18-4 | `apt-get install weewx` | 2020.04.29 | OK |
 | debian9 | weewx-4.0.0b18-3 | `apt-get install weewx` | 2020.04.28 | OK |
+|debian<br>dpkg| | | | |
 | debian10 | weewx-4.0.0b18-1 | `dpkg -i` | 2020.04.22 | OK |
 | debian10 | weewx-3.9.2-1 to weewx-4.0.0b18-1 | `dpkg -i` | 2020.04.22 | OK |
 | debian10 | weewx-3.9.2-1 | `dpkg -i` | 2020.04.22 | OK |

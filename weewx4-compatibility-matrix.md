@@ -334,6 +334,7 @@ deb [arch=all] http://weewx.com/apt/ buster main
 | platform | install/upgrade | method | date | result |
 |---|---|---|---|---|
 |debian| | | | |
+| debian10 | weewx-4.0.0b18-3 | `apt-get install weewx` | 2020.04.28 | OK |
 | debian9 | weewx-4.0.0b18-3 | `apt-get install weewx` | 2020.04.28 | OK |
 | debian10 | weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |
 | debian10 | weewx-3.9.2 to weewx-4.0.0b18 | `dpkg -i` | 2020.04.22 | OK |

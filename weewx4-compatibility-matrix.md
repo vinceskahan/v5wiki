@@ -351,3 +351,10 @@ deb [arch=all] http://weewx.com/apt/ buster main
 | centos7 | weewx-3.9.2 to weewx-4.0.0b18 | `yum update weewx` | 2020.04.27 | OK |
 |suse| | | | |
 |openbsd| | | | |
+
+## References
+
+```
+# how to put the same package into different apt repos as different distributions
+https://groups.google.com/forum/#!topic/aptly-discuss/YTLXLUqBbFo
+```

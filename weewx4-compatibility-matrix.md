@@ -346,6 +346,8 @@ deb [arch=all] http://weewx.com/apt/ buster main
 | debian8 | weewx-4.0.0b18-1 | `dpkg -i` | 2020.04.22 | OK |
 | debian8 | weewx-3.9.2-1 to weewx-4.0.0b18-1 | `dpkg -i` | 2020.04.22 | OK |
 | debian8 | weewx-3.9.2-1 | `dpkg -i` | 2020.04.22 | OK |
+|ubuntu| | | | |
+| ubuntu 20.04 | python3-weewx-4.0.0b18-3 | `apt-get install weewx` | 2020.04.28 | OK |
 |centos| | | | |
 | centos8 | weewx-4.0.0b18-2 | `yum install weewx` | 2020.04.27 | OK |
 | centos7 | weewx-4.0.0b18-2 to weewx-3.9.2-1 | `yum downgrade weewx` | 2020.04.27 | OK |

@@ -49,7 +49,7 @@ There are two general strategies we could use:
 Conclusion? We have chosen **strategy #2**. While it means rewriting more code, in the end, it will result in fewer surprises and will be more future proof.
 
 
-## Cavaets
+## Caveats
 While strategy 2 results in simpler, cleaner code, it does have a few things you need to watch out for. Consider this comparison:
 
 ```python
@@ -287,6 +287,54 @@ help.
 If you are a developer, you will find yourself switching back and forth between Python 2 and Python 3. Each
 will need its own pre-requisites. It can be hard to keep track of the separate environments. I have found
 the tool [`pyenv`](https://github.com/pyenv/pyenv) invaluable to do this.
+
+
+# Packaging
+
+Although python2 is now past end-of-life, there are still plenty of good reasons to keep using it, and weewx4 will continue to work with both python2 and python3 for awhile.
+
+How do we minimize the number of packages?  Given the different levels of python2 and python3 support in each operating system, and the many different ways of installing python (2 or 3) on any platform, how do we minimize the number of packages that provide maximum platform options?
+
+* Provide python2 and python3 packages for each major linux distribution (debian, redhat, suse)
+* Use 'pure python' approach (setup.py) for all systems
+
+This results in 7 packages that must be distributed.  In fact, there are only really 4 definitions that must be maintained, since the python2/python3 variants for debian/redhat/suse are identical, differing only in the interpreter invocation and the dependencies.
+
+## Dependencies
+
+Although the dependencies for weewx are minimal, they are packaged and named on each operating system in many different ways.  We can use the dependency mechanism on each platform to hide that complexity from users who use the debian/redhat/suse packages, but we must enumerate each of the variations for those who use the setup.py approach, at least if they want the system-provided pre-requisites.  The pure python approach (use pip to install pre-requisites) does not really simplify the problem, since some of the pre-requisites (e.g., python-imaging) still have lower-level non-python requirements that are specific to each platform.
+
+## The shebang
+
+The entry points for the weewx code will continue to use this pattern for the shebang:
+```
+#!/usr/bin/env python
+```
+When install is done using setup.py, the shebang will be replaced with a tight binding to whichever python was invoked to do the install.  This is true whether done directly or within a virtual environment.
+
+When running weewx directly from a repository clone, the `python` binding will be lazy.  This provides maximum flexibility for development and quick testing.
+
+When running from per-platform package, the shebang will remain as `/usr/bin/env python`, but the python interpreter will be specified in `/etc/default/weewx`.  The actual entry points are shell stubs that are placed in `/usr/bin`, so they are automatically in the user's path.  Those stubs invoke the interpreter specified in `/etc/default/weewx`.  As a result, the python2 and python3 installations differ only in the contents of the `/etc/default/weewx` file (and of course any compiled code in `*.pyc` or `__pycache__`).
+
+The baseline file `/etc/default/weewx` looks like this:
+```
+WEEWX_PYTHON=python3
+WEEWX_BINDIR=/home/weewx/bin
+WEEWX_BIN=/home/weewx/bin/weewxd
+WEEWX_CFG=/home/weewx/weewx.conf
+```
+It is used by the entry points in `/usr/bin/wee*` and the init script `/etc/init.d/weewx`
+
+## Running as a daemon
+
+The initial release of weewx4 still uses `init.d` on all platforms except suse.  At some point we may convert the rpm and deb packages to use a systemd unit file, but not until:
+
+* we can be sure that there is only one unit file that will work on all platforms
+* the unit file will use the `/etc/default/weewx` contents
+* there is a standard pattern to use in the weewx documentation that is not specific to systemd
+
+There are still platforms that do not use systemd, and never will.
+
 
 # Resources
 [The Conservative Python 3 Porting Guide](https://portingguide.readthedocs.io/en/latest/index.html)<br/>

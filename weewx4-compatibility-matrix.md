@@ -240,7 +240,6 @@ python3 setup.py install
 </table>
 
 
-
 ## Upgrade paths
 
 This is an enumeration of the upgrade paths for weewx, for various operating system packages.
@@ -251,7 +250,33 @@ This is an enumeration of the upgrade paths for weewx, for various operating sys
 | any debian<br>python2 | any debian<br>python2 | apt-get install weewx |
 | centos7<br>python2 | centos8<br>python3 | yum update weewx |
 
-## Issues
+
+## How to deal with both python2 and python3
+
+Although python2 is now past end-of-life, there are still plenty of good reasons to keep using it, and weewx4 will continue to work with both python2 and python3 for awhile.
+
+So how do we use one codebase with two python?  Use six.py or individual try/except blocks for APIs that are different between python2 and python3.
+
+### Dependencies
+
+How do we minimize the number of packages?  Given the different levels of python2 and python3 support in each operating system, and the many different ways of installing python (2 or 3) on any platform, how do we minimize the number of packages that provide maximum platform options?
+
+* Provide python2 and python3 packages for each major linux distribution (debian, redhat, suse)
+* Use 'pure python' approach (setup.py) for all systems
+
+### The shebang
+
+The entry points for the weewx code will continue to use this pattern for the shebang:
+```
+#!/usr/bin/env python
+```
+When install is done using setup.py, the shebang will be replaced with a tight binding to whichever python was invoked to do the install.  This is true whether done directly or within a virtual environment.
+
+When running weewx directly from a repository clone, the `python` binding will be lazy.  This provides maximum flexibility for development and quick testing.
+
+When running from per-platform package, the shebang will remain as `/usr/bin/env python`, but the python interpreter will be specified in `/etc/default/weewx`.  The actual entry points are shell stubs that are placed in `/usr/bin`, so they are automatically in the user's path.  Those stubs invoke the interpreter specified in `/etc/default/weewx`.  As a result, the python2 and python3 installations differ only in the contents of the `/etc/default/weewx` file (and of course any compiled code in `*.pyc` or `__pycache__`).
+
+## Packaging
 
 ### debian packaging
 

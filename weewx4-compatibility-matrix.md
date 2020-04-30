@@ -276,6 +276,25 @@ When running weewx directly from a repository clone, the `python` binding will b
 
 When running from per-platform package, the shebang will remain as `/usr/bin/env python`, but the python interpreter will be specified in `/etc/default/weewx`.  The actual entry points are shell stubs that are placed in `/usr/bin`, so they are automatically in the user's path.  Those stubs invoke the interpreter specified in `/etc/default/weewx`.  As a result, the python2 and python3 installations differ only in the contents of the `/etc/default/weewx` file (and of course any compiled code in `*.pyc` or `__pycache__`).
 
+The baseline file `/etc/default/weewx` looks like this:
+```
+WEEWX_PYTHON=python3
+WEEWX_BINDIR=/home/weewx/bin
+WEEWX_BIN=/home/weewx/bin/weewxd
+WEEWX_CFG=/home/weewx/weewx.conf
+```
+It is used by the entry points in `/usr/bin/wee*` and the init script `/etc/init.d/weewx`
+
+### Running as a daemon
+
+The initial release of weewx4 still uses `init.d` on all platforms except suse.  At some point we may convert the rpm and deb packages to use a systemd unit file, but not until:
+
+* we can be sure that there is only one unit file that will work on all platforms
+* the unit file will use the `/etc/default/weewx` contents
+* there is a standard pattern to use in the weewx documentation that is not specific to systemd
+
+There are still platforms that do not use systemd, and never will.
+
 ## Packaging
 
 ### debian packaging

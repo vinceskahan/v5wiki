@@ -18,6 +18,7 @@ The big advantage of the `logging` module is its ability to be extensively custo
 
 First, read, or, at least, attempt to read, the section on the [schema of the configuration dictionary](https://docs.python.org/3/library/logging.html#module-logging) that `logging` uses. It's dense and hard to follow, but it will eventually sink in. 
 
+## Defaults
 With that in mind, here is the default configuration that WeeWX uses (Linux only; the defaults are slightly
 different on the Mac or Windows):
 
@@ -67,6 +68,7 @@ The value for `{log_level}` depends on whether or not the `debug` option has bee
 
 The value for `{process_name}` is passed in when setting up the logging facility. For the WeeWX main program, it is `weewxd` (see below).
 
+## Specifying other handlers
 An example. Say you want to log to not only the system log (the default), but to the console as well. Then add this to your `weewx.conf` file:
 
 ```ini
@@ -77,6 +79,7 @@ An example. Say you want to log to not only the system log (the default), but to
 ```
 This will override the default list of handlers, which consists only of `syslog`, with a new list, that includes `console` as well as `syslog`.
 
+## Supressing log events
 Another example. Say you've decided that the `restx` module is too chatty for your liking when `debug` is on. You want to see only `INFO` messages and above --- nothing else. However, when `debug` is on, the default "root" logger will show `DEBUG` messages above ---basically everything.
 
 The solution is to create a specialized logger for just the `restx` module, so it no longer inherits properties from the root logger. For this logger, we will specify that it logs only `INFO` and above. To do this, the `[Logging]` section would look like:
@@ -101,6 +104,46 @@ debug = 0
       propagate = 0
 ```
 
+## Logging to rotating files.
+By default, the logging module logs to the "system log". In some cases, you may want to log to a
+set of rotating log files, such as `/var/log/weewx.log`. The WeeWX logging facility allows you
+to do this.
+
+Add this to `weewx.conf`:
+
+```ini
+[Logging]
+    [[loggers]]
+        # Root logger
+        [[[root]]]
+          handlers = rotate,            # 1
+    [[handlers]]
+        # Log to a set of rotating files    
+        [[[rotate]]]
+            level = DEBUG               # 2
+            formatter = standard        # 3
+            class = weeutil.logger.RotatingFileHandler  # 4
+            filename = /tmp/weewx.log   # 5
+            maxBytes = 10000000         # 6
+            backupCount = 4             # 7
+```
+
+Here's the meaning of the various lines:
+
+1. This tells the logging facility to use the `rotate` handler, instead of the default `syslog`
+handler.
+2. The default log level will be `DEBUG`. Everything with priority `DEBUG` or higher will get 
+logged.
+3. How shall the entries get formatted? This tells the logging facility to use the "standard"
+formatter. 
+4. Option `class` identifies the class of the handler that to be used. It should be set to
+`weeutil.logger.RotatingFileHandler`.
+5. Option `filename` specifies the location of the file in which the logs will appear.
+6. Option `maxBytes` is how big the file will be allowed to grow before logging is rotated into
+a new file.
+7. Option `backupCount` is how many rotated files to be retained before deletion.  
+ 
+The `rotate` handler also serves as a good example of overriding default logging behavior.
 # Using `logging` in modules
 It's very easy to use `logging` from within a module, such as a new service, search list extension, etc. At the top of your code, include
 

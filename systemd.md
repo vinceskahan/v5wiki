@@ -1,8 +1,15 @@
 ## How to configure weewx to run in a systemd environment
 
-If your system uses systemd to manage the starting and stopping of daemons, you might want to configure weewx specifically for systemd (`weewx.service`) instead of using the traditional rc script (`/etc/init.d/weewx`).  On most systems with systemd, the weewx rc script will still work.
+This page has been (partially?) updated for weewx version 4.
 
-### The `weewx.service` file
+If your system uses systemd to manage the starting and stopping of daemons, you might want to configure weewx specifically for systemd (`weewx.service`) instead of using the traditional rc script (`/etc/init.d/weewx`).  On most systems with systemd, the weewx rc script will still work and systemd commands can and should be used manage the rc script.
+If you want to run weewx as a non-root user then the systemd service route is simpler.
+
+Version 4 comes with even more variations in installation, with a choice between python versions.
+The instructions here might apply to your installation, or you might need to adapt them to your situation.
+Note, because of the complexity of options, _some _of the configuration parameters (for example in `/etc/default/weewx` in Debian-like systems) are still examined by `/usr/bin/weewxd`, even under this systemd.service configuration.
+
+### The `weewx.service` file in setup.py installations
 
 The weewx distribution includes a systemd "unit" file called [`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service) that tells systemd how to run weewx.  It looks something like this:
 
@@ -37,6 +44,62 @@ PIDFile=/var/run/weewx.pid
 # See notes; by default weewx will run with root privileges
 #User=weewx
 #Group=weewx
+
+[Install]
+WantedBy=multi-user.target
+```
+
+To install this file, put it in the systemd configuration directory as `/etc/systemd/system/weewx.service`
+
+Be sure that the paths in the `ExecStart` parameter match your weewx installation.
+
+### Debian package installation
+These instructions apply to installation via apt to standard system directories (rather than /home/weewx).
+
+The weewx package does not include a systemd "unit" file.
+You will need to create your own, called something like `weewx.service`.
+Use the following as a template and edit according to your requirements:
+```ini
+# systemd configuration for weewx
+[Unit]
+Description=weewx weather system
+Requires=time-sync.target
+After=time-sync.target
+
+# Uncomment the following two line if your database is written using mysql or MariaDB on the same host
+#After=mysql.service
+#BindsTo=mysql.service
+
+# The following two lines  should be uncommented and used if you
+# have enabled Restart=on-failure in the [Service] section below.
+# StartLimitIntervalSec=100
+# StartLimitBurst=5
+
+[Service]
+# The following two lines may be uncommented and used if you
+# want the weewx service to automatically restart if it crashes.
+# This can be particularly useful if weewx has an IP connection to the weather station
+# it is monitoring, since transient network problems are quite
+# common, and may cause the daemon to crash.
+# Adjust timing according to the typical recovery times in your situation
+#Restart=on-failure
+#RestartSec=20
+
+# See notes later in this wiki; by default weewx will run with root privileges, so
+# comment out the following two lines to run weewx as root.
+User=weewx
+Group=weewx
+# create a runtime directory below /run, because non-root users cannot create a file in /run itself
+# This works for root as well as non-root users.
+RuntimeDirectory=weewx
+PIDFile=/run/weewx/weewx.pid
+# setting the preserve option stops systemd deleting the PID file when weewx exits (debugging only)
+# RuntimeDirectoryPreserve=yes
+
+
+ExecStart=/usr/bin/weewxd --daemon --pidfile=/run/weewx/weewx.pid /etc/weewx/weewx.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Type=forking
 
 [Install]
 WantedBy=multi-user.target

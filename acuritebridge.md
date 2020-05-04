@@ -62,7 +62,7 @@ So you must make a DNS entry for `hubapi.myacurite.com` and `www.acu-link.com` t
 
 By the way, you can continue to use smarthub with new acurite sensors - at least until acurite changes their RF protocols.  The smarthubs still have a many years of life left in them, even though acurite has abandoned those who purchased them.  Acurite is not likely to change the RF protocols, since even the latest (2019) wifi consoles still know how to talk to the sensors that shipped with the bridge.
 
-The remote sensors are pretty cheap - I've seen them for as little as $5 each at walmart.  Although you could skip the bridge altogether by using a USB software-defined radio (SDR), in some cases it might be easier/cheaper to use a bridge.
+The remote sensors are pretty cheap - I've seen them for as little as $5 each at walmart.  Although you could skip the bridge altogether by using a USB software-defined radio (SDR), in some cases it might be easier/cheaper to use a bridge. (This article focusses on extending the life of an Accurite Bridge. SDR is more generalised, as it is brand-agnostic, but it is more challenging as it requires writing Sensor Maps. richardh9935)
 
 ## What does it look like?
 

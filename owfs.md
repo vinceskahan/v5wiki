@@ -46,12 +46,12 @@ some examples...
 --face=/dev/i2c-1 # on a raspberry pi?
 --iface=localhost:4304 # when using the owserver
 ```
-and its usage...
+and its usage (from the paths in a setup.py installation)...
 ```
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --iface=localhost:4304 --sensors
 ```
 
-Find out what sensors are attached:
+To find out what sensors are attached:
 ```
 # if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
@@ -60,7 +60,7 @@ sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --sensors
 ```
 
-Get some data from the sensors:
+To get data from all the sensors:
 
 ```
 # if you installed using setup.py:
@@ -69,7 +69,7 @@ sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
 # if you installed from rpm or deb package:
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 ```
-or get some data from a sensor:
+or get some data from a specific sensor:
 
 ```
 # if you installed using setup.py:
@@ -81,12 +81,22 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --reading=
 
 4.  Modify weewx.conf:
 
+Specify OWFS as the driver:
+
+```
+    [Station]
+        ...
+        station_type = OWFS
+```
 Specify the driver, interface, sensor map and possibly sensor types:
 ```
 interface = u # is used for the DS9490R USB adaptor
 interface = /dev/i2c-1 # would be used on a pi through the i2c-1 device
 interface = localhost:4304 # when accessing the devices via the owserver
 ```
+
+then fill in the OWFS section with your configuration
+
 ```
     [OWFS]
         interface = u
@@ -100,15 +110,7 @@ interface = localhost:4304 # when accessing the devices via the owserver
             lightning = counter
 ```
 
-Specify OWFS as the driver:
-
-```
-    [Station]
-        ...
-        station_type = OWFS
-```
-
-Add calibration corrections for individual sensors:
+As required, add calibration corrections for individual sensors:
 
 ```
     [StdCalibrate]
@@ -116,17 +118,21 @@ Add calibration corrections for individual sensors:
             radiation = radiation * 1.7304636.
 ```
 
-6. Start weewx
+6. Restart weewx
 
 ```
+sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
+
 ```
 
 ### Caveats ### 
 
 The interface defaults to 'u', which is short for 'usb'.  This is the interface for a DS9490R USB adaptor.  Other options for interface include a serial port such as '/dev/ttyS0', or a remote one-wire server such as 'remote_system:3003'.
 
-If you are using a one-wire-to-USB adapter, then the default interface of 'u' should work.  If your one-wire devices are attached via serial port, i2c, or some other physical interface, then you will have to specify the interface when running owfs.py direction and when configuring owfs.py to run as a service or driver.  Use the ```--iface``` option on the command-line or the ```interface``` option in the OWFS section of weewx.conf.
+If you are using a one-wire-to-USB adapter, then the default interface of 'u' should work.  If your one-wire devices are attached via serial port, i2c, or some other physical interface, then you will have to specify the interface when running owfs.py direction and when configuring owfs.py to run as a service or driver.  
+
+Use the ```--iface``` option on the command-line or the ```interface``` option in the OWFS section of weewx.conf.
 
 See the comments in owfs.py for additional options and for examples of how to configure for specific devices.
 

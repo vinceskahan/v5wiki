@@ -19,6 +19,11 @@ http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.21.tgz
 ```
 sudo apt-get install python-ow
 ```
+or if using weewx4 with python 3
+
+```
+sudo apt-get install python3-ow
+```
 
 2.  Run the extension installer:
 
@@ -26,8 +31,27 @@ sudo apt-get install python-ow
 wee_extension --install weewx-owfs-x.y.tgz
 ```
 
-3.  Find out what sensors are attached:
+3. Manually query the 1-wire bus for sensors or values
 
+This can be used to get the paths and values for the /[/[sensor_type\]\] and /[/[sensor_map\]\] for each sensor. 
+
+Specifying an interface to use
+
+If you are using the USB adaptor (DS9490R) then the iface does not need to be specified. It is the default entry.
+
+If it is anything else, that will need specifying as --iface=XXXXX
+
+some examples...
+```
+--face=/dev/i2c-1 # on a raspberry pi?
+--iface=localhost:4304 # when using the owserver
+```
+and its usage...
+```
+sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --iface=localhost:4304 --sensors
+```
+
+Find out what sensors are attached:
 ```
 # if you installed using setup.py:
 sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
@@ -36,7 +60,7 @@ sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --sensors
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --sensors
 ```
 
-4.  Get some data from the sensors:
+Get some data from the sensors:
 
 ```
 # if you installed using setup.py:
@@ -45,11 +69,24 @@ sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --readings
 # if you installed from rpm or deb package:
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --readings
 ```
+or get some data from a sensor:
 
-5.  Modify weewx.conf:
+```
+# if you installed using setup.py:
+sudo PYTHONPATH=/home/weewx/bin python /home/weewx/bin/user/owfs.py --reading=/1D.30C60D000000/counter.B
+
+# if you installed from rpm or deb package:
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/owfs.py --reading=/1D.30C60D000000/counter.B
+```
+
+4.  Modify weewx.conf:
 
 Specify the driver, interface, sensor map and possibly sensor types:
-
+```
+interface = u # is used for the DS9490R USB adaptor
+interface = /dev/i2c-1 # would be used on a pi through the i2c-1 device
+interface = localhost:4304 # when accessing the devices via the owserver
+```
 ```
     [OWFS]
         interface = u
@@ -76,7 +113,7 @@ Add calibration corrections for individual sensors:
 ```
     [StdCalibrate]
         [[Corrections]]
-            radiation = radiation * 1.7304636.  `
+            radiation = radiation * 1.7304636.
 ```
 
 6. Start weewx
@@ -85,7 +122,7 @@ Add calibration corrections for individual sensors:
 sudo /etc/init.d/weewx start
 ```
 
-### Caveats
+### Caveats ### 
 
 The interface defaults to 'u', which is short for 'usb'.  This is the interface for a DS9490R USB adaptor.  Other options for interface include a serial port such as '/dev/ttyS0', or a remote one-wire server such as 'remote_system:3003'.
 
@@ -104,6 +141,9 @@ The driver will work only with sensor values that can be converted to float.
 Use the corrections in StdCalibrate to calibrate raw data.
 
 The ow utilities owftpd, owhttpd, and owserver are part of the owfs package, not part of the weewx owfs extension.  They might be helpful for debugging and diagnostics, but they do not need to be running and do not even need to be installed.
+
+If you do install the owserver, it can be used as an intermediary by specifying ' interface = localhost:4304 '
+You may need to use this method if the pyownet module is installed, instead of the python-ow module (which may not always be available)
 
 Some sensors require a recent build of owfs.  If your sensor is not recognized, try updating owfs or compile it yourself.
 

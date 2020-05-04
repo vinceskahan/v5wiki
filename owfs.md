@@ -37,7 +37,7 @@ This can be used to get the paths and values for the /[/[sensor_type\]\] and /[/
 
 Specifying an interface to use
 
-If you are using the USB adaptor (DS9490R) then the iface does not need to be specified. It is the default entry.
+If you are using the USB adaptor (DS9490R) without an owserver running (the original installation method) then the iface does not need to be specified. It is the default entry.
 
 If it is anything else, that will need specifying as --iface=XXXXX
 

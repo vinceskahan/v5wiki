@@ -56,7 +56,8 @@ apt-get install python3-weewx
 #
 # required
 apt-get install python-configobj
-apt-get install python-pil OR python-imaging
+apt-get install python-pil
+   OR apt install python-imaging
 apt-get install python-cheetah
 apt-get install python-usb
 apt-get install python-serial

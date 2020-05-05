@@ -57,7 +57,7 @@ apt-get install python3-weewx
 # required
 apt-get install python-configobj
 apt-get install python-pil
-   OR apt install python-imaging
+   OR apt-get install python-imaging
 apt-get install python-cheetah
 apt-get install python-usb
 apt-get install python-serial
@@ -97,7 +97,8 @@ python3 setup.py install
 #
 # required
 apt-get install python-configobj
-apt-get install python-pil OR python-imaging
+apt-get install python-pil
+  OR apt-get install python-imaging
 apt-get install python-cheetah
 apt-get install python-usb
 apt-get install python-serial
@@ -131,7 +132,8 @@ python3 setup.py install
 #
 # required
 apt-get install python-configobj
-apt-get install python-pil OR python-imaging
+apt-get install python-pil
+ OR apt-get install python-imaging
 apt-get install python-cheetah
 apt-get install python-usb
 apt-get install python-serial

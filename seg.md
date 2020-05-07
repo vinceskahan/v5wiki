@@ -10,14 +10,14 @@ This is an extension to weewx that uploads weather data to smart energy groups.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-seg-0.8.tgz
+wget -O weewx-seg.zip https://github.com/matthewwall/weewx-seg/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-seg-x.y.tgz
+wee_extension --install weewx-seg.zip
 ```
 
 2.  Modify weewx.conf:

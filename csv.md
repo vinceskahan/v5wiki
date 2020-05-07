@@ -4,14 +4,14 @@ This is a service for weewx that saves sensor data to a file as comma-separated 
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-csv-0.10.tgz
+wget -O weewx-csv.zip https://github.com/matthewwall/weewx-csv/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-csv-x.y.tgz
+wee_extension --install weewx-csv.tgz
 ```
 
 2.  Modify weewx.conf:

@@ -8,14 +8,14 @@ http://sailing.mit.edu/weather/darkness
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-simple-0.4.tgz
+wget -O weewx-simple.zip https://github.com/matthewwall/weewx-simple/archive/master.zip
 
 ### Installation
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-simple-x.y.tgz
+wee_extension --install weewx-simple.zip
 ```
 
 2.  Restart weewx

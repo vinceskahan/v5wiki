@@ -5,14 +5,14 @@ http://sailing.mit.edu/weather/amphibian
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-amphibian-0.11.tgz
+wget -O weewx-amphibian.zip https://github.com/matthewwall/weewx-amphibian/archive/master.zip
 
 ## Installation
 
 1. Run the extension installer:
 
 ```
-wee_extension --install weewx-amphibian-x.y.tgz
+wee_extension --install weewx-amphibian.tgz
 ```
 
 2. Restart weewx:

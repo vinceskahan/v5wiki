@@ -17,7 +17,7 @@ wget -O weewx-maxbotix.zip https://github.com/matthewwall/weewx-maxbotix/archive
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-maxbotix-x.y.tgz
+wee_extension --install weewx-maxbotix.zip
 ```
 
 2.  Modify weewx.conf:

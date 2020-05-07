@@ -28,7 +28,7 @@ sudo apt-get install python3-ow
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-owfs-x.y.tgz
+wee_extension --install weewx-owfs.zip
 ```
 
 3. Manually query the 1-wire bus for sensors or values

@@ -8,14 +8,14 @@ The ComputerMonitor (cmon) is a weewx service that collects CPU load, memory use
 
 ### Download
 
-wget https://github.com/matthewwall/weewx-cmon/archive/master.zip
+wget -O weewx-cmon.zip https://github.com/matthewwall/weewx-cmon/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer
 
 ```
-wee_extension --install weewx-cmon-x.y.z.tgz
+wee_extension --install weewx-cmon.tgz
 ```
 
 2.  Restart weewx

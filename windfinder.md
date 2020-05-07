@@ -17,14 +17,14 @@ There you will enter details about your weather station, then obtain a station i
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-windfinder-0.9.tgz
+wget -O weewx-windfinder.zip https://github.com/matthewwall/weewx-windfinder/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-windfinder-x.y.tgz
+wee_extension --install weewx-windfinder.zip
 ```
 2.  Modify weewx.conf:
 

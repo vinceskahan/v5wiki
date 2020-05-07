@@ -4,14 +4,14 @@ This is an extension to weewx that uploads weather data to WeatherBug.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wbug-0.6.tgz
+wget -O weewx-wbug.zip https://github.com/matthewwall/weewx-wbug/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-wbug-x.y.tgz
+wee_extension --install weewx-wbug.zip
 ```
 
 2.  Modify weewx.conf

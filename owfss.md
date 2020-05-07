@@ -10,7 +10,7 @@ This is a service for weewx that collects data from one-wire sensors using owfs.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.21.tgz
+wget -O weewx-owfs.zip https://github.com/matthewwall/weewx-owfs/archive/master.zip
 
 ### How to Install
 
@@ -23,7 +23,7 @@ sudo apt-get install python-ow
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-owfs-x.y.tgz
+wee_extension --install weewx-owfs.zip
 ```
 
 3.  Find out what sensors are attached:

@@ -4,14 +4,14 @@ This is an extension to weewx that uploads weather data to OpenWeatherMap.
 
 ## Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owm-0.8.tgz
+wget -O weewx-owm.zip https://github.com/matthewwall/weewx-owm/archive/master.zip
 
 ## How to Install
 
 1.  Run the extension installer:
 
     ```
-    wee_extension --install weewx-owm-x.y.tgz
+    wee_extension --install weewx-owm.zip
     ```
 
 2.  Modify weewx.conf:

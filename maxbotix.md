@@ -10,7 +10,7 @@ This is a service for weewx that collects data from maxbotix sensors with the RS
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-maxbotix-0.5.tgz
+wget -O weewx-maxbotix.zip https://github.com/matthewwall/weewx-maxbotix/archive/master.zip
 
 ### How to Install
 

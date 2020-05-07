@@ -15,7 +15,7 @@ wget -O weewx-cmon.zip https://github.com/matthewwall/weewx-cmon/archive/master.
 1.  Run the extension installer
 
 ```
-wee_extension --install weewx-cmon.tgz
+wee_extension --install weewx-cmon.zip
 ```
 
 2.  Restart weewx

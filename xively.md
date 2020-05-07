@@ -11,14 +11,14 @@ This is an extension to weewx that uploads weather data to xively (formerly pach
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-xively-0.7.tgz
+wget -O weewx-xively.zip https://github.com/matthewwall/weewx-xively/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-xively-x.y.tgz
+wee_extension --install weewx-xively.zip
 ```
 
 2. Modify weewx.conf:

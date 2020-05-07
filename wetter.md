@@ -6,14 +6,14 @@ This is an extension to weewx that uploads weather data to wetter.com.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-wetter-0.5.tgz
+wget -O weewx-wetter.zip https://github.com/matthewwall/weewx-wetter/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-wetter-x.y.tgz
+wee_extension --install weewx-wetter.zip
 ```
 
 2.  Modify weewx.conf:

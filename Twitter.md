@@ -12,7 +12,7 @@ where you can create a new app and obtain the credentials.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-twitter-0.12.tgz
+wget -O weewx-twitter.zip https://github.com/matthewwall/weewx-twitter/archive/master.zip
 
 ### How to Install
 
@@ -25,7 +25,7 @@ sudo pip install twython
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-twitter-x.y.tgz
+wee_extension --install weewx-twitter.zip
 ```
 
 3.  Modify weewx.conf:

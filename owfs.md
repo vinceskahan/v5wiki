@@ -10,7 +10,7 @@ This is a driver for weewx that collects data from one-wire sensors using owfs.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-owfs-0.21.tgz
+wget -O weewx-owfs.zip https://github.com/matthewwall/weewx-owfs/archive/master.zip
 
 ### How to Install
 

@@ -8,14 +8,14 @@ This is an extension to weewx that uploads weather data to thingspeak.
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-thingspeak-0.6.tgz
+wget -O weewx-thingspeak.zip https://github.com/matthewwall/weewx-thingspeak/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-thingspeak-x.y.tgz
+wee_extension --install weewx-thingspeak.zip
 ```
 
 2.  Modify weewx.conf:

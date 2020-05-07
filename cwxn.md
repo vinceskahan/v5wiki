@@ -6,14 +6,14 @@ http://wiki.sandaysoft.com/a/Wxnow.txt
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-cwxn-0.4.tgz
+wget -O weewx-cwxn.zip https://github.com/matthewwall/weewx-cwxn/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-cwxn-x.y.tgz
+wee_extension --install weewx-cwxn.zip
 ```
 
 2.  Modify weewx.conf:

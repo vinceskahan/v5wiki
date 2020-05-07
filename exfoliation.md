@@ -4,14 +4,14 @@ http://sailing.mit.edu/weather
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-exfoliation-0.45.tgz
+wget -O weewx-exfoliation.zip https://github.com/matthewwall/weewx-exfoliation/archive/master.zip
 
 ### Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-exfoliation-x.y.tgz
+wee_extension --install weewx-exfoliation.zip
 ```
 
 2.  Restart weewx

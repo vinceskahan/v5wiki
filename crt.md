@@ -6,14 +6,14 @@ http://cumuluswiki.wxforum.net/a/Realtime.txt
 
 ### Download
 
-http://lancet.mit.edu/mwall/projects/weather/releases/weewx-crt-0.18.tgz
+wget -O weewx-crt.zip https://github.com/matthewwall/weewx-crt/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-crt-x.y.tgz
+wee_extension --install weewx-crt.tgz
 ```
 
 2.  Modify weewx.conf:

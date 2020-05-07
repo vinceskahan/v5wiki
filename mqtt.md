@@ -5,8 +5,7 @@ This is an extension to weewx that uploads weather data to an MQTT broker (serve
 
 ### Download
 
-https://github.com/matthewwall/weewx-mqtt/archive/master.zip
-
+wget -O weewx-mqtt.zip https://github.com/matthewwall/weewx-mqtt/archive/master.zip
 
 ### How to Install
 

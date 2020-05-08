@@ -81,6 +81,8 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
 
+<img src="http://weewx.com/ok-for-weewx4.jpg" /> Tested with weewx4 and python3
+
 #### Drivers
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
 * [atmocom - Collect data from Atmocom station](https://github.com/captain-coredump/weewx-atmocom-udp/)
@@ -92,7 +94,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000)
 * [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
 * [ip100 - Collect data from RainWise IP100](https://github.com/matthewwall/weewx-ip100)
-* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor)
+* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg)
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
@@ -105,7 +107,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)
 * [rmyro - Collect data from RM Young ResponseOne (92000 only)](https://github.com/doubleohwhatever/weewx-rmyro)
 * [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis)
-* [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr)
+* [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sds011 - Collect data from SDS011 particulate sensor](https://github.com/matthewwall/weewx-sds011)
 * [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
@@ -174,7 +176,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp)
 
 #### Uploaders
-* <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms)
+* <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="https://www.idokep.hu/images/icon/idokep_tab.png" width='16'/> [idokep](https://github.com/lorantkurthy/weewx-idokep/)
 * <img src="http://weewx.com/consumers/influx-logo.png" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx)

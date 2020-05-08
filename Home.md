@@ -182,7 +182,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://weewx.com/consumers/influx-logo.png" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx)
 * <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap)
+* <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)
 * <img src="https://prometheus.io/assets/favicons/favicon.ico" width='16'/> [prometheus](https://github.com/sulrich/weewx-prompush)
 * <img src="https://avatars3.githubusercontent.com/u/739550?v=3&s=200" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
@@ -194,11 +194,11 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter)
 * <img src="https://www.weather365.net/images/web-104x122.png" width='16'/> [weather365](weather365)
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)
-* <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud)
+* <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru)
-* <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy)
+* <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes

@@ -1,5 +1,7 @@
 ### Smart Energy Groups
 
+> As of May 2020, Smart Energy Groups appears to be gone.  This page remains as an example of how one company designed an API for communicating telemetry.
+
 Smart Energy Groups provides real time energy information, beautiful visualisations, alerts and notifications, iPhone, iPad and Android widgets, rock solid performance, and open source hardware to help people save money and energy in real time.
 
 This is an extension to weewx that uploads weather data to smart energy groups.

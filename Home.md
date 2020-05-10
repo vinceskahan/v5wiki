@@ -193,7 +193,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="https://www.weather365.net/images/web-104x122.png" width='16'/> [weather365](weather365)
-* <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)
+* <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter)
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder)

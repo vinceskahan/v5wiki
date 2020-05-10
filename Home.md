@@ -173,7 +173,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [weeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 
 #### Generators
-* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp)
+* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 #### Uploaders
 * <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) <img src="http://weewx.com/ok-for-weewx4.jpg" />

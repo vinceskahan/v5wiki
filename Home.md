@@ -190,7 +190,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="https://www.infoclimat.fr/images/footer_IClogo.png" width='16'/> [Réseau Static de www.infoclimat.fr](https://github.com/AssociationInfoclimat/StatIC-WeeWX)
 * <img src="https://rp5.ru/favicon.ico" width='16'/> [RP5](https://github.com/sapegin-o1eg/weewx-rp5)
 * <img src="http://smartenergygroups.com/favicon.ico" width='16'/> [smart energy groups](seg)
-* <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak)
+* <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="https://www.weather365.net/images/web-104x122.png" width='16'/> [weather365](weather365)
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug)

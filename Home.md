@@ -168,7 +168,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [simple](simple)
 * [Steel Series Gauges](steelseries)<img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Washboard](https://gitlab.com/jquagga/Washboard)
-* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34) (real time weather feed, WeeWX port of the popular Weather34 template)
+* [weewx-Weather34]<img src="http://weewx.com/ok-for-weewx4.jpg" />(https://github.com/steepleian/weewx-Weather34) (real time weather feed, WeeWX port of the popular Weather34 template)
 * [weewx-wd](weewx-wd)
 * [weeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 

@@ -191,3 +191,7 @@ echo 'blacklist dvb_usb_rtl28xxu' | sudo tee -a /etc/modprobe.d/blacklist.conf
 ```
 
 If you get an error that `dvb_usb_rtl28xxu` is in use, unplug your SDR device, then try again.
+
+If you run ```weewxd /etc/weewx/weewx.conf``` and nothing displays, stop it and run it as ```weewxd /etc/weewx/weewx.conf -x``` This will cause it to exit on I/O errors or database errors rather than retrying forever. If this happens, check the ```/var/log/syslog``` log file for what error may be causing this.
+
+

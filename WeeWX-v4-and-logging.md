@@ -117,6 +117,9 @@ debug = 0
 ```
 
 ## Logging to rotating files
+
+**15-may-2020: this strategy for rotating files does not work with WeeWX V4.0.0 due to a bug. Sorry! It will be fixed.**
+
 By default, the logging module logs to the "system log". In some cases, you may want to log to a
 set of rotating log files, such as `/var/log/weewx.log`. The WeeWX logging facility allows you
 to do this.

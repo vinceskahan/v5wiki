@@ -88,7 +88,7 @@ It also assumes the program startup is under the control of systemd, although ev
      ~~~~~
      The output of the _status_ command should show you, under "Loaded:" that it is loaded from `/etc/init.d/weewx`
 
-2.  Rather than edit the startup script directly (and risk losing changes each update), we override parameters by creating a file `\etc\default\weewx`, in which we specify the user, and a location for
+2.  Rather than edit the startup script directly (and risk losing changes each update), we override parameters by creating a file `/etc/default/weewx`, in which we specify the user, and a location for
 the process ID (PID) file (which is in a folder where that user has write privileges). Note, on recent Debian systems, /var/run is simply a symlink to /run
 
      ~~~~~

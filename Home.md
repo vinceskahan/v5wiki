@@ -127,7 +127,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). Lightly tested.
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
-* [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1)
+* [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
 
 #### Services

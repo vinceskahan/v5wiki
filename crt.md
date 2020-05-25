@@ -13,7 +13,7 @@ wget -O weewx-crt.zip https://github.com/matthewwall/weewx-crt/archive/master.zi
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-crt.tgz
+wee_extension --install weewx-crt.zip
 ```
 
 2.  Modify weewx.conf:

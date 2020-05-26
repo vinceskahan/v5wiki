@@ -135,7 +135,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
-* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
+* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)<img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -167,7 +167,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [simple](simple)
 * [Steel Series Gauges](steelseries)<img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Washboard](https://gitlab.com/jquagga/Washboard)
-* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)<img src="http://weewx.com/ok-for-weewx4.jpg" /> (real time weather feed, WeeWX port of the popular Weather34 template)
+* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [weewx-wd](weewx-wd)
 * [weeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 

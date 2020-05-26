@@ -138,7 +138,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
-* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)
+* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)<img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe)
@@ -173,7 +173,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### XType extensions
 [XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX
-* [weewx-xstats](https://github.com/tkeffer/weewx-xstats)<img src="http://weewx.com/ok-for-weewx4.jpg" /> - A grab-bag of new aggregation types, such as the historical highs or lows for a date.
+* [weewx-xstats](https://github.com/tkeffer/weewx-xstats) - A grab-bag of new aggregation types, such as the historical highs or lows for a date.<img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 #### Generators
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) <img src="http://weewx.com/ok-for-weewx4.jpg" />

@@ -111,7 +111,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
-* [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc)
+* [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
 * [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon)

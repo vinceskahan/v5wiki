@@ -115,18 +115,18 @@ The answer is to have systemd re-create the folder automatically each time. This
      ~~~~~
      systemctl start weewx 
      ~~~~~
-### Debian 10 and weewx 3.9.2
+
+### Debian 10
 With the upgrade to Buster the system was changed in a way that pidfiles owned by non-root users are not trusted and you cannot stop or restart the weewx service.
-The solution is to edit the init script `\etc\init.d\weewx` and in the functions _do_stop_() and _do_restart_() edit the arguments to the _start-stop-daemon_ command. For example, edit the _do_stop()_ function so that
+The solution is to edit the init script `/etc/init.d/weewx`. In the functions `do_stop()` and `do_restart()`, edit the arguments to the `start-stop-daemon` command. For example, edit the `do_stop()` function so that instead of:
 
-~~~~~
-         instead of:
      start-stop-daemon --stop --pidfile $PIDFILE
-         it reads 
+
+it reads
+
      start-stop-daemon --stop --pidfile $PIDFILE --user $WEEWX_USER
-~~~~~
 
-and likewise for the do_restart function.
+and likewise for the `do_restart()` function.
 
-There is a further complexity: the _--user_ parameter cannot take the form of _user:group_ so the easiest way is to simply remove the ":wxuser" part from the definition of WEEWX_USER in `\etc\default\weewx`.
-This will not be a problem  if the group name is the default for the weewx user, as the default group is applied automatically. If you require a different group then modify the init.d script accordingly with a suitable WEEWX_GROUP parameter.
+There is a further complexity: the `--user` parameter cannot take the form of `user:group` so the easiest way is to simply remove the ":wxuser" part from the definition of `WEEWX_USER` in `\etc\default\weewx`.
+This will not be a problem  if the group name is the default for the weewx user, as the default group is applied automatically. If you require a different group then modify the init.d script accordingly with a suitable `WEEWX_GROUP` parameter.

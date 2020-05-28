@@ -1,120 +1,88 @@
 By default, weewx runs as root.  This guide illustrates how to run weewx as a non-root user. There are multiple possible installation types. Here we list:
-* installation under /home, or
+* installation under `/home/weewx`, or
 * installation from a Debian repository
 
 In each case, we assume the user and group have been created already, with a name _wxuser_
 
 1.  Create the user account
 
-     ~~~~~
-     sudo useradd wxuser
-     ~~~~~
+        sudo useradd wxuser
 
 2.  Give serial/usb access to the user with a udev rule
 
     For example, for a vantage pro connected via USB, create the file
 
-     ~~~~~
-     /etc/udev/rules.d/vpro.rules
-     ~~~~~
+        /etc/udev/rules.d/vpro.rules
 
     with the following contents:
 
-     ~~~~~
-     SUBSYSTEM=="usb", ATTRS{interface}=="CP2102 USB to UART Bridge Controller", MODE: = "664", GROUP = "wxuser"
-     ~~~~~
+        SUBSYSTEM=="usb", ATTRS{interface}=="CP2102 USB to UART Bridge Controller", MODE: = "664", GROUP = "wxuser"
  
     or similarly for the Fine Offset clones on a raspberry pi:
 
-     ~~~~~
-     SUBSYSTEM=="usb", ATTR{idVendor}=="1941", ATTR{idProduct}=="8021", MODE="0664", GROUP="wxuser"
-     ~~~~~
+        SUBSYSTEM=="usb", ATTR{idVendor}=="1941", ATTR{idProduct}=="8021", MODE="0664", GROUP="wxuser"
 
-    the idVendor and idProduct can be established by using the lsusb command.
+    the `idVendor` and `idProduct` can be established by using the `lsusb` command.
 
-## Installed under /home, using setup.py
- It assumes that weewx has been installed to `/home/weewx` using setup.py and works properly when run as the root user.
+## Installed under `/home`, using `setup.py`
+
+It assumes that weewx has been installed to `/home/weewx` using `setup.py` and works properly when run as the root user.
 
 1.  Stop weewx if it is running:
 
-     ~~~~~
-     sudo /etc/init.d/weewx stop
-     ~~~~~
+        sudo /etc/init.d/weewx stop
 
-
-3.  In the startup script file, `/etc/init.d/weewx`, specify the user, and a location for
+2.  In the startup script file, `/etc/init.d/weewx`, specify the user, and a location for
 the process ID (PID) file where that user has write privileges
 
-     ~~~~~
-     WEEWX_USER = wxuser:wxuser
-     PIDFILE = $WEEWX_ROOT/run/$NAME.pid
-     ~~~~~
+        WEEWX_USER = wxuser:wxuser
+        PIDFILE = $WEEWX_ROOT/run/$NAME.pid
 
-4.  Create the directory where the PID file will reside
+3.  Create the directory where the PID file will reside
 
-     ~~~~~
-     sudo mkdir /home/weewx/run
-     ~~~~~
+        sudo mkdir /home/weewx/run
 
-5.  Give the user ownership of all weewx files
+4.  Give the user ownership of all weewx files
 
-     ~~~~~
-     sudo chown -R wxuser:wxuser /home/weewx
-     ~~~~~
+        sudo chown -R wxuser:wxuser /home/weewx
+ 
+5.  Start weewx
 
-
-
-7.  Start weewx
-
-     ~~~~~
-     sudo /etc/init.d/weewx start
-     ~~~~~
+        sudo /etc/init.d/weewx start
 
 ## Installed using a Debian package
 
 This assumes that weewx has been installed via a process such as 
 
-     ~~~~~
      apt install weewx
-     ~~~~~
 
 It also assumes the program startup is under the control of systemd, although even then it is still controlled through the script  `/etc/init.d/weewx`.  If you use a full systemd configuration, then see also [the wiki page relating to systemd](../wiki/systemd#to-run-as-a-non-root-user).
 
 1.  Stop weewx if it is running:
 
-     ~~~~~
-     systemctl stop weewx 
-     systemctl status weewx 
-     ~~~~~
-     The output of the _status_ command should show you, under "Loaded:" that it is loaded from `/etc/init.d/weewx`
+        systemctl stop weewx 
+        systemctl status weewx 
+
+     The output of the _status_ command should show you, under "Loaded:", that it is loaded from `/etc/init.d/weewx`
 
 2.  Rather than edit the startup script directly (and risk losing changes each update), we override parameters by creating a file `/etc/default/weewx`, in which we specify the user, and a location for
-the process ID (PID) file (which is in a folder where that user has write privileges). Note, on recent Debian systems, /var/run is simply a symlink to /run
+the process ID (PID) file (which is in a folder where that user has write privileges). Note, on recent Debian systems, `/var/run` is simply a symlink to `/run`
 
-     ~~~~~
-     WEEWX_USER = wxuser:wxuser
-     PIDFILE = /run/$NAME/$NAME.pid
-     ~~~~~
+        WEEWX_USER = wxuser:wxuser
+        PIDFILE = /run/$NAME/$NAME.pid
 
-4.  The directory where the PID file will reside is on a temporary filesystem, which will be destroyed each reboot.
-The answer is to have systemd re-create the folder automatically each time. This is controlled  by the creation of the file `/usr/lib/tmpfiles.d/weewx`, with contents:
+4.  The directory where the PID file will reside is on a temporary filesystem, which will be destroyed each reboot. The solution is to have systemd re-create the folder automatically each time. This can be done by creating a file `/usr/lib/tmpfiles.d/weewx` with contents:
 
-     ~~~~~
-    # create the directory for the weewx sysV pid file each boot
-    d /run/weewx 0755 wxuser wxuser - -
-     ~~~~~
+        # create the directory for the weewx sysV pid file each boot
+        d /run/weewx 0755 wxuser wxuser - -
 
 5.  Give the user ownership of all sqlite DB files
 
-     ~~~~~
-     sudo chown -R wxuser:wxuser /var/lib/weewx
-     ~~~~~
+        sudo chown -R wxuser:wxuser /var/lib/weewx
 
-7.  Start weewx and check
+6.  Start weewx and check
 
-     ~~~~~
-     systemctl start weewx 
-     ~~~~~
+        systemctl start weewx 
 
 ### Debian 10
 With the upgrade to Buster the system was changed in a way that pidfiles owned by non-root users are not trusted and you cannot stop or restart the weewx service.

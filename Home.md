@@ -125,7 +125,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [wlink - Collect data from weatherlink.com](wlink)
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). Lightly tested.
-* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT)
+* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
 
@@ -135,14 +135,14 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
-* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
-* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile)<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe)
-* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr)
+* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [owfs - Augment station data with data from one-wire sensors](owfss)
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
@@ -165,7 +165,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)
-* [Steel Series Gauges](steelseries)<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [Steel Series Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [weewx-wd](weewx-wd)
@@ -173,7 +173,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### XType extensions
 [XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX
-* [weewx-xstats](https://github.com/tkeffer/weewx-xstats) - A grab-bag of new aggregation types, such as the historical highs or lows for a date.<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewx-xstats](https://github.com/tkeffer/weewx-xstats) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 #### Generators
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) <img src="http://weewx.com/ok-for-weewx4.jpg" />

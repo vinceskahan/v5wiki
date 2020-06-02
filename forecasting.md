@@ -122,7 +122,7 @@ https://flaterco.com/xtide/index.html
 1.  Run the extension installer to install the forecast service and sample skin.
 
 ```
-wee_extension --install weewx-forecast-x.y.tgz
+wee_extension --install weewx-forecast.zip
 ```
 
 2.  In weewx.conf, specify required parameters for the forecast services you want to run

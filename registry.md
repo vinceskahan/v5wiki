@@ -11,8 +11,9 @@ Just to be clear: this is an opt-in service.  WeeWX never sends data until you t
 In the weeWX configuration file, enable the `StationRegistry`:
 
 ```
-[StationRegistry]
-    enable = True
+[StdRESTful]
+    [[StationRegistry]]
+        register_this_station = True
 ```
 
 The `station_url` must be specified.

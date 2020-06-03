@@ -1,10 +1,12 @@
 # The Station Registry
 
-You can opt-in to have your station(s) in the weeWX station registry.  When a station is registered it will show up on the map:
+When a station is registered it will show up on the map:
 
 http://weewx.com/stations.html
 
-Just to be clear: this is an opt-in service.  WeeWX never sends data until you tell it to do so.
+You must opt-in to register your station(s).  WeeWX never sends data until you tell it to do so.
+
+Stations are placed on the map using their location, and a screen capture is automatically made of the station's URL, if possible.
 
 ## How to turn it on?
 
@@ -29,6 +31,8 @@ grep StationRegistry /var/log/syslog
 ## How does it work?
 
 Each time weeWX starts, or once per week if weeWX has been running, the StationRegistry service sends a JSON string to the registry.
+
+Stations are identified by a URL.  If you register multiple stations, each must have its own URL.  URLs that are not publicly accessible are OK, but in that case no capture is possible.
 
 The map is updated periodically to show new stations.
 

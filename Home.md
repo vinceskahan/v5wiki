@@ -49,7 +49,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
-* [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README)
+* [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 * [Importing data from Weatherlink](Importing-data-from-Weatherlink)

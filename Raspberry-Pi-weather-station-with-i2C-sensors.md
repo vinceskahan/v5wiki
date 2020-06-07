@@ -28,7 +28,7 @@ My current installation is a raspberry Pi3 booting from an external HDD. I have 
 With my Pi3 defaulted to python3 another method of getting my rain gauge (one wire sensor) information into weewx had to be used and will be detailed later. (Python3 no longer has a OW module available)
 
 ### Pi Configuration #
-The following link will cover multiple configs, not all are required and have been in some form covered elsewhere. This is the config I now use. I include it here as it brings together most things I have needed on several installs on the Pi.
+This is the basic setup for my Pi with HDD and RAM disk and enabled i2c.
 [Pi configuration](http://bit.ly/2HlED6R)
 
 ### Weewx config #

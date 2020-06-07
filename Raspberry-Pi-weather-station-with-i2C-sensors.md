@@ -18,14 +18,14 @@ I have two runs (as shown on the block diagram) and with these extenders I have 
 ###### Adafruit ADS1115 16-bit ADC - 4 channel breakout board #
 ###### Adafruit BMP085 i2C Barometric Pressure and temperature breakout board #
 ###### Adafruit SI1145 Digital UV index #
-###### Sandbox i2C DS1307 RTC module #
 ###### i2C Bi-Directional level converter #
 #### Other sensors #
 ###### Davis Anemometer #
 ###### Rainwise one-wire rain bucket #
 
 ### General Information #
-My configuration includes RTC, external HDD (Boot from SD card fully run on the HDD), Temp RAM disk for logging of data, weewx 3.7.1 and my skin based on the work of Darryn Capes-Davis (responsive skin) also using MySQL DB with replication running to backup weewx database to a QNAP NAS in almost real time. This replication procedure allows for loss and then restarting of NAS...the DB backup will automatically get data from its last record to the present time.
+My current installation is a raspberry Pi3 booting from an external HDD. I have a ramdisk with services for gathering the sensor data from the i2C sensors, aircon status, and the fan speed from my Fan Assisted Radiation sensor (FARS).
+With my Pi3 defaulted to python3 another method of getting my rain gauge (one wire sensor) information into weewx had to be used and will be detailed later. (Python3 no longer has a OW module available)
 
 ### Pi Configuration #
 The following link will cover multiple configs, not all are required and have been in some form covered elsewhere. This is the config I now use. I include it here as it brings together most things I have needed on several installs on the Pi.

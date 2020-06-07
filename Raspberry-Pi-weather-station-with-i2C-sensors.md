@@ -28,17 +28,13 @@ My current installation is a raspberry Pi3 booting from an external HDD. I have 
 With my Pi3 defaulted to python3 another method of getting my rain gauge (one wire sensor) information into weewx had to be used and will be detailed later. (Python3 no longer has a OW module available)
 
 ### Pi Configuration #
-**This section is to be updated the old links if available I will leave until I finish.**
 The following link will cover multiple configs, not all are required and have been in some form covered elsewhere. This is the config I now use. I include it here as it brings together most things I have needed on several installs on the Pi.
 [Pi configuration](http://bit.ly/2HlED6R)
 
 ### Weewx config #
-
-**This will be updated.**
 Use your normal config procedure, this link is the procedure I use. [weewx install](http://bit.ly/2F5CUjT)
 
 ### Python scripts required for installation of i2C sensors and required services #
-**Some of this will be updated.**
 *[prerequisites and ADS1115 python script](http://bit.ly/2F4D8bj)
 
 *[Python and service scripts for i2C sensors FARS control Aircon data Weewx config and Weewx driver](http://bit.ly/2F5mpEA)

@@ -36,8 +36,7 @@ This is the basic setup for my Pi with HDD and RAM disk and enabled i2c.
 Use your normal config procedure, this link is the procedure I use. [weewx install](http://bit.ly/2F5CUjT)
 
 ### Python scripts required for installation of i2C sensors and required services #
-**to be updated**
-*[prerequisites and ADS1115 python script](http://bit.ly/2F4D8bj)
+
 
 *[Python and service scripts for i2C sensors FARS control Aircon data Weewx config and Weewx driver](http://bit.ly/2F5mpEA)
 

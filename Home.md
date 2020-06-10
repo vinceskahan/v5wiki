@@ -98,7 +98,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
-* [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe)
+* [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
@@ -141,7 +141,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
-* [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe)
+* [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [owfs - Augment station data with data from one-wire sensors](owfss)
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)

@@ -166,7 +166,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)
-* [Steel Series Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [SteelSeries Weather Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [weewx-wd](weewx-wd)

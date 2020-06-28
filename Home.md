@@ -89,6 +89,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [aws - Collect data from an Arduino connected to a Davis anemometer](https://github.com/wrybread/weewx-ArduinoWeatherStation)
 * [byows_rpi - Collect data from the Build Your Own Weather Station - Raspberry Pi](https://github.com/jardiamj/BYOWS_RPi)
 * [cm1 - Collect data from Dyacon CM1 weather station interface](https://github.com/matthewwall/weewx-cm1)
+* [columbia_ms - Collect data from Columbia Weather MicroServer supported sensors](https://github.com/bburton/weewx-columbia-ms) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [envoy - Collect data from Enphase Envoy solar controller](https://github.com/matthewwall/weewx-envoy)
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 * [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000)

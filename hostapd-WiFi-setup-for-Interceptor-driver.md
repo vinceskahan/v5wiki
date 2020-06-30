@@ -63,7 +63,7 @@ nohook lookup-hostname
 interface wlan0
 static ip_address=10.3.141.1/24
 static routers=10.3.141.1
-static domain_name_server=1.1.1.1 8.8.8.8
+static domain_name_servers=1.1.1.1 8.8.8.8
 </pre>
 -------------------------------------------
 

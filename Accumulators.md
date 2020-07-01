@@ -2,23 +2,26 @@
 
 ## Abstract
 
-This Wiki describes the accumulators, and how they can be customized. 
+This Wiki documents the accumulators. Accumulators ingest an irregular stream of LOOP packets, then, when requested, allows
+regular archive records to be extracted from them. Most of the time, they
+"do the right thing," but there may be occasions where customization is called for. 
 
-The accumulators accumulate an irregular stream of LOOP packets, then, when requested, allows
-regular archive records to be extracted from them.
+An accumulator is instantiated for each observation type. Which type is instantiated is set
+by option `accumulator` (described later). There are three choices
 
-Presently, there are three different kinds of accumulators:
 - Scalars: accumulate scalar quantities, such as temperature;
 - Vectors: accumulate vector quantities, such as wind; and
 - FirstLast: primarily used to accumulate strings.
 
-An accumulator is instantiated for each observation type. Which type is instantiated is set
-by option `accumulator`, defined below.
+The vast majority of the time, you will be working with scalars and, indeed, this is the
+default type of accumulator.
 
-There are three different functions an accumulator performs:
+Whatever their type, all accumulators are expected to perform three different functions:
 - How to add new values of a type (the 'adder');
 - How to merge a type with another accumulator (the 'merger'); and
 - How to extract a type out of its accumulator, and into a record (the 'extractor').
+
+Again, there are sensible defaults for these three roles, but this can be customized.
 
 ## Life cycle of an accumulator
 At the start of an archive interval, a new collection of accumulators is created (class
@@ -31,7 +34,10 @@ then added to its accumulator using the appropriate "adder".
 At the end of the archive period, it is time to convert the accumulators into an archive record.
 This is done for each type, using the appropriate "extractor".
 
-Finally, the collection of accumulators is dicarded, and the cycle begins again.
+This archive record must then be merged into the already existing daily summaries. This is done
+for each type, using the appropriate "merger."
+
+Finally, the collection of accumulators is discarded, and the cycle begins again.
  
 ## Configuration
 For each observation type, a type of accumulator, an adder, a merger, and an extractor can be
@@ -78,7 +84,7 @@ database's daily summaries. This means merging the finished accumulator with the
 in the database. It is the job of the merger to manage this merge. There are two kinds of mergers:
 
 - `minmax`. This is what you'll want most of the time. It is the default.
-- `avg`.
+- `avg`. This merger is used if the user has set option [`loop_hilo`](http://www.weewx.com/docs/usersguide.htm#StdArchive) to `False`.
 
 ### Extractor
 

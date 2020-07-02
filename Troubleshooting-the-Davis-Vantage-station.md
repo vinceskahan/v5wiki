@@ -155,7 +155,7 @@ console responded that it has lots of records after that time ("`Retrieving 45 p
 index= 1`"), but when WeeWX actually tries to retrieve them, they are all before the requested
 time.
 
-There seems to be two fixes:
+There seems to be several fixes:
 
 1. Unplug the console, take out the batteries, and wait a minute or two. This will cause the
 console software to internally reboot. In one case this has fixed the problem without data loss.
@@ -168,6 +168,8 @@ then to clear the memory.
 
     Note that the `--dump` command can generate lots of "duplicate primary key" errors. These can be
 ignored.
+
+3. If the clear-memory fails, the archive memory of your data logger may have gone bad.  You may need to replace the data logger hardware, or as a work-around disable weewx usage of the archive by setting record_generation = software in weewx.conf's \[StdArchive\] section.
 
 ## 3rd party Vantage connectors
 This section is for those who are using a homebrew or 3rd party connector to a Davis Vantage

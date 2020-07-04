@@ -94,11 +94,11 @@ extractors:
 
 - `avg`. Extract the average value of this type. This is the default.
 - `count`. Extract the total number of non-Null LOOP packets seen of this type.
-- `last`. Extract the last value seen of this type.
+- `last`. Extract the last value seen of this type. Use this type for totals of extensive variables, such as `dayRain`.
 - `max`. Extract the maximum value seen of this type.
 - `min`. Extract the minimum value seen of this type.
 - `noop`. Extract no value for this type.
-- `sum`. Extract the total seen for this type.
+- `sum`. Extract the total seen for this type. Use this type for `rain` or other  variables that are measured increments.
 - `wind`. Extract `windSpeed` as the average wind magnitude, `windDir` as the vector average
 direction, `windGust` as the maximum wind seen, and `windGustDir` as its direction.
 

@@ -94,7 +94,7 @@ well. Then add this to your `weewx.conf` file:
 This will override the default list of handlers, which consists only of `syslog`, with a new list that includes `console` as well as `syslog`.
 
 ## Customizing what gets logged
-Another example. When the `debug` option is on, the default "root" logger will show `DEBUG` messages and above ---basically everything. This is fine, except that you've decided the `weewx.restx` module is too chatty for your liking. For it, you want to see only `INFO` messages and above --- nothing else. 
+Another example. When the `debug` option is on, the default "root" logger will show `DEBUG` messages and above ---basically everything. This is fine, but say you've decided that the `weewx.restx` module is too chatty for your liking. For it, you want to see only `INFO` messages and above --- nothing else. 
 
 The solution is to tailor the logger used by the `weewx.restx` module, so it no longer inherits properties from the root logger. For this logger, we will specify that it logs only `INFO` and above. To do this, the `[Logging]` section would look like:
 

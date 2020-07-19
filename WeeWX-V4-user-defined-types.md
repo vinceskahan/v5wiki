@@ -71,7 +71,7 @@ To calculate a custom scalar value, the user should subclass `XTypes`, then over
 
 Where
 
-- `obs_type` is the type to be computed.
+- `obs_type` is the name of type to be computed.
 - `record` is a WeeWX record. It will include at least types `dateTime` and `usUnits`.
 - `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be open and usable.
 
@@ -96,7 +96,7 @@ The user should subclass `XTypes`, then override the member function `get_series
     
 Where
 
-- `obs_type` is the type to be computed.
+- `obs_type` is the name of type to be computed.
 - `timespan` is an instance of `weeutil.weeutil.TimeSpan`. It defines bounding start and ending times of the series,
 exclusive on the left, inclusive on the right.
 - `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be open and usable.
@@ -182,7 +182,7 @@ get_aggregate(obs_type, timespan, aggregate_type, db_manager, **option_dict)
 Example: function `weewx.xtypes.get_scalar()` searches the list `weewx.xtypes.xtypes`, trying member function
 `get_scalar()` of each object in turn. If the member function raises `weewx.UnknownType` or `weewx.CannotCalculate`,
 `weewx.xtypes.get_scalar()` moves on to the next object in the list. If no function can be found to do the evaluation, 
-it raises `weewx.Unknowntype`.
+it raises `weewx.UnknownType`.
 
 The other functions work in a similar manner. 
 
@@ -193,7 +193,7 @@ import weewx.units
 import weewx.uwxutils
 import weewx.xtypes
 
-class Pressure(weewx.xtypes.Xtype):
+class Pressure(weewx.xtypes.XType):
 
     def __init__(self, altitude_ft):
         """Initialize  with the altitude in feet"""

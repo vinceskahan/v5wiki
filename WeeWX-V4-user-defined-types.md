@@ -1,4 +1,4 @@
-# Extensible types
+# Extensible types (xtypes)
 
 ## Abstract
 
@@ -151,6 +151,8 @@ The function should raise:
 - An exception of type `weewx.UnknownAggregation` if the aggregation `aggregate_type` is not known to the function. 
 - An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the function, but all the
 information necessary to perform the aggregation is not there.
+
+See the extension [weewx-xstats](https://github.com/tkeffer/weewx-xstats) for an example of how to add a new aggregate type.
 
 #### Registering your subclass
 

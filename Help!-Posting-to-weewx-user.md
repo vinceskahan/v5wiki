@@ -17,9 +17,11 @@ There are three important rules to remember when seeking help from the group:
 2. Include more of the log!
 3. Include still more!
 
-Too often, we see either nothing from the log, or a tiny sliver of text with no context. Another common mistake
-is to include only a screen shot of the log. They are hard to read, include only a couple dozen lines, and
-waste a lot of space.
+Too often, we see either nothing from the log, or a tiny sliver of text with no context. 
+
+### _**Do not send a screen shot!**_
+
+They are hard to read, include only a couple dozen lines, cannot be searched nor translated, and waste a lot of space. Send only text!
 
 To get a good, useful log:
 

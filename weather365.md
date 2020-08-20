@@ -28,7 +28,7 @@ The extension is available at:
 ```
 * Update 2020-08-20 - new version 3.0 (fixing some problems - minimize log-files) 
 * and will work with Python3 now - sorry for the delay in the last weeks
-https://stations.weather365.net/wxupdates/EXTENSION/ 
+[WEATHER365 - Uploader - Extension](https://stations.weather365.net/wxupdates/EXTENSION/ ) 
 ```
 
 Obtain an ID by registering a new station:

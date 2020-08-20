@@ -26,8 +26,8 @@ The service is free. We use your weather data for model-control and development.
 
 The extension is available at:
 ```
-* Update 2020-06-20 - new version 1.3.8 (fixing some problems - minimize log-files) 
-* and should work with Python3 .. 
+* Update 2020-08-20 - new version 3.0 (fixing some problems - minimize log-files) 
+* and will work with Python3 now - sorry for the delay in the last weeks
 https://stations.weather365.net/wxupdates/EXTENSION/ 
 ```
 

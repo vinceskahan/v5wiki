@@ -169,7 +169,13 @@ then to clear the memory.
     Note that the `--dump` command can generate lots of "duplicate primary key" errors. These can be
 ignored.
 
-3. If the clear-memory fails, the archive memory of your data logger may have gone bad.  You may need to replace the data logger hardware, or as a work-around disable weewx usage of the archive by setting record_generation = software in weewx.conf's \[StdArchive\] section.
+3. If the `--clear-memory` option fails, then the archive memory of your data logger may have gone bad.  You may need to replace the data logger hardware. As a work-around, you can disable the usage of the archive by setting option `record_generation` to `software` in the configuration file `weewx.conf`:
+
+    ```ini
+    [StdArchive]
+        ...
+        record_generation = software
+    ```
 
 ## 3rd party Vantage connectors
 This section is for those who are using a homebrew or 3rd party connector to a Davis Vantage

@@ -157,14 +157,14 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### Skins
 * [amphibian](amphibian)
-* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed)
+* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [bootstrap](Bootstrap)
 * [byteweather](https://byteinsight.co.uk/freebies/weewx-byte-weather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
-* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React)
+* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [NeoWX](https://projects.neoground.com/neowx) 
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
@@ -173,8 +173,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [SteelSeries Weather Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
-* [weewx-wd](weewx-wd)
-* [weeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
+* [weewx-wd](weewx-wd) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 
 #### XType extensions
 [XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX

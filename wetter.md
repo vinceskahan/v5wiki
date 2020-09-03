@@ -6,7 +6,7 @@ This is an extension to weewx that uploads weather data to wetter.com.
 
 ### Download
 
-wget -O weewx-wetter.zip https://github.com/matthewwall/weewx-wetter/archive/master.zip
+    wget -O weewx-wetter.zip https://github.com/matthewwall/weewx-wetter/archive/master.zip
 
 ### How to Install
 
@@ -39,3 +39,7 @@ Simply run the extension installer then restart weewx.  If your weewx.conf alrea
 ### Upgrading from weewx 2.5
 
 If you were using the wetter extension with weewx 2.5.x, be sure to remove the 'driver' parameter from the Wetter section in weewx.conf.
+
+### Source
+
+The source repository can be found on GitHub: https://github.com/matthewwall/weewx-wetter/archive/master.zip

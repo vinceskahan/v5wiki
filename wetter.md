@@ -42,4 +42,4 @@ If you were using the wetter extension with weewx 2.5.x, be sure to remove the '
 
 ### Source
 
-The source repository can be found on GitHub: https://github.com/matthewwall/weewx-wetter/archive/master.zip
+The source repository can be found on GitHub: https://github.com/matthewwall/weewx-wetter

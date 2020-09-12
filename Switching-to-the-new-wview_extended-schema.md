@@ -9,7 +9,8 @@ Here's how to switch. Note that these instructions are just a variant on the ins
 **These instructions assume you are using WeeWX V4.x**
 
 1. We will be using the utility [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do the switch.
-2. **Modify `wx_binding`**. When it creates the new, modified database, `wee_database` needs to know to use the `wview_extended` schema instead of the old, `wview` schema. You do this by changing the option `schema` in section `[DataBindings]` in `weewx.conf`.
+2. Stop weewxd.
+3. **Modify `wx_binding`**. When it creates the new, modified database, `wee_database` needs to know to use the `wview_extended` schema instead of the old, `wview` schema. You do this by changing the option `schema` in section `[DataBindings]` in `weewx.conf`.
 
    The `[DataBindings]` section now looks like this:
 
@@ -27,12 +28,12 @@ Here's how to switch. Note that these instructions are just a variant on the ins
 
    Note that for the `manager` option, you can use either `weewx.manager.DaySummaryManager` or `weewx.manager.WXDaySummaryManager`.
 
-3. **Check permissions**. `wee_database` will create a new database with the same name as the old, except with the suffix `_new` attached to the end. Make sure you have the necessary permissions to create it. In particular, if you are using MySQL, you will need `CREATE` privileges:
+4. **Check permissions**. `wee_database` will create a new database with the same name as the old, except with the suffix `_new` attached to the end. Make sure you have the necessary permissions to create it. In particular, if you are using MySQL, you will need `CREATE` privileges:
 
    ```SQL
    mysql> GRANT select, update, create, delete, insert ON weewx_new.* TO weewx@localhost;
    ```
-3. **Create and populate the new database**. Now run the utility `wee_database` with the `--reconfigure` option. If your configuration file `weewx.conf` is in an unusual position, you may have to give its path as an argument.
+5. **Create and populate the new database**. Now run the utility `wee_database` with the `--reconfigure` option. If your configuration file `weewx.conf` is in an unusual position, you may have to give its path as an argument.
 
    ```shell
    wee_database weewx.conf --reconfigure
@@ -40,7 +41,7 @@ Here's how to switch. Note that these instructions are just a variant on the ins
 
    This will create a new database (nominally, `weewx.sdb_new` if you are using SQLite, `weewx_new` if you are using MySQL) using the new schema and populate it with data from the old database.
 
-4. **Shuffle the databases**. Now arrange things so WeeWX can find the new database.
+6. **Shuffle the databases**. Now arrange things so WeeWX can find the new database.
 
    **Warning!
    Make a backup of the data before doing any of the next steps!**
@@ -62,8 +63,9 @@ Here's how to switch. Note that these instructions are just a variant on the ins
    mysql> CREATE DATABASE weewx;                           # Create a new one with the same name
    mysql> RENAME TABLE weewx_new.archive TO weewx.archive; # Rename to the nominal name
    ```
+7. Restart weewxd
 
-It's worth noting that there's actually a hidden, last step: rebuilding the daily summaries inside the new database. This will be done automatically by WeeWX at the next startup. Alternatively, it can be done manually using the `wee_database` utility and the `--rebuild-daily` option:
+It's worth noting that there's actually a hidden, last step: rebuilding the daily summaries inside the new database. This will be done automatically by WeeWX when it starts up. Alternatively, it can be done manually using the `wee_database` utility and the `--rebuild-daily` option:
 
 ```shell
 wee_database weewx.conf --rebuild-daily

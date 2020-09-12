@@ -4,7 +4,9 @@ WeeWX V4.x offers a new schema `wview_extended`, with many new types. You may fi
 2. While `wview_extended` is the new, default, schema for V4.x, it is not necessary to "upgrade" to it. Your old `wview` schema will continue to work just fine with V4.x. Switch to the new schema only if you find the new types useful.
 3. If you are using MySQL, and if you need just one or two of the new types, you may find it easier to simply augment the table by using the SQL command [AUGMENT TABLE](https://www.mysqltutorial.org/mysql-add-column/). This allows you to change the database schema _in situ_, and is much faster. Unfortunately, SQLite does not have an analogous command.
 
-Here's how to switch. Note that it is just a variant on the instructions in section [_Adding a new type to the database_](http://www.weewx.com/docs/customizing.htm#add_archive_type) that can be found in the Customizing Guide.
+Here's how to switch. Note that these instructions are just a variant on the instructions in section [_Adding a new type to the database_](http://www.weewx.com/docs/customizing.htm#add_archive_type) that can be found in the Customizing Guide.
+
+**These instructions assume you are using WeeWX V4.x**
 
 1. We will be using the utility [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do the switch.
 2. **Modify `wx_binding`**. When it creates the new, modified database, `wee_database` needs to know to use the `wview_extended` schema instead of the old, `wview` schema. You do this by changing the option `schema` in section `[DataBindings]` in `weewx.conf`.
@@ -14,18 +16,23 @@ Here's how to switch. Note that it is just a variant on the instructions in sect
    ```ini
    [DataBindings]
       [[wx_binding]]
+          # The database option is unchanged. If you are using MySQL, it should be archive_mysql
           database = archive_sqlite
           table_name = archive
+          # Older installs will use WXDaySummaryManager instead of DaySummaryManager. Doesn't matter.
           manager = weewx.manager.DaySummaryManager
-          schema = user.electricity.schema_with_electricity
+          # Specify the new, extended schema here:
+          schema = schemas.wview_extended.schema
    ```
+
+   Note that for the `manager` option, you can use either `weewx.manager.DaySummaryManager` or `weewx.manager.WXDaySummaryManager`.
 
 3. **Check permissions**. `wee_database` will create a new database with the same name as the old, except with the suffix `_new` attached to the end. Make sure you have the necessary permissions to create it. In particular, if you are using MySQL, you will need `CREATE` privileges:
 
    ```SQL
    mysql> GRANT select, update, create, delete, insert ON weewx_new.* TO weewx@localhost;
    ```
-3. **Create and populate the new database**. Now run the utility `wee_database` with the `--reconfigure` option and the path to the configuration file:
+3. **Create and populate the new database**. Now run the utility `wee_database` with the `--reconfigure` option. If your configuration file `weewx.conf` is in an unusual position, you may have to give its path as an argument.
 
    ```shell
    wee_database weewx.conf --reconfigure

@@ -47,6 +47,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [SQLite vs MySQL](SQLite-vs-MySQL)
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
+* [Switching to the new, extended schema `wview_extended`](https://github.com/weewx/weewx/wiki/Switching-to-the-new-wview_extended-schema)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README) <img src="http://weewx.com/ok-for-weewx4.jpg" />

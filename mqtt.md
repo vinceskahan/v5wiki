@@ -187,3 +187,6 @@ weather/inHumidity
 weather/radiation_Wpm2
 ```
 _Please note that this list may vary depending on your settings_
+
+### Source repository
+https://github.com/matthewwall/weewx-mqtt

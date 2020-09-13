@@ -20,7 +20,7 @@ Here's how to switch. Note that these instructions are just a variant on the ins
           # The database option is unchanged. If you are using MySQL, it should be archive_mysql
           database = archive_sqlite
           table_name = archive
-          # Older installs will use WXDaySummaryManager instead of DaySummaryManager. Doesn't matter.
+          # Older installs will use weewx.wxmanager.WXDaySummaryManager instead of weewx.manager.DaySummaryManager. Doesn't matter.
           manager = weewx.manager.DaySummaryManager
           # Specify the new, extended schema here:
           schema = schemas.wview_extended.schema

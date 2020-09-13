@@ -26,7 +26,7 @@ Here's how to switch. Note that these instructions are just a variant on the ins
           schema = schemas.wview_extended.schema
    ```
 
-   Note that for the `manager` option, you can use either `weewx.manager.DaySummaryManager` or `weewx.manager.WXDaySummaryManager`.
+   Note that for the `manager` option, you can use either `weewx.manager.DaySummaryManager` or `weewx.wxmanager.WXDaySummaryManager`.
 
 4. **Check permissions**. `wee_database` will create a new database with the same name as the old, except with the suffix `_new` attached to the end. Make sure you have the necessary permissions to create it. In particular, if you are using MySQL, you will need `CREATE` privileges:
 

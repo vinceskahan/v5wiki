@@ -125,6 +125,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [WeatherLinkLiveJSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
 * [wll - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
 * [weatherlinkliveudp - Collect data from Davis Weatherlink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live - Collect data from WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.

@@ -117,3 +117,6 @@ Here is a minimal configuration to compile owfs:
 --disable-owftpd --disable-owhttpd --disable-owtap --disable-w1 \
 --disable-i2c --disable-ownetlib --disable-owshell --disable-ownet
 ```
+
+### Source code
+https://github.com/matthewwall/weewx-owfs

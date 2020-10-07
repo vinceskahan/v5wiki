@@ -167,6 +167,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin)
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [NeoWX](https://projects.neoground.com/neowx) 
 * [Niculskin](https://gitlab.com/ngulden/niculskin)

@@ -269,10 +269,15 @@ type(x)=<class 'str'>
 b'<p>int=6; byte=&#176;C; unicode=&#176;C; str=&#176;C</p>'
 ```
 
-which is exactly what we want.
+which is exactly what we want. The Cheetah generator in WeeWX uses a strategy similar to the above, except it also handles unidentified objects that cannot be 
+evaluated.
 
-### RESTful services
-to be done
+#### Search list extensions
+Note how Cheetahs's `respond()` method returns Unicode. What about search list extensions (SLE)? The Cheetah engine embeds any expressions
+they create in the Unicode string, then concatenate everything together. This means whatever the SLE returns must be convertible into
+Unicode. To guarantee this, follow a simple rule: __All search list extensions should return Unicode__
+
+If you follow this rule, you will not have any conversion issues.
 
 # Tools
 ## `six`

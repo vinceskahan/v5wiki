@@ -50,6 +50,5 @@ sudo wee_extension --install weewx-rainmachine.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo /etc/init.d/weewx restart
 ```

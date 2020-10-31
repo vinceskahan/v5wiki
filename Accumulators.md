@@ -24,8 +24,9 @@ Whatever their type, all accumulators are expected to perform three different fu
 Again, there are sensible defaults for these three roles, but this can be customized.
 
 ## Life cycle of an accumulator
-At the start of an archive interval, a new collection of accumulators is created (class
-`weewx.accum.Accum`). Initially, it is empty.
+
+Class `weewx.accum.Accum` is a *collection* of accumulators. At the start of an archive interval, a new instance is
+created. Initially, it is empty.
 
 As LOOP packets come in, each observation type is checked to see if it's already in the instance of
 `Accum`. If not, a new accumulator of the proper type is created for it. The observation type is
@@ -92,14 +93,14 @@ At the end of an archive interval, it is time to extract an archive record out o
 The job of the extractor is to do this for each type. There are eight different kinds of
 extractors:
 
-- `avg`. Extract the average value of this type. This is the default.
-- `count`. Extract the total number of non-Null LOOP packets seen of this type.
-- `last`. Extract the last value seen of this type. Use this type for totals of extensive variables, such as `dayRain`.
-- `max`. Extract the maximum value seen of this type.
-- `min`. Extract the minimum value seen of this type.
-- `noop`. Extract no value for this type.
-- `sum`. Extract the total seen for this type. Use this type for `rain` or other  variables that are measured increments.
-- `wind`. Extract `windSpeed` as the average wind magnitude, `windDir` as the vector average
+- `avg`: Extract the average value of this type. This is the default.
+- `count`: Extract the total number of non-Null LOOP packets seen of this type.
+- `last`: Extract the last value seen of this type. Use this type for totals of extensive variables, such as `dayRain`.
+- `max`: Extract the maximum value seen of this type.
+- `min`: Extract the minimum value seen of this type.
+- `noop`: Extract no value for this type.
+- `sum`: Extract the total seen for this type. Use this type for `rain` or other  variables that are measured increments.
+- `wind`: Extract `windSpeed` as the average wind magnitude, `windDir` as the vector average
 direction, `windGust` as the maximum wind seen, and `windGustDir` as its direction.
 
 ## Defaults
@@ -109,51 +110,66 @@ The accumulators come with a set of defaults that covers most situations.
 [Accumulator]
     [[dateTime]]
         adder = noop
-    [[usUnits]]
-        adder = check_units
-    [[rain]]
-        extractor = sum
-    [[ET]]
-        extractor = sum
     [[dayET]]
-        extractor = last
-    [[monthET]]
-        extractor = last
-    [[yearET]]
-        extractor = last
-    [[hourRain]]
         extractor = last
     [[dayRain]]
         extractor = last
+    [[ET]]
+        extractor = sum
+    [[hourRain]]
+        extractor = last
+    [[rain]]
+        extractor = sum
     [[rain24]]
+        extractor = last
+    [[monthET]]
         extractor = last
     [[monthRain]]
         extractor = last
-    [[yearRain]]
+    [[stormRain]]
         extractor = last
     [[totalRain]]
         extractor = last
-    [[stormRain]]
-        extractor = last
+    [[usUnits]]
+        adder = check_units
     [[wind]]
         accumulator = vector
         extractor = wind
-    [[windSpeed]]
-        adder = add_wind
-        merger = avg
-        extractor = noop
     [[windDir]]
         extractor = noop
     [[windGust]]
         extractor = noop
     [[windGustDir]]
         extractor = noop
-    [[windSpeed2]]
-        extractor = last
-    [[windSpeed10]]
-        extractor = last
     [[windGust10]]
         extractor = last
     [[windGustDir10]]
         extractor = last
+    [[windrun]]
+        extractor = sum
+    [[windSpeed]]
+        adder = add_wind
+        merger = avg
+        extractor = noop
+    [[windSpeed2]]
+        extractor = last
+    [[windSpeed10]]
+        extractor = last
+    [[yearET]]
+        extractor = last
+    [[yearRain]]
+        extractor = last
+    [[lightning_strike_count]]
+        extractor = sum
 ```  
+
+These can be overridden by adding a section `[Accumulator]` to the configuration file `weewx.conf`.
+Here's an example. By default, the average value of `outTemp` of all the LOOP packets in an archive
+interval is used for the value of `outTemp` in an archive record. Suppose you want the very last
+value instead. This is what you would put in `weewx.conf`:
+
+```ini
+[Accumulator]
+    [[outTemp]]
+        extractor = last
+``` 

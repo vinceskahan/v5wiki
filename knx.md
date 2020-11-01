@@ -1,6 +1,6 @@
 ### Write EIBnet/IP packets
 
-This weewx[1] extension allows the generation of EIBnet/IP packets
+This weewx extension allows the generation of EIBnet/IP packets
 containing weather information collected by weewx.
 This extension was written for the purpose of easy integration with EIB home automation.
 

@@ -155,6 +155,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
 * [luxtronik - Augment station data with data from Luxtronik heatpump controller
 ](https://github.com/tsoodla/weewx-luxtronik)
+* [knx - Send EIBnet/IP packets with weather information](knx)
 
 #### Skins
 * [amphibian](amphibian)

@@ -11,8 +11,9 @@ wget -O weewx-knx.zip https://github.com/AZAZ78/weewx-knx/archive/main.zip
 ### How to Install
 1. Install pknx (knxip)
 
-Follow installation instructions for https://github.com/open-homeautomation/pknx
-If you need a (simple) backport for Python 2, you can use https://github.com/AZAZ78/pknx
+Follow installation instructions for https://github.com/open-homeautomation/pknx<br>
+If you need a (simple) backport for Python 2, you can use https://github.com/AZAZ78/pknx<br>
+Hint: You can download the code zip and invoke pip install pknx.zip 
 
 2.  Run the extension installer
 

@@ -33,15 +33,24 @@ sudo /etc/init.d/weewx start
 knx service sends data to bus at every archive interval.  Look at the bus monitor to see data.
 
 ### Customize
-Adapt [KNX] configuration in weewx config file.
-Example:
-   # EIBnet/IP gateway configuration
-      gateway_ip = 192.168.2.70
-      gateway_port = 3671
+Adapt `[KNX]` configuration in weewx config file.
 
-   # node configuration
-      outTemp = 5.5.150
-      wind = 5.5.151
-      windGust = 5.5.152
-      rainRate = 5.5.153
-      outHumidity = 5.5.154
+Example:
+
+```ini
+[KNX]
+    # EIBnet/IP gateway configuration
+    gateway_ip = 192.168.2.70
+    gateway_port = 3671
+
+    # node configuration
+    outTemp = 5.5.150
+    wind = 5.5.151
+    windGust = 5.5.152
+    rainRate = 5.5.153
+    outHumidity = 5.5.154
+```
+
+### Source repository
+
+https://github.com/AZAZ78/weewx-knx

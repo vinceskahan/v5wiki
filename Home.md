@@ -132,6 +132,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
+* [WLLDriver - Weewx driver for WeatherLinkLive module with VP2 including archive from Weatherlink.com when data be lost on Weewx.](https://github.com/Drealine/weatherlinklive-driver-weewx)
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)

@@ -207,6 +207,7 @@ comprehensive examples used internally by WeeWX.
 from weewx.engine import StdService
 import weewx.xtypes
 
+# This is the actual XTypes extension:
 class OtherXType(weewx.xtypes.XType):
     def __init__(self, info1=1, info2=2):
         self.info1 = info1
@@ -216,6 +217,7 @@ class OtherXType(weewx.xtypes.XType):
         ...
         return value
 
+# This is a WeeWX service, whose only job is to register and unregister the extension:
 class MyService(StdService):
     def __init__(self, engine, config_dict):
         super(MyService, self).__init__(engine, config_dict)
@@ -224,7 +226,7 @@ class MyService(StdService):
         info1 = config_dict['OtherXType']['info1']
         info2 = config_dict['OtherXtype']['info2']
 
-        # Pass the options on to the OtherXType class
+        # Instantiate an instance of the class OtherXType, using the options:
         self.xt = OtherXType(info1, info2)
 
         # Register the class

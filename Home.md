@@ -213,6 +213,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 * [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns)
+* [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa)
 
 ### Development notes
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)

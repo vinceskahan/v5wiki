@@ -116,7 +116,7 @@ Finally, ensure that this run whenever the system is rebooted:
 
 Add this line at the end:
 
-`@reboot /path/initialize-apache-log`
+`@reboot /path/initialize-apache-logs`
 
 where path is /home/pi/scripts or whatever is appropriate.
 

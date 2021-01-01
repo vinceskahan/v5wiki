@@ -159,7 +159,7 @@ to the function.
 - An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the 
 function, but all the information necessary to perform the aggregation is not there.
 
-See the extension [weewx-xstats](https://github.com/tkeffer/weewx-xstats) for an example of how to
+See the extension [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) for an example of how to
 add a new aggregate type.
 
 ### Registering your subclass
@@ -243,7 +243,8 @@ class MyService(StdService):
 
 In this example, we are going to write an extension to calculate the 
 [vapor pressure of water](https://en.wikipedia.org/wiki/Vapour_pressure_of_water). The observation
-type will be called `vapor_p`, and we will offer two algorithms for calculating it.
+type will be called `vapor_p`, and we will offer two algorithms for calculating it. This example is included in WeeWX V4.3 and later in
+the `examples` subdirectory.
 
 ### The extension
 Here's what the XTypes extension looks like:
@@ -476,7 +477,7 @@ this is not an issue.
 ## Other examples
 It's worth taking a look in file `weewx/wxxtypes.py` for examples of XTypes used by WeeWX itself.
 
-See the project [`weewx-xstats`](https://github.com/tkeffer/weewx-xstats) for examples of adding
+See the project [`weewx-xaggs`](https://github.com/tkeffer/weewx-xaggs) for examples of adding
 new aggregation types, such as the historical highs and lows for a date.
 
 The repository [weepwr](https://github.com/tkeffer/weepwr) contains a more complex example. This is

@@ -11,6 +11,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [On what hardware do you run WeeWX?](hardware)
 * [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
 * [Switched USB hubs](usb-hubs)
+* [Details on Fine Offset clones](https://www.wxforum.net/index.php?topic=40730.0)
 
 ### HOWTO Pages
 

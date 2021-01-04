@@ -1,6 +1,6 @@
-# Weather365
+# Meteo-Services Institute Weather and Climateanalyses
 
-https://stations.weather365.net 
+https://stations.meteo-services.com
 
 More than 20 years of experience in marine weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
 
@@ -9,7 +9,7 @@ In our independent data processing service center we calculate the weather forec
 If  you are planning a trip, a tour, a sailing trip or other activities - detailed weather-forecasts will influence your planning.
 
 Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather?
-WEATHER365 provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts, ozonlevels, pollenlevels and much more.
+Meteo-Services provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts and much more.
 
 We have more then 100 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
 
@@ -19,32 +19,31 @@ The Weather365 extension for weeWX will send data to our network.  This extensio
 
 The service is free. We use your weather data for model-control and development. 
 
-**We give each registered station owner access to our professional network - PROFESSIONAL account at www.weather365.net where we run and show our own forecast models.**
-**How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on www.weather365.net. Send us email (support@weather365.net) with your username and your stationid.**
+**We give each registered station owner access to our professional network - PROFESSIONAL account at meteo-services.com where we run and show our own forecast models.**
+**How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on meteo-services.com . Send us email (info@meteo-services.com) with your username and your stationid.**
 **We will check and set you´re new account to PROFESSIONAL for free when sharing your data with us.**
-**More about PROFESSIONAL: https://www.weather365.net/en/weather-services/professional-weather.html .**
 
 The extension is available at:
 ```
 * Update 2020-08-20 - new version 3.0 (fixing some problems - minimize log-files) 
 * and will work with Python3 now - sorry for the delay in the last weeks
-[WEATHER365 - Uploader - Extension](https://stations.weather365.net/wxupdates/EXTENSION/ ) 
+[WEATHER365 - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
 ```
-[WEATHER365 - Uploader Extension (python3)](https://stations.weather365.net/wxupdates/EXTENSION/)
+[WEATHER365 - Uploader Extension (python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
 Obtain an ID by registering a new station:
 ```
-https://stations.weather365.net/login/
+https://stations.meteo-services.com/login/
 ```
 
 Existing stations can login here:
 ```
-https://stations.weather365.net/login/login.php
+https://stations.meteo-services.com/login/login.php
 ```
 
-NEW <WEATHER-BULLETIN> 
-Now we are able to provide a WEATHER-BULLETIN - Existing stations are still connected. Every new station will automatically connected to WEATHER-BULLETIN. 
+NEW <Station-Report> 
+Now we are able to provide a Station-Report - Existing stations are still connected. Every new station will automatically connected to a special Station-Report. 
 
-Example WEATHER-BULLETIN with LIVE WEATHER and LIVE_Prediction 
+Example Station-Report with LIVE WEATHER and LIVE_Prediction 
 
 STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
-https://stations.weather365.net/wetter-bulletin-1.1/index.php?station_id=1   
+https://stations.meteo-services.com/wetterstation/index.php?station_id=1   

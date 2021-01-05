@@ -1,13 +1,13 @@
-Meteo-Services - Institute f. weather and climateanalyses
-More than 20 years of experience in marine weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
+Meteo-Services - Institute f. Weather and Climate Analyses
+More than 30 years of experience with weather and climate change analyses - we try to analyze the regional things with your existing stations to get a better picture how fast climate change goes on. 
 
 In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (WRF/ETA, WW3) provide exact weather predictions worldwide.
 
 If you are planning a trip, a tour, a sailing trip or other activities - detailed weather-forecasts will influence your planning.
 
-Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather? WEATHER365 provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts, ozonlevels, pollenlevels and much more.
+Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather? Meteo-Services provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts and much more.
 
-We have more then 100 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
+We have more then 200 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly. If you´re interested to get such a module for your pi please contact us. info@meteo-services.com. We still have a few version 1 platines (B) for experiments.
 
 We have also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here.
 
@@ -32,4 +32,4 @@ NEW Now we are able to provide a STATION-REPORT - Existing stations are still co
 
 Example STATION-REPORT with LIVE WEATHER and LIVE_Prediction
 
-STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria) German and English Bulletin is available https://stations.weather365.net/wetter-bulletin-1.1/index.php?station_id=1
+STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria) German and English Bulletin is available https://stations.meteo-services/wetterstation/index.php?station_id=1

@@ -32,4 +32,4 @@ NEW Now we are able to provide a STATION-REPORT - Existing stations are still co
 
 Example STATION-REPORT with LIVE WEATHER and LIVE_Prediction
 
-STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria) German and English Bulletin is available https://stations.meteo-services/wetterstation/index.php?station_id=1
+STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria) German and English Bulletin is available https://stations.meteo-services.com/wetterstation/index.php?station_id=1

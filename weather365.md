@@ -1,75 +1,35 @@
-If you are new, please register your station first at https://stations.weather365.net/login/ ! Please follow the instructions carefully and enter the exact longitude, latitude and alt for your station. You will get a unique station ID by mail.
+Meteo-Services - Institute f. weather and climateanalyses
+More than 20 years of experience in marine weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
 
-a) Install weather365-uploader
+In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (WRF/ETA, WW3) provide exact weather predictions worldwide.
 
-On raspberry / linux Systems open a terminal (ctrl+alt+F1) or SSH session and as the user 'pi’ run: This installation-method works for Debian- and Python-installed weewx-systems with standard path.
+If you are planning a trip, a tour, a sailing trip or other activities - detailed weather-forecasts will influence your planning.
 
-bash <(curl -sL https://stations.weather365.net/wxupdates/update-weewx.sh)
+Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather? WEATHER365 provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts, ozonlevels, pollenlevels and much more.
 
-(If you’re running the installation over SSH, running the installation through a screen or tmux session is highly recommended.)
+We have more then 100 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
 
-Assuming everything went well, your data will be sent to stations.weather365.net and the first dataset is visible after approx 5 or 10 minutes.
+We have also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here.
 
-b) manual install weather365-uploader
+The extension for weeWX will send data to our network. This extension allows weeWX to send data to the Meteo-Services network.
 
-Download
+The service is free. We use your weather data for model-control and development.
 
-https://stations.weather365.net/wxupdates/Downloads/weather365-3.0.zip
+We give each registered station owner access to our professional network - PROFESSIONAL account at meteo-services.com where we run and show our own forecast models. How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on www.weather365.net. Send us email (support@meteo-services.com) with your username and your stationid. We will check and set you´re new account to PROFESSIONAL for free when sharing your data with us. 
 
-Installation raspberry-pi or Linux
+The extension is available at:
 
-Login on your raspberry / Linux locally or remote . On raspberry try it as Standard-User „pi“.
+* Update 2021-01-03 - new version 3.0 (fixing some problems - minimize log-files) 
+* and will work with Python3 now - sorry for the delay in the last weeks
+[Meteo-Services - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
+Meteo-Services (weather365)  - Uploader Extension (python3) Obtain an ID by registering a new station:
 
-This install describes a Debian based install.
+https://stations.meteo-services.com/login/
+Existing stations can login here:
 
-If you´re on a python2 system pleas install package python-future at first ! 
-ex. install for Linux/raspberry systems stretch / buster 
-sudo apt-get update 
-sudo apt-get install python-future
+https://stations.meteo-services.com/login/login.php
+NEW Now we are able to provide a STATION-REPORT - Existing stations are still connected. Every new station will automatically connected to indiviual STATION-Report
 
-If you´re on a python3 system pleas install package python3-future at first ! 
-ex. install for Linux/raspberry systems stretch / buster 
-sudo apt-get update 
-sudo apt-get install python3-future
+Example STATION-REPORT with LIVE WEATHER and LIVE_Prediction
 
-1. Fetch the Uploader ( using Terminal Window )
-
-wget https://stations.weather365.net/wxupdates/Downloads/weather365-3.0.zip
-
-2. Install the update
-
-sudo wee_extension --install weather365-3.0.zip
-
-3. extend weewx.conf
-
-Add here -> [StdRESTful] weewx.conf …
-
-sudo nano /etc/weewx/weewx.conf
-
-Find [StdRESTful] and add your station ID
-
-[[Weather365]]
-
-stationid = xxxxxxxxxx
-
-password = 14991234912
-
-SAVE with CTRL-X
-
-4. Restart weewx ( Sometimes you have to restart twice )
-
-sudo /etc/init.d/weewx stop
-
-sudo /etc/init.d/weewx start
-
-Copyright [2018] [Frank Bandle / Weather365]
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS,
-
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and limitations under the License.
+STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria) German and English Bulletin is available https://stations.weather365.net/wetter-bulletin-1.1/index.php?station_id=1

@@ -52,12 +52,20 @@ https://stations.meteo-services.com/wetterstation/index.php?station_id=1
 
 a) Install Meteo-Services - -uploader
 
-On raspberry / linux Systems open a terminal (ctrl+alt+F1) or SSH session and as the user 'pi’ run: This installation-method works for Debian- and Python-installed weewx-systems with standard path.
+On raspberry / linux Systems open a terminal (ctrl+alt+F1) or SSH session and as the user 'pi’ run: 
 
 `bash <(curl -sL https://stations.meteo-services.com/wxupdates/update-weewx.sh)`
 
-(If you’re running the installation over SSH, running the installation through a screen or tmux session is highly recommended.)
+This installation-method works for Debian- and Python-installed weewx-systems with standard path.
+
+**(If you’re running the installation over SSH, running the installation through a screen or tmux session is highly recommended.)**
 Assuming everything went well, your data will be sent to stations.meteo-services.com and the first dataset is visible after approx 5 or 10 minutes.
+You only have to enter your stationod - received by E-Mail
+
+Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the stationid send by E-mail
+`[[Weather365]]`
+`stationid = xxxxxxxxxx`
+`password = 14991234912`
 
 **b) manual install Meteo-Services - -uploader**
 

@@ -49,6 +49,7 @@ STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and
 https://stations.meteo-services.com/wetterstation/index.php?station_id=1   
 
 **HOW TO INSTALL - quick**
+
 a) Install Meteo-Services - -uploader
 
 On raspberry / linux Systems open a terminal (ctrl+alt+F1) or SSH session and as the user 'pi’ run: This installation-method works for Debian- and Python-installed weewx-systems with standard path.

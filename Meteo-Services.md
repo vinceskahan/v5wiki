@@ -50,7 +50,7 @@ https://stations.meteo-services.com/wetterstation/index.php?station_id=1
 
 **HOW TO INSTALL - quick**
 
-a) Install Meteo-Services - -uploader
+a) Install Meteo-Services -uploader in "Batch-mode" with one line.
 
 On raspberry / linux Systems open a terminal (ctrl+alt+F1) or SSH session and as the user 'pi’ run: 
 

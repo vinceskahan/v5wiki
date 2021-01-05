@@ -72,12 +72,16 @@ This install describes a Debian based install.
 
 If you´re on a python2 system pleas install package python-future at first ! 
 ex. install for Linux/raspberry systems stretch / buster 
+
 sudo apt-get update 
+
 sudo apt-get install python-future
 
 If you´re on a python3 system pleas install package python3-future at first ! 
 ex. install for Linux/raspberry systems stretch / buster 
+
 sudo apt-get update 
+
 sudo apt-get install python3-future
 
 1. Fetch the Uploader ( using Terminal Window )
@@ -97,13 +101,17 @@ sudo nano /etc/weewx/weewx.conf
 Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the stationid send by E-mail
 
 [[Weather365]]
+
 stationid = xxxxxxxxxx
+
 password = 14991234912
+
 SAVE with CTRL-X
 
 4. Restart weewx ( Sometimes you have to restart twice )
 
 sudo /etc/init.d/weewx stop
+
 sudo /etc/init.d/weewx start
 
 

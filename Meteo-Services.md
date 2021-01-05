@@ -58,7 +58,7 @@ bash <(curl -sL https://stations.meteo-services.com/wxupdates/update-weewx.sh)
 (If you’re running the installation over SSH, running the installation through a screen or tmux session is highly recommended.)
 Assuming everything went well, your data will be sent to stations.meteo-services.com and the first dataset is visible after approx 5 or 10 minutes.
 
-b) manual install Meteo-Services - -uploader
+**b) manual install Meteo-Services - -uploader**
 
 Download
 
@@ -100,7 +100,7 @@ sudo nano /etc/weewx/weewx.conf
 
 Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the stationid send by E-mail
 
-[[Weather365]]
+`[[Weather365]]`
 
 stationid = xxxxxxxxxx
 

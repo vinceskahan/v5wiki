@@ -15,6 +15,10 @@ wget -O weewx-mqtt.zip https://github.com/matthewwall/weewx-mqtt/archive/master.
 sudo pip install paho-mqtt
 sudo pip install python-cjson
 ```
+**Or** if on a system with both python2 and python3, and using weewx on python3:
+```
+sudo pip3 install paho-mqtt
+```
 
 2.  Run the extension installer:
 
@@ -59,6 +63,7 @@ _aggregation_ - How the observations should be grouped.  Options are `individual
 
 _retain_ - When set to `True`, the MQTT `retain` property is set for each message.  Default is `False`.
 
+_client_id_ - Use this mqtt client ID (optional)
 
 ### Topic names
 

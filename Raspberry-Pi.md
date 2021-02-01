@@ -4,11 +4,7 @@ Running WeeWX on a Raspberry Pi has become very popular. You'll have to look els
 
 ### Time
 
-First, you simply must run NTP on the RPi. It is not possible to create a dependable data logging system without an accurate source of time. To install NTP:
-
-~~~~~
-$ sudo apt-get install ntp
-~~~~~
+First, you simply must run a time synchronization service. It is not possible to create a dependable data logging system without an accurate source of time. See the Wiki article [*Time services*](Time-services).
 
 Second, the RPi does not have an onboard battery-powered clock. Instead, by default, the software is configured with a "fake clock," which regularly records the time on the hard disk. If there is a power failure, then this time is used to set the clock during the reboot. Unfortunately, this time could be hours behind the real time, depending on how long the power was out. 
 

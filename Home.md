@@ -31,6 +31,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Colorize the UV index](Colored%20UV%20index)
 * [Run multiple instances of WeeWX on one computer](weewx-multi)
 * [Implement a multi-threaded service](multi-threaded-service)
+* [Time services](Time-services)
 
 #### Operating system configuration
 * [Run WeeWX as a non-root user](Run-as-a-non-root-user)

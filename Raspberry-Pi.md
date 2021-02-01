@@ -10,7 +10,7 @@ Second, the RPi does not have an onboard battery-powered clock. Instead, by defa
 
 Meanwhile, if you are running WeeWX as a daemon, WeeWX will also start up and try to run with this seriously out-of-date time. When it comes time to store a record to the database, it will either be stored under a too-old timestamp, or there may already be a record for that timestamp (duplicate primary key), left over from before the power outage.
 
-Eventually NTP starts up, finds an authoritative time source, then sets the time correctly, but this could take several minutes and, by then, the damage has been done.
+Eventually, whatever time synchronization service you are using starts up, finds an authoritative time source, then sets the time correctly, but this could take several minutes and, by then, the damage has been done.
 
 There are a number of solutions. Here are two.
 

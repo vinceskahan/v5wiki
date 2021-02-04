@@ -1,4 +1,4 @@
-# How to run multiple instances of weeWX
+# How to run multiple instances of WeeWX
 
 There are a few applications where you might want to run more than one instance of weeWX.  You might want to test a new version of weeWX using the simulator without disrupting data from your weather station.  Or you might have more than one weather station from which you would like to collect data.  This is how to do it.
 

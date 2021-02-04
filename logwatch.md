@@ -1,10 +1,10 @@
-## Using logwatch to monitor weewx log messages
+## Using logwatch to monitor WeeWX log messages
 
-logwatch is a system for summarizing log files.  It matches patterns in log messages to create reports about the contents of log files for various system services such as mail, disk usage, software installations, etc.  This is a guide to make logwatch understand weewx log messages so that logwatch will report statistics such as the number of weewx uploads to weather underground, number of failed upload attempts over a month/week/day, etc.
+logwatch is a system for summarizing log files.  It matches patterns in log messages to create reports about the contents of log files for various system services such as mail, disk usage, software installations, etc.  This is a guide to make logwatch understand WeeWX log messages so that logwatch will report statistics such as the number of WeeWX uploads to weather underground, number of failed upload attempts over a month/week/day, etc.
 
-There are three files required to make logwatch understand weewx (or any new service).  The first is the service configuration file (services/weewx.conf), the second is the logfile configuration file (logfiles/weewx.conf), and the third is the script that generates the weewx report (scripts/services/weewx).
+There are three files required to make logwatch understand WeeWX (or any new service).  The first is the service configuration file (services/weewx.conf), the second is the logfile configuration file (logfiles/weewx.conf), and the third is the script that generates the WeeWX report (scripts/services/weewx).
 
-These instructions assume that weewx was installed from DEB or RPM package.  If weewx was installed using setup.py to `/home/weewx`, the weewx logwatch files will be located in `/home/weewx/util/logwatch` instead of `/etc/weewx`, so replace `/etc/weewx` with `/home/weewx/util` in the commands below.  In either case, you can copy or symlink the files.
+These instructions assume that WeeWX was installed from DEB or RPM package.  If WeeWX was installed using setup.py to `/home/weewx`, the WeeWX logwatch files will be located in `/home/weewx/util/logwatch` instead of `/etc/weewx`, so replace `/etc/weewx` with `/home/weewx/util` in the commands below.  In either case, you can copy or symlink the files.
 
 1. install logwatch
 ```
@@ -16,12 +16,12 @@ apt-get install logwatch
 ln -s /etc/weewx/logwatch/conf/services/weewx.conf /etc/logwatch/conf/services
 ```
 
-3. tell logwatch which log files weewx uses
+3. tell logwatch which log files WeeWX uses
 ```
 ln -s /etc/weewx/logwatch/conf/logfiles/weewx.conf /etc/logwatch/conf/logfiles
 ```
 
-4. tell logwatch how to interpret weewx log messages
+4. tell logwatch how to interpret WeeWX log messages
 ```
 ln -s /etc/weewx/logwatch/scripts/services/weewx /etc/logwatch/scripts/services
 ```
@@ -58,13 +58,13 @@ The range option understands many variations:
 ```
 Use the --debug option to see exactly what logwatch is doing.
 
-If you have configured rsyslog to put weewx logfiles into a location other than /var/log/syslog, modify the logfiles/weewx.conf file.
+If you have configured rsyslog to put WeeWX logfiles into a location other than /var/log/syslog, modify the logfiles/weewx.conf file.
 
 To look for different log messages or adjust the report formatting, modify the perl script /etc/logwatch/scripts/services/weewx
 
 ## What does it look like?
 
-The weewx logwatch script summarizes all of the known weewx messages and provides a summary such as number of images generated, number of upload failures, etc.  Any unrecognized log messages, such as exceptions or other failures, are listed after the summary.  
+The WeeWX logwatch script summarizes all of the known WeeWX messages and provides a summary such as number of images generated, number of upload failures, etc.  Any unrecognized log messages, such as exceptions or other failures, are listed after the summary.  
 
 Here is an example of the output from a daily run of logwatch (thank you vince :)
 

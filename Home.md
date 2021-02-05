@@ -194,7 +194,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="https://www.idokep.hu/images/icon/idokep_tab.png" width='16'/> [idokep](https://github.com/lorantkurthy/weewx-idokep/)
 * <img src="http://weewx.com/consumers/influx-logo.png" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services)
+* <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) <img src="http://weewx.com/ok-for-weewx4.jpg" />

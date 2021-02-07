@@ -17,7 +17,7 @@ using the same permissions protocols used by any other file.
 - Works well in a networked, multi-user environment.
 
 ### Con:
-- WeeWX tends to rely on many, small queries, which MySQL is ill-suited for.
+- WeeWX tends to rely on many, small queries, which MySQL is ill-suited for. Performance can be particularly slow when the MySQL server is on a different machine and the queries must be done through a network connection. For an example, see [this thread](https://groups.google.com/g/weewx-user/c/gvReyZeqOJQ)
 - Complex administration. Many arcane commands must be studied and understood.
 - Requires a separate install.
 - Takes considerable system resources.

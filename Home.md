@@ -96,8 +96,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 * [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
-* [ip100 - Collect data from RainWise IP100](https://github.com/matthewwall/weewx-ip100)
 * [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [ip100 - Collect data from RainWise IP100](https://github.com/matthewwall/weewx-ip100)
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
@@ -123,18 +123,18 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)
-* [WeatherLinkLiveJSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
-* [wll - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
-* [weatherlinkliveudp - Collect data from Davis Weatherlink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [WeatherLink Live - Collect data from WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLinkLiveJSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
+* [weatherlinkliveudp - Collect data from Davis Weatherlink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
+* [wll - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
+* [WLLDriver - Weewx driver for WeatherLinkLive module with VP2 including archive from Weatherlink.com when data be lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
-* [WLLDriver - Weewx driver for WeatherLinkLive module with VP2 including archive from Weatherlink.com when data be lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 #### Services
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)
@@ -148,17 +148,16 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [davishealthapi - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)](https://github.com/uajqq/weewx-davishealthapi)
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
+* [knx - Send EIBnet/IP packets with weather information](knx)
+* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik)
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
-* [owfs - Augment station data with data from one-wire sensors](owfss)
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
+* [owfs - Augment station data with data from one-wire sensors](owfss)
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
-* [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs)<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
-* [luxtronik - Augment station data with data from Luxtronik heatpump controller
-](https://github.com/tsoodla/weewx-luxtronik)
-* [knx - Send EIBnet/IP packets with weather information](knx)
 
 #### Skins
 * [amphibian](amphibian)
@@ -168,8 +167,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
-* [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
-* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [NeoWX](https://projects.neoground.com/neowx) 
@@ -177,10 +174,12 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Responsive](responsive)
 * [simple](simple)
 * [SteelSeries Weather Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [Washboard](https://gitlab.com/jquagga/Washboard)
-* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
-* [WeeWX-WD](weewx-wd) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
+* [WeeWX-WD](weewx-wd) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 
 #### XType extensions
 [XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX

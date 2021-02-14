@@ -118,19 +118,19 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
 * [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi)
-* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon)<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)
-* [WeatherLink Live - Collect data from WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [WeatherLinkLiveJSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
-* [weatherlinkliveudp - Collect data from Davis Weatherlink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live JSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
+* [WeatherLink Live UDP - Collect data from Davis WeatherLink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live - Collect data from Davis WeatherLink Live including archive from Weatherlink.com when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live WLL - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
-* [wll - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
-* [WLLDriver - Weewx driver for WeatherLinkLive module with VP2 including archive from Weatherlink.com when data be lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />

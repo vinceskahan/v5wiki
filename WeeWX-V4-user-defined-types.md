@@ -102,14 +102,16 @@ The user should subclass `XTypes`, then override the member function `get_series
 Where
 
 - `obs_type` is the name of type to be computed.
-- `timespan` is an instance of `weeutil.weeutil.TimeSpan`. It defines bounding start and ending times of the series,
-exclusive on the left, inclusive on the right.
-- `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be open and usable.
-- `aggregate_type` defines the type of aggregation, if any. Typically, it is one of `sum`, `avg`, `min`, or `max`,
-although there is nothing stopping the user-defined extension from defining new types of aggregation. If
-set to `None`, then no aggregation should occur, and the full series should be returned.
-- `aggregate_interval` is an aggregation interval. If aggregation is to be done (*i.e.*, `aggregate_type` is not
-`None`), then the series should be grouped by the aggregation interval.
+- `timespan` is an instance of `weeutil.weeutil.TimeSpan`. It defines bounding start and ending
+  times of the series, exclusive on the left, inclusive on the right.
+- `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be
+  open and usable.
+- `aggregate_type` defines the type of aggregation, if any. Typically, it is one of `sum`, `avg`,
+  `min`, or `max`, although there is nothing stopping the user-defined extension from defining
+  new types of aggregation. If set to `None`, then no aggregation should occur, and the full series
+  should be returned.
+- `aggregate_interval` is an aggregation interval. If aggregation is to be done (*i.e.*,
+  `aggregate_type` is not `None`), then the series should be grouped by the aggregation interval.
 
 The function should return:
 
@@ -123,9 +125,10 @@ The function should return:
 The function should raise:
 
 - An exception of type `weewx.UnknownType`, if the type `obs_type` is not known to the function. 
-- An exception of type `weewx.UnknownAggregation` if the aggregation `aggregate_type` is not known to the function. 
-- An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the function, but all the
-information necessary to perform the calculate is not there.
+- An exception of type `weewx.UnknownAggregation` if the aggregation `aggregate_type` is not known
+  to the function. 
+- An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the 
+  function, but all the information necessary to perform the calculate is not there.
 
 ### Calculating aggregates
 
@@ -145,7 +148,8 @@ times of the aggregation, exclusive on the left, inclusive on the right.
 be some new, user-defined aggregation.
 - `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be 
 open and usable.
-- `option_dict` is a dictionary with possible, additional, values to be used by the aggregation.  (Need details)
+- `option_dict` is a dictionary with possible, additional, values to be used by the aggregation.
+  (Need details)
 
 The function should return:
 
@@ -243,8 +247,8 @@ class MyService(StdService):
 
 In this example, we are going to write an extension to calculate the 
 [vapor pressure of water](https://en.wikipedia.org/wiki/Vapour_pressure_of_water). The observation
-type will be called `vapor_p`, and we will offer two algorithms for calculating it. This example is included in WeeWX V4.3 and later in
-the `examples` subdirectory.
+type will be called `vapor_p`, and we will offer two algorithms for calculating it. This example is
+included in WeeWX V4.3 and later in the `examples` subdirectory.
 
 ### The extension
 Here's what the XTypes extension looks like:
@@ -370,8 +374,7 @@ There are several different ways you can use your extension:
 4. In other extensions.
 
 #### Cheetah
-Suppose we 
-want to show the current vapor pressure in a Cheetah template:
+Suppose we want to show the current vapor pressure in a Cheetah template:
 
 ```
 <p>The current vapor pressure is $current.vapor_p </p>
@@ -399,10 +402,10 @@ plot with a single variable: `vapor_p`:
 
 ![image](images/dayvaporp.png)
 
-This works, because the XTypes system includes a version of `get_series()` which hits the database,
-then feeds the result into the XTypes system to calculate any derived variables, such as `vapor_p`.
-However, this version _does not_ know how to calculate aggregations (although there's no reason why
-this couldn't be added in the future).
+How does this work? The XTypes system includes a version of `get_series()`, which in the absence of
+a specialized version of `get_series()`, repeatedly calls our version of `get_scalar()`,
+synthesizing a series. However, this version _does not_ know how to calculate aggregations
+(although there's no reason why this couldn't be added in the future).
 
 #### Populate packets and records
 
@@ -441,8 +444,8 @@ get_aggregate(obs_type, timespan, aggregate_type, db_manager, **option_dict)
 
 Example: function `weewx.xtypes.get_scalar()` searches the list `weewx.xtypes.xtypes`, trying
 member function `get_scalar()` of each object in turn. If the member function raises
-`weewx.UnknownType` or `weewx.CannotCalculate`, `weewx.xtypes.get_scalar()` moves on to the next
-object in the list. If no function can be found to do the evaluation, it raises
+`weewx.UnknownType` or `weewx.CannotCalculate`, then `weewx.xtypes.get_scalar()` moves on to the
+next object in the list. If no function can be found to do the evaluation, it raises
 `weewx.UnknownType`.
 
 The other functions work in a similar manner.
@@ -495,15 +498,15 @@ and function to be called in `weewx.conf`, in a manner similar to search list ex
 approach has the advantage that it requires a bit less programming and, most importantly, it leaves
 a concise record of what extensions are being used in the configuration file `weewx.conf`.
 
-However, it has a big disadvantage. The example above shows why. It is difficult to predict what
-data a user might need to write an extension. In our example, we needed the altitude of the
-station. Where would that come from? The answer is that it would have to be supplied by a
-standardized interface to the user function, which would make all manner of information available.
-This means the user might potentially have to know everything, so you end up with a system where
-everything is connected to everything.
+However, it has a big disadvantage: it is difficult to predict what data a user might need to write
+an extension. For example, what if we needed to know the station's altitude? WeeWX obtains this
+from the hardware, with a fallback to the configuration file. Information like this would have to
+be supplied by a standardized interface that would make all manner of information available to the
+extension. This means the user might potentially have to know everything, so you end up with a
+system where everything is connected to everything.
 
 This is avoided by supplying a Python API that the type must adhere to. The new type can get any
-information it wants, then register with the API. This is what our example does.
+information it wants, then register with the API.
 
 ### Alternative: register functions through the API
 With this alternative, new types register with a Python API, but register functions, rather than

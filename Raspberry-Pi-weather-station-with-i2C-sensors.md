@@ -1,7 +1,8 @@
 # Overview #
 I am in the process of updating my configuration and will update this file when completed.
 
-The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I also now collect my aircon data and import this into weewx. Note this is an updated link (using Belchertown skin. I have also added the following tabs to the Belchertown skin; SEQ detailed forcast uses code developed by Darryn Capes-Davis for his responsive skin for weewx and a colour history chart by Nick Dajda used in his Bootstrap skin for weewx. Edited 23 Feb 2021
+The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I also now collect my aircon data and import this into weewx. Note this is an updated link (using Belchertown skin). 
+I have also added the following tabs to the Belchertown skin; SEQ detailed forcast uses code developed by Darryn Capes-Davis for his responsive skin for weewx and a colour history chart by Nick Dajda used in his Bootstrap skin for weewx. Edited 23 Feb 2021
 [Link to my station](https://bit.ly/2A8BbOx)
 
 ## Overall block diagram #

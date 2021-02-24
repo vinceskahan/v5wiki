@@ -31,6 +31,10 @@ With my Pi3 defaulted to python3 another method of getting my rain gauge (one wi
 This is the basic setup for my Pi with HDD and RAM disk and enabled i2c.
 [Pi configuration](http://bit.ly/2HlED6R)
 
+### Australian weather forecast added to Belchertown skin
+This is a link to the files and other information to enable a localised weather forecast and a colour history chart to be displayed within the Belchertown skin for weewx.
+(http://bit.ly/3btSmbY)
+
 ### Weewx config #
 **still to be updated**
 Use your normal config procedure, this link is the procedure I use. [weewx install](http://bit.ly/2F5CUjT)

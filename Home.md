@@ -169,7 +169,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
 * [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [NeoWX](https://projects.neoground.com/neowx) 
+* [NeoWX](https://neoground.com/projects/neowx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [NeoWX Material](https://neoground.com/projects/neowx-material) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)

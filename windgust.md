@@ -22,7 +22,7 @@ Contrast this with the anemometer on a sailing vessel.  These devices come very 
 
 So when an Ultimeter reports `windSpeed`, it is pretty close to instantaneous wind speed.  But the `windSpeed` reported by an Acurite station is actually an average wind speed.
 
-None of them report the 'sustained winds' definition.
+Few of them report the 'sustained winds' definition - the WMR300 is one, which reports wind speed only as a 10 minute block-average.
 
 ### Wind gust
 

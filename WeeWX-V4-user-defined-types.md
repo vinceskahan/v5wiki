@@ -168,7 +168,7 @@ add a new aggregate type.
 
 ### Registering your subclass
 
-The last step is to tell the XTypes system about the existence of your extension. The module
+The next step is to tell the XTypes system about the existence of your extension. The module
 `weewx.xtypes` keeps a simple list of extensions. When it comes time to evaluate a derived
 type, the list is scanned, and the first entry that successfully resolves a type, is the one
 that is used.
@@ -240,6 +240,23 @@ class MyService(StdService):
         # Engine is shutting down. Remove the registration
         weewx.xtypes.xtypes.remove(self.xt)
 ```
+
+### Including in loop packets and records
+
+Without that last step the defined values can be used in templates (such as "index.html.tmpl") and plots. But if you want to see the values in loop packets and/or records or want to publish them by MQTT, you need to extend the section `[StdWXCalculate]` subsection `[[Calculations]]` in weewx.conf.
+
+Say the name of the value defined in your extension is "foo", you would write:
+
+```
+[StdWXCalculate]
+    [[Calculations]]
+        ...
+        foo = software, archive
+```
+
+`software` means the value is always calculated by the extension. In case a hardware provided value should be preferred over the software calculated one, replace it by `prefer_hardware`
+
+`archive` means the value is included in archive records, only. If `archive` ist replaced by `loop` the value is included in loop records, only. If neither `archive` nor `loop` is provided, the value is included in both loop and archive records.
 
 ------------------------
 

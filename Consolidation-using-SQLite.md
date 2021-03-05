@@ -36,8 +36,8 @@ CREATE  TABLE wind (
 INSERT INTO wind 
   SELECT MAX(dateTime) AS dateTime,
     NULL AS windDir,					-- default if speed is zero
-	AVG(windSpeed * COS(RADIANS(windDir))) AS yvec,
-	AVG(windSpeed * SIN(RADIANS(windDir))) AS xvec
+	AVG(windSpeed * COS(RADIANS(windDir))) AS xvec,
+	AVG(windSpeed * SIN(RADIANS(windDir))) AS yvec
     FROM asmall
     GROUP BY dt5m  ;
 

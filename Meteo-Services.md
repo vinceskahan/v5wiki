@@ -4,7 +4,7 @@ https://stations.meteo-services.com
 
 More than 20 years of experience in marine-, agrarian- and media- weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
 
-In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (NMMB-Europe, WRF-Europe, ETA-Europe, WW3) provide regional and local weather predictions worldwide. 
+In our independent data processing service center we run and calculate weather forecast models 4 (6) times a day. On base of the actual measurement values with more than 40.000 measurement stations worldwide our optimized numerical weather models (NMMB-Europe, NMMB-D, WRF-Europe, WRF-D, ETA-Europe, WW3) provide regional and local weather predictions worldwide. 
 
 If  you are planning a trip, a tour, a sailing trip or other activities - detailed weather-forecasts will influence your planning.
 

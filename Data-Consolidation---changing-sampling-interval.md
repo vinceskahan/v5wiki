@@ -47,14 +47,19 @@ Populate table _c5_ with the easily generated data.
 
 Most of the data consolidation is handled by built-in functions of the sql language,
 but extra handling is required for wind data.
-#### Process the average wind vector
+#### Process the "average" wind vector
 
-Average wind is calculated as a vector average of wind speeds and directions.
+Average wind speed is simply an arithmetic mean of the wind magnitudes.
+The "average" direction is calculated as a vector summation of wind magnitudes and directions.
 
 #### Process the Wind Gust direction
 Wind _gust_ consolidation is not done, since the gust _speed_ is
 the  maximum during the consolidation period. This code
 extracts the direction at the time at which the maximum was observed.
+The calculations ignore the facts that 
+1. zero direction is different between compass bearings and trigonometric functions
+2. one is clockwise while the other anticlockwise.
+The final vector is correct, although the intermediate components will not make sense.
  	
 There is an ambiguity with duplicate maximum gusts resulting in multiple records for the one 5-minute interval.
 There is no sensible consolidation to pick a suitable direction for two or more equal gusts:

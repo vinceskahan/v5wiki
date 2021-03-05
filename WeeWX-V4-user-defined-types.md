@@ -241,22 +241,26 @@ class MyService(StdService):
         weewx.xtypes.xtypes.remove(self.xt)
 ```
 
-### Including in loop packets and records
+### Including in loop packets and archive records
 
-Without that last step the defined values can be used in templates (such as "index.html.tmpl") and plots. But if you want to see the values in loop packets and/or records or want to publish them by MQTT, you need to extend the section `[StdWXCalculate]` subsection `[[Calculations]]` in weewx.conf.
+With the previous step, the defined values can be used in templates (such as `index.html.tmpl`) and
+plots. However, if you want to see the values in loop packets and/or archive records, or want to
+publish them by MQTT, then you need to extend the section `[StdWXCalculate]`, subsection
+[`[[Calculations]]`](http://www.weewx.com/docs/usersguide.htm#[[Calculations]]), in `weewx.conf`.
 
-Say the name of the value defined in your extension is "foo", you would write:
+For example, say the name of the value defined in your extension is "foo", then you could write:
 
-```
+```ini
 [StdWXCalculate]
     [[Calculations]]
         ...
-        foo = software, archive
+        foo = software
 ```
 
-`software` means the value is always calculated by the extension. In case a hardware provided value should be preferred over the software calculated one, replace it by `prefer_hardware`
+where `software` means the value will always be calculated by the extension. See the section
+[_[[Calculations]]_](http://www.weewx.com/docs/usersguide.htm#[[Calculations]]) in the User's Guide
+for other options.
 
-`archive` means the value is included in archive records, only. If `archive` ist replaced by `loop` the value is included in loop records, only. If neither `archive` nor `loop` is provided, the value is included in both loop and archive records.
 
 ------------------------
 

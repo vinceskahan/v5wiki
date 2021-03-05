@@ -37,43 +37,6 @@ Existing stations can login here:
 ```
 https://stations.meteo-services.com/login/login.php
 ```
-
-Changelog - Milestones
-
-<Station-Report> 
-We are able to provide a individual Station-Report - Existing stations are still connected. Every new station will automatically connected to a special local Station-Report. 
-
-Example Station-Report with LIVE WEATHER and LIVE_Prediction 
-
-STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
-https://stations.meteo-services.com/wetterstation/index.php?station_id=1   
-
-Mar/2021 - improving WebApp - new Template and JS
-Feb/2021 - complete new graphics in stations-report
-Jan/2021 - adding new interactive graphics showing the measured values 
-Dec/2020 - adding new DB-Params for future use ... soil-params ... (air quality beta)
-Nov/2020 - preparing Grasland with new interactive graphic
-Oct/2020 - improving Archive
-Sep/2020 - Archive - Functions new setup
-Jul/2020 - alle graphs switch to jpgraph-Library
-Jun/2020 - building WebApp - responsive ready design
-May/2020 - making stations site - responsive Layout
-Apr/2020 - Adding Huglin-Index 
-Mar/2020 - adding corn-Index / (German: Maisreifeindex / Wäremsummen für Mais) 
-Feb/2020 - improving text forecasts - adding "fog-recognition with local measured data" (test)
-Jan/2020 - abdingt GTS - GraslandTemperature Vegetation Start /agriculture) / (German: Grünlandtemperaturindex) 
-Dec/2019 - adding local text forecast (German-region) responding to local measured values and local models
-Oct/2019 - adding switches metric / US  mm/inch etc.
-May/2019 - adding station measurements to WRF-Europe in testmode
-Jan/2019 - adding first local forecasts 
-Dez/2018 - connect first data to local model forecasts / first Test with ETA
-Sep/2018 - adding warnings
-Jun/2018 - Version 1 - special station-report
-Feb/2018 - some DB improvements
-Jan/2018 - adding Synopsis
-Oct/2017 - adding Metar
-Jun/2017 - first setup with own stations (10) experimental network for agriculture in Bavaria
-
 --
 
 **HOW TO INSTALL - quick**
@@ -146,5 +109,40 @@ SAVE with CTRL-X
 `sudo /etc/init.d/weewx stop`
 `sudo /etc/init.d/weewx start`
 
+----
+* Changelog - Milestones
 
+* <Station-Report> 
+* We are able to provide a individual Station-Report - Existing stations are still connected. Every new station will automatically connected to a special local Station-Report. 
+
+* Example Station-Report with LIVE WEATHER and LIVE_Prediction 
+
+* STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
+* https://stations.meteo-services.com/wetterstation/index.php?station_id=1   
+
+* Mar/2021 - improving WebApp - new Template and JS
+* Feb/2021 - complete new graphics in stations-report
+* Jan/2021 - adding new interactive graphics showing the measured values 
+* Dec/2020 - adding new DB-Params for future use ... soil-params ... (air quality beta)
+* Nov/2020 - preparing Grasland with new interactive graphic
+* Oct/2020 - improving Archive
+* Sep/2020 - Archive - Functions new setup
+* Jul/2020 - alle graphs switch to jpgraph-Library
+* Jun/2020 - building WebApp - responsive ready design
+* May/2020 - making stations site - responsive Layout
+* Apr/2020 - Adding Huglin-Index 
+* Mar/2020 - adding corn-Index / (German: Maisreifeindex / Wäremsummen für Mais) 
+* Feb/2020 - improving text forecasts - adding "fog-recognition with local measured data" (test)
+* Jan/2020 - abdingt GTS - GraslandTemperature Vegetation Start /agriculture) / (German: Grünlandtemperaturindex) 
+* Dec/2019 - adding local text forecast (German-region) responding to local measured values and local models
+* Oct/2019 - adding switches metric / US  mm/inch etc.
+* May/2019 - adding station measurements to WRF-Europe in testmode
+* Jan/2019 - adding first local forecasts 
+* Dez/2018 - connect first data to local model forecasts / first Test with ETA
+* Sep/2018 - adding warnings
+* Jun/2018 - Version 1 - special station-report
+* Feb/2018 - some DB improvements
+* Jan/2018 - adding Synopsis
+* Oct/2017 - adding Metar
+* Jun/2017 - first setup with own stations (10) experimental network for agriculture in Bavaria
 

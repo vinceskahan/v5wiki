@@ -2,7 +2,7 @@
 
 https://stations.meteo-services.com
 
-More than 20 years of experience in marine weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
+More than 20 years of experience in marine-, agrarian- and media- weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
 
 In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (WRF/ETA, WW3) provide exact weather predictions worldwide. 
 

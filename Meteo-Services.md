@@ -4,20 +4,18 @@ https://stations.meteo-services.com
 
 More than 20 years of experience in marine-, agrarian- and media- weather forecasting give us the ability to provide you with the most precise and applicable weather service and data base for your weather predictions.
 
-In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (WRF/ETA, WW3) provide exact weather predictions worldwide. 
+In our independent data processing service center we calculate the weather forecast 4 times a day. On base of the actual measurement values of more than 40.000 measurement stations worldwide our optimised numerical weather models (NMMB-Europe, WRF-Europe, ETA-Europe, WW3) provide regional and local weather predictions worldwide. 
 
 If  you are planning a trip, a tour, a sailing trip or other activities - detailed weather-forecasts will influence your planning.
 
 Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather?
 Meteo-Services provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts and much more.
 
-We have more then 100 stations working with our new receiver based on a raspberry pi receiving DAVIS Station signals directly.
+Actual more then 200 (Q1/2021) stations are working with our special-build receiver based on a raspberry pi receiving DAVIS Station signals directly. We also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. Next step is going with LORA / LORAWLAN networks. Here we are in BETA-field tests. 
 
-We have also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. 
+The MeteoServices extension /formerly weather365) (for weeWX will send data to our network. This extension allows weeWX to send data to the MeteoServices (formerly Weather365) network. 
 
-The Weather365 extension for weeWX will send data to our network.  This extension allows weeWX to send data to the Weather365 network. 
-
-The service is free. We use your weather data for model-control and development. 
+The service is free. We use your weather data for model-control, development and climate-analyses / climate-predictions.  
 
 **We give each registered station owner access to our professional network - PROFESSIONAL account at meteo-services.com where we run and show our own forecast models.**
 **How to get the PROFESSIONAL account? Please register your weatherstation and start sharing your data with us. Note your stationid. Sign up / Create a new account on meteo-services.com . Send us email (info@meteo-services.com) with your username and your stationid.**

@@ -127,6 +127,7 @@ SAVE with CTRL-X
 * Nov/2020 - preparing Grasland with new interactive graphic
 * Oct/2020 - improving Archive
 * Sep/2020 - Archive - Functions new setup
+* Aug/2020 - Python3 - installer available with some bugfixes and additional params
 * Jul/2020 - alle graphs switch to jpgraph-Library
 * Jun/2020 - building WebApp - responsive ready design
 * May/2020 - making stations site - responsive Layout

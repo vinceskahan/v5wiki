@@ -185,7 +185,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 #### XType extensions
 [XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX
 * [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total radiation energy received during some arbitrary timespan, and dayET and ET24 as opposite to dayRain and rain24
+* [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, and dayET and ET24 as opposite to dayRain and rain24 <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 #### Generators
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -215,8 +215,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
-* [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns)
-* [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa)
+* <img src="http://www.zschorlau-wetter.de/pics/favicon.ico" width=16 /> [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://www.regionalwetter-sa.de/favicon.ico" width=16 /> [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 ### Development notes

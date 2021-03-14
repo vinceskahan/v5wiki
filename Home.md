@@ -149,7 +149,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [knx - Send EIBnet/IP packets with weather information](knx)
-* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik)
+* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 

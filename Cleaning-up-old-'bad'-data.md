@@ -20,7 +20,7 @@ echo "SELECT * FROM archive WHERE (windSpeed > 100);" | sqlite3 /var/tmp/backup.
 echo "SELECT * FROM archive WHERE (windGust  > 100);" | sqlite3 /var/tmp/backup.sdb
 ~~~~~
 
-To null out the bad fields:
+Replace bad fields with the value null
 ~~~~~
 echo "UPDATE archive SET windSpeed=NULL WHERE (windSpeed > 100);" | sqlite3 /var/tmp/backup.sdb
 echo "UPDATE archive SET windGust=NULL  WHERE (windGust  > 100);" | sqlite3 /var/tmp/backup.sdb
@@ -36,10 +36,10 @@ first good record is 12-May 2018 1120 UTC.
 
 Use a tool like the website [epochconverter.com](https://www.epochconverter.com/) to figure out what this is in Unix epoch time. The answer for the example is `1526124000`.
 
-Now use the tool `sqlite3` to see what records predate that. For this example, we are going to use the tool directly:
+Now use the tool `sqlite3` to see what records predate that. We assume that you have copied your SQLITE database to `/var/tmp/backup.sdb`.
 
 ```shell
-sqlite3 /var/tmp/weewx.sdb
+sqlite3 /var/tmp/backup.sdb
 sqlite> select datetime(dateTime, 'unixepoch', 'localtime'), dateTime from archive where dateTime < 1526124000;
 ```
 

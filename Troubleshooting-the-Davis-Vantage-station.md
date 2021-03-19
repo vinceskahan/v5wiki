@@ -239,3 +239,21 @@ simultaneously (process IDs `5977`, `6024`, and `7543`). They are competing with
 control of the console, resulting in missed packets and records.
 
 The cure is simple: kill all but one of them. Or, better yet, kill them all, then restart WeeWX.
+
+
+### Console in setup mode
+
+Be sure that the VantagePro2 console is not in setup mode!
+
+Sometimes after you power-cycle the console, it stays in setup mode until you do a long press on the 'Done' button.  While the console is in setup mode, WeeWX can get station information (for example, `wee_device --info`) and it can even clear the station memory (`wee_device --clear-memory`).  But as long as the console is in setup mode, when WeeWX tries to get data it will fail, reporting messages such as these:
+
+```
+Mar 17 16:39:43 sailing weewx[25608]: engine: Starting main packet loop.
+Mar 17 16:39:48 sailing weewx[25608]: vantage: LOOP try #1; error: Expected to read 99 chars; got 0 instead
+Mar 17 16:39:53 sailing weewx[25608]: vantage: LOOP try #2; error: Expected to read 99 chars; got 0 instead
+Mar 17 16:39:58 sailing weewx[25608]: vantage: LOOP try #3; error: Expected to read 99 chars; got 0 instead
+Mar 17 16:40:03 sailing weewx[25608]: vantage: LOOP try #4; error: Expected to read 99 chars; got 0 instead
+Mar 17 16:40:03 sailing weewx[25608]: vantage: LOOP max tries (4) exceeded.
+Mar 17 16:40:03 sailing weewx[25608]: engine: Caught WeeWxIOError: Max tries exceeded while getting LOOP data.
+Mar 17 16:40:03 sailing weewx[25608]:     ****  Waiting 60 seconds then retrying...
+```

@@ -146,6 +146,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [csv - Emit loop or archive data to a file in CSV format](csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [davishealthapi - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)](https://github.com/uajqq/weewx-davishealthapi)
+* [DWD - forecast and warnings data from Deutscher Wetterdienst](https://github.com/roe-dl/weewx-DWD)
 * [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [knx - Send EIBnet/IP packets with weather information](knx)
@@ -158,7 +159,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
 * [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
-* [DWD - forecast and warnings data from Deutscher Wetterdienst](https://github.com/roe-dl/weewx-DWD)
 
 #### Skins
 * [amphibian](amphibian)

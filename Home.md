@@ -200,11 +200,13 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)
 * <img src="https://prometheus.io/assets/favicons/favicon.ico" width='16'/> [prometheus](https://github.com/sulrich/weewx-prompush)
 * <img src="https://avatars3.githubusercontent.com/u/739550?v=3&s=200" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
 * <img src="https://rainmachine.com/favicon.ico" width='16'/> [RainMachine](RainMachine)
+* <img src="http://www.regionalwetter-sa.de/favicon.ico" width=16 /> [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="https://www.infoclimat.fr/images/footer_IClogo.png" width='16'/> [Réseau Static de www.infoclimat.fr](https://github.com/AssociationInfoclimat/StatIC-WeeWX)
 * <img src="https://rp5.ru/favicon.ico" width='16'/> [RP5](https://github.com/sapegin-o1eg/weewx-rp5)
 * <img src="http://weewx.com/consumers/seg.ico" width='16'/> [smart energy groups](seg)
@@ -213,13 +215,11 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://www.zschorlau-wetter.de/pics/favicon.ico" width=16 /> [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
-* <img src="http://www.zschorlau-wetter.de/pics/favicon.ico" width=16 /> [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://www.regionalwetter-sa.de/favicon.ico" width=16 /> [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 
 ### Development notes
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)

@@ -91,6 +91,7 @@ For setup.py installs:
 sudo cp util/init.d/weewx-multi /etc/init.d/weewx
 sudo update-rc.d weewx defaults
 echo 'WEEWX_INSTANCES="vantage acurite"' | sudo tee /etc/default/weewx-multi
+echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee /etc/default/weewx-multi
 ```
 
 For DEB or RPM package installs:
@@ -99,6 +100,7 @@ wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/master/util/init.
 sudo cp /var/tmp/weewx-multi /etc/init.d/weewx
 sudo update-rc.d weewx defaults
 echo 'WEEWX_INSTANCES="vantage acurite"' | sudo tee /etc/default/weewx-multi
+echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee /etc/default/weewx-multi
 ```
 
 ### Starting and stopping

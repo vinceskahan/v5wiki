@@ -23,7 +23,7 @@ The tag `.series()` can take a number of optional parameters:
 .series(aggregate_type=None,
         aggregate_interval=None,
         time_series='both',
-        time_unit='unix_epoch'
+        time_unit='unix_epoch')
 ```
 
 | Parameter            | Effect                                                                                               |

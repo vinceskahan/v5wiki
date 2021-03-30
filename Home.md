@@ -229,5 +229,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Supporting Python 3](https://github.com/weewx/weewx/wiki/Python-3-strategy)
 * [Proposal for logging events in V4](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging)
 * [Proposal for user-defined types in V4 (xtypes)](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types)
+* [Tags for series (V4.5 or later)](https://github.com/weewx/weewx/wiki/Tags-for-series)
 * [Accumulators](https://github.com/weewx/weewx/wiki/Accumulators)
 * [Registry](https://github.com/weewx/weewx/wiki/registry)

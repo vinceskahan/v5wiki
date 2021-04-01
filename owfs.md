@@ -1,4 +1,4 @@
-### Overview
+### Overview for owfs as a driver
 
 If required, read [Use one-wire sensors with weeWX](Onewire-sensors) for the introduction.
 
@@ -7,6 +7,27 @@ If required, read [Use one-wire sensors with weeWX](Onewire-sensors) for the int
 OWFS (one-wire file system) provides access to data from one-wire sensors as if they were files in the computer's file system.
 
 This is a driver for weewx that collects data from one-wire sensors using owfs.
+
+### Requirements
+
+When using pyownet and python 3.x, owserver is required
+```
+sudo apt install owserver
+```
+and the contents of /etc/owfs.conf will be modified.
+
+    To configure the owserver, move aside the contents of /etc/owfs.conf and create
+    a new file with the contents as follows, but uncommenting one of the first 3
+    device entries that suits your setup...
+
+```    
+    #! server: server = localhost:4304
+    #server: usb = all # for a DS9490
+    #server: device = /dev/ttyS1 # for a serial port
+    #server: device /dev/i2c-1 # for a pi using i2c-1
+    server: port = 4304
+```
+
 
 ### Download
 

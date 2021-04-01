@@ -24,7 +24,7 @@ or if using weewx4 with python 3
 ```
 sudo apt-get install pyownet
 ```
-if it is not available via apt-getthen uses pip3 (apt-get install pip3-python to install pip3 )
+if it is not available via apt-get then uses pip3 (apt-get install pip3-python to install pip3 )
 ```
 pip3 install pyownet
 ```

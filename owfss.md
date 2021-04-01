@@ -1,4 +1,4 @@
-### Overview
+### Overview for using owfs as a service (rather than the main driver)
 
 If required, read [Use one-wire sensors with weeWX](Onewire-sensors) for the introduction.
 
@@ -8,17 +8,44 @@ OWFS (one-wire file system) provides access to data from one-wire sensors as if 
 
 This is a service for weewx that collects data from one-wire sensors using owfs.
 
+### Requirements
+
+When using pyownet and python 3.x, owserver is required
+```
+sudo apt install owserver
+```
+and the contents of /etc/owfs.conf will be modified.
+
+    To configure the owserver, move aside the contents of /etc/owfs.conf and create
+    a new file with the contents as follows, but uncommenting one of the first 3
+    device entries that suits your setup...
+
+```    
+    #! server: server = localhost:4304
+    #server: usb = all # for a DS9490
+    #server: device = /dev/ttyS1 # for a serial port
+    #server: device /dev/i2c-1 # for a pi using i2c-1
+    server: port = 4304
+```
+
 ### Download
 
 wget -O weewx-owfs.zip https://github.com/matthewwall/weewx-owfs/archive/master.zip
 
 ### How to Install
 
-1.  Install the python bindings.  For example, on debian systems:
+1.  Install the python bindings.  For example, on debian systems running python 2 versions: :
 
 ```
 sudo apt-get install python-ow
 ```
+or if using weewx4 with python 3
+
+sudo apt-get install pyownet
+
+if it is not available via apt-get then uses pip3 (apt-get install pip3-python to install pip3 )
+
+pip3 install pyownet
 
 2.  Run the extension installer:
 

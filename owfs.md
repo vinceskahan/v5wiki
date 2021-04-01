@@ -14,7 +14,7 @@ wget -O weewx-owfs.zip https://github.com/matthewwall/weewx-owfs/archive/master.
 
 ### How to Install
 
-1.  Install the python bindings.  For example, on debian systems:
+1.  Install the python bindings.  For example, on debian systems running python 2 versions:
 
 ```
 sudo apt-get install python-ow
@@ -22,7 +22,11 @@ sudo apt-get install python-ow
 or if using weewx4 with python 3
 
 ```
-sudo apt-get install python3-ow
+sudo apt-get install pyownet
+```
+if it is not available via apt-getthen uses pip3 (apt-get install pip3-python to install pip3 )
+```
+pip3 install pyownet
 ```
 
 2.  Run the extension installer:

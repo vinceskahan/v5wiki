@@ -22,10 +22,12 @@ Besides the equipment shown in the above images, there are.
 
 The owfs module for weewx uses the python bindings (python-ow) for the [OWFS 1-Wire support library](http://owfs.org/)
 
-The owfs software itself can be installed if you like, but it is not necessary; the owftpd, owhttpd, and owserver services are not used and do not need to be running.  In fact, it is safer to leave those services disabled to ensure that they do not conflict with weewx when it attempts to read one-wire devices.
+The owfs software is not necessary for the original python-ow module; for those earlier versions the owftpd, owhttpd, and owserver services are not used and do not need to be running.  In fact, it is safer to leave those services disabled to ensure that they do not conflict with weewx when it attempts to read one-wire devices using the python-ow module.
 
-The ow-server may be installed in some cases where it will act as an intermediary to owfs.py 
-It can be an alternative to the python-ow module where that might be misbehaving. The driver is being adapted for the pyownet module and that works well with the owserver.
+On the other hand, the conversion to python3 and the disappearance of the equivalent python3-ow bindings, and their replacement with the pyownet module has made the owserver an essential requirement. The owserver component of OWFS needs to be configured and running so that the weewx owfs driver can use it to access the hardware interface.
+
+pyownet and owserver can be also be used with python2.x versions
+
 
 ## Driver or Service
 There are two basic approaches to collecting data from one-wire devices: driver or service.

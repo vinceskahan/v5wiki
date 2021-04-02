@@ -1,4 +1,4 @@
-### Overview for using owfs as a service (rather than the main driver)
+### Overview for using owfs as a service (to supplement the main driver)
 
 If required, read [Use one-wire sensors with weeWX](Onewire-sensors) for the introduction.
 

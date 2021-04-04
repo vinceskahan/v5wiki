@@ -84,7 +84,7 @@ and in `acurite.conf`:
         ...
 ```
 
-5. Configure the startup script.  Use the `weewx-multi` init script to start each instance when the computer boots. The `weewx-multi` init script can be found in `/home/weewx/util/init.d` if WeeWX was installed with the setup.py approach, if WeeWX was installed as a DEB or RPM package you will need to download `weewx-multi` from the WeeWX GitHub repo.
+5. Configure the startup script.  Use the `weewx-multi` init script to start each instance when the computer boots. The `weewx-multi` init script can be found in `/home/weewx/util/init.d` if WeeWX was installed with the setup.py approach.  If WeeWX was installed as a DEB or RPM package you will need to download `weewx-multi` from the WeeWX GitHub repo.
 
 For setup.py installs:
 ```

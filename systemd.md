@@ -144,7 +144,9 @@ If you have only the rc script, you should be able to start/stop weewx using eit
 It can be confusing and a possible source of error to have  both the rc script and a `weewx.service` file installed and active.
 If you wish to use the service you have just created to run weewx, you should disable the rc script completely to ensure everything is using your new service.
 A simple
+
     sudo systemctl status weewx
+
 will show you whether you are using the unit file - look at the line headed "Loaded:" to identify any reference to init.d.
 
 To stop the init.d version and delete the references to it in the rc folders:

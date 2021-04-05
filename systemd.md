@@ -84,11 +84,6 @@ After=time-sync.target
 # Adjust timing according to the typical recovery times in your situation
 #Restart=on-failure
 #RestartSec=20
-
-# See notes later in this wiki; by default weewx will run with root privileges, so
-# comment out the following two lines to run weewx as root.
-User=weewx
-Group=weewx
 # create a runtime directory below /run, because non-root users cannot create a file in /run itself
 # This works for root as well as non-root users.
 RuntimeDirectory=weewx
@@ -96,10 +91,14 @@ PIDFile=/run/weewx/weewx.pid
 # setting the preserve option stops systemd deleting the PID file when weewx exits (debugging only)
 # RuntimeDirectoryPreserve=yes
 
-
 ExecStart=/usr/bin/weewxd --daemon --pidfile=/run/weewx/weewx.pid /etc/weewx/weewx.conf
 ExecReload=/bin/kill -HUP $MAINPID
 Type=forking
+
+# See notes later in this wiki; by default weewx will run with root privileges, so
+# comment out the following two lines to run weewx as root.
+User=weewx
+Group=weewx
 
 [Install]
 WantedBy=multi-user.target
@@ -111,10 +110,10 @@ Be sure that the paths in the `ExecStart` parameter match your weewx installatio
 
 ### To run as a non-root user.
 
-You will need to uncomment the last two lines in the [Service] section in the `weewx.service` file.
+You will need to uncomment the last two lines in the [Service] section in the `weewx.service` file, where it refers to  `User=` and `Group=`.
 
 If you use `weewx` as the `User` and `Group`, then weewx will run as the user `weewx`. If you do this, make sure that the `weewx` user has permission to :
-- Write to the weewx database;
+- Write to the weewx database (if using sqlite);
 - Write to the location for weewx reports (HTML) files;
 - and has access to the port your device is connected to You may have to write a udev rule to do this.
 
@@ -142,11 +141,21 @@ If you have only the rc script, you should be able to start/stop weewx using eit
     sudo /etc/init.d/weewx stop
     sudo /etc/init.d/weewx start
 
-It is almost certainly a bad idea to have both the rc script and a `weewx.service` file installed and active. If you wish to use the service you have just created to run weewx, you should stop the daemon and delete the references to it in the rc folders:
+It can be confusing and a possible source of error to have  both the rc script and a `weewx.service` file installed and active.
+If you wish to use the service you have just created to run weewx, you should disable the rc script completely to ensure everything is using your new service.
+A simple
+    sudo systemctl status weewx
+will show you whether you are using the unit file - look at the line headed "Loaded:" to identify any reference to init.d.
 
+To stop the init.d version and delete the references to it in the rc folders:
+
+    sudo systemctl disable weewx        (if you are still running the init.d version)
     sudo /etc/init.d/weewx stop
     sudo update-rc.d weewx remove
     sudo rm /etc/init.d/weewx
+    sudo systemctl daemon-reload        (assuming the service file is already in place)
+
+The rc script will probably return when you update weewx, but by that stage it should be safely ignored.
 
 ### Enabling and disabling weewx
 

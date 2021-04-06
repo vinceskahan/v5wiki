@@ -143,21 +143,21 @@ If you have only the rc script, you should be able to start/stop weewx using eit
 
 It can be confusing and a possible source of error to have  both the rc script and a `weewx.service` file installed and active.
 If you wish to use the service you have just created to run weewx, you should disable the rc script completely to ensure everything is using your new service.
+Do not delete the file in init.d, otherwise apt upgrades may fail.
+
 A simple
 
     sudo systemctl status weewx
 
-will show you whether you are using the unit file - look at the line headed "Loaded:" to identify any reference to init.d.
+will show you whether you are using your custom unit file - look at the line headed "Loaded:" to identify any reference to it or to init.d.
 
-To stop the init.d version and delete the references to it in the rc folders:
+To stop using the init.d version:
 
     sudo systemctl disable weewx        (if you are still running the init.d version)
-    sudo /etc/init.d/weewx stop
-    sudo update-rc.d weewx remove
-    sudo rm /etc/init.d/weewx
     sudo systemctl daemon-reload        (assuming the service file is already in place)
+    sudo systemctl enable weewx
+    sudo systemctl status weewx         (should show you that it is now loading the service file)
 
-The rc script will probably return when you update weewx, but by that stage it should be safely ignored.
 
 ### Enabling and disabling weewx
 

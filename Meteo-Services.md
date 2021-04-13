@@ -13,7 +13,7 @@ Meteo-Services provides weather forecasts and all relevant weather-data at a gla
 
 Actual more then 200 (Q1/2021) stations are working with our special-build receiver based on a raspberry pi receiving DAVIS Station signals directly. We also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. Next step is going with LORA / LORAWLAN networks. Here we are in BETA-field tests. 
 
-The MeteoServices extension (formerly weather365) for weeWX will send data to our network. This extension allows weeWX to send data to the MeteoServices (formerly weather365) network. 
+The MeteoServices extension for weeWX will send data to our network. This extension allows weeWX to send data to the MeteoServices network. 
 
 The service is free. We use your weather data for model-control, development and climate-analyses / climate-predictions.  
 
@@ -23,8 +23,8 @@ The service is free. We use your weather data for model-control, development and
 
 The extension is available at:
 ```
-* Update 2020-08-20 - new version 3.0 (fixing some problems - minimize log-files) 
-* and will work with Python3 now - sorry for the delay in the last weeks
+* Update 2021-04-09 - new version 3.1 (new parameters - t005m - Groundtemperature named as Temperature1) 
+* works with Python3 
 [WEATHER365 - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
 ```
 [WEATHER365 - Uploader Extension (python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
@@ -54,7 +54,7 @@ Assuming everything went well, your data will be sent to stations.meteo-services
 You only have to enter your stationod - received by E-Mail
 
 Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the stationid send by E-mail
-`[[Weather365]]`
+`[[METEOSERVICES]]`
 `stationid = xxxxxxxxxx`
 `password = 14991234912`
 
@@ -62,7 +62,7 @@ Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the station
 
 Download
 
-`https://stations.meteo-services.com/wxupdates/Downloads/weather365-3.0.zip`
+`https://stations.meteo-services.com/wxupdates/Downloads/meteoservices-3.1.zip`
 
 Installation raspberry-pi or Linux
 
@@ -84,11 +84,11 @@ ex. install for Linux/raspberry systems stretch / buster
 
 1. Fetch the Uploader ( using Terminal Window )
 
-`wget https://stations.meteo-services.com/wxupdates/Downloads/weather365-3.0.zip`
+`wget https://stations.meteo-services.com/wxupdates/Downloads/meteoservices-3.1.zip`
 
 2. Install the update
 
-`sudo wee_extension --install weather365-3.0.zip`
+`sudo wee_extension --install meteoservices-3.1.zip`
 
 3. extend weewx.conf
 
@@ -98,7 +98,7 @@ Add here -> [StdRESTful] weewx.conf …
 
 Find [StdRESTful] and add your station ID    replace xxxxxxxxxx with the stationid send by E-mail
 
-`[[Weather365]]`
+`[[METEOSERVICES]]`
 `stationid = xxxxxxxxxx`
 `password = 14991234912`
 
@@ -120,15 +120,16 @@ SAVE with CTRL-X
 * STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
 * https://stations.meteo-services.com/wetterstation/index.php?station_id=1   
 
+* Apr/2021 - new parameter ExtraTemp1 uses as t005m - groundtemperature / fixed Display issue with rain rate 
 * Mar/2021 - improving WebApp - new Template and JS
-* Feb/2021 - complete new graphics in stations-report
+* Feb/2021 - complete new graphics in stations-report - now all dynamic with js
 * Jan/2021 - adding new interactive graphics showing the measured values 
 * Dec/2020 - adding new DB-Params for future use ... soil-params ... (air quality beta)
 * Nov/2020 - preparing Grasland with new interactive graphic
 * Oct/2020 - improving Archive
 * Sep/2020 - Archive - Functions new setup
 * Aug/2020 - Python3 - installer available with some bugfixes and additional params
-* Jul/2020 - alle graphs switch to jpgraph-Library
+* Jul/2020 - all graphs switch to jpgraph-Library
 * Jun/2020 - building WebApp - responsive ready design
 * May/2020 - making stations site - responsive Layout
 * Apr/2020 - Adding Huglin-Index 
@@ -142,8 +143,9 @@ SAVE with CTRL-X
 * Dez/2018 - connect first data to local model forecasts / first Test with ETA
 * Sep/2018 - adding warnings
 * Jun/2018 - Version 1 - special station-report
-* Feb/2018 - some DB improvements
-* Jan/2018 - adding Synopsis
+* Feb/2018 - some DB improvements - faster reading
+* Jan/2018 - adding Synop 
 * Oct/2017 - adding Metar
 * Jun/2017 - first setup with own stations (10) experimental network for agriculture in Bavaria
+* Jun/2016 - first tests with 1 station - development of drivers
 

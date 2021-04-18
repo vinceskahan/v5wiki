@@ -26,7 +26,9 @@ RainMachine Mixer (that aggregates data from multiple sources) runs only hourly.
 
 ### Download
 
+```
 wget -O weewx-rainmachine.zip https://github.com/sprinkler/rainmachine-weewx/archive/master.zip
+```
 
 ### How to Install
 

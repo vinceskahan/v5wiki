@@ -4,7 +4,9 @@ This is an extension to weewx that uploads weather data to OpenWeatherMap.
 
 ## Download
 
+```
 wget -O weewx-owm.zip https://github.com/matthewwall/weewx-owm/archive/master.zip
+```
 
 ## How to Install
 

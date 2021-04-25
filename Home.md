@@ -6,6 +6,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 ### Getting help
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
+* [Frequently Asked Questions](faq)
 * [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html)
 
 ### Hardware recommendations

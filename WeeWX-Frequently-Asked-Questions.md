@@ -1,5 +1,3 @@
-## WeeWX Frequently Asked Questions
-
 The intent of this page is to capture pointers to help for questions most frequently asked on the weewx-user Google group.   
 
 In 'general' the hope is that this page will have only brief answers and pointers to more detailed information that is available in the WeeWX documentation, the wiki, and on external sites.

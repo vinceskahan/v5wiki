@@ -7,11 +7,11 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 | General | How-to | Extensions |
 |---|---|---|
 | [Getting help](#getting-help) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
-| [Frequently-asked questions](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Skins](#skins) |
-| [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [XTypes](#xtypes) |
-| [Development nots](#development-notes) | [Data management](#data-management) | [Generators](#generators) |
-| | [Troubleshooting](#troubleshooting) | [Uploaders](#uploaders) |
-| | [Hardware](#hardware) | |
+| [Frequently-asked questions](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Services](#services) |
+| [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [Skins](#skins) |
+| [Development nots](#development-notes) | [Data management](#data-management) | [XTypes](#xtypes) |
+| | [Troubleshooting](#troubleshooting) | [Generators](#generators) |
+| | [Hardware](#hardware) | [Uploaders](#uploaders) |
 
 ### Getting help
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)

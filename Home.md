@@ -4,7 +4,7 @@ This is the place to go for information about the many extensions available for 
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
-| general | how-to | extensions |
+| General | How-to | Extensions |
 |---|---|---|
 | [Getting help](#getting-help) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
 | [Frequently-asked questions](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Skins](#skins) |

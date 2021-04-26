@@ -1,6 +1,6 @@
-The intent of this page is to capture pointers to help for questions most frequently asked on the weewx-user Google group.   
+The intent of this page is to capture pointers to help for questions most frequently asked on the [weewx-user](https://groups.google.com/g/weewx-user) Google group.  
 
-In 'general' the hope is that this page will have only brief answers and pointers to more detailed information that is available in the WeeWX documentation, the wiki, and on external sites.
+This page contains pointers to more detailed information that is available in the [WeeWX documentation](https://weewx.com/docs.html), elsewhere in the [wiki](https://github.com/weewx/weewx/wiki), and on external sites.
 
 Items that are not linked to other pages are to-do items.  Feel free to help !!!
 
@@ -15,13 +15,13 @@ Items that are not linked to other pages are to-do items.  Feel free to help !!!
 
 ### FAQs about WeeWX specifically
 
-* Command not found - need for a correct $PATH
-* Permission denied - need to use sudo
-* How to clear bad data from my database
-* How to exclude obviously incorrect data emitted by my station
-* WeeWX is not starting/restarting/stopping as expected
+* [Command not found](faq-command-not-found) - need for a correct $PATH
+* [Permission denied](faq-permission-denied) - need to use sudo
+* [I'm getting a python error](faq-python-error) - python3 compatibility issues
 * My web pages are not appearing in my browser as expected
-* I'm getting a python error running under python3
+* WeeWX is not starting/restarting/stopping as expected
+* How do I exclude obviously incorrect data emitted by my station
+* How do I clean up past data that I know is incorrect
 
 ### FAQs about popular skins and extensions
 * Belchertown - how to get realtime updates via MQTT and websockets to work

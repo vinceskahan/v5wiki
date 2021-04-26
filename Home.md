@@ -4,6 +4,15 @@ This is the place to go for information about the many extensions available for 
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
+| general | how-to | extensions |
+|---|---|---|
+| [Getting help](#getting-help) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
+| [Hardware recommendations](#hardware-recommendations) | [WeeWX configuration](#weewx-configuration) | [Skins](#skins) |
+| [Development nots](#development-notes) | [OS configuration](#operating-system-configuration) | [XTypes](#xtypes) |
+| | [Data management](#data-management) | [Generators](#generators) |
+| | [Troubleshooting](#troubleshooting) | [Uploaders](#uploaders) |
+| | [Hardware](#hardware) | |
+
 ### Getting help
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
 * [Frequently Asked Questions](WeeWX-Frequently-Asked-Questions)

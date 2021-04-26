@@ -93,3 +93,19 @@ wee_device --help
 ```
 
 The final form is possible because the wee_* commands will look in the standard locations, `/etc/weewx/weewx.conf` and `/home/weewx/weewx.conf`, if no configuration file is specified.
+
+### The `PATH` for the `root` user
+
+On most modern systems, the `PATH` for the `root` user does not include `.` (the current directory).  This is to prevent silly mistakes such as executing a program in the current directory when you intended to execute a system program with the same name.
+
+As a result, if you really *do* want to execute something in the current directory, with elevated privileges, then you must do something like this:
+
+```shell
+sudo ./setup.py
+```
+
+instead of this:
+
+```shell
+sudo setup.py
+```

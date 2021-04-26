@@ -66,7 +66,7 @@ The second example shows a `cd` (change directory) to the directory where the we
 
 The third example illustrates a special feature of a .deb or .rpm installation.  There is a symbolic link `/usr/bin/weewxd` that points to the actual executable `/usr/share/weewx/weewxd`.  Since `/usr/bin` is in the `PATH` environment variable, one can simply type `weewxd` instead of the full path `/usr/bin/weewxd`, and since it is a symbolic link it runs the actual `weewxd` at `/usr/share/weewx/weewxd`.  
 
-### Other weewx commands
+### Other WeeWX commands
 
 Other weewx commands use a similar pattern.  For example, the `wee_config_device` command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
 
@@ -94,7 +94,7 @@ wee_device --help
 
 The final form is possible because the wee_* commands will look in the standard locations, `/etc/weewx/weewx.conf` and `/home/weewx/weewx.conf`, if no configuration file is specified.
 
-### The `PATH` for the `root` user
+### Considerations for privilege escalations
 
 On most modern systems, the `PATH` for the `root` user does not include `.` (the current directory).  This is to prevent silly mistakes such as executing a program in the current directory when you intended to execute a system program with the same name.
 

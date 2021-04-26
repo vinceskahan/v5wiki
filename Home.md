@@ -7,7 +7,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 | General | How-to | Extensions |
 |---|---|---|
 | [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
-| [Frequently-asked questions](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Services](#services) |
+| [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Services](#services) |
 | [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [Skins](#skins) |
 | [Development notes](#development-notes) | [Data management](#data-management) | [XTypes](#xtypes) |
 | [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html) | [Troubleshooting](#troubleshooting) | [Generators](#generators) |

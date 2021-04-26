@@ -11,7 +11,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 | [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [Skins](#skins) |
 | [Development notes](#development-notes) | [Data management](#data-management) | [XTypes](#xtypes) |
 | | [Troubleshooting](#troubleshooting) | [Generators](#generators) |
-| | [Hardware](#hardware) | [Uploaders](#uploaders) |
+| | [Hardware installation](#hardware) | [Uploaders](#uploaders) |
 
 ### Getting help
 * [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)

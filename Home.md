@@ -7,9 +7,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 | general | how-to | extensions |
 |---|---|---|
 | [Getting help](#getting-help) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
-| [Hardware recommendations](#hardware-recommendations) | [WeeWX configuration](#weewx-configuration) | [Skins](#skins) |
-| [Development nots](#development-notes) | [OS configuration](#operating-system-configuration) | [XTypes](#xtypes) |
-| | [Data management](#data-management) | [Generators](#generators) |
+| [Frequently-asked questions](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Skins](#skins) |
+| [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [XTypes](#xtypes) |
+| [Development nots](#development-notes) | [Data management](#data-management) | [Generators](#generators) |
 | | [Troubleshooting](#troubleshooting) | [Uploaders](#uploaders) |
 | | [Hardware](#hardware) | |
 

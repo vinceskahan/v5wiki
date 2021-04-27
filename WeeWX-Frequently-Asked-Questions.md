@@ -19,6 +19,7 @@ Feel free to help !!!
 
 ### FAQs about WeeWX specifically
 
+* [Does WeeWX work on my weather station model](faq-supported-hardware)
 * [Command not found](faq-command-not-found) - need for a correct $PATH
 * [Permission denied](faq-permission-denied) - need to use sudo
 * [I'm getting a python error](faq-python-error) - python3 compatibility issues

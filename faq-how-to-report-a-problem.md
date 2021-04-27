@@ -29,6 +29,9 @@ Frequently you will be asked to provide logfile information to help us help you.
 * post the log extract in a followup to your original message to weewx-user, try to not append zips or compressed files, just plain text (far easier for us to read on mobile devices etc)
 * don’t restart WeeWX multiple times or post excessively long log extracts (unless expressly asked for), just post two archive periods of logfile after restarting WeeWX
 
+### Where is my logfile ?
+See [here](faq-where-are-my-logs) for details
+
 ### About wee_debug
 
 The wee_debug utility can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.

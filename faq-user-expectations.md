@@ -15,9 +15,9 @@ There are two choices.  There are pre-packaged WeeWX packages that are installab
 ### Learn enough about how to work in Linux to manage your system
 
 * know how to edit a simple text file
-* understand permissions and when/if to use 'sudo'
+* understand [permissions](faq-permission-denied) and when/if to use 'sudo'
 * understand how processes are started/stopped/restarted
-* know where your log files are
+* know [where your log files are](faq-where-are-my-logs)
 
 
 ### Other resources

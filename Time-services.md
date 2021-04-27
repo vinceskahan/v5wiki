@@ -8,7 +8,7 @@ This note is about the second part of that problem: using a time service. There 
 1. [`ntp`](http://www.ntp.org/);
 2. [`systemd-timesyncd`](https://wiki.archlinux.org/index.php/systemd-timesyncd), a light weight, client-only, alternative.
 
-*You should run one or the other, but not both.*
+*You should usually enable one or the other, but not both.*
 
 ## `ntp`
 
@@ -37,3 +37,6 @@ To enable it:
 
     sudo timedatectl set-ntp true
 
+## What if I try to run both ?
+
+One nuance on most debian-based systems is that NTP will be used if it is installed and enabled even 'if' you have systemd time services also enabled, but in general you should disable the systemd time service if you want to use the standalone NTP daemon.

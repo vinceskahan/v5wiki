@@ -10,7 +10,7 @@ Items that are not linked to other pages are to-do items.  Feel free to help !!!
 
 * About WeeWX - quick description of the software and its minimal requirements
 * [User expectations](faq-user-expectations) - what computing skills are required to install and run WeeWX
-* How to report a problem - what is needed for people to be able to help you
+* [How to report a problem](faq-how-to-report-a-problem) - what is needed for people to be able to help you
 * Installation via package or setup.py - which method should I use ?
 * Please [register your station](faq-register-your-station) (optional) - help us understand the user community
 

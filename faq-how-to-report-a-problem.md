@@ -40,6 +40,6 @@ The wee_debug utility can output more detailed information about your system.  Y
 
 One thing to note is that wee_debug 'tries' to obfuscate usernames/passwords/keys in weewx.conf so that posting your debug does not post private information.  You need to 'carefully' examine the outpug of wee_debug to make sure it didn't miss obfuscating anything.
 
-Known bug - at this writing as of WeeWX 4.5.1 wee_debug does 'not' obfuscate anything in a commented out portion of a line.  So be very careful in examining your wee_debug output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the wee_debug output to remove those items.
+Known bug - <b>at this writing as of WeeWX 4.5.1 wee_debug does 'not' obfuscate anything in a commented out portion of a line.</b>  So be very careful in examining your wee_debug output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the wee_debug output to remove those items.
 
 

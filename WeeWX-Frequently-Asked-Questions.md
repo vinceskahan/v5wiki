@@ -11,7 +11,7 @@ Feel free to help !!!
 
 ### Start Here
 
-* About WeeWX - quick description of the software and its minimal requirements
+* [About WeeWX](faq-about-weewx) - quick description of the software and its minimal requirements
 * [User expectations](faq-user-expectations) - what computing skills are required to install and run WeeWX
 * [How to report a problem](faq-how-to-report-a-problem) - what is needed for people to be able to help you
 * Installation via package or setup.py - which method should I use ?

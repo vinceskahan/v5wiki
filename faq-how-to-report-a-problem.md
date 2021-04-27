@@ -26,8 +26,10 @@ I'm trying to enable realtime updates to my Belchertown skin and it is not updat
 Frequently you will be asked to provide logfile information to help us help you.
 * edit weewx.conf, set debug = 1, save weewx.conf and restart WeeWX
 * let WeeWX run for at least two archive periods (usually 10 minutes) and then take a copy of the log showing the full WeeWX startup and the 10 minutes of log activity.
-* post the log extract in a followup to your original message to weewx-user, try to not append zips or compressed files, just plain text (far easier for us to read on mobile devices etc)
+* post the log extract in a text-only followup to your original message to weewx-user
 * don’t restart WeeWX multiple times or post excessively long log extracts (unless expressly asked for), just post two archive periods of logfile after restarting WeeWX
+
+Please try not to append zip files or compressed files, as that makes it more difficult for mobile users to help.  Definitely do 'not' post screen shots, as they are not searchable when the next user has your identical problem and is looking for a solution.
 
 ### Where is my logfile ?
 See [here](faq-where-are-my-logs) for details

@@ -30,8 +30,4 @@ Items that are not linked to other pages are to-do items.  Feel free to help !!!
 ### FAQs about Operating Systems and Hardware Platforms
 
 * [where are my logs](faq-where-are-my-logs) ?
-
-#### Raspberry Pi nuances
-* keeping the clock accurate
-* need to install a web server
-* minimizing SD card writes
+* [Raspberry Pi](faq-raspi-nuances) nuances for new users

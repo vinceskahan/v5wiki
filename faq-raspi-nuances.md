@@ -26,4 +26,3 @@ Many people run their pi for many 'years' without SD failure, which requires hav
 It is possible to tweak your os to 'need' to write to SD less.
 
 More details are [here](Minimize-writes-on-SD-cards) in the wiki.
-.

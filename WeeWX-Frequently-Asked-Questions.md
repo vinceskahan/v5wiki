@@ -1,8 +1,11 @@
-The intent of this page is to capture pointers to help for questions most frequently asked on the [weewx-user](https://groups.google.com/g/weewx-user) Google group.  
+The [weewx-user](https://groups.google.com/g/weewx-user) Google group has thousands of threads and tens of thousands of messages in its archive, but many questions come up very frequently. This page is intended to provide pointers to more detailed information that is available:
+* in the [WeeWX documentation](https://weewx.com/docs.html)
+* elsewhere in the [wiki](https://github.com/weewx/weewx/wiki)
+* and on a number of user-provided external sites
 
-This page contains pointers to more detailed information that is available in the [WeeWX documentation](https://weewx.com/docs.html), elsewhere in the [wiki](https://github.com/weewx/weewx/wiki), and on external sites.
+Items that are not linked to other pages are to-do items.
 
-Items that are not linked to other pages are to-do items.  Feel free to help !!!
+Feel free to help !!!
 
 ***
 
@@ -23,6 +26,7 @@ Items that are not linked to other pages are to-do items.  Feel free to help !!!
 * WeeWX is not starting/restarting/stopping as expected
 * How do I exclude obviously incorrect data emitted by my station
 * How do I clean up past data that I know is incorrect
+* How do I answer the questions apt-get asks when I upgrade WeeWX
 
 ### FAQs about popular skins and extensions
 * Belchertown - how to get realtime updates via MQTT and websockets to work

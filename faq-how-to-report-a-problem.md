@@ -6,7 +6,7 @@ We frequently see weewx-user threads with content starting with "it doesn't work
 
 * what are you trying to do
 * what did you expect to see (or happen)
-* what did you see (or what happened)
+* what did you actually see (or what happened)
 * what is the configuration of your system
 * what did you change (if anything)
 

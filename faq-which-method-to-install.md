@@ -31,5 +31,5 @@ If you want to revert to a previous version, simply reverse the process so /home
 
 ## For more details
 
-* see the [User's Guide](https://weewx.com/docs/usersguide.htm#Where_to_find_things)
-* see the 'quickstart' section of the [WeeWX documentation](https://weewx.com/docs.html) home page
+* see the [User's Guide](https://weewx.com/docs/usersguide.htm#Where_to_find_things) for where each method installs things
+* see the 'quickstart' section of the [WeeWX documentation](https://weewx.com/docs.html) home page for the commands to install WeeWX

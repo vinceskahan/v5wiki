@@ -15,7 +15,7 @@ A secondary downside is that upgrades ask a [somewhat confusing question](faq-qu
 
 ### Benefits of using setup.py
 
-The main benefit is that, other than the system startup file, WeeWX is totally contained in one directory `/home/weewx`.   This makes upgrading much easier, as the setup.py installer tends to be smarter than the various os-dependent packaging systems.
+The main benefit is that, other than the system startup file, WeeWX is totally contained in one directory `/home/weewx` which makes upgrading much easier, as the setup.py installer tends to be smarter than the various os-dependent packaging systems.
 
 So one scenario to keep your old configuration and try a new version might look something like:
 * stop weewx

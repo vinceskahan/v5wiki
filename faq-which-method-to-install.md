@@ -11,7 +11,7 @@ The main benefit is the entire procedure, other than connecting up your hardware
 
 The downside is that this follows Linux Filesystem Standards, so bits and pieces of WeeWX are sprinkled through your os, just like any other application that follows this filesystem standard.   Fortunately, pre-packaged WeeWX can also be 'removed' in one step by using the operating systems packaging commands (apt or dpkg for Debian-based systems, yum or rpm for RedHat-based systems).
 
-A secondary downside is that upgrades ask a somewhat confusing question about how to deal with the weewx.conf file and whether it should be kept, upgraded, etc.   Unfortunately the confusing part is due to the operating system's packaging tools, so it's not anything WeeWX can make significantly less confusing at runtime.
+A secondary downside is that upgrades ask a [somewhat confusing question](faq-questions-apt-get-asks) about how to deal with the weewx.conf file and whether it should be kept, upgraded, etc.   Unfortunately the confusing part is due to the operating system's packaging tools, so it's not anything WeeWX can make significantly less confusing at runtime.
 
 ### Benefits of using setup.py
 

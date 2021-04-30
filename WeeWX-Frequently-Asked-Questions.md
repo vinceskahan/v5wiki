@@ -14,7 +14,7 @@ Feel free to help !!!
 * [About WeeWX](faq-about-weewx) - quick description of the software and its minimal requirements
 * [User expectations](faq-user-expectations) - what computing skills are required to install and run WeeWX
 * [How to report a problem](faq-how-to-report-a-problem) - what is needed for people to be able to help you
-* Installation via package or setup.py - [which method should I use](which-way-to-install-weewx) ?
+* Installation via package or setup.py - [faq-which-method-to-install](which-way-to-install-weewx) ?
 * Please [register your station](faq-register-your-station) (optional) - help us understand the user community
 
 ### FAQs about WeeWX specifically
@@ -27,7 +27,7 @@ Feel free to help !!!
 * WeeWX is not starting/restarting/stopping as expected
 * How do I exclude obviously incorrect data emitted by my station
 * How do I clean up past data that I know is incorrect
-* How do I answer the questions apt-get asks when I upgrade WeeWX
+* How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
 
 ### FAQs about popular skins and extensions
 * Belchertown - how to get realtime updates via MQTT and websockets to work

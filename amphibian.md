@@ -25,3 +25,5 @@ sudo /etc/init.d/weewx start
 ## Screenshots
 ![amphibian](http://lancet.mit.edu/mwall/projects/weather/amphibian-for-weewx-0.1/amphibian-for-weewx.png )
 
+## Source
+[https://github.com/matthewwall/weewx-amphibian](https://github.com/matthewwall/weewx-amphibian)

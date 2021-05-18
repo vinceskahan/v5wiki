@@ -13,7 +13,7 @@ area in terms of the response of the human eye, according to a
 standardized response curve obtained from experiments.
 
 For a single wavelength, one can ask what the value of one measurement
-is given the other, multiplying or dividing by the standarized response
+is given the other, multiplying or dividing by the standardized response
 curve.  Using a spectroradiometer, one can measure the power at a
 variety of wavelengths, say at 10 nm intervals, and then sum the
 converted powers.

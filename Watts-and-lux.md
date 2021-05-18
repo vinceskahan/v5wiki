@@ -48,3 +48,6 @@ sensor that measures the other, would be an interesting science
 experiment.
 
 [https://en.wikipedia.org/wiki/Photometry_(optics)](https://en.wikipedia.org/wiki/Photometry_(optics))
+
+https://help.ambientweather.net/help/why-is-the-lux-to-w-m-2-conversion-factor-126-7/
+https://cumulus.hosiene.co.uk/viewtopic.php?t=3979

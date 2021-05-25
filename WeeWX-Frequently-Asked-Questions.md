@@ -29,6 +29,7 @@ Feel free to help !!!
 
 ### FAQs about popular skins and extensions
 * Belchertown - [how do I do 'this'](faq-belchertown-pointers) ?
+* [rtl_433]((faq-rtl-433-file-not-found)) is giving me file-not-found errors ?
 
 ### FAQs about Operating Systems and Hardware Platforms
 

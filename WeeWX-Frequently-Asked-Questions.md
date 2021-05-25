@@ -24,13 +24,11 @@ Feel free to help !!!
 * [Permission denied](faq-permission-denied) - need to use sudo
 * [I'm getting a python error](faq-python-error) - python3 compatibility issues
 * My [web pages are not appearing](faq-web-pages-not-appearing) in my browser as expected
-* WeeWX is not starting/restarting/stopping as expected
 * How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
-* How do I clean up past data that I know is incorrect
 * How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
 
 ### FAQs about popular skins and extensions
-* Belchertown - how to get realtime updates via MQTT and websockets to work
+* Belchertown - [how do I do 'this'](faq-belchertown-pointers) ?
 
 ### FAQs about Operating Systems and Hardware Platforms
 

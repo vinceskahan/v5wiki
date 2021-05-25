@@ -25,7 +25,7 @@ Feel free to help !!!
 * [I'm getting a python error](faq-python-error) - python3 compatibility issues
 * My [web pages are not appearing](faq-web-pages-not-appearing) in my browser as expected
 * WeeWX is not starting/restarting/stopping as expected
-* How do I exclude obviously incorrect data emitted by my station
+* How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
 * How do I clean up past data that I know is incorrect
 * How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
 

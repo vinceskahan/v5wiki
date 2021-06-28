@@ -160,7 +160,7 @@ There seems to be several fixes:
 1. Unplug the console, take out the batteries, and wait a minute or two. This will cause the
 console software to internally reboot. In one case this has fixed the problem without data loss.
 
-2. If all else fails, stop WeeWX if it is running and use the utility `wee_device` to first dump any useful data in the logger,
+2. If all else fails, stop WeeWX if it is running then use the utility `wee_device` to first dump any useful data in the logger,
 then to clear the memory.
 
         wee_device --dump

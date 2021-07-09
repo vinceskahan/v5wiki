@@ -94,30 +94,8 @@ actually attached to!
 ## WeeWX generates HTML pages, but it does not update them
 If you are getting a symptom that everything appears normal, that is image and HTML files are
 generated (look in the log to be sure) and sent to your webserver (if you have configured FTP or
-rsync), but the values in the web pages are not being updated, it could be due to clock skew or
-corrupt station memory.
-
-### Clock skew
-If the database contains a record with time stamp (the `dateTime` field) in the future, then
-records from the station that are older than that future date will be ignored. How can the database
-contain records from the future? Sometimes the computer clock is not set correctly. For example,
-the Raspberry Pi has no clock, so if WeeWX saves data before the pi has synchronized its clock with
-internet time servers, the records will have incorrect time stamps, some of which might be in the
-future.
-
-The solution is to delete any records with time stamp in the future. For a sqlite database, the
-procedure looks like this:
-
-```shell
-cp /home/weewx/archive/weewx.sdb /home/weewx/archive/weewx.sdb.backup
-sqlite3 /home/weewx/archive/weewx.sdb
-sqlite> delete from archive where dateTime > X;
-sqlite> .exit
-```
-
-The timestamp `X` is the current time in unix epoch time (number of seconds since 1 January 1970).
-The website [www.epochconverter.com](https://www.epochconverter.com/) is useful for determining the
-current unix epoch time.
+rsync), but the values in the web pages are not being updated, it could be due to corrupt station memory
+or clock skew.
 
 ### Corrupt station memory
 If you have a Vantage station, the problem might be because the data on board your console has
@@ -176,6 +154,28 @@ ignored.
         ...
         record_generation = software
     ```
+
+### Clock skew
+If the database contains a record with time stamp (the `dateTime` field) in the future, then
+records from the station that are older than that future date will be ignored. How can the database
+contain records from the future? Sometimes the computer clock is not set correctly. For example,
+the Raspberry Pi has no clock, so if WeeWX saves data before the pi has synchronized its clock with
+internet time servers, the records will have incorrect time stamps, some of which might be in the
+future.
+
+The solution is to delete any records with time stamp in the future. For a sqlite database, the
+procedure looks like this:
+
+```shell
+cp /home/weewx/archive/weewx.sdb /home/weewx/archive/weewx.sdb.backup
+sqlite3 /home/weewx/archive/weewx.sdb
+sqlite> delete from archive where dateTime > X;
+sqlite> .exit
+```
+
+The timestamp `X` is the current time in unix epoch time (number of seconds since 1 January 1970).
+The website [www.epochconverter.com](https://www.epochconverter.com/) is useful for determining the
+current unix epoch time.
 
 ## 3rd party Vantage connectors
 This section is for those who are using a homebrew or 3rd party connector to a Davis Vantage

@@ -143,6 +143,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
 
 #### Services
+* [airQ - Retrieve air quality data from Air-Q device of Corant GmbH](https://github.com/roe-dl/weewx-airQ)
 * [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)
 * [aqi - Calculate Air Quality Index](https://github.com/jonathankoren/weewx-aqi)
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)

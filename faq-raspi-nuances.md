@@ -15,7 +15,7 @@ More details are [here](Time-services) in the wiki.
 
 Many pi users are running Raspberry Pi OS Lite which does not have a web server in the default image.  If you run the Lite version of the os, you will need to install a webserver of your choice to the os.  Users typically install nginx or apache, although other webservers are available on the pi.
 
-More details are [here](webserver) in the wiki.
+More details are [here](Configure-a-web-server-(Apache,-NGINX-or-lighttpd)) in the wiki.
 
 ### Minimizing SD writes
 

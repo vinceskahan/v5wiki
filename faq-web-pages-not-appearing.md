@@ -29,7 +29,7 @@ The fix is to open "http://myhostname.com/weewx" to see the WeeWX web.
 
 For setup.py installations specifically, WeeWX will write to /home/weewx/public_html by default, yet the default webservers generally expect the web documentation root to be in is /var/www/html, which is a different location.   So if you look at the WeeWX configuration it looks fine, as do the syslogs, yet if you try to open the web via a browser you get a file-not-found error.
 
-The fix is to make both pieces of software align in where on the filesystem WeeWX will put its generated web pages and images.   Instructions are elsewhere on the wiki [(link)](webserver)
+The fix is to make both pieces of software align in where on the filesystem WeeWX will put its generated web pages and images.   Instructions are elsewhere on the wiki [(link)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
 
 ### No webserver is installed
 

@@ -166,6 +166,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
 * [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
+* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 
 #### Skins
 * [amphibian](amphibian)

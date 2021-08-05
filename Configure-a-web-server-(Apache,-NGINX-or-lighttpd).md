@@ -14,7 +14,7 @@ Each web server has a mechanism to alias a URL to a location on disk.  Use this 
 
 ### Apache
 
-For apache, you will add a `.conf` file that contains the configuration specific to WeeWX.  The location of the file depends on the Apache version, the operating system and the operating system version.  On some systems, the file is located in a directory called `conf.d`:
+For Apache, you will add a `.conf` file that contains the configuration specific to WeeWX.  The location of the file depends on the Apache version, the operating system and the operating system version.  On some systems, the file is located in a directory called `conf.d`:
 
 ```
 /etc/apache2/conf.d/weewx.conf
@@ -82,9 +82,9 @@ Alias /weewx /home/weewx/public_html
 ```
 sudo ln -s /etc/apache2/conf-available/weewx.conf /etc/apache2/conf-enabled
 ```
-### nginx
+### NGINX
 
-Modify the nginx configuration file `/etc/nginx/sites-available` with a new location stanza, then restart nginx.
+Modify the NGINX configuration file `/etc/nginx/sites-available` with a new location stanza, then restart NGINX.
 ~~~~~
 server {
   ...

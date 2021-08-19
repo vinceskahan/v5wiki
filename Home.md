@@ -241,3 +241,4 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Tags for series (V4.5 or later)](https://github.com/weewx/weewx/wiki/Tags-for-series)
 * [Accumulators](https://github.com/weewx/weewx/wiki/Accumulators)
 * [Registry](https://github.com/weewx/weewx/wiki/registry)
+* [Storing text in the database](https://github.com/weewx/weewx/wiki/Storing-text-in-the-database)

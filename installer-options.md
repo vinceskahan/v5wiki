@@ -7,14 +7,15 @@ Support was later added for per-platform packages, such as `deb` for Debian, Ubu
 These notes about the pros/cons of different mechanisms for installing WeeWX.  
 
 ## weewx-ified setup.py (single directory install)
+  + easy, but with many caveats: `sudo python3 setup.py install`
   + everything in single directory
   + easy to maintain multiple concurrent versions for development
-
   - manual configuration for init.d/systemd
   - manual configuration for ancillary configs
   - full path or setting of PATH required to run
 
 ## pip
+  + easy: `pip install weewx`
   + works great for pure python apps
   + works with python2 or python3
   + works on any platform on which python runs
@@ -27,9 +28,9 @@ These notes about the pros/cons of different mechanisms for installing WeeWX.
   - where do the data live?
   - no standard for ancillary configs such as logrotate, rsyslog, udev, nginx
   - no mechanism for installing multiple concurrent versions
-  ? works well with virtualenv
 
 ## platform packages
+  + easy: `sudo yum install weewx` or `sudo apt install weewx`
   + for users, it looks like any other application
   + configs live in /etc/weewx
   + data live in /var/lib/weewx

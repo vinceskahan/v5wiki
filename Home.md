@@ -242,3 +242,4 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Accumulators](https://github.com/weewx/weewx/wiki/Accumulators)
 * [Registry](https://github.com/weewx/weewx/wiki/registry)
 * [Storing text in the database](https://github.com/weewx/weewx/wiki/Storing-text-in-the-database)
+* [Installer options](installer-options)

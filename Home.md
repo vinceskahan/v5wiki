@@ -4,24 +4,12 @@ This is the place to go for information about the many extensions available for 
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
-| General | How-to | Extensions |
-|---|---|---|
-| [Help! Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user) | [Basic principles](#basic-principles) | [Drivers](#drivers) |
-| [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions) | [WeeWX configuration](#weewx-configuration) | [Services](#services) |
-| [Hardware recommendations](#hardware-recommendations) | [OS configuration](#operating-system-configuration) | [Skins](#skins) |
-| [Development notes](#development-notes) | [Data management](#data-management) | [XTypes](#xtypes) |
-| [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html) | [Troubleshooting](#troubleshooting) | [Generators](#generators) |
-| | [Hardware installation](#hardware) | [Uploaders](#uploaders) |
+### General
+* [Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
+* [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions)
+* [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html)
 
-### Hardware recommendations
-* [On what hardware do you run WeeWX?](hardware)
-* [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
-* [Switched USB hubs](usb-hubs)
-* [Details on Fine Offset clones](https://www.wxforum.net/index.php?topic=40730.0)
-
-### HOWTO Pages
-
-#### Basic principles
+### Basic principles
 * [What you should know about paths](Understanding-paths)
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
@@ -29,6 +17,14 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Watts/m&sup2; vs lux](Watts-and-lux)
 * [Strategies for getting data into WeeWX](intake-strategies)
 * [Strategies for publishing dashboards](dashboards)
+
+### Hardware recommendations
+* [On what hardware do you run WeeWX?](hardware)
+* [Comparison of weather station hardware](http://weewx.com/hwcmp.html)
+* [Switched USB hubs](usb-hubs)
+* [Details on Fine Offset clones](https://www.wxforum.net/index.php?topic=40730.0)
+
+### Guides (How to ...)
 
 #### WeeWX configuration
 * [Manage extensions](extensions)

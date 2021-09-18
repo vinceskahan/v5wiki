@@ -41,7 +41,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
-* [Troubleshoot Pillow](Troubleshooting-Pillow)
 * [Configure a web server (Apache, NGINX or lighttpd)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)

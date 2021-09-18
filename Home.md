@@ -143,8 +143,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
-* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](https://github.com/matthewwall/weewx-csv) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
-* [csv - Emit loop or archive data to a file in CSV format](csv)
+* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [csv - Emit loop or archive data to a file in CSV format](https://github.com/matthewwall/weewx-csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [davishealthapi - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)](https://github.com/uajqq/weewx-davishealthapi)
 * [DWD - forecast and warnings data from Deutscher Wetterdienst](https://github.com/roe-dl/weewx-DWD)

@@ -63,7 +63,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
 
 #### Hardware
-* [Add a sensor to any weather station](add-sensor)
 * [Use one-wire sensors with WeeWX](Onewire-sensors)
 * [Get data from an Observer/WeatherSleuth/WeatherRanger](observer)
 * [Get your Aercus WeatherSleuth (Observer) working with WeeWX](weathersleuth)

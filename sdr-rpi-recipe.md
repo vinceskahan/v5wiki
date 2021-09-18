@@ -1,4 +1,4 @@
-# Use software-defined radio (SDR) on raspberry pi to collect data
+# Use software-defined radio (SDR) to collect data
 
 This is a guide to build a low-cost system that will collect data from any number of wireless sensors.  The recipes in this guide use a USB software-defined radio (SDR) plugged in to a raspberry pi, collecting data from Acurite temperature and temperature/humidity sensors.  This approach will work with many other types of sensors from other manufacturers, and it will run on other types of computers and operating systems.
 
@@ -191,7 +191,3 @@ echo 'blacklist dvb_usb_rtl28xxu' | sudo tee -a /etc/modprobe.d/blacklist.conf
 ```
 
 If you get an error that `dvb_usb_rtl28xxu` is in use, unplug your SDR device, then try again.
-
-If you run ```weewxd /etc/weewx/weewx.conf``` and nothing displays, stop it and run it as ```weewxd /etc/weewx/weewx.conf -x``` This will cause it to exit on I/O errors or database errors rather than retrying forever. If this happens, check the ```/var/log/syslog``` log file for what error may be causing this.
-
-

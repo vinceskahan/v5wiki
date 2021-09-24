@@ -81,7 +81,7 @@ sudo /etc/init.d/rsyslog start
 
 #### Using `weewx-multi`
 
-Consider the case using the two example WeeWX instances controlled by the `weewx-multi` script used in the [How to run multiple instances of WeeWX](weewx-multi.md) wiki page. One instance for a Davis Vantage Pro station known as 'home' and the other for an Acurite station known as 'paddock' using config files `/etc/weewx/home.conf` and `/etc/weewx/paddock.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/home.log` and the log output for the Acurite station is written to `/var/log/weewx/paddock.log`. 
+Consider the case using the two example WeeWX instances controlled by the `weewx-multi` script used in the [How to run multiple instances of WeeWX](https://github.com/weewx/weewx/wiki/weewx-multi#how-to-run-multiple-instances-of-weewx) wiki page. One instance for a Davis Vantage Pro station known as 'home' and the other for an Acurite station known as 'paddock' using config files `/etc/weewx/home.conf` and `/etc/weewx/paddock.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/home.log` and the log output for the Acurite station is written to `/var/log/weewx/paddock.log`. 
 
 By virtue of the `weewx-multi` script the log output for the home and paddock instances is as already 
 separately identified as `weewx-home` and `weewx-paddock` respectively.

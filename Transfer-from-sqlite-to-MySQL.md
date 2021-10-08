@@ -44,11 +44,11 @@ To transfer a database using `wee_database`, data bindings for both the source a
         [[dest_binding]]
             database = archive_mysql
             table_name = archive
-            manager = weewx.wxmanager.WXDaySummaryManager
+            manager = weewx.manager.DaySummaryManager
             schema = schemas.wview_extended.schema
 
     
-The above settings add a database binding `dest_binding` to a database entry `archive_mysql` in the `weewx.conf [Databases]` section, and use the default `wview` database schema. If this is not the case (e.g., you use a modified schema) you will need to alter one of more of the above settings accordingly.
+The above settings adds a new database binding `dest_binding`. It will use the database `archive_mysql` in the `[Databases]` section of `weewx.conf`, and the `wview_extended` database schema. If this is not the case (_e.g._, you use a modified schema) you will need to alter one of more of the above settings accordingly.
 
 Before doing the transfer, it may worthwhile to run `wee_database` with the `--help` option:
 

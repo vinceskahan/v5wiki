@@ -157,6 +157,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
 * [owfs - Augment station data with data from one-wire sensors](owfss)
+* [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)

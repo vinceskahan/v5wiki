@@ -191,3 +191,7 @@ echo 'blacklist dvb_usb_rtl28xxu' | sudo tee -a /etc/modprobe.d/blacklist.conf
 ```
 
 If you get an error that `dvb_usb_rtl28xxu` is in use, unplug your SDR device, then try again.
+
+When compiling `rtl-sdr`, you might encounter problems linking to libusb.  If so, try running `pkg-config` as explained here:
+
+https://stackoverflow.com/questions/65296289/fatal-error-libusb-libusb-h-no-such-file-or-directory-librtlsdr-install-for-gn/66311388#66311388

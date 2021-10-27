@@ -27,6 +27,8 @@ It took me about 2 hours to build this system.  That includes the time to remove
 
 The prices are US$ as of January 2019.  I have seen the temperature sensors on sale at Walmart for as little as $5 each.
 
+Beware of the Acurite 606TX!  The identifier for that sensor changes when the sensor is power-cycled.  So if you use that sensor, you will have to reconfigure WeeWX each time you change the batteries.
+
 ## Recipes
 
 ### Configure the raspberry pi

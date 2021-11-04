@@ -56,6 +56,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 * [Importing data from Weatherlink](Importing-data-from-Weatherlink)
+* [Migrating from wview](Moving-the-wview-database)
 
 #### Troubleshooting
 * [Troubleshooting Davis stations](Troubleshooting-the-Davis-Vantage-station)

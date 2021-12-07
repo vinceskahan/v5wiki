@@ -26,6 +26,7 @@ Feel free to help !!!
 * My [web pages are not appearing](faq-web-pages-not-appearing) in my browser as expected
 * How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
 * How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
+* I'm having [problems downloading the apt repo key](faq-apt-key-problems) to my debian(ish) system
 
 ### FAQs about popular skins and extensions
 * Belchertown - [how do I do 'this'](faq-belchertown-pointers) ?

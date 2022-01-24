@@ -94,6 +94,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [cm1 - Collect data from Dyacon CM1 weather station interface](https://github.com/matthewwall/weewx-cm1)
 * [columbia_ms - Collect data from Columbia Weather MicroServer supported sensors](https://github.com/bburton/weewx-columbia-ms) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [envoy - Collect data from Enphase Envoy solar controller](https://github.com/matthewwall/weewx-envoy)
+* [gw1000 - Collect data from Ecowitt GW1000/GW1100)(https://github.com/gjr80/weewx-gw1000) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
 * [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)

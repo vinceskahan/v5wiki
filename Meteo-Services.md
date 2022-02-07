@@ -124,6 +124,8 @@ SAVE with CTRL-X
 * STATION: Neufahrn / Freising - near Munich Airport (Germany/Bavaria)  German and English Bulletin is available 
 * https://stations.meteo-services.com/wetterstation/index.php?station_id=1   
 
+* Jan/2022 - operative winter-service stations with road predictions, based on customized DAVIS stations and own sensors
+* Nov/2021 - special stations - winter services with road predictions
 * Apr/2021 - new parameter ExtraTemp1 uses as t005m - groundtemperature / fixed Display issue with rain rate 
 * Mar/2021 - improving WebApp - new Template and JS
 * Feb/2021 - complete new graphics in stations-report - now all dynamic with js

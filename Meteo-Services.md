@@ -11,7 +11,7 @@ If  you are planning a trip, a tour, a sailing trip or other activities - detail
 Do you want to be sure of your plans so that your equipment and your choice are suitable to the weather?
 Meteo-Services provides weather forecasts and all relevant weather-data at a glance – sun, clouds, rain, snow, wind speed, wave forecasts and much more.
 
-Actual more then 200 (Q1/2021) stations are working with our special-build receiver based on a raspberry pi receiving DAVIS Station signals directly. We also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. Next step is going with LORA / LORAWLAN networks. Here we are in BETA-field tests. 
+Actual more then 400 (Q4/2021) stations are working with our special-build receiver based on a raspberry pi receiving DAVIS Station signals directly. We also built solar powered stations with GSM and GPS receiving DAVIS Station data building an agriculture network and also a network for sailors here. Next step is going with LORA / LORAWLAN networks. Here we are in BETA-field tests. 
 
 The MeteoServices extension for weeWX will send data to our network. This extension allows weeWX to send data to the MeteoServices network. 
 
@@ -23,6 +23,13 @@ The service is free. We use your weather data for model-control, development and
 
 The extension is available at:
 ```
+* Minor Update 2022-01-21 - version 3.1 ( fixed variable and made changes for special winter service stations - 
+  If you need more information about winter-service stations and partners please fell free and contact us. 
+  ex: Winter-Service station is: 
+  Neufahrn-Bauhof -> GERMAN language: [https://stations.meteo-services.com/wetterstation/index.php?station_id=6915](https://stations.meteo-services.com/wetterstation/index.php?station_id=6915)
+
+***
+
 * Update 2021-04-09 - new version 3.1 (new parameters - t005m - Groundtemperature named as Temperature1) 
 * works with Python3 
 [WEATHER365 - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 

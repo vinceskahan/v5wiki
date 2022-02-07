@@ -25,27 +25,24 @@ The extension is available at:
 ```
 * Minor Update 2022-01-21 - version 3.1 ( fixed variable and made changes for special winter service stations - 
   If you need more information about winter-service stations and partners please fell free and contact us. 
-  ex: Winter-Service station is: 
-  Neufahrn-Bauhof -> GERMAN language: [https://stations.meteo-services.com/wetterstation/index.php?station_id=6915](https://stations.meteo-services.com/wetterstation/index.php?station_id=6915)
-
-***
-
 * Update 2021-04-09 - new version 3.1 (new parameters - t005m - Groundtemperature named as Temperature1) 
 * works with Python3 
+```
 [WEATHER365 - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
-```
-[WEATHER365 - Uploader Extension (python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
+
+**ex: Winter-Service station: ** Neufahrn-Bauhof -> GERMAN language: [https://stations.meteo-services.com/wetterstation/index.php?station_id=6915](https://stations.meteo-services.com/wetterstation/index.php?station_id=6915)
+
+**[WEATHER365 - Uploader Extension **(python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
+
 Obtain an ID by registering a new station:
-```
-https://stations.meteo-services.com/login/
-```
+**REGISTER YOUR STATION HERE**
+[https://stations.meteo-services.com/login/](https://stations.meteo-services.com/login/)
 
-Existing stations can login here:
-```
-https://stations.meteo-services.com/login/login.php
-```
+
+Existing stations - LOGIN ( still working on this part - not ready yet )
+[https://stations.meteo-services.com/login/login.php](https://stations.meteo-services.com/login/login.php)
+
 --
-
 **HOW TO INSTALL - quick**
 
 a) Install Meteo-Services -uploader in "Batch-mode" with one line.

@@ -23,7 +23,7 @@ The service is free. We use your weather data for model-control, development and
 
 The extension is available at:
 ```
-* Minor Update 2022-01-21 - version 3.1 ( fixed variable and made changes for special winter service stations - 
+* Minor Update 2022-01-21 - version 3.2 ( fixed variable and made changes for special winter service stations - 
   If you need more information about winter-service stations and partners please fell free and contact us. 
 * Update 2021-04-09 - new version 3.1 (new parameters - t005m - Groundtemperature named as Temperature1) 
 * works with Python3 
@@ -88,11 +88,11 @@ ex. install for Linux/raspberry systems stretch / buster
 
 1. Fetch the Uploader ( using Terminal Window )
 
-`wget https://stations.meteo-services.com/wxupdates/Downloads/meteoservices-3.1.zip`
+`wget https://stations.meteo-services.com/wxupdates/Downloads/meteoservices-3.2.zip`
 
 2. Install the update
 
-`sudo wee_extension --install meteoservices-3.1.zip`
+`sudo wee_extension --install meteoservices-3.2.zip`
 
 3. extend weewx.conf
 

@@ -133,12 +133,16 @@ Here is an example showing 4 sensors that I installed.  The sensor identifiers a
     ...
     [[sensor_map]]
         inTemp = temperature.-102.Acurite606TXPacket # mud room
+        inTempBatteryStatus = battery.-102.Acurite606TXPacket
         outTemp = temperature.0995.AcuriteTowerPacket # back porch
         outHumidity = humidity.0995.AcuriteTowerPacket
+        outHumidity = battery.0995.AcuriteTowerPacket
         extraTemp1 = temperature.16B9.AcuriteTowerPacket # bathroom
         extraHumidity1 = humidity.16B9.AcuriteTowerPacket
+        batteryStatus1 = battery.16B9.AcuriteTowerPacket
         extraTemp2 = temperature.0ED5.AcuriteTowerPacket # kitchen
-        extraHumidity3 = humidity.0ED5.AcuriteTowerPacket
+        extraHumidity2 = humidity.0ED5.AcuriteTowerPacket
+        batteryStatus2 = battery.0ED5.AcuriteTowerPacket
 ```
 
 You can see the full list of database field names in the [archive types](http://weewx.com/docs/customizing.htm#archive_types) section of the weeWX customization guide.

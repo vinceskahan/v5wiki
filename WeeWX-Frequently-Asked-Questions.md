@@ -28,7 +28,7 @@ Feel free to help !!!
 * How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
 * How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
 * I'm having [problems downloading the apt repo key](faq-apt-key-problems) to my debian(ish) system
-* How to [run weewxd directly](../faq-running-weewxd-directly) for debugging problems
+* How to [run weewxd directly](faq-running-weewxd-directly) for debugging problems
 
 ### FAQs about popular skins and extensions
 * Belchertown - [how do I do 'this'](faq-belchertown-pointers) ?

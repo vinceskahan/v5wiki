@@ -1,3 +1,10 @@
+## Changing sampling interval
+There are different scenarios that could fit under this topic:
+1. Simply change the interval - you should be able at any stage to increase or decrease the storage interval without modifying already stored data. Weewx should handle this automatically and this is the recommended method.
+2. increase the interval and alter all the old data so that it conforms to the new sampling interval. You should only have to do this if you really need to save storage space.  It is this consolidation of data that is covered in this wiki page.
+3. Decrease the interval and alter all the old data so that it conforms to the new sampling interval. I can think of no useful reason to do this within weewx. If other software needs to make use of the data at defined intervals then it is probably simpler to do any interpolation within the software reading the database.
+
+## Increasing inverval and decreasing storage
 Say you have collected some data at a 1 minute interval, and after some months you decide that using only a 5 minute interval will be sufficient. You don't want to lose the data already collected, so this page describes how you can transform the existing data to be accepted in the new scheme.
 
 In this example, the target interval is assumed to be 5 minutes - the code was tested for input at 1 minute intervals, but should work as-is for anything less than 5 minutes. If you want to use an interval longer than 5 minutes then you will need to adjust the code slightly.

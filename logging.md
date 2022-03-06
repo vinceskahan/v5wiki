@@ -31,6 +31,13 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 
+**Note**: logrotate has specific ownership and file access requirements for config files in `/etc/logrotate.d` (including the source file for any linked config files in `/etc/logrotate.d`). logrotate v3.8.x and later requires these config files be owned by `root` or another user with uid 0. The config files must have a 644 permissions mask (read-write by owner, read only by group and others).
+
+2. confirm correct logrotate operation with WeeWX log files:
+```
+sudo logrotate -d -f /etc/logrotate.d/weewx
+```
+
 ### Multiple WeeWX instances
 
 Any number of WeeWX instances can be run from a single WeeWX installation, either manually using `weewxd` or via scripts such as the included `weewx-multi`. In such cases it may be useful to direct the WeeWX log output from each instance to a separate file. The instructions for doing so depend on the approach used to run multiple WeeWX instances.
@@ -112,7 +119,6 @@ sudo mkdir /var/log/weewx
   notifempty
 }
 ```
-
 4. restart the logging system:
 ```
 sudo /etc/init.d/rsyslog stop

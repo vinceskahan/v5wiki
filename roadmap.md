@@ -13,11 +13,9 @@ Include the sdr driver in the standard distribution, and make it autoconfigure.
 
 Do we need the interceptor driver?
 
-Explore using `pip` to install.
+Explore using `pip` to install, perhaps by using [pipx](https://pypi.org/project/pipx/). It seems to be specifically designed to
+install Python applications into virtual environments.
 
 Support of a skin that uses SVG graphs, updated dynamically.
 
 Utility `wee_extension` should be able to install directly from a GitHub URL.
-
-Look into [pipx](https://pypi.org/project/pipx/). It seems to be specifically designed to
-package Python applications.

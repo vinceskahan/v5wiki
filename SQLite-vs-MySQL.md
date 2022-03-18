@@ -23,6 +23,6 @@ using the same permissions protocols used by any other file.
 - Takes considerable system resources.
 
 ## Conclusion
-SQLite is consistently underestimated. The SQLite database for my station has well over 1.2M records and 12 years of data and is over 250 MB in size. It continues to show great performance.
+SQLite is consistently underestimated. The SQLite database for my station has well over 1.5M records, 14 years of data, and is over 330 MB in size. It continues to show great performance on a very modest 32-bit machine with 512MB of memory.
 
-Unless you really require remote access and you are an experienced MySQL administrator, there is really no good reason to use MySQL.
+Unless you really require remote access and unless you are an experienced MySQL administrator, there is really no good reason to use MySQL.

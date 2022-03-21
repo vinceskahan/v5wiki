@@ -72,3 +72,6 @@ The schema for cmon 0.7 is not backward compatible.  You must either delete any 
 ### Upgrading from weewx 2.5
 
 The default schema changed from cmon r789 to cmon 0.1.  cmon 0.1 adds the ability to specify the schema in weewx.conf or in bin/user/schemas.py.  cmon r789 defaulted to using a database called computer.sdb.  cmon 0.1 and later uses a database called cmon.sdb.
+
+### Source
+https://github.com/matthewwall/weewx-cmon

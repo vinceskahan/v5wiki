@@ -12,39 +12,39 @@ where you can create a new app and obtain the credentials.
 
 ### Download
 
-wget -O weewx-twitter.zip https://github.com/matthewwall/weewx-twitter/archive/master.zip
+    wget -O weewx-twitter.zip https://github.com/matthewwall/weewx-twitter/archive/master.zip
 
 ### How to Install
 
 1.  Install the Twitter Python bindings:
 
-```
-sudo pip install twython
-```
+    ```
+    sudo pip install twython
+    ```
 
 2.  Run the extension installer:
 
-```
-wee_extension --install weewx-twitter.zip
-```
+    ```
+    wee_extension --install weewx-twitter.zip
+    ```
 
 3.  Modify weewx.conf:
 
-```
-[StdRESTful]
-    [[Twitter]]
-        app_key = APP_KEY
-        app_key_secret = APP_KEY_SECRET
-        oauth_token = OAUTH_TOKEN
-        oauth_token_secret = OAUTH_TOKEN_SECRET
-```
+    ```
+    [StdRESTful]
+        [[Twitter]]
+            app_key = APP_KEY
+            app_key_secret = APP_KEY_SECRET
+            oauth_token = OAUTH_TOKEN
+            oauth_token_secret = OAUTH_TOKEN_SECRET
+    ```
 
 4.  Restart weewx
 
-```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
-```
+    ```
+    sudo /etc/init.d/weewx stop
+    sudo /etc/init.d/weewx start
+    ```
 
 ### Options
 
@@ -66,7 +66,7 @@ Wg: {windGust:%.1f}; oT: {outTemp:%.1f}; oH: {outHumidity:%.2f}; \
 P: {barometer:%.3f}; R: {rain:%.3f}"
 ```
 
-By default, units are those specified in the StdConvert section of weewx.conf.  To use other units, use the _unit_system_ option:
+By default, units are those specified in the `[StdConvert]` section of `weewx.conf`.  To use other units, use the _unit_system_ option:
 
 ```
 [StdRESTful]
@@ -74,7 +74,7 @@ By default, units are those specified in the StdConvert section of weewx.conf.  
         unit_system = METRICWX    # US, METRIC, or METRICWX
 ```
 
-By default, the extension will use the archive interval set in the weewx.conf to post to Twitter. If you don't want to post that often, it is recommended that you add a post_interval setting.
+By default, the extension will use the archive interval set in the `weewx.conf` to post to Twitter. If you don't want to post that often, it is recommended that you add a `post_interval` setting.
 
 ```
 [StdRESTful]
@@ -84,4 +84,7 @@ By default, the extension will use the archive interval set in the weewx.conf to
 
 ### Upgrading from weewx 2.6-2.7
 
-Simply run the extension installer then restart weewx.  If your weewx.conf already contained twitter credentials, these should be remembered by the installer.
+Simply run the extension installer then restart weewx.  If your `weewx.conf` already contained twitter credentials, these should be remembered by the installer.
+
+### Source repository
+https://github.com/matthewwall/weewx-twitter/

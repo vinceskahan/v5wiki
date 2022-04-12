@@ -24,6 +24,8 @@ where you can create a new app and obtain the credentials.
 
 2.  Run the extension installer:
 
+NB: you may need to run this as root (put sudo before wee_extension)
+ 
     ```
     wee_extension --install weewx-twitter.zip
     ```

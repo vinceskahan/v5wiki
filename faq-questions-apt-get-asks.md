@@ -17,9 +17,14 @@ Configuration file '/etc/weewx/weewx.conf'
 
 ### If you answer 'N' (the default):
 
-On a typical minimal system, this will simply change the courtesy version variable near the top of weewx.conf, but it will also save weewx.conf.<version> files for both your old version and the to-be new version.  These are helpful if you want to later compare things, or do some cut+paste from old to new if anything was missed by the installer in the upgrade process.
+This choice keeps your old configuration file (`weewx.conf`). and is usually the safest choice.
 
-In most cases you want to take the installer defaults.
+On a typical system, this will simply change the version number near the top of `weewx.conf`,
+as well as save versioned copies of your old `weewx.conf` file, and the soon-to-be-new version. 
+These are helpful if you later want to see what changed, or if you want to do some 
+cut and paste from old to new.
+
+If you make this choice, here is the output to expect:
 
 ```
 Installing new version of config file /etc/weewx/weewx.conf.dist ...
@@ -33,11 +38,19 @@ Processing triggers for systemd (241-7~deb10u7+rpi1) ...
 
 ### If you answer 'Y' or 'I':
 
-This does not save your previous weewx.conf, but it does keep any settings made when you installed weewx initially by answering questions 'debconf' asked you. If you had previously added skins or extensions into /home/weewx/bin/user, those are kept, but any accompanying weewx.conf edits made by the extension installer (or manual edits) are deleted from the weewx.conf file.
+This choice does *not* use your old `weewx.conf`. Instead, it replaces it with a brand new
+version. However, it does keep any settings made when you installed WeeWX initially such
+as station location and what driver to use. Any other `weewx.conf` edits, such as 
+any extensions that you installed, or special reports that you requested, 
+will not be transferred over. 
 
-Fortunately 'dpkg' under the hood saves your previous weewx.conf as 'weewx.conf.dpkg-old' which can be used to compare to your new weewx.conf so that you can manually replace the edits made.
+Having said that, `apt-get`, or, more precisely, the utility `dpkg` that `apt-get` uses,
+will save your previous copy of `weewx.conf` as `weewx.conf.dpkg-old` which can then
+be used to compare to your new `weewx.conf`, allowing you to manually edit it.
 
-(this is a good example of why taking the 'N' default is generally the best way to upgrade)
+This is a good example of why taking the 'N' default is generally the best way to upgrade.
+
+If you make this choice, here is the output to expect:
 
 ```
 

@@ -108,8 +108,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
-* [owfs - Collect data from one-wire sensors](owfs)
-* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)
+* [owfs - Collect data from one-wire sensors](owfs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)  <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [rmyro - Collect data from RM Young ResponseOne (92000 only)](https://github.com/doubleohwhatever/weewx-rmyro)
 * [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr) <img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -158,7 +158,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
-* [owfs - Augment station data with data from one-wire sensors](owfss)
+* [owfs - Augment station data with data from one-wire sensors](owfss) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 

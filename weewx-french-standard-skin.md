@@ -1,4 +1,10 @@
-This skin is a french translation of the weeWX default Standard skin. 
+This skin is a french translation of the WeeWX Standard skin. 
+
+### Update 30-April-2022
+The Standard skin that ships with WeeWX can now be localized by using option `lang`,
+so this skin is no longer needed.
+See the section [*Changing languages*](http://www.weewx.com/docs/customizing.htm#changing_languages)
+in the Customizing Guide for details.
 
 ### Download
 

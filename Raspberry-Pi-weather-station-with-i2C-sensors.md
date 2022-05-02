@@ -49,7 +49,7 @@ _**My new installation did not need all these scripts, also under python3 severa
 ### Schematics and construction information #
 *[i2C BUS](http://bit.ly/2F4zwGf)
 
-*[wind speed and direction](http://bit.ly/2HQngMB)
+*[wind speed and direction](https://bit.ly/3kQO57L)
 
 *[FARS control & fan rotation FB & RTC](http://bit.ly/2HR3jFt)
 

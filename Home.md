@@ -103,7 +103,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
-* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick)
+* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)

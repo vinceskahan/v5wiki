@@ -28,11 +28,11 @@ The extension is available at:
 * Update 2021-04-09 - new version 3.1 (new parameters - t005m - Groundtemperature named as Temperature1) 
 * works with Python3 
 ```
-[WEATHER365 - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
+[Meteo-Services - Uploader - Extension](https://stations.meteo-services.com/wxupdates/EXTENSION/ ) 
 
 **ex: Winter-Service station: ** Neufahrn-Bauhof -> GERMAN language: [https://stations.meteo-services.com/wetterstation/index.php?station_id=6915](https://stations.meteo-services.com/wetterstation/index.php?station_id=6915)
 
-**[WEATHER365 - Uploader Extension **(python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
+**[Meteo-Services - Uploader Extension **(python3)](https://stations.meteo-services.com/wxupdates/EXTENSION/)
 
 Obtain an ID by registering a new station:
 **REGISTER YOUR STATION HERE**

@@ -6,7 +6,7 @@ I have also added the following tabs to the Belchertown skin; SEQ detailed forca
 [Link to my station](https://bit.ly/2A8BbOx)
 
 ## Overall block diagram #
-[Link to block diagram](http://bit.ly/2HiSESR)
+[Link to block diagram](https://bit.ly/3LYTdT8)
 
 ## Equipment used and general information #
 #### Raspberry Pi3 #

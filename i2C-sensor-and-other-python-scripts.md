@@ -3,7 +3,7 @@
 ###### [sht31no2.py address #45](http://bit.ly/2HQarlj) #
 ###### [sht31test45.py](http://bit.ly/2HPAgll) #
 ###### [BMP085.py](http://bit.ly/2HR7Ffr) #
-###### [BMP180simpletest.py](http://bit.ly/2HVXVAZ) #
+###### [BMP180testing.py](https://bit.ly/3wZdDox) #
 ###### [SI1145.py address #60](http://bit.ly/2HRtJ9R) #
 ###### [si1145test.py](http://bit.ly/2HTvSli) #
 ###### [tsl2591.py address #29](http://bit.ly/2HQegqL) #

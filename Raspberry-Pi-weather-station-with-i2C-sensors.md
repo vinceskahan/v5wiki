@@ -37,7 +37,7 @@ This is a link to the files and other information to enable a localised weather 
 
 ### Weewx config #
 **still to be updated**
-Use your normal config procedure, this link is the procedure I use. [weewx install](http://bit.ly/2F5CUjT)
+Use your normal config procedure.
 
 ### Python scripts required for installation of i2C sensors and required services #
 

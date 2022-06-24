@@ -30,8 +30,8 @@ different for MacOS):
     # Root logger
     [[root]]
       level = {log_level}
-      handlers = rotate,
-    
+      handlers = syslog,
+
     # Additional loggers would go in the following section. This is useful for tailoring logging
     # for individual modules.
     [[loggers]]
@@ -39,14 +39,13 @@ different for MacOS):
     # Definitions of possible logging destinations
     [[handlers]]
 
-        # Log to a set of rotating files    
-        [[[rotate]]]
+        # System logger
+        [[[syslog]]]
             level = DEBUG
             formatter = standard
-            class = logging.handlers.RotatingFileHandler
-            filename = /var/log/weewx.log
-            maxBytes = 10000000
-            backupCount = 4
+            class = logging.handlers.SysLogHandler
+            address = {address}
+            facility = {facility}
 
         # Log to console
         [[[console]]]
@@ -132,7 +131,7 @@ Add this to `weewx.conf`:
     # Root logger
     [[root]]
       handlers = rotate,                    # 1
-    [[loggers]]
+
     [[handlers]]
         # Log to a set of rotating files    
         [[[rotate]]]
@@ -150,14 +149,15 @@ Here's the meaning of the various lines:
 handler. The comma is important: it tells Python that the option is actually a list.
 2. The default log level will be `DEBUG`. Everything with priority `DEBUG` or higher will get 
 logged.
-3. How shall the entries get formatted? This tells the logging facility to use the "standard"
-formatter. 
-4. Option `class` identifies the class of the handler that to be used. It should be set to
+3. How shall the entries get formatted? This tells the logging facility to use the `standard`
+formatter. Other options are `verbose`, or `simple`.
+4. Option `class` identifies the class of the handler that to be used. For rotating files,
+it should be set to 
 [`logging.handlers.RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler).
-5. Option `filename` specifies the location of the file in which the logs will appear.
-6. Option `maxBytes` is how big the file will be allowed to grow before logging is rotated into
+6. Option `filename` specifies the location of the file in which the logs will appear.
+7. Option `maxBytes` is how big the file will be allowed to grow before logging is rotated into
 a new file.
-7. Option `backupCount` is how many rotated files to be retained before deletion.  
+8. Option `backupCount` is how many rotated files to be retained before deletion.  
  
 The `rotate` handler also serves as a good example of overriding default logging behavior.
 

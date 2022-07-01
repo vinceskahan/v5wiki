@@ -188,6 +188,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
 * [WeeWX-WD](weewx-wd) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewx-wdc](https://github.com/Daveiano/weewx-wdc) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 
 #### XType extensions

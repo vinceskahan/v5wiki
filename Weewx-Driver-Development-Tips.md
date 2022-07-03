@@ -49,7 +49,7 @@ To install your driver you can either download a zip (most easily done using the
 
     wee_extension --install YOURDRIVER.zip
 
-If all goes well your driver will be installed and your config stanza be added to the weewx.conf.  ***Note that it will appear at the bottom of the file!***
+If all goes well your driver will be installed and your config stanza be added to the weewx.conf.  ***Note that the stanza for your driver will appear at the bottom of the weewx.conf file!***
 
 At this point you should set any custom configuration values and then run `wee_config` to start using your driver.  After editing you'll want to run the command below.
 

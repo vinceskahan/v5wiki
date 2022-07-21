@@ -103,6 +103,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
 * [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
+* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
@@ -155,7 +156,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [knx - Send EIBnet/IP packets with weather information](knx)
 * [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix)
+* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)

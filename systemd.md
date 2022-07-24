@@ -1,26 +1,42 @@
-## How to configure weewx to run in a systemd environment
+# How to configure WeeWX to run under systemd
 
-This page has been (partially?) updated for weewx version 4.
+If your system uses systemd to manage the starting and stopping of daemons, you might want to configure WeeWX
+using a systemd unit file (`weewx.service`), instead of the traditional rc script
+(`/etc/init.d/weewx`).  On most systems with systemd, the WeeWX rc script will still work, but
+the systemd unit files have a number of advantages:
+ - It's simpler to run as a non-root user;
+ - Dependencies, particularly on time synchronization, are more easily specified;
+ - A more declarative style, making the scripts simpler.
 
-If your system uses systemd to manage the starting and stopping of daemons, you might want to configure weewx specifically for systemd (`weewx.service`) instead of using the traditional rc script (`/etc/init.d/weewx`).  On most systems with systemd, the weewx rc script will still work and systemd commands can and should be used manage the rc script.
-If you want to run weewx as a non-root user then the systemd service route is simpler.
+The installation proceeds in two steps. The first installs the unit file `weewx.service`, the second enables and
+runs it and various services.
 
-Version 4 comes with even more variations in installation, with a choice between python versions.
-The instructions here might apply to your installation, or you might need to adapt them to your situation.
-Note, because of the complexity of options, _some _of the configuration parameters (for example in `/etc/default/weewx` in Debian-like systems) are still examined by `/usr/bin/weewxd`, even under this systemd.service configuration.
+## Install the unit file
 
-### The `weewx.service` file in setup.py installations
-
-The weewx distribution includes a systemd "unit" file called [`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service) that tells systemd how to run weewx.  It looks something like this:
+The WeeWX distribution includes a systemd "unit" file called 
+[`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service), which tells systemd how 
+to run WeeWX.  It looks something like this:
 
 ```ini
-# systemd configuration for weewx
+# systemd unit configuration file for WeeWX
 
 [Unit]
-Description=weewx weather system
+Description=WeeWX weather system
+Documentation=https://weewx.com/docs
+#
+# Require that a time synchronization service has started before running me.
+#
 Requires=time-sync.target
 After=time-sync.target
+#
+# NB: the above only requires that a time sync service be started, not actually synchronized!
+# To do that, enable systemd-time-wait-sync.service:
+#
+#   sudo systemctl enable --now systemd-time-wait-sync.service
+#
+
 RequiresMountsFor=/home
+
 # The following two lines are not in the current distribution version, but should be uncommented and used if you
 # have changed the [Service] section to automatically restart the weewx service if it crashes. As noted below,
 # this can be particularly useful if weewx has an IP connection to the weather station it is monitoring, since
@@ -29,19 +45,8 @@ RequiresMountsFor=/home
 # StartLimitBurst=5
 
 [Service]
-ExecStart=/home/weewx/bin/weewxd --daemon --pidfile=/var/run/weewx.pid /home/weewx/weewx.conf
-ExecReload=/bin/kill -HUP $MAINPID
-Type=simple
-PIDFile=/var/run/weewx.pid
-
-# The following two lines are not in the current distribution version, but may be uncommented and used if you
-# want the weewx service to automatically restart if it crashes. This can be particularly useful if weewx
-# has an IP connection to the weather station it is monitoring, since transient network problems are quite
-# common, and may cause the daemon to crash.
-#Restart=on-failure
-#RestartSec=10
-
-# See notes; by default weewx will run with root privileges
+ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
+StandardOutput=null
 #User=weewx
 #Group=weewx
 
@@ -49,123 +54,132 @@ PIDFile=/var/run/weewx.pid
 WantedBy=multi-user.target
 ```
 
-To install this file, put it in the systemd configuration directory as `/etc/systemd/system/weewx.service`
+### For `setup.py` installations
 
-Be sure that the paths in the `ExecStart` parameter match your weewx installation.
+Installations that used `setup.py` will include a copy of the service file. Copy it into position:
 
-### Debian package installation
-These instructions apply to installation via apt to standard system directories (rather than /home/weewx).
-
-The weewx package does not include a systemd "unit" file.
-You will need to create your own, called something like `weewx.service`.
-Use the following as a template and edit according to your requirements:
-```ini
-# systemd configuration for weewx
-[Unit]
-Description=weewx weather system
-Requires=time-sync.target
-After=time-sync.target
-
-# Uncomment the following two line if your database is written using mysql or MariaDB on the same host
-#After=mysql.service
-#BindsTo=mysql.service
-
-# The following two lines  should be uncommented and used if you
-# have enabled Restart=on-failure in the [Service] section below.
-# StartLimitIntervalSec=100
-# StartLimitBurst=5
-
-[Service]
-# The following two lines may be uncommented and used if you
-# want the weewx service to automatically restart if it crashes.
-# This can be particularly useful if weewx has an IP connection to the weather station
-# it is monitoring, since transient network problems are quite
-# common, and may cause the daemon to crash.
-# Adjust timing according to the typical recovery times in your situation
-#Restart=on-failure
-#RestartSec=20
-# create a runtime directory below /run, because non-root users cannot create a file in /run itself
-# This works for root as well as non-root users.
-RuntimeDirectory=weewx
-PIDFile=/run/weewx/weewx.pid
-# setting the preserve option stops systemd deleting the PID file when weewx exits (debugging only)
-# RuntimeDirectoryPreserve=yes
-
-ExecStart=/usr/bin/weewxd --daemon --pidfile=/run/weewx/weewx.pid /etc/weewx/weewx.conf
-ExecReload=/bin/kill -HUP $MAINPID
-Type=forking
-
-# See notes later in this wiki; by default weewx will run with root privileges, so
-# comment out the following two lines to run weewx as root.
-User=weewx
-Group=weewx
-
-[Install]
-WantedBy=multi-user.target
+```shell
+sudo cp /home/weewx/util/systemd/weewx.service /etc/systemd/system
 ```
 
-To install this file, put it in the systemd configuration directory as `/etc/systemd/system/weewx.service`
+Take a look at it, and make sure that the line that starts with `ExecStart` matches your installation. The default
+is
+```ini
+ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
+```
+which should work for most cases.
 
-Be sure that the paths in the `ExecStart` parameter match your weewx installation.
+### For Debian package installations
+If you installed using a Debian package installer, the distribution does not include with a copy of 
+`weewx.service`. Instead, you will have to download it:
+
+```
+cd /etc/systemd/system
+sudo wget https://raw.githubusercontent.com/weewx/weewx/master/util/systemd/weewx.service 
+```
+
+Look through the file and change the line that starts with `ExecStart` to match your installation. It will
+probably end up looking like this:
+
+```
+ExecStart=/usr/share/weewx/weewxd /etc/weewx/weewx.conf
+```
+ 
+## Enabling and running
+Now that the unit file is in position, it is time to enable it. These instructions are the same
+regardless of how you installed WeeWX.
+
+1. First, note that the unit file has a dependency on `time-sync.target`. This makes sure that `weewxd` does not get run
+before a time synchronization service has started. However, it does not guarantee that the time has actually been
+synchronized, only that a time service has started! To guarantee that the time has actually been synchronized,
+use this command:
+
+    ```shell
+    sudo systemctl enable --now systemd-time-wait-sync.service
+    ```
+
+    This service will not finish until the time has been synchronized. 
+
+2. If it exists, get rid of you old `/etc/init.d` script:
+    ```shell
+    sudo rm /etc/init.d/weewx
+   ```    
+4. You will then need to *enable* your WeeWX unit file, which makes sure it gets run during system startup:
+    ```shell
+    sudo systemctl enable weewx
+    ```
+
+5. Finally, start weewx:
+    ```shell
+    sudo systemctl start weewx
+    ```
 
 ### To run as a non-root user.
 
-You will need to uncomment the last two lines in the [Service] section in the `weewx.service` file, where it refers to  `User=` and `Group=`.
+You will need to uncomment the lines in the `[Service]` section in the `weewx.service` file,
+where it refers to `User=` and `Group=`. Add the name of the user you wish to run as. For example,
+to run as user `weewx` it would look like this (assuming `setup.py` install method):
 
-If you use `weewx` as the `User` and `Group`, then weewx will run as the user `weewx`. If you do this, make sure that the `weewx` user has permission to :
-- Write to the weewx database (if using sqlite);
-- Write to the location for weewx reports (HTML) files;
-- and has access to the port your device is connected to You may have to write a udev rule to do this.
+<pre>
+[Service]
+ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
+StandardOutput=null
+<b>User=weewx
+Group=weewx</b>
+</pre>
 
-First find the `idVendor` and `idProduct` of your weatherstation with `lsusb` command then  add a rules file in `/etc/udev/rules.d/` with this content:
+Make sure that whatever user you use has the following permissions: 
+- Permission to write to the weewx database (if using sqlite);
+- Permission to write to the location for weewx reports (HTML) files;
+- Permission to access the port your device is connected to. 
+ 
+For the last item, you may have to write a udev rule. First find the `idVendor` and `idProduct` of your
+weather station by using the `lsusb` command. For example:
 
-```shell
-SUBSYSTEM=="usb", ATTR{idVendor}=="your_value", ATTR{idProduct}=="your_value", ACTION=="add", GROUP="weewx", MODE="0664"
+<pre>
+/home/weewx$ lsusb
+Bus 001 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 005: ID 8087:07dc Intel Corp. Bluetooth wireless interface
+<b>Bus 002 Device 003: ID 10c4:ea60 Silicon Labs CP210x UART Bridge</b>
+Bus 002 Device 004: ID 413c:2010 Dell Computer Corp. Keyboard
+Bus 002 Device 002: ID 413c:1003 Dell Computer Corp. Keyboard Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</pre>
+
+From this, we can identify that the station is on Bus 2, Device 5. The vendor ID is `10c4` and the product id is 
+`ea60`.
+
+Create a rules file called `/etc/udev/rules.d/weewx.rules` with this content:
+
 ```
-Name the udev rules file something descriptive, such as an abbreviation of your weatherstation model or just weewx.rules, a la `/etc/udev/rules.d/weewx.rules` (extension must be .rules and filename should be simple, no spaces or special characters other than '-' and/or '_' and should not contain more than one period '.').
+SUBSYSTEM=="usb", ATTR{idVendor}=="10c4", ATTR{idProduct}=="ea60", ACTION=="add", GROUP="weewx", MODE="0664"
+```
 
-### Starting and stopping weewx
+When your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
+`weewx`, with read/write privileges `0664`.
 
-To start weewx:
+
+### Starting and stopping WeeWXd
+
+To start weewxd:
 
     sudo systemctl start weewx
 
-To stop weewx:
+To stop weewxd:
 
     sudo systemctl stop weewx
 
-These commands should work whether you use the rc script `/etc/init.d/weewx` or the systemd configuration `/etc/systemd/system/weewx.service`.
-
-If you have only the rc script, you should be able to start/stop weewx using either the systemctl syntax or the tradition rc syntax:
-
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
-
-It can be confusing and a possible source of error to have  both the rc script and a `weewx.service` file installed and active.
-If you wish to use the service you have just created to run weewx, you should disable the rc script completely to ensure everything is using your new service.
-Do not delete the file in init.d, otherwise apt upgrades may fail.
-
-A simple
+To find the status:
 
     sudo systemctl status weewx
 
-will show you whether you are using your custom unit file - look at the line headed "Loaded:" to identify any reference to it or to init.d.
-
-To stop using the init.d version:
-
-    sudo systemctl disable weewx        (if you are still running the init.d version)
-    sudo systemctl daemon-reload        (assuming the service file is already in place)
-    sudo systemctl enable weewx
-    sudo systemctl status weewx         (should show you that it is now loading the service file)
-
-
-### Enabling and disabling weewx
-
-If you want to prevent weewx from starting up when the system boots, disable it like this:
+If you want to prevent weewxd from starting up when the system boots, disable it like this:
 
     sudo systemctl disable weewx
 
-To enable it:
+Later, you can re-enable it:
 
     sudo systemctl enable weewx
 

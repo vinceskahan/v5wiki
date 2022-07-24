@@ -1,6 +1,6 @@
 By default, weewx runs as root.  This guide illustrates how to run weewx as a non-root user, using `init` style 
 "`rc`" scripts. An alternative way, usually simpler, is to use systemd "unit files". For information
-on the latter, see the companion article [How to configure WeeWX to run under systemd](systemd.md).
+on the latter, see the companion article [How to configure WeeWX to run under systemd](systemd).
 
 
 1. Create the user account, if it has not been done already
@@ -37,8 +37,8 @@ works for a USB device. First, figure out the vendor and device ID by using the 
     SUBSYSTEM=="usb", ATTR{idVendor}=="10c4", ATTR{idProduct}=="ea60", MODE="0664", GROUP="wxuser"
    ```
 
-    This tells udev to look for a vendor/product ID combination of 10cr/ea60. When it finds it, set its read/write
-    mode to 0664 and assign it to user group `wxuser`. This will allow user `wxuser` to access it.
+    This tells udev to look for a vendor/product ID combination of `10cr/ea60`. When it finds it, set its read/write
+    mode to `0664` and assign it to user group `wxuser`. This will allow user `wxuser` to access it.
 
 The next steps depend on whether you used the `setup.py` install method, or a package installer.
 

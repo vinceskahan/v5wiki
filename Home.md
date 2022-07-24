@@ -36,7 +36,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Time services](Time-services)
 
 #### Operating system configuration
-* [Run WeeWX as a non-root user](Run-as-a-non-root-user)
+* [Run WeeWX as a non-root user](Run-as-a-non-root-user-using-init)
 * [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Configure WeeWX to run under systemd](systemd)

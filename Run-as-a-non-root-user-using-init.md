@@ -1,5 +1,3 @@
-# Run as a non-root user using `init`
-
 By default, weewx runs as root.  This guide illustrates how to run weewx as a non-root user, using `init` style 
 "`rc`" scripts. An alternative way, usually simpler, is to use systemd "unit files". For information
 on the latter, see the companion article [How to configure WeeWX to run under systemd](systemd.md).

@@ -8,14 +8,30 @@ the systemd unit files have a number of advantages:
  - Dependencies, particularly on time synchronization, are more easily specified;
  - A more declarative style, making the scripts simpler.
 
-The installation proceeds in two steps. The first installs the unit file `weewx.service`, the second enables and
-runs it and various services.
+The installation proceeds in three steps.
+1. Clean up any old `rc` scripts.
+2. Installs the unit file `weewx.service`
+3. Enable and run the unit file.
 
-## Install the unit file
+## Clean up old `rc` scripts
 
-The WeeWX distribution includes a systemd "unit" file called 
-[`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service), which tells systemd how 
-to run WeeWX.  It looks something like this:
+1. Stop any running instances of `weewxd` that are using `rc` scripts:
+
+    ```shell
+   sudo /etc/init.d/weewx stop
+    ```
+ 
+2. If it exists, get rid of you old `/etc/init.d` script:
+    ```shell
+    sudo rm /etc/init.d/weewx
+   ```    
+
+## Install the unit file `weewx.service`
+
+WeeWX offers a systemd "unit" file called
+[`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service), which
+tells systemd how to run WeeWX. How you install it depends on whether you used `setup.py` or a package installer 
+to install your system. It looks something like this:
 
 ```ini
 # systemd unit configuration file for WeeWX
@@ -82,7 +98,7 @@ Look through the file and change the line that starts with `ExecStart` to match 
 probably end up looking like this:
 
 ```
-ExecStart=/usr/share/weewx/weewxd /etc/weewx/weewx.conf
+ExecStart=/usr/bin/weewxd /etc/weewx/weewx.conf
 ```
  
 ## Enabling and running
@@ -100,68 +116,17 @@ use this command:
 
     This service will not finish until the time has been synchronized. 
 
-2. If it exists, get rid of you old `/etc/init.d` script:
-    ```shell
-    sudo rm /etc/init.d/weewx
-   ```    
-4. You will then need to *enable* your WeeWX unit file, which makes sure it gets run during system startup:
+2. You will then need to *enable* your WeeWX unit file, which makes sure it gets run during system startup:
     ```shell
     sudo systemctl enable weewx
     ```
 
-5. Finally, start weewx:
+3. Finally, start weewx:
     ```shell
     sudo systemctl start weewx
     ```
 
-### To run as a non-root user.
-
-You will need to uncomment the lines in the `[Service]` section in the `weewx.service` file,
-where it refers to `User=` and `Group=`. Add the name of the user you wish to run as. For example,
-to run as user `weewx` it would look like this (assuming `setup.py` install method):
-
-<pre>
-[Service]
-ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
-StandardOutput=null
-<b>User=weewx
-Group=weewx</b>
-</pre>
-
-Make sure that whatever user you use has the following permissions: 
-- Permission to write to the weewx database (if using sqlite);
-- Permission to write to the location for weewx reports (HTML) files;
-- Permission to access the port your device is connected to. 
- 
-For the last item, you may have to write a udev rule. First find the `idVendor` and `idProduct` of your
-weather station by using the `lsusb` command. For example:
-
-<pre>
-/home/weewx$ lsusb
-Bus 001 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 002 Device 005: ID 8087:07dc Intel Corp. Bluetooth wireless interface
-<b>Bus 002 Device 003: ID 10c4:ea60 Silicon Labs CP210x UART Bridge</b>
-Bus 002 Device 004: ID 413c:2010 Dell Computer Corp. Keyboard
-Bus 002 Device 002: ID 413c:1003 Dell Computer Corp. Keyboard Hub
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</pre>
-
-From this, we can identify that the station is on Bus 2, Device 5. The vendor ID is `10c4` and the product id is 
-`ea60`.
-
-Create a rules file called `/etc/udev/rules.d/weewx.rules` with this content:
-
-```
-SUBSYSTEM=="usb", ATTR{idVendor}=="10c4", ATTR{idProduct}=="ea60", ACTION=="add", GROUP="weewx", MODE="0664"
-```
-
-When your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
-`weewx`, with read/write privileges `0664`.
-
-
-### Starting and stopping WeeWXd
+## Starting and stopping WeeWXd
 
 To start weewxd:
 
@@ -184,3 +149,51 @@ Later, you can re-enable it:
     sudo systemctl enable weewx
 
 Whether it is enabled or disabled, you can still start/stop.
+
+## To run as a non-root user.
+
+You will need to uncomment the lines in the `[Service]` section of the `weewx.service` file,
+where it refers to `User=` and `Group=`. Add the name of the user you wish to run as. For example,
+to run as user `weewx` it would look like this (assuming `setup.py` install method):
+
+<pre>
+[Service]
+ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
+StandardOutput=null
+<b>User=weewx
+Group=weewx</b>
+</pre>
+
+Make sure that whatever user you choose has the following permissions: 
+- Permission to write to the weewx database (if using sqlite);
+- Permission to write to the location for weewx reports (HTML) files;
+- Permission to access the port your device is connected to. 
+ 
+For the last item, you may have to write a udev rule. Here's an outline of how to do this.
+First find the `idVendor` and `idProduct` of your weather station by using the `lsusb` command. For example:
+
+<pre>
+/home/weewx$ lsusb
+Bus 001 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 005: ID 8087:07dc Intel Corp. Bluetooth wireless interface
+<b>Bus 002 Device 003: ID 10c4:ea60 Silicon Labs CP210x UART Bridge</b>
+Bus 002 Device 004: ID 413c:2010 Dell Computer Corp. Keyboard
+Bus 002 Device 002: ID 413c:1003 Dell Computer Corp. Keyboard Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</pre>
+
+From this, we can identify that the station is on Bus 2, Device 5. The vendor ID is `10c4` and the product id is 
+`ea60`.
+
+Create a rules file called `/etc/udev/rules.d/weewx.rules` and include this content:
+
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="10c4", ATTR{idProduct}=="ea60", ACTION=="add", GROUP="weewx", MODE="0664"
+```
+
+When your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
+`weewx`, with read/write privileges `0664`. This will allow the user `weewx` to access it.
+
+

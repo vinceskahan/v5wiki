@@ -248,18 +248,26 @@ plots. However, if you want to see the values in loop packets and/or archive rec
 publish them by MQTT, then you need to extend the section `[StdWXCalculate]`, subsection
 [`[[Calculations]]`](http://www.weewx.com/docs/usersguide.htm#[[Calculations]]), in `weewx.conf`.
 
-For example, say the name of the value defined in your extension is "foo", then you could write:
+For example, say the name of the new observation type defined in your extension is "bore_pressure", then you could
+write:
 
 ```ini
 [StdWXCalculate]
     [[Calculations]]
         ...
-        foo = software
+        bore_pressure = prefer_hardware
+        ...
 ```
 
-where `software` means the value will always be calculated by the extension. See the section
+where `prefer_hardware` means the value will be calculated by the extension if the hardware does not
+supply a value. See the section
 [_[[Calculations]]_](http://www.weewx.com/docs/usersguide.htm#[[Calculations]]) in the User's Guide
 for other options.
+
+With this addition, if a record comes in that does not include a value for `bore_pressure`, the record will be handed
+off to the XTypes system with a request to calculate `bore_pressure`. Because you registered your
+extension with the system, it will find your extension and calculate the value. The new value will then be put into the
+record, where it can be used like any other value.
 
 
 ------------------------
@@ -327,9 +335,8 @@ class VaporPressure(weewx.xtypes.XType):
             # Don't recognize the exception. Fail hard:
             raise ValueError(self.algorithm)
 
-        # We have the vapor pressure as a ValueTuple. Convert it back to the units used by
-        # the incoming record and return it
-        return weewx.units.convertStd(p_vt, record['usUnits'])
+        # If we got this far, we were able to calculate a value. Return it.
+        return p_vt
 ```
 
 We have subclassed `XTypes` as a class called `VaporPressure`. By default, it uses a "simple"

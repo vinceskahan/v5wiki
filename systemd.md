@@ -35,34 +35,22 @@ to install your system. It looks something like this:
 
 ```ini
 # systemd unit configuration file for WeeWX
-
+#
+# For information about running WeeWX under systemd,
+# be sure to read https://github.com/weewx/weewx/wiki/systemd
+#
 [Unit]
 Description=WeeWX weather system
 Documentation=https://weewx.com/docs
-#
-# Require that a time synchronization service has started before running me.
-#
+
 Requires=time-sync.target
 After=time-sync.target
-#
-# NB: the above only requires that a time sync service be started, not actually synchronized!
-# To do that, enable systemd-time-wait-sync.service:
-#
-#   sudo systemctl enable --now systemd-time-wait-sync.service
-#
-
 RequiresMountsFor=/home
-
-# The following two lines are not in the current distribution version, but should be uncommented and used if you
-# have changed the [Service] section to automatically restart the weewx service if it crashes. As noted below,
-# this can be particularly useful if weewx has an IP connection to the weather station it is monitoring, since
-# transient WiFi network problems are quite common, and may cause weewx to crash.
-# StartLimitIntervalSec=100
-# StartLimitBurst=5
 
 [Service]
 ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
 StandardOutput=null
+# To run as a non-root user, uncomment and set username and group here:
 #User=weewx
 #Group=weewx
 
@@ -126,7 +114,7 @@ use this command:
     sudo systemctl start weewx
     ```
 
-## Starting and stopping WeeWXd
+## Starting and stopping weewxd
 
 To start weewxd:
 
@@ -193,7 +181,9 @@ Create a rules file called `/etc/udev/rules.d/weewx.rules` and include this cont
 SUBSYSTEM=="usb", ATTR{idVendor}=="10c4", ATTR{idProduct}=="ea60", ACTION=="add", GROUP="weewx", MODE="0664"
 ```
 
-When your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
-`weewx`, with read/write privileges `0664`. This will allow the user `weewx` to access it.
+Of course, your `idVendor` and `idProduct` identifiers are likely to be different. Adjust as necessary.
+
+Now when your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
+`weewx`, with read/write privileges `0664`, allowing the user `weewx` to access it.
 
 

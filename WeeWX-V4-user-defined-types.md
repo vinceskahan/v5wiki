@@ -148,8 +148,13 @@ times of the aggregation, exclusive on the left, inclusive on the right.
 be some new, user-defined aggregation.
 - `db_manager` is an instance of `weewx.manager.Manager`, or a subclass. The connection will be 
 open and usable.
-- `option_dict` is a dictionary with possible, additional, values to be used by the aggregation.
-  (Need details)
+- `option_dict` is a dictionary containing any extra parameters used in the aggregation. For example, suppose you have
+defined a new aggregation that gives the percentage of observations greater than a specified number of standard 
+deviations from the mean:
+    ```
+    $year.outTemp.deviation_percentage(sd=2.0)
+    ```
+    then the parameter `option_dict` would include a key of `sd`, with a value of `2`.
 
 The function should return:
 

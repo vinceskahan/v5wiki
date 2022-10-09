@@ -155,6 +155,11 @@ deviations from the mean:
     $year.outTemp.deviation_percentage(sd=2.0)
     ```
     then the parameter `option_dict` would include a key of `sd`, with a value of `2`.
+    If a parameter is not named, then it will appear under name `val`. For example,
+    ```
+    $year.outTemp.deviation_percentage(4)
+    ```
+    would result in `option_dict` including a key `val`, with a value of `4`.
 
 The function should return:
 

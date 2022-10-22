@@ -79,6 +79,10 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Collect data from wifi sensors](https://hackaday.io/project/101680-solar-powered-wifi-temperature-sensor-for-weewx)
 * [Get data from Acurite Atlas on a RPi](https://github.com/ChrisM510/AtlasWeeWX/wiki/Acurite-Atlas-on-WeeWX-RTL-SDR-RTL_433-RPi-(Page-1))
 
+### Software
+* [How to calculate values in templates](calculate-in-templates)
+
+
 ### Extensions to WeeWX
 
 Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.

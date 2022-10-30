@@ -176,6 +176,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 
 #### Skins
+* [alltimeSeasons](https://github.com/glennmckechnie/alltimeSeasons) An addition to the Seasons skin that outputs some NOAA data as html (From Bootstrap via gedger)  <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [amphibian](amphibian)
 * [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [bootstrap](Bootstrap)

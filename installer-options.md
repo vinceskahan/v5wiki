@@ -134,12 +134,15 @@ sudo wee_ctl install-init
 ### upgrades
 
 ```
+# upgrade only the weewx code - does not touch any conf for data
 pip install weewx --upgrade
 ```
 ```
 # doing an apt update/upgrade will only touch weewx code
 # it will never touch weewx config, skins, or database!
 apt install weewx
+
+yum install weewx=5.1.2
 ```
 
 That way you can modify the code completely independently from any station instance.  That lets you roll back the code without worrying about the config (or skins or data).
@@ -148,12 +151,26 @@ Also lets you pin a weewx release for an OS package.  Or use the pip version pin
 
 If a user wants to upgrade a config file (instead of doing it manually), then s/he would use the `wee_config` utility for the config file, or the `wee_database` utility for the database.
 
+```
+wee_config update
+
+wee_config update --config ~/weewx-data/vantage.conf
+```
+
 WeeWX itself (i.e., `weewxd`) should be backward compatible with config files.  When that is not possible, it should fail hard and explain why instead of trying to update/modify the config file.
 
 
 ### configuration file
 
 * create-station would use the weewx.conf that came with the installed weewx as template
+
+Separation means that a config validator is possible.
+
+```
+wee_config validate
+
+wee_config validate --config /etc/weewx/vantage.conf
+```
 
 ### where to put data, what is considered data
 

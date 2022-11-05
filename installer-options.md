@@ -97,7 +97,7 @@ Cons
 
 ## The ctl pattern
 
-This is a proposal for weewx 5.  In the ctl pattern, the weewx code and weewx data are separated during the installation and upgrade processes.  The first step would be to install weewx code.  This would *not* install a config file (or database, although database is lazy creation anyway).  It would install a template config, and template skins, i.e., the config and skins that would be used to create a station instance.  The second step would be to create a station instance.  This would create a config file and skins.  If config and skins already exist, then this is a no-op, or perhaps an option to upgrade.  It would still be possible to make the end-user experience a single step, but by separating these into different logical (and physical) tasks we can address some of the problems in the installation and upgrade of weewx 4 and earlier.
+This is a proposal for weewx 5.  In the *ctl* pattern, the weewx code and weewx data are separated during the installation and upgrade processes.  The first step would be to install weewx code.  This would *not* install a config file (or database, although database is lazy creation anyway).  It would install a template config, and template skins, i.e., the config and skins that would be used to create a station instance.  The second step would be to create a station instance.  This would create a config file and skins.  If config and skins already exist, then this is a no-op, or perhaps an option to upgrade.  It would still be possible to make the end-user experience a single step, but by separating these into different logical (and physical) tasks we can address some of the problems in the installation and upgrade of weewx 4 and earlier.
 
 This requires a tool, say `wee_ctl`, for the post-install operations.  This tool would do things like create a station instance, upgrade a station instance, start/stop a station instance, install the init file(s).  It would exist alongside the existing `wee_xxx` utilities.  (Perhaps there would be a unifying command that passes to these, in the same way that 'git' is a single entry point that invokes the lower-level commands that do the actual work)
 
@@ -151,10 +151,10 @@ how to structure data?
 ~/weewx-data/skins/
 
 ~/weewx-data/
-~/weewx-data/stations/
-~/weewx-data/stations/vantage/
-~/weewx-data/stations/vantage/weewx.conf
-~/weewx-data/stations/vantage/weewx.sdb
+~/weewx-data/vantage.conf
+~/weewx-data/vantage.sdb
+~/weewx-data/gw1000.conf
+~/weewx-data/gw1000.sdb
 ~/weewx-data/skins/
 ```
 

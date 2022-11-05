@@ -106,20 +106,39 @@ Here is a clean install using pip:
 # install weewx using pip
 pip install weewx
 # create a station instance called 'weewx' with default settings
+# results in a new weewx.conf
 wee_ctl create-station
 ```
 
 What would be some of the options?
 ```
-# create a station instance called 'vantage'
-wee_ctl create-station --name vantage --station-path /home/username/weewx-stations
+# create a station instance called 'vantage1'
+wee_ctl create-station --name vantage1 --driver vantage
+# create a station instance called 'vantage2'
+wee_ctl create-station --name vantage2 --driver vantage
 # create a station instance called 'gw1000'
-wee_ctl create-station --name gw1000 --path /home/username/weewx-stations --driver gw1000
+wee_ctl create-station --name gw1000 --driver gw1000
+
+# keep the weewx data in a specific place
+wee_ctl --data-path /var/lib/weewx
 
 wee_ctl list-stations
+
+# update the conf for the station
+wee_ctl update-station
 
 # install the appropriate init file(s)
 sudo wee_ctl install-init
 ```
 
+* create-station would use the weewx.conf that came with the installed weewx as template
 
+how to structure data?
+```
+/home/weewx-data/
+/home/weewx-data/stations/
+/home/weewx-data/stations/vantage/
+/home/weewx-data/stations/vantage/weewx.conf
+/home/weewx-data/stations/vantage/weewx.sdb
+/home/weewx-data/skins/
+```

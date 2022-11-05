@@ -145,12 +145,46 @@ sudo wee_ctl install-init
 
 how to structure data?
 ```
-/home/weewx-data/
-/home/weewx-data/stations/
-/home/weewx-data/stations/vantage/
-/home/weewx-data/stations/vantage/weewx.conf
-/home/weewx-data/stations/vantage/weewx.sdb
-/home/weewx-data/skins/
+~/weewx-data/
+~/weewx-data/weewx.conf
+~/weewx-data/weewx.sdb
+~/weewx-data/skins/
+
+~/weewx-data/
+~/weewx-data/stations/
+~/weewx-data/stations/vantage/
+~/weewx-data/stations/vantage/weewx.conf
+~/weewx-data/stations/vantage/weewx.sdb
+~/weewx-data/skins/
+```
+
+```
+/etc/weewx/weewx.conf
+
+/etc/weewx/skins/
+
+/var/lib/weewx/
+/var/lib/weewx/weewx.sdb
+
+/var/log/weewx/
+/var/log/weewx/weewx.log
+/var/log/weewx/weewxd.log
+```
+
+```
+/etc/weewx/vantage.conf
+/etc/weewx/gw1000.conf
+
+/etc/weewx/skins/
+
+/var/lib/weewx/
+/var/lib/weewx/vantage.sdb
+/var/lib/weewx/gw1000.sdb
+
+/var/log/weewx/
+/var/log/weewx/weewx.log
+/var/log/weewx/vantage.log
+/var/log/weewx/gw1000.log
 ```
 
 ### permissions

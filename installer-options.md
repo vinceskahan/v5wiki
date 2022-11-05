@@ -109,4 +109,10 @@ pip install weewx
 wee_ctl create weewx
 ```
 
+What would be some of the options?
+```
+wee_ctl create-station --name vantage --path /home/username/vantage
+wee_ctl create-station --name gw1000 --path /home/username/gw1000
+```
+
 

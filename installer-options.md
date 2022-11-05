@@ -106,13 +106,20 @@ Here is a clean install using pip:
 # install weewx using pip
 pip install weewx
 # create a station instance called 'weewx' with default settings
-wee_ctl create weewx
+wee_ctl create-station
 ```
 
 What would be some of the options?
 ```
-wee_ctl create-station --name vantage --path /home/username/vantage
-wee_ctl create-station --name gw1000 --path /home/username/gw1000
+# create a station instance called 'vantage'
+wee_ctl create-station --name vantage --station-path /home/username/weewx-stations
+# create a station instance called 'gw1000'
+wee_ctl create-station --name gw1000 --path /home/username/weewx-stations --driver gw1000
+
+wee_ctl list-stations
+
+# install the appropriate init file(s)
+sudo wee_ctl install-init
 ```
 
 

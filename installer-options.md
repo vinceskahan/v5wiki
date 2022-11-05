@@ -133,6 +133,24 @@ sudo wee_ctl install-init
 
 ### upgrades
 
+```
+pip install weewx --upgrade
+```
+```
+# doing an apt update/upgrade will only touch weewx code
+# it will never touch weewx config, skins, or database!
+apt install weewx
+```
+
+That way you can modify the code completely independently from any station instance.  That lets you roll back the code without worrying about the config (or skins or data).
+
+Also lets you pin a weewx release for an OS package.  Or use the pip version pinning so that you can wait for a cheetah update, for example.
+
+If a user wants to upgrade a config file (instead of doing it manually), then s/he would use the `wee_config` utility for the config file, or the `wee_database` utility for the database.
+
+WeeWX itself (i.e., `weewxd`) should be backward compatible with config files.  When that is not possible, it should fail hard and explain why instead of trying to update/modify the config file.
+
+
 ### configuration file
 
 * create-station would use the weewx.conf that came with the installed weewx as template
@@ -196,7 +214,7 @@ how to structure data?
 * how to install udev file for a pip install?  or just always run as root in a pip install?  depends where you put the data, not where you put the code
 * manage with `wee_ctl install-udev`.  this could be used after a pip install or in post of deb or rpm install.
 
-## init
+### init
 
 * pkg install must detect systemd or no systemd (e.g., debian must always detect, rhel and suse must detect to maintain backward compatibility).  if systemd is on the system, then use unit file (which must be generic as possible to avoid systemd shenanigans), otherwise use rc file.
 * a `wee_ctl install-init` could do this detection and install the correct file(s), even for the BSDs and MacOS.  then simply invoke that in post for deb and rpm installs.  for a pip install, user just does `sudo wee_ctl install-init` and `sudo wee_ctl install-udev`

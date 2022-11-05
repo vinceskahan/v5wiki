@@ -131,7 +131,17 @@ wee_ctl update-station
 sudo wee_ctl install-init
 ```
 
+### upgrades
+
+### configuration file
+
 * create-station would use the weewx.conf that came with the installed weewx as template
+
+### where to put data, what is considered data
+
+* one configuration file for each instance
+* one database for each instance
+* skins directory can be shared by multiple instances
 
 how to structure data?
 ```
@@ -142,3 +152,18 @@ how to structure data?
 /home/weewx-data/stations/vantage/weewx.sdb
 /home/weewx-data/skins/
 ```
+
+### permissions
+
+* need sudo for pkg install
+* sudo not necessary for a pip install of weewx code (unless you install weewx into system area of python)
+* run weewx as non-root user
+* to run as non-root for pkg install need a generic udev file with all known hardware
+* how to install udev file for a pip install?  or just always run as root in a pip install?  depends where you put the data, not where you put the code
+* manage with `wee_ctl install-udev`.  this could be used after a pip install or in post of deb or rpm install.
+
+## init
+
+* pkg install must detect systemd or no systemd (e.g., debian must always detect, rhel and suse must detect to maintain backward compatibility).  if systemd is on the system, then use unit file (which must be generic as possible to avoid systemd shenanigans), otherwise use rc file.
+* a `wee_ctl install-init` could do this detection and install the correct file(s), even for the BSDs and MacOS.  then simply invoke that in post for deb and rpm installs.  for a pip install, user just does `sudo wee_ctl install-init` and `sudo wee_ctl install-udev`
+* keep the different init configs in util dir as currently done

@@ -177,6 +177,7 @@ wee_config validate --config /etc/weewx/vantage.conf
 * one configuration file for each instance
 * one database for each instance
 * skins directory can be shared by multiple instances
+* generated files
 
 how to structure data?
 ```
@@ -184,6 +185,7 @@ how to structure data?
 ~/weewx-data/weewx.conf
 ~/weewx-data/weewx.sdb
 ~/weewx-data/skins/
+~/weewx-data/reports/
 
 ~/weewx-data/
 ~/weewx-data/vantage.conf
@@ -191,6 +193,7 @@ how to structure data?
 ~/weewx-data/gw1000.conf
 ~/weewx-data/gw1000.sdb
 ~/weewx-data/skins/
+~/weewx-data/reports/
 ```
 
 ```
@@ -204,6 +207,8 @@ how to structure data?
 /var/log/weewx/
 /var/log/weewx/weewx.log
 /var/log/weewx/weewxd.log
+
+/var/www/html/weewx/
 ```
 
 ```
@@ -220,6 +225,9 @@ how to structure data?
 /var/log/weewx/weewx.log
 /var/log/weewx/vantage.log
 /var/log/weewx/gw1000.log
+
+/var/www/html/vantage/
+/var/www/html/gw1000/
 ```
 
 ### permissions

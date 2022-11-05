@@ -10,6 +10,22 @@ well as `rpm` for Redhat/CentOS and SuSE.
 
 These notes about the pros/cons of different mechanisms, actual and potential, for installing
 WeeWX.
+## General
+
+The present (weewx 4 and earlier) system of supporting both `setup.py` installs and package installers results in many different configurations. This means interrogating users about their install method
+before we can answer a support question.  Although there are only two families: python install (setup.py) or platform install (apt, yum, zypper), within each of these there are can be many variants.  For example, a python install might not be in /home/weewx, and an apt install might have multiple conf files (e.g., for weewx-multi).  A single weewx code install could be run using either python2 or python3.  A setup.py install could be run within a `venv` or other python virtualization.  Any of these could be run within a virtual environment or within a container, or within WSL.
+
+Python installs cannot integrate fully with the system (init system, logrotate, syslog, logwatch), at least not a pip or venv
+
+The creation of platform packages is highly dependent on bespoke scripts written in Perl by Matthew. We're screwed if he gets hit by a bus, or until Tom decides to learn PERL (or at least wear a hazmat suit when he looks at the code).
+
+OTOH, the `setup.py` method installs in non-standard places. It also requires the user to install
+dependencies manually. This is a major reason why we have stuck with the same dependencies for over
+10 years, despite a revolution in potential supporting libraries (such as `requests` or `tzinfo`).
+
+There is a fundamental issue that weewx has ignored: separation of code and data.  The weewx implementation has always done this in its implementation, but it has not had separation when it comes to installation and upgrade.  Many of the installation problems would go away and simplify if weewx code and weewx data/config were treated separately for installation and upgrade.  For example, installation could be a two-step process: first install weewx, then create a station configuration.  A station configuration consists of a conf file, database, and skins.
+
+The following sections enumerate the existing (weewx 4) installation options, as well as some alternatives.
 
 ## weewx-ified setup.py (single directory install)
 
@@ -79,22 +95,13 @@ Cons
 - Many dependencies take forever before they appear in the installer stream. A Python 3 version of
   Cheetah took about 3 years, yet it appeared in pypi almost immediately.
 
-## General
+## The ctl pattern
 
-The present system of supporting both `setup.py` installs and package installers results in many different configurations. This means interrogating users about their install method
-before we can answer a support question.  However, there are only two families: python install (setup.py) or platform install (apt, yum, zypper).  Within each of these there are many variants.  For example, a python install might not be in /home/weewx, and an apt install might have multiple conf files (e.g., for weewx-multi).
+This is a proposal for weewx 5.  In the ctl pattern, the weewx code and weewx data are separated during the installation and upgrade processes.  The first step would be to install weewx code.  This would *not* install a config file (or database, although database is lazy creation anyway).  It would install a template config, and template skins, i.e., the config and skins that would be used to create a station instance.  The second step would be to create a station instance.  This would create a config file and skins.  If config and skins already exist, then this is a no-op, or perhaps an option to upgrade.  It would still be possible to make the end-user experience a single step, but by separating these into different logical (and physical) tasks we can address some of the problems in the installation and upgrade of weewx 4 and earlier.
 
-Python installs cannot integrate fully with the system (init system, logrotate, syslog, logwatch), at least not a pip or venv
+This requires a tool, say `wee_ctl`, for the post-install operations.  This tool would do things like create a station instance, upgrade a station instance, start/stop a station instance, install the init file(s).  It would exist alongside the existing `wee_xxx` utilities.  (Perhaps there would be a unifying command that passes to these, in the same way that 'git' is a single entry point that invokes the lower-level commands that do the actual work)
 
-It is also highly dependent on bespoke scripts written in Perl by Matthew. We're screwed if he gets
-hit by a bus.
-
-OTOH, the `setup.py` method installs in non-standard places. It also requires the user to install
-dependencies manually. This is a major reason why we have stuck with the same dependencies for over
-10 years, despite a revolution in potential supporting libraries (such as `requests` or `tzinfo`).
-
-There is a fundamental issue that weewx has ignored: separation of code and data.  The weewx implementation has always done this in its implementation, but it has not had separation when it comes to installation and upgrade.  Many of the installation problems would go away and simplify if weewx code and weewx data/config were treated separately for installation and upgrade.  For example, use this process:
-
+Here is a clean install using pip:
 ```
 # install weewx using pip
 pip install weewx
@@ -102,4 +109,4 @@ pip install weewx
 wee_ctl create weewx
 ```
 
-The `ctl` pattern separates the installation/upgrade of a station instance from the installation/upgrade of weewx code.  I am defining a station instance as conf, skins, and database for a single instance.
+

@@ -28,6 +28,8 @@ There is danger lurking in every operating system that ships with Python: do you
 
 There is a fundamental issue that weewx has ignored: separation of code and data.  The weewx implementation has always done this, but it has not had separation when it comes to installation and upgrade.  Many of the installation problems would go away or simplify if weewx code and weewx data/config were treated separately for installation and upgrade.  For example, installation could be a two-step process: first install weewx, then create a station configuration.  A station configuration consists of a conf file, database, and skins.
 
+Distribution is also an issue.  All of the weewx tarballs and deb/rpm files, as well as the apt/yum/zypper repositories live at weewx.com.  This makes it possible to track downloads.  Hosting the code at github means that there is a significant number of downloads that are *not* tracked.  (In the early days, everything was hosted at sourceforge, but the benefits of github far outweigh the reduction in download data.)  Although it is possible to distribute weewx using pypi, someone would have to do that.  And the analog for debian, redhat, and suse is even more complicated, and requires even more development/management attention.  Since all of the installation tools/mechanisms can install from foreign sources, we have chosen to limit the distribution mechanism to weewx.com and github.com.
+
 The following sections enumerate the existing (weewx 4) installation options, as well as some alternatives.
 
 ## weewx-ified setup.py (single directory install)

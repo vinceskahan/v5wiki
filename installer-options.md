@@ -8,7 +8,7 @@ to make them behave the way we wanted.
 Support was later added for per-platform packages, such as `deb` for Debian, Ubuntu, and Mint as
 well as `rpm` for Redhat/CentOS and SuSE.
 
-These notes about the pros/cons of different mechanisms, actual and potential, for installing
+These are notes about the pros/cons of different mechanisms, actual and potential, for distributing and installing
 WeeWX.
 
 ## General
@@ -282,3 +282,13 @@ how to structure data?
 * pkg install must detect systemd or no systemd (e.g., debian must always detect, rhel and suse must detect to maintain backward compatibility).  if systemd is on the system, then use unit file (which must be generic as possible to avoid systemd shenanigans), otherwise use rc file.
 * a `wee_ctl install-init` could do this detection and install the correct file(s), even for the BSDs and MacOS.  then simply invoke that in post for deb and rpm installs.  for a pip install, user just does `sudo wee_ctl install-init` and `sudo wee_ctl install-udev`
 * keep the different init configs in util dir as currently done
+
+## Extensions
+
+The extension mechanism has make it easier to manage weewx core at the expense of additional user complexity.
+
+There is a balance between including every extension in weewx and including no extensions in weewx.  The former provides better out-of-box experience, the latter makes core updates and releases easier for the development team.
+
+* need to make `wee_extension` install directly from github (or any git repository) and network repos (e.g., a tarball online)
+* must ensure that installing extensions works the same way with every weewx install mechanism.  we do not want the pip/apt conflict when managing extensions.
+

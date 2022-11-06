@@ -45,8 +45,8 @@ Pros
 
 + easy, but with caveats: `sudo python3 setup.py install`
 + everything in a single directory
-+ easy to maintain multiple concurrent versions for development
-+ Root privileges not required for install, possibly required to run
++ easy to maintain multiple concurrent versions
++ easy layout for development
 
 Cons
 
@@ -54,6 +54,8 @@ Cons
 - manual configuration for init.d/systemd
 - manual configuration for ancillary configs
 - full path or setting of PATH required to run executables
+- might require root for install, depending on where the install goes
+- might require root for running, depending on hardware and where install goes
 - requires download and extract before install
 
 ## pip
@@ -76,7 +78,7 @@ Pros
 + easy and it's what Python users expect: `pip install weewx`
 + works great for pure python apps
 + works with python2 or python3
-+ Manages dependencies
++ Manages dependencies (with caveats)
 + works on any platform on which python runs
 + mechanisms for system-wide or per-user install
 + works well with virtual environments

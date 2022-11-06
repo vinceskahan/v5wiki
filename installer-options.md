@@ -10,18 +10,21 @@ well as `rpm` for Redhat/CentOS and SuSE.
 
 These notes about the pros/cons of different mechanisms, actual and potential, for installing
 WeeWX.
+
 ## General
 
 The present (weewx 4 and earlier) system of supporting both `setup.py` installs and package installers results in many different configurations. This means interrogating users about their install method
 before we can answer a support question.  Although there are only two families: python install (setup.py) or platform install (apt, yum, zypper), within each of these there are can be many variants.  For example, a python install might not be in /home/weewx, and an apt install might have multiple conf files (e.g., for weewx-multi).  A single weewx code install could be run using either python2 or python3.  A setup.py install could be run within a `venv` or other python virtualization.  Any of these could be run within a virtual environment or within a container, or within WSL.
 
-Python installs cannot integrate fully with the system (init system, logrotate, syslog, logwatch), at least not a pip or venv
+Python installs cannot integrate fully with the system, at least not a pip or venv install.  This is because Python installers have no notion of some of the operating system services that weewx requires: init system and udev rules, and optionally logrotate, syslog, logwatch.
 
 The creation of platform packages is highly dependent on bespoke scripts written in Perl by Matthew. We're screwed if he gets hit by a bus, or until Tom decides to learn PERL (or at least wear a hazmat suit when he looks at the code).
 
 OTOH, the `setup.py` method installs in non-standard places. It also requires the user to install
 dependencies manually. This is a major reason why we have stuck with the same dependencies for over
 10 years, despite a revolution in potential supporting libraries (such as `requests` or `tzinfo`).
+
+There is danger lurking in every operating system that ships with Python: do you update Python and its packages using the system's tools (apt, yum, zypper), or do you use pip?  If you try to manage Python using pip, you will probably break the system.  But if you manage Python with only the system's tools, you might be stuck with old versions of Python modules.
 
 There is a fundamental issue that weewx has ignored: separation of code and data.  The weewx implementation has always done this in its implementation, but it has not had separation when it comes to installation and upgrade.  Many of the installation problems would go away and simplify if weewx code and weewx data/config were treated separately for installation and upgrade.  For example, installation could be a two-step process: first install weewx, then create a station configuration.  A station configuration consists of a conf file, database, and skins.
 
@@ -78,6 +81,11 @@ Cons
 ## platform packages
 
 By "platform packages" we mean the installer packages specific to an operating system (or its derivatives).  In weewx 4 there are three of these: deb (for debian and its derivatives), rpm (for redhat linux and its derivatives), and rpm (for suse).  There are a few other operating systems for which there is no weewx package, including MacOS (pkg), *BSD (pkg), and MSWindows (msi).  These are possible, but require significant maintenance (well, the BSD packaging is pretty stable, but MacOS and MSWindows are moving targets, at least for the resources available for weewx development).
+
+There are many ways to create a platform package.  For example, Debian comes with packages that will build a `.deb`, and there are Python tools to create a `.deb` from Python code.  There are similar options for Redhat and SUSE.  For weewx, we use the low-level tools for each platform, and explicitly do *not* use the Python tools.  The result is packages that do not have to be re-released for every operating system change.  
+
+Isolating system Python installs/updates from user Python installs/updates is still important for many use cases.
+  During the era of both Python2 and Python3 support this was especially important - a single weewx install could be used with either Python2 or Python3, just by setting an environment variable using the `/etc/default` pattern.  Although the Python2/Python3 use case is no longer important as weewx moves to Python3 only, the pattern is still useful for platform packages so that a weewx install can work independent of the Python installation.
 
 Pros
 

@@ -77,6 +77,8 @@ Cons
 
 ## platform packages
 
+By "platform packages" we mean the installer packages specific to an operating system (or its derivatives).  In weewx 4 there are three of these: deb (for debian and its derivatives), rpm (for redhat linux and its derivatives), and rpm (for suse).  There are a few other operating systems for which there is no weewx package, including MacOS (pkg), *BSD (pkg), and MSWindows (msi).  These are possible, but require significant maintenance (well, the BSD packaging is pretty stable, but MacOS and MSWindows are moving targets, at least for the resources available for weewx development).
+
 Pros
 
 + easy: `sudo yum install weewx` or `sudo apt install weewx`

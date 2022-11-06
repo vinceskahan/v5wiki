@@ -32,6 +32,15 @@ The following sections enumerate the existing (weewx 4) installation options, as
 
 ## weewx-ified setup.py (single directory install)
 
+A 'Python' install of weewx looks like this:
+```
+./setup.py install
+```
+or, to use an explicit Python, like this:
+```
+python3 setup.py install
+```
+
 Pros
 
 + easy, but with caveats: `sudo python3 setup.py install`
@@ -41,12 +50,26 @@ Pros
 
 Cons
 
-- Does not manage dependencies.
+- Does not manage dependencies
 - manual configuration for init.d/systemd
 - manual configuration for ancillary configs
-- full path or setting of PATH required to run executables.
+- full path or setting of PATH required to run executables
+- requires download and extract before install
 
 ## pip
+
+A pip install pulls software from the pypi repository.  A simple example looks like this:
+```
+pip install weewx
+```
+To be safe, be explicit about which Python you want to use:
+```
+python3 -m pip
+```
+However, pip can also be used to install from a git repository, like this:
+```
+pip install https://github.com/weewx/weewx.git
+```
 
 Pros
 
@@ -60,6 +83,7 @@ Pros
 
 Cons
 
+- someone has to manage weewx releases to pypi in addition to the weewx.com web site and github.com releases
 - no auto-install mechanism for init.d/systemd/rc.
 - no mechanism for udev scripts.<br/>
   For a simple out-of-the-box experience, we should install a udev file that recognizes all supported (known?) hardware, with `/dev` links and non-root permissions set so that everything just works.

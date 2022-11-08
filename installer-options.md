@@ -11,6 +11,15 @@ well as `rpm` for Redhat/CentOS and SuSE.
 These are notes about the pros/cons of different mechanisms, actual and potential, for distributing and installing
 WeeWX.
 
+## Use cases
+
+* Development.  Modify weewx code, skins, pretty much anything.
+* Template development.  Modify skins, publish skins.
+* Heavy customization.  Some combination of: install one or more drivers, integrate multiple databases, customize templates.
+* Multi.  Deploy multiple drivers on a single host.
+* Multi-host.  Deploy weewx to multiple hosts.
+* Just works.  Possibly install a driver, create a station configuration, then everything should just work.
+
 ## General
 
 The present (weewx 4 and earlier) system of supporting both `setup.py` installs and package installers results in many different configurations. This means interrogating users about their install method

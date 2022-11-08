@@ -48,7 +48,8 @@ Pros
 + easy, but with caveats: `sudo python3 setup.py install`
 + everything in a single directory
 + easy to maintain multiple concurrent versions
-+ easy layout for development
++ easy layout for development - everything is in a single directory hierarchy
++ easy editing for development - no sudo required to modify config, skins, or database
 
 Cons
 
@@ -104,7 +105,9 @@ Cons
 - no standard for ancillary configs such as logrotate, rsyslog, udev, nginx
 - no mechanism for installing multiple concurrent versions<br/>
   This can be done with separate virtual environments.
-- you must install weewx for each python environment.  this could be a good thing, could be a bad thing.  when the weewx configs and data are considered part of weewx, this is a bad thing.
+- you must install weewx for each python environment.<br/>
+  Since weewx is installed into the python directory tree, you cannot use a single weewx tree with multiple python versions.  As a result, this installation method is not ideal for the development use case.
+  
 
 ## platform packages
 

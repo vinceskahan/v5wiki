@@ -297,7 +297,7 @@ how to structure data?
 
 ## Extensions
 
-The extension mechanism has make it easier to manage weewx core at the expense of additional user complexity.
+The extension mechanism has made it easier to manage weewx core at the expense of additional user complexity.
 
 There is a balance between including every extension in weewx and including no extensions in weewx.  The former provides better out-of-box experience, the latter makes core updates and releases easier for the development team.
 

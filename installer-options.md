@@ -106,10 +106,9 @@ Cons
   create [shell wrappers](https://setuptools.pypa.io/en/latest/userguide/entry_point.html) around
   entry points.
 - where do the config files and skins live?<br/>
-  The tool [Ansible](https://www.ansible.com/) puts them right in with the libraries. In our case,
-  that might mean directly under the `weewx` package
+  The config and skins are part of the python code, so they go into the Python tree, under the weewx package.
 - where do the data live?<br/>
-  This as a bigger problem. It feels unnatural to put the database in amongst the modules,
+  This is a bigger problem. It feels unnatural to put the database in amongst the modules,
   but `/var/lib` requires root privileges. What about `~/.weewx`?
 - no standard for ancillary configs such as logrotate, rsyslog, udev, nginx
 - no mechanism for installing multiple concurrent versions<br/>

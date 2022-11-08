@@ -14,11 +14,11 @@ WeeWX.
 ## Use cases
 
 * Development.  Modify weewx code, skins, pretty much anything.
+* Basic user.  Possibly install a driver, create a station configuration, possibly install a skin or uploader, then everything should just work.
 * Template development.  Modify skins, publish skins.
 * Heavy customization.  Some combination of: install one or more drivers, integrate multiple databases, customize templates.
 * Multi.  Deploy multiple drivers on a single host.
 * Multi-host.  Deploy weewx to multiple hosts.
-* Just works.  Possibly install a driver, create a station configuration, then everything should just work.
 
 ## General
 

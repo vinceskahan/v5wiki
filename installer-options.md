@@ -303,6 +303,6 @@ The extension mechanism has made it easier to manage weewx core at the expense o
 
 There is a balance between including every extension in weewx and including no extensions in weewx.  The former provides better out-of-box experience, the latter makes core updates and releases easier for the development team.
 
-* need to make `wee_extension` install directly from github (or any git repository) and network repos (e.g., a tarball online)
+* need to make `wee_extension` install directly from github (or any git repository) and network repos (e.g., a tarball online) (Not sure I agree with this goal. Yes, better user experience, but at a great expense of complexity. -tk)
 * must ensure that installing extensions works the same way with every weewx install mechanism.  we do not want the pip/apt conflict when managing extensions.
 

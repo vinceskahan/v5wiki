@@ -1,11 +1,15 @@
 # Overview
-Earlier versions of WeeWX use Python's `syslog` module to log events. It has several disadvantages:
+Earlier versions of WeeWX use Python's `syslog` module to log events. It has
+several disadvantages:
 - It works only under versions of *nix. No Windows.
 - It can log only to the system log.
 - It is inflexible in the formatting it uses.
 
-WeeWX V4 will transition to using Python's [`logging`](https://docs.python.org/3/library/logging.html) package. It has several advantages:
-- It abstracts out logging destinations, formatting, and filtering, allowing all to be changed at runtime.
+WeeWX V4 will transition to using Python's
+[`logging`](https://docs.python.org/3/library/logging.html) package. It has
+several advantages:
+- It abstracts out logging destinations, formatting, and filtering, allowing all
+  to be changed at runtime.
 - It has destinations that work on Windows.
 - It can support email or socket logging.
 
@@ -14,13 +18,18 @@ In short, it is a much more flexible facility. Plus, it's easy to use.
 This is a guide to how `logging` is implemented within WeeWX.
 
 # Configuring logging
-The big advantage of the `logging` module is its ability to be extensively customized. By default, WeeWX makes sensible choices, but you may want to change them. This section is on how to do this.
+The big advantage of the `logging` module is its ability to be extensively
+customized. By default, WeeWX makes sensible choices, but you may want to change
+them. This section is on how to do this.
 
-First, read, or, at least, attempt to read, the section on the [schema of the configuration dictionary](https://docs.python.org/3/library/logging.html#module-logging) that `logging` uses. It's dense and hard to follow, but it will eventually sink in. 
+First, read, or, at least, attempt to read, the section on the [schema of the
+configuration
+dictionary](https://docs.python.org/3/library/logging.html#module-logging) that
+`logging` uses. It's dense and hard to follow, but it will eventually sink in.
 
 ## Defaults
-With that in mind, here is the default configuration that WeeWX uses (Linux only; the defaults are slightly
-different for MacOS):
+With that in mind, here is the default configuration that WeeWX uses (Linux
+only; the defaults are slightly different for MacOS):
 
 ```ini
 [Logging]
@@ -67,35 +76,49 @@ different for MacOS):
             datefmt = %Y-%m-%d %H:%M:%S
 ```
 This configures three different facilities:
-1. Loggers, which expose the interface that application code directly uses. Most importantly,
-it determines which *handler(s)* to use. Note that the `root` logger is in its own section.
-2. Handlers, which send the log records (created by loggers) to an appropriate destination.
-3. Formatters, which specify the layout of log records in the final output. A number of attributes
- are available to the formatter (such as `%(levelname)s`; see the documentation 
- [*LogRecord attributes*](https://docs.python.org/3/library/logging.html#logrecord-attributes) 
- for a complete list).
+1. Loggers, which expose the interface that application code directly uses. Most
+   importantly,
+it determines which *handler(s)* to use. Note that the `root` logger is in its
+own section.
+2. Handlers, which send the log records (created by loggers) to an appropriate
+   destination.
+3. Formatters, which specify the layout of log records in the final output. A
+   number of attributes are available to the formatter (such as `%(levelname)s`; 
+   see the documentation [*LogRecord attributes*](https://docs.python.org/3/library/logging.html#logrecord-attributes) 
+   for a complete list).
 
-The value for `{log_level}` depends on whether or not the `debug` option has been set. If it has 
-not (the default), then `log_level` is `INFO`, otherwise, `DEBUG`.
+The value for `{log_level}` depends on whether or not the `debug` option has
+been set. If it has not (the default), then `log_level` is `INFO`, otherwise,
+`DEBUG`.
 
-The value for `{process_name}` is passed in when setting up the logging facility. For the WeeWX 
-main program, it is `weewxd` (see below).
+The value for `{process_name}` is passed in when setting up the logging
+facility. For the WeeWX main program, it is `weewxd` (see below).
 
 ## Specifying other handlers
-An example. Say you want logs to go to not only the system log (the default), but to the console as 
-well. Then add this to your `weewx.conf` file:
+
+An example. Say you want logs to go to not only the system log (the default),
+but to the console as well. Then add this to your `weewx.conf` file:
 
 ```ini
 [Logging]
   [[root]]
     handlers = syslog, console
 ```
-This will override the default list of handlers, which consists only of `syslog`, with a new list that includes `console` as well as `syslog`.
+
+This will override the default list of handlers, which consists only of
+`syslog`, with a new list that includes `console` as well as `syslog`.
 
 ## Customizing what gets logged
-Another example. When the `debug` option is on, the default "root" logger will show `DEBUG` messages and above ---basically everything. This is fine, but say you've decided that the `weewx.restx` module is too chatty for your liking. For it, you want to see only `INFO` messages and above --- nothing else. 
 
-The solution is to tailor the logger used by the `weewx.restx` module, so it no longer inherits properties from the root logger. For this logger, we will specify that it logs only `INFO` and above. To do this, the `[Logging]` section would look like:
+Another example. When the `debug` option is on, the default "root" logger will
+show `DEBUG` messages and above ---basically everything. This is fine, but say
+you've decided that the `weewx.restx` module is too chatty for your liking. For
+it, you want to see only `INFO` messages and above --- nothing else.
+
+The solution is to tailor the logger used by the `weewx.restx` module, so it no
+longer inherits properties from the root logger. For this logger, we will
+specify that it logs only `INFO` and above. To do this, the `[Logging]` section
+would look like:
 
 ```ini
 [Logging]
@@ -104,7 +127,15 @@ The solution is to tailor the logger used by the `weewx.restx` module, so it no 
       level = INFO
 ```
 
-Or instead, suppose you are debugging the `weewx.restx` module. In this case it would desirable to set its logging `level` to `DEBUG` while other loggers continue to log `INFO` or higher. Again, the solution is to customize the logger for the `weewx.restx` module.  In this case, along with setting the logging `level`, we need to define a `handler`. Because the `weewx.restx` logger will handle the logging for the `weewx.restx` module, we will also want to turn `propagate` off. Otherwise `INFO` and higher messages will be logged twice: once by the `weewx.restx` logger and also by any parent handlers. Lastly, `debug` should be left at 0, so that the default `root` logging is `INFO`.
+Or instead, suppose you are debugging the `weewx.restx` module. In this case it
+would desirable to set its logging `level` to `DEBUG` while other loggers
+continue to log `INFO` or higher. Again, the solution is to customize the logger
+for the `weewx.restx` module.  In this case, along with setting the logging
+`level`, we need to define a `handler`. Because the `weewx.restx` logger will
+handle the logging for the `weewx.restx` module, we will also want to turn
+`propagate` off. Otherwise `INFO` and higher messages will be logged twice: once
+by the `weewx.restx` logger and also by any parent handlers. Lastly, `debug`
+should be left at 0, so that the default `root` logging is `INFO`.
 
 The configuration would look something like this.
 ```ini
@@ -120,9 +151,9 @@ debug = 0
 
 ## Logging to rotating files
 
-By default, the logging module logs to the "system log". In some cases, you may want to log to a
-set of rotating log files, such as `/var/log/weewx.log`. The WeeWX logging facility allows you
-to do this.
+By default, the logging module logs to the "system log". In some cases, you may
+want to log to a set of rotating log files, such as `/var/log/weewx.log`. The
+WeeWX logging facility allows you to do this.
 
 Add this to `weewx.conf`:
 
@@ -130,43 +161,48 @@ Add this to `weewx.conf`:
 [Logging]
     # Root logger
     [[root]]
-      handlers = rotate,                    # 1
+      handlers = rotate,                                  # 1
 
     [[handlers]]
         # Log to a set of rotating files    
         [[[rotate]]]
-            level = DEBUG                   # 2
-            formatter = standard            # 3
+            level = DEBUG                                 # 2
+            formatter = standard                          # 3
             class = logging.handlers.RotatingFileHandler  # 4
-            filename = /var/log/weewx.log   # 5
-            maxBytes = 10000000             # 6
-            backupCount = 4                 # 7
+            filename = /var/log/weewx.log                 # 5
+            maxBytes = 10000000                           # 6
+            backupCount = 4                               # 7
 ```
 
 Here's the meaning of the various lines:
 
-1. This tells the logging facility to use the `rotate` handler, instead of the default `syslog`
-handler. The comma is important: it tells Python that the option is actually a list.
-2. The default log level will be `DEBUG`. Everything with priority `DEBUG` or higher will get 
-logged.
-3. How shall the entries get formatted? This tells the logging facility to use the `standard`
-formatter. Other options are `verbose`, or `simple`.
-4. Option `class` identifies the class of the handler that to be used. For rotating files,
-it should be set to 
-[`logging.handlers.RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler).
-6. Option `filename` specifies the location of the file in which the logs will appear.
-7. Option `maxBytes` is how big the file will be allowed to grow before logging is rotated into
-a new file.
+1. This tells the logging facility to use the `rotate` handler, instead of the 
+   default `syslog` handler. The comma is important: it tells Python that the 
+   option is actually a list.
+2. The default log level will be `DEBUG`. Everything with priority `DEBUG` or 
+   higher will get logged.
+3. How shall the entries get formatted? This tells the logging facility to use 
+   the `standard` formatter. Other options are `verbose`, or `simple`.
+4. Option `class` identifies the class of the handler that to be used. For 
+   rotating files, it should be set to
+   [`logging.handlers.RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler).
+6. Option `filename` specifies the location of the file in which the logs will
+   appear.
+7. Option `maxBytes` is how big the file will be allowed to grow before logging 
+   is rotated into a new file.
 8. Option `backupCount` is how many rotated files to be retained before deletion.  
  
-The `rotate` handler also serves as a good example of overriding default logging behavior.
+The `rotate` handler also serves as a good example of overriding default logging
+behavior.
 
 # For developers
 
 What follows is intended for developers who are extending WeeWX.
 
 ## In modules
-It's very easy to use `logging` from within a module, such as a new service, search list extension, etc. At the top of your code, include
+
+It's very easy to use `logging` from within a module, such as a new service,
+search list extension, etc. At the top of your code, include
 
 ```python
 import logging
@@ -186,7 +222,10 @@ log.critical("This is a critical message")
 That's it.
 
 ## In main programs
-If you are writing a utility which will be run as the "main program", then there are a couple extra steps you must take. At the minimum, include the following at the top of your code:
+
+If you are writing a utility which will be run as the "main program", then there
+are a couple extra steps you must take. At the minimum, include the following at
+the top of your code:
 
 ```python
 import logging
@@ -199,7 +238,8 @@ weeutil.logger.setup('prog_name', {})
 
 This will set up a default logging configuration, suitable for most situations.
 
-However, if you want the user to be able to customize the logging for your utility, then you need a few extra steps:
+However, if you want the user to be able to customize the logging for your
+utility, then you need a few extra steps:
 
 ```python
     import logging
@@ -231,12 +271,20 @@ However, if you want the user to be able to customize the logging for your utili
     log.info("Successfully read in weewx.conf")
 ```
 
-Note how the pattern first sets up a temporary logging facility, using WeeWX defaults. This is to log the process of reading in the config file. Then, once that is done, it uses the fully customized version.
+Note how the pattern first sets up a temporary logging facility, using WeeWX
+defaults. This is to log the process of reading in the config file. Then, once
+that is done, it uses the fully customized version.
 
 ## Throttling logging events
-The Python `logging` module makes it very easy to temporarily reduce the number of uninteresting messages going into a log. 
 
-Say you're about to call a function which will insert hundreds of records into the database using the `addRecord()` method of the `Manager` class. This method logs an `INFO` event for every insertion, resulting in hundreds of not-terribly-interesting entries. You'd like to temporarily avoid this. Here's how:
+The Python `logging` module makes it very easy to temporarily reduce the number
+of uninteresting messages going into a log.
+
+Say you're about to call a function which will insert hundreds of records into
+the database using the `addRecord()` method of the `Manager` class. This method
+logs an `INFO` event for every insertion, resulting in hundreds of
+not-terribly-interesting entries. You'd like to temporarily avoid this. Here's
+how:
 
 ```python
 import logging
@@ -250,11 +298,13 @@ generate_zillions_of_records()
 logging.disable(logging.NOTSET)
 ```
 
-See the Python docs for more details about [`logging.disable()`](https://docs.python.org/3/library/logging.html#logging.disable).
+See the Python docs for more details about
+[`logging.disable()`](https://docs.python.org/3/library/logging.html#logging.disable).
 
 ## Maintaining backwards compatibility
-If you are an extension writer, you will want to support not only the new style logging, but also the old
-`syslog` style. Here's how you can do it.
+
+If you are an extension writer, you will want to support not only the new style
+logging, but also the old `syslog` style. Here's how you can do it.
 
 ```python
 try:
@@ -290,5 +340,5 @@ except ImportError:
         logmsg(syslog.LOG_ERR, msg)
 ```
 
-Now you can just use the functions `logdbg()`, `loginf()`, and `logerr()` in your code, secure in the
-knowledge that it will work under both WeeWX V3 and V4.
+Now you can just use the functions `logdbg()`, `loginf()`, and `logerr()` in
+your code, secure in the knowledge that it will work under both WeeWX V3 and V4.

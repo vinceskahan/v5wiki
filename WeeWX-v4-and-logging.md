@@ -20,16 +20,18 @@ This is a guide to how `logging` is implemented within WeeWX.
 # Configuring logging
 The big advantage of the `logging` module is its ability to be extensively
 customized. By default, WeeWX makes sensible choices, but you may want to change
-them. This section is on how to do this.
+them. This section is about how to do this.
 
 First, read, or, at least, attempt to read, the section on the [schema of the
-configuration
-dictionary](https://docs.python.org/3/library/logging.html#module-logging) that
-`logging` uses. It's dense and hard to follow, but it will eventually sink in.
+configuration dictionary](https://docs.python.org/3/library/logging.html#module-logging) 
+that `logging` uses. It's dense and hard to follow, but it will eventually sink 
+in.
 
 ## Defaults
+_New: the `rotate` handler is now included in Version 4.10_ 
+
 With that in mind, here is the default configuration that WeeWX uses (Linux
-only; the defaults are slightly different for MacOS):
+only; the defaults are slightly different for MacOS. See [below](#for-mac-users).)
 
 ```ini
 [Logging]
@@ -64,6 +66,16 @@ only; the defaults are slightly different for MacOS):
             # Alternate choice is 'ext://sys.stderr'
             stream = ext://sys.stdout
 
+        # Log to a set of rotating files
+        [[[rotate]]]
+            level = DEBUG
+            formatter = standard
+            class = logging.handlers.RotatingFileHandler
+            # Writing to this file will require root privileges:
+            filename = /var/log/weewx.log
+            maxBytes = 10000000
+            backupCount = 4
+
     # How to format log messages
     [[formatters]]
         [[[simple]]]
@@ -76,18 +88,18 @@ only; the defaults are slightly different for MacOS):
             datefmt = %Y-%m-%d %H:%M:%S
 ```
 This configures three different facilities:
-1. Loggers, which expose the interface that application code directly uses. Most
-   importantly,
-it determines which *handler(s)* to use. Note that the `root` logger is in its
-own section.
+1. Loggers, which expose the interface that application code uses directly. Most
+   importantly, it determines which *handler(s)* to use. Note that the `root`
+   logger is in its own section.
 2. Handlers, which send the log records (created by loggers) to an appropriate
-   destination.
+   destination. There are three handlers that are included in the default
+   configuration: `syslog`, `console`, and `rotate`.
 3. Formatters, which specify the layout of log records in the final output. A
    number of attributes are available to the formatter (such as `%(levelname)s`; 
    see the documentation [*LogRecord attributes*](https://docs.python.org/3/library/logging.html#logrecord-attributes) 
    for a complete list).
 
-The value for `{log_level}` depends on whether or not the `debug` option has
+The value for `{log_level}` depends on whether the `debug` option has
 been set. If it has not (the default), then `log_level` is `INFO`, otherwise,
 `DEBUG`.
 
@@ -111,7 +123,7 @@ This will override the default list of handlers, which consists only of
 ## Customizing what gets logged
 
 Another example. When the `debug` option is on, the default "root" logger will
-show `DEBUG` messages and above ---basically everything. This is fine, but say
+show `DEBUG` messages and above --- basically everything. This is fine, but say
 you've decided that the `weewx.restx` module is too chatty for your liking. For
 it, you want to see only `INFO` messages and above --- nothing else.
 
@@ -128,7 +140,7 @@ would look like:
 ```
 
 Or instead, suppose you are debugging the `weewx.restx` module. In this case it
-would desirable to set its logging `level` to `DEBUG` while other loggers
+would be desirable to set its logging `level` to `DEBUG` while other loggers
 continue to log `INFO` or higher. Again, the solution is to customize the logger
 for the `weewx.restx` module.  In this case, along with setting the logging
 `level`, we need to define a `handler`. Because the `weewx.restx` logger will
@@ -138,8 +150,13 @@ by the `weewx.restx` logger and also by any parent handlers. Lastly, `debug`
 should be left at 0, so that the default `root` logging is `INFO`.
 
 The configuration would look something like this.
+
 ```ini
 debug = 0
+
+.
+.
+.
 
 [Logging]
   [[loggers]]
@@ -161,39 +178,39 @@ Add this to `weewx.conf`:
 [Logging]
     # Root logger
     [[root]]
-      handlers = rotate,                                  # 1
-
-    [[handlers]]
-        # Log to a set of rotating files    
-        [[[rotate]]]
-            level = DEBUG                                 # 2
-            formatter = standard                          # 3
-            class = logging.handlers.RotatingFileHandler  # 4
-            filename = /var/log/weewx.log                 # 5
-            maxBytes = 10000000                           # 6
-            backupCount = 4                               # 7
+      handlers = rotate,
 ```
 
-Here's the meaning of the various lines:
+This tells the logging facility to use the `rotate` handler, instead of the
+default `syslog` handler. The trailing comma is important: it tells Python that
+the option is actually a list.
 
-1. This tells the logging facility to use the `rotate` handler, instead of the 
-   default `syslog` handler. The comma is important: it tells Python that the 
-   option is actually a list.
-2. The default log level will be `DEBUG`. Everything with priority `DEBUG` or 
-   higher will get logged.
-3. How shall the entries get formatted? This tells the logging facility to use 
-   the `standard` formatter. Other options are `verbose`, or `simple`.
-4. Option `class` identifies the class of the handler that to be used. For 
-   rotating files, it should be set to
-   [`logging.handlers.RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler).
-6. Option `filename` specifies the location of the file in which the logs will
-   appear.
-7. Option `maxBytes` is how big the file will be allowed to grow before logging 
-   is rotated into a new file.
-8. Option `backupCount` is how many rotated files to be retained before deletion.  
+By default, the rotating log file will be `/var/log/weewx.log`. If you wish to
+change this to something else, use this in `weewx.conf`:
+
+```ini
+[Logging]
+    # Root logger
+    [[root]]
+      handlers = rotate,
+      
+    [[handlers]]
+        [[[rotate]]]
+            filename = /var/tmp/weewx.log  
+```
+
+As before, this will cause the `rotate` handler to be used, but this time, the
+log file will be `/var/tmp/weewx.log`.
  
 The `rotate` handler also serves as a good example of overriding default logging
 behavior.
+
+## For Mac users.
+
+The default root handler under MacOS is `rotate`, instead of `syslog`.
+This is because the system logger on the Mac is harder to use for debugging, so
+we log to rotating files instead.
+
 
 # For developers
 

@@ -1,6 +1,4 @@
-# Version 5
-
-## Goals
+# Goals
 
 To be able to do a complete WeeWX install using `pip`.
 
@@ -21,7 +19,7 @@ lots of breaking changes, but it would be a lot more elegant than the present
 pattern of using a WeeWX service to add data to the data pipeline. Asynchronous
 drivers would require Python 3.7 or greater.
 
-## Build tools 
+# Build tools 
 
 There are many tools that were considered to manage the build process including
 [setuptools](https://setuptools.pypa.io/), [pdm](https://pdm.fming.dev/),
@@ -37,14 +35,14 @@ mature. NB: this only affects the build process. Either way, `pip` is used to
 install.
 
 
-## Applications
+# Applications
 
 Applications will be invoked using an [_entry
 point_](https://packaging.python.org/en/latest/specifications/entry-points/).
 This is a small shim, installed by `pip`, that invokes a function within a
 module or package.
 
-## Resources
+# Resources
 
 The old `distutils` supported a
 [`data_files`](https://docs.python.org/3/distutils/setupscript.html#installing-additional-files)
@@ -64,7 +62,7 @@ possible that WeeWX could be installed as a zipfile or Python egg, so, even if a
 user was willing to find its resources deep in `site-packages` somewhere, s/he
 could not edit them.
 
-### Essential resources: `weex.conf` and skins
+## Essential resources: `weex.conf` and skins
 
 Both `weewx.conf` and the skins are essential for the proper operation of
 WeeWX, so they must be included in the distribution. For reasons outlined above,
@@ -83,13 +81,13 @@ directory would be updated with every upgrade. This is possible because the
 production versions are in a separate location. The production version would
 only be touched if the user requests it by using a utility.
 
-### Non essential resources
+## Non essential resources
 
 There is no obvious place to install the documentation and examples these using
 `pip`. Instead, they could be distributed in a dedicated tarball, which could
 then be downloaded and expanded in a location of the user's choosing.
 
-## Namespaces
+# Namespaces
 
 Generally, we expect WeeWX to be installed in a virtual envirornment, where the
 names of its modules and packages would not collide with another application.

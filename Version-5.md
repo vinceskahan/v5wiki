@@ -50,12 +50,12 @@ option that could be used to install miscellaneous resources such as
 documentation or configuration files into the final installation target.
 
 However, option `data_files` is being deprecated for a variety of reasons (see
-[this post](https://discuss.python.org/t/should-there-be-a-new-standard-for-installing-arbitrary-data-files/7853)
-for a summary).
-
-Instead, resources must now be included as "package data", that is, as part of a
-Python package. That means it will live deep in the target `site-packages`,
-where is is difficult to find and even more difficult to modify.
+[this
+post](https://discuss.python.org/t/should-there-be-a-new-standard-for-installing-arbitrary-data-files/7853)
+for a summary). Instead, resources must now be included as "package data", that
+is, as part of a Python package. That means it will live deep in the target
+`site-packages`, where is is difficult to find and even more difficult to
+modify.
 
 Furthermore, package data must be regarded as "_read only_". For example, it's
 possible that WeeWX could be installed as a zipfile or Python egg, so, even if a
@@ -83,8 +83,8 @@ only be touched if the user requests it by using a utility.
 
 ## Non essential resources
 
-There is no obvious place to install the documentation and examples these using
-`pip`. Instead, they could be distributed in a dedicated tarball, which could
+There is no obvious place to install the documentation and examples using
+`pip`. Instead, they could be distributed in a separate tarball, which could
 then be downloaded and expanded in a location of the user's choosing.
 
 # Namespaces
@@ -105,9 +105,34 @@ reasonable claim to a namespace. However, there are two problem areas:
 
 Note that these will break a _lot_ of code, particularly the renaming of `user`.
 Fortunately, all references to the `user` or `schemas` packages are dynamic,
-that is, they are in the form of string options in `weewx.conf`. The actual
-instantiation is done by the WeeWX function `weeutil.get_object()`. This makes
-it straightforward to maintain backwards compatibility by having `get_object()`
-remap references from `user` to `wee_user` at runtime. In a similar manner,
-references to `schemas` would get remapped to `wee_schemas`. All of this would
-be transparent to the user.
+that is, they are in the form of string options in `weewx.conf` or `skin.conf`.
+The actual instantiation is done by the WeeWX function `weeutil.get_object()`.
+This makes it straightforward to maintain backwards compatibility by having
+`get_object()` remap references from `user` to `wee_user` at runtime. In a
+similar manner, references to `schemas` would get remapped to `wee_schemas`. All
+of this would be transparent to the user.
+
+# Extensions
+
+Through the years, WeeWX has built up an extensive ecosystem of 3rd party
+extensions. It is essential that we not lose backwards compatibility with them.
+For this reason, they should continue to be installed directly into the target
+installation directories, and not indirectly through package resources.
+
+# Utility `weewx`
+
+Presently, we have 7 different utilities. Version 5 will combine these into one
+utility called, simply, `weewx`, with 7 different subcommands. 
+
+| Command     | Old utility     | Functionality                         |
+|-------------|-----------------|---------------------------------------|
+| `config`    | `wee_config`    | Copy resources to target directories  |
+| `database`  | `wee_database`  | Manage database                       |
+| `debug`     | `wee_debug`     | Create debug document                 |
+| `device`    | `wee_device`    | Information and management of devices |
+| `extension` | `wee_extension` | Install and remove extensions         |
+| `import`    | `wee_import`    | Import foreign data                   |
+| `report`    | `wee_reports`   | Generate a report                     |
+
+By having a single utility, we make it easier to find the appropriate command:
+The user can simply run `weewx --help`. 

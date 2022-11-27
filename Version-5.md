@@ -122,17 +122,17 @@ installation directories, and not indirectly through package resources.
 # Utility `weewx`
 
 Presently, we have 7 different utilities. Version 5 will combine these into one
-utility called, simply, `weewx`, with 7 different subcommands. 
+utility called, simply, `weewx`, with different subcommands. 
 
-| Command     | Old utility     | Functionality                         |
-|-------------|-----------------|---------------------------------------|
-| `config`    | `wee_config`    | Copy resources to target directories  |
-| `database`  | `wee_database`  | Manage database                       |
-| `debug`     | `wee_debug`     | Create debug document                 |
-| `device`    | `wee_device`    | Information and management of devices |
-| `extension` | `wee_extension` | Install and remove extensions         |
-| `import`    | `wee_import`    | Import foreign data                   |
-| `report`    | `wee_reports`   | Generate a report                     |
+| Command     | Functionality                                                          |
+|-------------|------------------------------------------------------------------------|
+| `station`   | Create (`--create`), update (`--update`), and list (`--list`) stations |
+| `database`  | Manage database                                                        |
+| `debug`     | Create debug document                                                  |
+| `device`    | Information and management of devices                                  |
+| `extension` | Install (`--install`) and remove (`--uninstall`) extensions            |
+| `import`    | Import foreign data                                                    |
+| `report`    | Generate a report                                                      |
 
 By having a single utility, we make it easier to find the appropriate command:
-The user can simply run `weewx --help`. 
+the user can simply run `weewx --help`. 

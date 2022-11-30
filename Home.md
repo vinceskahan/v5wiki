@@ -44,7 +44,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure a web server (Apache, NGINX or lighttpd)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
-* [Run WeeWX in a virtual environment](Run-WeeWX-in-a-virtual-environment)
+* [Run WeeWX in a python virtual environment](Run-WeeWX-in-a-virtual-environment)
 
 #### Data management
 * [SQLite vs MySQL](SQLite-vs-MySQL)
@@ -241,6 +241,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes
+* [v5 design notes](https://github.com/weewx/weewx/wiki/Version-5)
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](https://github.com/weewx/weewx/wiki/devtest-infrastructure)
 * [Dependency matrix](https://github.com/weewx/weewx/wiki/weewx4-compatibility-matrix)

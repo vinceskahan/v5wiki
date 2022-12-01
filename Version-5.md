@@ -260,8 +260,10 @@ weewx upgrade-config --config=/home/weewx/house.conf
 
 Install utility files to run as a daemon.
 
-| Command                 | Flags       | Functionality                               |
-|-------------------------|-------------|---------------------------------------------|
-| `weectl install-daemon` | `--init`    | Install `/etc/init.d/weewx`                 |
-| `weectl install-daemon` | `--systemd` | Install `/etc/systemd/system/weewx.service` |
+| Command                 | Flags            | Functionality                               |
+|-------------------------|------------------|---------------------------------------------|
+| `weectl install-daemon` | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
+| `weectl install-daemon` | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
+| `weectl remove-daemon`  | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
+| `weectl remove-daemon`  | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
 

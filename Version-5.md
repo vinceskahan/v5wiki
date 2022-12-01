@@ -124,12 +124,12 @@ extensions. It is essential that we not lose backwards compatibility with them.
 For this reason, they should continue to be installed directly into the target
 installation directories, and not indirectly through package resources.
 
-# Utility `weectl`
+# Command `weectl`
 
 Presently, we have 7 different utilities. Version 5 will combine these into one
-utility called, simply, `weectl`, with different subcommands. By having a single
-utility, we make it easier to find the appropriate command: the user can simply
-run `weectl --help`.
+command called, simply, `weectl`, with different subcommands. By having a
+single application, we make it easier to find the appropriate command: the user
+can simply run `weectl --help`.
 
 ## Definitions
 
@@ -142,9 +142,12 @@ run `weectl --help`.
 | _driver_                    | Software that interacts directly with the hardware. More than one _station_ can use the same driver.                                                         |
 | _station type_              | The currently active station, specified with option `station_type`. A corresponding _station_ must exist.                                                    |
 
-## Actions
+## Subcommand `weectl station`
 
-### Action `create-station`
+The utility subcommand `weectl station` manages the station configuration file
+and skins.
+
+### Action `station --create`
 
 Create a new copy of the configuration file, using the copy of `weewx.conf` in
 the _package resource_ as a template. The default location of the new file will
@@ -165,6 +168,34 @@ The following are set:
 | `SQLITE_ROOT` | The directory of the SQLite database, relative to `$HTML_ROOT`.                      | `archive`     |
 | `station_type`| The active station.                                                                  | `Simulator`   |
 
+
+### Action `station --reconfigure`
+
+This command provides an opportunity to reprovision an existing configuration
+file.
+
+### Action `station --upgrade`
+
+If necessary, upgrade an existing configuration file. The old version will be
+saved as a timestamped copy.
+
+#### Option `--config`
+
+Optional path to the configuration file.
+
+Default is `/home/weewx/weewx.conf`
+
+### Action `station --set`
+
+Set the currently active station. This sets option `station_type`.
+
+### Action `station --upgrade-skins`
+
+The skins will be copied over from the _package resource location_ to the
+_resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
+timestamp.
+
+## Options for the subcommand `weectl station`
 
 #### Option `--config`
 
@@ -195,75 +226,39 @@ Default is `simulator`.
 #### Option `--driver-name`
 
 This will be the name of a dedicated stanza (e.g., `[Vantage]`) that describes
-the hardware characteristics of the station. The option `station_type` will be
-set to the stanza name.
+the hardware characteristics of the station. The option `station_type` will also
+be set to this name.
 
 Default is whatever is returned as attribute `DRIVER_NAME` of the nominated
 `driver`.
-
-### Action `reconfigure-station`
-
-This command provides an opportunity to reprovision an existing configuration
-file.
-
-### Action `upgrade-config`
-
-If necessary, upgrade an existing configuration file. The old version will be
-saved as a timestamped copy.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-Default is `/home/weewx/weewx.conf`
-
-### Action `set-station`
-
-Set the currently active station. This sets option `station_type`.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-Default is `/home/weewx/weewx.conf`
-
-### Action `upgrade-skins`
-
-The skins will be copied over from the _package resource location_ to the
-_resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
-timestamp.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-Default is `/home/weewx/weewx.conf`
-
 
 ### Examples
 
 ```shell
 # Create a new weewx.conf, using the vantage driver. The station stanza will be [House]:
-weectl create-station --driver=vantage --driver-name=House
+weectl station --create --driver=vantage --driver-name=House
 
 # Same as above, but use a custom configuration file name
-weectl create-station --driver=vantage --driver-name=House --config=/home/weewx/house.conf
+weectl station --create --driver=vantage --driver-name=House --config=/home/weewx/house.conf
 
 # Reconfigure it:
-weectl reconfigure-station --config=/home/weewx/house.conf
+weectl station --reconfigure --config=/home/weewx/house.conf
 
 # Upgrade its configuration file
-weewx upgrade-config --config=/home/weewx/house.conf
+weectl station --upgrade --config=/home/weewx/house.conf
+
+# Upgrade the skins
+weectl station --upgrade-skins --config=/home/weewx/house.comf
 ```
 
-### Daemon related
+## Subcommand `weectl daemon`
 
-Install utility files to run as a daemon.
+This subcommand manages daemon files.
 
-| Command                 | Flags            | Functionality                               |
-|-------------------------|------------------|---------------------------------------------|
-| `weectl install-daemon` | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
-| `weectl install-daemon` | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
-| `weectl remove-daemon`  | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
-| `weectl remove-daemon`  | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
+| Action                    | Flags            | Functionality                               |
+|---------------------------|------------------|---------------------------------------------|
+| `weectl daemon --install` | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
+| `weectl daemon --install` | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
+| `weectl daemon --remove`  | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
+| `weectl daemon --remove`  | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
 

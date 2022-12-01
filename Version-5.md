@@ -144,7 +144,7 @@ run `weectl --help`.
 
 ## Actions
 
-### `create-station`
+### Action `create-station`
 
 Create a new copy of the configuration file, using the copy of `weewx.conf` in
 the _package resource_ as a template. The default location of the new file will
@@ -201,12 +201,12 @@ set to the stanza name.
 Default is whatever is returned as attribute `DRIVER_NAME` of the nominated
 `driver`.
 
-### `reconfigure-station`
+### Action `reconfigure-station`
 
 This command provides an opportunity to reprovision an existing configuration
 file.
 
-### `upgrade-config`
+### Action `upgrade-config`
 
 If necessary, upgrade an existing configuration file. The old version will be
 saved as a timestamped copy.
@@ -217,7 +217,7 @@ Optional path to the configuration file.
 
 Default is `/home/weewx/weewx.conf`
 
-### `set-station`
+### Action `set-station`
 
 Set the currently active station. This sets option `station_type`.
 
@@ -227,7 +227,7 @@ Optional path to the configuration file.
 
 Default is `/home/weewx/weewx.conf`
 
-### `upgrade-skins`
+### Action `upgrade-skins`
 
 The skins will be copied over from the _package resource location_ to the
 _resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
@@ -239,8 +239,6 @@ Optional path to the configuration file.
 
 Default is `/home/weewx/weewx.conf`
 
-
-                                                                                                            |
 
 ### Examples
 

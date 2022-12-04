@@ -147,7 +147,7 @@ can simply run `weectl --help`.
 The utility subcommand `weectl station` manages the station configuration file
 and skins.
 
-### Action `station --create`
+### Action `station create`
 
 Create a new copy of the configuration file, using the copy of `weewx.conf` in
 the _package resource_ as a template. The default location of the new file will
@@ -169,27 +169,21 @@ The following are set:
 | `station_type`| The active station.                                                                  | `Simulator`   |
 
 
-### Action `station --reconfigure`
+### Action `station reconfigure`
 
 This command provides an opportunity to reprovision an existing configuration
 file.
 
-### Action `station --upgrade`
+### Action `station upgrade`
 
 If necessary, upgrade an existing configuration file. The old version will be
 saved as a timestamped copy.
 
-#### Option `--config`
-
-Optional path to the configuration file.
-
-Default is `/home/weewx/weewx.conf`
-
-### Action `station --set`
+### Action `station set`
 
 Set the currently active station. This sets option `station_type`.
 
-### Action `station --upgrade-skins`
+### Action `station upgrade-skins`
 
 The skins will be copied over from the _package resource location_ to the
 _resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
@@ -236,19 +230,19 @@ Default is whatever is returned as attribute `DRIVER_NAME` of the nominated
 
 ```shell
 # Create a new weewx.conf, using the vantage driver. The station stanza will be [House]:
-weectl station --create --driver=vantage --driver-name=House
+weectl station create --driver=vantage --driver-name=House
 
 # Same as above, but use a custom configuration file name
-weectl station --create --driver=vantage --driver-name=House --config=/home/weewx/house.conf
+weectl station create --driver=vantage --driver-name=House --config=/home/weewx/house.conf
 
 # Reconfigure it:
-weectl station --reconfigure --config=/home/weewx/house.conf
+weectl station reconfigure --config=/home/weewx/house.conf
 
 # Upgrade its configuration file
-weectl station --upgrade --config=/home/weewx/house.conf
+weectl station upgrade --config=/home/weewx/house.conf
 
 # Upgrade the skins
-weectl station --upgrade-skins --config=/home/weewx/house.comf
+weectl station upgrade-skins --config=/home/weewx/house.comf
 ```
 
 ## Subcommand `weectl daemon`
@@ -257,8 +251,8 @@ This subcommand manages daemon files.
 
 | Action                    | Flags            | Functionality                               |
 |---------------------------|------------------|---------------------------------------------|
-| `weectl daemon --install` | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
-| `weectl daemon --install` | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
-| `weectl daemon --remove`  | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
-| `weectl daemon --remove`  | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
+| `weectl daemon install`   | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
+| `weectl daemon install`   | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
+| `weectl daemon uninstall` | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
+| `weectl daemon uninstall` | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
 

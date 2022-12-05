@@ -137,10 +137,10 @@ can simply run `weectl --help`.
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | _package resource_          | A resource, such as `weewx.conf` or `skins`, included in a distribution as a _Python package_. Read-only.<br/>Must be accessed using `importlib.resources` . |
 | _package resource location_ | Location of the _package resource_, typically somewhere under `site-packages`. May or may not be a file.                                                     |
-| _resource root_             | Final, installed, location of the resources, particularly the configuration file and skins.<br/>Typically, `/etc/weewx`, or `/home/weewx`                   |
-| _station_                   | Unique piece of hardware, which requires a driver. This is equivalent to a "stanza" such as `[Vantage]`.                                                     |
-| _driver_                    | Software that interacts directly with the hardware. More than one _station_ can use the same driver.                                                         |
-| _station type_              | The currently active station, specified with option `station_type`. A corresponding _station_ must exist.                                                    |
+| _resource root_             | Final, installed, location of the resources, particularly the configuration file and skins.<br/>Typically, `/etc/weewx`, or `/home/weewx`                    |
+| _driver_                    | The driver module (e.g., `weewx.drivers.vantage`).                                                                                                           |
+| _driver name_               | Returned by the attribute `DRIVER_NAME` of a driver. By default, this becomes the "stanza name" (e.g., `[Vantage]`).                                         |
+| _active driver_             | Option `station_type` specifies the active driver to be used. A corresponding _driver name_ must exist.                                                      |
 
 ## Subcommand `weectl station`
 
@@ -150,15 +150,15 @@ and skins.
 ### Action `station create`
 
 Create a new copy of the configuration file, using the copy of `weewx.conf` in
-the _package resource_ as a template. The default location of the new file will
-be `/home/weewx/weewx.conf`.
+the _package resource_ as a template. The user will be prompted for optional
+values. The default location of the new file will be `/home/weewx/weewx.conf`.
 
 If the configuration file already exists, then an error will be raised.
 
 If they do not already exist, then the skins are also copied over from the
 _package resource location_ to the _resource root_.
 
-The following are set:
+The following are set, either implicitly or explicitly.
 
 |          Name | What                                                                                 | Default       |
 |--------------:|--------------------------------------------------------------------------------------|---------------|
@@ -166,30 +166,7 @@ The following are set:
 |   `HTML_ROOT` | Where the generated HTML files and images will be put,<br/>relative to `$WEEWX_ROOT` | `public_html` |
 |   `SKIN_ROOT` | The directory of the skins, relative to `$HTML_ROOT`.                                | `skins`       |
 | `SQLITE_ROOT` | The directory of the SQLite database, relative to `$HTML_ROOT`.                      | `archive`     |
-| `station_type`| The active station.                                                                  | `Simulator`   |
-
-
-### Action `station reconfigure`
-
-This command provides an opportunity to reprovision an existing configuration
-file.
-
-### Action `station upgrade`
-
-If necessary, upgrade an existing configuration file. The old version will be
-saved as a timestamped copy.
-
-### Action `station set`
-
-Set the currently active station. This sets option `station_type`.
-
-### Action `station upgrade-skins`
-
-The skins will be copied over from the _package resource location_ to the
-_resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
-timestamp.
-
-## Options for the subcommand `weectl station`
+| `station_type`| The active _driver name_.                                                            | `Simulator`   |
 
 #### Option `--config`
 
@@ -197,6 +174,12 @@ Optional path to the configuration file. The value for `HTML_ROOT` will be set
 to its directory.
 
 The default is `/home/weewx/weewx.conf`.
+
+#### Option `--driver`
+
+Set the configuration file up to use the given _driver_.
+
+Default is `weewx.drivers.simulator`.
 
 #### Option `--skin_root`
 
@@ -211,38 +194,74 @@ relative to `$WEEWX_ROOT`.
 
 Default is `public_html`.
 
+#### Option `--no-prompt`
+
+Do not prompt for values. Obtain new values from the command line only.
+
+### Action `station reconfigure`
+
+This command provides an opportunity to reprovision an existing configuration
+file.
+
 #### Option `--driver`
 
-The device driver to use. 
+Reconfigure the configuration file to use the given _driver_.
 
-Default is `simulator`.
+Default is to use the existing _driver_.
 
-#### Option `--driver-name`
+#### Option `--config`
 
-This will be the name of a dedicated stanza (e.g., `[Vantage]`) that describes
-the hardware characteristics of the station. The option `station_type` will also
-be set to this name.
+Optional path to the configuration file.
 
-Default is whatever is returned as attribute `DRIVER_NAME` of the nominated
-`driver`.
+The default is `/home/weewx/weewx.conf`.
+
+#### Option `--no-prompt`
+
+Do not prompt for values. Obtain new values from the command line only.
+
+### Action `station upgrade`
+
+If necessary, upgrade an existing configuration file. The old version will be
+saved as a timestamped copy.
+
+#### Option `--config`
+
+Optional path to the configuration file.
+
+The default is `/home/weewx/weewx.conf`.
+
+### Action `station upgrade-skins`
+
+The skins will be copied over from the _package resource location_ to the
+_resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
+timestamp.
+
+#### Option `--config`
+
+Optional path to the configuration file.
+
+The default is `/home/weewx/weewx.conf`.
+
+
+
 
 ### Examples
 
 ```shell
-# Create a new weewx.conf, using the vantage driver. The station stanza will be [House]:
-weectl station create --driver=vantage --driver-name=House
+# Create a new weewx.conf, using the vantage driver.
+weectl station create --driver=weewx.drivers.vantage
 
 # Same as above, but use a custom configuration file name
-weectl station create --driver=vantage --driver-name=House --config=/home/weewx/house.conf
+weectl station create --driver=weewx.drivers.vantage --config=/home/weewx/house.conf
 
-# Reconfigure it:
-weectl station reconfigure --config=/home/weewx/house.conf
+# Reconfigure it to use a Fine Offset station
+weectl station reconfigure --driver=weewx.drivers.fousb --config=/home/weewx/house.conf
 
 # Upgrade its configuration file
 weectl station upgrade --config=/home/weewx/house.conf
 
 # Upgrade the skins
-weectl station upgrade-skins --config=/home/weewx/house.comf
+weectl station upgrade-skins --config=/home/weewx/house.conf
 ```
 
 ## Subcommand `weectl daemon`

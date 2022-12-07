@@ -169,7 +169,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
-* [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) 
+  (for sensors that speak SNMP and for monitoring equipment like UPS) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
 * [WXgraphic - Weather Graphic: A php driven generator to create a weather graphic image via your web server](https://github.com/glennmckechnie/weewx-WXgraphic) <img src="http://weewx.com/ok-for-weewx4.jpg" />

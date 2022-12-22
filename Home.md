@@ -173,6 +173,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
   (for sensors that speak SNMP and for monitoring equipment like UPS) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
+* [weewx-nws - NWS Weather Forecast and Alerts WeeWX Extention](https://github.com/chaunceygardiner/weewx-nws) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [WXgraphic - Weather Graphic: A php driven generator to create a weather graphic image via your web server](https://github.com/glennmckechnie/weewx-WXgraphic) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)

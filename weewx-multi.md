@@ -84,7 +84,11 @@ and in `paddock.conf`:
         ...
 ```
 
-5. Configure the startup script.  Use the `weewx-multi` init script to start each instance when the computer boots. The `weewx-multi` init script can be found in `/home/weewx/util/init.d` if WeeWX was installed with the setup.py approach.  If WeeWX was installed as a package you will need to download `weewx-multi` from the WeeWX GitHub repo.
+5. Configure the startup script.
+
+_If you are using systemd_, see the [[multi-instance details on the systemd wiki page|systemd#Multi-instance-Systemd]] and ignore the rest of this section.
+
+_If you are using initscripts_, then use the `weewx-multi` init script to start each instance when the computer boots. The `weewx-multi` init script can be found in `/home/weewx/util/init.d` if WeeWX was installed with the setup.py approach.  If WeeWX was installed as a package you will need to download `weewx-multi` from the WeeWX GitHub repo.
 
 For setup.py installs:
 ```

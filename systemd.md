@@ -33,7 +33,7 @@ WeeWX offers a systemd "unit" file called
 tells systemd how to run WeeWX. How you install it depends on whether you used `setup.py` or a package installer 
 to install your system.
 There is also the possibility to run multiple instances ([[weewx-multi|weewx-multi]] ) under systemd,
-for which [[the setup is described below|systemd#MultiInstance-Systemd]]
+for which [[the setup is described below|systemd#Multi-instance-Systemd]]
 
 The unit file looks something like this:
 
@@ -190,7 +190,7 @@ Of course, your `idVendor` and `idProduct` identifiers are likely to be differen
 Now when your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
 `weewx`, with read/write privileges `0664`, allowing the user `weewx` to access it.
 
-## MultiInstance Systemd
+## Multi-instance Systemd
 The changes required to run what systemd jargon refers to as [instantiated services](http://0pointer.de/blog/projects/instances.html)
 are quite simple.
 1. Start with the same .conf files described in the ([[weewx-multi|weewx-multi]] ) page.

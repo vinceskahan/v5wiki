@@ -193,7 +193,7 @@ Now when your station gets plugged into the USB port, this rule was identify it,
 ## MultiInstance Systemd
 The changes required to run what systemd jargon refers to as [instantiated services](http://0pointer.de/blog/projects/instances.html)
 are quite simple.
-1. Start with the same .conf files described above.
+1. Start with the same .conf files described in the ([[weewx-multi|weewx-multi]] ) page.
 2. No changes are required to /etc/default/weewx, and you do not need /etc/default/weewx-multi
 3. Locate your current weewx unit file, `weewx.service` (usually either from /etc/systemd/system, or /lib/systemd/system) and create a copy named `weewx@.service` in /etc/systemd/system.
 4. Edit the `weewx@.service` file and insert a "%i" in locations where the `house` or `paddock` identifiers need to appear.  For example, in the line that runs the daemon you might like to use:

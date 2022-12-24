@@ -192,13 +192,40 @@ Now when your station gets plugged into the USB port, this rule was identify it,
 
 ## Multi-instance Systemd
 The changes required to run what systemd jargon refers to as [instantiated services](http://0pointer.de/blog/projects/instances.html)
-are quite simple.
+are quite simple.  The examples here are based on the simple unit file above and the on example configurations on the weewx-multi page.
 1. Start with the same .conf files described in the ([[weewx-multi|weewx-multi]] ) page.
 2. No changes are required to /etc/default/weewx, and you do not need /etc/default/weewx-multi
 3. Locate your current weewx unit file, `weewx.service` (usually either from /etc/systemd/system, or /lib/systemd/system) and create a copy named `weewx@.service` in /etc/systemd/system.
-4. Edit the `weewx@.service` file and insert a "%i" in locations where the `house` or `paddock` identifiers need to appear.  For example, in the line that runs the daemon you might like to use:
+4. Edit the `weewx@.service` file and insert a "%i" in locations where the `house` or `paddock` identifiers need to appear.  For example, at the start, make each description unique
 ```
  Description=WeeWX weather system located in the %i
+```
+In the line that runs the daemon you might use:
+```
  ExecStart=/home/weewx/bin/weewxd --log-label weewx-%i /home/weewx/%i.conf
 ```
 If your unit file defines a pid-file then you will need to change that also, so that each instance has a uniquely named file - something like `weewx-%i.pid`
+### activating the services
+The usual commands are modified by appending the instance identifier to the unit name, so that `weewx` becomes `weewx@house` for example.
+```
+systemctl stop weewx
+systemctl disable weewx
+
+systemctl start weewx@house
+systemctl start weewx@paddock
+systemctl status weewx@\*
+```
+The wildcard form of the status request shows both instances.
+
+When everything seems to be working, set them up to start automatically:
+```
+systemctl enable weewx@house
+systemctl enable weewx@paddock
+```
+### Cleaning up
+After everything is working, it would be a good idea to reconfigure the original weewx.conf service back to the simulator.
+That way, if the singular weewx service is ever restarted unexpectedly there will not be multiple instances trying to access the same database.
+The following command will also help avoid potential problems:
+```
+systemctl mask weewx
+```

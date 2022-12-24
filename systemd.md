@@ -31,7 +31,11 @@ The installation proceeds in three steps.
 WeeWX offers a systemd "unit" file called
 [`weewx.service`](https://github.com/weewx/weewx/blob/master/util/systemd/weewx.service), which
 tells systemd how to run WeeWX. How you install it depends on whether you used `setup.py` or a package installer 
-to install your system. It looks something like this:
+to install your system.
+There is also the possibility to run multiple instances ([[weewx-multi|weewx-multi]] ) under systemd,
+for which [[the setup is described below|systemd#MultiInstance-Systemd]]
+
+The unit file looks something like this:
 
 ```ini
 # systemd unit configuration file for WeeWX
@@ -186,4 +190,15 @@ Of course, your `idVendor` and `idProduct` identifiers are likely to be differen
 Now when your station gets plugged into the USB port, this rule was identify it, then set its group ownership to
 `weewx`, with read/write privileges `0664`, allowing the user `weewx` to access it.
 
-
+## MultiInstance Systemd
+The changes required to run what systemd jargon refers to as [instantiated services](http://0pointer.de/blog/projects/instances.html)
+are quite simple.
+1. Start with the same .conf files described above.
+2. No changes are required to /etc/default/weewx, and you do not need /etc/default/weewx-multi
+3. Locate your current weewx unit file, `weewx.service` (usually either from /etc/systemd/system, or /lib/systemd/system) and create a copy named `weewx@.service` in /etc/systemd/system.
+4. Edit the `weewx@.service` file and insert a "%i" in locations where the `house` or `paddock` identifiers need to appear.  For example, in the line that runs the daemon you might like to use:
+```
+ Description=WeeWX weather system located in the %i
+ ExecStart=/home/weewx/bin/weewxd --log-label weewx-%i /home/weewx/%i.conf
+```
+If your unit file defines a pid-file then you will need to change that also, so that each instance has a uniquely named file - something like `weewx-%i.pid`

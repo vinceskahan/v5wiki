@@ -1,6 +1,13 @@
+# Overview
+
+This document discusses the goals and design decisions for WeeWX Version 5.
+
 # Goals
 
-To be able to do a complete WeeWX install using `pip`.
+Complete WeeWX install, including dependencies, using `pip`.
+
+No root privileges required to install and manage WeeWX. However, the operating
+system may require privileges in order to access hardware.
 
 Future-proof the install. Right now, we depend heavily on custom commands in
 `setup.py`. However, the imperative approach of `setup.py` is being phased out
@@ -14,7 +21,8 @@ Python 3.7 or greater. Python 3.7 was released over four years ago (on 27 June
 [importing resources](https://docs.python.org/3/library/importlib.resources.html#module-importlib.resources).
 Note that a [backport](https://importlib-resources.readthedocs.io) of
 `importlib.resources` is available for earlier versions of Python, so we may be
-able to relax this restriction and allow Python 3.5 and 3.6.
+able to relax this restriction and allow Python 3.6. WeeWX will use f-strings,
+so Python 3.5 cannot be supported.
 
 Support for Python 2.7 will be dropped. All references to `six` and other
 compatibility shims will be removed.
@@ -24,73 +32,109 @@ one driver to be active at the same time. This feature would probably involve
 lots of breaking changes, but it would be a lot more elegant than the present
 pattern of using a WeeWX service to add data to the data pipeline.
 
-# Build tools 
+# Resources
+
+The old `distutils` approach used by previous versions of WeeWX supported a
+[`data_files`](https://docs.python.org/3/distutils/setupscript.html#installing-additional-files)
+option that could be used to install miscellaneous resources, such as
+documentation or configuration files, into the final installation target.
+
+However, option `data_files` is being deprecated for a variety of reasons (see
+[this
+post](https://discuss.python.org/t/should-there-be-a-new-standard-for-installing-arbitrary-data-files/7853)
+for a summary). Instead, data resources must now be included as "[package
+data](https://setuptools.pypa.io/en/latest/userguide/datafiles.html)", that is,
+as part of a Python package. Like any other package, package data includes an
+`__init__.py` file, but unlike regular packages, it can include non-code
+resources.
+
+That means, once installed, these non-code resources will live deep in the
+target `site-packages` directory, where they are difficult to find and even more
+difficult to modify.
+
+Furthermore, package data must be regarded as "_read only_". For example, it's
+possible that WeeWX could be installed as a zipfile or Python egg, so, even if a
+user was willing to find the data resources deep in `site-packages` somewhere,
+s/he still could not edit them.
+
+## Location of package data
+
+These are the non-code resources that are used in WeeWX and where they will
+be located as package data:
+
+| Non-code resource  | Package data location      |
+|--------------------|----------------------------|
+| Configuration file | `wee_resources/weewx.conf` |
+| Skins              | `wee_resources/skins`      |
+| Documentation      | `wee_resources/docs`       |
+| Examples           | `wee_resources/examples`   |
+
+## Destination for data resources
+
+Previously, we used `/home/weewx` as the destination for user data, but it
+requires root access in order to set up. With Version 5, the default area
+becomes `~/weewx-data` in the user's home directory. However, `/home/weewx`
+can continue to be used by older installations.
+
+Because pip no longer allows free access to the operating system, these user
+data cannot be set up by pip. Instead, they must be copied into place using a
+new tool, `weectl`.
+
+## Install process
+
+All of this means that installing WeeWX becomes a two-step process:
+
+- Install using pip. This installs the code base and package data into the
+  Python library.
+- Copy non-code resources over from package data to a "user data" area
+  using `weectl`.
+
+## Install using pip
+
+See the companion document [_pip install strategies_](pip-install-strategies.md)
+for all the various way pip and its allies can be used to install WeeWX.
+
+## Copy non-code resources
+
+With Version 5, the default area for user data is `~/weewx-data`, although
+other areas can easily be used. This allows WeeWX to be installed entirely
+without root privileges.
+
+The directory `/home/weewx` served this purpose in previous versions of WeeWX
+and, indeed, it can continue to be used with V5. However, `/home/weewx`
+generally requires root privileges to set it up. It also holds WeeWX code in the
+`bin` subdirectory, which will no longer be used. With V5, all source code lives
+within the Python environment.
+
+### Creating the user data area with the tool `weectl`
+
+This is done with the command
+
+```shell
+weectl station create
+```
+
+# Build tools
 
 There are many tools that were considered to manage the Python distribution
 build process including [setuptools](https://setuptools.pypa.io/),
 [pdm](https://pdm.fming.dev/), [flit](https://flit.pypa.io), and
-[poetry](https://python-poetry.org/). We have chosen poetry to manage
-dependencies and to build the packages. It is mature, simple to use, depends on
-`pyproject.toml`, and very popular. Poetry can also be used to do an _in situ_
-install, but that's not the intended use case. Most users will use `pip`.
+[poetry](https://python-poetry.org/). We have chosen poetry. It is mature,
+simple to use, depends on `pyproject.toml`, and very popular. Poetry can also
+be used to do an _in situ_ install, but that's not the intended use case.
+Most users will use `pip`.
 
 The ubiquitous [setuptools](https://setuptools.pypa.io/) was considered, but
 poetry is easier to use and its implementation of `pyproject.toml` is more
 mature. NB: this only affects the distribution build process. Either way, `pip`
 is used to install.
 
-
 # Applications
 
 Applications will be invoked using an [_entry
 point_](https://packaging.python.org/en/latest/specifications/entry-points/).
-This is a small shim, installed by `pip`, that invokes a function within a
+This is a small shim, installed by `pip`, which invokes a function within a
 module or package.
-
-# Resources
-
-The old `distutils` supported a
-[`data_files`](https://docs.python.org/3/distutils/setupscript.html#installing-additional-files)
-option that could be used to install miscellaneous resources such as
-documentation or configuration files into the final installation target.
-
-However, option `data_files` is being deprecated for a variety of reasons (see
-[this
-post](https://discuss.python.org/t/should-there-be-a-new-standard-for-installing-arbitrary-data-files/7853)
-for a summary). Instead, resources must now be included as "package data", that
-is, as part of a Python package. That means it will live deep in the target
-`site-packages`, where is is difficult to find and even more difficult to
-modify.
-
-Furthermore, package data must be regarded as "_read only_". For example, it's
-possible that WeeWX could be installed as a zipfile or Python egg, so, even if a
-user was willing to find its resources deep in `site-packages` somewhere, s/he
-could not edit them.
-
-## Essential resources: `weex.conf` and skins
-
-Both `weewx.conf` and the skins are essential for the proper operation of
-WeeWX, so they must be included in the distribution. For reasons outlined above,
-they will be put in a dedicated `wee_resources` package as package data.
-
-| Old           | New                        |
-|---------------|----------------------------|
-| `skins`       | `wee_resources/skins`      |
-| `weewx.conf`  | `wee_resources/weewx.conf` |
-
-Once installed, these resources would be copied into position using a utility
-(or, possibly, a repurposed `wee_config`).
-
-Unlike previous versions of WeeWX, `weewx.conf` and the `skins`
-directory would be updated with every upgrade. This is possible because the
-production versions are in a separate location. The production version would
-only be touched if the user requests it by using a utility.
-
-## Non essential resources
-
-There is no obvious place to install the documentation and examples using
-`pip`. Instead, they could be distributed in a separate tarball, which could
-then be downloaded and expanded in a location of the user's choosing.
 
 # Namespaces
 
@@ -106,7 +150,6 @@ reasonable claim to a namespace. However, there are two problem areas:
 |-----------|---------------|
 | `user`    | `wee_user`    |
 | `schemas` | `wee_schemas` |
-
 
 Note that these will break a _lot_ of code, particularly the renaming of `user`.
 Fortunately, all references to the `user` or `schemas` packages are dynamic,
@@ -131,17 +174,6 @@ command called, simply, `weectl`, with different subcommands. By having a
 single application, we make it easier to find the appropriate command: the user
 can simply run `weectl --help`.
 
-## Definitions
-
-| Name                        | Definition                                                                                                                                                   |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| _package resource_          | A resource, such as `weewx.conf` or `skins`, included in a distribution as a _Python package_. Read-only.<br/>Must be accessed using `importlib.resources` . |
-| _package resource location_ | Location of the _package resource_, typically somewhere under `site-packages`. May or may not be a file.                                                     |
-| _resource root_             | Final, installed, location of the resources, particularly the configuration file and skins.<br/>Typically, `/etc/weewx`, or `/home/weewx`                    |
-| _driver_                    | The driver module (e.g., `weewx.drivers.vantage`).                                                                                                           |
-| _driver name_               | Returned by the attribute `DRIVER_NAME` of a driver. By default, this becomes the "stanza name" (e.g., `[Vantage]`).                                         |
-| _active driver_             | Option `station_type` specifies the active driver to be used. A corresponding _driver name_ must exist.                                                      |
-
 ## Subcommand `weectl station`
 
 The utility subcommand `weectl station` manages the station configuration file
@@ -160,13 +192,13 @@ _package resource location_ to the _resource root_.
 
 The following are set, either implicitly or explicitly.
 
-|          Name | What                                                                                 | Default       |
-|--------------:|--------------------------------------------------------------------------------------|---------------|
-|  `WEEWX_ROOT` | The _resource_root_.                                                                 | `/home/weewx` |
-|   `HTML_ROOT` | Where the generated HTML files and images will be put,<br/>relative to `$WEEWX_ROOT` | `public_html` |
-|   `SKIN_ROOT` | The directory of the skins, relative to `$HTML_ROOT`.                                | `skins`       |
-| `SQLITE_ROOT` | The directory of the SQLite database, relative to `$HTML_ROOT`.                      | `archive`     |
-| `station_type`| The active _driver name_.                                                            | `Simulator`   |
+|           Name | What                                                                                 | Default       |
+|---------------:|--------------------------------------------------------------------------------------|---------------|
+|   `WEEWX_ROOT` | The _resource_root_.                                                                 | `/home/weewx` |
+|    `HTML_ROOT` | Where the generated HTML files and images will be put,<br/>relative to `$WEEWX_ROOT` | `public_html` |
+|    `SKIN_ROOT` | The directory of the skins, relative to `$HTML_ROOT`.                                | `skins`       |
+|  `SQLITE_ROOT` | The directory of the SQLite database, relative to `$HTML_ROOT`.                      | `archive`     |
+| `station_type` | The active _driver name_.                                                            | `Simulator`   |
 
 #### Option `--config`
 
@@ -190,7 +222,7 @@ Default is `skins`.
 #### Option `---html_root`
 
 Optional path to where the generated HTML files and plots will be placed,
-relative to `$WEEWX_ROOT`. 
+relative to `$WEEWX_ROOT`.
 
 Default is `public_html`.
 
@@ -242,9 +274,6 @@ Optional path to the configuration file.
 
 The default is `/home/weewx/weewx.conf`.
 
-
-
-
 ### Examples
 
 ```shell
@@ -275,3 +304,15 @@ This subcommand manages daemon files.
 | `weectl daemon uninstall` | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
 | `weectl daemon uninstall` | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
 
+ # Definitions
+
+Throughout this document, the following definitions are used
+
+| Name                 | Definition                                                                                                                                                  |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| _package data_       | A resource, such as `weewx.conf` or `skins`, included in a distribution as a _Python package_. Read-only.<br/>Must be accessed using `importlib.resources`. |
+| _package data location_ | Location of the _package resource_, typically somewhere under `site-packages`. May or may not be a file.                                                    |
+| _WEEWX_ROOT_         | Final, installed, location of the resources, particularly the configuration file and skins.<br/>Typically, `~/weewx-data`, `/etc/weewx`, or `/home/weewx`    |
+| _driver_             | The driver module (e.g., `weewx.drivers.vantage`).                                                                                                          |
+| _driver name_        | Returned by the attribute `DRIVER_NAME` of a driver. By default, this becomes the "stanza name" (e.g., `[Vantage]`).                                        |
+| _active driver_      | Option `station_type` specifies the active driver to be used. A corresponding _driver name_ must exist.                                                     |

@@ -2,16 +2,15 @@ The Python tool [pip](https://pip.pypa.io) is a very powerful and flexible
 resource for installing libraries and applications. However, all that
 flexibility can lead to a bewildering set of choices for how to use it.
 
-This document outlines some of these choices, as well as their pros and cons.
-While its context is installing WeeWX, most conclusions would apply to any
-package or application.
+This document outlines some strategies for installing WeeWX Version 5 using pip,
+along with their various pros and cons. While its context is installing WeeWX,
+most conclusions would apply to any package or application.
 
 ## System install
 
 With this strategy, WeeWX is installed using `sudo pip` as a system-wide
-resource,
-usually in a location such as `'/usr/lib/python3.x/dist-packages` or, possibly,
-`/usr/lib/python3/dist-packages/`.
+resource, usually in a location such as `/usr/lib/python3.x/dist-packages` or,
+possibly, `/usr/lib/python3/dist-packages/`.
 
 ```sh
 sudo python3 -m pip install weewx

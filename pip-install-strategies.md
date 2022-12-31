@@ -18,8 +18,8 @@ sudo python3 -m pip install weewx
 
 ### Advantages
 
-- Simple install, resulting in a simple state to understand: everything is in
-  one, well-known location.
+- Simple install, resulting in a state that is simple to understand: everything 
+  is in one, well-known location.
 - Installs system-wide, so any user, including root, has access to it.
 
 ### Disadvantages
@@ -29,14 +29,22 @@ sudo python3 -m pip install weewx
   getting updated, it can break other programs, which may be depending on
   specific versions being available.
 - If you ever remove WeeWX, you will be faced with the choice of whether to
-  remove its prerequisites. You may not know, or remember, whether other
+  remove its dependencies. You may not know, or remember, whether other
   software depends on them.
+- To remove WeeWX, you will have to explicitly remove it and each of its 
+  dependencies using `pip uninstall`.
+
 
 ## User install
 
-By adding a `--user` flag, `pip` installs WeeWX in a subdirectory in the user's
-home directory. You will also end up with this method if you forget the `sudo`
-in a systems install.
+By adding a `--user` flag, `pip` installs WeeWX and its dependencies into
+sudirectories of
+[`site.USER_BASE`](https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme),
+typically `~/.local` on Unix machines, including macOS. This means the install
+cannot break existing code.
+
+You will also end up with this method if you forget the `sudo` in a systems
+install.
 
 ```shell
 python3 -m pip install weewx --user
@@ -47,15 +55,14 @@ python3 -m pip install weewx --user
 - Does not require root privileges.
 - Will not break existing systems programs.
 - While not as simple as a system install, it's still pretty simple: system
-  resources remain untouched, while the WeeWX resources end up under the user's 
-  home directory.
+  code remains untouched, while WeeWX code and resources end up under the
+  user's home directory.
 
 ### Disadvantages
 
-- Other users will not be able to run the results, at least without patching
-  `PYTHONPATH`, because WeeWX will be located under a user's home directory.
-- This means WeeWX cannot be run as a daemon without some crafting of
-  `PYTHONPATH`.
+- If `secure_path` is set on your system, then the directory `~/.local` and 
+  its subdirectories may not be included in `PATH` and `PYTHONPATH` when using
+  `sudo`, making it hard to use this kind of install in a daemon.
 - To remove WeeWX, you will have to explicitly remove it and each of its 
   dependencies using `pip uninstall`.
 
@@ -70,7 +77,7 @@ cd ~
 python3 -m venv weewx-venv
 # Activate it
 source weewx-venv/bin/activate
-# Then install WeeWX in it
+# Then, using pip, install WeeWX into it
 python3 -m pip install weewx 
 ```
 

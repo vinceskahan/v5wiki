@@ -26,11 +26,11 @@ sudo python3 -m pip install weewx
 
 - Requires root privileges.
 - Because this approach can result in one or more of the packages used by WeeWX
-  getting updated, it can break other programs, which may be depending on
-  specific versions being available.
+  getting updated, it can break other programs that are depending on particular 
+  versions of the same packages.
 - If you ever remove WeeWX, you will be faced with the choice of whether to
   remove its dependencies. You may not know, or remember, whether other
-  software depends on them.
+  programs depend on them.
 - To remove WeeWX, you will have to explicitly remove it and each of its 
   dependencies using `pip uninstall`.
 
@@ -40,14 +40,17 @@ sudo python3 -m pip install weewx
 By adding a `--user` flag, `pip` installs WeeWX and its dependencies into
 sudirectories of
 [`site.USER_BASE`](https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme),
-typically `~/.local` on Unix machines, including macOS. This means the install
-cannot break existing code.
+typically `~/.local` on Unix machines, including macOS. This means that the 
+install cannot break existing system programs.
 
 You will also end up with this method if you forget the `sudo` in a systems
 install.
 
 ```shell
+# Either...
 python3 -m pip install weewx --user
+# ... or (note sudo is not being used):
+python3 -m pip install weewx
 ```
 
 ### Advantages
@@ -60,9 +63,10 @@ python3 -m pip install weewx --user
 
 ### Disadvantages
 
-- If `secure_path` is set on your system, then the directory `~/.local` and 
-  its subdirectories may not be included in `PATH` and `PYTHONPATH` when using
-  `sudo`, making it hard to use this kind of install in a daemon.
+- If you run a daemon as `root`, it will be unable to find the WeeWX libraries
+  unless you patch `PYTHONPATH` (because they are located under `~/.local`
+  instead of `/usr/lib`). However, this problem goes away if you run
+  the daemon as the user.
 - To remove WeeWX, you will have to explicitly remove it and each of its 
   dependencies using `pip uninstall`.
 
@@ -122,6 +126,10 @@ pipx install weewx
 - A little harder to understand what's happening.
 - The tool must be used to remove WeeWX when you're done with it (although 
   it's just a single step).
+- If you install extensions that require dependencies, you cannot simply
+  install them by using `pip install`. Instead, you must ask pipx to "inject"
+  them. For example, if an extension used the popular `requests` package,
+  it would have to be installed using `pipx inject weewx requests`.
 
 
 ## Install using poetry

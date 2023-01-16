@@ -5,7 +5,7 @@ This is the place to go for information about the many extensions available for 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
 ### General
-* [Posting to weewx-user](https://github.com/weewx/weewx/wiki/Help!-Posting-to-weewx-user)
+* [Posting to weewx-user](Help!-Posting-to-weewx-user)
 * [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions)
 * [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html)
 
@@ -50,7 +50,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [SQLite vs MySQL](SQLite-vs-MySQL)
 * [Clean up old 'bad' data](Cleaning-up-old-'bad'-data)
 * [Upload missing data to weather underground](http://www.weewx.com/wunderfixer/)
-* [Switching to the new, extended schema `wview_extended`](https://github.com/weewx/weewx/wiki/Switching-to-the-new-wview_extended-schema)
+* [Switching to the new, extended schema `wview_extended`](Switching-to-the-new-wview_extended-schema)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
 * [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README) <img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -187,7 +187,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [byteweather](https://byteinsight.co.uk/freebies/weewx-byte-weather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
-* [French Standard skin](https://github.com/weewx/weewx/wiki/weewx-french-standard-skin)
+* [French Standard skin](weewx-french-standard-skin)
 * [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [NeoWX](https://neoground.com/projects/neowx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -196,7 +196,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Responsive](responsive)
 * [simple](simple)
 * [SteelSeries Weather Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [Thème graphique standard de weewx en français](https://github.com/weewx/weewx/wiki/Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
+* [Thème graphique standard de weewx en français](Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
@@ -205,7 +205,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
 
 #### XType extensions
-[XType extensions](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types) add new observation and aggregation types to WeeWX
+[XType extensions](xtypes) add new observation and aggregation types to WeeWX
 * [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, dayET and ET24 as opposite to dayRain and rain24, absolute humidity, (saturation) vapor pressure, mixing ratio, (potential) equivalent temperature <img src="http://weewx.com/ok-for-weewx4.jpg" />
 * [weewx-phenology](http://lacusveris.com/Phenology) - Growing Degree-Days development models for various insect pests, showing when to apply control strategies to minimize crop damage<img src="http://weewx.com/ok-for-weewx4.jpg" />
@@ -244,16 +244,16 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes
-* [v5 design notes](https://github.com/weewx/weewx/wiki/Version-5)
+* [v5 design notes](Version-5)
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
-* [Development and testing infrastructure](https://github.com/weewx/weewx/wiki/devtest-infrastructure)
-* [Dependency matrix](https://github.com/weewx/weewx/wiki/weewx4-compatibility-matrix)
-* [Weewx Driver Development Tips](https://github.com/weewx/weewx/wiki/Weewx-Driver-Development-Tips)
-* [Supporting Python 3](https://github.com/weewx/weewx/wiki/Python-3-strategy)
-* [Proposal for logging events in V4](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging)
-* [Proposal for user-defined types in V4 (xtypes)](https://github.com/weewx/weewx/wiki/WeeWX-V4-user-defined-types)
-* [Tags for series (V4.5 or later)](https://github.com/weewx/weewx/wiki/Tags-for-series)
-* [Accumulators](https://github.com/weewx/weewx/wiki/Accumulators)
-* [Registry](https://github.com/weewx/weewx/wiki/registry)
-* [Storing text in the database](https://github.com/weewx/weewx/wiki/Storing-text-in-the-database)
+* [Development and testing infrastructure](devtest-infrastructure)
+* [Dependency matrix](weewx4-compatibility-matrix)
+* [Weewx Driver Development Tips](Weewx-Driver-Development-Tips)
+* [Supporting Python 3](Python-3-strategy)
+* [Proposal for logging events in V4](WeeWX-v4-and-logging)
+* [Proposal for user-defined types in V4 (xtypes)](xtypes)
+* [Tags for series (V4.5 or later)](Tags-for-series)
+* [Accumulators](Accumulators)
+* [Registry](registry)
+* [Storing text in the database](Storing-text-in-the-database)
 * [Installer options](installer-options)

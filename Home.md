@@ -245,6 +245,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 ### Development notes
 * [v5 design notes](Version-5)
+* [v5 platform packages](Version-5-packages)
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](devtest-infrastructure)
 * [Dependency matrix](weewx4-compatibility-matrix)

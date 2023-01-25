@@ -1,11 +1,11 @@
-### Monitor Computer Health
+# Monitor Computer Health
 
-The ComputerMonitor (cmon) is a weewx service that collects CPU load, memory used/available, disk space, and network traffic to a database.  You can then add plots to view the data.
+The ComputerMonitor (`cmon`) is a weewx service that collects CPU load, memory used/available, disk space, and network traffic to a database.  You can then add plots to view the data.
 
-<!--- ### Screenshots
- This has been commented out until the screenshots return
+### Screenshots
+<!--- The links for these screenshots has gone bad. -->
 ![daycpu](http://lancet.mit.edu/mwall/projects/weather/cmon-daycpu.png )
-![dayload](http://lancet.mit.edu/mwall/projects/weather/cmon-dayload.png ) -->
+![dayload](http://lancet.mit.edu/mwall/projects/weather/cmon-dayload.png )
 
 ### Download
 
@@ -74,5 +74,5 @@ The schema for cmon 0.7 is not backward compatible.  You must either delete any 
 
 The default schema changed from cmon r789 to cmon 0.1.  cmon 0.1 adds the ability to specify the schema in weewx.conf or in bin/user/schemas.py.  cmon r789 defaulted to using a database called computer.sdb.  cmon 0.1 and later uses a database called cmon.sdb.
 
-### Source
+### Repository
 https://github.com/matthewwall/weewx-cmon

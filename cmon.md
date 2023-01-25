@@ -2,28 +2,29 @@
 
 The ComputerMonitor (cmon) is a weewx service that collects CPU load, memory used/available, disk space, and network traffic to a database.  You can then add plots to view the data.
 
-### Screenshots
+<!--- ### Screenshots
+ This has been commented out until the screenshots return
 ![daycpu](http://lancet.mit.edu/mwall/projects/weather/cmon-daycpu.png )
-![dayload](http://lancet.mit.edu/mwall/projects/weather/cmon-dayload.png )
+![dayload](http://lancet.mit.edu/mwall/projects/weather/cmon-dayload.png ) -->
 
 ### Download
 
-wget -O weewx-cmon.zip https://github.com/matthewwall/weewx-cmon/archive/master.zip
+    wget -O weewx-cmon.zip https://github.com/matthewwall/weewx-cmon/archive/master.zip
 
 ### How to Install
 
 1.  Run the extension installer
 
-```
-wee_extension --install weewx-cmon.zip
-```
+    ```shell
+    wee_extension --install weewx-cmon.zip
+    ```
 
 2.  Restart weewx
 
-```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
-```
+    ```shell
+    sudo /etc/init.d/weewx stop
+    sudo /etc/init.d/weewx start
+    ```
 
 ### Verify
 

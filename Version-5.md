@@ -7,7 +7,8 @@ This document discusses the goals and design decisions for WeeWX Version 5.
 Complete WeeWX install, including dependencies, using `pip`.
 
 No root privileges required to install and manage WeeWX. However, the operating
-system may require privileges in order to access hardware.
+system may require privileges in order to install daemon files and to 
+access hardware.
 
 Future-proof the install. Right now, we depend heavily on custom commands in
 `setup.py`. However, the imperative approach of `setup.py` is being phased out
@@ -18,11 +19,12 @@ in favor of a more declarative approach, using `pyproject.toml` (see [PEP
 
 Python 3.7 or greater. Python 3.7 was released over four years ago (on 27 June
 2018), so it should be ubiquitous by now. Python 3.7 is necessary to support
-[importing resources](https://docs.python.org/3/library/importlib.resources.html#module-importlib.resources).
+[importing
+resources](https://docs.python.org/3/library/importlib.resources.html#module-importlib.resources).
 Note that a [backport](https://importlib-resources.readthedocs.io) of
 `importlib.resources` is available for earlier versions of Python, so we may be
-able to relax this restriction and allow Python 3.6. WeeWX will use f-strings,
-so Python 3.5 cannot be supported.
+able to relax this restriction and allow Python 3.6. Version 5 will use
+f-strings, so Python 3.5 cannot be supported.
 
 Support for Python 2.7 will be dropped. All references to `six` and other
 compatibility shims will be removed.
@@ -133,27 +135,18 @@ module or package.
 
 # Namespaces
 
-Generally, we expect WeeWX to be installed in a virtual envirornment, where the
-names of its modules and packages would not collide with another application.
-Nevertheless, it is possible that the user would install to the system's
-`sys.exec`, and we should be prepared for this.
 
 Most packages used by WeeWX already start with the prefix `wee_`, which is a
-reasonable claim to a namespace. However, there are two problem areas:
+reasonable claim to a namespace. However, there are two problem areas: `user`
+and `schemas`. Renaming them would break a _lot_ of code, particularly the
+renaming of `user`.
 
-| Old       | New           |
-|-----------|---------------|
-| `user`    | `wee_user`    |
-| `schemas` | `wee_schemas` |
-
-Note that these will break a _lot_ of code, particularly the renaming of `user`.
-Fortunately, all references to the `user` or `schemas` packages are dynamic,
-that is, they are in the form of string options in `weewx.conf` or `skin.conf`.
-The actual instantiation is done by the WeeWX function `weeutil.get_object()`.
-This makes it straightforward to maintain backwards compatibility by having
-`get_object()` remap references from `user` to `wee_user` at runtime. In a
-similar manner, references to `schemas` would get remapped to `wee_schemas`. All
-of this would be transparent to the user.
+If this becomes a problem, we can rename them and take advantage of the fact
+that all references to them are dynamic. That is, they are in the form of string
+options in `weewx.conf` or `skin.conf`. The actual instantiation is done by the
+WeeWX function `weeutil.get_object()`, which could remap references from `user`
+to `wee_user` at runtime. In a similar manner, references to `schemas` would get
+remapped to `wee_schemas`. All of this would be transparent to the user.
 
 # Extensions
 
@@ -295,16 +288,6 @@ weectl station upgrade
 weectl station upgrade-skins
 ```
 
-## Subcommand `weectl daemon`
-
-This subcommand manages daemon files.
-
-| Action                    | Flags            | Functionality                               |
-|---------------------------|------------------|---------------------------------------------|
-| `weectl daemon install`   | `--type=sysv`    | Install `/etc/init.d/weewx`                 |
-| `weectl daemon install`   | `--type=systemd` | Install `/etc/systemd/system/weewx.service` |
-| `weectl daemon uninstall` | `--type=sysv`    | Remove `/etc/init.d/weewx`                  |
-| `weectl daemon uninstall` | `--type=systemd` | Remove `/etc/systemd/system/weewx.service`  |
 
  # Definitions
 

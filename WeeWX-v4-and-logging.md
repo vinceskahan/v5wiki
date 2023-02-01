@@ -115,8 +115,8 @@ Simply add this to your `weewx.conf` file:
         # Log to a set of rotating files
         [[[rotate]]]                                       # NOTE 2
             level = DEBUG
-            formatter = standard
-            class = logging.handlers.RotatingFileHandler   # NOTE 3
+            formatter = verbose                            # NOTE 3
+            class = logging.handlers.RotatingFileHandler   # NOTE 4
             # Writing to this file will require root privileges:
             filename = /var/log/weewx.log
             maxBytes = 10000000
@@ -135,7 +135,10 @@ it is a list, you can actually specify multiple handlers. For example, to log to
  
 2. This is where we define the new handler. It will be named `rotate`.
 
-3. Handler `rotate` will use class
+3. The `verbose` formatter is useful when doing file rotations because it
+includes a timestamp.
+
+4. Handler `rotate` will use class
 [`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler)
 for the actual implementation. It will log to the file `/var/log/weewx.log`. If
 the file gets bigger than 10MB, a new file will be created.

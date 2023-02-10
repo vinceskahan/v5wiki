@@ -1,24 +1,22 @@
-Bootstrap template with simple gauges (for Weewx v3)
+Bootstrap template with simple gauges (for Weewx v4)
 ==================
 
-This skin uses the Bootstrap front end and some home made generators to create simple gauge representations of the current weather, and a colourful monthly history summary.
+This skin uses the Bootstrap front end and apache eCharts create sophisticated gauge and charts representations of the current weather, and a colourful monthly history summary. It can be configured to work with MQTT and display live weather data with moving gauges and interactive charts.
 
-To see a live example of this skin, visit this weather site for Royston, UK:
+To see a live example of this skin, visit this weather site for "Rif bei Hallein, AT":
 
-http://dajda.net
+https://www.kainzbauer.net/weather/Rif/
 
 Before we begin...
 --------
-1. This has been tested on weewx version 3.0.1 running on Ubuntu linux 14.04 (PC) and
-on Raspbian Wheezy (Raspberry Pi).</li>
-2. Works with sqlite, mysql, and any other weewx supported database.</li>
+1. This has been tested on weewx version 4.10.1 running on Raspberry Pi OS.
+2. Works with sqlite, mysql, and any other weewx supported database.
 
 Download
 --------
-* https://github.com/brewster76/fuzzy-archer/archive/v2.2-beta.tar.gz, or 
-https://github.com/brewster76/fuzzy-archer/archive/v2.2-beta.zip
+* https://github.com/brewster76/fuzzy-archer/archive/refs/heads/master.zip for the latest unverified version.
 
-Later developments, including possibly unverified versions of the code can be found here: 
+Releases can be found here: 
 https://github.com/brewster76/fuzzy-archer/releases
 
 Install
@@ -26,7 +24,7 @@ Install
 Use the Weewx extension installer:
 
 ~~~~~~
-wee_extension --install [wherever you've put the .tar.gz archive]
+wee_extension --install [wherever you've put the .tar.gz or .zip archive]
 ~~~~~~
 
 Web content is stored in public_html/Bootstrap.
@@ -41,7 +39,7 @@ Screenshots
 -----
 
 1. *Front page*
-![Front page](https://sourceforge.net/p/weewx/wiki/Bootstrap/attachment/bootstrap01.png)
+![Front page](https://kainzbauer.net/example_rif.png)
 
 2. *History page*
-![History page](https://sourceforge.net/p/weewx/wiki/Bootstrap/attachment/bootstrap02.png)
+![History page](https://kainzbauer.net/example_history_rif.png)

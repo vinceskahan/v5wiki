@@ -4,6 +4,8 @@ This is the place to go for information about the many extensions available for 
 
 Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com/articles/github-flavored-markdown/) syntax, not HTML.  To add a new page, reference it within brackets, e.g.: [SamplePage].
 
+:heavy_check_mark: = Tested with weewx4 and python3
+
 ### General
 * [Posting to weewx-user](Help!-Posting-to-weewx-user)
 * [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions)
@@ -53,7 +55,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Switching to the new, extended schema `wview_extended`](Switching-to-the-new-wview_extended-schema)
 * [Transfer from MySQL to sqlite](Transfer%20from%20MySQL%20to%20sqlite/)
 * [Transfer from sqlite to MySQL](Transfer%20from%20sqlite%20to%20MySQL)
-* [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [SQLBackup, an optional SLE to perform database backups](https://github.com/glennmckechnie/weewx-sqlbackup/wiki/SQLBackup-README) :heavy_check_mark:
 * [Using the RSYNC skin as a backup solution](Using-the-RSYNC-skin-as-a-backup-solution)
 * [Data Consolidation - changing sampling interval](Data-Consolidation---changing-sampling-interval)
 * [Importing data from Weatherlink](Importing-data-from-Weatherlink)
@@ -88,7 +90,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
 
-<img src="http://weewx.com/ok-for-weewx4.jpg" /> Tested with weewx4 and python3
 
 #### Drivers
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
@@ -97,52 +98,52 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [aws - Collect data from an Arduino connected to a Davis anemometer](https://github.com/wrybread/weewx-ArduinoWeatherStation)
 * [byows_rpi - Collect data from the Build Your Own Weather Station - Raspberry Pi](https://github.com/jardiamj/BYOWS_RPi)
 * [cm1 - Collect data from Dyacon CM1 weather station interface](https://github.com/matthewwall/weewx-cm1)
-* [columbia_ms - Collect data from Columbia Weather MicroServer supported sensors](https://github.com/bburton/weewx-columbia-ms) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [columbia_ms - Collect data from Columbia Weather MicroServer supported sensors](https://github.com/bburton/weewx-columbia-ms) :heavy_check_mark:
 * [envoy - Collect data from Enphase Envoy solar controller](https://github.com/matthewwall/weewx-envoy)
-* [gw1000 - Collect data from Ecowitt GW1000/GW1100](https://github.com/gjr80/weewx-gw1000) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [gw1000 - Collect data from Ecowitt GW1000/GW1100](https://github.com/gjr80/weewx-gw1000) :heavy_check_mark:
 * [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
-* [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000) :heavy_check_mark:
 * [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
-* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [ip100 - Collect data from RainWise IP100](https://github.com/chaunceygardiner/weewx-ip100) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor) :heavy_check_mark:
+* [ip100 - Collect data from RainWise IP100](https://github.com/chaunceygardiner/weewx-ip100) :heavy_check_mark:
 * [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
-* [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) :heavy_check_mark:
 * [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
-* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) :heavy_check_mark:
+* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick) :heavy_check_mark:
+* [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) :heavy_check_mark:
 * [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
 * [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
 * [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
-* [owfs - Collect data from one-wire sensors](owfs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)  <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [owfs - Collect data from one-wire sensors](owfs) :heavy_check_mark:
+* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)  :heavy_check_mark:
 * [rmyro - Collect data from RM Young ResponseOne (92000 only)](https://github.com/doubleohwhatever/weewx-rmyro)
-* [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis) :heavy_check_mark:
+* [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr) :heavy_check_mark:
 * [sds011 - Collect data from SDS011 particulate sensor](https://github.com/matthewwall/weewx-sds011)
 * [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
 * [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
 * [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
 * [tempestWS - Collect data from the Weatherflow Tempest Websocket API](https://github.com/livysdad27/tempestWS)
-* [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc) :heavy_check_mark:
 * [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
-* [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi) :heavy_check_mark:
+* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon) :heavy_check_mark:
 * [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
 * [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
 * [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
 * [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)
-* [WeatherLink Live - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) :heavy_check_mark:
 * [WeatherLink Live JSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
-* [WeatherLink Live UDP - Collect data from Davis WeatherLink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [WeatherLink Live - Collect data from Davis WeatherLink Live including archive from Weatherlink.com when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeatherLink Live UDP - Collect data from Davis WeatherLink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) :heavy_check_mark:
+* [WeatherLink Live - Collect data from Davis WeatherLink Live including archive from Weatherlink.com when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) :heavy_check_mark:
 * [WeatherLink Live WLL - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
-* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) :heavy_check_mark: 
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
 * [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
-* [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). :heavy_check_mark:
+* [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) :heavy_check_mark:
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
 
 #### Services
@@ -152,95 +153,95 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
 * [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
 * [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
-* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt) :heavy_check_mark: 
 * [csv - Emit loop or archive data to a file in CSV format](https://github.com/matthewwall/weewx-csv)
 * [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
 * [davishealthapi - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)](https://github.com/uajqq/weewx-davishealthapi)
 * [DWD - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations](https://github.com/roe-dl/weewx-DWD) (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan)
-* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) :heavy_check_mark:
 * [forecasting - Download, generate, and display forecasts and tides](forecasting)
 * [knx - Send EIBnet/IP packets with weather information](knx)
-* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik) :heavy_check_mark:
+* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) :heavy_check_mark:
+* [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) :heavy_check_mark:
+* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) :heavy_check_mark: 
 * [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
-* [owfs - Augment station data with data from one-wire sensors](owfss) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [owfs - Augment station data with data from one-wire sensors](owfss) :heavy_check_mark:
+* [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) :heavy_check_mark:
+* [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) :heavy_check_mark:
+* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) :heavy_check_mark: 
 * [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) 
-  (for sensors that speak SNMP and for monitoring equipment like UPS) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) <img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+  (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:
+* [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) :heavy_check_mark: 
 * [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
-* [weewx-nws - NWS Weather Forecast and Alerts WeeWX Extention](https://github.com/chaunceygardiner/weewx-nws) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [WXgraphic - Weather Graphic: A php driven generator to create a weather graphic image via your web server](https://github.com/glennmckechnie/weewx-WXgraphic) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewx-nws - NWS Weather Forecast and Alerts WeeWX Extention](https://github.com/chaunceygardiner/weewx-nws) :heavy_check_mark:
+* [WXgraphic - Weather Graphic: A php driven generator to create a weather graphic image via your web server](https://github.com/glennmckechnie/weewx-WXgraphic) :heavy_check_mark:
+* [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) :heavy_check_mark:
 * [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
 
 
 #### Skins
-* [alltimeSeasons](https://github.com/glennmckechnie/alltimeSeasons) An addition to the Seasons skin that outputs some NOAA data as html (From Bootstrap via gedger)  <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [alltimeSeasons](https://github.com/glennmckechnie/alltimeSeasons) An addition to the Seasons skin that outputs some NOAA data as html (From Bootstrap via gedger)  :heavy_check_mark:
 * [amphibian](amphibian)
-* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [bootstrap](Bootstrap) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed) :heavy_check_mark:
+* [bootstrap](Bootstrap) (live weather feed) :heavy_check_mark:
 * [byteweather](https://byteinsight.co.uk/freebies/weewx-byte-weather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](weewx-french-standard-skin)
-* [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [NeoWX](https://neoground.com/projects/neowx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [NeoWX Material](https://neoground.com/projects/neowx-material) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) :heavy_check_mark:
+* [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) :heavy_check_mark:
+* [NeoWX](https://neoground.com/projects/neowx) :heavy_check_mark:
+* [NeoWX Material](https://neoground.com/projects/neowx-material) :heavy_check_mark:
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)
-* [SteelSeries Weather Gauges](steelseries) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [SteelSeries Weather Gauges](steelseries) :heavy_check_mark:
 * [Thème graphique standard de weewx en français](Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [Washboard](https://gitlab.com/jquagga/Washboard)
-* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) :heavy_check_mark:
 * [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
-* [WeeWX-WD](weewx-wd) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewx-wdc](https://github.com/Daveiano/weewx-wdc) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template)<img src="http://weewx.com/ok-for-weewx4.jpg" /> 
+* [WeeWX-WD](weewx-wd) :heavy_check_mark:
+* [weewx-wdc](https://github.com/Daveiano/weewx-wdc) :heavy_check_mark:
+* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template):heavy_check_mark: 
 
 #### XType extensions
 [XType extensions](xtypes) add new observation and aggregation types to WeeWX
-* [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, dayET and ET24 as opposite to dayRain and rain24, absolute humidity, (saturation) vapor pressure, mixing ratio, (potential) equivalent temperature <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* [weewx-phenology](http://lacusveris.com/Phenology) - Growing Degree-Days development models for various insect pests, showing when to apply control strategies to minimize crop damage<img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. :heavy_check_mark:
+* [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, dayET and ET24 as opposite to dayRain and rain24, absolute humidity, (saturation) vapor pressure, mixing ratio, (potential) equivalent temperature :heavy_check_mark:
+* [weewx-phenology](http://lacusveris.com/Phenology) - Growing Degree-Days development models for various insect pests, showing when to apply control strategies to minimize crop damage:heavy_check_mark:
 
 #### Generators
-* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) :heavy_check_mark:
 
 #### Uploaders
-* <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) :heavy_check_mark:
 * <img src="http://graphite.readthedocs.org/favicon.ico" width='16'/> [graphite](https://github.com/ampledata/weewx_graphite)
 * <img src="https://www.idokep.hu/images/icon/idokep_tab.png" width='16'/> [idokep](https://github.com/lorantkurthy/weewx-idokep/)
-* <img src="http://weewx.com/consumers/influx-logo.png" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://mastodon.help/favicon.ico" width='16'/> [mastodon](https://github.com/glennmckechnie/weewx-mastodon) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://weewx.com/consumers/influx-logo.png" width='16'/> [influxdb](https://github.com/matthewwall/weewx-influx) :heavy_check_mark:
+* <img src="http://mastodon.help/favicon.ico" width='16'/> [mastodon](https://github.com/glennmckechnie/weewx-mastodon) :heavy_check_mark:
+* <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services) :heavy_check_mark:
+* <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) :heavy_check_mark:
+* <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) :heavy_check_mark:
+* <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) :heavy_check_mark:
+* <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) :heavy_check_mark:
 * <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)
 * <img src="https://prometheus.io/assets/favicons/favicon.ico" width='16'/> [prometheus](https://github.com/sulrich/weewx-prompush)
 * <img src="https://avatars3.githubusercontent.com/u/739550?v=3&s=200" width='16'/> [pusher](https://github.com/raymondelooff/weewx-pusher)
 * <img src="https://rainmachine.com/favicon.ico" width='16'/> [RainMachine](RainMachine)
-* <img src="http://www.regionalwetter-sa.de/favicon.ico" width=16 /> [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://www.regionalwetter-sa.de/favicon.ico" width=16 /> [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) :heavy_check_mark:
 * <img src="https://www.infoclimat.fr/images/footer_IClogo.png" width='16'/> [Réseau Static de www.infoclimat.fr](https://github.com/AssociationInfoclimat/StatIC-WeeWX)
 * <img src="https://rp5.ru/favicon.ico" width='16'/> [RP5](https://github.com/sapegin-o1eg/weewx-rp5)
 * <img src="http://weewx.com/consumers/seg.ico" width='16'/> [smart energy groups](seg)
-* <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://www.zschorlau-wetter.de/pics/favicon.ico" width=16 /> [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru) <img src="http://weewx.com/ok-for-weewx4.jpg" />
-* <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) <img src="http://weewx.com/ok-for-weewx4.jpg" />
+* <img src="http://thingspeak.com/favicon.ico" width='16'/> [thingspeak](thingspeak) :heavy_check_mark:
+* <img src="http://twitter.com/favicon.ico" width='16'/> [twitter](twitter) :heavy_check_mark:
+* <img src="http://weatherbug.com/favicon.ico" width='16'/> [weatherbug](weatherbug) :heavy_check_mark:
+* <img src="http://weewx.com/consumers/weathercloud.ico" width='16'/> [weathercloud](https://github.com/matthewwall/weewx-wcloud) :heavy_check_mark:
+* <img src="http://wetter.com/favicon.ico" width='16'/> [wetter](wetter) :heavy_check_mark:
+* <img src="http://www.zschorlau-wetter.de/pics/favicon.ico" width=16 /> [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) :heavy_check_mark:
+* <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder) :heavy_check_mark:
+* <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru) :heavy_check_mark:
+* <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) :heavy_check_mark:
 * <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes

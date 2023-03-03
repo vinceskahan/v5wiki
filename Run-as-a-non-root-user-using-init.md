@@ -51,10 +51,10 @@ This assumes that WeeWX has been installed to `/home/weewx` using `setup.py` and
         sudo /etc/init.d/weewx stop
 
 2.  In the startup script file, `/etc/init.d/weewx`, specify the user, and a location for
-the process ID (PID) file where that user has write privileges
+the process ID (PID) file where that user has write privileges, e.g.:
 
         WEEWX_USER=wxuser:wxuser
-        PIDFILE=$WEEWX_ROOT/run/$NAME.pid
+        PIDFILE=/home/weewx/run/$NAME.pid
 
 3.  Create the directory where the PID file will reside
 

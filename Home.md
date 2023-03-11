@@ -197,7 +197,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Responsive](responsive)
 * [simple](simple)
 * [SteelSeries Weather Gauges](steelseries) :heavy_check_mark:
-* [SVG weather symbols and icons](https://github.com/roe-dl/weewx-DWD/tree/master/images) (not a complete skin but only the symbols and icons in Scalable Vector Graphics format)
+* [SVG weather symbols and icons](https://github.com/roe-dl/weathericons) (not a complete skin but only the symbols and icons in Scalable Vector Graphics format)
 * [Thème graphique standard de weewx en français](Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
 * [Washboard](https://gitlab.com/jquagga/Washboard)
 * [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) :heavy_check_mark:

@@ -146,6 +146,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). :heavy_check_mark:
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) :heavy_check_mark:
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
+* [BCRobotics - Collect data from a BC Robotics and Pi based PWS](https://github.com/David-Enst/WeeWX-BCRobotics). :heavy_check_mark:
 
 #### Services
 * [airQ - Retrieve air quality data from Air-Q device of Corant GmbH](https://github.com/roe-dl/weewx-airQ) (PM<sub>1.0</sub>, PM<sub>2.5</sub>, PM<sub>10.0</sub>, TVOC, CO, CO<sub>2</sub>, O<sub>2</sub>, O<sub>3</sub>, NO<sub>2</sub>, H<sub>2</sub>S, SO<sub>2</sub>, noise, health index, performance index)

@@ -81,6 +81,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Get data from ecowitt GW1000](gw1000-recipe)
 * [Collect data from wifi sensors](https://hackaday.io/project/101680-solar-powered-wifi-temperature-sensor-for-weewx)
 * [Get data from Acurite Atlas on a RPi](https://github.com/ChrisM510/AtlasWeeWX/wiki/Acurite-Atlas-on-WeeWX-RTL-SDR-RTL_433-RPi-(Page-1))
+* [Building a Pi based PWS](https://github.com/David-Enst/WeeWX-BCRobotics)
 
 ### Software
 * [How to calculate values in templates](calculate-in-templates)

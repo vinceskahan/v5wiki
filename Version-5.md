@@ -65,12 +65,13 @@ s/he still could not edit them.
 These are the non-code resources that are used in WeeWX and where they will
 be located as package data:
 
-| Non-code resource  | Package data location      |
-|--------------------|----------------------------|
-| Configuration file | `wee_resources/weewx.conf` |
-| Skins              | `wee_resources/skins`      |
-| Documentation      | `wee_resources/docs`       |
-| Examples           | `wee_resources/examples`   |
+| Non-code resource    | Package data location      |
+|----------------------|----------------------------|
+| Configuration file   | `wee_resources/weewx.conf` |
+| Documentation        | `wee_resources/docs`       |
+| Examples             | `wee_resources/examples`   |
+| Skins                | `wee_resources/skins`      |
+| Daemon utility files | `wee_resources/util`       |
 
 ## Destination for data resources
 
@@ -135,18 +136,14 @@ module or package.
 
 # Namespaces
 
-
 Most packages used by WeeWX already start with the prefix `wee_`, which is a
 reasonable claim to a namespace. However, there are two problem areas: `user`
 and `schemas`. Renaming them would break a _lot_ of code, particularly the
 renaming of `user`.
 
-If this becomes a problem, we can rename them and take advantage of the fact
-that all references to them are dynamic. That is, they are in the form of string
-options in `weewx.conf` or `skin.conf`. The actual instantiation is done by the
-WeeWX function `weeutil.get_object()`, which could remap references from `user`
-to `wee_user` at runtime. In a similar manner, references to `schemas` would get
-remapped to `wee_schemas`. All of this would be transparent to the user.
+However, the recommended install method is to use pip with the `--user` flag, which
+will cause WeeWX to be installed in the user's home directory, where `user` and `schema` are
+unlikely to compete with other, unrelated, packages.
 
 # Extensions
 
@@ -157,139 +154,39 @@ installation directories, and not indirectly through package resources.
 
 # Command `weectl`
 
-Presently, we have 7 different utilities. Version 5 will combine these into one
-command called, simply, `weectl`, with different subcommands. By having a
-single application, we make it easier to find the appropriate command: the user
-can simply run `weectl --help`.
+Presently, we have 7 different utilities. Version 5 will start the process of combining them into
+one command called, simply, `weectl`, with different subcommands. By having a single application,
+we make it easier to find the appropriate command: the user can simply run `weectl --help`.
 
-## Subcommand `weectl station`
+Version 5 will offer these subcommands:
 
-The utility subcommand `weectl station` manages the station configuration file
-and skins and can set up new user data areas.
-
-### Action `station create`
-
-Create a new copy of the configuration file, using the copy of `weewx.conf` in
-the _package data_ as a template. The user will be prompted for optional
-values. The default location of the new file will be `~/weewx-data/weewx.conf`.
-
-If the configuration file already exists, then an error will be raised.
-
-If they do not already exist, then the skins are also copied over from the
-_package data_ to the.
-
-The following are set, either implicitly or explicitly.
-
-|           Name | What                                                                                 | Default        |
-|---------------:|--------------------------------------------------------------------------------------|----------------|
-|   `WEEWX_ROOT` | The _resource_root_.                                                                 | `~/weewx-data` |
-|    `HTML_ROOT` | Where the generated HTML files and images will be put,<br/>relative to `$WEEWX_ROOT` | `public_html`  |
-|    `SKIN_ROOT` | The directory of the skins, relative to `$HTML_ROOT`.                                | `skins`        |
-|  `SQLITE_ROOT` | The directory of the SQLite database, relative to `$HTML_ROOT`.                      | `archive`      |
-| `station_type` | The active _driver name_.                                                            | `Simulator`    |
-
-#### Option `--config`
-
-Optional path to the configuration file. The value for `WEEWX_ROOT` will be set
-to its directory.
-
-The default is `~/weewx-data/weewx.conf`.
-
-#### Option `--driver`
-
-Set the configuration file up to use the given _driver_.
-
-Default is `weewx.drivers.simulator`.
-
-#### Option `--skin_root`
-
-Optional path to where the skins will be installed, relative to `$WEEWX_ROOT`.
-
-Default is `skins`.
-
-#### Option `---html_root`
-
-Optional path to where the generated HTML files and plots will be placed,
-relative to `$WEEWX_ROOT`.
-
-Default is `public_html`.
-
-#### Option `--no-prompt`
-
-Do not prompt for values. Obtain new values from the command line only.
-
-### Action `station reconfigure`
-
-This command provides an opportunity to reprovision an existing configuration
-file.
-
-#### Option `--driver`
-
-Reconfigure the configuration file to use the given _driver_.
-
-Default is to use the existing _driver_.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-The default is `~/weewx-data/weewx.conf`. If that doesn't exist, then 
-`/etc/weewx/weewx.conf` will be tried. If that doesn't exist, then
-`/home/weewx/weewx.conf` will be tried.
-
-#### Option `--no-prompt`
-
-Do not prompt for values. Obtain new values from the command line only.
-
-### Action `station upgrade`
-
-If necessary, upgrade an existing configuration file. The old version will be
-saved as a timestamped copy.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-The default is `~/weewx-data/weewx.conf`. If that doesn't exist, then 
-`/etc/weewx/weewx.conf` will be tried. If that doesn't exist, then
-`/home/weewx/weewx.conf` will be tried.
-
-
-### Action `station upgrade-skins`
-
-The skins will be copied over from the _package resource location_ to the
-_resource root_ (`$WEEWX_ROOT`). The old version will be saved under a
-timestamp.
-
-#### Option `--config`
-
-Optional path to the configuration file.
-
-The default is `~/weewx-data/weewx.conf`. If that doesn't exist, then 
-`/etc/weewx/weewx.conf` will be tried. If that doesn't exist, then
-`/home/weewx/weewx.conf` will be tried.
-
-### Examples
-
-```shell
-# Create a new weewx.conf in ~/weewx-data, using the vantage driver.
-weectl station create --driver=weewx.drivers.vantage
-
-# Same as above, but create in the alternative directory ~/alt-dir
-weectl station create --driver=weewx.drivers.vantage --config=~/alt-dir/house.conf
-
-# Reconfigure the configuration file in the default area to use a Fine Offset station
-weectl station reconfigure --driver=weewx.drivers.fousb
-
-# Upgrade its configuration file
+```
+weectl station create
+weectl station reconfigure
 weectl station upgrade
-
-# Upgrade its skins
-weectl station upgrade-skins
+weectl extension list
+weectl extension install
+weectl extension uninstall
 ```
 
+## Some examples
 
- # Definitions
+```shell
+# Create a new user data area in ~/weewx-data (the default)
+weectl station create
+# Upgrade config file, docs, examples, and daemon utility files in ~/weewx-data.
+# Skins will be untouched
+weectl station upgrade
+# Upgrade the config file only
+weectl statioin upgrade --what config
+# Upgrade the skins only
+weectl station upgrade --what skins
+
+# Install the Windy extension:
+weectl extension install https://github.com/matthewwall/weewx-windy/archive/master.zip
+```
+
+# Definitions
 
 Throughout this document, the following definitions are used
 

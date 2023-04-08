@@ -8,11 +8,12 @@ most conclusions would apply to any package or application.
 
 ## System install
 
-With this strategy, WeeWX is installed using `sudo pip` as a system-wide
-resource, usually in a location such as `/usr/lib/python3.x/dist-packages` or,
-possibly, `/usr/lib/python3/dist-packages/`.
+With this strategy, WeeWX is installed using `sudo pip` as a system-wide resource. The WeeWX
+libraries end up in a location such as `/usr/local/lib/python3.x/dist-packages/` or, possibly,
+`/usr/lib/python3/dist-packages/`, while the executables are in `/usr/local/bin`. All are
+accessible to any user.
 
-```sh
+```shell
 sudo python3 -m pip install weewx
 ```
 

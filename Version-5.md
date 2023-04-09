@@ -96,7 +96,7 @@ All of this means that installing WeeWX becomes a two-step process:
 
 ## Install using pip
 
-See the companion document [_pip install strategies_](pip-install-strategies.md)
+See the companion document [_pip install strategies_](pip-install-strategies)
 for all the various way pip and its allies can be used to install WeeWX.
 
 ## Copy non-code resources

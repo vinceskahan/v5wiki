@@ -171,6 +171,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [owfs - Augment station data with data from one-wire sensors](owfss) :heavy_check_mark:
 * [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) :heavy_check_mark:
 * [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) :heavy_check_mark:
+* [PrecipMeter - Receive and save data from Ott Parsivel<sup>2</sup> disdrometer](https://github.com/roe-dl/weewx-precipmeter)
 * [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) :heavy_check_mark: 
 * [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) 
   (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:

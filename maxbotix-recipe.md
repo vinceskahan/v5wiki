@@ -14,6 +14,12 @@ This guide uses the MB7363 HRXL-MaxSonar-WRLS, which has the following character
 * read rate: 6 Hz
 * communications: RS232
 
+Data collection happens on a computer to which the sensor is attached.  The computer can be a raspberry pi, an intel NUC, or any other device that (1) can run weewx, and (2) has a serial port and/or USB port.
+
+Note that this configuration does not have a data logger; when the computer is off, no data are collected.  So be sure to put the computer on a UPS that has enough battery to get through the longest anticipated power outage.  Even better, put the computer on a battery that is connected to a solar panel or other renewable energy source.
+
+The recipes in this guide assume a Debian-like operating system.  The syntax will be slightly different for other operating systems, but the principles and steps are the same.
+
 ## What does it look like?
 
 <img src="maxbotix-recipe/MB7363.png" width="200">
@@ -45,21 +51,22 @@ The sensor requires 5V power, so get that from one of the USB ports on the compu
 
 <img src="maxbotix-recipe/sensor-power.png" width="200">
 
-### Configure the raspberry pi
+### Configure the computer
 
-There are many guides available for bootstrapping a raspberry pi.  There are also many guides available for installing and configuring a real-time clock in the raspberry pi.  Do it!
-
-The rest of this guide requires only command-line access to the pi.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor plugged in to the pi.
+The rest of this guide requires only command-line access to the computer.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor on the computer.
 
 ```
-# install operating system on sdcard, use it to boot the rpi
+# install operating system
 
-# install a real-time clock and enable it
+# if the computer is a raspberry pi, install a real-time clock and enable it
 
-# configure the rpi for remote access and headless operation
+# configure the computer for remote access and headless operation - enable sshd
 
 # get rid of fake clock
 sudo apt-get remove --purge fake-hwclock
+
+# configure the network time daemon
+sudo apt install ntpd
 
 # ensure the correct timezone
 sudo dpkg-reconfigure tzdata
@@ -67,7 +74,7 @@ sudo dpkg-reconfigure tzdata
 
 ### Install weeWX
 
-When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `SDR` when you run the `wee_config --reconfigure` command.
+When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Maxbotix` when you run the `wee_config --reconfigure` command.
 ```
 # install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -
@@ -78,8 +85,10 @@ sudo apt-get install weewx
 # shut down weeWX
 sudo /etc/init.d/weewx stop
 
-# install weewx-maxbotix extension and enable the driver
+# install weewx-maxbotix extension
 sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
+
+# configure weewx to use the maxbotix sensor
 sudo wee_config --reconfigure
 ```
 

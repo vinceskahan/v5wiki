@@ -116,3 +116,13 @@ sudo wee_config --reconfigure
 ### Configure
 
 The maxbotix driver requires a sensor type and communication port.
+
+## Troubleshooting
+
+Unstable sensor readings - eliminate reflections
+
+Objects too close
+
+Corrosion
+
+Temperature correction

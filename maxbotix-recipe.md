@@ -51,6 +51,24 @@ The sensor requires 5V power, so get that from one of the USB ports on the compu
 
 <img src="maxbotix-recipe/sensor-power.png" width="200">
 
+Verify the sensor operation by reading directly from the serial port.  The `screen` tool is perhaps the easiest way to do this.  
+
+The first thing you must do is determine to which port the sensor is connected.  If the sensor is connected directly to a serial port, then the port will be `/dev/ttyS0` or `/dev/ttyS1` on most x86_64 systems running linux.  On ARM systems running linux, the serial port will be `/dev/ttyAMA0` or `/dev/ttyS0`, or there might be a symlink `/dev/serial0` or `/dev/serial1`.
+
+Assuming that the sensor is connected to the first serial port, then invoke screen like this:
+```
+sudo screen /dev/ttyS0
+```
+The `sudo` is typically required, since non-privileged users are typically not allowed to write to the serial ports in a default system configuration.
+
+When `screen` is running, you should see output like this:
+```
+R1034
+```
+Place an object in front of the sensor, then move it closer and further from the sensor.  You should see the number change as you move the object.
+
+To quit `screen`, type `ctrl-a k`, then type `y` in response to the prompt.
+
 ### Configure the computer
 
 The rest of this guide requires only command-line access to the computer.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor on the computer.

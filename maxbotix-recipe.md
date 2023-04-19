@@ -24,7 +24,7 @@ This guide uses the MB7363 HRXL-MaxSonar-WRLS, which has the following character
 
 | cost | description | source |
 |---|---|---|
-| $138 | MB7363 |  | https://maxbotix.com/products/mb7363 |
+| $138 | MB7363 | https://maxbotix.com/products/mb7363 |
 | $78 | RPi 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
 
 Prices are US$ as of April 2023.

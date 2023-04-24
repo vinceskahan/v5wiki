@@ -156,8 +156,6 @@ First install the weewx-maxbotix extension, configure it to use the port that yo
 
 When you configure the weewx-maxbotix extension, you must specify two things: (1) which port to use, and (2) the sensor type.  The sensor type determines the minimum and maximum ranges, as well as the units of measurement.
 
-In order to retain data, you must either add a column to an existing weewx database, or create a new weewx database with only the range data for the sensor.  The instructions below are for the latter.
-
 ```
 # Shut down weeWX
 sudo /etc/init.d/weewx stop
@@ -167,15 +165,21 @@ sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
 
 # Configure weewx to use the maxbotix sensor
 sudo wee_config --reconfigure
+```
 
+Now verify that the driver can read the sensor.
+```
 # Verify that the weewx-maxbotix driver can read the sensor
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port /dev/ttyS0 --test-sensor
 # If that worked, then verify that the driver emits packets
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port /dev/ttyS0 --test-driver
+```
 
-# Configure a new weewx database to receive the data.  The changes go in the
-# weewx configuration file.  Specify a simple range schema in the DataBindings,
-# and specify a bespoke maxbotix database in the Databases stanza.
+
+In order to retain data, you must either add a column to an existing weewx database, or create a new weewx database with only the range data for the sensor.  The instructions below are for the latter.
+
+The following changes go in the weewx configuration file.  Specify a simple range schema in the DataBindings, and specify a bespoke maxbotix database in the Databases stanza.
+```
 [DataBindings]
     [[wx_binding]]
         database = archive_sqlite
@@ -187,12 +191,33 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port
     [[archive_sqlite]]
         database_name = maxbotix.sdb
         database_type = SQLite
+```
 
-# Start weeWX
+Run weewx directly to see what the driver is feeding into weewx.
+```
+sudo weewxd /etc/weewx/weewx.conf
+```
+
+You should see output something like this:
+```
+LOOP:   2023-04-24 10:59:03 EDT (1682348343) 'dateTime': '1682348343', 'range': '225.31496062992125', 'usUnits': '1'
+LOOP:   2023-04-24 10:59:04 EDT (1682348344) 'dateTime': '1682348344', 'range': '224.37007874015748', 'usUnits': '1'
+LOOP:   2023-04-24 10:59:05 EDT (1682348345) 'dateTime': '1682348345', 'range': '223.4251968503937', 'usUnits': '1'
+LOOP:   2023-04-24 10:59:06 EDT (1682348346) 'dateTime': '1682348346', 'range': '224.37007874015748', 'usUnits': '1'
+```
+
+Now that the data collection is working, run weewx as a daemon:
+```
 sudo /etc/init.d/weewx start
 ```
 
-### Verify the data in weewx
+### Verify the data in weewx reports
+
+The last thing to do is verify that you can see the data in reports.  You will have to add a `range` field to any textual displays, and configure the `ImageGenerator` to plot the `range` over time.  You can do this by extending the `Seasons` skin, or you can create a standalone skin just for plotting whatever it is that you are measuring.
+
+TODO: add instructions for extending seasons
+
+TODO: add a sample 'tide' skin
 
 If you the weeWX reporting structure, you should end up with plots something like this:
 

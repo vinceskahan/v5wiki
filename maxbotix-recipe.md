@@ -192,10 +192,31 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port
 
 ## Troubleshooting
 
-Unstable sensor readings - eliminate reflections
+### Unstable sensor readings - eliminate reflections
 
-Objects too close
+Do not embed the sensor in a small-diameter pipe.  Ensure that the sensor is spaced sufficiently far from any walls or other obstructions that might interfere with the ranging.  See the Maxbotix specification for each sensor to see how wide/narrow the nominal beam is.
 
-Corrosion
+### Objects too close
 
-Temperature correction
+Remember that every sensor has a minimum range.  For many of the sensors, that is around 30 cm.  In practice, this often means that you will have to mount the sensor above or outside the tank in which you are trying to measure, typically with a pipe to provide the extension.
+
+### Corrosion
+
+<table>
+<tr>
+<td>
+<a href="maxbotix-recipe/corrosion-chlorine.png">
+<img src="maxbotix-recipe/corrosion-chlorine.png" width="200"></a><br/>
+Corrision from chlorine
+</td>
+<td>
+<a href="maxbotix-recipe/corrosion-salt-and-spider.png">
+<img src="maxbotix-recipe/corrosion-salt-and-spider.png" width="200"></a><br/>
+Corrosion from exposure to saltwater spray (and a spider)
+</td>
+</tr>
+</table>
+
+### Temperature correction
+
+When measuring in cold temperatures, consider adding the external temperature sensor (also sold by Maxbotix).  The speed of sound in cold air is not the same as the speed of sound in warm air, and an external temperature sensor lets the maxbotix sensor adjust its measurements based on the air temperature.

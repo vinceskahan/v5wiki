@@ -26,7 +26,7 @@ The recipes in this guide assume a Debian-like operating system.  The syntax wil
 <tr>
 <td>
 <a href="maxbotix-recipe/MB7363.png"><img src="maxbotix-recipe/MB7363.png" width="150"></a><br/>
-MB7263
+MB7363
 </td>
 </tr>
 <tr>
@@ -50,7 +50,7 @@ Four 500 gallon water tanks, selectively connected by pipes and valves at their 
 </td>
 <td>
 <a href="maxbotix-recipe/hi-tank-sensor.png"><img src="maxbotix-recipe/hi-tank-sensor.png" width="150"></a><br/>
-Tank sensor.  Each sensor points down at the water surface, mounted in a PVC pipe on top of each tank.
+Tank sensor.  Each sensor points down at the water surface, mounted in a PVC pipe on top of each tank.  A single cat5e ethernet cable provides 4 twisted pairs for the signal and ground to each of four sensors.  A 5V bus from a step-down transformer provides power to each sensor (the black wires).
 </td>
 <td>
 <a href="maxbotix-recipe/hi-four-tank-wiring.png"><img src="maxbotix-recipe/hi-four-tank-wiring.png" width="150"></a><br/>

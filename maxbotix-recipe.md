@@ -161,9 +161,6 @@ wget -qO - http://weewx.com/keys.html | sudo apt-key add -
 wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/weewx.list
 sudo apt-get update
 sudo apt-get install weewx
-
-# Shut down weeWX
-sudo /etc/init.d/weewx stop
 ```
 
 ### Install and configure the weewx-maxbotix extension
@@ -175,6 +172,9 @@ When you configure the weewx-maxbotix extension, you must specify two things: (1
 In order to retain data, you must either add a column to an existing weewx database, or create a new weewx database with only the range data for the sensor.  The instructions below are for the latter.
 
 ```
+# Shut down weeWX
+sudo /etc/init.d/weewx stop
+
 # Install weewx-maxbotix extension
 sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
 
@@ -188,6 +188,9 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port
 
 # Configure a new weewx database to receive the data
 
+
+# Start weeWX
+sudo /etc/init.d/weewx start
 ```
 
 ## Troubleshooting

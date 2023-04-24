@@ -65,11 +65,15 @@ tank sensor wiring
 |---|---|---|---|
 | $138 | sensor | MB7363 | https://maxbotix.com/products/mb7363 |
 | $78 | computer | RPi 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
-| | wire | | https://www.amazon.com/CIMPLE-CO-Thermostat-Residential-Commercial/dp/B07SZ5D3SH |
-| | DB9 | | https://www.amazon.com/Breakout-Connector-Serial-Terminal-Female/dp/B073RGGDKH |
-| | USB | | https://www.amazon.com/Jienk-Terminal-Connector-Pluggable-Converter/dp/B0914Y1GXD |
+| $10 | wire | | https://www.amazon.com/CIMPLE-CO-Thermostat-Residential-Commercial/dp/B07SZ5D3SH |
+| $0.25 - $5 | DB9 connector | | https://www.amazon.com/Breakout-Connector-Serial-Terminal-Female/dp/B073RGGDKH |
+| $0.25 - $3 | USB connector | | https://www.amazon.com/Jienk-Terminal-Connector-Pluggable-Converter/dp/B0914Y1GXD |
 
 Prices are US$ as of April 2023.
+
+To prototype a system, you might want the DB9 and USB connectors with screw terminals.  Later you can replace these with soldered connectors, or connectors with watertight housings.
+
+The sensor terminals are solder-only.  Soldering onto these terminals is perhaps the most difficult part of the entire build.  Be sure to use flux/resin!
 
 ## Recipes
 

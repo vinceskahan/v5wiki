@@ -69,9 +69,14 @@ If you have the external temperature sensor, then connect that as well.
 <table>
 <tr>
 <td>
-<a href="maxbotix-recipe/serial-port-pinout.png">
-<img src="maxbotix-recipe/serial-port-pinout.png" width="200"></a><br/>
-ultrasonic only
+<a href="maxbotix-recipe/MB7363-wiring.png">
+<img src="maxbotix-recipe/MB7363-wiring.png" width="200"></a><br/>
+MB7363 wiring
+</td>
+<td>
+<a href="maxbotix-recipe/db9-wiring.png">
+<img src="maxbotix-recipe/db9-wiring.png" width="200"></a><br/>
+DB9 connector
 </td>
 <td>
 <a href="maxbotix-recipe/wiring-diagram-with-temperature.png">

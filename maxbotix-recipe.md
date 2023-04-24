@@ -39,7 +39,7 @@ tide monitoring
 tide monitoring
 </td>
 <td>
-<a href=""><img src="maxbotix-recipe/wls-tide-sensor.png" width="150"></a><br/>
+<a href="maxbotix-recipe/wls-tide-sensor.png"><img src="maxbotix-recipe/wls-tide-sensor.png" width="150"></a><br/>
 tide monitoring
 </td>
 <td>
@@ -62,13 +62,24 @@ Prices are US$ as of April 2023.
 
 ### Install the sensor
 
-Connect the sensor to a serial port on the computer.
+Connect the sensor to a serial port on the computer.  For the RS232 part, there are two approaches: (1) direct serial connection, or (2) serial via USB-serial adapter.
 
-<img src="maxbotix-recipe/serial-port-pinout.png" width="200">
+If you have the external temperature sensor, then connect that as well.
 
-If the computer does not have a serial port, then wire up a USB-to-serial adapter.
-
-<img src="maxbotix-recipe/usb-serial-pinout.png" width="200">
+<table>
+<tr>
+<td>
+<a href="maxbotix-recipe/serial-port-pinout.png">
+<img src="maxbotix-recipe/serial-port-pinout.png" width="200"></a><br/>
+ultrasonic only
+</td>
+<td>
+<a href="maxbotix-recipe/wiring-diagram-with-temperature.png">
+<img src="maxbotix-recipe/wiring-diagram-with-temperature.png" width="200"></a><br/>
+with temperature sensor
+</td>
+</tr>
+<table>
 
 The sensor requires 5V power, so get that from one of the USB ports on the computer.
 

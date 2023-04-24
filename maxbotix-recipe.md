@@ -22,11 +22,32 @@ The recipes in this guide assume a Debian-like operating system.  The syntax wil
 
 ## What does it look like?
 
-<img src="maxbotix-recipe/MB7363.png" width="150">
-<img src="maxbotix-recipe/vh-tide-sensor.png" width="150">
-<img src="maxbotix-recipe/hi-tide-sensor.png" width="150">
-<img src="maxbotix-recipe/wls-tide-sensor.png" width="150">
-<img src="maxbotix-recipe/tank-sensor.png" width="150">
+<table>
+<tr>
+<td>
+<img src="maxbotix-recipe/MB7363.png" width="150"><br/>
+MB7263
+</td>
+</tr>
+<tr>
+<td>
+<img src="maxbotix-recipe/vh-tide-sensor.png" width="150"><br/>
+tide monitoring
+</td>
+<td>
+<img src="maxbotix-recipe/hi-tide-sensor.png" width="150"><br/>
+tide monitoring
+</td>
+<td>
+<img src="maxbotix-recipe/wls-tide-sensor.png" width="150"><br/>
+tide monitoring
+</td>
+<td>
+<img src="maxbotix-recipe/tank-sensor.png" width="150"><br/>
+tank monitoring
+</td>
+</tr>
+</table>
 
 ## What do you need?
 

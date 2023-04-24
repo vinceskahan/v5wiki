@@ -92,6 +92,13 @@ If you have the external temperature sensor, then connect that as well.
 <table>
 <tr>
 <td>
+<a href="maxbotix-recipe/wiring-diagram-with-temperature.png">
+<img src="maxbotix-recipe/wiring-diagram-with-temperature.png" width="200"></a><br/>
+wiring diagram, with temperature sensor
+</td>
+</tr>
+<tr>
+<td>
 <a href="maxbotix-recipe/wiring-MB7363.png">
 <img src="maxbotix-recipe/wiring-MB7363.png" width="200"></a><br/>
 MB7363 wiring.  You will need three conductors: 5V power, ground, and signal.  Adding temperature correction will require one more conductor.
@@ -109,9 +116,14 @@ Power from USB.  One approach for power is to use the 5V pin from a USB port.  I
 </tr>
 <tr>
 <td>
-<a href="maxbotix-recipe/wiring-diagram-with-temperature.png">
-<img src="maxbotix-recipe/wiring-diagram-with-temperature.png" width="200"></a><br/>
-wiring diagram, with temperature sensor
+<a href="maxbotix-recipe/vh-tide-sensor-wiring.png">
+<img src="maxbotix-recipe/vh-tide-sensor-wiring.png" width="200"></a><br/>
+Ultrasonic sensor wiring with an external temperature sensor.
+</td>
+<td>
+<a href="maxbotix-recipe/vh-tide-sensor-wiring-at-computer.png">
+<img src="maxbotix-recipe/vh-tide-sensor-wiring-at-computer.png" width="200"></a><br/>
+This example draws power from a USB port on the computer, and does signaling using a serial port.
 </td>
 </tr>
 <table>

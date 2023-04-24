@@ -85,7 +85,7 @@ If you have to use a USB-serial adapter, be sure to get a real FTDI-compatible d
 
 Connect the sensor to a serial port on the computer.  For the RS232 part, there are two approaches: (1) direct serial connection, or (2) serial via USB-serial adapter.
 
-The sensor requires 5V power, so get that from one of the USB ports on the computer.
+The sensor requires 5V power, so get that from one of the USB ports on the computer, or use a transformer to step down from your 12V or 24V supply.
 
 If you have the external temperature sensor, then connect that as well.
 

@@ -128,30 +128,6 @@ Place an object in front of the sensor, then move it closer to and further from 
 
 To quit `screen`, type `ctrl-a k`, then type `y` in response to the prompt.
 
-### Configure the computer
-
-The rest of this guide requires only command-line access to the computer.  You can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor on the computer.
-
-```
-# Install the operating system.
-# This is left as an exercise for the reader.  Any Linux or BSD will work.
-
-# If the computer is a raspberry pi, install a real-time clock and enable it
-# This is HIGHLY recommended so that you avoid temporal chaos.
-
-# Configure the computer for remote access and headless operation.
-sudo apt install sshd
-
-# get rid of fake clock
-sudo apt-get remove --purge fake-hwclock
-
-# configure the network time daemon
-sudo apt install ntpd
-
-# ensure the correct timezone
-sudo dpkg-reconfigure tzdata
-```
-
 ### Install weeWX
 
 When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Maxbotix`.

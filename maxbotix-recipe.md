@@ -64,31 +64,36 @@ Prices are US$ as of April 2023.
 
 Connect the sensor to a serial port on the computer.  For the RS232 part, there are two approaches: (1) direct serial connection, or (2) serial via USB-serial adapter.
 
+The sensor requires 5V power, so get that from one of the USB ports on the computer.
+
 If you have the external temperature sensor, then connect that as well.
 
 <table>
 <tr>
 <td>
-<a href="maxbotix-recipe/MB7363-wiring.png">
-<img src="maxbotix-recipe/MB7363-wiring.png" width="200"></a><br/>
+<a href="maxbotix-recipe/wiring-MB7363.png">
+<img src="maxbotix-recipe/wiring-MB7363.png" width="200"></a><br/>
 MB7363 wiring
 </td>
 <td>
-<a href="maxbotix-recipe/db9-wiring.png">
-<img src="maxbotix-recipe/db9-wiring.png" width="200"></a><br/>
+<a href="maxbotix-recipe/wiring-db9.png">
+<img src="maxbotix-recipe/wiring-db9.png" width="200"></a><br/>
 DB9 connector
 </td>
 <td>
+<a href="maxbotix-recipe/wiring-power.png">
+<img src="maxbotix-recipe/wiring-power.png" width="200"></a><br/>
+DB9 connector
+</td>
+</tr>
+<tr>
+<td>
 <a href="maxbotix-recipe/wiring-diagram-with-temperature.png">
 <img src="maxbotix-recipe/wiring-diagram-with-temperature.png" width="200"></a><br/>
-with temperature sensor
+wiring diagram, with temperature sensor
 </td>
 </tr>
 <table>
-
-The sensor requires 5V power, so get that from one of the USB ports on the computer.
-
-<img src="maxbotix-recipe/sensor-power.png" width="200">
 
 Verify the sensor operation by reading directly from the serial port.  The `screen` tool is perhaps the easiest way to do this.  If it is not already on your system, install it with your system's package manager:
 ```

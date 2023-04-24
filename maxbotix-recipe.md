@@ -241,6 +241,18 @@ If you configure weewx to feed the data into influx (use the weewx-influx extens
 
 For tide monitoring, I find it useful to record both loop data and archive data.  This is especially useful when a station is first installed - you an use the high-frequency sampling to see if there are reflections or water-surface reflections that might be skewing any 5-minute averages.
 
+### Calibration
+
+After all that work comes the easy (?) part - calibrating to any offsets, and possibly transforming the data into units that are easier to understand.
+
+For a tide station, you will want to convert the measurement to a unit system for your region, and you will want to apply an offset so that the measurement is relative to some baseline, such as mean high or mean low tide.
+
+For a tank sensor, you will probably want to convert to litres or gallons.
+
+Although you can do conversions within weewx (see the `StdCalibrate` section of the weewx configuration), you might want to do it at the display level instead.  The guiding principle here is to keep the data measurements as 'clean' as possible, and apply any transformations as late as possible in any processing.
+
+Snow measurements are more complicated.  The ultrasonic sensor will measure snow depth, but there are many types of snow.  A given depth of wet snow is not the same as the same depth of dry snow.  So consider adding a rain bucket with heater so that you measure not only snow depth, but also water volume.  Also, you will probably want some way to clear the snow deck, or otherwise accurately measure snow deltas.  That way you can isolate one day's snowfall from possibly ocompacted snow from previous days.
+
 
 ## Troubleshooting
 

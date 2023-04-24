@@ -46,7 +46,7 @@ Tide monitoring.  Ultrasonic sensor is mounted under the bridge between shore an
 <tr>
 <td>
 <a href="maxbotix-recipe/hi-four-tanks.png"><img src="maxbotix-recipe/hi-four-tanks.png" width="150"></a><br/>
-Four 250 gallon water tanks, selectively connected by pipes and valves at their bases.  Water from a quarry is pumped up a 300 foot hill to these tanks.  Each tank has a sensor.
+Four 500 gallon water tanks, selectively connected by pipes and valves at their bases.  Water from a quarry is pumped up a 300 foot hill to these tanks.  Each tank has a sensor.
 </td>
 <td>
 <a href="maxbotix-recipe/hi-tank-sensor.png"><img src="maxbotix-recipe/hi-tank-sensor.png" width="150"></a><br/>

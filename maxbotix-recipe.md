@@ -61,10 +61,13 @@ tank sensor wiring
 
 ## What do you need?
 
-| cost | description | source |
-|---|---|---|
-| $138 | MB7363 | https://maxbotix.com/products/mb7363 |
-| $78 | RPi 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
+| cost | description | model | source |
+|---|---|---|---|
+| $138 | sensor | MB7363 | https://maxbotix.com/products/mb7363 |
+| $78 | computer | RPi 3B+ | https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ |
+| | wire | | https://www.amazon.com/CIMPLE-CO-Thermostat-Residential-Commercial/dp/B07SZ5D3SH |
+| | DB9 | | https://www.amazon.com/Breakout-Connector-Serial-Terminal-Female/dp/B073RGGDKH |
+| | USB | | https://www.amazon.com/Jienk-Terminal-Connector-Pluggable-Converter/dp/B0914Y1GXD |
 
 Prices are US$ as of April 2023.
 

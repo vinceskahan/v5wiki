@@ -25,25 +25,25 @@ The recipes in this guide assume a Debian-like operating system.  The syntax wil
 <table>
 <tr>
 <td>
-<img src="maxbotix-recipe/MB7363.png" width="150"><br/>
+<a href="maxbotix-recipe/MB7363.png"><img src="maxbotix-recipe/MB7363.png" width="150"></a><br/>
 MB7263
 </td>
 </tr>
 <tr>
 <td>
-<img src="maxbotix-recipe/vh-tide-sensor.png" width="150"><br/>
+<a href="maxbotix-recipe/vh-tide-sensor.png"><img src="maxbotix-recipe/vh-tide-sensor.png" width="150"></a><br/>
 tide monitoring
 </td>
 <td>
-<img src="maxbotix-recipe/hi-tide-sensor.png" width="150"><br/>
+<a href="maxbotix-recipe/hi-tide-sensor.png"><img src="maxbotix-recipe/hi-tide-sensor.png" width="150"></a><br/>
 tide monitoring
 </td>
 <td>
-<img src="maxbotix-recipe/wls-tide-sensor.png" width="150"><br/>
+<a href=""><img src="maxbotix-recipe/wls-tide-sensor.png" width="150"></a><br/>
 tide monitoring
 </td>
 <td>
-<img src="maxbotix-recipe/tank-sensor.png" width="150"><br/>
+<a href="maxbotix-recipe/tank-sensor.png"><img src="maxbotix-recipe/tank-sensor.png" width="150"></a><br/>
 tank monitoring
 </td>
 </tr>

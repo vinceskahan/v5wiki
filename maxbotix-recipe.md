@@ -202,17 +202,19 @@ Remember that every sensor has a minimum range.  For many of the sensors, that i
 
 ### Corrosion
 
+When deploying sensors in a corrosive environment, apply a thin silicone coating to the sensor membrane.
+
 <table>
 <tr>
 <td>
 <a href="maxbotix-recipe/corrosion-chlorine.png">
 <img src="maxbotix-recipe/corrosion-chlorine.png" width="200"></a><br/>
-Corrision from chlorine
+Corrision from chlorine.  This sensor was deployed 2 feet above the maximum water level in a tank of fresh water.  Chlorine was added to the water as it was pumped into the tank, at an amount specified by the state to ensure quality drinking water.  This is corrosion after 4 years of sensing, with the tanks empty during the winter months.
 </td>
 <td>
 <a href="maxbotix-recipe/corrosion-salt-and-spider.png">
 <img src="maxbotix-recipe/corrosion-salt-and-spider.png" width="200"></a><br/>
-Corrosion from exposure to saltwater spray (and a spider)
+Corrosion from exposure to saltwater spray.  This sensor was mounted 2 feet above the mean high tide level.  The salt encrustation developed after only 6 months, and pitted the sensor membrane to the point where it would no longer range.  The spider was also interfering with the ranging.
 </td>
 </tr>
 </table>

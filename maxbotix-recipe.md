@@ -186,8 +186,20 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port
 # If that worked, then verify that the driver emits packets
 sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port /dev/ttyS0 --test-driver
 
-# Configure a new weewx database to receive the data
+# Configure a new weewx database to receive the data.  The changes go in the
+# weewx configuration file.  Specify a simple range schema in the DataBindings,
+# and specify a bespoke maxbotix database in the Databases stanza.
+[DataBindings]
+    [[wx_binding]]
+        database = archive_sqlite
+        table_name = archive
+        manager = weewx.manager.DaySummaryManager
+        schema = user.maxbotix.schema
 
+[Databases]
+    [[archive_sqlite]]
+        database_name = maxbotix.sdb
+        database_type = SQLite
 
 # Start weeWX
 sudo /etc/init.d/weewx start

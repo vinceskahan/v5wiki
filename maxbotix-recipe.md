@@ -42,9 +42,19 @@ tide monitoring
 <a href="maxbotix-recipe/wls-tide-sensor.png"><img src="maxbotix-recipe/wls-tide-sensor.png" width="150"></a><br/>
 tide monitoring
 </td>
+</tr>
+<tr>
 <td>
-<a href="maxbotix-recipe/tank-sensor.png"><img src="maxbotix-recipe/tank-sensor.png" width="150"></a><br/>
-tank monitoring
+<a href="maxbotix-recipe/hi-four-tanks.png"><img src="maxbotix-recipe/hi-four-tanks.png" width="150"></a><br/>
+four water tanks
+</td>
+<td>
+<a href="maxbotix-recipe/hi-tank-sensor.png"><img src="maxbotix-recipe/hi-tank-sensor.png" width="150"></a><br/>
+tank sensor
+</td>
+<td>
+<a href="maxbotix-recipe/hi-four-tank-wiring.png"><img src="maxbotix-recipe/hi-four-tank-wiring.png" width="150"></a><br/>
+tank sensor wiring
 </td>
 </tr>
 </table>
@@ -83,7 +93,7 @@ DB9 connector
 <td>
 <a href="maxbotix-recipe/wiring-power.png">
 <img src="maxbotix-recipe/wiring-power.png" width="200"></a><br/>
-DB9 connector
+power from USB
 </td>
 </tr>
 <tr>

@@ -192,6 +192,19 @@ sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port
 sudo /etc/init.d/weewx start
 ```
 
+### Verify the data in weewx
+
+If you the weeWX reporting structure, you should end up with plots something like this:
+
+<a href="maxbotix-recipe/tide-plot-weewx.png"><img src="maxbotix-recipe/tide-plot-weewx.png" width="400"></a>
+
+If you configure weewx to feed the data into influx (use the weewx-influx extension), then you can see the data in grafana like this:
+
+<a href="maxbotix-recipe/tide-plot-grafana.png"><img src="maxbotix-recipe/tide-plot-grafana.png" width="400"></a>
+
+For tide monitoring, I find it useful to record both loop data and archive data.  This is especially useful when a station is first installed - you an use the high-frequency sampling to see if there are reflections or water-surface reflections that might be skewing any 5-minute averages.
+
+
 ## Troubleshooting
 
 ### Unstable sensor readings - eliminate reflections

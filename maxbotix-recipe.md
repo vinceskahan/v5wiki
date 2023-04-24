@@ -219,7 +219,7 @@ TODO: add instructions for extending seasons
 
 TODO: add a sample 'tide' skin
 
-If you the weeWX reporting structure, you should end up with plots something like this:
+If you use the weeWX reporting infrastructure, you should end up with plots something like this:
 
 <a href="maxbotix-recipe/tide-plot-weewx.png"><img src="maxbotix-recipe/tide-plot-weewx.png" width="400"></a>
 

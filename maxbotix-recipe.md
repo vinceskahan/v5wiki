@@ -105,6 +105,8 @@ wiring diagram, with temperature sensor
 </tr>
 <table>
 
+### Verify sensor operation
+
 Verify the sensor operation by reading directly from the serial port.  The `screen` tool is perhaps the easiest way to do this.  If it is not already on your system, install it with your system's package manager:
 ```
 sudo apt install screen
@@ -112,7 +114,7 @@ sudo apt install screen
 
 The first thing you must do is determine to which port the sensor is connected.  If the sensor is connected directly to a serial port, then the port will be `/dev/ttyS0` or `/dev/ttyS1` on most x86_64 systems running linux.  On ARM systems running linux, the serial port will be `/dev/ttyAMA0` or `/dev/ttyS0`, or there might be a symlink `/dev/serial0` or `/dev/serial1`.
 
-Assuming that the sensor is connected to the first serial port, then invoke screen like this:
+Assuming that the sensor is connected to the first serial port, then invoke screen with the port as the only arguement, like this:
 ```
 sudo screen /dev/ttyS0
 ```
@@ -122,20 +124,23 @@ When `screen` is running, you should see output like this:
 ```
 R1034
 ```
-Place an object in front of the sensor, then move it closer and further from the sensor.  You should see the number change as you move the object.
+Place an object in front of the sensor, then move it closer to and further from the sensor.  You should see the number change as you move the object.
 
 To quit `screen`, type `ctrl-a k`, then type `y` in response to the prompt.
 
 ### Configure the computer
 
-The rest of this guide requires only command-line access to the computer.  So you can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor on the computer.
+The rest of this guide requires only command-line access to the computer.  You can do the steps below remotely logged in via ssh, or in a terminal window with a keyboard and monitor on the computer.
 
 ```
-# install operating system
+# Install the operating system.
+# This is left as an exercise for the reader.  Any Linux or BSD will work.
 
-# if the computer is a raspberry pi, install a real-time clock and enable it
+# If the computer is a raspberry pi, install a real-time clock and enable it
+# This is HIGHLY recommended so that you avoid temporal chaos.
 
-# configure the computer for remote access and headless operation - enable sshd
+# Configure the computer for remote access and headless operation.
+sudo apt install sshd
 
 # get rid of fake clock
 sudo apt-get remove --purge fake-hwclock
@@ -149,27 +154,41 @@ sudo dpkg-reconfigure tzdata
 
 ### Install weeWX
 
-When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Maxbotix` when you run the `wee_config --reconfigure` command.
+When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Maxbotix`.
 ```
-# install weeWX
+# Install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -
 wget -qO - http://weewx.com/apt/weewx.list | sudo tee /etc/apt/sources.list.d/weewx.list
 sudo apt-get update
 sudo apt-get install weewx
 
-# shut down weeWX
+# Shut down weeWX
 sudo /etc/init.d/weewx stop
-
-# install weewx-maxbotix extension
-sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
-
-# configure weewx to use the maxbotix sensor
-sudo wee_config --reconfigure
 ```
 
-### Configure
+### Install and configure the weewx-maxbotix extension
 
-The maxbotix driver requires a sensor type and communication port.
+First install the weewx-maxbotix extension, configure it to use the port that you identified when you tested the sensor, verify that the weewx-maxbotix driver emits the correct data, then configure a weewx database to receive the data.
+
+When you configure the weewx-maxbotix extension, you must specify two things: (1) which port to use, and (2) the sensor type.  The sensor type determines the minimum and maximum ranges, as well as the units of measurement.
+
+In order to retain data, you must either add a column to an existing weewx database, or create a new weewx database with only the range data for the sensor.  The instructions below are for the latter.
+
+```
+# Install weewx-maxbotix extension
+sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
+
+# Configure weewx to use the maxbotix sensor
+sudo wee_config --reconfigure
+
+# Verify that the weewx-maxbotix driver can read the sensor
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port /dev/ttyS0 --test-sensor
+# If that worked, then verify that the driver emits packets
+sudo PYTHONPATH=/usr/share/weewx python /usr/share/weewx/user/maxbotix.py --port /dev/ttyS0 --test-driver
+
+# Configure a new weewx database to receive the data
+
+```
 
 ## Troubleshooting
 

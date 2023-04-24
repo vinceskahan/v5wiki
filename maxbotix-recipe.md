@@ -32,29 +32,29 @@ MB7263
 <tr>
 <td>
 <a href="maxbotix-recipe/vh-tide-sensor.png"><img src="maxbotix-recipe/vh-tide-sensor.png" width="150"></a><br/>
-tide monitoring
+Tide monitoring.  Ultrasonic sensor is cantilevered from the back of a utility panel on the ferry dock, about 8 feet above mean high tide.  Tide range is 10-12 feet.
 </td>
 <td>
 <a href="maxbotix-recipe/hi-tide-sensor.png"><img src="maxbotix-recipe/hi-tide-sensor.png" width="150"></a><br/>
-tide monitoring
+Tide monitoring.  Ultrasonic sensor is mounted under the fixed portion of a dock, about 3 feet from a granite wall.  Tide range is 10-12 feet.
 </td>
 <td>
 <a href="maxbotix-recipe/wls-tide-sensor.png"><img src="maxbotix-recipe/wls-tide-sensor.png" width="150"></a><br/>
-tide monitoring
+Tide monitoring.  Ultrasonic sensor is mounted under the bridge between shore and granite pier.  Tide range is 10-12 feet.
 </td>
 </tr>
 <tr>
 <td>
 <a href="maxbotix-recipe/hi-four-tanks.png"><img src="maxbotix-recipe/hi-four-tanks.png" width="150"></a><br/>
-four water tanks
+Four 250 gallon water tanks, selectively connected by pipes and valves at their bases.  Water from a quarry is pumped up a 300 foot hill to these tanks.  Each tank has a sensor.
 </td>
 <td>
 <a href="maxbotix-recipe/hi-tank-sensor.png"><img src="maxbotix-recipe/hi-tank-sensor.png" width="150"></a><br/>
-tank sensor
+Tank sensor.  Each sensor points down at the water surface, mounted in a PVC pipe on top of each tank.
 </td>
 <td>
 <a href="maxbotix-recipe/hi-four-tank-wiring.png"><img src="maxbotix-recipe/hi-four-tank-wiring.png" width="150"></a><br/>
-tank sensor wiring
+Tank sensor wiring.  There is a 4-port USB-serial adapter that connects a single USB port on the RPi to 4 ultrasonic sensors.  There is a pair of twisted pair wires to each sensor, using standard cat5e ethernet cable.  Power to each sensor is supplied by a common 5V bus (black wires).
 </td>
 </tr>
 </table>
@@ -68,12 +68,16 @@ tank sensor wiring
 | $10 | wire | | https://www.amazon.com/CIMPLE-CO-Thermostat-Residential-Commercial/dp/B07SZ5D3SH |
 | $0.25 - $5 | DB9 connector | | https://www.amazon.com/Breakout-Connector-Serial-Terminal-Female/dp/B073RGGDKH |
 | $0.25 - $3 | USB connector | | https://www.amazon.com/Jienk-Terminal-Connector-Pluggable-Converter/dp/B0914Y1GXD |
+| $12 | USB-serial | FTDI | https://www.amazon.com/Adapter-Chipset%EF%BC%8CDB9-Serial-Converter-Windows/dp/B0759HSLP1 |
+| $40 | 4-port USB-serial | FTDI | https://www.amazon.com/Gearmo-Serial-Windows-Certified-Drivers/dp/B004ETDC8K |
 
 Prices are US$ as of April 2023.
 
 To prototype a system, you might want the DB9 and USB connectors with screw terminals.  Later you can replace these with soldered connectors, or connectors with watertight housings.
 
 The sensor terminals are solder-only.  Soldering onto these terminals is perhaps the most difficult part of the entire build.  Be sure to use flux/resin!
+
+If you have to use a USB-serial adapter, be sure to get a real FTDI-compatible device.  Many knock-offs do not have a serial number.  That may be OK if your system has only one sensor, but if you ever have to use multiple sensors, you will want the serial number so that you can uniquely identify each sensor.
 
 ## Recipes
 

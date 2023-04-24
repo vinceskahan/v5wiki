@@ -94,17 +94,17 @@ If you have the external temperature sensor, then connect that as well.
 <td>
 <a href="maxbotix-recipe/wiring-MB7363.png">
 <img src="maxbotix-recipe/wiring-MB7363.png" width="200"></a><br/>
-MB7363 wiring
+MB7363 wiring.  You will need three conductors: 5V power, ground, and signal.  Adding temperature correction will require one more conductor.
 </td>
 <td>
 <a href="maxbotix-recipe/wiring-db9.png">
 <img src="maxbotix-recipe/wiring-db9.png" width="200"></a><br/>
-DB9 connector
+DB9 connector.  Use only two pins on a DB9 connector: RXD and GND.
 </td>
 <td>
 <a href="maxbotix-recipe/wiring-power.png">
 <img src="maxbotix-recipe/wiring-power.png" width="200"></a><br/>
-power from USB
+Power from USB.  One approach for power is to use the 5V pin from a USB port.  If you do this and a USB-serial adapter, then you'll end up with two USB connectors at the computer end, then three wires going to the sensor.
 </td>
 </tr>
 <tr>

@@ -173,7 +173,7 @@ When you configure the weewx-maxbotix extension, you must specify two things: (1
 sudo /etc/init.d/weewx stop
 
 # Install weewx-maxbotix extension
-sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix
+sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix/archive/master.zip
 
 # Configure weewx to use the maxbotix sensor
 sudo wee_config --reconfigure

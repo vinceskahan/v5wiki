@@ -101,13 +101,25 @@ This is the client library necessary to use MySQL. If you are not using that dat
 not need to install `pymysql`. 
 
 While installing the library itself is straightforward, if you are using `sha256_password` or
-`caching_sha2_password` authentication then you will need to also install a rsa library. This
-usually involves installing `cryptography`, which, if it does not exist on your platform, can be
-very difficult to do. It requires not only a C compiler and various headers, but also a Rust
-compiler.
+`caching_sha2_password` authentication then you will also need an rsa library. This
+usually involves installing `cryptography`. On Debian platforms, this can be as simple as
+
+```shell
+sudo apt install python3-cryptography
+```
+
+Then try the install again:
+
+```shell
+python3 -m pip install pymysql[rsa]
+```
+
+But, if the library `cryptography` is not available on your platform, then it must be built from
+source, which can be very difficult to do. It requires not only a C compiler and various headers,
+but also a Rust compiler.
 
 If you wish to try installing Rust, see the website https://rustup.rs/.
 
-If compiling `cryptography` is not possible, you will have to use either some other kind of
+If compiling `cryptography` is not possible, then you will have to use either some other kind of
 authentication, or another database.
 

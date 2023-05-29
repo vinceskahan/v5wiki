@@ -106,5 +106,8 @@ usually involves installing `cryptography`, which, if it does not exist on your 
 very difficult to do. It requires not only a C compiler and various headers, but also a Rust
 compiler.
 
+If you wish to try installing Rust, see the website https://rustup.rs/.
+
 If compiling `cryptography` is not possible, you will have to use either some other kind of
 authentication, or another database.
+

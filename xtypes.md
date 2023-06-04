@@ -93,7 +93,13 @@ information necessary to calculate the type is not there.
 
 ### Calculating series
 
-The user should subclass `XTypes`, then override the member function `get_series`:
+WeeWX includes versions of `get_series()` that repeatedly invoke `get_scalar()`
+or `get_aggregate()` to calculate a series, so you usually do not need to supply
+your own version of `get_series()`. Nevertheless, a custom version may be useful
+as an optimization, or for specialty series.
+
+To do so, the user should subclass `XTypes`, then override the member function
+`get_series`:
 
     class MyTypes(XTypes):
     

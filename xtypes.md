@@ -49,9 +49,10 @@ summaries. This replaces some functionality presently done by `WXDaySummaryManag
 
 ------------------------
 
-## Overview of adding new types
-Adding a new observation type is done by subclassing the abstract base class `XTypes`, then
-overriding one to three functions:
+## Overview of adding new observation and aggregation types
+
+Adding a new observation or aggregation type is done by subclassing the abstract
+base class `XTypes`, then overriding one to three functions:
 
 ```python
 class XTypes:

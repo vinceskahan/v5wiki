@@ -72,11 +72,11 @@ new_install
 V4:
 wee_config --install --dist-config=/etc/weewx/weewx.conf.dist --output=/etc/weewx/weewx.conf --driver=weewx.drivers.simulator --no-prompt --no-backup
 V5:
-
+weectl station create --dist-config=/etc/weewx/weewx.conf.dist --output=/etc/weewx/weewx.conf --driver=weewx.drivers.simulator --no-prompt --what=config
 
 upgrade
 V4:
 wee_config --upgrade --config=%{cfg_file}-$OLDVER --dist-config=%{cfg_file}.dist --output=%{cfg_file} --no-prompt --no-backup
 V5:
-
+weectl station upgrade --config=%{cfg_file}-$OLDVER --dist-config=%{cfg_file}.dist --output=%{cfg_file} --no-prompt --no-backup --what=config
 ```

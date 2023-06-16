@@ -229,6 +229,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="https://meteo-services.com/images/weather365-logo-new.png" width='16'/> [Meteo-Services](Meteo-Services) :heavy_check_mark:
 * <img src="http://meteotemplate.com/web/logoBlack.png" width='16'/> [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) :heavy_check_mark:
 * <img src="http://mqtt.org/favicon.ico" width='16'/> [mqtt](mqtt) :heavy_check_mark:
+* <img src="https://curl.se/favicon.ico" width='16'/> [notifier](https://github.com/teeks99/weewx-notify) :heavy_check_mark: 
 * <img src="https://opensensemap.org/images/a86afe07.favicon.svg" width='16'> [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) :heavy_check_mark:
 * <img src="http://openweathermap.org/favicon.ico" width='16'/> [openweathermap](openweathermap) :heavy_check_mark:
 * <img src="http://services.previmeteo.com/fr/assets/img/previmeteo/favicon-previmeteo.jpg" width='16'/> [previmeteo](https://github.com/previmeteo/weewx-previmeteo)

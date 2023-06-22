@@ -10,7 +10,7 @@ Some stations meausure "illuminance" in lux, which is a measure of the amount of
 
 Typically people care about illuminance for management of artificial
 lighting or light pollution, and the values are very low compared to
-values that can be read on a solar radiation sensor.
+values that can be read on a solar radiation sensor.  Typically people care about solar radiation for photovoltaic panels and perhaps farming.  The values of interest are generally high, some fraction of full sunlight.
 
 # Obtaining illuminance
 

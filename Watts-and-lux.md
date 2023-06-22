@@ -1,6 +1,6 @@
 # Meta
 
-Authored by user Greg Troxel, from an [email exchange](https://groups.google.com/d/msg/weewx-user/vPkAixmKba8/-HJnGPxHGgAJ).  Edited over time, likely also by others
+Authored by user Greg Troxel, from an [email exchange](https://groups.google.com/d/msg/weewx-user/vPkAixmKba8/-HJnGPxHGgAJ).  Edited over time, likely also by others.
 
 # Irradiance and Illuminance are not the same thing
 

@@ -1,18 +1,20 @@
 # Migrating `setup.py` installs to Version 5.0
 
 This is a guide for migrating V4.x installations that were installed using the `setup.py` method,
-to Version 5.0.
+to Version 5.0, using pip.
 
 ## Code vs user data
+
 With V5.0, there is now a clean separation between *WeeWX code*, and *user data*. They are stored
 in separate areas, rather than everything under `/home/weewx`.
 
 ### WeeWX code
-With one exception, the software used by the WeeWX application is now kept in the normal Python
-directories, rather than under `/home/weewx/bin`. This software includes:
 
-- Executables such as `weewxd` and `wee_reports`;
-- Their libraries.
+While there are many ways to install WeeWX using pip, if you follow the WeeWX install
+recommendations, pip will install your code in a _virtual environment_, located in `~/weewx-venv`
+in your home directory.
+
+This contrasts with the `setup.py` method, which installed everything under `/home/weewx/bin`.
 
 ### User data
 By contrast, *user data* is specific to your station. By default, it is now stored in your
@@ -25,35 +27,35 @@ home directory in `~/weewx-data`, although you may continue to use your old user
 * Generated HTML files and images; and
 * Extensions (Python code specific to a station).
 
-## Using your old `/home/weewx`
-With this in mind, here is how you can continue to use the old user data in `/home/weewx`.
-The code will be replaced by new code.
+With this in mind, here is how to install Version 5, while continuing to use the old user data in
+`/home/weewx`.
 
-1. Install V5.0 by using the tool `pip`. (You can find more details in the document 
-   [_Installation using pip_](pip.md), but note that you are *only going to follow step 1*.
-   Do not do step 2.)
+## Install the V5.0 code
 
-    ```
-    python3 -m pip install weewx --user
-    ```
-
-    When you are done, the new V5.0 executable will be in `~/.local/bin/weewxd`,
+1. Install V5.0 by using the tool `pip`. See the guide [_Installation using
+   pip_](https://weewx.com/docs/5.0/quickstarts/pip/), but note that you are _only going to follow the
+   first step_ [_Install in a virtual
+   environment_](https://weewx.com/docs/5.0/quickstarts/pip/#install-in-a-virtual-environment). Do not
+   do step 2, _Provision a new station_.
+ 
+    When you are done, the new V5.0 executable will be in `~/weewx-venv/bin/weewxd`,
     rather than the more familiar V4.x location `/home/weewx/bin/weewxd`.
 
-2. You do not have to do Step 2, provision a new station, because you will be simply reusing
-   your old user data in `/home/weewx`. However, you do need to upgrade your old configuration
-   file, documentation, examples, and daemon utility files:
+    For what follows, make sure your virtual environment is still active. When in doubt, you
+    can always reactivate it:
 
-    ```
-    weectl station upgrade --config=/home/weewx/weewx.conf
-    ```
+        source ~/weewx-venv/bin/activate
+
+2. You do not have to do Step 2, _Provision a new station_, because you will be simply reusing
+   your old user data in `/home/weewx`. However, you do need to upgrade your old configuration
+   file, documentation, examples, and daemon utility files.
+
+        weectl station upgrade --config=/home/weewx/weewx.conf
 
 3. At this point, try running the V5.0 version of `weewxd` directly, using your
    old configuration file.
 
-    ```
-    weewxd --config=/home/weewx/weewx.conf
-    ```
+        weewxd --config=/home/weewx/weewx.conf
 
 4. If that works, then it's time to modify your old daemon configuration file
    so that it uses the new V5.0 executable. These steps will require root privileges.
@@ -82,7 +84,7 @@ The code will be replaced by new code.
     sudo launchctl load /Library/LaunchDaemons/com.weewx.weewxd.plist
     ```
 
-## Old code
+## Move your old code aside
 
 Note that your old V4.x code will still be under `/home/weewx/bin` 
 (`/Users/Shared/weewx` for macOS).

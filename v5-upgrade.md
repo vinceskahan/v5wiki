@@ -30,7 +30,7 @@ home directory in `~/weewx-data`, although you may continue to use your old user
 With this in mind, here is how to install Version 5, while continuing to use the old user data in
 `/home/weewx`.
 
-## Install the V5.0 code
+## Migration process
 
 1. Install V5.0 by using the tool `pip`. See the guide [_Installation using
    pip_](https://weewx.com/docs/5.0/quickstarts/pip/), but note that you are _only going to follow the

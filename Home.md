@@ -95,7 +95,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 
 #### Drivers
-* [airlink - Collect data from Davis AirLink](https://github.com/chaunceygardiner/weewx-airlink) Air Quality Sensor
+* [airlink - Collect data from Davis AirLink air quality sensor](https://github.com/chaunceygardiner/weewx-airlink)
 * [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
 * [ambientweatherapi-json - Collect data from the Ambient Weather API without the need for any additional hardware](https://github.com/themoosman/weewx-ambientweatherapi-json)
 * [atmocom - Collect data from Atmocom station](https://github.com/captain-coredump/weewx-atmocom-udp/)

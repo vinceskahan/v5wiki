@@ -214,6 +214,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### XType extensions
 [XType extensions](xtypes) add new observation and aggregation types to WeeWX
+* [weewx-aqi-xtype](https://github.com/bellrichm/weewx-aqi-xtype) - Calculate the AQI for a given air pollutant value.
 * [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. :heavy_check_mark:
 * [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, dayET and ET24 as opposite to dayRain and rain24, absolute humidity, (saturation) vapor pressure, mixing ratio, (potential) equivalent temperature :heavy_check_mark:
 * [weewx-phenology](http://lacusveris.com/Phenology) - Growing Degree-Days development models for various insect pests, showing when to apply control strategies to minimize crop damage:heavy_check_mark:

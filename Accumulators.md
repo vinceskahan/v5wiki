@@ -2,9 +2,9 @@
 
 ## Abstract
 
-This Wiki documents the accumulators. Accumulators ingest an irregular stream of LOOP packets, then, when requested, allows
-regular archive records to be extracted from them. Most of the time, they
-"do the right thing," but there may be occasions where customization is called for. 
+This Wiki documents the accumulators. Accumulators ingest an irregular stream of LOOP packets,
+then, when requested, allows regular archive records to be extracted from them. Most of the time,
+they "do the right thing," but there may be occasions where customization is called for.
 
 An accumulator is instantiated for each observation type. Which type is instantiated is set
 by option `accumulator` (described later). There are three choices
@@ -25,8 +25,8 @@ Again, there are sensible defaults for these three roles, but this can be custom
 
 ## Life cycle of an accumulator
 
-Class `weewx.accum.Accum` is a *collection* of accumulators. At the start of an archive interval, a new instance is
-created. Initially, it is empty.
+Class `weewx.accum.Accum` is a *collection* of accumulators. At the start of an archive interval, a
+new instance is created. Initially, it is empty.
 
 As LOOP packets come in, each observation type is checked to see if it's already in the instance of
 `Accum`. If not, a new accumulator of the proper type is created for it. The observation type is
@@ -51,7 +51,7 @@ specified, all through the `weewx.conf` file. The format is:
         accumulator = [scalar | vector | firstlast]
         adder = [add | add_wind | check_units | noop]
         merger = [minmax | avg]
-        extractor = [avg | sum | min | max | count | last | wind | noop]
+        extractor = [avg | sum | min | max | count | first | last | wind | noop]
 ```
 
 These are defined in more detail below.
@@ -95,13 +95,16 @@ extractors:
 
 - `avg`: Extract the average value of this type. This is the default.
 - `count`: Extract the total number of non-Null LOOP packets seen of this type.
-- `last`: Extract the last value seen of this type. Use this type for totals of extensive variables, such as `dayRain`.
+- `first`: Extract the first value seen of this type (introduced WeeWX V5).
+- `last`: Extract the last value seen of this type. Use this type for totals of extensive 
+  variables, such as `dayRain`.
 - `max`: Extract the maximum value seen of this type.
 - `min`: Extract the minimum value seen of this type.
 - `noop`: Extract no value for this type.
-- `sum`: Extract the total seen for this type. Use this type for `rain` or other  variables that are measured increments.
+- `sum`: Extract the total seen for this type. Use this type for `rain` or other  variables that 
+  are measured increments.
 - `wind`: Extract `windSpeed` as the average wind magnitude, `windDir` as the vector average
-direction, `windGust` as the maximum wind seen, and `windGustDir` as its direction.
+  direction, `windGust` as the maximum wind seen, and `windGustDir` as its direction.
 
 ## Defaults
 The accumulators come with a set of defaults that covers most situations.

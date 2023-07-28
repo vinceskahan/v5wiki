@@ -190,6 +190,22 @@ debug = 0
       propagate = 0
 ```
 
+## Disabling logging
+
+This example essentially disables WeeWX logging completely,
+resulting in no log messages at all related to WeeWX other
+than those perhaps written by the operating system itself.
+
+```
+[Logging]
+    version = 1
+    disable_existing_loggers = True
+
+    # Root logger
+    [[root]]
+      level = CRITICAL
+```
+
 
 # For developers
 

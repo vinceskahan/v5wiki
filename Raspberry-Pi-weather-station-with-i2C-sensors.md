@@ -1,12 +1,9 @@
 # Overview #
 
-I currently have major problems with this site, cables cut and other physical damage, it will be some weeks or months before I am operational again.
-
-I am in the process of updating my configuration and will update this file when completed.
-
-The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I also now collect my aircon data and import this into weewx. Note this is an updated link (using Belchertown skin). 
-I have also added the following tabs to the Belchertown skin; SEQ detailed forcast uses code developed by Darryn Capes-Davis for his responsive skin for weewx and a colour history chart by Nick Dajda used in his Bootstrap skin for weewx. Edited 23 Feb 2021
-[Link to my station](https://bit.ly/2A8BbOx)
+I am again almost fully operational after a lot of work
+The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I also now collect my aircon data and import this into weewx. 
+I have also added the following tabs to the Belchertown skin; SEQ detailed forcast uses code developed by Darryn Capes-Davis for his responsive skin for weewx and a colour history chart by Nick Dajda used in his Bootstrap skin for weewx. Edited 13 Aug 2023
+I will add a link to my station when secured.
 
 ## Overall block diagram #
 [Link to block diagram](https://bit.ly/3t6id3o)
@@ -27,16 +24,20 @@ I have two runs (as shown on the block diagram) and with these extenders I have 
 ###### Rainwise one-wire rain bucket #
 
 ### General Information #
-My current installation is a raspberry Pi3 booting from an external HDD. I have a ramdisk with services for gathering the sensor data from the i2C sensors, aircon status, and the fan speed from my Fan Assisted Radiation sensor (FARS).
-With my Pi3 defaulted to python3 another method of getting my rain gauge (one wire sensor) information into weewx had to be used and will be detailed later. (Python3 no longer has a OW module available)
+My current installation is a raspberry Pi4 booting from an external SSD. I have a ramdisk with services for gathering the sensor data from the i2C sensors, aircon status, and the fan speed from my Fan Assisted Radiation sensor (FARS).
+I had a failure of my external SHT31-D sensor and have installed a "water proof" version of the SHR31 by DFRobot. I had some difficulty finding a python script suitable for my Pi... here is a link to a folder holding all the information supplied by DFRobot
+[DFROBOT_SHT3x-master](https://bit.ly/45clGyw).
+My Pi4 is now running software gathering data from my Solar system and energy consumed in near real time.
+Weewx and a MQTT broker is also installed. MQTT information from weewx and my power monitoring system is combined and sent to another Pi3 running home assistant (for the energy screen :))
+I will give more detailed information later as well as links to my system when I secure it.  
 
 ### Pi Configuration #
+This has changed considerably I will update later.
 This is the basic setup for my Pi with HDD and RAM disk and enabled i2c.
 [Pi configuration](https://bit.ly/3GxhTQu)
 
 ### Australian weather forecast added to Belchertown skin
-This is a link to the files and other information to enable a localised weather forecast and a colour history chart to be displayed within the Belchertown skin for weewx.
-[Belchertown edits](https://bit.ly/3t4pKzA)
+This is a link to the files and other information to enable a localised weather forecast and a colour history chart to be displayed within the Belchertown skin for weewx. This has changed considerably so removed link will update later.
 
 ### Weewx config #
 **still to be updated**

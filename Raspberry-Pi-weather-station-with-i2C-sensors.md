@@ -29,7 +29,9 @@ I had a failure of my external SHT31-D sensor and have installed a "water proof"
 [DFROBOT_SHT3x-master](https://bit.ly/45clGyw).
 My Pi4 is now running software gathering data from my Solar system and energy consumed in near real time.
 Weewx and a MQTT broker is also installed. MQTT information from weewx and my power monitoring system is combined and sent to another Pi3 running home assistant (for the energy screen :))
-I will give more detailed information later as well as links to my system when I secure it.  
+The following link will contain new and updated files as I create them. The initial info is the configuration I now use as well as solar 
+and power install info. Weather info will follow.
+[link to folder with updated info](https://bit.ly/3KE7t53)
 
 ### Pi Configuration #
 This has changed considerably I will update later.

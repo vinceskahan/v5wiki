@@ -195,6 +195,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](weewx-french-standard-skin)
+* [jas](https://github.com/bellrichm/weewx-jas) (A highly configurable skin using ECharts for charting, Bootstrap for layout, and MQTT for live updates.) :heavy_check_mark:
 * [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) :heavy_check_mark:
 * [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) :heavy_check_mark:
 * [NeoWX](https://neoground.com/projects/neowx) :heavy_check_mark:

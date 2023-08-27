@@ -269,3 +269,5 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Registry](registry)
 * [Storing text in the database](Storing-text-in-the-database)
 * [Installer options](installer-options)
+* [Character encodings](encodings)
+* 

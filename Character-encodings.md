@@ -105,6 +105,9 @@ the HTML file uses
 
 Again, these days, this is almost always in UTF-8.
 
+To find out what character encoding your browser is using, open up the
+"Developer's Tools" window, navigate to the console, and type `document.characterSet`.
+
 ## Gotchas
 
 A common problem is special characters in a _text_  (not HTML) file. These are files with the
@@ -117,15 +120,18 @@ encoded in `cp1252`, then they will end up looking "funny". This is a common pro
 reports (which are text files) with location names that include special characters that cannot be
 encoded in `cp1252`.
 
-There are two solutions:
+There are three solutions:
 
 1. Specify an encoding of `normalized_ascii`. The Cheetah generator will turn something like
-`crêpe` into `crepe`. The results won't be correct, but they will be recognizable. This is the
-default encoding WeeWX uses for NOAA files.
+`crêpe` into `crepe`. The results won't be correct, but they will be recognizable.
 
 2. Specify an encoding of `cp1252`. This way, the output of the Cheetah generator will match what
 the browser is expecting. Of course, this will only work if all the characters in the location name
 can be represented in `cp1252`. If not, you will end up with a garbled location name.
+
+3. Wrap the text file in an HTML file that specifies UTF-8 encoding. This is how the Seasons
+skin does it, provided you always navigate to the NOAA files via the title bar drop
+down option list.
 
 What will not work is specifying an encoding of UTF-8. For example, the degree symbol, which takes
 two bytes to encode using UTF-8, is instead interpreted by the browser as two characters encoded in

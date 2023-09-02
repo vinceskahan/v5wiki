@@ -34,7 +34,7 @@ Clean separation of WeeWX source code from station data:
  - Multiple stations can share the same source code. They just have different
    station data areas.
 
-See the section [_Location of user Python code_](#Location-of-user-Python-code) 
+See the section [_Location of user Python code_](#user-code-location) 
 below for details.
 
 
@@ -195,7 +195,7 @@ weectl station upgrade --what skins
 weectl extension install https://github.com/matthewwall/weewx-windy/archive/master.zip
 ```
 
-# Location of user Python code
+# Location of user Python code (`$USER_ROOT`)<a name="user-code-location"></a>
 
 Previously, user Python code lived amongst the rest of WeeWX's source code, that
 is, either under `/home/weewx/bin`, or `/usr/share/weewx`. However, with Version
@@ -206,16 +206,23 @@ Whatever location we use, the parent directory will have to be injected into
 `PYTHON_PATH` when `weewxd` starts up. It's the _parent_ directory because
 `user` is actually a Python package. We need to find `user.foo`, not just `foo`.
 
-For legacy installs, it is tempting to inject both the legacy location (e.g.,
-`/usr/share/weewx/`) and the new location (`/etc/weewx/`), but that tempation
-should be resisted. Only _one_, well-defined, location should be used, otherwise
-there can be inconsistent versions between the two locations, leading to
-difficult-to-diagnose bugs.
+## Subgoals
 
-We discuss use cases, then possible locations for user Python code, then
-draw up the pros and cons.
+As far as possible, we want the configuration file `weewx.conf` used by
+package installs to be the same as the file used by pip installs. This will
+simplify the install logic, as well as support burden.
 
-## Use cases
+For this reason, it would be desirable if `$USER_ROOT` is the same for the two
+install methods. What is different, is the value for `$WEEWX_ROOT`.
+
+No ambiguity. For legacy installs, it is tempting to inject both the legacy
+location (e.g., `/usr/share/weewx/`) and the new location (`/etc/weewx/`) into
+`PYTHONPATH`, which would make old user code accessible in a new install.
+However, that tempation should be resisted. Only _one_, well-defined, location
+should be used, otherwise there can be inconsistent versions between the two
+locations, leading to difficult-to-diagnose bugs.
+
+ ## Use cases
 
 - New pip install. Everything under `~/weewx-data`.
 - Pip install, using legacy (`setup.py`) station data. Station data is located

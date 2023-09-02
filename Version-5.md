@@ -165,16 +165,16 @@ All extensions will be installed into the station data area. That is, into
 
 This results in the following list of locations:
 
-| Symbol        | Pkg install            | Pip install                           |
-|---------------|------------------------|---------------------------------------|
-|`WEEWX_ROOT`   |`/etc/weewx`            |`~/weewx-data`                         |
-|`SKIN_ROOT`    |`/etc/weewx/skins`      |`~/weewx-data/skins`                   |
-|`SQLITE_ROOT`  |`/var/lib/weewx`        |`~/weewx-data/archive`                 |
-|`HTML_ROOT`    |`/var/www/weewx`        |`~/weewx-data/public_html`             |
-|`DOC_ROOT`     |`/etc/weewx/docs/weewx` |`~/weewx-data/docs`                    |
-|`EXAMPLE_ROOT` |`/usr/weewx/examples`   |`~/weewx-data/examples`                |
-|`USER_ROOT`    |`/usr/share/weewx/user` |`~/weewx-data/bin/user`                |
-|`BIN_ROOT`     |`/usr/share/weewx`      |`~/weewx-venv/pythonX.Y/site-packages` |
+| Symbol        | Pkg install           | Pip install                           |
+|---------------|-----------------------|---------------------------------------|
+|`WEEWX_ROOT`   | `/etc/weewx`          |`~/weewx-data`                         |
+|`SKIN_ROOT`    | `/etc/weewx/skins`    |`~/weewx-data/skins`                   |
+|`DOC_ROOT`     | `/etc/weewx/docs`     |`~/weewx-data/docs`                    |
+|`EXAMPLE_ROOT` | `/etc/weewx/examples` |`~/weewx-data/examples`                |
+|`USER_ROOT`    | `/etc/weewx/bin/user` |`~/weewx-data/bin/user`                |
+|`SQLITE_ROOT`  | `/var/lib/weewx`      |`~/weewx-data/archive`                 |
+|`HTML_ROOT`    | `/var/www/weewx`      |`~/weewx-data/public_html`             |
+|`BIN_ROOT`     | `/usr/share/weewx`    |`~/weewx-venv/pythonX.Y/site-packages` |
 
 
 # Command `weectl`

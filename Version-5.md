@@ -267,6 +267,12 @@ location.
 Package install. The comments for `$WEEWX_ROOT/bin/user` above apply, except
 the contents would have to be copied to `/etc/weewx/lib/user`.
 
+One other comment on using `lib` instead of `bin`. Presently, the prototype
+`user` subdirectory is located under `bin` in the source tree, yet it would
+finally end up under `lib`. That's an inconsistency. We could relocate it to a
+new `lib` subdirectory, but then what of the rest of the WeeWX code? Why is it
+under `bin`, instead of also under `lib`?
+
 ### `$WEEWX_ROOT/user`
 
 With this approach, the `user` package would live directly in `$WEEWX_ROOT`. It

@@ -66,8 +66,10 @@ Examples: Hideki, Vantage, WS23xx, WS20x0, CC3000, HP3000
 </td>
 <td>
 <p>
-Some hardware is directly extensible - you can add sensors and the hardware will recognize them.  In some cases this might be additional temperature/humidity sensors.  For other stations, you can add soil moisture, leaf wetness, solar radiation, or other types of sensors.
-</p>
+Some hardware is directly extensible - you can [add sensors](add-sensors.md) and
+the hardware will recognize them.  In some cases this might be additional
+temperature/humidity sensors.  For other stations, you can add soil moisture,
+leaf wetness, solar radiation, or other types of sensors. </p>
 <p>
 Examples: Vantage Pro, Acurite Bridge/SmartHUB, Rainwise, Hideki, Klimalogg, HP3000
 </p>

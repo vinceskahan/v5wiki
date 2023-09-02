@@ -295,6 +295,7 @@ Throughout this document, the following definitions are used
 | _package data_       | A resource, such as `weewx.conf` or `skins`, included in a distribution as a _Python package_. Read-only.<br/>Must be accessed using `importlib.resources`. |
 | _package data location_ | Location of the _package data_, typically somewhere under `site-packages`. May or may not be a file.                                                        |
 | _WEEWX_ROOT_         | Final, installed, location of the resources, particularly the configuration file and skins.<br/>Typically, `~/weewx-data`, `/etc/weewx`, or `/home/weewx`   |
+| _USER_ROOT_ | The location of the `user` subdirectory, _relative to `WEEWX_ROOT`_.<br/>Typically, `./bin/user`, `./lib/user`, or `./user`.                                |                                 |
 | _driver_             | The driver module (e.g., `weewx.drivers.vantage`).                                                                                                          |
 | _driver name_        | Returned by the attribute `DRIVER_NAME` of a driver. By default, this becomes the "stanza name" (e.g., `[Vantage]`).                                        |
 | _active driver_      | Option `station_type` specifies the active driver to be used. A corresponding _driver name_ must exist.                                                     |

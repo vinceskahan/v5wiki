@@ -1,4 +1,4 @@
-Many weather hardware will occasionally emit a bad data value. This will not only cause your plots to look bad, but it can also cause many errors in historical hi/low, NOAA reports, etc.
+Weather hardware will occasionally emit a bad data value. This will not only cause your plots to look bad, but it can also cause many errors in historical hi/low, NOAA reports, etc.
 
 Here's a method for deleting these bad values in a sqlite database. 
 
@@ -8,13 +8,13 @@ You will need the command line utility `sqlite3`. To install it on a Debian syst
 
     sudo apt-get install sqlite3
 
-As always, it is prudent to work off a temporary copy of your db.  Stop weewx.  Copy your database to `/var/tmp` or another scratch location.  Work on it there.  Copy the modified version back into place (having saved the original one just in case).
+As always, it is prudent to work off a temporary copy of your db.  Stop weewx.  Copy your database to `/var/tmp` or another scratch location.  Work on it there.  Copy the modified version back into place (having saved the original file just in case).
 
 ### Bad data
 
 For the sake of a concrete example, let's assume that you are trying to find and remove some `windSpeed` and `windGust` values greater than 100. You have copied your SQLITE database to `/var/tmp/backup.sdb`.
 
-To find the bad records records:
+To find the bad records:
 ~~~~~
 echo "SELECT * FROM archive WHERE (windSpeed > 100);" | sqlite3 /var/tmp/backup.sdb
 echo "SELECT * FROM archive WHERE (windGust  > 100);" | sqlite3 /var/tmp/backup.sdb
@@ -55,13 +55,19 @@ Now save your old SQLITE database, then replace it with `/var/tmp/backup.sdb`.
 
 ## Daily summaries
 
-Finally, you need to drop the old daily summaries, which otherwise would include these bad data. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this:
+Finally, you will need to rebuild the daily summaries for any data that you have changed. If your changes are small, you can rebuild just the day or days you have touched. Otherwise, rebuild all of them. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this.
+
+To rebuild just a single day, use option `--date`. For example, to rebuild 22 August 2019:
+
+    wee_database weewx.conf --rebuild-daily --date=2019-08-22
+
+To rebuild a group of days, use options `--from` and `--to`. For example, to rebuild from 19 August 2019 through 22 August 2019, inclusive:
+
+    wee_database weewx.conf --rebuild-daily --from=2019-08-19 --to=2019-08-22
+
+To rebuild all summaries:
 
     wee_database weewx.conf --drop-daily
-
-The summaries will be rebuilt the next time weewx starts. As this can take a long time, you
-may want to do this explicitly:
-
     wee_database weewx.conf --rebuild-daily
 
 ## Regenerate web pages

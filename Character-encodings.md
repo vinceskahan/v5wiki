@@ -111,13 +111,15 @@ To find out what character encoding your browser is using, open up the
 ## Gotchas
 
 A common problem is special characters in a _text_  (not HTML) file. These are files with the
-suffix `.txt`, instead of `.html`. When a browser encounters a file ending in `.txt` it does not
-interpret any HTML tags within it, including a `<meta>` tag, so it does not know what encoding the
-file uses. It has to guess.
+suffix `.txt`, instead of `.html`. When a browser encounters a file ending in `.txt` it treats
+the contents as raw text and does not try to interpret any HTML tags within it, including 
+a `<meta>` tag. Because it ignores any possible `<meta>` tag, it does not know what encoding the
+file uses, so it has to guess.
 
-Most guess `cp1252`, aka `Windows-1252`. If the file includes special characters that cannot be
-encoded in `cp1252`, then they will end up looking "funny". This is a common problem with NOAA
-reports (which are text files) with location names that include special characters that cannot be
+Most browsers guess `cp1252`, aka `Windows-1252`. This means that if the file
+includes special characters that cannot be encoded in `cp1252`, then they will
+end up looking "funny". This is a common problem with NOAA reports (which are
+text files) with location names that include special characters that cannot be
 encoded in `cp1252`.
 
 There are three solutions:
@@ -133,6 +135,8 @@ can be represented in `cp1252`. If not, you will end up with a garbled location 
 skin does it, provided you always navigate to the NOAA files via the title bar drop
 down option list.
 
-What will not work is specifying an encoding of UTF-8. For example, the degree symbol, which takes
-two bytes to encode using UTF-8, is instead interpreted by the browser as two characters encoded in
-cp1252, in this case, the character 'Á' and the character '⁰'.
+What will _not_ work is specifying an encoding of UTF-8. Remember, the browser
+thinks the file is in `cp1252` so, for example, the degree symbol, which takes
+two bytes to encode using UTF-8, is instead interpreted by the browser as two
+characters encoded in `cp1252`, in this case, the character 'Á' and the
+character '⁰'.

@@ -7,7 +7,10 @@ dependencies may not be.
 Try installing WeeWX the suggested way
 
 ```
-python3 -m pip install weewx --user
+# Activate the virtual environment
+source ~/weewx-venv/bin/activate
+# Then, using pip, install WeeWX into it
+python3 -m pip install weewx 
 ```
 
 If that doesn't work, use this guide for suggestsions on getting around common problems.
@@ -19,7 +22,11 @@ One approach is to have pip install WeeWX _without_ its dependencies, then manua
 dependency, possibly working around any problems that might come up:
 
 ```shell
+# Activate the virtual environment
+source ~/weewx-venv/bin/activate
+# Install WeeWX _without_ any dependencies
 python3 -m pip install weewx --no-deps
+# Then install the dependencies, one-by-one:
 python3 -m pip install configobj  
 python3 -m pip install pyserial
 python3 -m pip install pyusb
@@ -65,7 +72,7 @@ need it.
 The library `CT3` is the Cheetah library (formerly called `Cheetah3`). It has 25 wheels, which will
 cover most cases. However, if you have an unusual platform, pip will attempt a `setup.py` install,
 which involves compiling its "NameMapper" utility. It's a simple utility, so this usually succeeds
-without problem. If not, Cheetah has a fallback of a pure Python, but slower, version.
+without problem. If not, Cheetah will fall back to a pure Python, but slower, version.
 
 ### ephem
 
@@ -78,7 +85,7 @@ information.
 
 ### Pillow
 
-Despite its abundance of wheels (65), installing Pillow often causes problems because it may be
+Despite its abundance of wheels (65), installing Pillow can often cause problems because it may be
 missing an underlying library. By default, it needs `zlib`, and `libjpeg`, which may or may not be
 available on your platform (`zlib` is necessary to create the `.png` files WeeWX uses for plots).
 Usually, installing them using `apt` (or whatever is appropriate for your platform) will solve the
@@ -94,6 +101,9 @@ worked for me:
 ```shell
 python3.7 -m pip install pillow=9.4.0
 ```
+
+Because WeeWX will run on any version of Pillow from v5.2 (released July 2018) or later, it's usually
+possible to find some version of Pillow that will work.
 
 ### pymysql
 

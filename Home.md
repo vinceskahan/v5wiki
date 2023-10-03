@@ -222,6 +222,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 #### Generators
 * [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) :heavy_check_mark:
+* [weewx-svg2png - Create thumbnail images and weather mini-pics by converting WeeWX-created SVG files to PNG](https://github.com/roe-dl/weewx-svg2png) :heavy_check_mark:
 
 #### Uploaders
 * <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) :heavy_check_mark:

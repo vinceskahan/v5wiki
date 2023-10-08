@@ -24,7 +24,8 @@ Steps:
 |-----------------------------------------------------------|---------------|----------------|-----------|-------------|-------|
 | NUC i7, 11th gen                                          | 5.0.0b13      | 3.7.10         | 0.31s     | 0.48s       |       |
 | inovato quadra Allwinner H6<br/>ARMv8 Cortex-A53 @ 1.7GHz | 5.0.0b12      | 3.9.2          | 3.84s     | 5.29s       |       |
-| RPi 4 (4GB, RaspiOS lite aarch64 6.1.21-v8+)              | 5.0.0b13      | 3.9.2          | 1.87s     | 2.42s       |  (1)  |
+| Raspberry Pi 4 Model B Rev 1.1 <br>(4GB, RaspiOS lite aarch64 6.1.21-v8+)          | 5.0.0b13      | 3.9.2          | 1.87s     | 2.42s       |  (1)  |
+| Raspberry Pi 3 Model B Plus Rev 1.3 <br>(RaspiOS lite aarch64 6.1.21-v8+)              | 5.0.0b13      | 3.9.2          | 3.89s     | 4.47s       |  (1)  |
 | RPi 2 (32-bit)                                            | 5.0.0b12      | 3.9.2          | 7.67s     | 8.44s       |       |
 | Rpi Zero W (32-bit)                                       | 5.0.0b12      | 3.9.2          | 20.12s    | 19.67s      |       |
 

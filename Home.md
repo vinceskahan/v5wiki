@@ -65,6 +65,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 #### Troubleshooting
 * [Troubleshooting Davis stations](Troubleshooting-the-Davis-Vantage-station)
 * [Deal with FineOffset USB lockup](FineOffset-USB-lockup)
+* [Pillow fights](Pillow-fights)
 
 #### Hardware
 * [Use one-wire sensors with WeeWX](Onewire-sensors)

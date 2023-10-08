@@ -29,6 +29,7 @@ a pip install of Version 5.
 | Hardware                                                         | WeeWX Version | Python version | Files (8) | Images (60) |
 |------------------------------------------------------------------|---------------|----------------|-----------|-------------|
 | Mac Mini, M1 2020 (Sonoma 14.0)                                  | 5.0.0b13      | 3.10.9         | 0.23s     | 0.55s       |
+| MacBook Air, M1 (2020)                                           | 5.0.0b12      | 3.7.16         | 0.27s     | 0.43s       |
 | NUC i7, 11th gen                                                 | 5.0.0b13      | 3.7.10         | 0.31s     | 0.48s       |
 | RPi 4 Model B Rev 1.1 <br>(4GB, RaspiOS lite aarch64 6.1.21-v8+) | 5.0.0b13      | 3.9.2          | 1.87s     | 2.42s       |
 | RPi 3 Model B Plus Rev 1.3 <br>(RaspiOS lite aarch64 6.1.21-v8+) | 5.0.0b13      | 3.9.2          | 3.89s     | 4.47s       |

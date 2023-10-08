@@ -49,4 +49,6 @@ The StationRegistry service sends the following information:
 * weewx version
 * python version
 * platform information (the string you see when you do 'uname -a')
+* the location of `weewxd` (used to infer the install method)
+* the location of `weewx.conf` (used to infer the install method)
 

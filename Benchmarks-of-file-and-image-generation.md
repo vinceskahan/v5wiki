@@ -20,9 +20,14 @@ Steps:
 5. Look in the log for generation times for the files and images. There should
    be 8 files and 60 images.
 
-| Hardware                                                  | WeeWX Version | Python version | Files (8) | Images (60) |
-|-----------------------------------------------------------|---------------|----------------|-----------|-------------|
-| NUC i7, 11th gen                                          | 5.0.0b13      | 3.7.10         | 0.31s     | 0.48s       |   
-| inovato quadra Allwinner H6<br/>ARMv8 Cortex-A53 @ 1.7GHz | 5.0.0b12      | 3.9.2          | 3.84s     | 5.29s       |
-| RPi 2 (32-bit)                                            | 5.0.0b12      | 3.9.2          | 7.67s     | 8.44s       |
-| Rpi Zero W (32-bit)                                       | 5.0.0b12      | 3.9.2          | 20.12s    | 19.67s      |
+| Hardware                                                  | WeeWX Version | Python version | Files (8) | Images (60) | Notes |
+|-----------------------------------------------------------|---------------|----------------|-----------|-------------|-------|
+| NUC i7, 11th gen                                          | 5.0.0b13      | 3.7.10         | 0.31s     | 0.48s       |       |
+| inovato quadra Allwinner H6<br/>ARMv8 Cortex-A53 @ 1.7GHz | 5.0.0b12      | 3.9.2          | 3.84s     | 5.29s       |       |
+| RPi 4 (4GB, RaspiOS lite aarch64 6.1.21-v8+)              | 5.0.0b13      | 3.9.2          | 1.87s     | 2.42s       |  (1)  |
+| RPi 2 (32-bit)                                            | 5.0.0b12      | 3.9.2          | 7.67s     | 8.44s       |       |
+| Rpi Zero W (32-bit)                                       | 5.0.0b12      | 3.9.2          | 20.12s    | 19.67s      |       |
+
+
+Notes:
+ * (1) generated 56 images

@@ -39,6 +39,7 @@ table at the end.
 | Mac Mini, M1 2020 (Sonoma 14.0)                                  | 5.0.0b13  | 3.10.9 |      0.60s |       1.06s |           |
 | MacBook Air, M1 (2020)                                           | 5.0.0b13  | 3.7.16 |      0.71s |       0.97s |           |
 | NUC i7, 11th gen                                                 | 5.0.0b13  | 3.7.10 |      0.89s |       1.14s |           |
+| RPi 4 Model B Rev 1.1 <br>(4GB, RaspiOS lite aarch64 6.1.0-rpi4-rpi-v8) | 5.0.0b13  | 3.11.2 |      6.24s |       6.39s |  (2)      |
 | RPi 4 Model B Rev 1.1 <br>(4GB, RaspiOS lite aarch64 6.1.21-v8+) | 5.0.0b13  | 3.9.2  |      6.36s |       6.56s |           | 
 | RPi 3 Model B Plus Rev 1.3 <br>(RaspiOS lite aarch64 6.1.21-v8+) | 5.0.0b13  | 3.9.2  |     13.06s |      14.07s |           |       
 | inovato quadra Allwinner H6<br/>ARMv8 Cortex-A53 @ 1.7GHz        | 5.0.0b13  | 3.9.2  |     14.03s |      11.87s |       (1) |
@@ -48,6 +49,7 @@ table at the end.
 
 (1) Using the Python version of Cheetah's NameMapper, which can significantly
 slow file generation.
+(2) 2023-09-28-raspios-bookworm-arm64-lite.img.xz beta based on debian 12
 
 
 ## Old (minimal) protocol

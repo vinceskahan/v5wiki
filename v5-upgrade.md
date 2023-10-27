@@ -1,7 +1,7 @@
 # Migrating `setup.py` installs to Version 5.0
 
-This is a guide for migrating V4.x installations that were installed using the `setup.py` method,
-to Version 5.0, using pip.
+This is a guide for migrating V4.x installations that were installed using the
+`setup.py` method, to Version 5.0, using pip.
 
 ## Code vs station data
 
@@ -11,9 +11,9 @@ data*. They are stored in separate areas, rather than everything under
 
 ### WeeWX code
 
-While there are many ways to install WeeWX using pip, if you follow the WeeWX
-install recommendations, pip will install your code in a _virtual environment_,
-located in `~/weewx-venv` in your home directory.
+While there are [many ways to install WeeWX using pip](pip-install-strategies),
+if you follow the WeeWX install recommendations, pip will install your code in a
+_virtual environment_, located in `~/weewx-venv` in your home directory.
 
 This contrasts with the `setup.py` method, which installed everything under
 `/home/weewx/bin`.

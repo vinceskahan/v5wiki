@@ -100,7 +100,7 @@ While WeeWX comes with two handlers (`syslog` and `console`) there are
 many others. See the Python documentation 
 [*Logging handlers*](https://docs.python.org/3/library/logging.handlers.html).
 
-One handler that is particularly useful, especially on macOS, is the
+One handler that is particularly useful, especially on **macOS**, is the
 [`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler),
 which writes to a specified file. If the file becomes too old or too big, a new
 file is opened and 'rotated' into place. Here's how to specify and use it.
@@ -117,8 +117,12 @@ Simply add this to your `weewx.conf` file:
             level = DEBUG
             formatter = verbose                            # NOTE 3
             class = logging.handlers.RotatingFileHandler   # NOTE 4
-            # Writing to this file will require root privileges:
-            filename = /var/log/weewx.log
+
+            # Writing to this file will require root privileges!
+            filename = /var/log/weewx.log                  # NOTE 5
+            # An alternative that does not require root privileges:
+            # filename = /var/tmp/weewx.log
+
             maxBytes = 10000000
             backupCount = 4
 ```
@@ -126,35 +130,40 @@ Simply add this to your `weewx.conf` file:
 This does three things (marked by `NOTE`):
 
 1. This reconfigures the `root` logger to send log messages to the hander 
-`rotate`, instead of to the default `syslog`. The trailing comma is important:
-it tells Python that option `handlers` is a list, and not a single item. Because
-it is a list, you can actually specify multiple handlers. For example, to log to
-`rotate` as well as the `console`, the option becomes:
+   `rotate`, instead of to the default `syslog`. The trailing comma is important:
+   it tells Python that option `handlers` is a list, and not a single item. Because
+   it is a list, you can actually specify multiple handlers. For example, to log to
+   `rotate` as well as the `console`, the option becomes:
 
         handlers = rotate, console
  
 2. This is where we define the new handler. It will be named `rotate`.
 
 3. The `verbose` formatter is useful when doing file rotations because it
-includes a timestamp.
+   includes a timestamp.
 
 4. Handler `rotate` will use class
-[`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler)
-for the actual implementation. It will log to the file `/var/log/weewx.log`. If
-the file gets bigger than 10MB, a new file will be created.
+   [`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler)
+   for the actual implementation. 
+
+5. It will log to the file `/var/log/weewx.log`. If the file gets bigger than
+   10MB, a new file will be created. Note that `/var/log/weewx.log` is a
+   **protected location**. It can only be written to by a process with root
+   privileges. Pick another, unprotected location, such as `/var/tmp/weewx.log`,
+   if your process does not have root privileges.
 
 
 ## Customizing what gets logged
 
 Another example. When the `debug` option is on, the default `root` logger will
-show `DEBUG` messages and above &mdash; basically everything. This is fine, but say
-you've decided that the `weewx.restx` module is too chatty for your liking. For
-it, you want to see only `INFO` messages and above &mdash; nothing else.
+show `DEBUG` messages and above &mdash; basically everything. This is fine, but
+say you've decided that the `weewx.restx` module is too chatty for your liking.
+For it, you want to see only `INFO` messages and above &mdash; nothing else.
 
 The solution is to tailor the logger used by the `weewx.restx` module, so it no
 longer inherits properties from the root logger. For this logger, we will
 specify that it logs only `INFO` and above. To do this, the `[Logging]` section
-would look like:
+in `weewx.conf` would look like:
 
 ```ini
 [Logging]
@@ -163,12 +172,12 @@ would look like:
       level = INFO
 ```
 
-Another example. Suppose you are debugging the `weewx.restx` module. In this case it
-would be desirable to set its logging `level` to `DEBUG` while other loggers
-continue to log `INFO` or higher. Again, the solution is to customize the logger
-for the `weewx.restx` module.  In this case, along with setting the logging
-`level`, we need to define a `handler`. Because the `weewx.restx` logger will
-handle the logging for the `weewx.restx` module, we will also want to turn
+Another example. Suppose you are debugging the `weewx.restx` module. In this
+case it would be desirable to set its logging `level` to `DEBUG` while other
+loggers continue to log `INFO` or higher. Again, the solution is to customize
+the logger for the `weewx.restx` module.  In this case, along with setting the
+logging `level`, we need to define a `handler`. Because the `weewx.restx` logger
+will handle the logging for the `weewx.restx` module, we will also want to turn
 `propagate` off. Otherwise `INFO` and higher messages will be logged twice: once
 by the `weewx.restx` logger and also by any parent handlers. Lastly, `debug`
 should be left at 0, so that the default `root` logging is `INFO`.
@@ -192,9 +201,9 @@ debug = 0
 
 ## Disabling logging
 
-This example essentially disables WeeWX logging completely,
-resulting in no log messages at all related to WeeWX other
-than those perhaps written by the operating system itself.
+This example essentially disables WeeWX logging completely, resulting in no log
+messages at all related to WeeWX other than those perhaps written by the
+operating system itself.
 
 ```
 [Logging]

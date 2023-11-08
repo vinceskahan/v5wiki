@@ -50,6 +50,15 @@ To get a good, useful log:
 
        sudo tail -f /var/log/syslog | tee /var/tmp/mylog
  
+
+   note - on a modern systemd system you might not see these files present due to
+   systemd handling logging.  You might consider installing a traditional syslog
+   daemon (for debian: `sudo apt-get install rsyslog`) or alternately use the
+   systemd `journalctl` command.  This example returns the last 20 lines of
+   weewx logs from systemd:
+
+       sudo journalctl -u weewx --no-pager -n 20
+
 5. In a _different_ console terminal, restart `weewxd`. On Debian, this is 
    generally done with 
 

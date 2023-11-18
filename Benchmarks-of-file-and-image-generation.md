@@ -29,8 +29,10 @@ table at the end.
    wee_reports weewx-benchmark/weewx.conf
    ```
    
-5. Look in the log for the generation time of the files and images. There should
-   be 21 files and 68 images.
+5. The benchmark will print the generation time for the files and images
+   to standard output. Make sure there are 21 files and 68 images. If not, there
+   may have been something in `weewx-benchmark/public_html`. Go back and do
+   step 3 again.
 
 6. Add your results to the table below. For architecture on Debian systems,
    please run `dpkg --print-architecture`, rather than relying on `uname -a`.

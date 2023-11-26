@@ -94,63 +94,63 @@ been set. If it has not (the default), then `log_level` is `INFO`, otherwise,
 The value for `{process_name}` is passed in when setting up the logging
 facility. For the WeeWX main program, it is `weewxd` (see below).
 
-## Logging to rotating files
+## Logging to a rotating files
 
 While WeeWX comes with two handlers (`syslog` and `console`) there are 
 many others. See the Python documentation 
 [*Logging handlers*](https://docs.python.org/3/library/logging.handlers.html).
 
 One handler that is particularly useful, especially on **macOS**, is the
-[`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler),
-which writes to a specified file. If the file becomes too old or too big, a new
+[`TimedRotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#timedrotatingfilehandler),
+which writes to a specified file. At a specified time, a new
 file is opened and 'rotated' into place. Here's how to specify and use it.
 
 Simply add this to your `weewx.conf` file:
 ```ini
 [Logging]
+
+    # Root logger
     [[root]]
-        handlers = rotate,                                 # NOTE 1
+      handlers = timed_rotate,                                  # NOTE 1
 
     [[handlers]]
         # Log to a set of rotating files
-        [[[rotate]]]                                       # NOTE 2
+        [[[timed_rotate]]]                                      # NOTE 2
             level = DEBUG
-            formatter = verbose                            # NOTE 3
-            class = logging.handlers.RotatingFileHandler   # NOTE 4
-
-            # Writing to this file will require root privileges!
-            filename = /var/log/weewx.log                  # NOTE 5
-            # An alternative that does not require root privileges:
-            # filename = /var/tmp/weewx.log
-
-            maxBytes = 10000000
-            backupCount = 4
+            formatter = verbose                                 # NOTE 3
+            class = logging.handlers.TimedRotatingFileHandler   # NOTE 4
+            # File to log to:
+            filename = /var/tmp/weewx.log                       # NOTE 5
+            # When to rotate:
+            when = midnight                                     # NOTE 6
+            # How many log files to save
+            backupCount = 7                                     # NOTE 7
 ```
 
-This does three things (marked by `NOTE`):
-
 1. This reconfigures the `root` logger to send log messages to the hander 
-   `rotate`, instead of to the default `syslog`. The trailing comma is important:
-   it tells Python that option `handlers` is a list, and not a single item. Because
-   it is a list, you can actually specify multiple handlers. For example, to log to
-   `rotate` as well as the `console`, the option becomes:
+   `timed_rotate`, instead of to the default `syslog`. The trailing comma is
+   important: it tells Python that option `handlers` is a list, and not a single
+   item. Because it is a list, you can actually specify multiple handlers. For
+   example, to log to `timed_rotate` as well as the `console`, the option becomes:
 
-        handlers = rotate, console
+        handlers = timed_rotate, console
  
-2. This is where we define the new handler. It will be named `rotate`.
+2. This is where we define the new handler. It will be named `timed_rotate`.
 
 3. The `verbose` formatter is useful when doing file rotations because it
    includes a timestamp.
 
-4. Handler `rotate` will use class
-   [`RotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#rotatingfilehandler)
+4. Handler `timed_rotate` will use class
+   [`TimedRotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#timedrotatingfilehandler)
    for the actual implementation. 
 
-5. It will log to the file `/var/log/weewx.log`. If the file gets bigger than
-   10MB, a new file will be created. Note that `/var/log/weewx.log` is a
-   **protected location**. It can only be written to by a process with root
-   privileges. Pick another, unprotected location, such as `/var/tmp/weewx.log`,
-   if your process does not have root privileges.
+5. It will log to the file `/var/tmp/weewx.log`. In WeeWX V5, this location can
+   be a relative path, in which case it will be relative to `WEEWX_ROOT`. For
+   V4, it must be an absolute path.
+
+7. Do the rotation at midnight.
+
+8. Save seven (7) backup files, that is, a week's worth.
 
 
 ## Customizing what gets logged

@@ -52,8 +52,7 @@ old station data in `/home/weewx`.
 
 2. You do not want to do Step 2, _Provision a new station_, because you will be 
    simply reusing your old station data in `/home/weewx`. However, you do need to 
-   upgrade your old documentation, examples, and daemon utility files to the
-   V5 versions.
+   upgrade your old examples and daemon utility files to the V5 versions.
 
         weectl station upgrade --config=/home/weewx/weewx.conf
 
@@ -62,8 +61,9 @@ old station data in `/home/weewx`.
 
         weewxd --config=/home/weewx/weewx.conf
 
-4. If that works, then it's time to modify your old daemon configuration file
-   so that it uses the new V5.0 executable. These steps will require root privileges.
+4. If that works, then it's time to replace your old daemon configuration file
+   with one that uses the new V5.0 executable. These steps will require root 
+   privileges.
 
     ```shell
     # systems with systemd

@@ -11,7 +11,7 @@ several advantages:
 - It abstracts out logging destinations, formatting, and filtering, allowing all
   to be changed at runtime.
 - It has destinations that work on Windows.
-- It can support email or socket logging.
+- It can support logging to email, sockets, and rotating files.
 
 In short, it is a much more flexible facility. Plus, it's easy to use.
 
@@ -33,7 +33,7 @@ With that in mind, here is the default configuration that WeeWX uses:
 ```ini
 [Logging]
     version = 1
-    disable_existing_loggers = False
+    disable_existing_loggers = True
 
     # Root logger
     [[root]]
@@ -92,9 +92,9 @@ been set. If it has not (the default), then `log_level` is `INFO`, otherwise,
 `DEBUG`.
 
 The value for `{process_name}` is passed in when setting up the logging
-facility. For the WeeWX main program, it is `weewxd` (see below).
+facility. For the WeeWX main program, it is `weewxd`.
 
-## Logging to a rotating files
+## Logging to rotating files
 
 While WeeWX comes with two handlers (`syslog` and `console`) there are 
 many others. See the Python documentation 
@@ -146,7 +146,11 @@ Simply add this to your `weewx.conf` file:
 
 5. It will log to the file `/var/tmp/weewx.log`. In WeeWX V5, this location can
    be a relative path, in which case it will be relative to `WEEWX_ROOT`. For
-   V4, it must be an absolute path.
+   example, specifying
+
+       filename = log/weewx.log
+ 
+   in Version 5 will cause the log to go to `~/weewx-data/log/weewx.log`. 
 
 7. Do the rotation at midnight.
 
@@ -242,59 +246,6 @@ log.critical("This is a critical message")
 ```
 That's it.
 
-## In main programs
-
-If you are writing a utility which will be run as the "main program", then there
-are a couple extra steps you must take. At the minimum, include the following at
-the top of your code:
-
-```python
-import logging
-import weeutil.logger
-
-log = logging.getLogger(__name__)
-
-weeutil.logger.setup('prog_name', {})
-```
-
-This will set up a default logging configuration, suitable for most situations.
-
-However, if you want the user to be able to customize the logging for your
-utility, then you need a few extra steps:
-
-```python
-    import logging
-    import weecfg
-    import weeutil.logger
-    from weeutil.weeutil import to_int
-
-    log = logging.getLogger(__name__)
-
-    # Temporarily set up logging using the defaults. This is so you can log
-    # the process of reading in the weewx.conf file
-    weeutil.logger.setup('utility_name', {})
-
-    ...
-
-    # This message will use the default logger:
-    log.info("Attempting to read config file from %s' % config_path)
-
-    # Get the config_dict to use
-    config_path, config_dict = weecfg.read_config(options.config_path, args)
-
-    # Set weewx.debug as necessary:
-    weewx.debug = to_int(config_dict.get('debug', 0))
-
-    # Now we can set up the user customized system:
-    weeutil.logger.setup('utility_name', config_dict)
-
-    # This message will use the customized logger:
-    log.info("Successfully read in weewx.conf")
-```
-
-Note how the pattern first sets up a temporary logging facility, using WeeWX
-defaults. This is to log the process of reading in the config file. Then, once
-that is done, it uses the fully customized version.
 
 ## Throttling logging events
 
@@ -362,4 +313,5 @@ except ImportError:
 ```
 
 Now you can just use the functions `logdbg()`, `loginf()`, and `logerr()` in
-your code, secure in the knowledge that it will work under both WeeWX V3 and V4.
+your code, secure in the knowledge that it will work under WeeWX V3, as
+well as V4 and V5.

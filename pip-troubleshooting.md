@@ -50,7 +50,10 @@ any platform, and any version of Python 3.)
 
 If you have an unusual platform, a wheel may not exist for one or more of these
 dependencies. In this case, pip will attempt to create a wheel, which will
-involve compiling any required binaries. It may or may not succeed.
+involve compiling any required binaries, which may or may not succeed. Before
+starting, make sure you have a suitable development environment available. In
+particular, be sure to have installed `python3-dev` on Debian systems,
+`python3-devel` on RHEL-derivative systems.
 
 Here's how to work around some of the more common problems.
 

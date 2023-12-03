@@ -33,7 +33,7 @@ With that in mind, here is the default configuration that WeeWX uses:
 ```ini
 [Logging]
     version = 1
-    disable_existing_loggers = True
+    disable_existing_loggers = False
 
     # Root logger
     [[root]]

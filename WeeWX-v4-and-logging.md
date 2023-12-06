@@ -16,11 +16,11 @@ several advantages:
 
 In short, it is a much more flexible facility. Plus, it's easy to use.
 
-Both the `syslog` module and the `logging` module can send log
-messages to the system's logger.  In fact, that is the default
-behavior for WeeWX.  WeeWX sends log messages to the system logger
-so that the system will handle log file rotation, filtering of
-log messages, sending messages to remote log servers, etc.
+Although the `logging` module provides many more options and
+abilities than the `syslog` module, in its default configuration,
+WeeWX still sends log messages to the system logger so that the 
+system will handle log file rotation, filtering of log messages, 
+sending messages to remote log servers, etc.
 
 This is a guide to how `logging` is implemented within WeeWX.
 

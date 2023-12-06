@@ -6,63 +6,82 @@ WeeWX is a free, open-source project created and run entirely by volunteers. We 
 to provide support on weewx-user, but it is not guaranteed. You are dependent
 on the kindness of strangers, so please be nice to them!
 
-Drivers and skins that are not part of the standard distribution will be given a 
-lower priority.
-
-# The system log
+# The log
 
 There are three important rules to remember when seeking help from the group:
 
 1. Include the log!
 2. Include more of the log!
-3. Include still more!
+3. Did you include the log?
+
+As it runs, WeeWX sends messages to the system log. If you look at the messages in
+the log, you will probably figure out exactly what is causing the problem.  If you
+do not understand what is happening in the log messages, someone else probably will.
+But without the log, no one else can help you.
 
 Too often, we see either nothing from the log, or a tiny sliver of text with no context. 
 
-### _**Do not send a screenshot!**_
+_**Do not send a screenshot!**_
 
-They are hard to read, include only a couple dozen lines, cannot be searched nor
+A screenshot is hard to read, includes only a couple dozen lines, cannot be searched nor
 translated, and waste a lot of space. _Send only text!_
 
-To get a good, useful log:
+# How to get a good, useful log
 
-1. Figure out where the log is located. On Debian systems, such as the Raspberry Pi,
-   this is `/var/log/syslog`. The *User's Guide* has a section [*Where to find
-   things*](http://weewx.com/docs/usersguide.htm#Where_to_find_things) that can
-   help locate your system log.
+It is helpful to have debug enabled before you run WeeWX, as that results in more
+verbosity in the log messages.  This is how to enable debug and get the contents
+of the log.
 
-2. Stop `weewxd`. On Debian systems, this can be done with
+1. Figure out where the log is located
 
-       sudo systemctl stop weewx
+    | system                        | location of system log |
+    |-------------------------------|------------------------|
+    | Debian, Ubuntu, Raspian       | /var/log/syslog        |
+    | Redhat, Fedora, CentOS, Rocky | /var/log/messages      |
+    | MacOS                         | /var/log/syslog        |
+    
+2. Stop `weewxd`
+
+    | init system | how to stop weewxd          |
+    |-------------|-----------------------------|
+    | systemd     | sudo systemctl stop weewx   |
+    | sysV        | sudo /etc/init.d/weewx stop |
+    | launchd     | sudo launchctl unload /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 3. Set `debug=1` in the configuration file in `weewx.conf`. Setting `debug=2`
    will give you even more information, which can be helpful when debugging
    RESTful uploads and FTP. However, it will generate a lot of log entries.
  
-4. In a console terminal, type the command 
+4. View and save the system log
+
+    In a terminal window, use `tail` to watch the system log, combined
+    with `tee` to save what you see to a separate file:
 
        tail -f /var/log/syslog | tee /var/tmp/mylog
 
    This will allow you to see the log, while saving a copy to the file
-   `/var/tmp/mylog`. One potential complication is that on recent Linux systems
-   you might have to use `sudo` to view the log. In this case, the command
-   becomes
+   `/var/tmp/mylog`. On recent Linux systems you might have to use `sudo`
+   to view the log. In this case, the command becomes:
 
        sudo tail -f /var/log/syslog | tee /var/tmp/mylog
  
-
-   note - on a modern systemd system you might not see these files present due to
-   systemd handling logging.  You might consider installing a traditional syslog
-   daemon (for debian: `sudo apt-get install rsyslog`) or alternately use the
-   systemd `journalctl` command.  This example returns the last 20 lines of
-   weewx logs from systemd:
+   NOTE - On some systems that use systemd, you might not see the system log
+   because systemd-journald intercepts all of the system logging.  If that is
+   the case on your system, you will have to use the `journalctl` command to
+   view the log. This example returns the last 20 lines of weewx log messages:
 
        sudo journalctl -u weewx --no-pager -n 20
 
-5. In a _different_ console terminal, restart `weewxd`. On Debian, this is 
-   generally done with 
+5. Start `weewxd` and watch the log
 
-       sudo systemctl start weewx
+    In a _different_ terminal, start `weewxd` as you watch the log
+    output in the first terminal.
+
+    | init system | how to stop weewxd          |
+    |-------------|-----------------------------|
+    | systemd     | sudo systemctl start weewx   |
+    | sysV        | sudo /etc/init.d/weewx start |
+    | launchd     | sudo launchctl load /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 6. Let it run through at least the first reporting cycle (usually 5-10 minutes).
  

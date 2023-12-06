@@ -1,4 +1,4 @@
-This is a guide to viewing WeeWX log messages.
+This is a guide to viewing and managing WeeWX log messages.
 
 In its default configuration, WeeWX sends log messages to the system logging facility, called `syslog`.  This means that the system is responsible for things like ensuring that running multiple instances of `weewxd` do not corrupt the log, and that the system is responsible for rotating log files so that they do not fill up the disks.
 

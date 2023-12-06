@@ -1,11 +1,12 @@
 # Overview
-Earlier versions of WeeWX use Python's `syslog` module to log events. It has
+
+WeeWX V3 uses Python's `syslog` module to log events. It has
 several disadvantages:
 - It works only under versions of *nix. No Windows.
 - It can log only to the system log.
 - It is inflexible in the formatting it uses.
 
-WeeWX V4 will transition to using Python's
+WeeWX V4 uses Python's
 [`logging`](https://docs.python.org/3/library/logging.html) package. It has
 several advantages:
 - It abstracts out logging destinations, formatting, and filtering, allowing all
@@ -14,6 +15,12 @@ several advantages:
 - It can support logging to email, sockets, and rotating files.
 
 In short, it is a much more flexible facility. Plus, it's easy to use.
+
+Both the `syslog` module and the `logging` module can send log
+messages to the system's logger.  In fact, that is the default
+behavior for WeeWX.  WeeWX sends log messages to the system logger
+so that the system will handle log file rotation, filtering of
+log messages, sending messages to remote log servers, etc.
 
 This is a guide to how `logging` is implemented within WeeWX.
 

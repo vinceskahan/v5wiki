@@ -7,9 +7,9 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 :heavy_check_mark: = Tested with weewx4 and python3
 
 ### General
+* [Answers to frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions)
 * [Posting to weewx-user](Help!-Posting-to-weewx-user)
 * [How to view the log](view-logs)
-* [Frequently-asked questions (FAQ)](WeeWX-Frequently-Asked-Questions)
 * [Informationen auf Deutsch](https://www.woellsdorf-wetter.de/software/weewx.html)
 
 ### Basic principles

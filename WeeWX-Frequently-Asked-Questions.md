@@ -1,4 +1,4 @@
-The page provides answers to some of the most frequently-asked questions (FAQ) about WeeWX.
+This page provides answers to some of the most frequently-asked questions (FAQ) about WeeWX.
 
 ## Getting started
 
@@ -13,7 +13,7 @@ The page provides answers to some of the most frequently-asked questions (FAQ) a
 
 The answer to this depends on you. Many tens of thousands of people have installed WeeWX. Some of those people have years of computer experience, but many of them have little or no experience with computers, or command-line programs.
 
-WeeWX is a command-line application, which means that people used to 'click in the gui' interfaces frequently have some growing pains. Using a command-line application requires some investment of your time and energy to reach a minimal level of expertise. However, the skills you learn to install and run WeeWX are applicable to many other systems.
+WeeWX is a command-line application, which means that people used to 'point-and-click' interfaces frequently have some growing pains. Using a command-line application requires some investment of your time and energy to reach a minimal level of expertise. However, the skills you learn to install and run WeeWX are applicable to many other systems.
 
 ### What skills do I need to run WeeWX?
 

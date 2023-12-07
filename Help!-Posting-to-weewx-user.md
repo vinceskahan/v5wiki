@@ -1,4 +1,4 @@
-This is a guideline for requesting help by posting to the [weewx-user group](https://groups.google.com/forum/#!forum/weewx-user).
+These are things that you should know and do before you post to the [weewx-user group](https://groups.google.com/forum/#!forum/weewx-user).
 
 ## What is supported
 

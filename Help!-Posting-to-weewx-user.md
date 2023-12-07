@@ -1,29 +1,29 @@
 This is a guideline for requesting help by posting to the [weewx-user group](https://groups.google.com/forum/#!forum/weewx-user).
 
-# What is supported
+## What is supported
 
 WeeWX is a free, open-source project created and run entirely by volunteers. We try
 to provide support on weewx-user, but it is not guaranteed. You are dependent
 on the kindness of strangers, so please be nice to them!
 
-# Do your homework
+## Do your homework
 
 Chances are your problem has been encountered by someone else. So before you post,
 do a search in the weewx-user group.
 
-# Do not just use someone else's posting
+## Do not just use someone else's posting
 
 If you find another posting that is similar to your problem, it might be OK
 to continue that thread. However, if the posting is older than a few months,
 or if it is only slightly related to your problem, you should create a new
 thread.  Then make a link to the other posting, if it helps clarify the problem.
 
-# Do not cross-post
+## Do not cross-post
 
 If you post in weewx-user, do not post the same message in weewx-development.
 Cross-posting almost ensures that your request will be ignored.
 
-# The log
+## The log
 
 There are three important rules to remember when seeking help from the group:
 
@@ -43,7 +43,7 @@ _**Do not send a screenshot!**_
 A screenshot is hard to read, includes only a couple dozen lines, cannot be searched nor
 translated, and waste a lot of space. _Send only text!_
 
-# How to get a good, useful log
+## How to get a good, useful log
 
 It is helpful to have debug enabled before you run WeeWX, as that results in more
 verbosity in the log messages.  This is how to enable debug and get the contents

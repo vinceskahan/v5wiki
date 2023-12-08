@@ -47,7 +47,7 @@ $ sudo systemctl disable systemd-timesyncd
 #### C. Make weewxd depend on a valid system time
 
 The article [How can I delay the startup of systemd services until the datetime is set (no RTC on the Raspberry Pi)
-](https://raspberrypi.stackexchange.com/questions/94635/how-can-i-delay-the-startup-of-systemd-services-until-the-datetime-is-set-no-rt) has some very useful hints on a more elegant solution
+](https://raspberrypi.stackexchange.com/questions/94635/how-can-i-delay-the-startup-of-systemd-services-until-the-datetime-is-set-no-rt) has some very useful hints on a more elegant solution.
 
 
 ### Use a high-quality SD card
@@ -67,7 +67,7 @@ Historically there have been SD card issues on older pi. While this occurred mos
 
 It is possible to tweak the operating system so that it does not write to the SD as much.
 
-Detailed instructions are in the [guide to minimizing writes](https://github.com/weewx/weewx/wiki/Minimize-writes-on-SD-cards).
+Detailed instructions are in the Wiki article about [*minimizing writes to disk*](https://github.com/weewx/weewx/wiki/Minimize-writes-on-SD-cards).
 
 ### FTP
 

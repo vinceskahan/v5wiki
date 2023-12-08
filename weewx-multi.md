@@ -8,7 +8,7 @@ You can run any number of WeeWX instances from a single WeeWX installation.  How
 * database
 * reports
 
-The instructions vary slightly depending on where your WeeWX configuration file, database, reports, and logs are located.
+The instructions vary slightly depending on where your WeeWX configuration file, database, and reports are located.
 
 ## Multiple weather stations, one WeeWX installation
 

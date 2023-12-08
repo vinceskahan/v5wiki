@@ -166,12 +166,47 @@ For more details and examples, see the guide about [logging](view-logs)
 
 ### Why do I get "command not found" when I type WeeWX commands?
 
-* [Command not found](faq-command-not-found) - need for a correct $PATH
+If you type a WeeWX command and you see `command not found`, that probably means that the command is not in your `PATH`.
+```
+$ sudo wee_extension --list
+sudo: wee_extension: command not found
+```
+
+First, be sure that you are typing the right command.  In WeeWX V5 there are only two: `weewxd` and `weectl`.  In WeeWX V4 there are a few, including `weewxd`, `wee_config`, `wee_extension`, `wee_database`, and `wee_reports`.
+
+If you installed WeeWX using `pip`, be sure to activate the Python virtual environment before you invoke a WeeWX command.
+```
+$ source ~/weewx-venv/bin/activate
+$ weectl extension --list
+```
+
+If you installed WeeWX V4 using `setup.py`, try using the full path to the WeeWX command.
+```
+$ sudo /home/weewx/bin/wee_extension --list
+```
+
+See the Wiki article [understanding paths](Understanding-paths)
 
 
 ### Why do I get "permission denied"?
 
-* [Permission denied](faq-permission-denied) - need to use sudo
+There are a few situations where you might encounter "permission denied".
+
+* starting/stopping `weewxd` when it is running as a system daemon
+* viewing the system log
+* modifying a configuration file or skin
+* installing an extension
+* reading/writing data to the database
+* reading/writing data to a USB or serial device
+
+In many cases, you can escalate your privileges by putting a `sudo` at the beginning of the command. This executes the command as the `root` user. 
+```
+sudo systemctl start weewx
+```
+
+Another option is to add your username to the list of administrative users on the computer. 
+
+See the Wiki article [understanding permissions](Understanding-permissions)
 
 
 ### What do these Python errors mean?

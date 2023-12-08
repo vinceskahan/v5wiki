@@ -150,14 +150,14 @@ Create the `defaults` file to match your installation.
 For a DEB/RPM package installation:
 ```
 echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
-echo 'WEEWX_CFGDIR=/home/weewx' | sudo tee -a /etc/default/weewx-multi
-echo 'WEEWX_BINDIR=/home/weewx/bin' | sudo tee -a /etc/default/weewx-multi
+echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee -a /etc/default/weewx-multi
+echo 'WEEWX_BINDIR=/usr/share/weewx' | sudo tee -a /etc/default/weewx-multi
 ```
 For a `setup.py` installation:
 ```
 echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
-echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee -a /etc/default/weewx-multi
-echo 'WEEWX_BINDIR=/usr/share/weewx' | sudo tee -a /etc/default/weewx-multi
+echo 'WEEWX_CFGDIR=/home/weewx' | sudo tee -a /etc/default/weewx-multi
+echo 'WEEWX_BINDIR=/home/weewx/bin' | sudo tee -a /etc/default/weewx-multi
 ```
 Finally, enable the script
 ```

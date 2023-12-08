@@ -79,6 +79,43 @@ Yes, but... While you have to specify *something* for the `station_url`, it does
 Simply disable the registration setting then restart WeeWX. Systems that refresh their data are dropped from the map in about a month.
 
 
+## Installing and upgrading
+
+### How do I fix GPG and problems with the apt/yum/suse repository keys?
+
+* I'm having [problems downloading the apt repo key](faq-apt-key-problems) to my debian(ish) system
+
+### How do I answer the questions from `apt` or `yum` when I upgrade WeeWX?
+
+* How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
+
+
+
+## Using the command-line, Python, and WeeWX
+
+### How do I run `weewxd` directly in order to diagnose problems?
+
+In many cases you can simply type `weewxd` to start WeeWX.  This will run `weewxd` in the foreground, and it will print data from the weather station to the screen.  To stop it, type `ctrl-c` (press the `c` key while you hold down the `control` key).
+
+If you used `pip` to install WeeWX, then you must activate the Python virtual environment before you start `weewxd`, something like this:
+```
+source ~/weewx-env/bin/activate
+weewxd
+```
+
+In some cases you might have to run `weewxd` with root permissions in order to read data from the station, write data to the database, or write the reports.  If so, the use `sudo weewxd` instead of just `weewxd`.
+
+### Where do I find the log?
+
+Whether you run it directly or in the background, `weewxd` emits log messages to indicate what it is doing.  These messages go to the *system logger*, which you can then view using tools that come with your operating system.
+
+On Linux systems, the system logger saves messages in either `/etc/syslog` (Debian, Ubuntu, etc) or `/var/log/messages` (Redhat, Fedora, etc).  On MacOS and most BSD systems, the system logger saves messages in `/var/log/syslog`. If you installed WeeWX using a DEB/RPM package, or if you used the system integration script on a `pip` installation, the WeeWX messages will be saved to `/var/log/weewx/weewx.log` separate from other system messages.
+
+To view the log messages, use the tools that come with your system.  On most systems, you can use `head` or `tail` to look at the first or last messages, respectively. On some systems, use `journalctl` to view the log messages. You might have to preface the commands with `sudo`, since many systems make the log readable only by admin users.
+
+For more details and examples, see the guide about [logging](view-logs)
+
+
 ### Why do I get "command not found" when I type WeeWX commands?
 
 * [Command not found](faq-command-not-found) - need for a correct $PATH
@@ -98,35 +135,21 @@ Simply disable the registration setting then restart WeeWX. Systems that refresh
 
 * [ModuleNotFoundError](PYTHONPATH-and-ModuleNotFoundError) - need to set PYTHONPATH
 
+### How can I find/see the web pages that WeeWX generates?
 
-### Why do my web pages not appear as expected?
+### WeeWX is running, but why are there no web pages?
 
 * My [web pages are not appearing](faq-web-pages-not-appearing) in my browser as expected
 
+### Why do the web pages not appear as expected?
+
+### Why are the web pages not updating?
 
 ### How do I fix obviously incorrect data from my station?
 
 * How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
 
 
-### How do I answer the questions from `apt` or `yum` when I upgrade WeeWX?
-
-* How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
-
-
-### How do I run `weewxd` directly in order to diagnose problems?
-
-* I'm having [problems downloading the apt repo key](faq-apt-key-problems) to my debian(ish) system
-
-
-### How do I fix GPG and problems with the apt/yum/suse repository keys?
-
-* How to [run weewxd directly](faq-running-weewxd-directly) for debugging problems
-
-
-### Where do I find the log?
-
-* [where are my logs](faq-where-are-my-logs) ?
 
 
 ### What should I know about using WeeWX on a Raspberry Pi

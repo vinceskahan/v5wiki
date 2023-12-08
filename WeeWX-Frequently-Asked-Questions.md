@@ -5,8 +5,8 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 ### I need help - where do I go for support?
 * read the rest of the questions in this page!
 * read the WeeWX documentation at `weewx.com` (https://weewx.com/docs)
-* read the instructions about posting to the `weewx-user` group (https://groups.google.com/group/weewx-user)
-* post your question(s) to the [`weewx-user`](https://groups.google.com/group/weewx-user) group
+* read the [instructions](Help!-Posting-to-weewx-user) about posting to the `weewx-user` group
+* post your question(s) to the `weewx-user` group (https://groups.google.com/group/weewx-user)
 * if you find any of this confusing, please [let us know](https://groups.google.com/group/weewx-user) so that we can make it better!
 
 ### Is WeeWX hard to install and use?

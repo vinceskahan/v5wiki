@@ -18,10 +18,13 @@ Here are some examples:
 ```
 # look at the last 10 messages
 sudo tail -10 /var/log/syslog
+
 # look at the first 20 messages, just from weewxd
 sudo grep weewxd /var/log/messages | head -20
+
 # watch all of the messages from weewxd as they arrive (ctrl-c to stop)
 sudo tail -f /var/log/messages | grep weewxd
+
 # watch the messages from weectl as they arrive, and save them to a file weectl.log
 sudo tail -f /var/log/syslog | grep weectl > ~/weectl.log
 ```
@@ -36,6 +39,7 @@ Here are some examples:
 ```
 # look at the messages only from the weewx service
 sudo journalctl -u weewx
+
 # view all of the message contents, not just the first few words of each line
 sudo journalctl -u weewx | more
 ```

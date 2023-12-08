@@ -16,7 +16,7 @@ Let's say that you have two weather stations connected to a single computer, one
 
 ### 1. Create the configuration files
 
-The config files may be named whatever you wish; however, keep in mind that the file name stem will be used later with the init script to control each instance and in the log entries. Typically, a self-evident descriptive single word works best. Create one file for each station, say `house.conf` and `paddock.conf`.  Put these files in the directory `/etc/weewx`:
+The config files may be named whatever you wish; however, keep in mind that the file name stem will be used later with the init script to control each instance and in the log entries. Typically, a self-evident descriptive single word works best. Create one file for each station, say `house.conf` and `paddock.conf`.  Put these files in the same directory as your original `weewx.conf`.
 
 For DEB/RPM package installs: 
 ```

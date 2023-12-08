@@ -40,18 +40,18 @@ sudo cp /home/weewx/weewx.conf /home/weewx/paddock.conf
 In each configuration file, ensure that `station_type` is set correctly.  In `house.conf`:
 ```
 [Station]
-        ...
-        station_type = Vantage
+    ...
+    station_type = Vantage
 [Vantage]
-        ...
+    ...
 ```
 and in `paddock.conf`:
 ```
 [Station]
-        ...
-        station_type = Acurite
+    ...
+    station_type = Acurite
 [Acurite]
-        ...
+    ...
 ```
 
 ### 3. Verify the database configurations
@@ -59,22 +59,22 @@ and in `paddock.conf`:
 In each configuration file, ensure a unique database.  In `house.conf`:
 ```
 [Databases]
-        [[archive_sqlite]]
-            database_name = house.sdb
-            database_type = SQLite
-        [[archive_mysql]]
-            database_name = house
-            database_type = MySQL
+    [[archive_sqlite]]
+        database_name = house.sdb
+        database_type = SQLite
+    [[archive_mysql]]
+        database_name = house
+        database_type = MySQL
 ```
 and in `paddock.conf`:
 ```
 [Databases]
-        [[archive_sqlite]]
-            database_name = paddock.sdb
-            database_type = SQLite
-        [[archive_mysql]]
-            database_name = paddock
-            database_type = MySQL
+    [[archive_sqlite]]
+        database_name = paddock.sdb
+        database_type = SQLite
+    [[archive_mysql]]
+        database_name = paddock
+        database_type = MySQL
 ```
 
 ### 4. Verify the report configurations
@@ -82,14 +82,14 @@ and in `paddock.conf`:
 In each configuration file, ensure that HTML_ROOT is unique.  In `house.conf`:
 ```
 [StdReport]
-        HTML_ROOT = public_html/house
-        ...
+    HTML_ROOT = public_html/house
+    ...
 ```
 and in `paddock.conf`:
 ```
 [StdReport]
-        HTML_ROOT = public_html/paddock
-        ...
+    HTML_ROOT = public_html/paddock
+    ...
 ```
 
 ### 5. Configure the startup script

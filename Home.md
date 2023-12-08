@@ -14,6 +14,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 ### Basic principles
 * [What you should know about paths](Understanding-paths)
+* [What you should know about permissions](Understanding-permissions)
 * [What is the difference between `barometer`, `pressure`, and `altimeter`?](Barometer,-pressure,-and-altimeter)
 * [What is `wind gust` and how is it different from `maximum wind speed`?](windgust)
 * [Wind chill and heat indexes](Wind-chill-and-heat-index)

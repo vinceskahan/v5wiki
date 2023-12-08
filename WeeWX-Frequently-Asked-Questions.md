@@ -4,7 +4,7 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 
 ### I need help - where do I go for support?
 * read the rest of the questions in this page!
-* read the WeeWX documentation at `weewx.com` (https://weewx.com/docs)
+* read the WeeWX documentation (https://weewx.com/docs)
 * read the guides in the WeeWX wiki (https://github.com/weewx/weewx/wiki)
 * read the [instructions](Help!-Posting-to-weewx-user) about posting to the `weewx-user` group
 * post your question(s) to the `weewx-user` group (https://groups.google.com/group/weewx-user)
@@ -18,7 +18,7 @@ The stations supported in WeeWX core are listed in the [hardware guide](https://
 
 Many more weather stations are listed at the [supported hardware page](http://weewx.com/hardware.html).  There you will see pictures and model numbers.  As you browse the devices on that page, remember that many devices are sold under different model numbers, by different vendors. Support for these are provided through `drivers` that you must add after you install WeeWX.
 
-To see all of the drivers, browse the [*Drivers* section](https://github.com/weewx/weewx/wiki#drivers) of the WeeWX wiki.
+To see many of the additional drivers, browse the [*Drivers* section](https://github.com/weewx/weewx/wiki#drivers) of the WeeWX wiki.
 
 ### Is WeeWX hard to install and use?
 

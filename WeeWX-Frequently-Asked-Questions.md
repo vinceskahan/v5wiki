@@ -81,9 +81,42 @@ Simply disable the registration setting then restart WeeWX. Systems that refresh
 
 ## Installing and upgrading
 
-### How do I fix GPG and problems with the apt/yum/suse repository keys?
+### gpg: no valid OpenPGP data found
 
-* I'm having [problems downloading the apt repo key](faq-apt-key-problems) to my debian(ish) system
+If it has been awhile since you updated your Debian-like system, then the keys that it uses to trust other systems might be out of date.  You can upgrade your system, including the keys, like this:
+
+```
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
+For details, see [problems downloading the apt repo key](faq-apt-key-problems).
+
+### wget: command not found
+
+The `wget` program is used to download the keys needed when you first configure a computer to trust `weewx.com`.  If your system does not have `wget`, install it like this:
+
+```
+# debian systems
+sudo apt install wget
+
+# redhat systems
+sudo yum install wget
+```
+
+Another option is to use `curl` instead of `wget`
+
+### gpg: command not found
+
+The `gpg` program is used to download the keys needed when you first configure a computer to trust `weewx.com`.  If your system does not have `gpg`, install it like this:
+
+```
+# debian systems
+sudo apt install gnupg
+
+# redhat systems
+sudo yum install gnupg
+```
 
 ### How do I answer the questions from `apt` or `yum` when I upgrade WeeWX?
 

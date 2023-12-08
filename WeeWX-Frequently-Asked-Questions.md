@@ -5,9 +5,20 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 ### I need help - where do I go for support?
 * read the rest of the questions in this page!
 * read the WeeWX documentation at `weewx.com` (https://weewx.com/docs)
+* read the guides in the WeeWX wiki (https://github.com/weewx/weewx/wiki)
 * read the [instructions](Help!-Posting-to-weewx-user) about posting to the `weewx-user` group
 * post your question(s) to the `weewx-user` group (https://groups.google.com/group/weewx-user)
 * if you find any of this confusing, please [let us know](https://groups.google.com/group/weewx-user) so that we can make it better!
+
+### Is my hardware supported by WeeWX?
+
+WeeWX itself includes support for a small number of weather station models. However, many, many more weather stations, as well as other types of hardware, are supported by user-supplied `drivers` - extensions to the WeeWX core.
+
+The stations supported in WeeWX core are listed in the [hardware guide](https://weewx.com/docs/5.0/hardware/drivers/).
+
+Many more weather stations are listed at the [supported hardware page](http://weewx.com/hardware.html).  There you will see pictures and model numbers.  As you browse the devices on that page, remember that many devices are sold under different model numbers, by different vendors. Support for these are provided through `drivers` that you must add after you install WeeWX.
+
+To see all of the drivers, browse the [*Drivers* section](https://github.com/weewx/weewx/wiki#drivers) of the WeeWX wiki.
 
 ### Is WeeWX hard to install and use?
 
@@ -53,28 +64,19 @@ The Installation section of the User's Guide has more details.
 
 ### Should I register my station?
 
-WeeWX has an *optional* capability to register your station with the `weewx.com` server. Registered stations appear on the [map](https://weewx.com/stations.html).
+WeeWX has an *optional* capability to register your station with the `weewx.com` server. Registered stations appear on the [map](https://weewx.com/stations.html). The registration includes only basic information about a station, including the location, hardware type, driver, WeeWX version, and Python version. We use this information to answer questions like "how many sites use this driver" and "how many sites are on the current weewx version" and the like, and to consider which configurations are used so much (or little) to merit higher or lower support levels.
 
 Registration is *not* required.  In fact, registration is disabled by default; you must take action to register your station.
-
-The registration includes only basic information about a station, including the location, hardware type, driver, WeeWX version, and Python version.
-
-We use this information to answer questions like "how many sites use this driver" and "how many sites are on the current weewx version" and the like, and to consider which configurations are used so much (or little) to merit higher or lower support levels.
 
 To register your station, see the instructions in the [`station_registry`](http://www.weewx.com/docs/usersguide.htm#station_registry) section of the User's Guide.
 
 ### Can I register without specifying an Internet-facing website ?
 
-Somewhat. While you have to specify *something* for the `station_url`, it does not need to actually resolve to a real, public-facing URL. If you use a private URL, this will result in you providing your registration data (thank you), put your station on the map, but the link to your station on the map will be broken.
+Yes, but... While you have to specify *something* for the `station_url`, it does not need to actually resolve to a real, public-facing URL. If you use a private URL, this will result in you providing your registration data (thank you), put your station on the map, but the link to your station on the map will be broken.
 
 ### How do I unregister ?
 
 Simply disable the registration setting then restart WeeWX. Systems that refresh their data are dropped from the map in about a month.
-
-
-### Is my hardware supported by WeeWX?
-
-* [Does WeeWX support my weather station model ?](faq-supported-hardware) - supported hardware
 
 
 ### Why do I get "command not found" when I type WeeWX commands?

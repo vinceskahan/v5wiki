@@ -38,11 +38,13 @@ A few minutes of searching will turn up tutorials specific to your operating sys
 
 ### Which method should I use to install WeeWX?
 
+There are three ways to install WeeWX: the packaged approach, the Python approach, and the run-from-source approach.
+
 The packaged approach (DEB/RPM packages using `apt`, `yum/dnf`, or `zypper`) is the fastest, easiest way to get started with WeeWX. However, this will work only if you use one of the operating systems for which these packages have been created.
 
 The Python approach (`pip` in WeeWX V5, or `setup.py` in WeeWX V4) will work on every operating system. However, this approach requires you to install additional pieces to integrate WeeWX completely into your system. This approach is typically used by those who want to do a lot of customization, or by those who use an operating system for which there is no DEB/RPM package.
 
-The `git` approach works on every operating system. However, this approach requires the most work to integrate WeeWX into your system. This approach is typically used by developers, or by those who need to fit WeeWX into systems with little memory or storage.
+The run-from-source approach (using `git`) works on every operating system. However, this approach requires the most work to integrate WeeWX into your system. This approach is typically used by developers, or by those who need to fit WeeWX into systems with little memory or storage.
 
 The Installation section of the User's Guide has more details.
 

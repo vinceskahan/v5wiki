@@ -267,7 +267,14 @@ Here is an example that is included in the default WeeWX configuration. In this 
 ```
 
 
-## Specific configurations of WeeWX
+## Specific WeeWX extensions
 
-* [How do I do XXXX in the Belchertown skin?](faq-belchertown-pointers)
-* How do I fix [rtl_433 file-not-found errors](faq-rtl-433-file-not-found) in the SDR driver?
+### How do I do XXXX in the Belchertown skin?
+
+The Belchertown skin is very popular yet somewhat complicated, especially for new users.
+
+Documentation can be found at:
+* The [Github](https://github.com/poblabs/weewx-belchertown) page for the skin - read this first for most issues
+* The [wiki](https://github.com/poblabs/weewx-belchertown/wiki) - contains more detailed information for more customized setups
+
+How to [customize the charts](https://github.com/poblabs/weewx-belchertown/wiki/Belchertown-Charts-Documentation) is part of the Belchertown Wiki.

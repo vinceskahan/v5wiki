@@ -54,7 +54,7 @@ For details, see the [development guide for logging](https://github.com/weewx/we
 
 For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
 
-## How to test your systems' logging
+## How to test your system logger
 
 There is a program called `logger` that you can use to test the behavior of your system's logging facilities.
 

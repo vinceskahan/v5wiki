@@ -30,11 +30,25 @@ On most modern Linux systems, the `sudo` is required, since the system logs are 
 
 ## journalctl
 
-Some systems that use `systemd` do not include `syslog` - they use `systemd-journald` instead.  Others include both `syslog` and `systemd-journald`.
+On systems that use `systemd`, there is a program called `systemd-journald` that manages some (or all) of the system logging.  In fact, on some systems that use `systemd`, there is no `syslog` - they use `systemd-journald` instead.  Others include both `syslog` and `systemd-journald`.  On systems with `systemd-journald`, you might be able to use the `journalctl` tool to view messages from WeeWX.
 
-## newsyslog
+Here are some examples:
+```
+# look at the messages only from the weewx service
+sudo journalctl -u weewx
+# view all of the message contents, not just the first few words of each line
+sudo journalctl -u weewx | more
+```
 
-## make weewx save to files and skip syslog
+## Make WeeWX save directly to files and skip the system logging
+
+Since version 4, WeeWX uses the Python `logging` module.  This means that you can configure WeeWX to save its messages directly to files, skipping your system's logging mechanism.  The Python `logging` module can also do log rotation, so log files do not grow too big, or so that older log files are deleted automatically.
+
+Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
+
+For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).
+
+For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
 
 ## testing
 

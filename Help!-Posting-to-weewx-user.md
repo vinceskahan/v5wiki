@@ -32,9 +32,18 @@ A good bug report includes:
 * what is the configuration of your system
 * what did you change (if anything)
 
-* Example: A bad bug report* I tried to install WeeWX and it doesn't work.  Will somebody help me ?
+### A bad bug report
+```
+I tried to install WeeWX and it doesn't work.  Will somebody help me ?
+```
 
-* Example: A good bug report* I'm trying to enable realtime updates to my Belchertown skin and it is not updating in realtime.  I keep getting 'waiting for data'.  I am running weewx 4.5.1 installed via apt-get and Belchertown 1.3.0 on a pi4 under Raspbian. My os version from /etc/os-release is 10.4
+### A good bug report
+```
+I'm trying to enable realtime updates to my Belchertown skin and it is 
+not updating in realtime.  I keep getting 'waiting for data'.  I am 
+running weewx 4.5.1 installed via apt-get and Belchertown 1.3.0 on a 
+pi4 under Raspbian. My os version from /etc/os-release is 10.4
+```
 
 ## The WeeWX debug utility
 

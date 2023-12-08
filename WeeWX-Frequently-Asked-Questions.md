@@ -249,7 +249,7 @@ To see the web pages from a different computer, you might want to install a web 
 
 For existing data, use a database tool, possibly with the WeeWX database tool, to manipulate values in the database. See the Wiki article [cleaning up old data](Cleaning-up-old-'bad'-data).
 
-For new data, use the `StdCalibrate` settings to apply a correction, or use the `StdQC` service to filter the values from your station.
+For new data, use `StdCalibrate` to apply a correction, or use `StdQC` to filter the values from your station.
 
 Here is an example. In this case the station can emit a lightning distance reading yet show a lightning strike count of zero. The example below ensures that lightning distance is not recorded unless there is a corresponding strike count during that interval.
 ```

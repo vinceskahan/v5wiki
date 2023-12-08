@@ -10,7 +10,23 @@ This document describes some of the configurations you might encounter on system
 
 ## syslog
 
-For every system other than Windows, the default logger for WeeWX is `syslog`.  When `weewxd` or any service or extension emits a log message, that message goes to the system's logger, `syslog`.
+The default logger for WeeWX is `syslog`.  When `weewxd` or any service or extension emits a log message, that message goes to the system's logger, `syslog`.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS, xBSD), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
+
+If the system saves `syslog` messages to file, then you can use standard tools such as `head`, `tail`, `more`, or `less` to view those messages.
+
+Here are some examples:
+```
+# look at the last 10 messages
+sudo tail -10 /var/log/syslog
+# look at the first 20 messages, just from weewxd
+sudo grep weewxd /var/log/messages | head -20
+# watch all of the messages from weewxd as they arrive (ctrl-c to stop)
+sudo tail -f /var/log/messages | grep weewxd
+# watch the messages from weectl as they arrive, and save them to a file weectl.log
+sudo tail -f /var/log/syslog | grep weectl > ~/weectl.log
+```
+
+On most modern Linux systems, the `sudo` is required, since the system logs are visible only to the system administration accounts.
 
 ## journalctl
 

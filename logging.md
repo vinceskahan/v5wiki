@@ -44,22 +44,19 @@ Any number of WeeWX instances can be run from a single WeeWX installation, eithe
 
 #### Using `weewxd`
 
-Consider the case where two WeeWX instances are being run; one for a Davis Vantage Pro station and the other for a Rainwise station using config files `/etc/weewx/vantage.conf` and `/etc/weewx/rainwise.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/vantage.log` and the log output for the Rainwise station is written to `/var/log/weewx/rainwise.log`. 
+Consider the case where two WeeWX instances are being run; one for a Davis Vantage Pro station and the other for a Rainwise station using config files `/etc/weewx/vantage.conf` and `/etc/weewx/rainwise.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/weewxd-vantage.log` and the log output for the Rainwise station is written to `/var/log/weewx/weewxd-rainwise.log`. 
 
 1. ensure the log output from each instance is separately identified by starting each WeeWX instance like this:
 ```
-sudo weewxd --log-label weewx-vantage /etc/weewx/vantage.conf
-sudo weewxd --log-label weewx-rainwise /etc/weewx/rainwise.conf
+sudo weewxd --log-label weewxd-vantage /etc/weewx/vantage.conf
+sudo weewxd --log-label weewxd-rainwise /etc/weewx/rainwise.conf
 ```
 
 2. use a syslog configuration `/etc/rsyslog.d/weewx.conf` like this:
 ```
-:programname,startswith,"wee_" /var/log/weewx/weewx.log
-:programname,startswith,"wee_" ~
-:programname,isequal,"weewx-vantage" /var/log/weewx/vantage.log
-:programname,isequal,"weewx-vantage" ~
-:programname,isequal,"weewx-rainwise" /var/log/weewx/rainwise.log
-:programname,isequal,"weewx-rainwise" ~
+$template WEEWX_LOGFILE,"/var/log/weewx/%programname%.log
+if $programname startswith 'wee' then ?WEEWX_LOGFILE
+if $programname startswith 'wee' then stop
 ```
 
 3. ensure the WeeWX log directory exists:
@@ -88,19 +85,15 @@ sudo /etc/init.d/rsyslog start
 
 #### Using `weewx-multi`
 
-Consider the case using the two example WeeWX instances controlled by the `weewx-multi` script used in the [How to run multiple instances of WeeWX](https://github.com/weewx/weewx/wiki/weewx-multi#how-to-run-multiple-instances-of-weewx) wiki page. One instance for a Davis Vantage Pro station known as 'home' and the other for an Acurite station known as 'paddock' using config files `/etc/weewx/home.conf` and `/etc/weewx/paddock.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/home.log` and the log output for the Acurite station is written to `/var/log/weewx/paddock.log`. 
+Consider the case using the two example WeeWX instances controlled by the `weewx-multi` script used in the [How to run multiple instances of WeeWX](https://github.com/weewx/weewx/wiki/weewx-multi#how-to-run-multiple-instances-of-weewx) wiki page. One instance for a Davis Vantage Pro station known as 'house' and the other for an Acurite station known as 'paddock' using config files `/etc/weewx/house.conf` and `/etc/weewx/paddock.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/weewx-house.log` and the log output for the Acurite station is written to `/var/log/weewx/weewx-paddock.log`. 
 
-By virtue of the `weewx-multi` script the log output for the home and paddock instances is as already 
-separately identified as `weewx-home` and `weewx-paddock` respectively.
+By virtue of the `--log-label` found in either the `weewx-multi` script or `weewx@.service` unit, the log output for the home and paddock instances is as already separately identified as `weewx-house` and `weewx-paddock` respectively.
 
 1. use a syslog configuration `/etc/rsyslog.d/weewx.conf` like this:
 ```
-:programname,startswith,"wee_" /var/log/weewx/weewx.log
-:programname,startswith,"wee_" ~
-:programname,isequal,"weewx-home" /var/log/weewx/home.log
-:programname,isequal,"weewx-home" ~
-:programname,isequal,"weewx-paddock" /var/log/weewx/paddock.log
-:programname,isequal,"weewx-paddock" ~
+$template WEEWX_LOGFILE,"/var/log/weewx/%programname%.log
+if $programname startswith 'wee' then ?WEEWX_LOGFILE
+if $programname startswith 'wee' then stop
 ```
 
 2. ensure the WeeWX log directory exists:
@@ -113,7 +106,7 @@ sudo mkdir /var/log/weewx
 /var/log/weewx/*.log {
   weekly
   missingok
-  rotate 52
+  rotate 4
   compress
   delaycompress
   notifempty

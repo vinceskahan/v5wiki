@@ -118,11 +118,22 @@ sudo apt install gnupg
 sudo yum install gnupg
 ```
 
-### How do I answer the questions from `apt` or `yum` when I upgrade WeeWX?
+### How do I answer the questions from `apt` when I upgrade WeeWX?
 
-* How do I answer the [questions apt-get asks](faq-questions-apt-get-asks) when I upgrade WeeWX
+When you upgrade WeeWX on a Debian-like system, the installer will ask you whether you want to keep your existing configuration, or use the latest configuration.  In most cases, you should choose to keep your existing configuration; the WeeWX developers work hard to ensure that new versions of WeeWX are backward-compatible with configurations and skins.
+
+Whether you choose to keep your configuration or the new one, both options will be saved. So if you change your mind later, or if you want to compare, you can do so.
+
+More detail can be found in the [apt update guide](faq-questions-apt-get-asks).
+
+### How do I answer the questions from `yum` or `dnf` when I upgrade WeeWX?
 
 
+When you upgrade WeeWX on a Redhat-like or SUSE system, the installer will ask you whether you want to keep your existing configuration, or use the latest configuration.  In most cases, you should choose to keep your existing configuration; the WeeWX developers work hard to ensure that new versions of WeeWX are backward-compatible with configurations and skins.
+
+Whether you choose to keep your configuration or the new one, both options will be saved. So if you change your mind later, or if you want to compare, you can do so.
+
+More detail can be found in the [yum update guide](yum-update-guide).
 
 ## Using the command-line, Python, and WeeWX
 

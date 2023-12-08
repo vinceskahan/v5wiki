@@ -207,19 +207,26 @@ systemctl start weewx
 sudo systemctl start weewx
 ```
 
-Another option is to add your username to the list of administrative users on the computer. In this approach, you add a user to a group, for exampl, adding the `pi` user to the `adm` group would let the `pi` user see and modify files that are available to the `adm` group but not to the rest of the world.
+Another option is to add your username to the list of administrative users on the computer. In this approach, you add a user to a group.  For example, adding the `pi` user to the `adm` group would let the `pi` user see and modify files that are available to the `adm` group but not to the rest of the world.
 
 See the Wiki article [understanding permissions](Understanding-permissions)
 
 
-### What do these Python errors mean?
+### SyntaxError: invalid syntax
 
-* [I'm getting a python error](faq-python-error) - python3 compatibility issues
+There are many things that could cause this Python error.  It might be as simple as a typographic error in code, or it could result from attempting to run Python2 code with a Python3 interpreter.
+
+See the Wiki article [python errors](faq-python-error)
 
 
-### What does "ModuleNotFoundError" mean?
+### ModuleNotFoundError: No module named xxx
 
-* [ModuleNotFoundError](PYTHONPATH-and-ModuleNotFoundError) - need to set PYTHONPATH
+This is a Python error that arises when Python is unable to find code (a Python 'module').  Perhaps the most common reason for this is if a a Python module has not been installed.  If this is the case, all you have to do is install the missing module.
+
+The error might also arise if the Python code is not invoked as the author intended it.  If this is the case, you might be able to fix it by setting the PYTHONPATH so that it includes the missing module.
+
+See the Wiki article about [Python module not found](PYTHONPATH-and-ModuleNotFoundError)
+
 
 ### How can I find/see the web pages that WeeWX generates?
 

@@ -195,13 +195,8 @@ For more details and examples, see the guide about [logging](view-logs)
 
 
 
+## Specific categories
 
-### What should I know about using WeeWX on a Raspberry Pi
-
-* [Raspberry Pi](faq-raspi-nuances) nuances for new users
-
-
-### FAQs about popular skins and extensions
-
+* What about [running WeeWX on a Raspberry Pi](https://github.com/weewx/weewx/wiki/Raspberry-Pi)?
 * [How do I do XXXX in the Belchertown skin?](faq-belchertown-pointers)
 * How do I fix [rtl_433 file-not-found errors](faq-rtl-433-file-not-found) in the SDR driver?

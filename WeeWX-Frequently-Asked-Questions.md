@@ -247,7 +247,9 @@ To see the web pages from a different computer, you might want to install a web 
 
 ### How do I fix obviously incorrect data from my station?
 
-For new data, use the `StdCalibrate` or `StdQC` service to filter and/or adjust the values from your station.
+For existing data, use a database tool, possibly with the WeeWX database tool, to manipulate values in the database. See the Wiki article [cleaning up old data](Cleaning-up-old-'bad'-data).
+
+For new data, use the `StdCalibrate` settings to apply a correction, or use the `StdQC` service to filter the values from your station.
 
 Here is an example. In this case the station can emit a lightning distance reading yet show a lightning strike count of zero. The example below ensures that lightning distance is not recorded unless there is a corresponding strike count during that interval.
 ```
@@ -256,7 +258,13 @@ Here is an example. In this case the station can emit a lightning distance readi
         lightning_distance = lightning_distance if Atlas_stike_count > 0 else None
 ```
 
-For existing data, use a database tool, possibly with the WeeWX database tool, to manipulate values in the database.
+Here is an example that is included in the default WeeWX configuration. In this case, the values for humidity are limited to 0-100, even if the sensor emits values outside that range.
+```
+[StdQC]
+    [[MinMax]]
+        outHumidity = 0, 100
+        inHumidity = 0, 100
+```
 
 
 ## Specific configurations of WeeWX

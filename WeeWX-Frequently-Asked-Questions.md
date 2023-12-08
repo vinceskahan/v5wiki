@@ -28,9 +28,13 @@ There are many instructions and guides that will help you, but you must still th
 
 ### How do I learn the things I need to run WeeWX?
 
-There are *dozens* of free Linux introductory courses available on Internet.   The [Introduction to Linux](https://www.edx.org/course/introduction-to-linux) is a free, self-paced course on edx.org, which has been taken by hundreds of thousands of people.  A few minutes of searching will turn up tutorials specific to your operating system of choice, whether that is MacOS, FreeBSD, Rocky, Debian, Mint, Ubuntu, Redhat, SUSE, etc.
+There are *dozens* of free Linux introductory courses available on Internet.   The [Introduction to Linux](https://www.edx.org/course/introduction-to-linux) is a free, self-paced course on edx.org, which has been taken by hundreds of thousands of people.  Or try the [Linux Journey](https://linuxjourney.com/)
 
 There are many os-specific forums on Reddit that are Linux, Linux administration, and operating system specific.
+* [I am new to Linux, what should a beginner know?](https://www.reddit.com/r/linux4noobs/comments/10kz0xh/i_am_new_to_linux_what_should_a_beginner_know/)
+* [A good guide to learn Linux from zero](https://www.reddit.com/r/linuxquestions/comments/125dn50/a_good_guide_to_learn_linux_from_zero/)
+
+A few minutes of searching will turn up tutorials specific to your operating system of choice, whether that is MacOS, FreeBSD, Rocky, Debian, Mint, Ubuntu, Redhat, SUSE, etc.
 
 ### Which method should I use to install WeeWX?
 

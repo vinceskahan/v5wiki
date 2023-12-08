@@ -92,6 +92,7 @@ sudo apt-get upgrade -y
 
 For details, see [problems downloading the apt repo key](faq-apt-key-problems).
 
+
 ### wget: command not found
 
 The `wget` program is used to download the keys needed when you first configure a computer to trust `weewx.com`.  If your system does not have `wget`, install it like this:
@@ -106,6 +107,7 @@ sudo yum install wget
 
 Another option is to use `curl` instead of `wget`
 
+
 ### gpg: command not found
 
 The `gpg` program is used to download the keys needed when you first configure a computer to trust `weewx.com`.  If your system does not have `gpg`, install it like this:
@@ -118,7 +120,8 @@ sudo apt install gnupg
 sudo yum install gnupg
 ```
 
-### How do I answer the questions from `apt` when I upgrade WeeWX?
+
+### How should I answer the questions from `apt` when I upgrade WeeWX?
 
 When you upgrade WeeWX on a Debian-like system, the installer will ask you whether you want to keep your existing configuration, or use the latest configuration.  In most cases, you should choose to keep your existing configuration; the WeeWX developers work hard to ensure that new versions of WeeWX are backward-compatible with configurations and skins.
 
@@ -126,8 +129,8 @@ Whether you choose to keep your configuration or the new one, both options will 
 
 More detail can be found in the [apt update guide](faq-questions-apt-get-asks).
 
-### How do I answer the questions from `yum` or `dnf` when I upgrade WeeWX?
 
+### How should I answer the questions from `yum` or `dnf` when I upgrade WeeWX?
 
 When you upgrade WeeWX on a Redhat-like or SUSE system, the installer will ask you whether you want to keep your existing configuration, or use the latest configuration.  In most cases, you should choose to keep your existing configuration; the WeeWX developers work hard to ensure that new versions of WeeWX are backward-compatible with configurations and skins.
 
@@ -149,6 +152,7 @@ weewxd
 
 In some cases you might have to run `weewxd` with root permissions in order to read data from the station, write data to the database, or write the reports.  If so, the use `sudo weewxd` instead of just `weewxd`.
 
+
 ### Where do I find the log?
 
 Whether you run it directly or in the background, `weewxd` emits log messages to indicate what it is doing.  These messages go to the *system logger*, which you can then view using tools that come with your operating system.
@@ -165,7 +169,7 @@ For more details and examples, see the guide about [logging](view-logs)
 * [Command not found](faq-command-not-found) - need for a correct $PATH
 
 
-### What do I do when I get "permission denied"?
+### Why do I get "permission denied"?
 
 * [Permission denied](faq-permission-denied) - need to use sudo
 

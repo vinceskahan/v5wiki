@@ -1,29 +1,30 @@
 ## Working with permissions in a Unix environment
 
 
-#### Viewing the log
+### Viewing the log
 
 Most systems require administrative privileges to view the system log.
 ```
 sudo tail /var/log/syslog
 ```
 
-#### Modifying a configuration file or skin
+### Modifying a configuration file or skin
 ```
 sudo nano /home/weewx/weewx.conf
 ```
 
-#### Installing an extension
+### Installing an extension
 
-#### Reading/writing to a database
+### Reading/writing to a database
 
-#### Reading/writing data to a device
+### Reading/writing data to a device
 
-
+## Add a user to a group
 ```
 sudo usermod -a -g weewx $USER
 ```
 
+## Example
 ```
 $ /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
 Request to install '/var/tmp/gw1000-0.3.1.tar.gz'

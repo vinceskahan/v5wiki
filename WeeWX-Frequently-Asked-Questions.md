@@ -221,27 +221,42 @@ See the Wiki article [python errors](faq-python-error)
 
 ### ModuleNotFoundError: No module named xxx
 
-This is a Python error that arises when Python is unable to find code (a Python 'module').  Perhaps the most common reason for this is if a a Python module has not been installed.  If this is the case, all you have to do is install the missing module.
+This is a Python error that arises when Python is unable to find code (a Python 'module').  Perhaps the most common reason for this is if a Python module has not been installed.  If this is the case, all you have to do is install the missing module.
 
 The error might also arise if the Python code is not invoked as the author intended it.  If this is the case, you might be able to fix it by setting the PYTHONPATH so that it includes the missing module.
 
 See the Wiki article about [Python module not found](PYTHONPATH-and-ModuleNotFoundError)
 
 
-### How can I find/see the web pages that WeeWX generates?
+### Where are the WeeWX web pages?
 
-### WeeWX is running, but why are there no web pages?
+WeeWX does not generate any reports until it has received data, so you might just have to wait.  A typical station will emit an "archive record" every 5 minutes, but if your station is configured for a 30 minute archive interval, you will have a considerably longer wait.  Or you can shorten the archive interval.
 
-* My [web pages are not appearing](faq-web-pages-not-appearing) in my browser as expected
+The location of the pages depends on the configuration:
 
-### Why do the web pages not appear as expected?
+| configuration | location                 |
+|---------------|--------------------------|
+| DEB/RPM       | /var/www/html/weewx      |
+| pip           | ~/weewx-data/public_html |
+| setup.py      | /home/weewx/public_html  |
 
-### Why are the web pages not updating?
+You can see the web pages by navigating to the directory above.
+
+To see the web pages from a different computer, you might want to install a web server.  See the Wiki article about [web servers](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
+
 
 ### How do I fix obviously incorrect data from my station?
 
-* How do I [exclude obviously incorrect data](faq-exclude-incorrect-data) emitted by my station
+For new data, use the `StdCalibrate` or `StdQC` service to filter and/or adjust the values from your station.
 
+Here is an example. In this case the station can emit a lightning distance reading yet show a lightning strike count of zero. The example below ensures that lightning distance is not recorded unless there is a corresponding strike count during that interval.
+```
+[StdCalibrate]    
+    [[Corrections]]
+        lightning_distance = lightning_distance if Atlas_stike_count > 0 else None
+```
+
+For existing data, use a database tool, possibly with the WeeWX database tool, to manipulate values in the database.
 
 
 ## Specific configurations of WeeWX

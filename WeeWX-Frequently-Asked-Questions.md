@@ -190,7 +190,7 @@ See the Wiki article [understanding paths](Understanding-paths)
 
 ### Why do I get "permission denied"?
 
-There are a few situations where you might encounter "permission denied".
+There are a few situations where you might encounter "permission denied", including:
 
 * starting/stopping `weewxd` when it is running as a system daemon
 * viewing the system log
@@ -199,12 +199,15 @@ There are a few situations where you might encounter "permission denied".
 * reading/writing data to the database
 * reading/writing data to a USB or serial device
 
-In many cases, you can escalate your privileges by putting a `sudo` at the beginning of the command. This executes the command as the `root` user. 
+In many cases, you can get the permissions that you need by putting a `sudo` at the beginning of the command. Invoking `sudo` executes the command as the `root` user. This process is called "privilege escalation".
 ```
+# run the `systemctl` program as the logged-in user:
+systemctl start weewx
+# run the `systemctl` program as the `root` user:
 sudo systemctl start weewx
 ```
 
-Another option is to add your username to the list of administrative users on the computer. 
+Another option is to add your username to the list of administrative users on the computer. In this approach, you add a user to a group, for exampl, adding the `pi` user to the `adm` group would let the `pi` user see and modify files that are available to the `adm` group but not to the rest of the world.
 
 See the Wiki article [understanding permissions](Understanding-permissions)
 

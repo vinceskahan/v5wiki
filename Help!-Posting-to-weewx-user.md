@@ -23,9 +23,28 @@ thread.  Then make a link to the other posting, if it helps clarify the problem.
 If you post in weewx-user, do not post the same message in weewx-development.
 Cross-posting almost ensures that your request will be ignored.
 
-## The log
+## Write a good bug report
 
-There are three important rules to remember when seeking help from the group:
+A good bug report includes:
+* what are you trying to do
+* what did you expect to see (or happen)
+* what did you actually see (or what happened)
+* what is the configuration of your system
+* what did you change (if anything)
+
+* Example: A bad bug report* I tried to install WeeWX and it doesn't work.  Will somebody help me ?
+
+* Example: A good bug report* I'm trying to enable realtime updates to my Belchertown skin and it is not updating in realtime.  I keep getting 'waiting for data'.  I am running weewx 4.5.1 installed via apt-get and Belchertown 1.3.0 on a pi4 under Raspbian. My os version from /etc/os-release is 10.4
+
+## The WeeWX debug utility
+
+The debug utility (`wee_debug` or `weectl debug`) can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.
+
+Note that the utility *tries* to obfuscate usernames/passwords/keys so that posting your debug does not post private information.  However, you still need to examine the output to make sure it didn't miss any usernames, passwords, tokens, or other private information.
+
+## Include the log!
+
+There are three important rules to remember when seeking help:
 
 1. Include the log!
 2. Include more of the log!

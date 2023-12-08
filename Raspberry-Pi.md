@@ -14,7 +14,7 @@ Eventually, whatever time synchronization service you are using starts up, finds
 
 There are a number of solutions. Here are two.
 
-##### A. Add a hardware clock
+#### A. Add a hardware clock
 
 The best solution is to add a real-time clock. They are inexpensive ($5-$15 USD) and solve the problem permanently. Users have had good luck with these clocks:
 
@@ -27,7 +27,7 @@ For Raspberry Pi-2 models, detailed RTC installation and Raspbian configuration 
 
 For Raspberry models running Jessie, see some hints on the page [pi RTC with jessie](https://github.com/weewx/weewx/wiki/pi-RTC-with-raspbian-jessie).
 
-##### B. Remove the fake clock
+#### B. Remove the fake clock
 
 As of Version 3.4, WeeWX will not start up until the system time is later than 1 January 2000. So, a simple solution is to remove the fake clock. Without the fake clock, the system time will literally start at "time zero," or unix epoch time zero, which is midnight 1-Jan-1970, far before what WeeWX is expecting. WeeWX detects this very early time and sleeps until NTP can set the true time. Then it proceeds.
 
@@ -44,9 +44,11 @@ $ sudo systemctl stop systemd-timesyncd
 $ sudo systemctl disable systemd-timesyncd
 ~~~~~
 
-##### Postscript
-*Added 25-Nov-2019*. The article [How can I delay the startup of systemd services until the datetime is set (no RTC on the Raspberry Pi)
+#### C. Make weewxd depend on a valid system time
+
+The article [How can I delay the startup of systemd services until the datetime is set (no RTC on the Raspberry Pi)
 ](https://raspberrypi.stackexchange.com/questions/94635/how-can-i-delay-the-startup-of-systemd-services-until-the-datetime-is-set-no-rt) has some very useful hints on a more elegant solution
+
 
 ### Use a high-quality SD card
 
@@ -58,6 +60,14 @@ Many users have had good luck with the better Sandisk SD cards. In increasing or
 * Sandisk Extreme Plus (what I use)
 * Sandisk Extreme Pro
 
+Historically there have been SD card issues on older pi. While this occurred most often on the old model-B pi, it does occur occasionally on the newer zero/zerow/pi3/pi3+/pi4 cards that use micro SD cards that have weak power supplies.
+
+
+### Minimize writes to the SD card
+
+It is possible to tweak the operating system so that it does not write to the SD as much.
+
+Detailed instructions are in the [guide to minimizing writes](https://github.com/weewx/weewx/wiki/Minimize-writes-on-SD-cards).
 
 ### FTP
 

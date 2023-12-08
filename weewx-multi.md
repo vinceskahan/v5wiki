@@ -37,7 +37,9 @@ sudo cp /home/weewx/weewx.conf /home/weewx/paddock.conf
 
 ### 2. Verify the driver configurations
 
-In each configuration file, ensure that `station_type` is set correctly.  In `house.conf`:
+In each configuration file, ensure that `station_type` is set correctly.  
+
+For example, in `house.conf`:
 ```
 [Station]
     ...
@@ -56,7 +58,9 @@ and in `paddock.conf`:
 
 ### 3. Verify the database configurations
 
-In each configuration file, ensure a unique database.  In `house.conf`:
+In each configuration file, ensure a unique database.
+
+For example, in `house.conf`:
 ```
 [Databases]
     [[archive_sqlite]]
@@ -79,7 +83,9 @@ and in `paddock.conf`:
 
 ### 4. Verify the report configurations
 
-In each configuration file, ensure that HTML_ROOT is unique.  In `house.conf`:
+In each configuration file, ensure that HTML_ROOT is unique.
+
+For example, in `house.conf`:
 ```
 [StdReport]
     HTML_ROOT = public_html/house

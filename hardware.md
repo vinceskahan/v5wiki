@@ -110,3 +110,17 @@ port and 1GB RAM.
 
 It works well with [Armbian](https://www.armbian.com/), [Pi-Hole](https://pi-hole.net), and Weewx 3.9.2 with several 
 skins simultaneously.
+
+<br/>
+
+Olimex A20-OLinuXino-MICRO
+---
+<img src="https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-MICRO/images/thumbs/310x230/A20-OLINUXINO-MICRO-i.jpg" align="right" height="100">
+
+https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-MICRO/open-source-hardware
+
+Linux-enabled Allwinner A20 development board with Ethernet, HDMI output, 1GB DDR3 RAM memory, two SD card connectors, plenty of free GPIOs and much more.
+
+Also includes a SATA port and optional steel case with internal battery backup option.  The case has provision for mounting a 2 inch form factor internal hard drive or SSD.
+
+It has good OS support from Armbian (community) and Debian.  ALARM (Arch Linux ARM) was tried but it would never direct output through the HDMI port.

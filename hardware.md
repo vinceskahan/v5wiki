@@ -123,4 +123,4 @@ Linux-enabled Allwinner A20 development board with Ethernet, HDMI output, 1GB DD
 
 Also includes a SATA port and optional steel case with internal battery backup option.  The case has provision for mounting a 2 inch form factor internal hard drive or SSD.
 
-It has good OS support from Armbian (community) and Debian.  ALARM (Arch Linux ARM) was tried but it would never direct output through the HDMI port.
+It has good OS support from [Armbian](https://www.armbian.com/olimex-micro/ (community)) and Debian.  ALARM (Arch Linux ARM) was tried but it would never direct output through the HDMI port.

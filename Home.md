@@ -189,31 +189,31 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 
 #### Skins
-* [alltimeSeasons](https://github.com/glennmckechnie/alltimeSeasons) An addition to the Seasons skin that outputs some NOAA data as html (From Bootstrap via gedger)  :heavy_check_mark:
+* [alltimeSeasons](https://github.com/glennmckechnie/alltimeSeasons) - An addition to the Seasons skin that outputs some NOAA data as html (From Bootstrap via gedger)  :heavy_check_mark:
 * [amphibian](amphibian)
-* [Belchertown](https://github.com/poblabs/weewx-belchertown) (live weather feed) :heavy_check_mark:
-* [bootstrap](Bootstrap) (live weather feed) :heavy_check_mark:
+* [Belchertown](https://github.com/poblabs/weewx-belchertown) - live weather feed :heavy_check_mark:
+* [bootstrap](Bootstrap) - live weather feed :heavy_check_mark:
 * [byteweather](https://byteinsight.co.uk/freebies/weewx-byte-weather-template/)
 * [exfoliation](exfoliation)
 * [Flat](http://projects.neoground.com/sofaskin) (sofaskin)
 * [French Standard skin](weewx-french-standard-skin)
-* [jas](https://github.com/bellrichm/weewx-jas) (A highly configurable skin using ECharts for charting, Bootstrap for layout, and MQTT for live updates.) :heavy_check_mark:
-* [JSON](https://github.com/teeks99/weewx-json) (add json output to an existing skin) :heavy_check_mark:
-* [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) (live weather feed) :heavy_check_mark:
+* [jas](https://github.com/bellrichm/weewx-jas) - A highly configurable skin using ECharts for charting, Bootstrap for layout, and MQTT for live updates :heavy_check_mark:
+* [JSON](https://github.com/teeks99/weewx-json) - add json output to an existing skin :heavy_check_mark:
+* [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) - live weather feed :heavy_check_mark:
 * [NeoWX](https://neoground.com/projects/neowx) :heavy_check_mark:
 * [NeoWX Material](https://neoground.com/projects/neowx-material) :heavy_check_mark:
 * [Niculskin](https://gitlab.com/ngulden/niculskin)
 * [Responsive](responsive)
 * [simple](simple)
 * [SteelSeries Weather Gauges](steelseries) :heavy_check_mark:
-* [SVG weather symbols and icons](https://github.com/roe-dl/weathericons) (not a complete skin but only the symbols and icons in Scalable Vector Graphics format)
-* [Thème graphique standard de weewx en français](Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) (standard skin in french)
+* [SVG weather symbols and icons](https://github.com/roe-dl/weathericons) - not a complete skin but only the symbols and icons in Scalable Vector Graphics format
+* [Thème graphique standard de weewx en français](Th%C3%A8me-graphique-standard-de-weewx-en-fran%C3%A7ais-%7Bweewx-french-standard-skin-page-in-french%7D) - standard skin in french
 * [Washboard](https://gitlab.com/jquagga/Washboard)
-* [WeeRT](https://github.com/tkeffer/weert-js) (experimental live weather feed using Node+React) :heavy_check_mark:
-* [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) (Android)
+* [WeeRT](https://github.com/tkeffer/weert-js) - experimental live weather feed using Node+React :heavy_check_mark:
+* [WeeWX Weather App](https://github.com/evilbunny2008/weeWXWeatherApp/wiki) - Android
 * [WeeWX-WD](weewx-wd) :heavy_check_mark:
-* [weewx-wdc](https://github.com/Daveiano/weewx-wdc) (live weather feed) :heavy_check_mark:
-* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34)(real time weather feed, WeeWX port of the popular Weather34 template):heavy_check_mark: 
+* [weewx-wdc](https://github.com/Daveiano/weewx-wdc) - live weather feed :heavy_check_mark:
+* [weewx-Weather34](https://github.com/steepleian/weewx-Weather34) - real time weather feed, WeeWX port of the popular Weather34 template :heavy_check_mark: 
 
 #### XType extensions
 [XType extensions](xtypes) add new observation and aggregation types to WeeWX

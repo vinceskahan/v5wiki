@@ -151,7 +151,9 @@ More detail can be found in the [yum update guide](yum-update-guide).
 ### How do I run `weewxd` directly in order to diagnose problems?
 
 In many cases you can simply type `weewxd` to start WeeWX.  This will run `weewxd` in the foreground, and it will print data from the weather station to the screen.  To stop it, type `ctrl-c` (press the `c` key while you hold down the `control` key).
-
+```
+weewxd
+```
 If you used `pip` to install WeeWX, then you must activate the Python virtual environment before you start `weewxd`, something like this:
 ```
 source ~/weewx-env/bin/activate

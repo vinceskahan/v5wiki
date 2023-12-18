@@ -142,12 +142,12 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [WeatherLink Live - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) :heavy_check_mark:
 * [WeatherLink Live JSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
 * [WeatherLink Live UDP - Collect data from Davis WeatherLink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) :heavy_check_mark:
-* [WeatherLink Live - Collect data from Davis WeatherLink Live including archive from Weatherlink.com when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) :heavy_check_mark:
+* [WeatherLink Live - Collect data from Davis WeatherLink Live (including Weatherlink.com) when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) :heavy_check_mark:
 * [WeatherLink Live WLL - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
 * [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) :heavy_check_mark: 
 * [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
 * [wlink - Collect data from weatherlink.com](wlink)
-* [wmII - Collect data from Davis Weather Monitor II Station](https://github.com/jardiamj/wmII): It should also work for Davis Wizzard and Perception stations but that hasn't been tested.
+* [wmII - Collect data from Davis Weather Monitor II, Wizzard, Perception](https://github.com/jardiamj/wmII)
 * [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). :heavy_check_mark:
 * [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) :heavy_check_mark:
 * [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
@@ -177,7 +177,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) :heavy_check_mark:
 * [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) :heavy_check_mark:
 * [PrecipMeter - Receive, process and save data from disdrometers like Ott Parsivel<sup>2</sup> or Thies LNM or other devices that send data in ASCII format](https://github.com/roe-dl/weewx-precipmeter), includes precipitation intensity and kind (drizzle, rain snow, hail etc.), metorological optical range, radar reflectivity factor etc.)
-* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for pyhton3\) :heavy_check_mark: 
+* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for python3\) :heavy_check_mark: 
 * [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) 
   (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:
 * [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) :heavy_check_mark: 

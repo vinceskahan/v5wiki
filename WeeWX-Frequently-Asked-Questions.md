@@ -219,11 +219,11 @@ sudo systemctl start weewx
 
 Another option is to add your username to the list of administrative users on the computer. In this approach, you add a user to a group.  For example, adding the `jackhandy` user to the `weewx` group would let the `jackhandy` user work with files in the `weewx` group:
 ```
-sudo usermod -aG weewx jackhandy
+sudo usermod -a -G weewx jackhandy
 ```
 Another example: adding the `pi` user to the `adm` group would let the `pi` user see and modify files that are available to the `adm` group but not to the rest of the world.
 ```
-sudo usermod -aG adm pi
+sudo usermod -a -G adm pi
 ```
 
 See the Wiki article [understanding permissions](Understanding-permissions)

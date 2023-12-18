@@ -10,13 +10,6 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 <li><a href="#how-do-i-learn-the-things-i-need-to-run-weewx">How do I learn the things I need to run WeeWX?</a></li>
 </ul>
 
-#### Registering your station
-<ul>
-<li><a href="">Should I register my station?</a></li>
-<li><a href="">Can I register without specifying an Internet-facing website?</a></li>
-<li><a href="">How do I unregister?</a></li>
-</ul>
-
 #### Installing and upgrading
 <ul>
 <li><a href="">Which method should I use to install WeeWX?</a></li>
@@ -25,6 +18,13 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 <li><a href="">gpg: no valid OpenPGP data found</a></li>
 <li><a href="#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx">How should I answer the questions from apt when I upgrade WeeWX?</a></li>
 <li><a href="#how-should-i-answer-the-questions-from-yum-or-dnf-when-i-upgrade-weewx">How should I answer the questions from yum or dnf when I upgrade WeeWX?</a></li>
+</ul>
+
+#### Registering your station
+<ul>
+<li><a href="">Should I register my station?</a></li>
+<li><a href="">Can I register without specifying an Internet-facing website?</a></li>
+<li><a href="">How do I unregister?</a></li>
 </ul>
 
 #### Using the command-line
@@ -93,25 +93,6 @@ There are many os-specific forums on Reddit that are Linux, Linux administration
 * [A good guide to learn Linux from zero](https://www.reddit.com/r/linuxquestions/comments/125dn50/a_good_guide_to_learn_linux_from_zero/)
 
 A few minutes of searching will turn up tutorials specific to your operating system of choice, whether that is MacOS, FreeBSD, Rocky, Debian, Mint, Ubuntu, Redhat, SUSE, etc.
-
-
-## Registering your station
-
-### Should I register my station?
-
-WeeWX has an *optional* capability to register your station with the `weewx.com` server. Registered stations appear on the [map](https://weewx.com/stations.html). The registration includes only basic information about a station, including the location, hardware type, driver, WeeWX version, and Python version. We use this information to answer questions like "how many sites use this driver" and "how many sites are on the current weewx version" and the like, and to consider which configurations are used so much (or little) to merit higher or lower support levels.
-
-Registration is *not* required.  In fact, registration is disabled by default; you must take action to register your station.
-
-To register your station, see the instructions in the [`station_registry`](http://www.weewx.com/docs/usersguide.htm#station_registry) section of the User's Guide.
-
-### Can I register without specifying an Internet-facing website?
-
-Yes, but... While you have to specify *something* for the `station_url`, it does not need to actually resolve to a real, public-facing URL. If you use a private URL, this will result in you providing your registration data (thank you), put your station on the map, but the link to your station on the map will be broken.
-
-### How do I unregister?
-
-Simply disable the registration setting then restart WeeWX. Systems that refresh their data are dropped from the map in about a month.
 
 
 ## Installing and upgrading
@@ -184,6 +165,26 @@ When you upgrade WeeWX on a Redhat-like or SUSE system, the installer will ask y
 Whether you choose to keep your configuration or the new one, both options will be saved. So if you change your mind later, or if you want to compare, you can do so.
 
 More detail can be found in the [yum update guide](yum-update-guide).
+
+
+## Registering your station
+
+### Should I register my station?
+
+WeeWX has an *optional* capability to register your station with the `weewx.com` server. Registered stations appear on the [map](https://weewx.com/stations.html). The registration includes only basic information about a station, including the location, hardware type, driver, WeeWX version, and Python version. We use this information to answer questions like "how many sites use this driver" and "how many sites are on the current weewx version" and the like, and to consider which configurations are used so much (or little) to merit higher or lower support levels.
+
+Registration is *not* required.  In fact, registration is disabled by default; you must take action to register your station.
+
+To register your station, see the instructions in the [`station_registry`](http://www.weewx.com/docs/usersguide.htm#station_registry) section of the User's Guide.
+
+### Can I register without specifying an Internet-facing website?
+
+Yes, but... While you have to specify *something* for the `station_url`, it does not need to actually resolve to a real, public-facing URL. If you use a private URL, this will result in you providing your registration data (thank you), put your station on the map, but the link to your station on the map will be broken.
+
+### How do I unregister?
+
+Simply disable the registration setting then restart WeeWX. Systems that refresh their data are dropped from the map in about a month.
+
 
 ## Using the command-line, Python, and WeeWX
 

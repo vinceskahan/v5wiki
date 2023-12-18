@@ -223,8 +223,8 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [weewx-phenology](http://lacusveris.com/Phenology) - Growing Degree-Days development models for various insect pests, showing when to apply control strategies to minimize crop damage:heavy_check_mark:
 
 #### Generators
-* [sftp - Upload data using SFTP (not FTPS)](https://github.com/matthewwall/weewx-sftp) :heavy_check_mark:
-* [weewx-svg2png - Create thumbnail images, weather mini-pics, and webcam images with weather data by converting WeeWX-created SVG files to PNG](https://github.com/roe-dl/weewx-svg2png) :heavy_check_mark:
+* [sftp](https://github.com/matthewwall/weewx-sftp) - Upload data using SFTP (not FTPS) :heavy_check_mark:
+* [weewx-svg2png](https://github.com/roe-dl/weewx-svg2png) - Create thumbnail images, weather mini-pics, and webcam images with weather data by converting WeeWX-created SVG files to PNG :heavy_check_mark:
 
 #### Uploaders
 * <img src="http://weewx.com/consumers/emoncms.png" width='16'/> [emoncms](emoncms) :heavy_check_mark:

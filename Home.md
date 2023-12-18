@@ -154,38 +154,37 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [wxt5x0](https://github.com/matthewwall/weewx-wxt5x0) - Collect data from Vaisala WXT5x0 stations
 
 #### Services
-* [airQ - Retrieve air quality data from Air-Q device of Corant GmbH](https://github.com/roe-dl/weewx-airQ) (PM<sub>1.0</sub>, PM<sub>2.5</sub>, PM<sub>10.0</sub>, TVOC, CO, CO<sub>2</sub>, O<sub>2</sub>, O<sub>3</sub>, NO<sub>2</sub>, H<sub>2</sub>S, SO<sub>2</sub>, noise, health index, performance index)
-* [aprs - Generate APRS-compliant weather packets](/cavedon/weewx-aprs)
-* [aqi - Calculate Air Quality Index](https://github.com/jonathankoren/weewx-aqi)
-* [as3935 - Augment station data with lightning strike data from AS3935 attached to RPi](as3935)
-* [bme280wx - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi](https://gitlab.com/wjcarpenter/bme280wx)
-* [cmon - Monitor CPU, Memory, Disk, and Network on the computer running weewx](cmon)
-* [crt - Emit a Cumulus realtime.txt file whenever sensor readings change](crt) :heavy_check_mark: 
-* [csv - Emit loop or archive data to a file in CSV format](https://github.com/matthewwall/weewx-csv)
-* [cwxn - Emit a Cumulus wxnow.txt file whenever sensor readings change](cwxn)
-* [davishealthapi - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)](https://github.com/uajqq/weewx-davishealthapi)
-* [DWD - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations](https://github.com/roe-dl/weewx-DWD) (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan)
-* [filepile - Add additional types to a WeeWX data stream via a file](https://github.com/tkeffer/filepile) :heavy_check_mark:
-* [forecasting - Download, generate, and display forecasts and tides](forecasting)
-* [knx - Send EIBnet/IP packets with weather information](knx)
-* [luxtronik - Augment station data with data from Luxtronik heatpump controller](https://github.com/tsoodla/weewx-luxtronik) :heavy_check_mark:
-* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) :heavy_check_mark:
-* [MQTTSubscribe - Augment station data with JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) :heavy_check_mark:
-* [nmea-xdr - Augment data from a source of NMEA 0183 XDR sentences](https://github.com/tkeffer/weewx-nmea-xdr) :heavy_check_mark: 
-* [opsgenie - Send heartbeats and alerts to cloud alerting service OpsGenie](opsgenie)
-* [owfs - Augment station data with data from one-wire sensors](owfss) :heavy_check_mark:
-* [photovoltaics - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins](https://github.com/roe-dl/weewx-photovoltaics) :heavy_check_mark:
-* [PiSenseHat - Add measure to loop data from PiSense Hat sensor set](https://github.com/sbsrouteur/weewx-PiSenseHat) :heavy_check_mark:
-* [PrecipMeter - Receive, process and save data from disdrometers like Ott Parsivel<sup>2</sup> or Thies LNM or other devices that send data in ASCII format](https://github.com/roe-dl/weewx-precipmeter), includes precipitation intensity and kind (drizzle, rain snow, hail etc.), metorological optical range, radar reflectivity factor etc.)
-* [sds011 - Add pm measure to loop data](https://github.com/sbsrouteur/weewx-sds011) \(forked from SDS011 driver updated for python3\) :heavy_check_mark: 
-* [snmp - Retrieve data by SNMP](https://github.com/roe-dl/weewx-snmp) 
-  (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:
-* [sunduration - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor](https://github.com/Jterrettaz/sunduration) :heavy_check_mark: 
-* [tristar - Augment station data with solar controller data from a Tristar Charge Controller](https://github.com/jim-olsen/weewx_tristar)
-* [weewx-nws - NWS Weather Forecast and Alerts WeeWX Extention](https://github.com/chaunceygardiner/weewx-nws) :heavy_check_mark:
-* [WXgraphic - Weather Graphic: A php driven generator to create a weather graphic image via your web server](https://github.com/glennmckechnie/weewx-WXgraphic) :heavy_check_mark:
-* [wxobs - Provides a php driven report page to extract archival data as Daily Summaries](https://github.com/glennmckechnie/weewx-wxobs) :heavy_check_mark:
-* [zabbix - Emit loop data to a zabbix server](https://github.com/RandomReaper/weewx-zabbix)
+* [airQ](https://github.com/roe-dl/weewx-airQ) - Retrieve air quality data from Air-Q device of Corant GmbH (PM<sub>1.0</sub>, PM<sub>2.5</sub>, PM<sub>10.0</sub>, TVOC, CO, CO<sub>2</sub>, O<sub>2</sub>, O<sub>3</sub>, NO<sub>2</sub>, H<sub>2</sub>S, SO<sub>2</sub>, noise, health index, performance index)
+* [aprs](/cavedon/weewx-aprs) - Generate APRS-compliant weather packets
+* [aqi](https://github.com/jonathankoren/weewx-aqi) - Calculate Air Quality Index
+* [as3935](as3935) - Augment station data with lightning strike data from AS3935 attached to RPi
+* [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) - Use temp/pressure/humidity data from a BME280 attached to a Raspberry Pi
+* [cmon](cmon) - Monitor CPU, Memory, Disk, and Network on the computer running weewx
+* [crt](crt) - Emit a Cumulus realtime.txt file whenever sensor readings change :heavy_check_mark: 
+* [csv](https://github.com/matthewwall/weewx-csv) - Emit loop or archive data to a file in CSV format
+* [cwxn](cwxn) - Emit a Cumulus wxnow.txt file whenever sensor readings change
+* [davishealthapi](https://github.com/uajqq/weewx-davishealthapi) - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)
+* [DWD](https://github.com/roe-dl/weewx-DWD) - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan)
+* [filepile](https://github.com/tkeffer/filepile) - Add additional types to a WeeWX data stream via a file :heavy_check_mark:
+* [forecasting](forecasting) - Download, generate, and display forecasts and tides
+* [knx](knx) - Send EIBnet/IP packets with weather information
+* [luxtronik](https://github.com/tsoodla/weewx-luxtronik) - Augment station data with data from Luxtronik heatpump controller :heavy_check_mark:
+* [maxbotix](maxbotix) - Augment station data with data from maxbotix ultrasonic rangefinder :heavy_check_mark:
+* [MQTTSubscribe](https://github.com/bellrichm/WeeWX-MQTTSubscribe) - Augment station data with JSON, keyword, or individual topic MQTT messages :heavy_check_mark:
+* [nmea-xdr](https://github.com/tkeffer/weewx-nmea-xdr) - Augment data from a source of NMEA 0183 XDR sentences :heavy_check_mark: 
+* [opsgenie](opsgenie) - Send heartbeats and alerts to cloud alerting service OpsGenie
+* [owfs](owfss) - Augment station data with data from one-wire sensors :heavy_check_mark:
+* [photovoltaics](https://github.com/roe-dl/weewx-photovoltaics) - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins :heavy_check_mark:
+* [PiSenseHat](https://github.com/sbsrouteur/weewx-PiSenseHat) - Add measure to loop data from PiSense Hat sensor set :heavy_check_mark:
+* [PrecipMeter](https://github.com/roe-dl/weewx-precipmeter) - Receive, process and save data from disdrometers like Ott Parsivel<sup>2</sup> or Thies LNM or other devices that send data in ASCII format, includes precipitation intensity and kind (drizzle, rain snow, hail etc.), metorological optical range, radar reflectivity factor, etc.
+* [sds011](https://github.com/sbsrouteur/weewx-sds011) - Add pm measure to loop data (forked from SDS011 driver updated for python3) :heavy_check_mark: 
+* [snmp](https://github.com/roe-dl/weewx-snmp)  - Retrieve data by SNMP (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:
+* [sunduration](https://github.com/Jterrettaz/sunduration) - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor :heavy_check_mark: 
+* [tristar](https://github.com/jim-olsen/weewx_tristar) - Augment station data with solar controller data from a Tristar Charge Controller
+* [weewx-nws](https://github.com/chaunceygardiner/weewx-nws) - NWS Weather Forecast and Alerts WeeWX Extention :heavy_check_mark:
+* [WXgraphic](https://github.com/glennmckechnie/weewx-WXgraphic) - Weather Graphic: A php driven generator to create a weather graphic image via your web server :heavy_check_mark:
+* [wxobs](https://github.com/glennmckechnie/weewx-wxobs) - Provides a php driven report page to extract archival data as Daily Summaries :heavy_check_mark:
+* [zabbix](https://github.com/RandomReaper/weewx-zabbix) - Emit loop data to a zabbix server
 
 
 #### Skins

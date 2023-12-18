@@ -14,6 +14,8 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 
 This depends on your needs.  How much can you spend?  How much can you spend each year?  How much time are you willing to spend on maintenance?  Will the station be located in a harsh environment (e.g., maritime conditions, extreme heat, extreme cold)?  Will the station be located remotely, or somewhere you can service it easily?  Do you need a completely off-grid solution, a station tied to the internet, or some combination of these?  What power source is available?  What network and computer resources are available?  How often do you need to see the data?
 
+Take a look at the 'stations' section of the [WeeWX station map](https://weewx.com/stations.html) to see what other WeeWX users are using.
+
 There is a [wxforum board](https://www.wxforum.net/index.php?board=71.0) dedicated to this question.
 
 ### Is my hardware supported by WeeWX?

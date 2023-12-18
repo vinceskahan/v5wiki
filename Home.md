@@ -33,23 +33,24 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 #### WeeWX configuration
 * [Manage extensions](extensions)
 * [Change from one driver to another](Change-driver)
+* [Run multiple instances of WeeWX on one computer](weewx-multi)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)
 * [Migrating `setup.py` installs to Version 5](v5-upgrade)
-* [Colorize the UV index](Colored%20UV%20index)
-* [Run multiple instances of WeeWX on one computer](weewx-multi)
 * [Implement a multi-threaded service](multi-threaded-service)
-* [Time services](Time-services)
+* [Colorize the UV index](Colored%20UV%20index)
+* [How to calculate values in templates](calculate-in-templates)
 
 #### Operating system configuration
+* [Time services](Time-services)
 * [Run WeeWX as a non-root user](Run-as-a-non-root-user-using-init)
 * [Put log messages from WeeWX into a separate file](logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
-* [Configure WeeWX to run under systemd](systemd)
 * [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
 * [Configure a web server (Apache, NGINX or lighttpd)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
 * [Run WeeWX in a python virtual environment](Run-WeeWX-in-a-virtual-environment)
+* [Configure WeeWX to run under systemd](systemd)
 
 #### Data management
 * [SQLite vs MySQL](SQLite-vs-MySQL)
@@ -88,9 +89,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Get data from Acurite Atlas on a RPi](https://github.com/ChrisM510/AtlasWeeWX/wiki/Acurite-Atlas-on-WeeWX-RTL-SDR-RTL_433-RPi-(Page-1))
 * [Building a Pi based PWS](https://github.com/David-Enst/WeeWX-BCRobotics)
 * [Measure water/snow level using Maxbotix ultrasonic sensor](maxbotix-recipe)
-
-### Software
-* [How to calculate values in templates](calculate-in-templates)
 
 
 ### Extensions to WeeWX

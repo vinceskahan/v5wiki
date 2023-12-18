@@ -93,7 +93,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 ### Extensions to WeeWX
 
-Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, and uploaders transfer data to online services.
+Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeWX to collect data from various sources, services collect and emit data, skins contain the templates for generating reports, [XType extensions](xtypes) add new observation and aggregation types, and uploaders transfer data to online services.
 
 
 #### Drivers
@@ -215,7 +215,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [weewx-Weather34](https://github.com/steepleian/weewx-Weather34) - real time weather feed, WeeWX port of the popular Weather34 template :heavy_check_mark: 
 
 #### XType extensions
-[XType extensions](xtypes) add new observation and aggregation types to WeeWX
 * [weewx-aqi-xtype](https://github.com/bellrichm/weewx-aqi-xtype) - Calculate the AQI for a given air pollutant value.
 * [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) - A grab-bag of new aggregation types, such as the historical highs or lows for a date. :heavy_check_mark:
 * [weewx-GTS](https://github.com/roe-dl/weewx-GTS) - Provides "Grünlandtemperatursumme" (GTS), a kind of growing degree days, the date, when it exceeds the magic value of 200, the total solar energy received during some arbitrary timespan, dayET and ET24 as opposite to dayRain and rain24, absolute humidity, (saturation) vapor pressure, mixing ratio, (potential) equivalent temperature :heavy_check_mark:

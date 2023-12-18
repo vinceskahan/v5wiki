@@ -97,61 +97,61 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 
 
 #### Drivers
-* [airlink - Collect data from Davis AirLink air quality sensor](https://github.com/chaunceygardiner/weewx-airlink)
-* [airmar - Collect data from Airmar 150WX](https://github.com/fullergalway/weewx-airmar-150wx-driver)
-* [ambientweatherapi-json - Collect data from the Ambient Weather API without the need for any additional hardware](https://github.com/themoosman/weewx-ambientweatherapi-json)
-* [atmocom - Collect data from Atmocom station](https://github.com/captain-coredump/weewx-atmocom-udp/)
-* [aws - Collect data from an Arduino connected to a Davis anemometer](https://github.com/wrybread/weewx-ArduinoWeatherStation)
-* [byows_rpi - Collect data from the Build Your Own Weather Station - Raspberry Pi](https://github.com/jardiamj/BYOWS_RPi)
-* [cm1 - Collect data from Dyacon CM1 weather station interface](https://github.com/matthewwall/weewx-cm1)
-* [columbia_ms - Collect data from Columbia Weather MicroServer supported sensors](https://github.com/bburton/weewx-columbia-ms) :heavy_check_mark:
-* [envoy - Collect data from Enphase Envoy solar controller](https://github.com/matthewwall/weewx-envoy)
-* [gw1000 - Collect data from Ecowitt GW1000/GW1100/GW2000](https://github.com/gjr80/weewx-gw1000) :heavy_check_mark:
-* [hackulink - Collect data from AcuLink Internet Bridge via OpenWRT](http://geekfun.com/hackulink/)
-* [Hp1000 - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection](https://github.com/AussieSusan/HP1000) :heavy_check_mark:
-* [id5001 - Collect data from Heathkit ID5001 with serial port option](https://github.com/n2ee/weewx-id5001)
-* [interceptor - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU](https://github.com/matthewwall/weewx-interceptor)
-* [ip100 - Collect data from RainWise IP100](https://github.com/chaunceygardiner/weewx-ip100) :heavy_check_mark:
-* [ipwx - Collect data from AcuLink Internet Bridge via Raspberry Pi](http://nincehelser.com/ipwx/)
-* [klimalogg - Collect data from Klimalogg Pro](https://github.com/matthewwall/weewx-klimalogg) :heavy_check_mark:
-* [mate - Collect data from Outback MATE3 solar/battery controller](https://github.com/matthewwall/weewx-mate)
-* [maxbotix - Augment station data with data from maxbotix ultrasonic rangefinder](maxbotix) :heavy_check_mark:
-* [meteostick - Collect data from Meteostick](https://github.com/matthewwall/weewx-meteostick) :heavy_check_mark:
-* [MQTTSubscribe - Collect data from JSON, keyword, or individual topic MQTT messages](https://github.com/bellrichm/WeeWX-MQTTSubscribe) :heavy_check_mark:
-* [netatmo - Collect data from netatmo](https://github.com/matthewwall/weewx-netatmo)
-* [nm150 - Collect data from New Mountain NM150](https://github.com/matthewwall/weewx-nm150)
-* [observerip - Collect data from ObserverIP (Fine Offset HP1000)](https://github.com/dkmcode/weewx-observerip)
-* [owfs - Collect data from one-wire sensors](owfs) :heavy_check_mark:
-* [purpleair - Collect data from PurpleAir particulate sensor](https://github.com/bakerkj/weewx-purpleair)  :heavy_check_mark:
-* [rmyro - Collect data from RM Young ResponseOne (92000 only)](https://github.com/doubleohwhatever/weewx-rmyro)
-* [rtldavis - Collect data from software-defined radio (SDR) for Davis Vantage stations](https://github.com/lheijst/weewx-rtldavis) :heavy_check_mark:
-* [sdr - Collect data from software-defined radio (SDR) receiver](https://github.com/matthewwall/weewx-sdr) :heavy_check_mark:
-* [sds011 - Collect data from SDS011 particulate sensor](https://github.com/matthewwall/weewx-sds011)
-* [si1000 - Collect data from Si1000 radio receiver (for Davis stations)](DavisSi1000-radio)
-* [socketlogger - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/)
-* [swb - Collect data from SMA Sunny WebBox](https://github.com/matthewwall/weewx-swb)
-* [tempestWS - Collect data from the Weatherflow Tempest Websocket API](https://github.com/livysdad27/tempestWS)
-* [tfrc - Collect data from software-defined radio using tfrec](https://github.com/matthewwall/weewx-tfrc) :heavy_check_mark:
-* [tracer - Collect data from Tracer solar charge controllers](https://github.com/matthewwall/weewx-tracer)
-* [twi - Collect data from Texas Weather Instruments hardware](https://github.com/matthewwall/weewx-twi) :heavy_check_mark:
-* [uradmon - Collect data from a Uradmon Environmental Monitor](https://github.com/glennmckechnie/weewx-uradmon) :heavy_check_mark:
-* [vedirect - Collect data from Victron MPPT solar/battery controller](https://github.com/matthewwall/weewx-vedirect)
-* [w820 - Collect data from Ventus W820 bluetooth station](https://github.com/daduke/ventusw820)
-* [wanet - Collect data from Wanet Wario ME11/12 meteo station](https://sourceforge.net/projects/wariome11)
-* [weatherflow - Collect data from WeatherFlow hardware](https://github.com/captain-coredump/weatherflow-udp)
-* [WeatherLink Live - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API. Supports any combination of sensors and transmitters.](https://github.com/michael-slx/weewx-weatherlink-live) :heavy_check_mark:
-* [WeatherLink Live JSON - Collect data from Davis WeatherLink Live via periodic polling](https://github.com/vinceskahan/weewx-weatherlinklive-json)
-* [WeatherLink Live UDP - Collect data from Davis WeatherLink Live (with 2.5s UDP updates)](https://github.com/grebleem/weewx-weatherlinkliveudp) :heavy_check_mark:
-* [WeatherLink Live - Collect data from Davis WeatherLink Live (including Weatherlink.com) when data is lost.](https://github.com/Drealine/weatherlinklive-driver-weewx) :heavy_check_mark:
-* [WeatherLink Live WLL - Collect data from Davis WeatherLink Live devices](https://github.com/jonotaegi/weewx-wll)
-* [weewxMQTT - Collect data by subscribing to MQTT topics](https://github.com/morrowwm/weewxMQTT) :heavy_check_mark: 
-* [wh23xx - Collect data from Fine Offset WH23xx (Tycon TP2700)](https://github.com/matthewwall/weewx-wh23xx)
-* [wlink - Collect data from weatherlink.com](wlink)
-* [wmII - Collect data from Davis Weather Monitor II, Wizzard, Perception](https://github.com/jardiamj/wmII)
-* [wmr89 - Collect data from the Oregon Scientific WMR89](https://github.com/tkeffer/weewx-wmr89). :heavy_check_mark:
-* [ws6in1 - Collect data WS 6 in 1 weather stations with PC console](https://github.com/bobatchley/weewx-ws6in1) :heavy_check_mark:
-* [wxt5x0 - Collect data from Vaisala WXT5x0 stations](https://github.com/matthewwall/weewx-wxt5x0)
-* [BCRobotics - Collect data from a BC Robotics and Pi based PWS](https://github.com/David-Enst/WeeWX-BCRobotics). :heavy_check_mark:
+* [airlink](https://github.com/chaunceygardiner/weewx-airlink) - Collect data from Davis AirLink air quality sensor
+* [airmar](https://github.com/fullergalway/weewx-airmar-150wx-driver) - Collect data from Airmar 150WX
+* [ambientweatherapi-json](https://github.com/themoosman/weewx-ambientweatherapi-json) - Collect data from the Ambient Weather API without the need for any additional hardware
+* [atmocom](https://github.com/captain-coredump/weewx-atmocom-udp/) - Collect data from Atmocom station
+* [aws](https://github.com/wrybread/weewx-ArduinoWeatherStation) - Collect data from an Arduino connected to a Davis anemometer
+* [BCRobotics](https://github.com/David-Enst/WeeWX-BCRobotics) - Collect data from a BC Robotics and Pi based PWS :heavy_check_mark:
+* [byows_rpi](https://github.com/jardiamj/BYOWS_RPi) - Collect data from the Build Your Own Weather Station - Raspberry Pi
+* [cm1](https://github.com/matthewwall/weewx-cm1) - Collect data from Dyacon CM1 weather station interface
+* [columbia_ms](https://github.com/bburton/weewx-columbia-ms) - Collect data from Columbia Weather MicroServer supported sensors :heavy_check_mark:
+* [envoy](https://github.com/matthewwall/weewx-envoy) - Collect data from Enphase Envoy solar controller
+* [gw1000](https://github.com/gjr80/weewx-gw1000) - Collect data from Ecowitt GW1000/GW1100/GW2000 :heavy_check_mark:
+* [hackulink](http://geekfun.com/hackulink/) - Collect data from AcuLink Internet Bridge via OpenWRT
+* [Hp1000](https://github.com/AussieSusan/HP1000) - collect data from HP1000, (WS1001, XC0422 etc.) via WiFi connection :heavy_check_mark:
+* [id5001](https://github.com/n2ee/weewx-id5001) - Collect data from Heathkit ID5001 with serial port option
+* [interceptor](https://github.com/matthewwall/weewx-interceptor) - Collect data from Acurite Bridge, Fine Offset HP1000/WH2600, OS LW301/LW302, LaCross GW1000U, or any station that sends to WU
+* [ip100](https://github.com/chaunceygardiner/weewx-ip100) - Collect data from RainWise IP100 :heavy_check_mark:
+* [ipwx](http://nincehelser.com/ipwx/) - Collect data from AcuLink Internet Bridge via Raspberry Pi
+* [klimalogg](https://github.com/matthewwall/weewx-klimalogg) - Collect data from Klimalogg Pro :heavy_check_mark:
+* [mate](https://github.com/matthewwall/weewx-mate) - Collect data from Outback MATE3 solar/battery controller
+* [maxbotix](maxbotix) - Augment station data with data from maxbotix ultrasonic rangefinder :heavy_check_mark:
+* [meteostick](https://github.com/matthewwall/weewx-meteostick) - Collect data from Meteostick :heavy_check_mark:
+* [MQTTSubscribe](https://github.com/bellrichm/WeeWX-MQTTSubscribe) - Collect data from JSON, keyword, or individual topic MQTT messages :heavy_check_mark:
+* [netatmo](https://github.com/matthewwall/weewx-netatmo) - Collect data from netatmo
+* [nm150](https://github.com/matthewwall/weewx-nm150) - Collect data from New Mountain NM150
+* [observerip](https://github.com/dkmcode/weewx-observerip) - Collect data from ObserverIP (Fine Offset HP1000)
+* [owfs](owfs) - Collect data from one-wire sensors :heavy_check_mark:
+* [purpleair](https://github.com/bakerkj/weewx-purpleair) - Collect data from PurpleAir particulate sensor :heavy_check_mark:
+* [rmyro](https://github.com/doubleohwhatever/weewx-rmyro) - Collect data from RM Young ResponseOne (92000 only)
+* [rtldavis](https://github.com/lheijst/weewx-rtldavis) - Collect data from software-defined radio (SDR) for Davis Vantage stations :heavy_check_mark:
+* [sdr](https://github.com/matthewwall/weewx-sdr) - Collect data from software-defined radio (SDR) receiver :heavy_check_mark:
+* [sds011](https://github.com/matthewwall/weewx-sds011) - Collect data from SDS011 particulate sensor
+* [si1000](DavisSi1000-radio) - Collect data from Si1000 radio receiver (for Davis stations)
+* [socketlogger](http://obrienlabs.net/redirecting-weather-station-data-from-observerip/) - Collect data from ObserverIP (Fine Offset HP1000) by intercepting traffic
+* [swb](https://github.com/matthewwall/weewx-swb) - Collect data from SMA Sunny WebBox
+* [tempestWS](https://github.com/livysdad27/tempestWS) - Collect data from the Weatherflow Tempest Websocket API
+* [tfrc](https://github.com/matthewwall/weewx-tfrc) - Collect data from software-defined radio using tfrec :heavy_check_mark:
+* [tracer](https://github.com/matthewwall/weewx-tracer) - Collect data from Tracer solar charge controllers
+* [twi](https://github.com/matthewwall/weewx-twi) - Collect data from Texas Weather Instruments hardware :heavy_check_mark:
+* [uradmon](https://github.com/glennmckechnie/weewx-uradmon) - Collect data from a Uradmon Environmental Monitor :heavy_check_mark:
+* [vedirect](https://github.com/matthewwall/weewx-vedirect) - Collect data from Victron MPPT solar/battery controller
+* [w820](https://github.com/daduke/ventusw820) - Collect data from Ventus W820 bluetooth station
+* [wanet](https://sourceforge.net/projects/wariome11) - Collect data from Wanet Wario ME11/12 meteo station
+* [weatherflow](https://github.com/captain-coredump/weatherflow-udp) - Collect data from WeatherFlow hardware
+* [WeatherLink Live](https://github.com/michael-slx/weewx-weatherlink-live) - Collect data from Davis WeatherLink Live using both polling and UDP broadcast API :heavy_check_mark:
+* [WeatherLink Live JSON](https://github.com/vinceskahan/weewx-weatherlinklive-json) - Collect data from Davis WeatherLink Live via periodic polling
+* [WeatherLink Live UDP](https://github.com/grebleem/weewx-weatherlinkliveudp) - Collect data from Davis WeatherLink Live (with 2.5s UDP updates) :heavy_check_mark:
+* [WeatherLink Live](https://github.com/Drealine/weatherlinklive-driver-weewx) - Collect data from Davis WeatherLink Live (including Weatherlink.com) when data is lost :heavy_check_mark:
+* [WeatherLink Live WLL](https://github.com/jonotaegi/weewx-wll) - Collect data from Davis WeatherLink Live devices
+* [weewxMQTT](https://github.com/morrowwm/weewxMQTT) - Collect data by subscribing to MQTT topics :heavy_check_mark: 
+* [wh23xx](https://github.com/matthewwall/weewx-wh23xx) - Collect data from Fine Offset WH23xx (Tycon TP2700)
+* [wlink](wlink) - Collect data from weatherlink.com
+* [wmII](https://github.com/jardiamj/wmII) - Collect data from Davis Weather Monitor II, Wizzard, Perception
+* [wmr89](https://github.com/tkeffer/weewx-wmr89) - Collect data from the Oregon Scientific WMR89 :heavy_check_mark:
+* [ws6in1](https://github.com/bobatchley/weewx-ws6in1) - Collect data WS 6 in 1 weather stations with PC console :heavy_check_mark:
+* [wxt5x0](https://github.com/matthewwall/weewx-wxt5x0) - Collect data from Vaisala WXT5x0 stations
 
 #### Services
 * [airQ - Retrieve air quality data from Air-Q device of Corant GmbH](https://github.com/roe-dl/weewx-airQ) (PM<sub>1.0</sub>, PM<sub>2.5</sub>, PM<sub>10.0</sub>, TVOC, CO, CO<sub>2</sub>, O<sub>2</sub>, O<sub>3</sub>, NO<sub>2</sub>, H<sub>2</sub>S, SO<sub>2</sub>, noise, health index, performance index)

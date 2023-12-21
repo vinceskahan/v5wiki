@@ -1,11 +1,11 @@
 This page contains instructions for customizing the logging configuration for WeeWX.
 
-* [Save WeeWX log messages separate from system log messages](save-weewx-log-messages-separate-from-system-log-messages)
-* [Make WeeWX skip the system logging facility]()
+* [Make syslog save WeeWX logs separate from system](#make-syslog-save-weewx-logs-separate-from-system)
+* [Make WeeWX skip the system logging facility](#make-weewx-skip-the-system-logging-facility)
 * [Multiple WeeWX log files](#multiple-weewx-log-files)
 * [Remote logging](#remote-logging)
 
-## Save WeeWX log messages separate from system log messages
+## Make syslog save WeeWX logs separate from system
 
 In a default configuration, WeeWX writes log messages to the system log.  With a few changes to the system logging configuration, you can put all WeeWX messages in a separate log file.  In some cases this makes it easier to monitor WeeWX, or multiple instances of WeeWX.
 

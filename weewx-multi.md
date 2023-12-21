@@ -108,7 +108,7 @@ Download the unit template
 ```
 wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v5.0/util/systemd/weewx@.service
 ```
-Open the unit template with a text editor, and modify the `ExecStart` line to match your installation.  For a `setup.py` installation, change `weewxd` to `/home/weewx/bin/weewxd`
+Open the unit template with a text editor, and modify the `ExecStart` line to match your installation.
 ```
 ExecStart=weewxd --log-label weewx-%i /etc/weewx/%i.conf
 ```

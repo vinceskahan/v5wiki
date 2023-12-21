@@ -19,11 +19,13 @@ Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will
     [[root]]
         handlers = timed_rotate
     [[handlers]]
-        level = DEBUG
-        formatter = standard
-        class = logging.handlers.TimedRotatingFileHandler
-        when = midnight
-        backupCount = 7
+        [[[timed_rotate]]]
+            {process_name}.log
+            level = DEBUG
+            formatter = standard
+            class = logging.handlers.TimedRotatingFileHandler
+            when = midnight
+            backupCount = 7
 ```
 
 For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).

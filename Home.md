@@ -44,7 +44,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 #### Operating system configuration
 * [Time services](Time-services)
 * [Run WeeWX as a non-root user](Run-as-a-non-root-user-using-init)
-* [Put log messages from WeeWX into a separate file](logging)
+* [How to configure logging](logging) (separate log files, standalone logging, remote logging)
 * [Use logwatch to report WeeWX log messages](logwatch)
 * [Reduce the number of writes for SD cards or SSDs](Minimize-writes-on-SD-cards)
 * [Configure a web server (Apache, NGINX or lighttpd)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))

@@ -1,12 +1,12 @@
-This is a guide to viewing and managing WeeWX log messages.
+This is a guide to viewing WeeWX log messages.
 
 In its default configuration, WeeWX sends log messages to the system logging facility, called `syslog`.  This means that the system is responsible for things like ensuring that running multiple instances of `weewxd` do not corrupt the log, and that the system is responsible for rotating log files so that they do not fill up the disks.
 
 There are many different system loggers available.  For example, linux systems have `syslog`, `rsyslog`, `syslog-ng`, and/or `systemd-journald`, BSD systems typically have `syslog` or `newsyslog`. Most of these save the log messages to file, and the system takes care of rotating the log files so that they do not fill up the local storage. Some can be configured to send the logs to a remote logging server, which can make managing multiple machines much easier, and provides security benefits as well.
 
-In many cases, you will want to use the system's logging mechanisms to manage the logs.  However, since WeeWX uses the python `logging` module (since WeeWX V4), you can configure WeeWX to manage its own logs, skipping the system logging facility.
+This document describes some of the configurations you might encounter when you use the system logging facility.
 
-This document describes some of the configurations you might encounter on systems that run WeeWX.
+If you want to change the logging configuration, see the Wiki article about [*How to customize logging*](logging)
 
 ## syslog
 
@@ -43,16 +43,6 @@ sudo journalctl -u weewx
 # view all of the message contents, not just the first few words of each line
 sudo journalctl -u weewx | more
 ```
-
-## Make WeeWX save directly to files and skip the system logging
-
-Since version 4, WeeWX uses the Python `logging` module.  This means that you can configure WeeWX to save its messages directly to files, skipping your system's logging mechanism.  The Python `logging` module can also do log rotation, so log files do not grow too big, or so that older log files are deleted automatically.
-
-Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
-
-For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).
-
-For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
 
 ## How to test your system logger
 

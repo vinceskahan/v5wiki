@@ -66,9 +66,6 @@ For example, in `house.conf`:
     [[archive_sqlite]]
         database_name = house.sdb
         database_type = SQLite
-    [[archive_mysql]]
-        database_name = house
-        database_type = MySQL
 ```
 and in `paddock.conf`:
 ```
@@ -76,9 +73,6 @@ and in `paddock.conf`:
     [[archive_sqlite]]
         database_name = paddock.sdb
         database_type = SQLite
-    [[archive_mysql]]
-        database_name = paddock
-        database_type = MySQL
 ```
 
 ### 4. Verify the report configurations
@@ -102,15 +96,8 @@ and in `paddock.conf`:
 
 #### WeeWX V5 using systemd unit template
 
-If you installed WeeWX using a DEB/RPM package, the unit template file is already installed.  Just enable each `weewxd` instance.
+If you installed WeeWX using a DEB/RPM package, or if you installed using `pip` and configured WeeWX to run as a daemon, then the unit template file is already installed.  Just enable each `weewxd` instance.
 ```
-sudo systemctl enable weewx@vantage
-sudo systemctl enable weewx@paddock
-```
-
-If you installed WeeWX using `pip`, copy the unit template into place, then then enable each `weewxd` instance.
-```
-sudo cp ~/weewx-data/util/systemd/weewx@.service /etc/systemd/system
 sudo systemctl enable weewx@vantage
 sudo systemctl enable weewx@paddock
 ```
@@ -121,12 +108,9 @@ Download the unit template
 ```
 wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v5.0/util/systemd/weewx@.service
 ```
-Open the unit template with a text editor, and modify the `ExecStart` line to match your installation.
+Open the unit template with a text editor, and modify the `ExecStart` line to match your installation.  For a `setup.py` installation, change `weewxd` to `/home/weewx/bin/weewxd`
 ```
-# for a DEB/RPM package installation:
 ExecStart=weewxd --log-label weewx-%i /etc/weewx/%i.conf
-# for a setup.py installation:
-ExecStart=/home/weewx/bin/weewxd --log-label weewx-%i /home/weewx/%i.conf
 ```
 Copy the unit template into place
 ```
@@ -145,20 +129,15 @@ Download the `weewx-multi` init script, and copy it into place.
 wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v4.10.2/util/init.d/weewx-multi
 sudo cp /var/tmp/weewx-multi /etc/init.d/weewx
 ```
-Create the `defaults` file to match your installation.
 
-For a DEB/RPM package installation:
+Create the `defaults` file to match your installation.  For a `setup.py` installation, use `/home/weewx/bin` for `WEEWX_BINDIR`.
 ```
 echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
 echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee -a /etc/default/weewx-multi
 echo 'WEEWX_BINDIR=/usr/share/weewx' | sudo tee -a /etc/default/weewx-multi
 ```
-For a `setup.py` installation:
-```
-echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
-echo 'WEEWX_CFGDIR=/home/weewx' | sudo tee -a /etc/default/weewx-multi
-echo 'WEEWX_BINDIR=/home/weewx/bin' | sudo tee -a /etc/default/weewx-multi
-```
+
+
 Finally, enable the script
 ```
 sudo update-rc.d weewx defaults

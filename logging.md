@@ -1,4 +1,11 @@
-## Save WeeWX log messages to a separate file
+This page contains instructions for customizing the logging configuration for WeeWX.
+
+* [Save WeeWX log messages separate from system log messages](save-weewx-log-messages-separate-from-system-log-messages)
+* [Make WeeWX skip the system logging facility]()
+* [Multiple WeeWX log files](#multiple-weewx-log-files)
+* [Remote logging](#remote-logging)
+
+## Save WeeWX log messages separate from system log messages
 
 In a default configuration, WeeWX writes log messages to the system log.  With a few changes to the system logging configuration, you can put all WeeWX messages in a separate log file.  In some cases this makes it easier to monitor WeeWX, or multiple instances of WeeWX.
 
@@ -15,8 +22,7 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 
 2. restart the logging system:
 ```
-sudo /etc/init.d/rsyslog stop
-sudo /etc/init.d/rsyslog start
+sudo systemctl restart rsyslog
 ```
 
 The file order matters in `rsyslog.d`.  If you find that the WeeWX log messages are going to both the WeeWX log file and the syslog/messages log file, you might have to make the `weewx.conf` appear before the `syslog.conf` defaults.  For example,
@@ -37,6 +43,32 @@ sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 sudo logrotate -d -f /etc/logrotate.d/weewx
 ```
+
+
+## Make WeeWX skip the system logging facility
+
+Since version 4, WeeWX uses the Python `logging` module.  This means that you can configure WeeWX to save its messages directly to files, skipping your system's logging mechanism.  The Python `logging` module can also do log rotation, so log files do not grow too big, or so that older log files are deleted automatically.
+
+Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
+
+Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will save WeeWX log files to a directory `~/weewx-data/log`, rotating once per day at midnight, and retaining 7 days of log files.
+```
+[Logging]
+    LOG_ROOT = log
+    [[root]]
+        handlers = timed_rotate
+    [[handlers]]
+        level = DEBUG
+        formatter = standard
+        class = logging.handlers.TimedRotatingFileHandler
+        when = midnight
+        backupCount = 7
+```
+
+For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).
+
+For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
+
 
 ## Multiple WeeWX log files
 

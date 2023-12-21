@@ -1,31 +1,25 @@
 This page provides answers to some of the most frequently-asked questions (FAQ) about WeeWX.
 
 #### Getting started
-<ul>
-<li><a href="#i-need-help---where-do-i-go-for-support">I need help - where do I go for support?</a></li>
-<li><a href="#what-weather-station-should-i-buy">What weather station should I buy?</a></li>
-<li><a href="#is-my-hardware-supported-by-weewx">Is my hardware supported by WeeWX?</a></li>
-<li><a href="#is-weewx-hard-to-install-and-use">Is WeeWX hard to install and use?</a></li>
-<li><a href="#what-skills-do-i-need-to-run-weewx">What skills do I need to run WeeWX?</a></li>
-<li><a href="#how-do-i-learn-the-things-i-need-to-run-weewx">How do I learn the things I need to run WeeWX?</a></li>
-</ul>
+* [I need help - where do I go for support?](#i-need-help---where-do-i-go-for-support)
+* [What weather station should I buy?](#what-weather-station-should-i-buy)
+* [Is my hardware supported by WeeWX?](#is-my-hardware-supported-by-weewx)
+* [Is WeeWX hard to install and use?](#is-weewx-hard-to-install-and-use)
+* [What skills do I need to run WeeWX?](#what-skills-do-i-need-to-run-weewx)
+* [How do I learn the things I need to run WeeWX?](#how-do-i-learn-the-things-i-need-to-run-weewx)
 
 #### Installing and upgrading
-<ul>
-<li><a href="">Which method should I use to install WeeWX?</a></li>
-<li><a href="">wget: command not found</a></li>
-<li><a href="">gpg: command not found</a></li>
-<li><a href="">gpg: no valid OpenPGP data found</a></li>
-<li><a href="#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx">How should I answer the questions from apt when I upgrade WeeWX?</a></li>
-<li><a href="#how-should-i-answer-the-questions-from-yum-or-dnf-when-i-upgrade-weewx">How should I answer the questions from yum or dnf when I upgrade WeeWX?</a></li>
-</ul>
+* [Which method should I use to install WeeWX?](#which-method-should-i-use-to-install-weewx)
+* [wget: command not found](#wget-command-not-found)
+* [gpg: command not found](#gpg-command-not-found)
+* [gpg: no valid OpenPGP data found](#gpg-no-valid-openpgp-data-found)
+* [How should I answer the questions from apt when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx)
+* [How should I answer the questions from yum or dnf when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-yum-or-dnf-when-i-upgrade-weewx)
 
 #### Registering your station
-<ul>
-<li><a href="">Should I register my station?</a></li>
-<li><a href="">Can I register without specifying an Internet-facing website?</a></li>
-<li><a href="">How do I unregister?</a></li>
-</ul>
+* [Should I register my station?](#should-i-register-my-station)
+* [Can I register without specifying an Internet-facing website?](#can-i-register-without-specifying-an-internet-facing-website)
+* [How do I unregister?](#how-do-i-unregister)
 
 #### Using the command-line, Python, and WeeWX
 * [Why do I get "command not found" when I type WeeWX commands?](#why-do-i-get-command-not-found-when-i-type-weewx-commands)

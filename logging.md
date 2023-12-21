@@ -140,12 +140,15 @@ else ?DYNmessages
 :hostname,!isequal,"blackhole" stop
 ```
 
+## Example configuration files
 
-### rsyslog configuration examples
+The `syslog` and `logrotate` utilities have been around for a long time. Although they are well-documented and reliable, there have been changes over the years, and there are variations in how they are configured between different operating systems and operating system versions.  This section includes sample `syslog` and `logrotate` configuration files with comments and examples of many of these variations.
+
+### syslog configuration
 
 ```
 #
-# Configuration options for rsyslog / log handling
+# Configuration options for rsyslog
 #
 # weewxd.log - messages from the weewx daemon
 # weewx.log  - messages from the weewx utilities
@@ -205,7 +208,7 @@ else ?DYNmessages
 #:programname,startswith,"wee" ~
 ```
 
-### logrotate configuration examples
+### logrotate configuration
 
 ```
 /var/log/weewxd.log /var/log/weewx.log {
@@ -213,11 +216,11 @@ else ?DYNmessages
   missingok
   rotate 52
   compress
-#  delaycompress # do not compress the most recently rotated file
+  delaycompress  # do not compress the most recently rotated file
   copytruncate   # copy the file, then truncate
   notifempty
 
-# on some systems the permissions do not propagate, so force them
+# on some systems the permissions must be specified explicitly
 #  create 644 root adm    # default user/group on Debian
 #  create 644 syslog adm  # default user/group on Ubuntu
 #  create 644 root root   # default user/group on Redhat

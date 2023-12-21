@@ -6,7 +6,7 @@ several disadvantages:
 - It can log only to the system log.
 - It is inflexible in the formatting it uses.
 
-WeeWX V4 uses Python's
+WeeWX V4 and later use Python's
 [`logging`](https://docs.python.org/3/library/logging.html) package. It has
 several advantages:
 - It abstracts out logging destinations, formatting, and filtering, allowing all
@@ -47,8 +47,8 @@ With that in mind, here is the default configuration that WeeWX uses:
       level = {log_level}
       handlers = syslog,
 
-    # Additional loggers would go in the following section. This is useful for tailoring logging
-    # for individual modules.
+    # Additional loggers would go in the following section. This is useful for 
+    # tailoring logging for individual modules.
     [[loggers]]
 
     # Definitions of possible logging destinations
@@ -75,9 +75,9 @@ With that in mind, here is the default configuration that WeeWX uses:
         [[[simple]]]
             format = "%(levelname)s %(message)s"
         [[[standard]]]
-            format = "{process_name}[%(process)d] %(levelname)s %(name)s: %(message)s" 
+            format = "{process_name}[%(process)d]: %(levelname)s %(name)s: %(message)s"
         [[[verbose]]]
-            format = "%(asctime)s  {process_name}[%(process)d] %(levelname)s %(name)s: %(message)s"
+            format = "%(asctime)s {process_name}[%(process)d]: %(levelname)s %(name)s: %(message)s"
             # Format to use for dates and times:
             datefmt = %Y-%m-%d %H:%M:%S
 ```
@@ -127,7 +127,7 @@ Simply add this to your `weewx.conf` file:
             formatter = verbose                                 # NOTE 3
             class = logging.handlers.TimedRotatingFileHandler   # NOTE 4
             # File to log to:
-            filename = /var/tmp/weewx.log                       # NOTE 5
+            filename = /var/tmp/{process_name}.log              # NOTE 5
             # When to rotate:
             when = midnight                                     # NOTE 6
             # How many log files to save
@@ -151,9 +151,11 @@ Simply add this to your `weewx.conf` file:
    [`TimedRotatingFileHandler`](https://docs.python.org/3/library/logging.handlers.html#timedrotatingfilehandler)
    for the actual implementation. 
 
-5. It will log to the file `/var/tmp/weewx.log`. In WeeWX V5, this location can
-   be a relative path, in which case it will be relative to `WEEWX_ROOT`. For
-   example, specifying
+5. The option `filename` specifies the path to the rotating file. The variable 
+   `{process_name}` can be used, in which case the name of the process (usually
+   `weewxd`) will be used. So, in this example, for the main program `weewxd`, logs
+   will be sent to `/var/tmp/weewxd.log`. In WeeWX V5, `filename` can be a relative
+   path, in which case it will be relative to `WEEWX_ROOT`. For example, specifying
 
        filename = log/weewx.log
  

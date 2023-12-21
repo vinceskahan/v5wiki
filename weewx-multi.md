@@ -130,7 +130,7 @@ wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v4.10.2/util/init
 sudo cp /var/tmp/weewx-multi /etc/init.d/weewx
 ```
 
-Create the `defaults` file to match your installation.  For a `setup.py` installation, use `/home/weewx/bin` for `WEEWX_BINDIR`.
+Create the `defaults` file to match your installation.  For a `setup.py` installation, use `WEEWX_CFGDIR=/home/weewx` and `WEEWX_BINDIR=/home/weewx/bin`
 ```
 echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
 echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee -a /etc/default/weewx-multi

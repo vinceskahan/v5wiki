@@ -1,9 +1,35 @@
 This page contains instructions for customizing the logging configuration for WeeWX.
 
-* [Make syslog save WeeWX logs separate from system](#make-syslog-save-weewx-logs-separate-from-system)
 * [Make WeeWX skip the system logging facility](#make-weewx-skip-the-system-logging-facility)
-* [Multiple WeeWX log files](#multiple-weewx-log-files)
+* [Make syslog save WeeWX logs separate from system](#make-syslog-save-weewx-logs-separate-from-system)
+* [Multiple WeeWX log files for multiple WeeWX processes](#multiple-weewx-log-files)
 * [Remote logging](#remote-logging)
+
+
+## Make WeeWX skip the system logging facility
+
+Since version 4, WeeWX uses the Python `logging` module.  This means that you can configure WeeWX to save its messages directly to files, skipping your system's logging mechanism.  The Python `logging` module can also do log rotation, so log files do not grow too big, or so that older log files are deleted automatically.
+
+Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
+
+Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will save WeeWX log files to a directory `~/weewx-data/log`, rotating once per day at midnight, and retaining 7 days of log files.
+```
+[Logging]
+    LOG_ROOT = log
+    [[root]]
+        handlers = timed_rotate
+    [[handlers]]
+        level = DEBUG
+        formatter = standard
+        class = logging.handlers.TimedRotatingFileHandler
+        when = midnight
+        backupCount = 7
+```
+
+For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).
+
+For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
+
 
 ## Make syslog save WeeWX logs separate from system
 
@@ -43,31 +69,6 @@ sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 sudo logrotate -d -f /etc/logrotate.d/weewx
 ```
-
-
-## Make WeeWX skip the system logging facility
-
-Since version 4, WeeWX uses the Python `logging` module.  This means that you can configure WeeWX to save its messages directly to files, skipping your system's logging mechanism.  The Python `logging` module can also do log rotation, so log files do not grow too big, or so that older log files are deleted automatically.
-
-Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
-
-Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will save WeeWX log files to a directory `~/weewx-data/log`, rotating once per day at midnight, and retaining 7 days of log files.
-```
-[Logging]
-    LOG_ROOT = log
-    [[root]]
-        handlers = timed_rotate
-    [[handlers]]
-        level = DEBUG
-        formatter = standard
-        class = logging.handlers.TimedRotatingFileHandler
-        when = midnight
-        backupCount = 7
-```
-
-For details, see the [development guide for logging](https://github.com/weewx/weewx/wiki/WeeWX-v4-and-logging).
-
-For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
 
 
 ## Multiple WeeWX log files

@@ -75,7 +75,7 @@ sudo logrotate -d -f /etc/logrotate.d/weewx
 
 ## Multiple WeeWX log files
 
-Any number of WeeWX instances can be run from a single WeeWX installation, either manually using `weewxd` or via scripts such as the included `weewx-multi`. In such cases it may be useful to direct the WeeWX log output from each instance to a separate file. The instructions for doing so depend on the approach used to run multiple WeeWX instances.
+Any number of WeeWX instances can be run from a single WeeWX installation, either manually using `weewxd` or at system startup. In such cases it may be useful to direct the WeeWX log output from each instance to a separate file. The instructions for doing so depend on the approach used to run multiple WeeWX instances.
 
 Consider the case where two WeeWX instances are being run; one for a Davis Vantage Pro station and the other for a Rainwise station using config files `/etc/weewx/vantage.conf` and `/etc/weewx/rainwise.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/weewxd-vantage.log` and the log output for the Rainwise station is written to `/var/log/weewx/weewxd-rainwise.log`. 
 

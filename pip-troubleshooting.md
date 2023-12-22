@@ -13,8 +13,21 @@ source ~/weewx-venv/bin/activate
 python3 -m pip install weewx 
 ```
 
-If that doesn't work, use this guide for suggestsions on getting around common
+If that doesn't work, use this guide for suggestions on getting around common
 problems.
+
+
+## Upgrade pip
+
+If you get errors that say pip was unable to build one of the dependencies, it
+may be because it is using a technique that an old version of pip is unable to
+understand. Upgrade pip, then try again:
+
+```
+python3 -m pip install pip --upgrade
+python3 -m pip install weewx
+```
+
 
 ## Install piecemeal
 

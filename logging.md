@@ -12,7 +12,7 @@ Since version 4, WeeWX uses the Python `logging` module.  This means that you ca
 
 Using the Python `logging` might be a good choice if you want to save logs to an in-memory partition, in order to minimize writes to disk.
 
-Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will save WeeWX log files to a directory `~/weewx-data/log`, rotating once per day at midnight, and retaining 7 days of log files.
+Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will save WeeWX log files to a directory `log` (relative to `WEEWX_ROOT`), rotating once per day at midnight, and retaining 7 days of log files.
 ```
 [Logging]
     LOG_ROOT = log
@@ -20,7 +20,7 @@ Add this stanza to your WeeWX configuration file, then restart WeeWX.  This will
         handlers = timed_rotate
     [[handlers]]
         [[[timed_rotate]]]
-            {process_name}.log
+            filename = {process_name}.log
             level = DEBUG
             formatter = standard
             class = logging.handlers.TimedRotatingFileHandler

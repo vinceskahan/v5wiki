@@ -124,7 +124,7 @@ Here is an example of how to do this, with a logging host called `blackhole`.
 
 Put something like this into the file `/etc/rsyslog.d/send-to-blackhole.conf` on the machine running WeeWX:
 ```
-$ActionQueueFileName mostess
+$ActionQueueFileName blackhole
 $ActionQueueMaxDiskSpace 1g  
 $ActionQueueSaveOnShutdown on
 $ActionQueueType LinkedList   

@@ -118,9 +118,11 @@ sudo weewxd --log-label weewxd-rainwise /etc/weewx/rainwise.conf
 
 ## Remote logging
 
-Sometimes it is useful to send WeeWX log messages to a different server.  This can be particularly useful to eliminate the writes to local disk.
+Sometimes it is useful to send WeeWX log messages to a different server.  This can be particularly useful to eliminate the writes to local disk.  To do this, specify the remote server in the syslog configuration on the machine running WeeWX.
 
-To do this, specify the remote server in the syslog configuration on the machine running WeeWX.  For example, if the logging host is called `blackhole`, put something like this into the file `/etc/rsyslog.d/send-to-blackhole.conf` on the machine running WeeWX:
+Here is an example of how to do this, with a logging host called `blackhole`.
+
+Put something like this into the file `/etc/rsyslog.d/send-to-blackhole.conf` on the machine running WeeWX:
 ```
 $ActionQueueFileName mostess
 $ActionQueueMaxDiskSpace 1g  
@@ -130,7 +132,7 @@ $ActionResumeRetryCount -1
 *.* @@blackhole:514
 ```
 
-On the remote server `blackhole`, make syslog receive messages from other hosts.  Put something like this into the file `/etc/rsyslog.d/receive-logs.conf` on `blackhole`:
+On the remote server `blackhole`, make syslog receive messages from other hosts.  Put something like this into the file `/etc/rsyslog.d/receive-logs.conf` on `blackhole`.  If a firewall is running on `blackhole`, be sure to enable incoming TCP/UDP traffic on port 514.
 ```
 # Receive logs using either tcp or udp
 

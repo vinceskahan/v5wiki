@@ -86,7 +86,7 @@ sudo mkdir -p /var/log/weewx
 
 2. use a syslog configuration `/etc/rsyslog.d/weewx.conf` like this:
 ```
-$template WEEWX_LOGFILE,"/var/log/weewx/%programname%.log
+$template WEEWX_LOGFILE,"/var/log/weewx/%programname%.log"
 if $programname startswith 'wee' then ?WEEWX_LOGFILE
 if $programname startswith 'wee' then stop
 ```

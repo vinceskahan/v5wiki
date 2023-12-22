@@ -104,19 +104,33 @@ sudo systemctl enable weewx@paddock
 
 #### WeeWX V4 using systemd unit
 
-Download the unit template
+a) Download the unit and unit template
 ```
+wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v5.0/util/systemd/weewx.service
 wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v5.0/util/systemd/weewx@.service
 ```
-Open the unit template with a text editor, and modify the `ExecStart` line to match your installation.
+b) Open each file with a text editor and modify the `ExecStart` line to match your installation. In `weewx.service`, change this:
 ```
-ExecStart=weewxd --log-label weewx-%i /etc/weewx/%i.conf
+ExecStart=weewxd weewx.conf
 ```
-Copy the unit template into place
+to this:
 ```
+ExecStart=/home/weewx/bin/weewxd /home/weewx/weewx.conf
+```
+In `weewx@.service`, change this:
+```
+ExecStart=weewxd --log-label weewxd-%i $HOME/weewx-data/%i.conf
+```
+to this:
+```
+ExecStart=/home/weewx/bin/weewxd --log-label weewx-%i /home/weewx/%i.conf
+```
+c) Copy the units into place
+```
+sudo cp /var/tmp/weewx.service /etc/systemd/system
 sudo cp /var/tmp/weewx@.service /etc/systemd/system
 ```
-Enable each `weewxd` instance.
+d) Enable each `weewxd` instance.
 ```
 sudo systemctl enable weewx@vantage
 sudo systemctl enable weewx@paddock

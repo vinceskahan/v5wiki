@@ -65,12 +65,12 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 
-**Note**: logrotate has specific ownership and file access requirements for config files in `/etc/logrotate.d` (including the source file for any linked config files in `/etc/logrotate.d`). logrotate v3.8.x and later requires these config files be owned by `root` or another user with uid 0. The config files must have a 644 permissions mask (read-write by owner, read only by group and others).
-
 2. confirm correct logrotate operation with WeeWX log files:
 ```
 sudo logrotate -d -f /etc/logrotate.d/weewx
 ```
+
+**Note**: logrotate has specific ownership and file access requirements for config files in `/etc/logrotate.d` (including the source file for any linked config files in `/etc/logrotate.d`). logrotate v3.8.x and later requires these config files be owned by `root` or another user with uid 0. The config files must have a 644 permissions mask (read-write by owner, read only by group and others).
 
 
 ## Multiple WeeWX log files

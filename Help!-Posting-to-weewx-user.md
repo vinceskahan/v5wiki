@@ -71,6 +71,9 @@ _**Do not send a screenshot!**_
 A screenshot is hard to read, includes only a couple dozen lines, cannot be searched nor
 translated, and waste a lot of space. _Send only text!_
 
+The wiki article [*How to view the log*](view-logs) explains where to find the log on
+your system and how to view it.
+
 ## How to get a good, useful log
 
 It is helpful to have debug enabled before you run WeeWX, as that results in more

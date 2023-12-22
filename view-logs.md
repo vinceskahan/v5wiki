@@ -1,6 +1,6 @@
 This is a guide to viewing WeeWX log messages.
 
-In its default configuration, WeeWX sends log messages to the system logging facility, called `syslog`.  This means that the system is responsible for things like ensuring that running multiple instances of `weewxd` do not corrupt the log, and that the system is responsible for rotating log files so that they do not fill up the disks.
+In its default configuration, WeeWX sends log messages to the system logging facility.  This means that the system is responsible for things like ensuring that running multiple instances of `weewxd` do not corrupt the log, and that the system is responsible for rotating log files so that they do not fill up the disks.
 
 There are many different system loggers available.  For example, linux systems have `syslog`, `rsyslog`, `syslog-ng`, and/or `systemd-journald`, BSD systems typically have `syslog` or `newsyslog`. Most of these save the log messages to file, and the system takes care of rotating the log files so that they do not fill up the local storage. Some can be configured to send the logs to a remote logging server, which can make managing multiple machines much easier, and provides security benefits as well.
 
@@ -10,9 +10,9 @@ If you want to change the logging configuration, see the Wiki article about [*Ho
 
 ## syslog
 
-The default logger for WeeWX is `syslog`.  When `weewxd` or any service or extension emits a log message, that message goes to the system's logger, `syslog`.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS, xBSD), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
+On systems that use `syslog`, when `weewxd` or any service or extension emits a log message, that message goes to the system's logger.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS, xBSD), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
 
-If the system saves `syslog` messages to file, then you can use standard tools such as `head`, `tail`, `more`, or `less` to view those messages.
+You can use standard tools such as `head`, `tail`, `more`, or `less` to view those messages.
 
 Here are some examples:
 ```
@@ -33,7 +33,7 @@ On most modern Linux systems, the `sudo` is required, since the system logs are 
 
 ## journalctl
 
-On systems that use `systemd`, there is a program called `systemd-journald` that manages some (or all) of the system logging.  In fact, on some systems that use `systemd`, there is no `syslog` - they use `systemd-journald` instead.  Others include both `syslog` and `systemd-journald`.  On systems with `systemd-journald`, you might be able to use the `journalctl` tool to view messages from WeeWX.
+On systems that use `systemd`, there is a program called `systemd-journald` that manages some (or all) of the system logging.  On some systems that use `systemd`, there is no `syslog` - they use `systemd-journald` exclusively.  Others include both `syslog` and `systemd-journald`.  On systems with `systemd-journald`, you might be able to use the `journalctl` tool to view messages from WeeWX.
 
 Here are some examples:
 ```

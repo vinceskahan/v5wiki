@@ -49,7 +49,7 @@ This depends on your needs.  How much can you spend?  How much can you spend eac
 
 Take a look at the 'hardware' section of the [WeeWX station map](https://weewx.com/stations.html) to see what other WeeWX users are using.
 
-There is a [wxforum board](https://www.wxforum.net/index.php?board=71.0) dedicated to this question.
+For a lengthy read with many examples and opinions, see the [wxforum board](https://www.wxforum.net/index.php?board=71.0) dedicated to this question.
 
 ### Is my hardware supported by WeeWX?
 

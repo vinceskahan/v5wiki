@@ -10,9 +10,10 @@ Here are some situations where permissions matter when you are using WeeWX.
 
 Most systems require administrative privileges to view the system log.
 ```
+# systems that use syslog
 sudo tail /var/log/syslog
-```
-```
+sudo tail /var/log/messages
+# systems that use systemd-journald
 sudo journalctl -u weewx
 ```
 

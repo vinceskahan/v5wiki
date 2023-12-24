@@ -255,7 +255,10 @@ source ~/weewx-env/bin/activate
 weewxd
 ```
 
-In some cases you might have to run `weewxd` with root permissions in order to read data from the station, write data to the database, or write the reports.  If so, the use `sudo weewxd` instead of just `weewxd`.
+In some cases you might have to run `weewxd` with root permissions in order to read data from the station, write data to the database, or write the reports.  If so, the use `sudo`:
+```
+sudo weewxd
+```
 
 
 ### Where do I find the log?

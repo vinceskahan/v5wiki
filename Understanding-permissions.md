@@ -42,6 +42,11 @@ sqlite3 /var/lib/weewx.sdb
 
 ### Reading/writing data to a device
 
+By default, only a privileged user can write to USB or serial devices.
+
+Independent of permissions, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
+
+
 ## Add a user to a group
 
 If you add yourself to the `weewx` group, then you can modify configurations and skins without having to `sudo`.

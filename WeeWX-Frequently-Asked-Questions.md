@@ -14,7 +14,6 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 * [gpg: command not found](#gpg-command-not-found)
 * [gpg: no valid OpenPGP data found](#gpg-no-valid-openpgp-data-found)
 * [How should I answer the questions from apt when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx)
-* [How should I answer the questions from yum or dnf when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-yum-or-dnf-when-i-upgrade-weewx)
 
 #### Registering your station
 * [Should I register my station?](#should-i-register-my-station)
@@ -150,15 +149,6 @@ When you upgrade WeeWX on a Debian-like system, the installer will ask you wheth
 Whether you choose to keep your configuration or the new one, both options will be saved. So if you change your mind later, or if you want to compare, you can do so.
 
 More detail can be found in the [apt update guide](faq-questions-apt-get-asks).
-
-
-### How should I answer the questions from `yum` or `dnf` when I upgrade WeeWX?
-
-When you upgrade WeeWX on a Redhat-like or SUSE system, the installer will ask you whether you want to keep your existing configuration, or use the latest configuration.  In most cases, you should choose to keep your existing configuration; the WeeWX developers work hard to ensure that new versions of WeeWX are backward-compatible with configurations and skins.
-
-Whether you choose to keep your configuration or the new one, both options will be saved. So if you change your mind later, or if you want to compare, you can do so.
-
-More detail can be found in the [yum update guide](yum-update-guide).
 
 
 ## Registering your station

@@ -30,6 +30,27 @@ sudo nano /etc/weewx/weewx.conf
 
 ### Installing an extension
 
+You must have read/write permissions on the WeeWX station "user" directory in order to install or remove extensions.
+
+For example:
+```
+$ /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
+Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
+Traceback (most recent call last):
+   [...]
+PermissionError: [Errno 13] Permission denied: '/home/weewx/bin/user/gw1000.py'
+```
+
+```
+$ sudo /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
+Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
+Saving installer file to /home/weewx/bin/user/installer/GW1000
+Saved configuration dictionary. Backup copy at /home/weewx/weewx.conf.20210426101025
+Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
+```
+
 ### Reading/writing to a database
 
 In a default configuration, the WeeWX database is world-readable, but writable only by the owner.  So you should be able to read the WeeWX database no matter how you installed WeeWX.
@@ -52,23 +73,4 @@ Independent of permissions, most USB and serial devices are accessible to only o
 If you add yourself to the `weewx` group, then you can modify configurations and skins without having to `sudo`.
 ```
 sudo usermod -a -g weewx $USER
-```
-
-## Example
-```
-$ /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
-Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
-Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
-Traceback (most recent call last):
-   [...]
-PermissionError: [Errno 13] Permission denied: '/home/weewx/bin/user/gw1000.py'
-```
-
-```
-$ sudo /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
-Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
-Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
-Saving installer file to /home/weewx/bin/user/installer/GW1000
-Saved configuration dictionary. Backup copy at /home/weewx/weewx.conf.20210426101025
-Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
 ```

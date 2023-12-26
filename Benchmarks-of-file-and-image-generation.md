@@ -23,10 +23,10 @@ table at the end.
    rm -r weewx-benchmark/public_html
    ```
 
-4. Run the benchmark, using `wee_reports`
+4. Run the benchmark, using `weectl report`
 
    ```shell
-   wee_reports weewx-benchmark/weewx.conf
+   weectl report run --config=weewx-benchmark/weewx.conf
    ```
    
 5. The benchmark will print the generation time for the files and images

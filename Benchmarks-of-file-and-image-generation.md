@@ -8,6 +8,8 @@ Debian systems, please run `dpkg --print-architecture`, rather than relying on
 `uname -a`. If that does not reveal anything useful, then try `cat
 /proc/cpuinfo`.
 
+<hr/>
+
 | Hardware                                                              | WeeWX    | Python | Files (21) | Images (68) | Footnotes |
 |-----------------------------------------------------------------------|----------|--------|-----------:|------------:|----------:|
 | Mac Mini, M1 2020 (Sonoma 14.0)                                       | 5.0.0b13 | 3.10.9 |      0.60s |       1.06s |           |

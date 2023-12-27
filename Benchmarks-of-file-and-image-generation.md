@@ -1,47 +1,19 @@
-## Benchmark protocol
+## Instructions
 
-This is a benchmark designed to test how fast WeeWX generates the files and
-images of the Seasons skin, using one year of data. Add your results to the
-table at the end.
+See https://github.com/weewx/weewx-benchmark. Follow the directions in the
+readme for how to run the benchmark. 
 
-1. Make sure you have installed WeeWX V5.0.0b13 or later. _Earlier versions will
-   not work!_
- 
-2. Download and unpack the test station data
- 
-    ```shell
-    cd /var/tmp
-    wget https://weewx.com/benchmarks/weewx-benchmark.tar.gz
-    tar xvf weewx-benchmark.tar.gz
-    ```
-
-3. The test is of how long it takes to create and populate the subdirectory
-   `weewx-benchmark/public_html`, so make sure it is _not_ present before
-   continuing.
-
-   ```shell
-   rm -r weewx-benchmark/public_html
-   ```
-
-4. Run the benchmark, using `weectl report`
-
-   ```shell
-   weectl report run --config=weewx-benchmark/weewx.conf
-   ```
-   
-5. The benchmark will print the generation time for the files and images
-   to standard output. Make sure there are 21 files and 68 images. If not, there
-   may have been something in `weewx-benchmark/public_html`. Go back and do
-   step 3 again.
-
-6. Add your results to the table below. For architecture on Debian systems,
-   please run `dpkg --print-architecture`, rather than relying on `uname -a`.
-   If that does not reveal anything useful, then `cat /proc/cpuinfo`
+When you're done, add your results to the table below. For architecture on
+Debian systems, please run `dpkg --print-architecture`, rather than relying on
+`uname -a`. If that does not reveal anything useful, then try `cat
+/proc/cpuinfo`.
 
 | Hardware                                                              | WeeWX    | Python | Files (21) | Images (68) | Footnotes |
 |-----------------------------------------------------------------------|----------|--------|-----------:|------------:|----------:|
 | Mac Mini, M1 2020 (Sonoma 14.0)                                       | 5.0.0b13 | 3.10.9 |      0.60s |       1.06s |           |
+| MacBook Air, M1 2020                                                  | 4.10.2   | 3.7.16 |      0.69s |       0.78s |           |
 | MacBook Air, M1 2020                                                  | 5.0.0b13 | 3.7.16 |      0.71s |       0.97s |           |
+| MacBook Air, M1 2020                                                  | 5.0.0rc1 | 3.7.16 |      0.74s |       1.28s |           |
 | NUC i7, 11th gen                                                      | 5.0.0b13 | 3.7.10 |      0.89s |       1.14s |           |
 | Xen VM running on i5-9600K 3.7GHz                                     | 5.0.0rc1-1 | 3.11.2 |    1.44s |       1.51s |           |
 | RPI 5 Model B Rev 1.0<br>(4GB RaspiOS lite arm64 6.1.0-rpi6-rpi-2712 )| 5.0.0b15 | 3.11.2 |      1.63s |       2.03s |           |

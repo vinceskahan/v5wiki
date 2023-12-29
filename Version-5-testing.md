@@ -24,3 +24,14 @@ Clean install of WeeWX.  These are platforms with built-in python3.  Older platf
 
 ## Upgrades
 
+* weewx4,python2 to weewx5
+* weewx4,python3 to weewx5
+* weewx5 to weewx5
+* weewx4,python3,setup.py to weewx5,pip
+* weewx4,python3,deb to weewx5,deb
+* weewx4,python3,rocky8 to weewx5,rocky8
+
+## Supported but *not* automated
+
+* weewx4,python2,centos7 to weewx5,rocky8
+* weewx5,python3,rocky8 to weewx5,rocky9

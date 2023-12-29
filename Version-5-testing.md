@@ -2,24 +2,25 @@ This is an attempt to outline the tests required to give adequate coverage for W
 
 ## Installation
 
-Clean install of WeeWX.
+Clean install of WeeWX.  These are platforms with built-in python3.  Older platforms should work using a `pip` install, but only by installing python3 separately.
 
-|           | pip | deb | rpm |
-|-----------|-----|-----|-----|
-| MacOS     | x   |     |     |
-| Debian 9  | x   | x   |     |
-| Debian 10 | x   | x   |     |
-| Debian 11 | x   | x   |     |
-| Debian 12 | x   | x   |     |
-| Ubuntu 22 | x   | x   |     |
-| CentOS 7  | x   |     | x   |
-| Rocky 8   | x   |     | x   |
-| Rocky 9   | x   |     | x   |
-| SUSE 12   | x   |     | x   |
-| SUSE 15   | x   |     | x   |
-| FreeBSD   | x   |     |     |
-| OpenBSD   | x   |     |     |
-| Window 10 |     |     |     |
+|                  | pip | deb | rpm |
+|------------------|-----|-----|-----|
+| MacOS            | x   |     |     |
+| Debian 9         | x   | x   |     |
+| Debian 10        | x   | x   |     |
+| Debian 11        | x   | x   |     |
+| Debian 12        | x   | x   |     |
+| Ubuntu 16.04 LTS | x   | x   |     |
+| Ubuntu 18.04 LTS | x   | x   |     |
+| Ubuntu 20.04 LTS | x   | x   |     |
+| Ubuntu 22.04 LTS | x   | x   |     |
+| Rocky 8          | x   |     | x   |
+| Rocky 9          | x   |     | x   |
+| SUSE 15          | x   |     | x   |
+| FreeBSD          | x   |     |     |
+| OpenBSD          | x   |     |     |
+| Windows 10       |     |     |     |
 
 ## Upgrades
 

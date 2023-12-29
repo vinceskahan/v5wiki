@@ -33,5 +33,6 @@ Clean install of WeeWX.  These are platforms with built-in python3.  Older platf
 
 ## Supported but *not* automated
 
+* weewx4,python2,debian10 to weewx5,debian10
 * weewx4,python2,centos7 to weewx5,rocky8
 * weewx5,python3,rocky8 to weewx5,rocky9

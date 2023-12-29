@@ -259,9 +259,9 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 ### Development notes
 * [v5 design notes](Version-5)
 * [v5 platform packages](Version-5-packages)
+* [v5 testing matrix](Version-5-testing)
 * [Development recipes](https://raw.githubusercontent.com/weewx/weewx/master/DEV_NOTES.txt)
 * [Development and testing infrastructure](devtest-infrastructure)
-* [Dependency matrix](weewx4-compatibility-matrix)
 * [Weewx Driver Development Tips](Weewx-Driver-Development-Tips)
 * [Supporting Python 3](Python-3-strategy)
 * [Proposal for logging (V4 or later)](WeeWX-v4-and-logging)
@@ -273,3 +273,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [Installer options](installer-options)
 * [Character encodings](Character-encodings)
 * [Benchmarks of file and image generation](Benchmarks-of-file-and-image-generation)
+* [v4 dependency matrix](weewx4-compatibility-matrix)
+
+

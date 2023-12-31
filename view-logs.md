@@ -2,13 +2,13 @@ This is a guide to viewing WeeWX log messages.
 
 In its default configuration, WeeWX sends log messages to the system logging facility.  This means that the system is responsible for things like ensuring that running multiple instances of `weewxd` do not corrupt the log, and that the system is responsible for rotating log files so that they do not fill up the disks.
 
-There are many different system loggers available.  For example, linux systems have `syslog`, `rsyslog`, `syslog-ng`, and/or `systemd-journald`, BSD systems typically have `syslog` or `newsyslog`. Most of these save the log messages to file, and the system takes care of rotating the log files so that they do not fill up the local storage. Some can be configured to send the logs to a remote logging server, which can make managing multiple machines much easier, and provides security benefits as well.
+There are many different system loggers available.  For example, linux systems have `syslog`, `rsyslog`, `syslog-ng`, and/or `systemd-journald`, BSD systems typically have `syslog` and `newsyslog`. Most of these save the log messages to file, and the system takes care of rotating the log files so that they do not fill up the local storage. Some can be configured to send the logs to a remote logging server, which can make managing multiple machines much easier, and provides security benefits as well.
 
 This document describes some of the configurations you might encounter when you use the system logging facility.
 
 If you want to change the logging configuration, see the Wiki article about [*How to customize logging*](logging)
 
-## syslog
+## syslog/rsyslog
 
 On systems that use `syslog`, when `weewxd` or any service or extension emits a log message, that message goes to the system's logger.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS, xBSD), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
 

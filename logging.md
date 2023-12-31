@@ -1,9 +1,11 @@
 This page contains instructions for customizing the logging configuration for WeeWX.
 
 * [Make WeeWX skip the system logging facility](#make-weewx-skip-the-system-logging-facility)
-* [Make syslog save WeeWX logs separate from system](#make-syslog-save-weewx-logs-separate-from-system)
+* [Make rsyslog on Linux save WeeWX messages to a separate file](#make-rsyslog-on-linux-save-weewx-logs-separate-from-system)
 * [Multiple WeeWX log files for multiple WeeWX processes](#multiple-weewx-log-files)
+* [Make syslog on FreeBSD save all WeeWX messages](#make-syslog-on-freebsd-save-all-log-levels)
 * [Remote logging](#remote-logging)
+* [Example configuration files](#example-configuration-files)
 
 
 ## Make WeeWX skip the system logging facility
@@ -33,7 +35,7 @@ For details, see the [development guide for logging](https://github.com/weewx/we
 For even more details, see the [Python logging documentation](https://docs.python.org/3/library/logging.html).
 
 
-## Make syslog save WeeWX logs separate from system
+## Make rsyslog on Linux save WeeWX logs separate from system
 
 In a default configuration, WeeWX writes log messages to the system log.  With a few changes to the system logging configuration, you can put all WeeWX messages in a separate log file.  In some cases this makes it easier to monitor WeeWX, or multiple instances of WeeWX.
 
@@ -113,6 +115,33 @@ sudo /etc/init.d/rsyslog start
 ```
 sudo weewxd --log-label weewxd-vantage /etc/weewx/vantage.conf
 sudo weewxd --log-label weewxd-rainwise /etc/weewx/rainwise.conf
+```
+
+## Make syslog on FreeBSD save all log levels
+
+In its default configuration, FreeBSD saves only log messages that are `NOTICE` or higher.  As a result, the only messages you will see from WeeWX are `ERROR` messages.  This makes it very difficult to diagnose a new installation, since most WeeWX messages are `INFO`.
+
+You can tell FreeBSD to save all log levels, *only* for WeeWX, and save the WeeWX messages to a separate log file.  There are two steps: configure `syslog` (this controls the log level and where log messages are saved) and configure `newsyslog` (this ensures that the log files are rotated regularly).
+
+1. Tell `syslog` to save all log levels from `weewxd` to a log file just for WeeWX.  Put this into the file `/usr/local/etc/syslog.d/weewx.conf`:
+```
+!weewxd,weectl
+*.* /var/log/weewx.log
+!*
+```
+2. Create the initial log file:
+```
+sudo touch /var/log/weewx.log
+sudo chmod 644 /var/log/weewx.log
+```
+3. Restart `syslog`:
+```
+sudo service syslogd reload
+```
+
+4. Tell `newsyslog` to rotate the WeeWX log file regularly.  Put this into the file `/usr/local/etc/newsyslog.conf.d/weewx.conf`:
+```
+/var/log/weewx.log 644  5  *  $D0
 ```
 
 

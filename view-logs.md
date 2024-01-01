@@ -8,9 +8,19 @@ This document describes some of the configurations you might encounter when you 
 
 If you want to change the logging configuration, see the Wiki article about [*How to customize logging*](logging)
 
+## Log levels
+
+The system logging facility has different *log levels*.  For example, a message about something that is important but non-fatal might be a *WARNING*, a message about normal report generation might be *INFO*, and *DEBUG* messages will appear if you enable verbose logging.  Messages about events that affect WeeWX operation will typically be at the *ERROR* level.  These messages include a mis-configured driver or extension, a failed attempt to upload data, or failure to save data to the database, 
+
+When you enable *debug* in the WeeWX configuration file, this enables **many** more messages, but at the *DEBUG* level.  These messages can help you diagnose problems with hardware, report generation, and network issues.
+
+In a default, functional WeeWX installation, all of the log messages will be at the *INFO* level.  So if you do not see messages from WeeWX in your system logs, be sure that your system is recording all log levels.
+
+Most Linux systems are configured to record all of the log levels.  BSD systems such as FreeBSD and OpenBSD are configured to record only *error* messages.
+
 ## syslog/rsyslog
 
-On systems that use `syslog`, when `weewxd` or any service or extension emits a log message, that message goes to the system's logger.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS, xBSD), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
+On systems that use `syslog`, when `weewxd` or any service or extension emits a log message, that message goes to the system's logger.  The system then saves the log messages to a file.  Some operating systems use `/var/log/syslog` (Debian, Ubuntu, MacOS), while others use `/var/log/messages` (Redhat, Fedora, CentOS, Rocky, FreeBSD, OpenBSD).  In some configurations, you might see messages from WeeWX in both `/var/log/syslog` and `/var/log/messages`.
 
 You can use standard tools such as `head`, `tail`, `more`, or `less` to view those messages.
 

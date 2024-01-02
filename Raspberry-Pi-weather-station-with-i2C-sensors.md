@@ -1,5 +1,6 @@
 # Overview #
 
+Severe storms (24th Dec 2023) have caused large scale damage in my local area including destroying my outdoor sensors, will be awhile before I am operational again.
 I am again almost fully operational after a lot of work
 The following will describe a weather station utilising i2C sensors for (temperature, humidity, pressure, UV and solar radiation, rain data by a one-wire Rainwise bucket and the wind direction and strength from a Davis mast head unit. I also now collect my aircon data and import this into weewx. 
 I have also added the following tabs to the Belchertown skin; SEQ detailed forcast uses code developed by Darryn Capes-Davis for his responsive skin for weewx and a colour history chart by Nick Dajda used in his Bootstrap skin for weewx. Edited 26 Aug 2023

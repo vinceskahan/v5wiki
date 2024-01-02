@@ -102,25 +102,11 @@ sudo systemctl enable weewx@vantage
 sudo systemctl enable weewx@paddock
 ```
 
-#### WeeWX V4 using sysV init
+#### WeeWX V5 using sysV init
 
-Download the `weewx-multi` init script, and copy it into place.
+In the `defaults` file, set the `WEEWX_INSTANCES` variable to match your installation.
 ```
-wget -P /var/tmp https://raw.githubusercontent.com/weewx/weewx/v4.10.2/util/init.d/weewx-multi
-sudo cp /var/tmp/weewx-multi /etc/init.d/weewx
-```
-
-Create the `defaults` file to match your installation.  For a `setup.py` installation, use `WEEWX_CFGDIR=/home/weewx` and `WEEWX_BINDIR=/home/weewx/bin`
-```
-echo 'WEEWX_INSTANCES="house paddock"' | sudo tee /etc/default/weewx-multi
-echo 'WEEWX_CFGDIR=/etc/weewx' | sudo tee -a /etc/default/weewx-multi
-echo 'WEEWX_BINDIR=/usr/share/weewx' | sudo tee -a /etc/default/weewx-multi
-```
-
-
-Finally, enable the script
-```
-sudo update-rc.d weewx defaults
+sudo sed -i 's/^WEEWX_INSTANCES=.*/WEEWX_INSTANCES="house paddock"/'
 ```
 
 ### Starting and stopping

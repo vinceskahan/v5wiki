@@ -16,7 +16,7 @@ When you enable *debug* in the WeeWX configuration file, this enables **many** m
 
 In a default, functional WeeWX installation, all of the log messages will be at the *INFO* level.  So if you do not see messages from WeeWX in your system logs, be sure that your system is recording all log levels.
 
-Most Linux systems are configured to record all of the log levels.  BSD systems such as FreeBSD and OpenBSD are configured to record only *error* messages.
+Most Linux systems are configured to record all of the log levels.  BSD systems such as FreeBSD and OpenBSD are configured to record only *error* messages.  The article about [*How to customize logging*](logging#make-syslog-on-freebsd-save-all-log-levels) explains how to change a BSD logging configuration.
 
 ## syslog/rsyslog
 

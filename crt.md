@@ -65,3 +65,7 @@ _temperature_units_ - The units to use for temperature data in realtime.txt.  Op
 _pressure_units_ - The units to use for pressure data in realtime.txt.  Options include `hPa`, `mbar`, and `inHg`.  Default is to use the units defined in the unit system.
              
 _cloudbase_units_ - The units to use for cloud base in realtime.txt.  Options include `foot` and `meter`.  Default is to use the units for altitude in the unit system.
+
+### Software
+
+The software can be found on GitHub at https://github.com/matthewwall/weewx-crt

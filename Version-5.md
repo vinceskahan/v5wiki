@@ -15,14 +15,13 @@ in favor of a more declarative approach, using `pyproject.toml` (see [PEP
 631](https://peps.python.org/pep-0631/)). As an alternative, we could use
 `setup.cfg`, but it's clear that `pyproject.toml` is the future.
 
-Python 3.7 or greater. Python 3.7 was released over five years ago (on 27 June
-2018), so it should be ubiquitous by now. Python 3.7 is necessary to support
-[importing
-resources](https://docs.python.org/3/library/importlib.resources.html#module-importlib.resources).
-Note that a [backport](https://importlib-resources.readthedocs.io) of
-`importlib.resources` is available for earlier versions of Python, so we may be
-able to relax this restriction and allow Python 3.6. Version 5 will use
-f-strings, so Python 3.5 cannot be supported.
+Version 5 will require support for [importing
+resources](https://docs.python.org/3/library/importlib.resources.html#module-importlib.resources),
+which was introduced in Python 3.7. However, a
+[backport](https://importlib-resources.readthedocs.io) of `importlib.resources`
+is available for Python 3.6. Hence, the earliest supported version of Python
+will be 3.6 (introduced Dec. 2016). Version 5 will use f-strings, so Python 3.5
+cannot be supported.
 
 Support for Python 2.7 will be dropped. All references to `six` and other
 compatibility shims will be removed. All `__future__` imports will be removed.
@@ -69,14 +68,13 @@ s/he still could not edit them.
 These are the non-code resources that are used in WeeWX and where they will
 be located as package data:
 
-| Non-code resource    | Package data location                     |
-|----------------------|-------------------------------------------|
-| Configuration file   | `wee_resources/weewx.conf`                |
-| Documentation        | `wee_resources/docs`                      |
-| Examples             | `wee_resources/examples`                  |
-| Skins                | `wee_resources/skins`                     |
-| Daemon utility files | `wee_resources/util`                      |
-| User code            | `wee_resources/bin/user` (but, see below) |
+| Non-code resource    | Package data location                  |
+|----------------------|----------------------------------------|
+| Configuration file   | `weewx_data/weewx.conf`                |
+| Examples             | `weewx_data/examples`                  |
+| Skins                | `weewx_data/skins`                     |
+| Daemon utility files | `weewx_data/util`                      |
+| User code            | `weewx_data/bin/user` (but, see below) |
 
 ## Destination for data resources
 
@@ -114,8 +112,8 @@ and, indeed, it can continue to be used by just specifying the location
 `/home/weewx/weewx.conf` when using the tool `weectl`. Note that in the past,
 `/home/weewx` also held WeeWX code in the `bin` subdirectory, which, starting
 with V5, will no longer be used. Instead, all source code will live within the
-Python library structure, except for code used by user-installed extensions,
-which will live in the station data area.
+normal Python library structure, except for code used by user-installed
+extensions, which will live in the station data area.
 
 # Build tools
 
@@ -180,20 +178,22 @@ This results in the following list of nominal locations, _relative to
 
 # Command `weectl`
 
-Presently, we have 7 different utilities. Version 5 will start the process of
-combining them into one command called, simply, `weectl`, with different
-subcommands. By having a single application, we make it easier to find the
-appropriate subcommand: the user can simply run `weectl --help`.
+Presently, we have 7 different utilities. Version 5 will combining them into one
+command called, simply, `weectl`, with different subcommands. By having a single
+application, we make it easier to find the appropriate subcommand: the user can
+simply run `weectl --help`.
 
 Version 5 will offer these subcommands:
 
-```
-weectl database
-weectl debug
-weectl device
-weectl extension
-weectl station
-```
+| Old utility     | New utility        |
+|-----------------|--------------------|
+| `wee_database`  | `weectl database`  |
+| `wee_debug`     | `weectl debug`     |
+| `wee_device`    | `weectl device`    |
+| `wee_extension` | `weectl extension` |
+| `wee_import`    | `weectl import`    |
+| `wee_reports`   | `weectl report`    |
+| `wee_config`    | `weectl station`   |
 
 ## Some examples
 
@@ -217,11 +217,13 @@ weectl extension install https://github.com/matthewwall/weewx-windy/archive/mast
 Previously, user Python code lived amongst the rest of WeeWX's source code, that
 is, either under `/home/weewx/bin`, or `/usr/share/weewx`. However, with Version
 5, we are seeking a clean separation between WeeWX source code and station data.
-Where should its new home be?
+Because user Python code is customized, it will live with other station data.
+For a pip install, its location will be `~/weewx-data/bin/user` for a pip 
+install, it's `/etc/weewx/bin/user`.
 
-Whatever location we use, the parent directory will have to be injected into
-`PYTHON_PATH` when `weewxd` starts up. It's the _parent_ directory because
-`user` is actually a Python package. We need to find `user.foo`, not just `foo`.
+In both caes, note that it's the path of the _parent directory_ that gets
+injected into `PYTHON_PATH` when `weewxd` starts up. This is because `user` is
+actually a Python package. We need to find `user.foo`, not just `foo`.
 
 ## Subgoals
 
@@ -263,7 +265,7 @@ means there are several choices.
 | Git        | `~/weewx-data` | ?                       |
 
 
-## Potential locations for `$USER_ROOT`
+## Potential locations for `$USER_ROOT` that were considered
 
 The following has the pros and cons for different values of `$USER_ROOT`. It
 only discusses legacy installs --- new installs will work with any solution.

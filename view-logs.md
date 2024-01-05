@@ -10,7 +10,7 @@ If you want to change the logging configuration, see the Wiki article about [*Ho
 
 ## Log levels
 
-The system logging facility has different *log levels*.  For example, a message about something that is important but non-fatal might be a *WARNING*, a message about normal report generation might be *INFO*, and *DEBUG* messages will appear if you enable verbose logging.  Messages about events that affect WeeWX operation will typically be at the *ERROR* level.  These messages include a mis-configured driver or extension, a failed attempt to upload data, or failure to save data to the database, 
+The system logging facility has different *log levels*.  For example, a message about something that is important but non-fatal might be a *WARNING*, a message about normal report generation might be *INFO*, and *DEBUG* messages will appear if you enable verbose logging.  Messages about events that adversely affect WeeWX operation will typically be at the *ERROR* level.  These messages include a mis-configured driver or extension, a failed attempt to upload data, or failure to save data to the database, 
 
 When you enable *debug* in the WeeWX configuration file, this enables **many** more messages, but at the *DEBUG* level.  These messages can help you diagnose problems with hardware, report generation, and network issues.
 

@@ -168,6 +168,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [DWD](https://github.com/roe-dl/weewx-DWD) - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan)
 * [filepile](https://github.com/tkeffer/filepile) - Add additional types to a WeeWX data stream via a file :heavy_check_mark:
 * [forecasting](forecasting) - Download, generate, and display forecasts and tides
+* [Healthchecks](https://github.com/bellrichm/weewx-healthchecks) - Use [Healthchecks.io](https://healthchecks.io/) to monitor WeeWX
 * [knx](knx) - Send EIBnet/IP packets with weather information
 * [luxtronik](https://github.com/tsoodla/weewx-luxtronik) - Augment station data with data from Luxtronik heatpump controller :heavy_check_mark:
 * [maxbotix](maxbotix) - Augment station data with data from maxbotix ultrasonic rangefinder :heavy_check_mark:

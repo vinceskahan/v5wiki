@@ -37,7 +37,7 @@ For even more details, see the [Python logging documentation](https://docs.pytho
 
 ## Make rsyslog on Linux save WeeWX logs separate from system
 
-In a default configuration, WeeWX writes log messages to the system log.  With a few changes to the system logging configuration, you can put all WeeWX messages in a separate log file.  In some cases this makes it easier to monitor WeeWX, or multiple instances of WeeWX.
+In a default configuration, WeeWX writes log messages to the system logger, so messages from WeeWX are mixed in the system log file with messages from other applications.  With a few changes to the system logging configuration, you can put all WeeWX messages in a separate log file.  In some cases this makes it easier to monitor WeeWX, or multiple instances of WeeWX.
 
 To make this happen you must modify two parts of the system, the logging (typically rsyslog) and the log rotation (typically logrotate).
 

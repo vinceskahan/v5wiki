@@ -106,7 +106,7 @@ sudo systemctl enable weewx@paddock
 
 In the defaults file `/etc/default/weewx` file, set the `WEEWX_INSTANCES` variable to match your installation.
 ```
-sudo sed -i 's/^WEEWX_INSTANCES=.*/WEEWX_INSTANCES="house paddock"/' /etc/default/weewx
+sudo sed -i 's/^WEEWX_INSTANCES=.*/WEEWX_INSTANCES=\"house paddock\"/' /etc/default/weewx
 ```
 
 ### Starting and stopping

@@ -41,7 +41,7 @@ In a default configuration, WeeWX writes log messages to the system log.  With a
 
 To make this happen you must modify two parts of the system, the logging (typically rsyslog) and the log rotation (typically logrotate).
 
-These instructions assume that WeeWX was installed from DEB or RPM package.  If WeeWX was installed using setup.py to `/home/weewx`, replace `/etc/weewx` with `/home/weewx/util` in the commands below.
+These instructions assume that WeeWX was installed from DEB or RPM package.  In the commands below, you might have to replace `/etc/weewx` with a path appropriate for your installation.  For example, if WeeWX was installed using `setup.py`, replace `/etc/weewx` with `/home/weewx/util`.  If WeeWX was installed using `pip`, replace `/etc/weewx` with `~/weewx-data`.
 
 ### rsyslog
 

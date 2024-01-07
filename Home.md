@@ -179,6 +179,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [photovoltaics](https://github.com/roe-dl/weewx-photovoltaics) - Retrieve live data from E3/DC S10 solar system, save to a database, output to MQTT, and present in skins :heavy_check_mark:
 * [PiSenseHat](https://github.com/sbsrouteur/weewx-PiSenseHat) - Add measure to loop data from PiSense Hat sensor set :heavy_check_mark:
 * [PrecipMeter](https://github.com/roe-dl/weewx-precipmeter) - Receive, process and save data from disdrometers like Ott Parsivel<sup>2</sup> or Thies LNM or other devices that send data in ASCII format, includes precipitation intensity and kind (drizzle, rain snow, hail etc.), metorological optical range, radar reflectivity factor, etc.
+* [Pushover](https://github.com/bellrichm/weewx-pushover) - Send alerts via [Pushover](https://pushover.net/) when WeeWX observations are out of a specified range
 * [sds011](https://github.com/sbsrouteur/weewx-sds011) - Add pm measure to loop data (forked from SDS011 driver updated for python3) :heavy_check_mark: 
 * [snmp](https://github.com/roe-dl/weewx-snmp)  - Retrieve data by SNMP (for sensors that speak SNMP and for monitoring equipment like UPS) :heavy_check_mark:
 * [sunduration](https://github.com/Jterrettaz/sunduration) - Augment station data with sunshine duration - for Davis Vantage Pro 2 with solar radiation sensor :heavy_check_mark: 

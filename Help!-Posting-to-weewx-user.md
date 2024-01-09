@@ -96,7 +96,7 @@ of the log.
     | sysV        | sudo /etc/init.d/weewx stop |
     | launchd     | sudo launchctl unload /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
-3. Set `debug=1` in the configuration file in `weewx.conf`. Setting `debug=2`
+3. Set `debug=1` in the configuration file (typically `weewx.conf`). Setting `debug=2`
    will give you even more information, which can be helpful when debugging
    RESTful uploads and FTP. However, it will generate a lot of log entries.
  
@@ -105,33 +105,30 @@ of the log.
     In a terminal window, use `tail` to watch the system log, combined
     with `tee` to save what you see to a separate file:
 
-       tail -f /var/log/syslog | tee /var/tmp/mylog
+       sudo tail -f /var/log/syslog | tee /var/tmp/mylog
 
    This will allow you to see the log, while saving a copy to the file
-   `/var/tmp/mylog`. On recent Linux systems you might have to use `sudo`
-   to view the log. In this case, the command becomes:
-
-       sudo tail -f /var/log/syslog | tee /var/tmp/mylog
+   `/var/tmp/mylog`. The `sudo` is usually necessary on recent operating systems.
  
-   NOTE - On some systems that use systemd, you might not see the system log
+   On some systems that use systemd, the file `/var/log/syslog` no longer exists,
    because systemd-journald intercepts all of the system logging.  If that is
    the case on your system, you will have to use the `journalctl` command to
-   view the log. This example returns the last 20 lines of weewx log messages:
+   view the log.
 
-       sudo journalctl -u weewx --no-pager -n 20
+       sudo journalctl -u weewx -f | tee /var/tmp/mylog
 
 5. Start `weewxd` and watch the log
 
     In a _different_ terminal, start `weewxd` as you watch the log
     output in the first terminal.
 
-    | init system | how to stop weewxd          |
-    |-------------|-----------------------------|
+    | init system | how to start weewxd          |
+    |-------------|------------------------------|
     | systemd     | sudo systemctl start weewx   |
     | sysV        | sudo /etc/init.d/weewx start |
     | launchd     | sudo launchctl load /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
-6. Let it run through at least the first reporting cycle (usually 5-10 minutes).
+6. Let `weewxd` run through at least the first reporting cycle (usually 5-10 minutes).
  
 7. Attach the created file (`/var/tmp/mylog`) to your post to weewx-user, or put
    it on a cloud service like [pastebin.com](http://pastebin.com/) and include a

@@ -33,31 +33,31 @@ If you installed WeeWX using `pip`, then all of the station settings and skins s
 ```
 nano ~/weewx-data/weewx.conf
 ```
-If you installed WeeWX from a DEB/RPM package, then the station settings and skins are owned by the `weewx` user.  You must either be in the `weewx` group, or use `sudo` to modify them.
+If you installed WeeWX from a DEB/RPM package, then the station settings and skins are owned by the `weewx` user or by `root`.  If the files are owned by `weewx`, you must either be in the `weewx` group, or use `sudo` to modify them.
 ```
 sudo nano /etc/weewx/weewx.conf
 ```
 
 ### Installing an extension
 
-You must have read/write permissions on the WeeWX station "user" directory in order to install or remove extensions.
+You must have read/write permissions on the WeeWX station "user" directory in order to install or remove extensions.  If you installed using `pip`, then you should be the owner of the `weewx-data` directory, so you can just invoke `weectl extension` and everything should work.  However, if you installed using a DEB or RPM package, then the `user` directory will be owned by `weewx` or `root`.
 
 For example:
 ```
-$ /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+$ weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
 Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
 Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
 Traceback (most recent call last):
    [...]
-PermissionError: [Errno 13] Permission denied: '/home/weewx/bin/user/gw1000.py'
+PermissionError: [Errno 13] Permission denied: '/etc/weewx/bin/user/gw1000.py'
 ```
 
 ```
-$ sudo /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+$ sudo weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
 Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
 Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
-Saving installer file to /home/weewx/bin/user/installer/GW1000
-Saved configuration dictionary. Backup copy at /home/weewx/weewx.conf.20210426101025
+Saving installer file to /etc/weewx/bin/user/installer/GW1000
+Saved configuration dictionary. Backup copy at /etc/weewx/weewx.conf.20210426101025
 Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
 ```
 

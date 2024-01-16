@@ -1,3 +1,7 @@
+> Warning!
+>
+> This page applies to WeeWX V4. There is a [newer page](weewx-multi) that applies to V5 and later.
+
 # How to configure WeeWX to run under systemd
 
 If your system uses systemd to manage the starting and stopping of daemons, you might want to configure WeeWX

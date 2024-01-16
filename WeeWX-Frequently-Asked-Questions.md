@@ -265,7 +265,7 @@ sudo weewxd
 
 Whether you run it directly or in the background, `weewxd` emits log messages to indicate what it is doing.  These messages go to the *system logger*, which you can then view using tools that come with your operating system.
 
-On Linux systems, the system logger saves messages in either `/etc/syslog` (Debian, Ubuntu, etc) or `/var/log/messages` (Redhat, Fedora, etc).  On MacOS and most BSD systems, the system logger saves messages in `/var/log/syslog`.
+On Linux systems, the system logger saves messages in either `/var/log/syslog` (Debian, Ubuntu, etc) or `/var/log/messages` (Redhat, Fedora, etc).  On MacOS and most BSD systems, the system logger saves messages in `/var/log/syslog`.
 
 To view the log messages, use the tools that come with your system.  On most systems, you can use `head` or `tail` to look at the first or last messages, respectively. On some systems, use `journalctl` to view the log messages. You might have to preface the commands with `sudo`, since many systems make the log readable only by admin users.
 

@@ -50,7 +50,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Configure a web server (Apache, NGINX or lighttpd)](Configure-a-web-server-(Apache,-NGINX-or-lighttpd))
 * [Distinguish between USB devices using `udev` rules](udevrules)
 * [Run WeeWX in Docker](docker)
-* [Run WeeWX in a python virtual environment](Run-WeeWX-in-a-virtual-environment)
 * [Configure WeeWX to run under systemd](systemd)
 
 #### Data management

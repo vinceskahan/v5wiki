@@ -2,11 +2,15 @@
 
 There are two general classes of users in a Unix environment: (1) privileged and (2) unprivileged.  A privileged user has the ability to do things to the system that affect how the system operates and could break the system if applied incorrectly.  For example, administrative privileges are typically required to upgrade the operating system or to install system software.  An unprivileged user can run software and save data, but only in ways that would not break the system. Usually you login to a computer as an unprivileged user, then you only *escalate* privilege when you do specific, administrative activities.  This helps prevent silly mistakes, and it provides a layer of protection against malicious behavior.
 
-So how does an unprivileged user get permission to do system administration things?  There are two approaches: (1) temporary escalation using `sudo` (Linux, macOS, BSD) or `doas` (BSD), or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
+### sudo vs su
+
+So how does an unprivileged user get permission to do system administration things?  There are two approaches: (1) temporary escalation using `sudo`, or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
 
 Which approach is better?  It depends.  See the [Debian article about sudo](https://wiki.debian.org/sudo/) for pros and cons of each approach.
 
-Beware that `sudo` may not be on your system.  If not, use your system's package manager to install it.
+Beware that `sudo` may not be on your system, depending on how you installed/configured the operating system.  If there is no `sudo`, use your system's package manager to install it.
+
+Note that BSD systems have the command `doas` as well as or instead of `sudo`, depending on how you installed/configured the operating system.
 
 Privilege escalation usually affects you when you need to view or modify a file.  It will also affect you when you try to start and stop certain processes.
 

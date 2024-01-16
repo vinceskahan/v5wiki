@@ -31,7 +31,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 
 ### Guides (How to ...)
 
-#### WeeWX configuration
+#### WeeWX configuration and installation
 * [Manage extensions](extensions)
 * [Change from one driver to another](Change-driver)
 * [Run multiple instances of WeeWX on one computer](weewx-multi)
@@ -40,6 +40,7 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 * [Implement a multi-threaded service](multi-threaded-service)
 * [Colorize the UV index](Colored%20UV%20index)
 * [How to calculate values in templates](calculate-in-templates)
+* [Pip install strategies](pip-install-strategies)
 
 #### Operating system configuration
 * [Time services](Time-services)

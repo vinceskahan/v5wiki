@@ -8,6 +8,11 @@ most conclusions would apply to any package or application.
 
 ## Install in a virtual environment (preferred)
 
+This is the recommended install strategy. You can find more details in the [pip
+"quickstart" guide](https://www.weewx.com/docs/5.0/quickstarts/pip/). What
+follows is just a general outline, for purposes of comparing to other install
+strategies.
+
 This is a multi-step process. Depending on your environment, you may have to
 install the Python package `venv` first.
 

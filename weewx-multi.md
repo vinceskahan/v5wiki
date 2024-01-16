@@ -108,6 +108,12 @@ In the defaults file `/etc/default/weewx` file, set the `WEEWX_INSTANCES` variab
 ```
 sudo sed -i 's/^WEEWX_INSTANCES=.*/WEEWX_INSTANCES=\"house paddock\"/' /etc/default/weewx
 ```
+The file should end up something like this:
+```
+WEEWX_PYTHON=python3
+WEEWX_BINDIR=/usr/share/weewx
+WEEWX_INSTANCES="house paddock"
+```
 
 ### Starting and stopping
 

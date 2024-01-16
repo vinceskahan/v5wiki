@@ -4,7 +4,7 @@ There are two general classes of users in a Unix environment: (1) privileged and
 
 There are two approaches to doing things with elevated privileges: (1) temporary escalation using `sudo` (Linux, macOS, BSD) or `doas` (BSD), or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
 
-Which approach is better?  It depends.  See the (Debian article about sudo](https://wiki.debian.org/sudo/) for pros and cons of each approach.
+Which approach is better?  It depends.  See the [Debian article about sudo](https://wiki.debian.org/sudo/) for pros and cons of each approach.
 
 Beware that `sudo` may not be on your system.  If not, use your system's package manager to install it.
 

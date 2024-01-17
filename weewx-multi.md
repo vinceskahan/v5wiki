@@ -98,7 +98,7 @@ and in `paddock.conf`:
 
 If you installed WeeWX using a DEB/RPM package, or if you installed using `pip` and configured WeeWX to run as a daemon, then the unit template file is already installed.  Just enable each `weewxd` instance.
 ```
-sudo systemctl enable weewx@vantage
+sudo systemctl enable weewx@house
 sudo systemctl enable weewx@paddock
 ```
 
@@ -122,14 +122,14 @@ Now you can start and stop each instance.
 #### Using systemd
 ```
 # start each instance
-sudo systemctl start weewx@vantage
+sudo systemctl start weewx@house
 sudo systemctl start weewx@paddock
 
 # stop just the paddock
 sudo systemctl stop weewx@paddock
 
 # restart only the vantage instance
-sudo systemctl restart weewx@vantage
+sudo systemctl restart weewx@house
 
 # stop all instances
 sudo systemctl stop weewx

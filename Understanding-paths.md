@@ -10,49 +10,16 @@ weewxd weewx.conf
 
 However, the specifics of how this should actually be entered depend on how and where weewx was installed.
 
-### Installations using setup.py
+### Installations using DEB or RPM package
 
-For example, if weewx was installed using setup.py to default location `/home/weewx`, then the following are equivalent:
-
-```shell
-/home/weewx/bin/weewxd /home/weewx/weewx.conf
-```
-
-or
+Consider the case where weewx was installed from a .deb or .rpm package.  In this case, the following are equivalent:
 
 ```shell
-cd /home/weewx
-./bin/weewxd weewx.conf
-```
-
-The first example uses an explicit, absolute path to both `weewxd` and `weewx.conf`, so it can be run from any directory.
-
-The second example shows a `cd` (change directory) to the directory where weewx was installed (`/home/weewx`), followed by relative paths to both the `weewxd` and `weewx.conf`.  The use of `./` in `./bin/weewxd` might not be necessary for a non-root user, but is typically necessary for a root user.  This is because the current directory (`.`) is usually not in the `PATH` for the root user.
-
-What will *not* work is this:
-
-```shell
-cd /home/weewx/bin
-weewxd ../weewx.conf
-```
-
-The reason why is a subtle one: by default, the "current directory" is not included in your `PATH`. The reason is to avoid accidentally running a malicious version of a common program like `ls` or `mv`. Instead, you must explicitly include the current directory when you invoke the program. So, this will work:
-
-```shell
-cd /home/weewx/bin
-./weewxd ../weewx.conf
-```
-
-### Installations using .deb or .rpm
-
-Now consider the case where weewx was installed from a .deb or .rpm package.  In this case, the following are equivalent:
-
-```shell
-/usr/share/weewx/weewxd /etc/weewx/weewx.conf
+/usr/bin/weewxd /etc/weewx/weewx.conf
 ```
 
 ```shell
-cd /usr/share/weewx
+cd /usr/bin
 ./weewxd /etc/weewx/weewx.conf
 ```
 
@@ -62,50 +29,37 @@ weewxd /etc/weewx/weewx.conf
 
 The first example uses an explicit, absolute path to both `weewxd` and `weewx.conf`.
 
-The second example shows a `cd` (change directory) to the directory where the weewx components are installed, followed by a relative path to `weewxd` and an absolute path to `weewx.conf`.  The absolute path is necessary since `weewx.conf` is not in the `/usr/share/weewx` directory hierarchy.
+The second example shows a `cd` (change directory) to the directory where the weewxd command is installed, followed by a relative path to `weewxd` and an absolute path to `weewx.conf`.
 
-The third example illustrates a special feature of a .deb or .rpm installation.  There is a symbolic link `/usr/bin/weewxd` that points to the actual executable `/usr/share/weewx/weewxd`.  Since `/usr/bin` is in the `PATH` environment variable, one can simply type `weewxd` instead of the full path `/usr/bin/weewxd`, and since it is a symbolic link it runs the actual `weewxd` at `/usr/share/weewx/weewxd`.  
+The third example illustrates a special feature of a .deb or .rpm installation.  There is a symbolic link `/usr/bin/weewxd` that points to the actual executable `/usr/share/weewx/weewxd`.  Since `/usr/bin` is in the `PATH` environment variable, one can simply type `weewxd` instead of the full path `/usr/bin/weewxd`.  
+
+### Installations using `pip`
+
+Consider the case where WeeWX was installed using `pip`.  In this case, the following will fail:
+
+```
+weewxd /etc/weewx/weewx.conf
+```
+
+It fails because `weewxd` is not in the PATH.  The `weewxd` and `weectl` commands are in the Python virtual environment that was created as a part of the `pip` installation.  In order to access those commands, you must put them into the PATH.  This is what the virtual environment `activate` command does.  For example, if you installed the virtual environment at `~/weewx-env`, then the environment is activated like this:
+
+```
+source ~/weewx-env/bin/activate
+```
+Then the `weewxd` command will be found.
 
 ### Other WeeWX commands
 
-Other weewx commands use a similar pattern.  For example, the `wee_config_device` command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `--info` or `--help`.  The generic description looks like this:
+The pattern described above applies to both of the WeeWX commands, `weewxd` and `weectl`.  For example, the `weectl device` command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `info` or `--help`.  The generic invocation looks like this:
 
 ```shell
-wee_device /path/to/weewx.conf --help
-```
-
-For a setup.py installation, this would be:
-
-```shell
-/home/weewx/bin/wee_device /home/weewx/weewx.conf --help
-```
-
-For a .deb or .rpm installation, this would be:
-
-```shell
-/usr/share/weewx/wee_device /etc/weewx/weewx.conf --help
+weectl device /path/to/weewx.conf --help
 ```
 
 or, even more succinctly:
 
 ```shell
-wee_device --help
+weectl device --help
 ```
 
-The final form is possible because the wee_* commands will look in the standard locations, `/etc/weewx/weewx.conf` and `/home/weewx/weewx.conf`, if no configuration file is specified.
-
-### Considerations for privilege escalations
-
-On most modern systems, the `PATH` for the `root` user does not include `.` (the current directory).  This is to prevent silly mistakes such as executing a program in the current directory when you intended to execute a system program with the same name.
-
-As a result, if you really *do* want to execute something in the current directory, with elevated privileges, then you must do something like this:
-
-```shell
-sudo ./setup.py
-```
-
-instead of this:
-
-```shell
-sudo setup.py
-```
+The final form is possible because the WeeWX commands will look in the standard locations, `/etc/weewx/weewx.conf` and `~/weewx-data/weewx.conf`, if no configuration file is specified.

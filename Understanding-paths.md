@@ -48,7 +48,7 @@ source ~/weewx-venv/bin/activate
 ```
 Then the `weewxd` command will be found.  The `activate` only has to be done once in a terminal window or login shell - it does not have to be entered before every WeeWX command.
 
-### Other WeeWX commands
+### The path to the configuration file
 
 The pattern described above applies to both of the WeeWX commands, `weewxd` and `weectl`.  For example, the `weectl device` command is used to display and modify options in the hardware.  In addition to requiring a configuration file, it also recognizes many options, such as `info` or `--help`.  The generic invocation looks like this:
 

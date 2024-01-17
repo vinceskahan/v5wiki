@@ -176,21 +176,24 @@ Simply disable the registration setting then restart WeeWX. Systems that refresh
 
 If you type a WeeWX command and you see `command not found`, that probably means that the command is not in your `PATH`.
 ```
-$ sudo wee_extension --list
-sudo: wee_extension: command not found
+weectl extension list
+weectl: command not found
 ```
-
-First, be sure that you are typing the right command.  In WeeWX V5 there are only two: `weewxd` and `weectl`.  In WeeWX V4 there are a few, including `weewxd`, `wee_config`, `wee_extension`, `wee_database`, and `wee_reports`.
 
 If you installed WeeWX using `pip`, be sure to activate the Python virtual environment before you invoke a WeeWX command.
 ```
 $ source ~/weewx-venv/bin/activate
-$ weectl extension --list
+$ weectl extension list
 ```
 
-If you installed WeeWX V4 using `setup.py`, try using the full path to the WeeWX command.
+Be sure that you are typing the right command.  In WeeWX V5 there are only two: `weewxd` and `weectl`.  In WeeWX V4 there are a few, including `weewxd`, `wee_config`, `wee_extension`, `wee_database`, and `wee_reports`.
+
 ```
-$ sudo /home/weewx/bin/wee_extension --list
+$ wee_extension --list
+wee_extension: command not found
+$ weectl extension list
+Extension Name    Version   Description
+windy             0.7       Upload weather data to Windy.
 ```
 
 See the Wiki article [understanding paths](Understanding-paths)

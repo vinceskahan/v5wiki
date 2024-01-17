@@ -176,7 +176,7 @@ Simply disable the registration setting then restart WeeWX. Systems that refresh
 
 If you type a WeeWX command and you see `command not found`, that probably means that the command is not in your `PATH`.
 ```
-weectl extension list
+$ weectl extension list
 weectl: command not found
 ```
 

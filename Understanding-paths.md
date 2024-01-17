@@ -41,12 +41,12 @@ Consider the case where WeeWX was installed using `pip`.  In this case, the foll
 weewxd /etc/weewx/weewx.conf
 ```
 
-It fails because `weewxd` is not in the PATH.  The `weewxd` and `weectl` commands are in the Python virtual environment that was created as a part of the `pip` installation.  In order to access those commands, you must put them into the PATH.  This is what the virtual environment `activate` command does.  For example, if you installed the virtual environment at `~/weewx-env`, then the environment is activated like this:
+It fails because `weewxd` is not in the PATH.  The `weewxd` and `weectl` commands are in the Python virtual environment that was created as a part of the `pip` installation.  In order to access those commands, you must put them into the PATH.  This is what the virtual environment `activate` command does.  For example, if you installed the virtual environment at `~/weewx-venv`, then the environment is activated like this:
 
 ```
-source ~/weewx-env/bin/activate
+source ~/weewx-venv/bin/activate
 ```
-Then the `weewxd` command will be found.
+Then the `weewxd` command will be found.  The `activate` only has to be done once in a terminal window or login shell - it does not have to be entered before every WeeWX command.
 
 ### Other WeeWX commands
 

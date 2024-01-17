@@ -31,7 +31,7 @@ The first example uses an explicit, absolute path to both `weewxd` and `weewx.co
 
 The second example shows a `cd` (change directory) to the directory where the weewxd command is installed, followed by a relative path to `weewxd` and an absolute path to `weewx.conf`.
 
-The third example illustrates a special feature of a .deb or .rpm installation.  There is a symbolic link `/usr/bin/weewxd` that points to the actual executable `/usr/share/weewx/weewxd`.  Since `/usr/bin` is in the `PATH` environment variable, one can simply type `weewxd` instead of the full path `/usr/bin/weewxd`.  
+The third example illustrates a special feature of a .deb or .rpm installation.  There is file `/usr/bin/weewxd` that invokes the actual Python code `/usr/share/weewx/weewxd.py`.  Since `/usr/bin` is in the `PATH` environment variable, one can simply type `weewxd` instead of the full path `/usr/bin/weewxd`.  
 
 ### Installations using `pip`
 

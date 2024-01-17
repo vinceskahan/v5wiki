@@ -164,7 +164,7 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * [csv](https://github.com/matthewwall/weewx-csv) - Emit loop or archive data to a file in CSV format
 * [cwxn](cwxn) - Emit a Cumulus wxnow.txt file whenever sensor readings change
 * [davishealthapi](https://github.com/uajqq/weewx-davishealthapi) - Record and display Davis sensor health telemetry from the online API (signal strength, battery, etc.)
-* [DWD](https://github.com/roe-dl/weewx-DWD) - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan)
+* [DWD](https://github.com/roe-dl/weewx-DWD) - forecast and warnings data for WeeWX and Belchertown skin, augment WeeWX data by readings from governmental weather stations (possible data sources: DWD Germany, ZAMG Austria, and by the Open-Meteo API MeteoFrance, MSC Canada, NOAA U.S.A., ECMWF E.U., MET Norway, JMA Japan), process DWD radar data and create animated GIFs
 * [filepile](https://github.com/tkeffer/filepile) - Add additional types to a WeeWX data stream via a file :heavy_check_mark:
 * [forecasting](forecasting) - Download, generate, and display forecasts and tides
 * [Healthchecks](https://github.com/bellrichm/weewx-healthchecks) - Use [Healthchecks.io](https://healthchecks.io/) to monitor WeeWX

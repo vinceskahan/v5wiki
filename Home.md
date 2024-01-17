@@ -32,7 +32,6 @@ Edit this page as you see fit; this wiki uses [Markdown](https://help.github.com
 ### Guides (How to ...)
 
 #### WeeWX configuration and installation
-* [Manage extensions](extensions)
 * [Change from one driver to another](Change-driver)
 * [Run multiple instances of WeeWX on one computer](weewx-multi)
 * [Convert from setup.py to deb](How%20to%20convert%20from%20setup.py%20install%20to%20debian%20install)

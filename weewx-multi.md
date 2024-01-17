@@ -128,7 +128,7 @@ sudo systemctl start weewx@paddock
 # stop just the paddock
 sudo systemctl stop weewx@paddock
 
-# restart only the vantage instance
+# restart only the house instance
 sudo systemctl restart weewx@house
 
 # stop all instances

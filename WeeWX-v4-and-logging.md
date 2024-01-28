@@ -157,9 +157,10 @@ Simply add this to your `weewx.conf` file:
    will be sent to `/var/tmp/weewxd.log`. In WeeWX V5, `filename` can be a relative
    path, in which case it will be relative to `WEEWX_ROOT`. For example, specifying
 
-       filename = log/weewx.log
+        filename = log/{process_name}.log
  
-   in Version 5 will cause the log to go to `~/weewx-data/log/weewx.log`. 
+   in Version 5 will cause the `weewxd` log to go to 
+   `~/weewx-data/log/weewxd.log`. 
 
 7. Do the rotation at midnight.
 

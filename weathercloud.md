@@ -1,0 +1,1 @@
+wee_extension --install weewx-wcloud-xytgz

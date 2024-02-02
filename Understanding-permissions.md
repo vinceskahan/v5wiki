@@ -84,7 +84,13 @@ Independent of permissions, most USB and serial devices are accessible to only o
 
 ## Add a user to a group
 
-If you add yourself to the `weewx` group, then you can modify configurations and skins without having to `sudo`.
+For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.
+
+The DEB/RPM installer will put you into the `weewx` group.
+
+When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files.
+
+If somehow that did not happen, you add yourself to the `weewx` group:
 ```
 sudo usermod -a -g weewx $USER
 ```

@@ -72,7 +72,7 @@ In a default configuration, the WeeWX database is world-readable, but writable o
 # pip install
 sqlite3 ~/weewx-data/archive/weewx.sdb
 # deb/rpm install
-sqlite3 /var/lib/weewx.sdb
+sqlite3 /var/lib/weewx/weewx.sdb
 ```
 
 ### Reading/writing data to a device

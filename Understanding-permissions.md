@@ -82,15 +82,15 @@ By default, only a privileged user can write to USB or serial devices.
 Independent of permissions, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
 
 
-## Add a user to a group
+### The `weewx` user and group
 
 For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.
 
-The DEB/RPM installer will put you into the `weewx` group.
+When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files, but you do need `sudo` to start/stop the `weewxd` daemon.
 
-When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files.
+If you installed WeeWX using the DEB/RPM package, the installer will put you into the `weewx` group.
 
-If somehow that did not happen, you add yourself to the `weewx` group:
+If somehow that did not happen, you can add yourself to the `weewx` group:
 ```
 sudo usermod -a -g weewx $USER
 ```

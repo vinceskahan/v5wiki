@@ -45,7 +45,7 @@ These instructions assume that WeeWX was installed from DEB or RPM package.  In 
 
 ### 1. Create a log directory with suitable permissions
 
-For a DEB/RPM install, put the logs in `/var/log/weewx`
+For a DEB/RPM install, put the logs in `/var/log/weewx` and set permissions so that the `weewx` user can write.
 ```
 sudo mkdir /var/log/weewx
 sudo chmod 775 /var/log/weewx

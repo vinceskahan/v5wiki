@@ -62,7 +62,10 @@ mkdir ~/weewx-data/log
 ```
 sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 ```
-For a `pip` install, change `/var/log/weewx` to `/home/USERNAME/weewx-data/log` in `rsyslog.d/weewx.conf`
+For a `pip` install, change `/var/log/weewx` to `$HOME/weewx-data/log` before copying the rsyslog config file:
+```
+cat ~/weewx-data/util/rsyslog.d/weewx.conf | sed "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/rsyslog.d/weewx.conf
+```
 
 2b. restart the logging system:
 ```
@@ -80,8 +83,10 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 ```
 sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
-For a `pip` install, change `/var/log/weewx` to `/home/USERNAME/weewx-data/log` in `logrotate.d/weewx`
-
+For a `pip` install, change `/var/log/weewx` to `$HOME/weewx-data/log` before copying the logrotate config file:
+```
+cat ~/weewx-data/util/logrotate.d/weewx | sed "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/logrotate.d/weewx
+```
 
 3b. confirm correct logrotate operation with WeeWX log files:
 ```

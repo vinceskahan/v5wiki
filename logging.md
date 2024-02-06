@@ -56,7 +56,7 @@ For a `pip` install, you probably want to keep the logs with the rest of the wee
 mkdir ~/weewx-data/log
 ```
 
-### 2. rsyslog
+### 2. Configure rsyslog
 
 2a. tell rsyslog to recognize log messages from WeeWX and put them in a separate file:
 ```
@@ -64,7 +64,7 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 ```
 For a `pip` install, change `/var/log/weewx` to `$HOME/weewx-data/log` before copying the rsyslog config file:
 ```
-cat ~/weewx-data/util/rsyslog.d/weewx.conf | sed "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/rsyslog.d/weewx.conf
+cat ~/weewx-data/util/rsyslog.d/weewx.conf | sed -e "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/rsyslog.d/weewx.conf
 ```
 
 2b. restart the logging system:
@@ -77,7 +77,7 @@ The file order matters in `rsyslog.d`.  If you find that the WeeWX log messages 
 sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 ```
 
-### 3. logrotate
+### 3. Configure logrotate
 
 3a. tell logrotate to rotate WeeWX log files:
 ```
@@ -85,7 +85,7 @@ sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
 For a `pip` install, change `/var/log/weewx` to `$HOME/weewx-data/log` before copying the logrotate config file:
 ```
-cat ~/weewx-data/util/logrotate.d/weewx | sed "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/logrotate.d/weewx
+cat ~/weewx-data/util/logrotate.d/weewx | sed -e "s%/var/log/weewx%$HOME/weewx-data/log%" | sudo tee /etc/logrotate.d/weewx
 ```
 
 3b. confirm correct logrotate operation with WeeWX log files:

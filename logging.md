@@ -102,9 +102,11 @@ Any number of WeeWX instances can be run from a single WeeWX installation, eithe
 
 Consider the case where two WeeWX instances are being run; one for a Davis Vantage Pro station and the other for a Rainwise station using config files `/etc/weewx/vantage.conf` and `/etc/weewx/rainwise.conf` respectively. In this case we will configure the system such that the WeeWX log output for the Davis Vantage Pro station is written to `/var/log/weewx/weewxd-vantage.log` and the log output for the Rainwise station is written to `/var/log/weewx/weewxd-rainwise.log`. 
 
-1. ensure the WeeWX log directory exists:
+1. ensure the WeeWX log directory exists and is writable by the `weewx` user
 ```
 sudo mkdir -p /var/log/weewx
+sudo chmod 775 /var/log/weewx
+sudo chown root:weewx /var/log/weewx
 ```
 
 2. use a syslog configuration `/etc/rsyslog.d/weewx.conf` like this:

@@ -43,12 +43,26 @@ To make this happen you must modify two parts of the system, the logging (typica
 
 These instructions assume that WeeWX was installed from DEB or RPM package.  In the commands below, you might have to replace `/etc/weewx` with a path appropriate for your installation.  For example, if WeeWX was installed using `setup.py`, replace `/etc/weewx` with `/home/weewx/util`.  If WeeWX was installed using `pip`, replace `/etc/weewx` with `~/weewx-data`.
 
+### create a log directory with suitable permissions
+
+For a DEB/RPM install, put the logs in `/var/log/weewx`
+```
+sudo mkdir /var/log/weewx
+sudo chmod 775 /var/log/weewx
+sudo chown root:weewx /var/log/weewx
+```
+For a `pip` install, you probably want to keep the logs with the rest of the weewx data, and there is no need to adjust permissions.
+```
+mkdir ~/weewx-data/log
+```
+
 ### rsyslog
 
 1. tell rsyslog to recognize log messages from WeeWX and put them in a separate file:
 ```
 sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
 ```
+For a `pip` install, change `/var/log/weewx` to `/home/USERNAME/weewx-data/log` in `rsyslog.d/weewx.conf`
 
 2. restart the logging system:
 ```
@@ -66,6 +80,8 @@ sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
 ```
 sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
 ```
+For a `pip` install, change `/var/log/weewx` to `/home/USERNAME/weewx-data/log` in `logrotate.d/weewx`
+
 
 2. confirm correct logrotate operation with WeeWX log files:
 ```

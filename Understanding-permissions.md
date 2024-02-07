@@ -77,7 +77,24 @@ sudo nano /etc/weewx/weewx.conf
 
 ### Installing an extension
 
-You must have read/write permissions on the WeeWX station "user" directory in order to install or remove extensions.  If you installed using `pip`, then you should be the owner of the `weewx-data` directory, so you can just invoke `weectl extension` and everything should work.  However, if you installed using a DEB or RPM package, then the `user` directory will be owned by `weewx` or `root`.
+You must have read/write permissions on the WeeWX station "user" directory in order to install or remove extensions.  If you installed using `pip`, then you should be the owner of the `weewx-data` directory, so you can just invoke `weectl extension` and everything should work.
+
+```
+$ weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
+Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
+Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
+Saving installer file to /home/jackhandy/weewx-data/bin/user/installer/GW1000
+Saved configuration dictionary. Backup copy at /home/jackhandy/weewx-data/weewx.conf.20210426101025
+Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
+```
+
+If you installed using a DEB or RPM package, then the `user` directory will be owned by `weewx`.  The installer *should* have put you into the `weewx` group, so you can just install the extension.
+
+```
+weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
+```
+
+If somehow you are not in the `weewx` group, you will see permission failure:
 
 For example:
 ```
@@ -89,13 +106,9 @@ Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/etc/weewx/bin/user/gw1000.py'
 ```
 
+The solution is to install the extension as the `weewx` user:
 ```
-$ sudo weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
-Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
-Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
-Saving installer file to /etc/weewx/bin/user/installer/GW1000
-Saved configuration dictionary. Backup copy at /etc/weewx/weewx.conf.20210426101025
-Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
+sudo -u weewx weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
 ```
 
 ### Reading/writing to a database

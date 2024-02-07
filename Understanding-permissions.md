@@ -23,12 +23,19 @@ For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The f
 
 When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files, but you do need `sudo` to start/stop the `weewxd` daemon.
 
-If you installed WeeWX using the DEB/RPM package, the installer will put you into the `weewx` group.
+The DEB/RPM package installer will put you into the `weewx` group.
 
-If somehow that did not happen, you can add yourself to the `weewx` group:
+Verify that you are in the `weewx` group using the `groups` command:
+```
+groups
+```
+
+If somehow you were not added to the `weewx` group, you can add yourself:
 ```
 sudo usermod -a -g weewx $USER
 ```
+
+Note that you must create a new shell/terminal to see the group change.  Or you can log out then log back in.
 
 ### sudo vs su
 

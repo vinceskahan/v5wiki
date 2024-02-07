@@ -77,9 +77,16 @@ If you installed WeeWX using `pip`, then all of the station settings and skins s
 ```
 nano ~/weewx-data/weewx.conf
 ```
-If you installed WeeWX from a DEB/RPM package, then the station settings and skins are owned by the `weewx` user or by `root`.  If the files are owned by `weewx`, you must either be in the `weewx` group, or use `sudo` to modify them.
+If you installed WeeWX from a DEB/RPM package, then the station settings and skins are owned by the `weewx` user.  If the files are owned by `weewx`, you must either be in the `weewx` group,
 ```
-sudo nano /etc/weewx/weewx.conf
+# see whether you are in the weewx group
+groups
+# if so, edit the config file
+nano /etc/weewx/weewx.conf
+```
+or use `sudo` to modify them.
+```
+sudo -u weewx nano /etc/weewx/weewx.conf
 ```
 
 ### Installing an extension

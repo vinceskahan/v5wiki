@@ -137,11 +137,16 @@ sqlite3 /var/lib/weewx/weewx.sdb
 
 First of all, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
 
-By default, only a privileged user can write to USB or serial devices.  If you want someone other than root to read/write a USB or serial device, then you must change the permissions on that device.  Usually it is best to define read/write access to a group, then put individual users into that group to grant them permission.  Linux has a mechanism called `udev` that will automatically detect certain types of devices, and automatically apply permissions to those devices.
+By default, only a privileged user can write to USB or serial devices.  If you want someone other than root to read/write a USB or serial device, then you must change the permissions on that device.  Usually it is best to define read/write access to a group, then put individual users into that group to grant them permission.
 
-There are udev rules for USB and serial devices included with WeeWX.  These are installed as `/usr/lib/udev/rules.d/60-weewx.rules` for a DEB/RPM installation, or `/etc/udev/rules.d/60-weewx.rules` for a `pip` installation.
+Linux has a mechanism called `udev` that will automatically detect certain types of devices, and automatically apply permissions to those devices.  There are udev rules for USB and serial devices included with WeeWX.  These are installed as `/usr/lib/udev/rules.d/60-weewx.rules` for a DEB/RPM installation, or `/etc/udev/rules.d/60-weewx.rules` for a `pip` installation.
 
-If you are using a SDR, then you must ensure that the user running WeeWX is in the group.  The SDR software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw`.  So you must put the user who runs `weewxd` into that group.  For example, on a DEB/RPM installation, this would grant permissions by putting the `weewx` user into the group `plugdev`:
+If you are using a device connect via serial port or USB-to-serial adapter (e.g., a Davis weather station), you must ensure that the user running WeeWX is in the group that can read/write the serial port.  For example, this would grant permissions by putting the `weewx` user into the group `dialout`:
+```
+sudo usermod -aG dialout weewx
+```
+
+If you are using a SDR, then you must ensure that the user running WeeWX is in the group.  The SDR software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw`.  So you must put the user who runs `weewxd` into that group.  For example, this would grant permissions by putting the `weewx` user into the group `plugdev`:
 
 ```
 sudo usermod -aG plugdev weewx

@@ -4,9 +4,32 @@ For each file and directory, there is a set of permissions that define who can r
 
 There are two general classes of users in a Unix environment: (1) privileged and (2) unprivileged.  A privileged user has the ability to do things to the system that affect how the system operates and could break the system if applied incorrectly.  For example, administrative privileges are typically required to upgrade the operating system or to install system software.  An unprivileged user can run software and save data, but only in ways that would not break the system. Usually you login to a computer as an unprivileged user, then you only *escalate* privilege when you do specific, administrative activities.  This helps prevent silly mistakes, and it provides a layer of protection against malicious behavior.
 
+* [The `weewx` user](#the-weewx-user-and-group)
+* [Privilege escalation: sudo vs su](#sudo-vs-su)
+* [Viewing the log](#viewing-the-log)
+* [Modifying configuration/skin](#modifying-a-configuration-file-or-skin)
+* [Installing extensions](#installing-an-extension)
+* [Modifying the database](#readingwriting-to-a-database)
+* [Read/Write to a device](#readingwriting-data-to-a-device)
+* [Binding to a network port](#binding-to-a-network-port)
+
+
+### The `weewx` user and group
+
+For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.
+
+When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files, but you do need `sudo` to start/stop the `weewxd` daemon.
+
+If you installed WeeWX using the DEB/RPM package, the installer will put you into the `weewx` group.
+
+If somehow that did not happen, you can add yourself to the `weewx` group:
+```
+sudo usermod -a -g weewx $USER
+```
+
 ### sudo vs su
 
-So how does an unprivileged user get permission to do system administration things?  There are two approaches: (1) temporary escalation using `sudo`, or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
+How does an unprivileged user get permission to do system administration things?  There are two approaches: (1) temporary escalation using `sudo`, or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
 
 Which approach is better?  It depends.  See the [Debian article about sudo](https://wiki.debian.org/sudo/) for pros and cons of each approach.
 
@@ -123,17 +146,3 @@ stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
 serverfault shows how to do the iptables redirect:
 
     https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
-
-
-### The `weewx` user and group
-
-For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.
-
-When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files, but you do need `sudo` to start/stop the `weewxd` daemon.
-
-If you installed WeeWX using the DEB/RPM package, the installer will put you into the `weewx` group.
-
-If somehow that did not happen, you can add yourself to the `weewx` group:
-```
-sudo usermod -a -g weewx $USER
-```

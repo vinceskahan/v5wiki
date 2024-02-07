@@ -84,6 +84,47 @@ By default, only a privileged user can write to USB or serial devices.  If you w
 Independent of permissions, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
 
 
+### Binding to a network port
+
+If you use the `interceptor` driver listen on port 80, you might have problems when you run `weewxd` as a non-root user.  This is because only root is allowed to bind to ports lower than 1024.
+
+For Linux systems, your options include:
+
+- run `nginx` with a reverse proxy rule to send traffic to `weewxd`
+- run `weewxd` as `root:root`
+- listen on a higher port (this only works if you can change the port on whatever is sending data)
+- use `authbind` to let `weewx:weewx` bind to port 80
+- use `iptables` to redirect traffic from port 80 to a high port
+- use `CAP_NET_BIND_SERVICE`
+
+The reverse proxy is perhaps the most robust approach.  If you make interceptor listen on port 8080, the reverse proxy configuration looks something like this:
+```
+location / { 
+  proxy_set_header X-Is-Reverse-Proxy "true";
+  proxy_set_header Host $host;
+  proxy_set_header X-Forwarded-Host $host;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $remote_addr;
+  proxy_pass http://localhost:8080;
+}
+```
+
+here is the man page for authbind:
+
+    https://manpages.ubuntu.com/manpages/noble/en/man1/authbind.1.html
+
+stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
+
+    https://stackoverflow.com/questions/413807/is-there-a-way-for-non-root-processes-to-bind-to-privileged-ports-on-linux
+
+    https://superuser.com/questions/710253/allow-non-root-process-to-bind-to-port-80-and-443
+
+serverfault shows how to do the iptables redirect:
+
+    https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
+
+
 ### The `weewx` user and group
 
 For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.

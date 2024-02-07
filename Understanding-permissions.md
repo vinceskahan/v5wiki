@@ -2,7 +2,6 @@
 
 This is an introduction to how permissions work in a Unix environment, with functional examples that you might encounter with WeeWX.
 
-* [The `weewx` user](#the-weewx-user-and-group)
 * [Privilege escalation: sudo vs su](#sudo-vs-su)
 * [Viewing the log](#viewing-the-log)
 * [Modifying configuration/skin](#modifying-a-configuration-file-or-skin)
@@ -14,6 +13,8 @@ This is an introduction to how permissions work in a Unix environment, with func
 For each file and directory, there is a set of permissions that define who can read and write that file or directory.  The permissions are defined by `owner`, `group`, and `world`.  This lets you say "only bill can write to file X, but anyone can read it", or "anyone in the `weewx` group can write to this directory, and no one else can even read it".  Since USB and serial devices are also just files (a special kind of file, but still just files), the same permissions system applies to them.
 
 There are two general classes of users in a Unix environment: (1) privileged and (2) unprivileged.  A privileged user has the ability to do things to the system that affect how the system operates and could break the system if applied incorrectly.  For example, administrative privileges are typically required to upgrade the operating system or to install system software.  An unprivileged user can run software and save data, but only in ways that would not break the system. Usually you login to a computer as an unprivileged user, then you only *escalate* privilege when you do specific, administrative activities.  This helps prevent silly mistakes, and it provides a layer of protection against malicious behavior.
+
+Before V5, WeeWX ran as `root`.  When run this way, permissions are not an issue - `root` has permission to do anything.  With V5, WeeWX runs as a non-root user, either the dedicated `weewx` user (DEB/RPM installs), or the user who installed WeeWX (pip installs).  Running as a non-root user is considered best practice - it minimizes the damage to the system should something go awry, and it is more secure against nefarious attacks.
 
 
 ### The `weewx` user and group
@@ -116,7 +117,7 @@ Independent of permissions, most USB and serial devices are accessible to only o
 
 ### Binding to a network port
 
-If you use the `interceptor` driver listen on port 80, you might have problems when you run `weewxd` as a non-root user.  This is because only root is allowed to bind to ports lower than 1024.
+If you use the `interceptor` driver to listen on port 80, you might have problems when you run `weewxd` as a non-root user.  This is because only root is allowed to bind to ports lower than 1024.
 
 For Linux systems, your options include:
 

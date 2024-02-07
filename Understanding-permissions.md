@@ -19,11 +19,9 @@ Before V5, WeeWX ran as `root`.  When run this way, permissions are not an issue
 
 ### The `weewx` user and group
 
-For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.
+For DEB/RPM installations, the WeeWX files are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.  For DEB/RPM installations, the installer puts you into the `weewx` group.
 
 When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files, but you do need `sudo` to start/stop the `weewxd` daemon.
-
-The DEB/RPM package installer will put you into the `weewx` group.
 
 Verify that you are in the `weewx` group using the `groups` command:
 ```

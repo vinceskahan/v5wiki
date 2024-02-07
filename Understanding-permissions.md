@@ -31,7 +31,12 @@ sudo usermod -a -g weewx $USER
 
 ### sudo vs su
 
-How does an unprivileged user get permission to do system administration things?  There are two approaches: (1) temporary escalation using `sudo`, or (2) extended escalation by becoming `root`.  For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
+How does an unprivileged user get permission to do system administration things?  There are two approaches: 
+
+1. temporary escalation using `sudo`, or 
+2. extended escalation by becoming `root`.  
+
+For temporary escalation, prefix a command with `sudo`.  For example, instead of `nano /etc/weewx/weewx.conf` you would do `sudo nano /etc/weewx/weewx.conf`.  For extended escalation, you login as the `root` user.  For example, you can become root by doing `su` or `su --login`.
 
 Which approach is better?  It depends.  See the [Debian article about sudo](https://wiki.debian.org/sudo/) for pros and cons of each approach.
 

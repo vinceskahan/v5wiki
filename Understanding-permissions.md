@@ -127,6 +127,17 @@ For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/w
 
 For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/public_html` in the home directory of the user running WeeWX.
 
+If you "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions:
+```
+ls -l /var/www/html/weewx
+```
+You can set the correct permissions with a `find` command.  Files should be `664` and directories should be `775`.
+```
+sudo find /var/www/html/weewx -type d -exec chmod 2775 {} \;
+sudo find /var/www/html/weewx -type t -exec chmod 644 {} \;
+```
+
+
 ### Reading/writing data to a device
 
 First of all, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
@@ -135,13 +146,20 @@ By default, only a privileged user can write to USB or serial devices.  If you w
 
 Linux has a mechanism called `udev` that will automatically detect certain types of devices, and automatically apply permissions to those devices.  There are udev rules for USB and serial devices included with WeeWX.  These are installed as `/usr/lib/udev/rules.d/60-weewx.rules` for a DEB/RPM installation, or `/etc/udev/rules.d/60-weewx.rules` for a `pip` installation.  If you are using a USB or serial device that is not in the WeeWX core, you will probably have to add a udev rule for your device.
 
-For example, put this rule in `/etc/udev/rules.d/60-weewx.rules` to give permission to the `weewx` user for the WH23xx weather station connected via USB:
+Changes to group membership require a logout/login, or a restart of the WeeWX daemon.
+
+Changes to the udev rules are recognized immediately on modern systems, but on older systems you might have to unplug-then-replug the device.
+
+#### Examples
+
+For the WH23xx weather station, a USB-connected device with idVendor=10c4, idProduct=8486, put this rule in `/etc/udev/rules.d/60-weewx.rules` to give permission to the `weewx` user :
 ```
 SUBSYSTEM=="usb",ATTRS{idVendor}=="10c4",ATTRS{idProduct}=="8468",MODE="0664",GROUP="weewx"
 ```
 
-The SDR (software-defined radio) software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw`.  In this case, yo you must put the user who runs `weewxd` into that group.  For example, this would grant permissions by putting the `weewx` user into the group `plugdev`:
+The SDR (software-defined radio) software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw` - look at the rules in `/etc/udev/rules.d` to find out.  In this case, the rules are installed, but you must put the user who runs `weewxd` into the group specified in the rules.  
 
+For example, this would grant permissions by putting the `weewx` user into the group `plugdev`:
 ```
 sudo usermod -aG plugdev weewx
 ```
@@ -153,9 +171,6 @@ For example, this would grant permissions by putting the `weewx` user into the g
 sudo usermod -aG dialout weewx
 ```
 
-Changes to group membership require a logout/login, or a restart of the WeeWX daemon.
-
-Changes to the udev rules are recognized immediately on modern systems, but on older systems you might have to unplug-then-replug the device.
 
 ### Binding to a network port
 
@@ -196,6 +211,7 @@ stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
 serverfault shows how to do the iptables redirect:
 
     https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
+
 
 ### Viewing the log
 

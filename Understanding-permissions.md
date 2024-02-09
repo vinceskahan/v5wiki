@@ -21,6 +21,11 @@ The following sections explain how permissions affect different parts of WeeWX.
 * [access to network resources](#binding-to-a-network-port)
 * [access to the log files](#viewing-the-log)
 
+Sometimes permissions and/or ownership get mixed up, typically when upgrading from a pre-V5 installation, or when you copy files or backups from one machine to another.
+
+* [How to fix permissions](#how-to-fix-permissions)
+
+
 ### The WeeWX user and group
 
 Before V5, WeeWX ran as the user `root`.  When WeeWX runs as the `root` user, runtime permissions are not an issue - `root` has permission to do anything.  However, any user other than `root` would have to become `root` in order to make changes to the configuration.
@@ -62,6 +67,7 @@ Files and directories in your `HOME` directory do not have these restrictions.
 
 Here are some situations where permissions matter when you are using WeeWX.
 
+
 ### Modifying a configuration file or skin
 
 If you installed WeeWX using `pip`, then all of the station settings and skins should be owned by you, so you can simply edit them:
@@ -97,25 +103,11 @@ Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/etc/weewx/bin/user/gw1000.py'
 ```
 
-You can either do the extension installation as the `weewx` user:
-```
-sudo -u weewx weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
-```
-Or put yourself into the `weewx` group:
-```
-sudo usermod -aG weewx $USER
-```
-Or fix the permissions:
-```
-sudo find /etc/weewx -type d -exec chmod 2775 {} \;
-sudo find /etc/weewx -type t -exec chmod 664 {} \;
-sudo chown -R weewx /etc/weewx
-sudo chgrp -R weewx /etc/weewx
-```
 
 ### Reading/writing to a database
 
-In a default configuration, the WeeWX database is world-readable, but writable only by the owner.  So you should be able to read the WeeWX database no matter how you installed WeeWX.
+In a default configuration, the WeeWX database is world-readable, but writable only by the owner.  So you should be able to read the WeeWX database no matter how you installed WeeWX.  If you see messages about "database locked", then the problem is probably not because of permissions or ownership.
+
 ```
 # pip install
 sqlite3 ~/weewx-data/archive/weewx.sdb
@@ -123,6 +115,7 @@ sqlite3 ~/weewx-data/archive/weewx.sdb
 # deb/rpm install
 sqlite3 /var/lib/weewx/weewx.sdb
 ```
+
 
 ### Writing reports
 
@@ -132,21 +125,9 @@ For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/w
 
 For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/public_html` in the home directory of the user running WeeWX.
 
-#### How to fix permissions in `HTML_ROOT`
-
-If you see "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions.  If the user running WeeWX is not the owner and not in the file/directory group, then it will not be able to write reports.
+If you see "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions.  If the user running WeeWX is not the owner and not in a file/directory group with write permissions, then it will not be able to write reports.
 ```
 ls -la /var/www/html/weewx
-```
-You can set the correct permissions with a `find` command.  Files should be `664` and directories should be `775`.
-```
-sudo find /var/www/html/weewx -type d -exec chmod 2775 {} \;
-sudo find /var/www/html/weewx -type t -exec chmod 664 {} \;
-```
-Ownership should be `weewx:weewx`.
-```
-sudo chown -R weewx /var/www/html/weewx
-sudo chgrp -R weewx /var/www/html/weewx
 ```
 
 
@@ -235,4 +216,39 @@ sudo tail /var/log/messages
 
 # systems that use systemd-journald
 sudo journalctl -u weewx
+```
+
+
+### How to fix permissions
+
+These instructions are for fixing the permissions and ownership of files in a DEB/RPM installation.  Files should be `664` and directories should be `775`.  Owner should be `weewx` and group should be `weewx`.
+
+For the `WEEWX_ROOT` directory (configuration file, skins, and other extensions):
+```
+# set the permissions
+sudo find /etc/weewx -type d -exec chmod 2775 {} \;
+sudo find /etc/weewx -type t -exec chmod 664 {} \;
+# set the owner and group
+sudo chown -R weewx /etc/weewx
+sudo chgrp -R weewx /etc/weewx
+```
+
+For the `HTML_ROOT` directory:
+```
+# set the permissions
+sudo find /var/www/html/weewx -type d -exec chmod 2775 {} \;
+sudo find /var/www/html/weewx -type t -exec chmod 664 {} \;
+# set the owner and group
+sudo chown -R weewx /var/www/html/weewx
+sudo chgrp -R weewx /var/www/html/weewx
+```
+
+For the `SQLITE_ROOT` directory:
+```
+# set the permissions
+sudo find /var/lib/weewx -type d -exec chmod 2775 {} \;
+sudo find /var/lib/weewx -type t -exec chmod 664 {} \;
+# set the owner and group
+sudo chown -R weewx /var/lib/weewx
+sudo chgrp -R weewx /var/lib/weewx
 ```

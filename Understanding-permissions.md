@@ -227,7 +227,7 @@ For the `WEEWX_ROOT` directory (configuration file, skins, and other extensions)
 ```
 # set the permissions
 sudo find /etc/weewx -type d -exec chmod 2775 {} \;
-sudo find /etc/weewx -type t -exec chmod 664 {} \;
+sudo find /etc/weewx -type f -exec chmod 664 {} \;
 # set the owner and group
 sudo chown -R weewx /etc/weewx
 sudo chgrp -R weewx /etc/weewx
@@ -237,7 +237,7 @@ For the `HTML_ROOT` directory:
 ```
 # set the permissions
 sudo find /var/www/html/weewx -type d -exec chmod 2775 {} \;
-sudo find /var/www/html/weewx -type t -exec chmod 664 {} \;
+sudo find /var/www/html/weewx -type f -exec chmod 664 {} \;
 # set the owner and group
 sudo chown -R weewx /var/www/html/weewx
 sudo chgrp -R weewx /var/www/html/weewx
@@ -247,7 +247,7 @@ For the `SQLITE_ROOT` directory:
 ```
 # set the permissions
 sudo find /var/lib/weewx -type d -exec chmod 2775 {} \;
-sudo find /var/lib/weewx -type t -exec chmod 664 {} \;
+sudo find /var/lib/weewx -type f -exec chmod 664 {} \;
 # set the owner and group
 sudo chown -R weewx /var/lib/weewx
 sudo chgrp -R weewx /var/lib/weewx

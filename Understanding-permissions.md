@@ -208,7 +208,7 @@ serverfault shows how to do the iptables redirect:
 
 ### Viewing the log
 
-Most systems require administrative privileges to view the system log.
+Most systems require administrative privileges to view the system log, so you must use `sudo` or become root before you can view the log messages.
 ```
 # systems that use syslog
 sudo tail /var/log/syslog

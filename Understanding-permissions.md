@@ -145,8 +145,8 @@ sudo find /var/www/html/weewx -type t -exec chmod 664 {} \;
 ```
 Ownership should be `weewx:weewx`.
 ```
-sudo chown -R weewx /etc/weewx
-sudo chgrp -R weewx /etc/weewx
+sudo chown -R weewx /var/www/html/weewx
+sudo chgrp -R weewx /var/www/html/weewx
 ```
 
 

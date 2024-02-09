@@ -75,8 +75,7 @@ nano /etc/weewx/weewx.conf
 
 ### Installing an extension
 
-You must have read/write permissions on the WeeWX "user" directory in order to install or remove extensions.  If you installed using `pip`, then you should be the owner of the `weewx-data` directory, so you can just invoke `weectl extension` and everything should work.
-
+You must have read/write permissions on the WeeWX "user" directory in order to install or remove extensions.  If you installed using `pip`, then you should be the owner of the `weewx-data` directory, so you can just invoke `weectl extension` and everything should work. 
 ```
 $ weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
 Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
@@ -88,13 +87,7 @@ Finished installing extension '/var/tmp/gw1000-0.3.1.tar.gz'
 
 If you installed using a DEB or RPM package, then the `user` directory will be owned by `weewx`.  The installer *should* have put you into the `weewx` group, so you can just install the extension.
 
-```
-weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
-```
-
-If somehow you are not in the `weewx` group, you will see permission failure:
-
-For example:
+If somehow you are not in the `weewx` group, or the permissions are set incorrectly, you will see permission failure:
 ```
 $ weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
 Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
@@ -104,9 +97,20 @@ Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/etc/weewx/bin/user/gw1000.py'
 ```
 
-The solution is to install the extension as the `weewx` user:
+You can either do the extension installation as the `weewx` user:
 ```
 sudo -u weewx weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
+```
+Or put yourself into the `weewx` group:
+```
+sudo usermod -aG weewx $USER
+```
+Or fix the permissions:
+```
+sudo find /etc/weewx -type d -exec chmod 2775 {} \;
+sudo find /etc/weewx -type t -exec chmod 644 {} \;
+sudo chown -R weewx /etc/weewx
+sudo chgrp -R weewx /etc/weewx
 ```
 
 ### Reading/writing to a database
@@ -115,6 +119,7 @@ In a default configuration, the WeeWX database is world-readable, but writable o
 ```
 # pip install
 sqlite3 ~/weewx-data/archive/weewx.sdb
+
 # deb/rpm install
 sqlite3 /var/lib/weewx/weewx.sdb
 ```
@@ -127,7 +132,9 @@ For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/w
 
 For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/public_html` in the home directory of the user running WeeWX.
 
-If you "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions:
+#### How to fix permissions in `HTML_ROOT`
+
+If you see "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions.  If the user running WeeWX is not the owner and not in the file/directory group, then it will not be able to write reports.
 ```
 ls -l /var/www/html/weewx
 ```

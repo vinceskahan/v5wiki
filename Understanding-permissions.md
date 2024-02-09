@@ -108,7 +108,7 @@ sudo usermod -aG weewx $USER
 Or fix the permissions:
 ```
 sudo find /etc/weewx -type d -exec chmod 2775 {} \;
-sudo find /etc/weewx -type t -exec chmod 644 {} \;
+sudo find /etc/weewx -type t -exec chmod 664 {} \;
 sudo chown -R weewx /etc/weewx
 sudo chgrp -R weewx /etc/weewx
 ```
@@ -136,12 +136,17 @@ For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/publ
 
 If you see "no permission" messages in the log when WeeWX is generating reports, check the directory and file permissions.  If the user running WeeWX is not the owner and not in the file/directory group, then it will not be able to write reports.
 ```
-ls -l /var/www/html/weewx
+ls -la /var/www/html/weewx
 ```
 You can set the correct permissions with a `find` command.  Files should be `664` and directories should be `775`.
 ```
 sudo find /var/www/html/weewx -type d -exec chmod 2775 {} \;
-sudo find /var/www/html/weewx -type t -exec chmod 644 {} \;
+sudo find /var/www/html/weewx -type t -exec chmod 664 {} \;
+```
+Ownership should be `weewx:weewx`.
+```
+sudo chown -R weewx /etc/weewx
+sudo chgrp -R weewx /etc/weewx
 ```
 
 

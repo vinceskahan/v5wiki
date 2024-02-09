@@ -119,30 +119,43 @@ sqlite3 ~/weewx-data/archive/weewx.sdb
 sqlite3 /var/lib/weewx/weewx.sdb
 ```
 
-## Writing reports
+### Writing reports
 
-The WeeWX process must have write permission on the report directory, `HTML_ROOT`.
+The WeeWX process must have write permission on the report directory, `HTML_ROOT`.  If you put `HTML_ROOT` in a location other than the default, you must ensure that the user running WeeWX has write permission to that location.
+
+For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/weewx`.  This directory will be created with correct permissions when you install WeeWX.
+
+For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/public_html` in the home directory of the user running WeeWX.
 
 ### Reading/writing data to a device
 
 First of all, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
 
-By default, only a privileged user can write to USB or serial devices.  If you want someone other than root to read/write a USB or serial device, then you must change the permissions on that device.  Usually it is best to define read/write access to a group, then put individual users into that group to grant them permission.
+By default, only a privileged user can write to USB or serial devices.  If you want someone other than `root` to read/write a USB or serial device, then you must change the permissions on that device.  Usually it is best to define read/write access to a group, then put individual users into that group to grant them permission.
 
-Linux has a mechanism called `udev` that will automatically detect certain types of devices, and automatically apply permissions to those devices.  There are udev rules for USB and serial devices included with WeeWX.  These are installed as `/usr/lib/udev/rules.d/60-weewx.rules` for a DEB/RPM installation, or `/etc/udev/rules.d/60-weewx.rules` for a `pip` installation.
+Linux has a mechanism called `udev` that will automatically detect certain types of devices, and automatically apply permissions to those devices.  There are udev rules for USB and serial devices included with WeeWX.  These are installed as `/usr/lib/udev/rules.d/60-weewx.rules` for a DEB/RPM installation, or `/etc/udev/rules.d/60-weewx.rules` for a `pip` installation.  If you are using a USB or serial device that is not in the WeeWX core, you will probably have to add a udev rule for your device.
 
-If you are using a device connect via serial port or USB-to-serial adapter (e.g., a Davis weather station), you must ensure that the user running WeeWX is in the group that can read/write the serial port.  For example, this would grant permissions by putting the `weewx` user into the group `dialout`:
+For example, put this rule in `/etc/udev/rules.d/60-weewx.rules` to give permission to the `weewx` user for the WH23xx weather station connected via USB:
 ```
-sudo usermod -aG dialout weewx
+SUBSYSTEM=="usb",ATTRS{idVendor}=="10c4",ATTRS{idProduct}=="8468",MODE="0664",GROUP="weewx"
 ```
 
-If you are using a SDR, then you must ensure that the user running WeeWX is in the group.  The SDR software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw`.  So you must put the user who runs `weewxd` into that group.  For example, this would grant permissions by putting the `weewx` user into the group `plugdev`:
+The SDR (software-defined radio) software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw`.  In this case, yo you must put the user who runs `weewxd` into that group.  For example, this would grant permissions by putting the `weewx` user into the group `plugdev`:
 
 ```
 sudo usermod -aG plugdev weewx
 ```
 
-Changes to group membership require a logout/login, or a restart of the WeeWX daemon.  Changes to the udev rules are recognized immediately on modern systems, but on older systems you might have to unplug-then-replug the device.
+The serial port on many systems is configured so that anyone in the `dialout` group can read/write the serial ports.  So if you use a weather station connected to a serial port (e.g., a Davis station connected by serial or USB-to-serial), you must ensure that the user running WeeWX is in the group that can read/write the serial port.
+
+For example, this would grant permissions by putting the `weewx` user into the group `dialout`:
+```
+sudo usermod -aG dialout weewx
+```
+
+Changes to group membership require a logout/login, or a restart of the WeeWX daemon.
+
+Changes to the udev rules are recognized immediately on modern systems, but on older systems you might have to unplug-then-replug the device.
 
 ### Binding to a network port
 

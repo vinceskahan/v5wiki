@@ -26,24 +26,6 @@ Sometimes permissions and/or ownership get mixed up, typically when upgrading fr
 * [How to fix permissions](#how-to-fix-permissions)
 
 
-### The WeeWX user and group
-
-Before V5, WeeWX ran as the user `root`.  When WeeWX runs as the `root` user, runtime permissions are not an issue - `root` has permission to do anything.  However, any user other than `root` would have to become `root` in order to make changes to the configuration.
-
-Starting with V5, WeeWX runs as a non-root user, either the dedicated `weewx` user (DEB/RPM installs), or the user who installed WeeWX (pip installs).  Running as a non-root user is considered best practice - it minimizes the damage to the system should something go awry, and it is more secure against nefarious attacks.  However, it requires that permissions are configured for reading data from the weather station (typically USB or serial devices, or perhaps network interfaces), saving data to the database, and saving data to the files and directories that constitute the reports.
-
-For DEB/RPM installations, the WeeWX configuration files and skins are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.  For DEB/RPM installations, the installer puts you into the `weewx` group.  When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files in `/etc/weewx`, but you do need `sudo` to start/stop the `weewxd` daemon.
-
-Verify that you are in the `weewx` group using the `groups` command.
-```
-groups
-```
-
-If somehow you were not added to the `weewx` group, you can add yourself.  Note that you must create a new shell/terminal to see the group change.  Or you can log out then log back in.
-```
-sudo usermod -a -g weewx $USER
-```
-
 ### sudo vs su
 
 How does an unprivileged user get permission to do system administration things?  There are two approaches: 
@@ -66,6 +48,25 @@ System files and directories are usually protected, so that only users with admi
 Files and directories in your `HOME` directory do not have these restrictions.
 
 Here are some situations where permissions matter when you are using WeeWX.
+
+
+### The WeeWX user and group
+
+Before V5, WeeWX ran as the user `root`.  When WeeWX runs as the `root` user, runtime permissions are not an issue - `root` has permission to do anything.  However, any user other than `root` would have to become `root` in order to make changes to the configuration.
+
+Starting with V5, WeeWX runs as a non-root user, either the dedicated `weewx` user (DEB/RPM installs), or the user who installed WeeWX (pip installs).  Running as a non-root user is considered best practice - it minimizes the damage to the system should something go awry, and it is more secure against nefarious attacks.  However, it requires that permissions are configured for reading data from the weather station (typically USB or serial devices, or perhaps network interfaces), saving data to the database, and saving data to the files and directories that constitute the reports.
+
+For DEB/RPM installations, the WeeWX configuration files and skins are owned by the `weewx` user.  The files are also in a group called `weewx`, so anyone in the `weewx` group will also have permission to modify the files.  For DEB/RPM installations, the installer puts you into the `weewx` group.  When you are in the `weewx` group, you do not have to `sudo` to modify the WeeWX files in `/etc/weewx`, but you do need `sudo` to start/stop the `weewxd` daemon.
+
+Verify that you are in the `weewx` group using the `groups` command.
+```
+groups
+```
+
+If somehow you were not added to the `weewx` group, you can add yourself.  Note that you must create a new shell/terminal to see the group change.  Or you can log out then log back in.
+```
+sudo usermod -a -g weewx $USER
+```
 
 
 ### Modifying a configuration file or skin

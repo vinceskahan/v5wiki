@@ -106,7 +106,7 @@ PermissionError: [Errno 13] Permission denied: '/etc/weewx/bin/user/gw1000.py'
 
 ### Reading/writing to a database
 
-In a default configuration, the WeeWX database is world-readable, but writable only by the owner.  So you should be able to read the WeeWX database no matter how you installed WeeWX.  If you see messages about "database locked", then the problem is probably not because of permissions or ownership.
+In a default configuration, the WeeWX database is world-readable, but writable only by the owner.  So you should be able to read the WeeWX database no matter how you installed WeeWX.
 
 ```
 # pip install
@@ -116,12 +116,14 @@ sqlite3 ~/weewx-data/archive/weewx.sdb
 sqlite3 /var/lib/weewx/weewx.sdb
 ```
 
+If you see messages about "database locked", then the problem is probably not because of permissions or ownership.
+
 
 ### Writing reports
 
-The WeeWX process must have write permission on the report directory, `HTML_ROOT`.  If you put `HTML_ROOT` in a location other than the default, you must ensure that the user running WeeWX has write permission to that location.
+The WeeWX process must have write permission on the report directory, `HTML_ROOT`.  If you put `HTML_ROOT` in a location other than the default, you must ensure that the user running WeeWX has write permission to that location.  If you run a web server on the same machine that WeeWX saves reports, then the contents of `HTML_ROOT` must be readable to the web server process.
 
-For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/weewx`.  This directory will be created with correct permissions when you install WeeWX.
+For DEB/RPM installations, the default `HTML_ROOT` directory is `/var/www/html/weewx`.  This directory will be created with correct permissions when you install WeeWX.  The files and directories should be owned by `weewx:weewx` and should be read/write for owner and group, and read-only for world.
 
 For `pip` installations, the `HTML_ROOT` directory is typically `weewx-data/public_html` in the home directory of the user running WeeWX.
 

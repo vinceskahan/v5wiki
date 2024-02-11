@@ -37,6 +37,9 @@ sudo tail -f /var/log/messages | grep weewxd
 
 # watch the messages from weectl as they arrive, and save them to a file weectl.log
 sudo tail -f /var/log/syslog | grep weectl > ~/weectl.log
+
+# watch messages from every WeeWX process and save them to a file
+sudo tail -f /var/log/syslog | grep wee | tee /var/log/weewx.log
 ```
 
 On most modern Linux systems, the `sudo` is required, since the system logs are visible only to the system administration accounts.
@@ -52,6 +55,15 @@ sudo journalctl -u weewx
 
 # view all of the message contents, not just the first few words of each line
 sudo journalctl -u weewx | more
+
+# view the messages from the weectl utility
+sudo journalctl -t weectl
+
+# view messages from both weewxd and weectl
+sudo journalctl -t weewxd -t weectl
+
+# view messages from every WeeWX process and save to file
+sudo journalctl -t weewxd -t weectl | tee /var/tmp/weewx.log
 ```
 
 ## How to test your system logger

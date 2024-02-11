@@ -146,12 +146,14 @@ Changes to group membership require a logout/login, or a restart of the WeeWX da
 
 Changes to the udev rules are recognized immediately on modern systems, but on older systems you might have to unplug-then-replug the device.
 
-#### Examples
+#### Example: install a udev rule
 
 For the WH23xx weather station, a USB-connected device with idVendor=10c4, idProduct=8486, put this rule in `/etc/udev/rules.d/60-weewx.rules` to give permission to the `weewx` user :
 ```
 SUBSYSTEM=="usb",ATTRS{idVendor}=="10c4",ATTRS{idProduct}=="8468",MODE="0664",GROUP="weewx"
 ```
+
+#### Example: add user to group in a udev rule
 
 The SDR (software-defined radio) software, `rtl-sdr`, typically installs its udev rules with permissions granted to a dedicated group.  This might be `plugdev` or `plughw` - look at the rules in `/etc/udev/rules.d` to find out.  In this case, the rules are installed, but you must put the user who runs `weewxd` into the group specified in the rules.  
 
@@ -159,6 +161,8 @@ For example, this would grant permissions by putting the `weewx` user into the g
 ```
 sudo usermod -aG plugdev weewx
 ```
+
+#### Example: add user to group defined on a device
 
 The serial port on many systems is configured so that anyone in the `dialout` group can read/write the serial ports.  So if you use a weather station connected to a serial port (e.g., a Davis station connected by serial or USB-to-serial), you must ensure that the user running WeeWX is in the group that can read/write the serial port.
 

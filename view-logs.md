@@ -62,8 +62,8 @@ sudo journalctl -t weectl
 # view messages from both weewxd and weectl
 sudo journalctl -t weewxd -t weectl
 
-# view messages from every WeeWX process and save to file
-sudo journalctl -t weewxd -t weectl | tee /var/tmp/weewx.log
+# view messages from every WeeWX process as they arrive and save to file
+sudo journalctl -f -t weewxd -t weectl | tee /var/tmp/weewx.log
 ```
 
 ## How to test your system logger

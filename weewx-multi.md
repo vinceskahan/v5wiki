@@ -132,7 +132,10 @@ sudo systemctl stop weewx@paddock
 sudo systemctl restart weewx@house
 
 # stop all instances
-sudo systemctl stop weewx
+sudo systemctl stop weewx@\*
+
+# get status of all instances
+sudo systemctl status weewx@\*
 ```
 
 #### Using the sysV init

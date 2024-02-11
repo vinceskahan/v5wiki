@@ -24,6 +24,7 @@ Debian systems, please run `dpkg --print-architecture`, rather than relying on
 | RPi 4 Model B Rev 1.1 <br>(4GB, RaspiOS lite armhf 6.1.21-v8+)        | 5.0.0b13   | 3.9.2  |      6.36s |       6.56s |           | 
 | RPi 3 Model B Plus Rev 1.3 <br>(RaspiOS lite armhf 6.1.21-v8+)        | 5.0.0b13   | 3.9.2  |     13.06s |      14.07s |           |       
 | inovato quadra Allwinner H6<br/>ARMv8 Cortex-A53 @ 1.7GHz             | 5.0.0b13   | 3.9.2  |     14.03s |      11.87s |       (1) |
+| MacBook Pro, M1 Max, 2021 (Sonoma 14.3) in a Docker Container         | 5.0.0-1    | 3.7.3  |     18.43s |      19.17s |           |
 | RPi 2 (32-bit)                                                        | 5.0.0b13   | 3.9.2  |     24.27s |      25.95s |           |
 | Rpi Zero W (32-bit)                                                   | 5.0.0b13   | 3.9.2  |     53.97s |      57.79s |           |
 

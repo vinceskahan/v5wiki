@@ -2,6 +2,12 @@
 
 This is an introduction to how permissions work in a Unix environment, with functional examples that you might encounter with WeeWX.
 
+Sometimes permissions and/or ownership get mixed up, typically when attaching USB and/or serial devices, upgrading from a pre-V5 installation, or when you copy files or backups from one machine to another.
+
+* [How to fix permissions on files/directories](#how-to-fix-permissions)
+* [Access to USB and/or serial devices](#readingwriting-data-to-a-device)
+* [Access to network resources](#binding-to-a-network-port)
+
 There are two general classes of users in a Unix environment: (1) privileged and (2) unprivileged.  A privileged user has the ability to do things to the system that affect how the system operates and could break the system if applied incorrectly.  For example, administrative privileges are typically required to upgrade the operating system or to install system software.  An unprivileged user can run software and save data, but only in ways that would not break the system. Usually you login to a computer as an unprivileged user, then you only *escalate* privilege when you do specific, administrative activities.  This helps prevent silly mistakes, and it provides a layer of protection against malicious behavior.
 
 * [Privilege escalation: sudo vs su](#sudo-vs-su)
@@ -17,14 +23,7 @@ The following sections explain how permissions affect different parts of WeeWX.
 * [installing and removing extensions](#installing-an-extension)
 * [reading the database](#readingwriting-to-a-database)
 * [ownership of the files and directories for reports](#writing-reports)
-* [access to USB and/or serial devices](#readingwriting-data-to-a-device)
-* [access to network resources](#binding-to-a-network-port)
 * [access to the log files](#viewing-the-log)
-
-Sometimes permissions and/or ownership get mixed up, typically when upgrading from a pre-V5 installation, or when you copy files or backups from one machine to another.
-
-* [How to fix permissions](#how-to-fix-permissions)
-
 
 ### sudo vs su
 
@@ -134,6 +133,19 @@ ls -la /var/www/html/weewx
 ```
 
 
+### Viewing the log
+
+Most systems require administrative privileges to view the system log, so you must use `sudo` or become root before you can view the log messages.
+```
+# systems that use syslog
+sudo tail /var/log/syslog
+sudo tail /var/log/messages
+
+# systems that use systemd-journald
+sudo journalctl -u weewx
+```
+
+
 ### Reading/writing data to a device
 
 First of all, most USB and serial devices are accessible to only one process at a time.  For example, if `weewxd` is running and communicating with the device `/dev/ttyUSB0`, then you will not be able to read/write to the device `/dev/ttyUSB0` even if you have sufficient permissions.
@@ -211,19 +223,6 @@ stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
 serverfault shows how to do the iptables redirect:
 
     https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
-
-
-### Viewing the log
-
-Most systems require administrative privileges to view the system log, so you must use `sudo` or become root before you can view the log messages.
-```
-# systems that use syslog
-sudo tail /var/log/syslog
-sudo tail /var/log/messages
-
-# systems that use systemd-journald
-sudo journalctl -u weewx
-```
 
 
 ### How to fix permissions

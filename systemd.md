@@ -1,4 +1,4 @@
-> Warning!
+> Note!
 >
 > This page applies to WeeWX V4. There is a [newer page](weewx-multi) that applies to V5 and later.
 

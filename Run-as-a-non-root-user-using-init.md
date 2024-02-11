@@ -1,5 +1,6 @@
-> Note: As of WeeWX 5.0.1, WeeWX runs as a non-root user.
-> The following applies only to older WeeWX installations.
+> Note!
+>
+> As of WeeWX 5.0.1, WeeWX runs as a non-root user for DEB/RPM installations as well as pip installations.  The following applies only to older WeeWX installations.
 
 By default, WeeWX runs as root.  This guide illustrates how to run WeeWX as a non-root user, using `init` style "rc" scripts. An alternative way, usually simpler, is to use systemd "unit files". For information on the latter, see the companion article [How to configure WeeWX to run under systemd](systemd).
 

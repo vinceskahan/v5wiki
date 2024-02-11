@@ -13,7 +13,7 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 * [wget: command not found](#wget-command-not-found)
 * [gpg: command not found](#gpg-command-not-found)
 * [gpg: no valid OpenPGP data found](#gpg-no-valid-openpgp-data-found)
-* [Signatures could not be verified: NO_PUBKEY](#signature-verification-failed-no-pubkey)
+* [Signatures could not be verified: NO_PUBKEY](#signature-verification-failed-no_pubkey)
 * [How should I answer the questions from apt when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx)
 
 #### Registering your station

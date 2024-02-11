@@ -210,19 +210,19 @@ location / {
 }
 ```
 
-here is the man page for authbind:
+Here is the man page for authbind:
 
-    https://manpages.ubuntu.com/manpages/noble/en/man1/authbind.1.html
+https://manpages.ubuntu.com/manpages/noble/en/man1/authbind.1.html
 
-stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
+Stack overflow and superuser have details about CAP_NET_BIND_SERVICE:
 
-    https://stackoverflow.com/questions/413807/is-there-a-way-for-non-root-processes-to-bind-to-privileged-ports-on-linux
+https://stackoverflow.com/questions/413807/is-there-a-way-for-non-root-processes-to-bind-to-privileged-ports-on-linux
 
-    https://superuser.com/questions/710253/allow-non-root-process-to-bind-to-port-80-and-443
+https://superuser.com/questions/710253/allow-non-root-process-to-bind-to-port-80-and-443
 
-serverfault shows how to do the iptables redirect:
+Serverfault shows how to do the iptables redirect:
 
-    https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
+https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
 
 
 ### How to fix permissions

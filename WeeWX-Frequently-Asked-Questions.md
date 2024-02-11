@@ -209,8 +209,9 @@ There are a few situations where you might encounter "permission denied", includ
 * installing an extension
 * reading/writing data to the database
 * reading/writing data to a USB or serial device
+* upgrading to V5 from an earlier version of WeeWX
 
-In many cases, you can get the permissions that you need by putting a `sudo` at the beginning of the command. Invoking `sudo` executes the command as the `root` user. This process is called "privilege escalation".
+To read the system logs and to start/stop WeeWX as a daemon, you can get the permissions that you need by putting a `sudo` at the beginning of the command. Invoking `sudo` executes the command as the `root` user. This process is called "privilege escalation".
 ```
 # run the `systemctl` program as the logged-in user:
 systemctl start weewx
@@ -218,16 +219,13 @@ systemctl start weewx
 sudo systemctl start weewx
 ```
 
-Another option is to add your username to the list of administrative users on the computer. In this approach, you add a user to a group.  For example, adding the `jackhandy` user to the `weewx` group would let the `jackhandy` user work with files in the `weewx` group:
-```
-sudo usermod -a -G weewx jackhandy
-```
-Another example: adding the `pi` user to the `adm` group would let the `pi` user see and modify files that are available to the `adm` group but not to the rest of the world.
-```
-sudo usermod -a -G adm pi
-```
+If you see messages from WeeWX that it does not have permissions to read data from the weather station, then you should ensure that the WeeWX user has read (and write) permissions for the USB or serial device.  If you use Linux, you might want to install a udev rule, or if a udev rule already exists, just add the WeeWX user to the group specified in the udev rule.
 
-See the Wiki article [understanding permissions](Understanding-permissions)
+If you see messages from WeeWX that it does not have permission to save images or other files in the reports, then you should ensure that the WeeWX user has write permissions on the report directory `HMTL_ROOT`.
+
+If you installed WeeWX using a DEB/RPM package, then the configuration files, skins, and database are owned by the user `weewx`.  If you are not in the `weewx` group, you will not be able to modify those files, although you *should* be able to read them.  If you need to edit the files or database, put yourself into the `weewx` group.
+
+See the Wiki article [understanding permissions](Understanding-permissions).
 
 
 ### SyntaxError: invalid syntax

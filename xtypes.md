@@ -134,8 +134,11 @@ The function should raise:
 - An exception of type `weewx.UnknownType`, if the type `obs_type` is not known to the function. 
 - An exception of type `weewx.UnknownAggregation` if the aggregation `aggregate_type` is not known
   to the function. 
-- An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the 
-  function, but all the information necessary to perform the calculate is not there.
+
+The function should _not_ raise a `weewx.CannotCalculate` exception. This means
+that if it relies on calling `get_scalar()` for its implementation, it should
+catch any `weewx.CannotCalculate` exceptions raised by that function and 
+resolve them.
 
 ### Calculating aggregates
 
@@ -177,11 +180,14 @@ The function should raise:
 - An exception of type `weewx.UnknownType`, if the type `obs_type` is not known to the function.
 - An exception of type `weewx.UnknownAggregation` if the aggregation `aggregate_type` is not known 
 to the function. 
-- An exception of type `weewx.CannotCalculate` if the type and aggregation are known to the 
-function, but all the information necessary to perform the aggregation is not there.
 
-See the extension [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) for an example of how to
-add a new aggregate type.
+The function should _not_ raise a `weewx.CannotCalculate` exception. This means
+that if it relies on calling `get_scalar()` for its implementation, it should
+catch any `weewx.CannotCalculate` exceptions raised by that function and 
+resolve them.
+
+See the extension [weewx-xaggs](https://github.com/tkeffer/weewx-xaggs) for an
+example of how to add a new aggregate type.
 
 ### Registering your subclass
 

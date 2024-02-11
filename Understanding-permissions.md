@@ -194,8 +194,8 @@ For Linux systems, your options include:
 - run `weewxd` as `root:root`
 - listen on a higher port (this only works if you can change the port on whatever is sending data)
 - use `authbind` to let `weewx:weewx` bind to port 80
-- use `iptables` to redirect traffic from port 80 to a high port
 - use `CAP_NET_BIND_SERVICE`
+- use `iptables` to redirect traffic from port 80 to a high port
 
 The reverse proxy is perhaps the most robust approach.  If you make interceptor listen on port 8080, the reverse proxy configuration looks something like this:
 ```

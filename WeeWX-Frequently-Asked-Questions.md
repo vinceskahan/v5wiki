@@ -13,6 +13,7 @@ This page provides answers to some of the most frequently-asked questions (FAQ) 
 * [wget: command not found](#wget-command-not-found)
 * [gpg: command not found](#gpg-command-not-found)
 * [gpg: no valid OpenPGP data found](#gpg-no-valid-openpgp-data-found)
+* [Signatures could not be verified: NO_PUBKEY](#signature-verification-failed-no-pubkey)
 * [How should I answer the questions from apt when I upgrade WeeWX?](#how-should-i-answer-the-questions-from-apt-when-i-upgrade-weewx)
 
 #### Registering your station
@@ -140,6 +141,31 @@ sudo apt-get upgrade -y
 ```
 
 For details, see [problems downloading the apt repo key](faq-apt-key-problems).
+
+
+### Signature verification failed: NO_PUBKEY
+
+During an installation using the DEB/RPM method, you might encounter a message about `NO_PUBKEY` such as one of these:
+```
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B7D370EC17FC079E
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E788768B9CB16E10
+```
+This is because your system does not trust the GPG keys from `weewx.com`.  The keys were updated in 2023, so be sure that you have the latest keys before you try to install WeeWX.
+```
+# debian systems
+wget -qO - https://weewx.com/keys.html | \
+    sudo gpg --dearmor --output /etc/apt/trusted.gpg.d/weewx.gpg
+# redhat systems
+sudo rpm --import https://weewx.com/keys.html
+# suse systems
+sudo rpm --import https://weewx.com/keys.html
+```
+If you somehow have an older DEB or RPM that was signed with the older keys, you might see a message with one of these public key hashes:
+```
+A0CB255B75BF977C
+ED444FCCF0E2B09E
+```
+If so, you can add those keys by running the appropriate command above, but using `keys-old.html` instead of `keys.html`.
 
 
 ### How should I answer the questions from `apt` when I upgrade WeeWX?

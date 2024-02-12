@@ -3,7 +3,7 @@ This article covers moving from MySQL to sqlite. It's from an [email exchange](h
 There are two general approaches to this problem:
 
 1. Use `mysqldump` to create a dump file, massage it, then restore using the utility `sqlite3`; or
-2. Use the `wee_database` utility.
+2. Use the utility `weectl database`.
 
 The former is more general and can be done independently of WeeWX. The latter is simpler, but requires access to the rest of WeeWX.
 
@@ -43,40 +43,51 @@ Then restore using `sqlite3` (which you may have to install first)
 
 Put the resultant sqlite3 file, `weewx.sdb`, wherever your installation method requires.
 
-If the new database is to be used as the weewx archive then weewx needs to be configured to use sqlite for the weewx archive. This can be done by changing the settings of the data binding to which `[StdArchive] data_binding` refers. To change the settings of the data binding referred to by `[StdArchive] data_binding`, edit `weewx.conf` and if the data binding to which `[StdArchive] data_binding` refers to is `wx_binding`, change the `[DataBindings] wx_binding` settings as follows:
+If the new database is to be used as the weewx archive, then weewx needs to be configured to use sqlite for the weewx archive. This can be done by changing the settings of the data binding to which `[StdArchive] data_binding` refers. To change the settings of the data binding referred to by `[StdArchive] data_binding`, edit `weewx.conf` and if the data binding to which `[StdArchive] data_binding` refers to is `wx_binding`, change the `[DataBindings] wx_binding` settings as follows:
 
     [DataBindings]
     
         [[wx_binding]]
             database = archive_sqlite
             table_name = archive
-            manager = weewx.wxmanager.WXDaySummaryManager
+            manager = weewx.wxmanager.DaySummaryManager
             schema = schemas.wview.schema
 
 Note the above settings are based on there being an `archive_sqlite` entry in the `weewx.conf [Databases]` section and the use of the standard weewx database schema. If this is not the case (e.g. you use a modified schema) you will need to alter one of more of the above settings accordingly.
 
 
-# Using wee_database
+# Using weectl database
 
-To transfer a database using `wee_database`, data bindings for both the source and destination databases must exist in `weewx.conf`. As the source database will most likely be the archive database currently used by WeeWX, it is likely that only the destination database will require the addition of a data binding to `weewx.conf`. To add a data binding; edit `weewx.conf`, locate the `[DataBinding]` section and add a binding similar to the following:
+To transfer a database using `weectl database`, data bindings for both the
+source and destination databases must exist in `weewx.conf`. As the source
+database will most likely be the archive database currently used by WeeWX, it is
+likely that only the destination database will require the addition of a data
+binding to `weewx.conf`. To add a data binding; edit `weewx.conf`, locate the
+`[DataBinding]` section and add a binding similar to the following:
 
         [[dest_binding]]
             database = archive_sqlite
             table_name = archive
-            manager = weewx.wxmanager.WXDaySummaryManager
+            manager = weewx.wxmanager.DaySummaryManager
             schema = schemas.wview.schema
 
-The above settings assume an `archive_sqlite` entry in the `weewx.conf [Databases]` section and use the default `wview` database schema. If this is not the case (e.g., you use a modified schema) you will need to alter one of more of the above settings accordingly.
+The above settings assume an `archive_sqlite` entry in the `weewx.conf
+[Databases]` section and use the default `wview` database schema. If this is not
+the case (e.g., you use a modified schema) you will need to alter one of more of
+the above settings accordingly.
 
-Before doing the transfer, it may worthwhile to run `wee_database` with the `--help` option:
+The instructions below assume you are using WeeWX V5 or greater.
 
-    $ wee_database --help
+Before doing the transfer, it may worthwhile to run `weectl database transfer` with the `--help` option:
 
-Note the `--dry-run` option. When used with the `--transfer` option, `wee_database` prints out what would happen but does not actually do the transfer.
+    $ weectl database transfer--help
 
-To use the `--dry-run` option with `--transfer`:
+Note the `--dry-run` option. When used with the `transfer` action, `weectl
+database` prints out what would happen but does not actually do the transfer.
 
-    $ wee_database --transfer --dest-binding=dest_binding --dry-run
+To use the `--dry-run` option with `transfer`:
+
+    $ weectl database transfer --dest-binding=dest_binding --dry-run
 
 This will result in output something like this:
 
@@ -87,7 +98,7 @@ This will result in output something like this:
 
 If the dry run was successful the transfer can be completed using the following command:
 
-    $ wee_database --transfer --dest-binding=dest_binding
+    $ weectl database transfer --dest-binding=dest_binding
 
 This will result in output something like this:
 
@@ -99,7 +110,7 @@ This will result in output something like this:
 
 Once the transfer is complete and before the new database can be used with WeeWX the daily summaries need to be created inside the new database. If WeeWX is configured to use the new database, the daily summaries will be built automatically by WeeWX at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--rebuild-daily` option:
 
-    $ wee_database --rebuild-daily --binding=dest_binding
+    $ weectl database rebuild-daily --binding=dest_binding
 
 The last step is to configure WeeWX to use the sqlite database.  In `weewx.conf`, modify the `wx_binding` to match the `dest_binding`:
 
@@ -111,8 +122,3 @@ The last step is to configure WeeWX to use the sqlite database.  In `weewx.conf`
                 schema = schemas.wview.schema
 
 Be sure to stop then start WeeWX after any changes to `weewx.conf`.
-
-
-# Caveats
-
-WeeWX v3.0.0 or greater is required in order to use `wee_database` to transfer from MySQL to sqlite. When WeeWX is installed using setup.py and the default location of `/home/weewx`, `wee_database` is installed to `/home/weewx/bin/wee_database`. When WeeWX is installed using .deb or .rpm, `wee_database` is installed to `/usr/share/weewx/wee_database` with a symbolic link `/usr/bin/wee_database`.

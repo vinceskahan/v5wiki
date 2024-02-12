@@ -55,20 +55,24 @@ Now save your old SQLITE database, then replace it with `/var/tmp/backup.sdb`.
 
 ## Daily summaries
 
-Finally, you will need to rebuild the daily summaries for any data that you have changed. If your changes are small, you can rebuild just the day or days you have touched. Otherwise, rebuild all of them. Use the tool [`wee_database`](http://www.weewx.com/docs/utilities.htm#wee_database_utility) to do this.
+Finally, you will need to rebuild the daily summaries for any data that you have
+changed. If your changes are small, you can rebuild just the day or days you
+have touched. Otherwise, rebuild all of them. Use the tool
+[`weectl database`](https://www.weewx.com/docs/5.0/utilities/weectl-database)
+to do this.
 
 To rebuild just a single day, use option `--date`. For example, to rebuild 22 August 2019:
 
-    wee_database weewx.conf --rebuild-daily --date=2019-08-22
+    weectl database rebuild-daily --date=2019-08-22
 
 To rebuild a group of days, use options `--from` and `--to`. For example, to rebuild from 19 August 2019 through 22 August 2019, inclusive:
 
-    wee_database weewx.conf --rebuild-daily --from=2019-08-19 --to=2019-08-22
+    weectl database rebuild-daily --from=2019-08-19 --to=2019-08-22
 
 To rebuild all summaries:
 
-    wee_database weewx.conf --drop-daily
-    wee_database weewx.conf --rebuild-daily
+    weectl database drop-daily
+    weectl database rebuild-daily
 
 ## Regenerate web pages
 
@@ -78,4 +82,7 @@ past, then you should delete the offending NOAA files and let WeeWX regenerate t
 
 ## Preventing future problems
 
-Finally, to avoid a problem in the future, be sure to set a range of acceptable values for service `StdQC`. See the section [StdQC](http://weewx.com/docs/usersguide.htm#StdQC) in the User's Guide for details on how to do this.
+Finally, to avoid a problem in the future, be sure to set a range of acceptable
+values for service `StdQC`. See the documentation on
+[StdQC](https://www.weewx.com/docs/5.0/reference/weewx-options/stdqc/) for
+details.

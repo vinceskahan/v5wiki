@@ -108,11 +108,15 @@ This will result in output something like this:
     transferring, this may take a while.... complete
     7814 records transferred from source database 'weewx' to destination database 'weewx.sdb'.
 
-Once the transfer is complete and before the new database can be used with WeeWX the daily summaries need to be created inside the new database. If WeeWX is configured to use the new database, the daily summaries will be built automatically by WeeWX at the next startup. Alternatively, the daily summaries can be built manually using the `wee_database` utility and the `--rebuild-daily` option:
+Once the transfer is complete and before the new database can be used with WeeWX
+the daily summaries need to be created inside the new database. If WeeWX is
+configured to use the new database, the daily summaries will be built
+automatically by WeeWX at the next startup. Alternatively, the daily summaries
+can be built manually using the `weectl database rebuild-daily`action:
 
     $ weectl database rebuild-daily --binding=dest_binding
 
-The last step is to configure WeeWX to use the sqlite database.  In `weewx.conf`, modify the `wx_binding` to match the `dest_binding`:
+The final step is to configure WeeWX to use the sqlite database.  In `weewx.conf`, modify the `wx_binding` to match the `dest_binding`:
 
         [DataBindings]
             [[wx_binding]]

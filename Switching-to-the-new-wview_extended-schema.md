@@ -29,7 +29,7 @@ of the _Customizing Guide_.
 2. Stop `weewxd`.
 
 3. **Modify `wx_binding`**. When it creates the new, modified database,
-   `wee_database` needs to know to use the `wview_extended` schema instead of
+   `weectl database` needs to know to use the `wview_extended` schema instead of
    the old, `wview` schema. You do this by changing the option `schema` in
    section `[DataBindings]` in `weewx.conf`.
 

@@ -193,7 +193,7 @@ Yes, but... While you have to specify *something* for the `station_url`, it does
 
 ### How do I unregister?
 
-Simply disable the registration setting then restart WeeWX. Systems that refresh their data are dropped from the map in about a month.
+Simply disable the registration setting then restart WeeWX. Systems that do not refresh their data are dropped from the map in about a month.
 
 
 ## Using the command-line, Python, and WeeWX

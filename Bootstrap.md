@@ -12,22 +12,15 @@ Before we begin...
 1. This has been tested on weewx version 4.10.1 running on Raspberry Pi OS.
 2. Works with sqlite, mysql, and any other weewx supported database.
 
-Download
---------
-* https://github.com/brewster76/fuzzy-archer/archive/refs/heads/master.zip for the latest unverified version.
-
-Releases can be found here: 
-https://github.com/brewster76/fuzzy-archer/releases
-
 Install
 --------
-Use the Weewx extension installer:
+Use the WeeWX extension installer:
 
 ~~~~~~
-wee_extension --install [wherever you've put the .tar.gz or .zip archive]
+weectl extension install https://github.com/brewster76/fuzzy-archer/archive/refs/heads/master.zip
 ~~~~~~
 
-Web content is stored in public_html/Bootstrap.
+Web content is stored in `public_html/Bootstrap`.
 
 More information
 --------

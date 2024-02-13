@@ -255,7 +255,6 @@ Use extensions to add capabilities to a WeeWX installation.  Drivers enable WeeW
 * <img src="http://windfinder.com/favicon.ico" width='16'/> [windfinder](windfinder) :heavy_check_mark:
 * <img src="https://stations.windguru.cz/img/apple-touch-icon-precomposed.png" width='16'/> [windguru](https://github.com/claudobahn/weewx-windguru) :heavy_check_mark:
 * <img src="http://weewx.com/consumers/windy.png" width='16'/> [windy](https://github.com/matthewwall/weewx-windy) :heavy_check_mark:
-* <img src="http://weewx.com/consumers/xively.ico" width='16'/> [xively/cosm/pachube](xively)
 
 ### Development notes
 * [v5 design notes](Version-5)

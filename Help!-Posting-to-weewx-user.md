@@ -93,7 +93,7 @@ of the log.
     | init system | how to stop weewxd          |
     |-------------|-----------------------------|
     | systemd     | sudo systemctl stop weewx   |
-    | sysV        | sudo systemctl stop weewx |
+    | sysV        | sudo /etc/init.d/weewx stop |
     | launchd     | sudo launchctl unload /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 3. Set `debug=1` in the configuration file (typically `weewx.conf`). Setting `debug=2`
@@ -125,7 +125,7 @@ of the log.
     | init system | how to start weewxd          |
     |-------------|------------------------------|
     | systemd     | sudo systemctl start weewx   |
-    | sysV        | sudo systemctl start weewx |
+    | sysV        | sudo /etc/init.d/weewx start |
     | launchd     | sudo launchctl load /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 6. Let `weewxd` run through at least the first reporting cycle (usually 5-10 minutes).

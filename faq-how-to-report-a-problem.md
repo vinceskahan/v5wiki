@@ -40,5 +40,5 @@ The `weectl debug` utility can output more detailed information about your syste
 
 One thing to note is that `weectl debug` 'tries' to obfuscate usernames/passwords/keys in weewx.conf so that posting your debug does not post private information.  You need to 'carefully' examine the output of `weectl debug` to make sure it didn't miss obfuscating anything.
 
-<b>Known bug</b> - at this writing as of WeeWX 4.5.1 `weectl debug` does 'not' obfuscate anything in a commented out portion of a line.  Be very careful in examining your `weectl debug` output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the `weectl debug` output to remove those items.
+<b>Known bug</b> - older versions of `wee_debug` (updated to `weectl debug` in v5)  did 'not' obfuscate anything in a commented out portion of a line.  Be very careful in examining your `weectl debug` output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the `weectl debug` output to remove those items.
 

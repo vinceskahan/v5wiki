@@ -1,4 +1,3 @@
-## FIXME FOR V5 reference rsyslog
 WeeWX writes to disk for the following:
 
 * Images and HTML files are generated every archive interval

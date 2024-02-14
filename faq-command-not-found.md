@@ -1,20 +1,17 @@
-##FIXME: rewrite for v5 pip
 ### Problem Description
-Users new to Linux/Unix who have installed WeeWX via the 'setup.py' method are frequently confused when they run a command as indicated in the WeeWX documentation and get a 'command not found' message.
+Users new to Linux/Unix who have installed WeeWX via the 'pip' method are frequently confused when they run a command as indicated in the WeeWX documentation and get a 'command not found' message.
 
-    pi@pi4p1:~ $ sudo weectl extension list
-    sudo: weectl: command not found
+    pi@pi4p1:~ $ weectl extension list
+    weectl: command not found
 
-The problem here is that setup.py installations of weewx install things in /home/weewx/bin which is not in the user's $PATH.
-
-    pi@pi4p1:~ $ echo $PATH
-    /home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+The problem here is that pip installations of weewx require you to activate the python virtual environment before running weewx commands
 
 #### The correct way
 
-Preface the command with the full pathname to the utility you are trying to use.
+Activate your python virtual environment first...
 
-    pi@pi4p1:~ $ sudo /home/weewx/bin/wee_extension --list
+    pi@pi4p1:~ $ source ~/weewx-venv/bin/activate
+    pi@pi4p1:~ weectl extension list
     Extension Name    Version   Description
     mqtt              0.23      Upload weather data to MQTT server.
 

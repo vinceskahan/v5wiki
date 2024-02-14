@@ -80,7 +80,7 @@ old station data in `/home/weewx`.
     sudo cp /home/weewx/util/init.d/weewx.debian /etc/init.d/weewx
     sudo chmod +x /etc/init.d/weewx
     sudo update-rc.d weewx defaults 98
-    sudo /etc/init.d/weewx start     
+    sudo systemctl start weewx     
     ```
  
     ```shell

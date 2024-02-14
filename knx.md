@@ -18,14 +18,14 @@ Hint: You can download the code zip and invoke pip install pknx.zip
 2.  Run the extension installer
 
 ```
-wee_extension --install weewx-knx.zip
+weectl extension install weewx-knx.zip
 ```
 
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Verify

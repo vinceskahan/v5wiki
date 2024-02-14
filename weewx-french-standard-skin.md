@@ -19,7 +19,7 @@ https://github.com/weewx/weewx/files/2409004/weeWX_v3.8.2-Standard-FR.tar.gz
 1. Stop the weeWX process:
 
 ```
-sudo /etc/init.d/weewx stop
+sudo systemctl stop weewx
 ```
 
 2. Get the file :
@@ -55,7 +55,7 @@ to
 5. Start weewx process:
 
 ```
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 6. Go to your weewx URL home page and check the home page.

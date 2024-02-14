@@ -212,11 +212,8 @@ $ source ~/weewx-venv/bin/activate
 $ weectl extension list
 ```
 
-Be sure that you are typing the right command.  In WeeWX V5 there are only two: `weewxd` and `weectl`.  In WeeWX V4 there are a few, including `weewxd`, `wee_config`, `wee_extension`, `wee_database`, and `wee_reports`.
-
+A successful run will look something like:
 ```
-$ wee_extension --list
-wee_extension: command not found
 $ weectl extension list
 Extension Name    Version   Description
 windy             0.7       Upload weather data to Windy.

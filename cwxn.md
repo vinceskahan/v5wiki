@@ -13,7 +13,7 @@ wget -O weewx-cwxn.zip https://github.com/matthewwall/weewx-cwxn/archive/master.
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-cwxn.zip
+weectl extension install weewx-cwxn.zip
 ```
 
 2.  Modify weewx.conf:
@@ -26,8 +26,8 @@ wee_extension --install weewx-cwxn.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Verify

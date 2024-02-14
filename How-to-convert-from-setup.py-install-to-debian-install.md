@@ -2,7 +2,7 @@ This is how to convert from a setup.py installation to a deb package installatio
 
 1. Be sure weewx is not running
 ```
-sudo /etc/init.d/weewx stop
+sudo systemctl stop weewx
 ```
 
 2. Move the startup script out of the way

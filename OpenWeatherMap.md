@@ -13,7 +13,7 @@ wget -O weewx-owm.zip https://github.com/matthewwall/weewx-owm/archive/master.zi
 1.  Run the extension installer:
 
     ```
-    wee_extension --install weewx-owm.zip
+    weectl extension install weewx-owm.zip
     ```
 
 2.  Modify weewx.conf:
@@ -28,8 +28,8 @@ wget -O weewx-owm.zip https://github.com/matthewwall/weewx-owm/archive/master.zi
 3.  Restart weewx
 
     ```
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
+    sudo systemctl stop weewx
+    sudo systemctl start weewx
     ```
 
 ## Changes to the OpenWeatherMap API

@@ -144,13 +144,13 @@ sudo systemctl status weewx@\*
 /etc/init.d/weewx status
 
 # start only the paddock instance
-sudo /etc/init.d/weewx start paddock
+sudo systemctl start weewx paddock
 
 # restart only the paddock instance
 sudo /etc/init.d/weewx restart paddock
 
 # stop only the house instance
-sudo /etc/init.d/weewx stop house
+sudo systemctl stop weewx house
 ```
 
 ### Logging

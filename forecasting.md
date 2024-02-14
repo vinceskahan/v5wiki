@@ -122,7 +122,7 @@ https://flaterco.com/xtide/index.html
 1.  Run the extension installer to install the forecast service and sample skin.
 
 ```
-wee_extension --install weewx-forecast.zip
+weectl extension install weewx-forecast.zip
 ```
 
 2.  In weewx.conf, specify required parameters for the forecast services you want to run
@@ -151,8 +151,8 @@ wee_extension --install weewx-forecast.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 The extension installer will add all of the forecast methods to the service list.  However, each method requires parameters such as an API key, so unless those parameters are entered, only Zambretti will actually run.

@@ -50,7 +50,7 @@ pip3 install pyownet
 2.  Run the extension installer:
 
 ```
-wee_extension --install weewx-owfs.zip
+weectl extension install weewx-owfs.zip
 ```
 
 3.  Find out what sensors are attached:
@@ -108,7 +108,7 @@ Add calibration corrections for individual sensors:
 6. Start weewx
 
 ```
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 ### Caveats

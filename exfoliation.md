@@ -11,14 +11,14 @@ wget -O weewx-exfoliation.zip https://github.com/matthewwall/weewx-exfoliation/a
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-exfoliation.zip
+weectl extension install weewx-exfoliation.zip
 ```
 
 2.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Customize

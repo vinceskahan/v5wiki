@@ -24,10 +24,10 @@ where you can create a new app and obtain the credentials.
 
 2.  Run the extension installer:
 
-NB: you may need to run this as root (put sudo before wee_extension)
+NB: you may need to run this as root (preface the following command with 'sudo')
  
     ```
-    wee_extension --install weewx-twitter.zip
+    weectl extension install weewx-twitter.zip
     ```
 
 3.  Modify weewx.conf:
@@ -44,8 +44,8 @@ NB: you may need to run this as root (put sudo before wee_extension)
 4.  Restart weewx
 
     ```
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
+    sudo systemctl stop weewx
+    sudo systemctl start weewx
     ```
 
 ### Options

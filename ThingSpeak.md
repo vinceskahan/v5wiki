@@ -15,7 +15,7 @@ wget -O weewx-thingspeak.zip https://github.com/matthewwall/weewx-thingspeak/arc
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-thingspeak.zip
+weectl extension install weewx-thingspeak.zip
 ```
 
 2.  Modify weewx.conf:
@@ -29,8 +29,8 @@ wee_extension --install weewx-thingspeak.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Options

@@ -48,8 +48,8 @@ These are instructions for adding data from a single sensor.
 4.  Restart weewx
 
     ```shell
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
+    sudo systemctl stop weewx
+    sudo systemctl start weewx
     ```
 
 ### Units

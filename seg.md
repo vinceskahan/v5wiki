@@ -19,7 +19,7 @@ wget -O weewx-seg.zip https://github.com/matthewwall/weewx-seg/archive/master.zi
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-seg.zip
+weectl extension install weewx-seg.zip
 ```
 
 2.  Modify weewx.conf:
@@ -34,8 +34,8 @@ wee_extension --install weewx-seg.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Options

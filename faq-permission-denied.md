@@ -1,7 +1,7 @@
 ### Problem Description
 Users new to Linux/Unix are frequently confused when they run a command as indicated in the WeeWX documentation and get a 'permission denied' message.
 
-    pi@pi4p1:~ $ /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+    pi@pi4p1:~ $ /home/weewx/bin/weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
     Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
     Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
     Traceback (most recent call last):
@@ -15,7 +15,7 @@ The problem here is that weewx installs things as the privileged user 'root', ye
 
 Preface the command with 'sudo' so that your command runs with elevated privileges.
 
-    pi@pi4p1:~ $ sudo /home/weewx/bin/wee_extension --install /var/tmp/gw1000-0.3.1.tar.gz
+    pi@pi4p1:~ $ sudo /home/weewx/bin/weectl extension install /var/tmp/gw1000-0.3.1.tar.gz
     Request to install '/var/tmp/gw1000-0.3.1.tar.gz'
     Extracting from tar archive /var/tmp/gw1000-0.3.1.tar.gz
     Saving installer file to /home/weewx/bin/user/installer/GW1000

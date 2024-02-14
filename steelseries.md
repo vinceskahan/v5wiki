@@ -1,6 +1,6 @@
 This skin provides a page displaying the [SteelSeries Weather Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges).
 
-The preferred method of installation is using the *wee_extension* utility although the skin may also be installed manually.
+The preferred method of installation is using the *weectl* utility although the skin may also be installed manually.
 
 **Note**: This skin uses a WeeWX report to generate the file *gauge-data.txt* which in turn is used to update the *SteelSeries Weather Gauges*. Since WeeWX reports are generated only once per archive period, *gauge-data.txt* and the *SteelSeries Weather Gauges* are only updated once per archive period.
 
@@ -8,7 +8,7 @@ The preferred method of installation is using the *wee_extension* utility althou
 
 This skin requires WeeWX v3.4.0 or later.
 
-### Installation using *wee_extension*
+### Installation using *weectl*
 
 #### Download
 
@@ -21,12 +21,12 @@ $ wget -P /var/tmp https://github.com/gjr80/weewx-steelseries/releases/download/
 
 1.  Run the extension installer:
 
-        $ wee_extension --install steelseries-x.y.z.tar.gz
+        $ weectl extension install steelseries-x.y.z.tar.gz
 
 2. Restart WeeWX:
 
-        $ sudo /etc/init.d/weewx stop
-        $ sudo /etc/init.d/weewx start
+        $ sudo systemctl stop weewx
+        $ sudo systemctl start weewx
 
 ### Manual installation
 

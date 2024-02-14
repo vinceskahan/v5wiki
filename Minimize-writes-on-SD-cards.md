@@ -1,3 +1,4 @@
+## FIXME FOR V5 reference rsyslog
 WeeWX writes to disk for the following:
 
 * Images and HTML files are generated every archive interval
@@ -39,8 +40,8 @@ The following recipes are for a Debian-like linux.  Other operating systems have
 4) Restart WeeWX
 
 ```
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
+    sudo systemctl stop weewx
+    sudo systemctl start weewx
 ```
 
 5) Tell the web server where to find the reports

@@ -16,7 +16,7 @@ You can send an Alert based on any valid Python expression using Weewx LOOP pack
 1. Run the extension installer
    
 ```
-wee_extension --install weewx-opsgenie.tar.gz
+weectl extension install weewx-opsgenie.tar.gz
 ```
 
 2. Modify weewx.conf. Your OpsGenie API Key can be found on the OpsGenie Integrations page. See
@@ -45,7 +45,7 @@ wee_extension --install weewx-opsgenie.tar.gz
 3. Restart Weewx
 
 ```
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 See [readme.txt](https://raw.githubusercontent.com/dcapslock/Weewx-OpsGenie/master/Weewx-OpsGenie/readme.txt) for more information on config options.

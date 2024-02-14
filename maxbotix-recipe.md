@@ -170,13 +170,13 @@ When you configure the weewx-maxbotix extension, you must specify two things: (1
 
 ```
 # Shut down weeWX
-sudo /etc/init.d/weewx stop
+sudo systemctl stop weewx
 
 # Install weewx-maxbotix extension
-sudo wee_extension --install https://github.com/matthewwall/weewx-maxbotix/archive/master.zip
+sudo weectl extension install https://github.com/matthewwall/weewx-maxbotix/archive/master.zip
 
 # Configure weewx to use the maxbotix sensor
-sudo wee_config --reconfigure
+sudo weectl station reconfigure
 ```
 
 Now verify that the driver can read the sensor.
@@ -220,7 +220,7 @@ LOOP:   2023-04-24 10:59:06 EDT (1682348346) 'dateTime': '1682348346', 'range': 
 
 Now that the data collection is working, run weewx as a daemon:
 ```
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 ### Verify the data in weewx reports

@@ -13,7 +13,7 @@ This is an extension to weewx that uploads weather data to wetter.com.
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-wetter.zip
+weectl extension install weewx-wetter.zip
 ```
 
 2.  Modify weewx.conf:
@@ -28,8 +28,8 @@ wee_extension --install weewx-wetter.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Upgrading from weewx 2.6-2.7

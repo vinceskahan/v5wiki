@@ -25,7 +25,7 @@ sudo pip3 install paho-mqtt==1.6.1
 2.  Run the extension installer:
 
 ```
-sudo wee_extension --install weewx-mqtt.zip
+sudo weectl extension install weewx-mqtt.zip
 ```
 
 3.  Modify the weewx configuration file: 
@@ -47,8 +47,8 @@ sudo wee_extension --install weewx-mqtt.zip
 4.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Options

@@ -138,11 +138,11 @@ There seems to be several fixes:
 1. Unplug the console, take out the batteries, and wait a minute or two. This will cause the
 console software to internally reboot. In one case this has fixed the problem without data loss.
 
-2. If all else fails, stop WeeWX if it is running then use the utility `wee_device` to first dump any useful data in the logger,
+2. If all else fails, stop WeeWX if it is running then use the utility `weectl device` to first dump any useful data in the logger,
 then to clear the memory.
 
-        wee_device --dump
-        wee_device --clear-memory
+        weectl device --dump
+        weectl device --clear-memory
 
     Note that the `--dump` command can generate lots of "duplicate primary key" errors. These can be
 ignored.
@@ -245,7 +245,7 @@ The cure is simple: kill all but one of them. Or, better yet, kill them all, the
 
 Be sure that the VantagePro2 console is not in setup mode!
 
-Sometimes after you power-cycle the console, it stays in setup mode until you do a long press on the 'Done' button.  While the console is in setup mode, WeeWX can get station information (for example, `wee_device --info`) and it can even clear the station memory (`wee_device --clear-memory`).  But as long as the console is in setup mode, when WeeWX tries to get data it will fail, reporting messages such as these:
+Sometimes after you power-cycle the console, it stays in setup mode until you do a long press on the 'Done' button.  While the console is in setup mode, WeeWX can get station information (for example, `weectl device --info`) and it can even clear the station memory (`wee_device --clear-memory`).  But as long as the console is in setup mode, when WeeWX tries to get data it will fail, reporting messages such as these:
 
 ```
 Mar 17 16:39:43 sailing weewx[25608]: engine: Starting main packet loop.

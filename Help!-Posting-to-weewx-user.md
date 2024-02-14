@@ -47,7 +47,7 @@ pi4 under Raspbian. My os version from /etc/os-release is 10.4
 
 ## The WeeWX debug utility
 
-The debug utility (`wee_debug` or `weectl debug`) can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.
+The debug utility (`weectl debug`) can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.
 
 Note that the utility *tries* to obfuscate usernames/passwords/keys so that posting your debug does not post private information.  However, you still need to examine the output to make sure it didn't miss any usernames, passwords, tokens, or other private information.
 
@@ -93,7 +93,7 @@ of the log.
     | init system | how to stop weewxd          |
     |-------------|-----------------------------|
     | systemd     | sudo systemctl stop weewx   |
-    | sysV        | sudo /etc/init.d/weewx stop |
+    | sysV        | sudo systemctl stop weewx |
     | launchd     | sudo launchctl unload /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 3. Set `debug=1` in the configuration file (typically `weewx.conf`). Setting `debug=2`
@@ -125,7 +125,7 @@ of the log.
     | init system | how to start weewxd          |
     |-------------|------------------------------|
     | systemd     | sudo systemctl start weewx   |
-    | sysV        | sudo /etc/init.d/weewx start |
+    | sysV        | sudo systemctl start weewx |
     | launchd     | sudo launchctl load /Library/LaunchDaemons/com.weewx.weewxd.plist |
  
 6. Let `weewxd` run through at least the first reporting cycle (usually 5-10 minutes).

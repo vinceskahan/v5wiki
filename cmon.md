@@ -16,14 +16,14 @@ The ComputerMonitor (`cmon`) is a weewx service that collects CPU load, memory u
 1.  Run the extension installer
 
     ```shell
-    wee_extension --install weewx-cmon.zip
+    weectl extension install weewx-cmon.zip
     ```
 
 2.  Restart weewx
 
     ```shell
-    sudo /etc/init.d/weewx stop
-    sudo /etc/init.d/weewx start
+    sudo systemctl stop weewx
+    sudo systemctl start weewx
     ```
 
 ### Verify

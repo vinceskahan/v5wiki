@@ -12,14 +12,14 @@ wget -O weewx-amphibian.zip https://github.com/matthewwall/weewx-amphibian/archi
 1. Run the extension installer:
 
 ```
-wee_extension --install weewx-amphibian.tgz
+weectl extension install weewx-amphibian.tgz
 ```
 
 2. Restart weewx:
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ## Screenshots

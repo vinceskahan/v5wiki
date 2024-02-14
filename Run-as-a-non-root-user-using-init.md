@@ -47,7 +47,7 @@ This assumes that WeeWX has been installed to `/home/weewx` using `setup.py` and
 
 1.  Stop WeeWX if it is running:
     ```
-    sudo /etc/init.d/weewx stop
+    sudo systemctl stop weewx
     ````
 
 2.  In the startup script file, `/etc/init.d/weewx`, specify the user, and a location for the process ID (PID) file where that user has write privileges, e.g.:
@@ -68,7 +68,7 @@ This assumes that WeeWX has been installed to `/home/weewx` using `setup.py` and
 
 5.  Start WeeWX:
     ```
-    sudo /etc/init.d/weewx start
+    sudo systemctl start weewx
     ```
 
 ## Installed using a Debian package
@@ -88,7 +88,7 @@ apt install weewx
 2.  Stop WeeWX if it is running:
     ```
     shell
-    sudo /etc/init.d/weewx stop 
+    sudo systemctl stop weewx 
     ```
 
 3.  Rather than edit the startup script directly (and risk losing changes each update), we override parameters by creating a file `/etc/default/weewx` (if it doesn't exist already), in which we specify the user, and a location for the process ID (PID) file. For example:
@@ -114,7 +114,7 @@ apt install weewx
 6.  Start WeeWX and check status
     ```
     shell
-    /etc/init.d/weewx start
+    systemctl start weewx
     /etc/init.d/weewx status
     ``` 
 

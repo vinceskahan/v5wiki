@@ -15,14 +15,14 @@ wget -O weewx-simple.zip https://github.com/matthewwall/weewx-simple/archive/mas
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-simple.zip
+weectl extension install weewx-simple.zip
 ```
 
 2.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Screenshots

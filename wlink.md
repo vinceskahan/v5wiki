@@ -31,7 +31,7 @@ cp wlink-x.y.z/bin/user/wlink.py /home/weewx/bin/user
 3.  Start weewx
 
 ```
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 ### Options

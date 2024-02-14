@@ -1,8 +1,9 @@
+##FIXME: rewrite for v5 pip
 ### Problem Description
 Users new to Linux/Unix who have installed WeeWX via the 'setup.py' method are frequently confused when they run a command as indicated in the WeeWX documentation and get a 'command not found' message.
 
-    pi@pi4p1:~ $ sudo wee_extension --list
-    sudo: wee_extension: command not found
+    pi@pi4p1:~ $ sudo weectl extension list
+    sudo: weectl: command not found
 
 The problem here is that setup.py installations of weewx install things in /home/weewx/bin which is not in the user's $PATH.
 

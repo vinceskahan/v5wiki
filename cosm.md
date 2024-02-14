@@ -31,8 +31,8 @@ setup.py install --extension weewx-xively-x.y.tgz
 3.  Restart weewx:
 
     ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Options

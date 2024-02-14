@@ -35,7 +35,7 @@ wget -O weewx-rainmachine.zip https://github.com/sprinkler/rainmachine-weewx/arc
 1.  Run the extension installer:
 
 ```
-sudo wee_extension --install weewx-rainmachine.zip
+sudo weectl extension install weewx-rainmachine.zip
 ```
 
 2.  Modify weewx.conf:

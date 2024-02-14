@@ -6,11 +6,11 @@ The SQLite archive database (usually named `wview-archive.sdb`) used by the Linu
 Assuming that the wview database is in file `/var/wview/archive/wview-archive.sdb` (its usual place),
 
 ```sh
-sudo /etc/init.d/weewx stop
+sudo systemctl stop weewx
 cd SQLITE_ROOT
 mv weewx.sdb weewx.sdb.bak
 cp /var/wview/archive/wview-archive.sdb weewx.sdb
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 where the variable _`SQLITE_ROOT`_ is the directory where your WeeWX SQLite database is located (usually `/home/weewx/archive` or `/var/lib/weewx`).

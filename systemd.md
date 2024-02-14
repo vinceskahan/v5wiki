@@ -22,7 +22,7 @@ The installation proceeds in three steps.
 1. Stop any running instances of `weewxd` that are using `rc` scripts:
 
     ```shell
-   sudo /etc/init.d/weewx stop
+   sudo systemctl stop weewx
     ```
  
 2. If it exists, get rid of you old `/etc/init.d` script:

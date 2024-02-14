@@ -14,7 +14,7 @@ wget -O weewx-emoncms.zip https://github.com/matthewwall/weewx-emoncms/archive/m
 1.  Run the extension installer:
 
 ```
-wee_extension --install weewx-emoncms.zip
+weectl extension install weewx-emoncms.zip
 ```
 
 2.  Modify weewx.conf:
@@ -28,8 +28,8 @@ wee_extension --install weewx-emoncms.zip
 3.  Restart weewx
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 ### Options

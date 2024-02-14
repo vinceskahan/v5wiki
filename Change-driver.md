@@ -73,7 +73,7 @@ drivers.
 3.  Start weewx
 
     ```shell
-    sudo /etc/init.d/weewx start
+    sudo systemctl start weewx
     ```
 
 ### The WeeWX approach: use `weectl station`

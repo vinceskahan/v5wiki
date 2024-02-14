@@ -35,7 +35,7 @@ appear in the current LOOP packet or archive record, allowing their use elsewher
 
 - When resolving tags, the Cheetah generator would first look in the present record, then in the
 database, as it does now. But, then it would look to `weewx.types` to try and calculate any
-unresolved types. This would allow the products of `StdWXCalculate` to be used by `wee_reports`,
+unresolved types. This would allow the products of `StdWXCalculate` to be used by `weectl report run`,
 resolving [Issue #95](https://github.com/weewx/weewx/issues/95)
 
 - In a similar manner, the Image generator would first try the database to resolve any series. If

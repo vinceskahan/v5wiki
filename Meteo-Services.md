@@ -92,7 +92,7 @@ ex. install for Linux/raspberry systems stretch / buster
 
 2. Install the update
 
-`sudo wee_extension --install meteoservices-3.2.zip`
+`sudo weectl extension install meteoservices-3.2.zip`
 
 3. extend weewx.conf
 
@@ -110,8 +110,8 @@ SAVE with CTRL-X
 
 4. Restart weewx ( Sometimes you have to restart twice )
 
-`sudo /etc/init.d/weewx stop`
-`sudo /etc/init.d/weewx start`
+`sudo systemctl stop weewx`
+`sudo systemctl start weewx`
 
 ----
 * Changelog - Milestones

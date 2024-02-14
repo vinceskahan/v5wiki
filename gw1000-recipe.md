@@ -34,7 +34,7 @@ These parts are manufactured by Fine Offset.  As of December 2019, Ecowitt seems
 
 ### Install weeWX
 
-When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Interceptor` when you run the `wee_config --reconfigure` command.
+When you install weeWX, select `Simulator` when prompted for the station type.  You will change it later to `Interceptor` when you run the `weectl station reconfigure` command.
 ```
 # install weeWX
 wget -qO - http://weewx.com/keys.html | sudo apt-key add -
@@ -43,12 +43,12 @@ sudo apt-get update
 sudo apt-get install weewx
 
 # shut down weeWX
-sudo /etc/init.d/weewx stop
+sudo systemctl stop weewx
 
 # install weewx-interceptor extension and enable the driver
 git clone https://github.com/matthewwall/weewx-interceptor.git
-sudo wee_extension --install weewx-interceptor
-sudo wee_config --reconfigure
+sudo weectl extension install weewx-interceptor
+sudo weectl station reconfigure
 ```
 
 ### Verify that the interceptor can receive data
@@ -122,7 +122,7 @@ weewxd /etc/weewx/weewx.conf
 After you have verified it is working properly, kill `weewxd`.  Now you can run it as a daemon so that it will continue to run, even after you log out.
 ```
 # run weewx as a daemon and forget about it!
-sudo /etc/init.d/weewx start
+sudo systemctl start weewx
 ```
 
 ### Viewing the data and customizing the reports

@@ -34,11 +34,11 @@ Please try not to append zip files or compressed files, as that makes it more di
 ### Where is my logfile ?
 See [here](faq-where-are-my-logs) for details
 
-### About wee_debug
+### About `weectl debug`
 
-The wee_debug utility can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.
+The `weectl debug` utility can output more detailed information about your system.  You may be asked to run that utility and follow up to your original problem report with more details.
 
-One thing to note is that wee_debug 'tries' to obfuscate usernames/passwords/keys in weewx.conf so that posting your debug does not post private information.  You need to 'carefully' examine the output of wee_debug to make sure it didn't miss obfuscating anything.
+One thing to note is that `weectl debug` 'tries' to obfuscate usernames/passwords/keys in weewx.conf so that posting your debug does not post private information.  You need to 'carefully' examine the output of `weectl debug` to make sure it didn't miss obfuscating anything.
 
-<b>Known bug</b> - at this writing as of WeeWX 4.5.1 wee_debug does 'not' obfuscate anything in a commented out portion of a line.  Be very careful in examining your wee_debug output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the wee_debug output to remove those items.
+<b>Known bug</b> - at this writing as of WeeWX 4.5.1 `weectl debug` does 'not' obfuscate anything in a commented out portion of a line.  Be very careful in examining your `weectl debug` output if you do things like save keys or username/passwords in comments in the file.  If you do, you will need to manually edit the `weectl debug` output to remove those items.
 
